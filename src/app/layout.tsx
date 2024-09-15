@@ -1,4 +1,6 @@
-import type { Metadata } from "next";
+'use client';
+
+// import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import  Footer  from '@/components/Footer'
@@ -6,6 +8,10 @@ import  Footer  from '@/components/Footer'
 import 'focus-visible'
 import { NewHeader } from '../components/NewHeader'
 import Navbar from "@/components/Navbar";
+import { SessionContextProvider } from '@supabase/auth-helpers-react';
+import supabase from '@/utils/supabase-browser';
+import { useState } from "react";
+
 // import '../styles/globals.css';
 // import { useEffect, useRef } from "react";
 
@@ -19,8 +25,9 @@ import Navbar from "@/components/Navbar";
 //   return ref.current
 // }
 
-import AuthProvider from './context/AuthProvider'
-
+// import AuthProvider from './context/AuthProvider'
+// // App.js or your root component
+// import { UserProvider } from '../UserContext';
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -33,26 +40,27 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
-export const metadata: Metadata = {
-  title: "PROXY",
-  description: "A WEB APP FOR THOSE THINGS YOU CANT BUY",
-};
+// export const metadata: Metadata = {
+//   title: "PROXY",
+//   description: "A WEB APP FOR THOSE THINGS YOU CANT BUY",
+// };
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const [supabaseClient] = useState(() => supabase);
   // let previousPathname = usePrevious(router.pathname)
   return (
     <html lang="en">
 
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-       <AuthProvider>
+      <SessionContextProvider supabaseClient={supabaseClient}>
          <Navbar />
         {children}
-      </AuthProvider>
+       </SessionContextProvider>
       </body>
       {/* <Footer/> */}
     </html>

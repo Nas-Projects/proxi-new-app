@@ -24,6 +24,7 @@
     "@sanity/image-url": "^1.0.2",
     "@sanity/vision": "^3.51.0",
     "@supabase/auth-helpers-nextjs": "^0.10.0",
+    "@supabase/auth-helpers-react": "^0.5.0",
     "@supabase/ssr": "^0.5.1",
     "@supabase/supabase-js": "^2.45.3",
     "@swc/helpers": "^0.5.11",

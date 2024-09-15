@@ -1,25 +1,52 @@
 // src/app/profile/page.tsx
+"use client"
+
 import { redirect } from "next/navigation";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/auth";
 import ProfileComponent from "@/components/ProfileComponent";
 import { fetchUserById } from "@/lib/data";
-
+import { useEffect } from "react";
+import supabase from '@/utils/supabase-browser';
 export default async function PrivatePage() {
+  const { user } = useUser();
+  const { mongoUser, setMongoUser } = useMongoUser();
+
+  useEffect(() => {
+    if (user && !mongoUser) {
+      fetch(`/api/users/${user.id}`)
+        .then((res) => res.json())
+        .then((data) => setMongoUser(data));
+    }
+  }, [user, mongoUser, setMongoUser]);
+  console.log("SESSION_IN_USER_PROFILE_PAGE", mongoUser)
+  if (!user) {
+    return <div>Please log in</div>;
+  }
+
+  if (!mongoUser) {
+    return <div>Loading...</div>;
+  }
+
   const session = await getServerSession(authOptions);
   console.log("SESSION_IN_USER_PROFILE_PAGE", session)
   if (!session || !session.user?.id) {
     redirect("/login");
   }
 
-  const userId = session.user.id;
 
-  const user = await fetchUserById(userId);
-
-  if (!user) {
-    // redirect("/login");
-    console.log("User SESSION not found")
+  if (!mongoUser) {
+    return <div>Loading...</div>;
   }
+
+  // const userId = session.user.id;
+
+  // const user = await fetchUserById(userId);
+
+  // if (!user) {
+  //   // redirect("/login");
+  //   console.log("User SESSION not found")
+  // }
 
   return <ProfileComponent user={user} />;
 }
