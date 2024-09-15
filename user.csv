@@ -1,0 +1,3 @@
+id,created_at,first_name,last_name,email,phone_number,plan,track_started,progress,completed_workouts,badges_earned
+0a171f4b-c490-4363-9c54-52a61385f240,2024-09-09T04:08:29Z,Nasser,Sanou,nassersanou23@gmail.com,16465753666,Free,Bodybuilding,50%,"Workout 1, Workout 2","Completion Badge"
+1a2b3c4d-e5f6-7890-g1h2-i3456789jklm,2024-09-09T05:09:30Z,Jane,Doe,janedoe@example.com,1234567890,Personal,Powerlifting,70%,"Workout 3","Elite Badge"
