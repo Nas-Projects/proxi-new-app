@@ -47,7 +47,7 @@ export const POST = async (request: NextRequest) => {
         email: supabaseUser.email,
         phone: userMetadata.phone || '',  // Use userMetadata phone or default to empty string
         username: supabaseUser.email.split('@')[0],  // Generate username from email if none is provided
-        userRole: userMetadata.userRole || '',  // App-specific user role
+        userRole: userMetadata.userRole || 'Enthusiast',  // App-specific user role
         role: supabaseUser.role || 'unauthenticated',  // Supabase authentication role
         realEstateLicense: userMetadata.license || null,  // License if applicable
         supabaseUserId: supabaseUser.id || null,  // Store Supabase user ID

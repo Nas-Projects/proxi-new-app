@@ -3,7 +3,7 @@
 import { createServerSupabaseClient } from '@supabase/auth-helpers-nextjs';
 import type { GetServerSidePropsContext } from 'next';
 
-export const createServerSupabaseClient = (ctx: GetServerSidePropsContext) => {
+export const getServerSessionUser = (ctx: GetServerSidePropsContext) => {
   return createServerSupabaseClient({
     req: ctx.req,
     res: ctx.res,

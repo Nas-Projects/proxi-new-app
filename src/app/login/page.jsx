@@ -45,7 +45,7 @@ import { SelectButton } from '@/components/select/SelectButton';
         if (error) {
           setErrorMessage(error.message);
         } else {
-          router.push('/private'); // Redirect on successful login
+          router.push('/properties'); // Redirect on successful login
         }
       };
 
@@ -69,8 +69,10 @@ import { SelectButton } from '@/components/select/SelectButton';
             last_name: lastName,
             phone: phone,
             role: userRole,  // Your app-specific role
+            userRole:userRole,
             license: userRole === 'Agent' || userRole === 'Broker' || userRole === 'Lawyer' ? license : null,
           };
+          console.log("USER_TO_SYNC", supabaseUser);
       
           const { error, data } = await supabase.auth.signUp({
             email,
@@ -112,7 +114,7 @@ import { SelectButton } from '@/components/select/SelectButton';
             // Step 4: Sync the new user with MongoDB
             await syncUserToMongoDB(data.user, supabaseUser.userRole, supabaseUser.license);
             console.log('SUPERBASE_POSTED_TO_MOGO_RESPONSEi:',  data.userRole);
-            router.push('/profile');  // Redirect on successful registration
+            router.push('/properties');  // Redirect on successful registration
           }
         } catch (err) {
           console.error('Registration error:', err);

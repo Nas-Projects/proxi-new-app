@@ -1,5 +1,4 @@
 
-'use client'
 
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
@@ -10,6 +9,8 @@ import { signIn, signOut } from 'next-auth/react'
 import LoadingDots from '@/components/LoadingDots'
 import { createClient } from '@/utils/supabase/client'
 import { useRouter } from 'next/navigation'
+import { useSession } from '@supabase/auth-helpers-react'
+import { extractSessionUserInfo } from '@/utils/extractSessionUserInfo'
 
 const user = {
   name: 'Tom Cook',
@@ -33,63 +34,121 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function Navbar({session}) {
-
+export default function Navbar({}) {
   const [isScrollingUp, setIsScrollingUp] = useState(false);
   const [isTop, setIsTop] = useState(true);
   const [lastScrollTop, setLastScrollTop] = useState(0);
   const [isSocialVisible, setIsSocialVisible] = useState(true);
   const [open, setIsNavOpen] = useState(false); // New state for managing the nav checkbox
   const [loading, setLoading] = useState(false);
-
-
   const [userProfile, setUserProfile] = useState(null);
-
   const [errorMessage, setErrorMessage] = useState(null);
 
   const router = useRouter();
+  const  session  = useSession(); // destructuring session and error
+  const userInfo = extractSessionUserInfo(session);
 
   useEffect(() => {
-    async function fetchUserProfile() {
-      const supabase = createClient();
-
-      // Get the authenticated user
-      const { data: userData, error: userError } = await supabase.auth.getUser();
-
-      if (userError || !userData?.user) {
-        console.log("NAV_Error loading authenticated user.");
-        setErrorMessage("NAV_Error loading authenticated user.");
+    const fetchUserProfile = async () => {
+      if (!session) {
+        setUserProfile(null);
         return;
       }
 
-      // Fetch the user profile from user_profiles table
-      const { data: profileData, error: profileError } = await supabase
-        .from('user_profiles')
-        .select('*')
-        .eq('id', userData.user.id)
-        .single();
+      const supabase = createClient();
 
+      try {
+        const { data: userData, error: userError } = await supabase.auth.getUser();
 
-      if (profileError) {
-        setErrorMessage("Error loading user profile.");
-      } else {
-        console.log("User profile loaded successfully:", profileData);
-        setUserProfile(profileData);
+        if (userError || !userData?.user) {
+          setErrorMessage('Error loading authenticated user.');
+          setUserProfile(null);
+          return;
+        }
+
+        // You can fetch additional profile information if needed
+        // const { data: profileData, error: profileError } = await supabase
+        //   .from('user_profiles')
+        //   .select('*')
+        //   .eq('id', userData.user.id)
+        //   .single();
+
+        // if (profileError) {
+        //   setErrorMessage('Error loading user profile.');
+        //   setUserProfile(null);
+        // } else {
+        //   setUserProfile(profileData);
+        // }
+
+        setUserProfile(userData.user);
+      } catch (error) {
+        console.error('Error fetching user profile:', error);
+        setErrorMessage('An error occurred while fetching the user profile.');
+        setUserProfile(null);
       }
-    }
+    };
 
     fetchUserProfile();
-  }, []);
+  }, [session]); // Adding session as a dependency to run the effect when session changes
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const st = window.scrollY || document.documentElement.scrollTop;
+      setIsScrollingUp(st < lastScrollTop);
+      setLastScrollTop(st);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollTop]);
+
+  if (loading) return <LoadingDots />; // Show loading spinner while loading
+
+  // useEffect(() => {
+  //   async function fetchUserProfile() {
+  //     const supabase = createClient();
+
+  //     // Get the authenticated user
+  //     const { data: userData, error: userError } = await supabase.auth.getUser();
+  //     const {user} = userData;
+  //     console.log("User_profile_loaded_supabase_auth_successfully:", userData);
+  //     console.log("User_profile_loaded_supabase_USER:", user)
+
+  //     if (userError || !userData?.user) {
+  //       console.log("NAV_Error loading authenticated user.");
+  //       setErrorMessage("NAV_Error loading authenticated user.");
+  //       return;
+  //     }
+
+  //     // Fetch the user profile from user_profiles table
+  //     // const { data: profileData, error: profileError } = await supabase //when we set profiles in Supabase
+  //     //   .from('user_profiles')
+  //     //   .select('*')
+  //     //   .eq('id', userData.user.id)
+  //     //   .single();
+
+
+  //     if (profileError) {
+  //       setErrorMessage("Error loading user profile.");
+  //     } else {
+  //       console.log("User_profile_loaded successfully:", userData);
+  //       setUserProfile(user);
+  //     }
+  //   }
+
+  //   fetchUserProfile();
+  // }, []);
 
   
 
-  if (errorMessage) {
-    console.log("NAV_BAR", errorMessage)
-  }
+  // if (errorMessage) {
+  //   console.log("NAV_BAR", errorMessage)
+  // }
 
-  if (!userProfile) {
-    setUserProfile({})
-  }
+  // if (!userProfile) {
+  //   setUserProfile({})
+  // }
 
  
 
@@ -215,7 +274,8 @@ export default function Navbar({session}) {
                     <span className="sr-only">Open user menu</span>
                    { userProfile ?
                    <div className="flex space-y-4 space-x-4">
-                     { userProfile?.image ? <div className="flex w-8"><img alt="" src={userProfile.user.imageUrl} className="h-8 w-8 rounded-full flex" /></div> :  <div className="flex w-8"><img alt="" src={'/omariIcon.jpg'} className="h-8 w-8 rounded-full flex" /></div> }
+                     { userProfile?.image ? <div className="flex w-8"
+                     ><img alt="" src={userProfile.user.imageUrl} className="h-8 w-8 rounded-full flex" /></div> :  <div className="flex w-8"><img alt="" src={'/omariIcon.jpg'} className="h-8 w-8 rounded-full flex" /></div> }
                       
 
 
@@ -230,7 +290,7 @@ export default function Navbar({session}) {
                         {/* <MenuIcon className="h-6 w-6" aria-hidden="true" /> */}
                       </button>
                       
-                      <button
+                   {  userProfile ?  <button
                         disabled={loading}
                         onClick={() => {
                           setLoading(true);
@@ -239,11 +299,26 @@ export default function Navbar({session}) {
                         className={`${
                           loading
                             ? 'bg-gray-200 border-gray-300'
-                            : 'bg-black hover:bg-white border-black'
+                            : 'bg-gray-500 hover:bg-white border-black'
                         } w-36 h-8 py-1 text-white hover:text-black border rounded-md text-sm transition-all`}
                       >
                         {loading ? <LoadingDots color="gray" /> : 'Logout'}
                       </button>
+                       :
+                      <button
+                        disabled={loading}
+                        onClick={() => {
+                          setLoading(true);
+                          signIn("Google", {redirect: "/properties"})
+                        }}
+                        className={`${
+                          loading
+                            ? 'bg-gray-200 border-gray-300'
+                            : 'bg-black hover:bg-white border-black'
+                        } w-36 h-8 py-1 text-white hover:text-black border rounded-md text-sm transition-all`}
+                      >
+                        {loading ? <LoadingDots color="gray" /> : 'Login'}
+                      </button>}
                     </MenuButton>
                     </div>
                   
@@ -256,7 +331,7 @@ export default function Navbar({session}) {
                         disabled={loading}
                         onClick={() => {
                           setLoading(true);
-                          signIn('google', { callbackUrl: `/profile` });
+                          signIn('google', { callbackUrl: `/properties` });
                         }}
                         className={`${
                           loading

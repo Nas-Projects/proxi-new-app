@@ -12,6 +12,10 @@ import { SessionContextProvider } from '@supabase/auth-helpers-react';
 import supabase from '@/utils/supabase-browser';
 import { useState } from "react";
 
+// import { SessionProvider } from '@supabase/auth-helpers-react';
+import { createClient } from '@/utils/supabase/client';
+
+const supabaseClient = createClient();
 // import '../styles/globals.css';
 // import { useEffect, useRef } from "react";
 
@@ -50,7 +54,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const [supabaseClient] = useState(() => supabase);
+  // const [supabaseClient] = useState(() => supabase);
   // let previousPathname = usePrevious(router.pathname)
   return (
     <html lang="en">

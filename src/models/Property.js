@@ -5,9 +5,9 @@ const { Schema, model, models } = mongoose; // Destructure the necessary exports
 const PropertySchema = new Schema(
   {
     owner: {
-      type: Schema.Types.ObjectId,
+      type: mongoose.Schema.Types.ObjectId,
       ref: 'User',
-      required: true,
+      required: true
     },
     name: {
       type: String,

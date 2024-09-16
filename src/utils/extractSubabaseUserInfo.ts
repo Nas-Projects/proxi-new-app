@@ -15,7 +15,7 @@ interface UserInfo {
   // Include other properties as needed
 }
 
-export function extractUserInfo(
+export function extractSubabaseUserInfo(
   user: User | null
 ): UserInfo | null {
   if (!user) {
