@@ -54,6 +54,7 @@ const PropertyMap = ({ property }) => {
         setLoading(false);
       } catch (error) {
         console.log(error);
+        console.log("Error loading Google map");
         setGeocodeError(true);
         setLoading(false);
       }

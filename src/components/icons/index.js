@@ -9,7 +9,8 @@ import {LifetimeIcon} from './LifetimeIcon'
 // import progress from './schemaTypes/progress'
 import Eye from './eye'
 import EyeOff from './eye-off'
-// import tag from './schemaTypes/tag'
+
+import ChevronDown from './chevron-down'
 // import landingPage from './schemaTypes/landingPage';
 // import heroSection from './schemaTypes/heroSection';
 // import aboutSection from './schemaTypes/aboutSection';
@@ -19,4 +20,7 @@ import EyeOff from './eye-off'
 // import testimonialsSection from './schemaTypes/testimonialsSection';
 // import gallerySection from './schemaTypes/gallerySection';
 // import contactSection from './schemaTypes/contactSection';
-export  {PersonalIcon, DesktopIcon, LotsOfContentIcon, CheckIcon, LifetimeIcon,  Ideal , Back, ArrowRight, Eye, EyeOff}
+// export  {PersonalIcon, DesktopIcon, LotsOfContentIcon, CheckIcon, LifetimeIcon,  Ideal , Back, ArrowRight, Eye, EyeOff}
+
+export  {PersonalIcon, DesktopIcon, LotsOfContentIcon, CheckIcon, LifetimeIcon,  Ideal , Back, ArrowRight, Eye, EyeOff, ChevronDown}
+

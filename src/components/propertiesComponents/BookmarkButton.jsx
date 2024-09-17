@@ -55,12 +55,12 @@ const BookmarkButton = ({ property }) => {
   // Conditional rendering happens after hooks
   if (!session) {
     console.log("No session available");
-    return <p className='text-center'>Please log in to bookmark this item.</p>;
+    return <p className='text-center'>Please log in to save this item.</p>;
   }
 
   if (!userInfo) {
     console.log("No user info available");
-    return <p className='text-center'>Please log in to bookmark this item.</p>;
+    return <p className='text-center'>Please log in to save this item.</p>;
   }
 
   const handleClick = async () => {
@@ -96,16 +96,16 @@ const BookmarkButton = ({ property }) => {
   return isBookmarked ? (
     <button
       onClick={handleClick}
-      className='bg-red-500 hover:bg-red-600 text-white font-bold w-full py-2 px-4 rounded-full flex items-center justify-center'
+      className='max-h-[4em] bg-red-500 hover:bg-red-600 text-white font-bold w-full py-2 px-4 rounded-full flex items-center justify-center'
     >
-      <FaBookmark className='mr-2' /> Remove Bookmark
+      <FaBookmark className='mr-2' />Remove Property from your Saved List 
     </button>
   ) : (
     <button
       onClick={handleClick}
-      className='bg-blue-500 hover:bg-blue-600 text-white font-bold w-full py-2 px-4 rounded-full flex items-center justify-center'
+      className='max-h-[4em] max-w-4xl justify-center bg-custom-gradient hover:bg-blue-600 text-white font-bold w-full py-2 px-4 rounded-full flex items-center justify-center'
     >
-      <FaBookmark className='mr-2' /> Bookmark Property
+      <FaBookmark className='mr-2' /> Save Property
     </button>
   );
 };

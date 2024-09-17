@@ -40,12 +40,12 @@ export const SelectButton = ({ label, name, items, handleInputChange, value }) =
       <select
         id={name}
         name={name}
-        className="border rounded w-full py-2 px-3"
+        className="border rounded w-full py-2 px-3 xl:py-3 xl:px-4 "
         value={value}
         onChange={(e) => handleInputChange(e.target.value)} // Pass the selected value (role) as a string
       >
         {items.map((item, index) => (
-          <option key={index} value={item}>
+          <option key={index} value={item} className="px-2">
             {item}
           </option>
         ))}

@@ -11,6 +11,7 @@ import { createClient } from '@/utils/supabase/client'
 import { useRouter } from 'next/navigation'
 import { useSession } from '@supabase/auth-helpers-react'
 import { extractSessionUserInfo } from '@/utils/extractSessionUserInfo'
+import { NavigationMenuDemo } from './navigationMenu/navigation'
 
 const user = {
   name: 'Tom Cook',
@@ -230,7 +231,8 @@ export default function Navbar({}) {
               />
             </Link>
             <div className="hidden md:ml-6 md:flex md:items-center md:space-x-4">
-              {navigation.map((item) => (
+              <NavigationMenuDemo />
+              {/* {navigation.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
@@ -242,7 +244,7 @@ export default function Navbar({}) {
                 >
                   {item.name}
                 </a>
-              ))}
+              ))} */}
             </div>
             
           </div>
@@ -364,15 +366,15 @@ export default function Navbar({}) {
               </Menu>
             </div>
           </div>
-          <div className="-ml-2 mr-2 flex items-center md:hidden">
-              {/* Mobile menu button */}
+          {/* <div className="-ml-2 mr-2 flex items-center md:hidden">
+      
               <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                 <span className="absolute -inset-0.5" />
                 <span className="sr-only">Open main menu</span>
                 <Bars3Icon aria-hidden="true" className={`block h-6 w-6 group-data-[${open}]:hidden`} />
                 <XMarkIcon aria-hidden="true" className={`hidden h-6 w-6 group-data-[${open}]:block`} />
               </DisclosureButton>
-            </div>
+            </div> */}
         </div>
       </div>
 

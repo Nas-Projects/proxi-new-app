@@ -1,0 +1,126 @@
+/* DetailCard.module.css */
+
+.absoluteWrapStickyBox {
+    width: 33vw;
+    max-width: 390px;
+    height: 94%;
+    margin-top: 156px;
+    position: absolute;
+    top: 0%;
+    bottom: auto;
+    left: auto;
+    right: 40px;
+  }
+  
+  .detailCard {
+    background-color: #fff;
+    border-radius: 6px;
+    width: 100%;
+    max-width: none;
+    padding: 30px 30px 20px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 90px;
+    box-shadow: 0 4px 44px rgba(0, 0, 0, 0.05);
+  }
+  
+  .listItemWrap {
+    grid-row-gap: 12px;
+    flex-direction: column;
+    display: flex;
+  }
+  
+  .listItem {
+    grid-column-gap: 24px;
+    justify-content: space-between;
+    display: flex;
+  }
+  
+  .detailBlock {
+    grid-column-gap: 8px;
+    color: var(--midnight-blue);
+    align-items: center;
+    text-decoration: none;
+    display: flex;
+  }
+  
+  .icon {
+    flex: none;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+    display: flex;
+  }
+  
+  .paragraphSmall {
+    font-size: 14px;
+    line-height: 28px;
+  }
+  
+  .paragraphSmall.propertyDetailsLeft {
+    color: var(--slate-grey);
+  }
+  
+  .textBold {
+    font-weight: 700;
+  }
+  
+  .space12 {
+    height: 12px;
+  }
+  
+  .textColorAccent {
+    color: #56bcf6;
+  }
+  
+  .detailCardDivider {
+    background-color: var(--background-blue);
+    width: 100%;
+    height: 1px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+  }
+  
+  .wrapDetailValue {
+    grid-column-gap: 4px;
+    justify-content: flex-end;
+    align-items: center;
+    display: flex;
+  }
+  
+  .wrapDetailPrice {
+    grid-column-gap: 1px;
+    justify-content: flex-end;
+    align-items: center;
+    display: flex;
+  }
+  
+  .linkBlockAppointment {
+    color: var(--accent);
+    text-decoration: none;
+  }
+  
+  @media screen and (max-width: 991px) {
+    .absoluteWrapStickyBox {
+      width: 100%;
+      max-width: none;
+      margin-top: 0;
+      padding: 24px 24px 40px;
+      position: static;
+    }
+  }
+  
+  @media screen and (max-width: 479px) {
+    .paragraphSmall.textBold.propertyRight {
+      text-align: right;
+    }
+  }
+  
+  .detailCardAuthor{
+    grid-column-gap: 16px;
+    background-color: var(--background);
+    border-radius: 6px;
+    padding: 16px;
+    display: flex;
+}

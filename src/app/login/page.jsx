@@ -158,9 +158,9 @@ import { SelectButton } from '@/components/select/SelectButton';
       };
     
       return (
-        <div className="relative bg-white hover:border border-black">
+        <div className="relative bg-[var(--background)] hover:border border-black">
           <div className="mx-auto max-w-7xl lg:grid lg:grid-cols-12 lg:gap-x-8 lg:px-8">
-            <div className="px-6 pb-24 pt-10 sm:pb-32 lg:col-span-7 lg:px-0 lg:pb-56 lg:pt-48 xl:col-span-6">
+            <div className="px-6 lg:pl-12  pb-24 pt-10 sm:pb-32 lg:col-span-7 lg:px-0 lg:pb-56 lg:pt-24 xl:col-span-6">
               <div className="mx-auto max-w-2xl lg:mx-0">
                 <div className="logo flex gap-x-4">
                   <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
@@ -168,7 +168,7 @@ import { SelectButton } from '@/components/select/SelectButton';
                   </h1>
                 </div>
     
-                <div className="py-4 lg:max-w-[24vw] gap-6 flex-wrap items-center justify-center">
+                <div className="py-4 lg:max-w-[38vw] lg:pt-12 xl:max-w-[44vw] xl:mr-24 gap-6 flex-wrap items-center justify-center">
                   <div className="rounded-xl border bg-card text-card-foreground shadow">
                     <div className="flex flex-col space-y-1.5 p-6">
                       <div className="grid grid-cols-6">
@@ -316,12 +316,227 @@ import { SelectButton } from '@/components/select/SelectButton';
                 </div>
               </div>
             </div>
-            <div className="relative bg-pink-500 lg:col-span-5 lg:-mr-8 xl:absolute xl:inset-0 xl:left-1/2 xl:mr-0">
-              <img
+            <div className="relative bg-white   lg:col-span-5 lg:-mr-8 xl:absolute xl:inset-0 xl:left-1/2 xl:mr-0">
+              <div className="block  justify-center px-12 lg:pl-24 lg:py-[5rem] py-44">
+ <div className="w-full max-w-[424px]">
+  <div className="text-font-xl mb-6 p-0 lg:text-4xl text-center font-serif font-semibold text-glass-700">
+    Unlock the best Realestate experience
+  </div>
+  <div className="mb-6 flex items-center justify-center">
+    <img
+      alt=""
+      loading="lazy"
+      width={60}
+      height={60}
+      decoding="async"
+      data-nimg={1}
+      className="mr-4"
+      srcSet="https://storage.googleapis.com/speechify-website-assets/onboarding-v3/intro/intro-avatar.png 1x, https://storage.googleapis.com/speechify-website-assets/onboarding-v3/intro/intro-avatar.png 2x"
+      src="https://storage.googleapis.com/speechify-website-assets/onboarding-v3/intro/intro-avatar.png"
+      style={{ color: "transparent" }}
+    />
+    <img
+      alt=""
+      loading="lazy"
+      width={60}
+      height={60}
+      decoding="async"
+      data-nimg={1}
+      className="mr-4"
+      srcSet="https://storage.googleapis.com/speechify-website-assets/onboarding-v3/goals/goals-avatar.png 1x, https://storage.googleapis.com/speechify-website-assets/onboarding-v3/goals/goals-avatar.png 2x"
+      src="https://storage.googleapis.com/speechify-website-assets/onboarding-v3/goals/goals-avatar.png"
+      style={{ color: "transparent" }}
+    />
+    <img
+      alt=""
+      loading="lazy"
+      width={60}
+      height={60}
+      decoding="async"
+      data-nimg={1}
+      className="mr-4"
+      srcSet="https://storage.googleapis.com/speechify-website-assets/onboarding-v3/voice/voice-avatar.png 1x, https://storage.googleapis.com/speechify-website-assets/onboarding-v3/voice/voice-avatar.png 2x"
+      src="https://storage.googleapis.com/speechify-website-assets/onboarding-v3/voice/voice-avatar.png"
+      style={{ color: "transparent" }}
+    />
+    <img
+      alt=""
+      loading="lazy"
+      width={60}
+      height={60}
+      decoding="async"
+      data-nimg={1}
+      className="mr-4"
+      srcSet="https://storage.googleapis.com/speechify-website-assets/onboarding-v3/speed/speed-avatar.png 1x, https://storage.googleapis.com/speechify-website-assets/onboarding-v3/speed/speed-avatar.png 2x"
+      src="https://storage.googleapis.com/speechify-website-assets/onboarding-v3/speed/speed-avatar.png"
+      style={{ color: "transparent" }}
+    />
+  </div>
+  <div className="mx-auto mb-4 flex max-w-[339px] text-font-s flex-col items-start text-start text-glass-600">
+    <div className="mb-4 flex items-center">
+      <img
+        alt=""
+        loading="lazy"
+        width={18}
+        height={24}
+        decoding="async"
+        data-nimg={1}
+        className="mr-2"
+        srcSet="check-mark-yellow.1e4c6a8b.svg"
+        src="check-mark-yellow.1e4c6a8b.svg"
+        style={{ color: "transparent" }}
+      />
+      <div className="font-bold text-left">Convert leads to sales</div>
+    </div>
+    <div className="mb-4 flex items-center">
+      <img
+        alt=""
+        loading="lazy"
+        width={18}
+        height={24}
+        decoding="async"
+        data-nimg={1}
+        className="mr-2"
+        srcSet="check-mark-yellow.1e4c6a8b.svg"
+        src="check-mark-yellow.1e4c6a8b.svg"
+        style={{ color: "transparent" }}
+      />
+      <div className="font-bold text-left">Access 50+ premium property insights</div>
+    </div>
+    <div className="mb-4 flex items-center">
+      <img
+        alt=""
+        loading="lazy"
+        width={18}
+        height={24}
+        decoding="async"
+        data-nimg={1}
+        className="mr-2"
+        srcSet="check-mark-yellow.1e4c6a8b.svg"
+        src="check-mark-yellow.1e4c6a8b.svg"
+        style={{ color: "transparent" }}
+      />
+      <div className="font-bold text-left">Blockchain property sales and titles transfers</div>
+    </div>
+    <div className="mb-4 flex items-center">
+      <img
+        alt=""
+        loading="lazy"
+        width={18}
+        height={24}
+        decoding="async"
+        data-nimg={1}
+        className="mr-2"
+        srcSet="check-mark-yellow.1e4c6a8b.svg"
+        src="check-mark-yellow.1e4c6a8b.svg"
+        style={{ color: "transparent" }}
+      />
+      <div className="font-bold text-left">
+      Analyze market trends faster with accelerated data processing
+      </div>
+    </div>
+    <div className="mb-4 flex items-center">
+      <img
+        alt=""
+        loading="lazy"
+        width={18}
+        height={24}
+        decoding="async"
+        data-nimg={1}
+        className="mr-2"
+        srcSet="check-mark-yellow.1e4c6a8b.svg"
+        src="check-mark-yellow.1e4c6a8b.svg"
+        style={{ color: "transparent" }}
+      />
+      <div className="font-bold text-left">
+      Automatically filter out irrelevant information (e.g., outdated listings, irrelevant details)
+      </div>
+    </div>
+    <div className="mb-4 flex items-center">
+      <img
+        alt=""
+        loading="lazy"
+        width={18}
+        height={24}
+        decoding="async"
+        data-nimg={1}
+        className="mr-2"
+        srcSet="check-mark-yellow.1e4c6a8b.svg"
+        src="check-mark-yellow.1e4c6a8b.svg"
+        style={{ color: "transparent" }}
+      />
+      <div className="font-bold text-left">No ads</div>
+    </div>
+  </div>
+  <div className="border-tertiaryTint w-full border-t-2 border-dotted" />
+  <div className="mt-m flex justify-center leading-none">
+    <div className="pb-l relative flex items-center justify-evenly sm:pb-0">
+      <button data-le="clicked_web=itemClicked:previousQuote">
+        <img
+          alt=""
+          loading="lazy"
+          width={9}
+          height={16}
+          decoding="async"
+          data-nimg={1}
+          className="pointer-events-none mb-8 mr-5"
+          srcSet="check-mark-yellow.1e4c6a8b.svg"
+          src="check-mark-yellow.1e4c6a8b.svg"
+          style={{ color: "transparent" }}
+        />
+      </button>
+      <div className="mb-l font-sans-serif flex h-40 items-center lg:mb-0  pt-8 lg:pt-12">
+        <div className="animate-in fade-in duration-2s">
+          <div
+            className="text-font-xxs lg:text-font-xs mb-6 text-center text-glass-600"
+            style={{ maxWidth: 328 }}
+          >
+**Proxy has transformed real estate transactions with its blockchain technology. It ensures secure, transparent transactions and immutable records. Verifying property histories and ownership is now effortless. I can't imagine managing real estate deals without it.**”
+          </div>
+          <div className="flex items-center justify-center">
+            <img
+              alt="Reviewer"
+              loading="lazy"
+              width={32}
+              height={32}
+              decoding="async"
+              data-nimg={1}
+              className="mr-xs rounded-full"
+              srcSet="https://storage.googleapis.com/speechify-website-assets/new-speechify/review/writer%2060x60%402x.png 1x, https://storage.googleapis.com/speechify-website-assets/new-speechify/review/writer%2060x60%402x.png 2x"
+              src="https://storage.googleapis.com/speechify-website-assets/new-speechify/review/writer%2060x60%402x.png"
+              style={{ color: "transparent" }}
+            />
+            <div className="font-sans-serif text-font-xxs text-glass-600">
+              Daniel, writer
+            </div>
+          </div>
+        </div>
+      </div>
+      <button data-le="clicked_web=itemClicked:nextQuote">
+        <img
+          alt=""
+          loading="lazy"
+          width={9}
+          height={16}
+          decoding="async"
+          data-nimg={1}
+          className="pointer-events-none mb-8 ml-5 rotate-180"
+          srcSet="check-mark-yellow.1e4c6a8b.svg"
+          src="check-mark-yellow.1e4c6a8b.svg"
+          style={{ color: "transparent" }}
+        />
+      </button>
+    </div>
+  </div>
+</div>
+              </div>
+
+
+              {/* <img
                 alt=""
                 src="/omari_3_ copy-modified.png"
                 className="aspect-[3/2] w-full bg-custom-gradient object-cover lg:absolute lg:inset-0 lg:aspect-auto lg:h-full"
-              />
+              /> */}
             </div>
           </div>
         </div>

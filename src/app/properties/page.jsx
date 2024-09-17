@@ -5,7 +5,10 @@ import { useState, useEffect } from 'react';
 import Spinner from '@/components/propertiesComponents/Spinner';
 import Pagination from '@/components/propertiesComponents/Pagination';
 import { SelectButton } from '@/components/select/SelectButton';
-
+import  CardGrid  from '@/components/cards/CardGrid.jsx';
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Button } from "@medusajs/ui";
 // Reusable PropertyCard component
 const PropertyCard = ({ property }) => (
   <Link className="property" href={`properties/${property.id}`}>
@@ -41,7 +44,7 @@ const PropertyCard = ({ property }) => (
 );
 
 // Arrays for Locations, Property Types, and Sizes
-const locations = ["New York", "Los Angeles", "Austin", "Phoenix", , "San Francisco", "Miami", "Lost Angeles", "Chicago", "Houston", "Phoenix", , "Seattle", "Miami", "Denver", "Boston",  "Brooklyn", "Queens"];
+const locations = ["New York", "Los Angeles", "Austin", "Phoenix", "San Francisco", "Miami", "Lost Angeles", "Chicago", "Houston", "Phoenix","Seattle", "Miami", "Denver", "Boston",  "Brooklyn", "Queens"];
 const propertyTypes = [
   "Residential",
   "Commercial",
@@ -96,8 +99,8 @@ export const Filters = ({ filters, setFilters }) => {
   };
 
   return (
-    <div className="filterSection my-4 lg:my-8">
-      <div className="filterFields space-between lg:flex">
+    <div className="filterSection my-4 lg:my-8 container-navbar">
+      <div className="filterFields space-between lg:flex   lg:space-x-24 xl:space-x-44">
         <div className="filterFieldsOne">
           <SelectButton
             label="Location"
@@ -106,7 +109,7 @@ export const Filters = ({ filters, setFilters }) => {
             handleInputChange={handleInputChange}
             value={filters.location} // Bind the value to the filters state
           />
-          <SelectButton
+          <SelectButton className="text-left"
             label="Type"
             name="type"
             items={["All Types", ...propertyTypes]} 
@@ -121,32 +124,101 @@ export const Filters = ({ filters, setFilters }) => {
             value={filters.size} // Bind the value to the filters state
           />
         </div>
-        <div className="filterFieldsTwo">
+        <div className="right-top-filters ">
+          <div className="w-form">
+             <div className="form-price-inputs">
+              <div className="gap-[12px] flex">
+                <div className="input-wrap filter-input">
+                <Label htmlFor="price-from" className="text-left block text-gray-700 !font-bold mb-2">Price from</Label>
+                   <Input 
+                    type="text"
+                    id="price-from"
+                    placeholder="$1000"
+                    name="priceFrom"
+                    value={filters.priceFrom}
+                    onChange={handleInputChange}
+                    className="filter-text-field bg-white"
+                  />
+                 
+                </div>
+                <div className="input-wrap filter-input">
+                <Label htmlFor="price-to" className="text-left block text-gray-700 !font-bold mb-2">Price to</Label>
+                <Input 
+                    type="text"
+                    id="price-to"
+                    placeholder="$10000000"
+                    name="proceTo"
+                    onChange={handleInputChange}
+                    value={filters.priceFrom} 
+                    className="bg-white"
+                    // Bind the value to the filters state
+                  />
+                  
+                </div>
+              </div>
+              <div className="space-32" />
+              <div className="cta-wrap-price-inputs">
+                <Button  onClick={clearFilters} className="dark-link w-inline-block font-bold">
+                  <div>Clear filters</div>
+                </Button>
+                <Button
+                  type="submit"
+                  data-wait="Please wait..."
+                  className="cta filter-results  !bg-[#0f1841] text-white"
+                  defaultValue="Filter results"
+                >
+                    Filter result
+                </Button>
+              </div>
+            </div>
+            <div
+              className="success-message w-form-done"
+              tabIndex={-1}
+              role="region"
+              aria-label="Email Form success"
+            >
+              <div>Learn how you can make filters functional in our documentation</div>
+            </div>
+            <div
+              className="w-form-fail sr-only"
+              tabIndex={-1}
+              role="region"
+              aria-label="Email Form failure"
+            >
+              <div> "Oops! Something went wrong while submitting the form.
+            </div>
+            </div>
+          </div>
+
+        </div>
+
+        {/* <div className="filterFieldsTwo inline-flex">
           <div className="price">
-            <label htmlFor="price-to">Price To:</label>
-            <input
-              type="text"
-              id="price-to"
-              placeholder="$10000"
-              name="priceTo"
-              onChange={handleInputChange}
-              value={filters.priceTo} // Bind the value to the filters state
-            />
+            <Label htmlFor="price-to">From $:</Label>
+            <Input
+                type="text"
+                id="price-from"
+                placeholder="$1000"
+                name="priceFrom"
+                value={filters.priceFrom}
+                onChange={handleInputChange}
+              />
+           
           </div>
           <div className="price">
-            <label htmlFor="price-from">Price From:</label>
-            <input
+          <Label htmlFor="price-to">To $:</Label>
+            <Input 
               type="text"
               id="price-from"
-              placeholder="$10000"
-              name="priceFrom"
+              placeholder="$10000000"
+              name="proceTo"
               onChange={handleInputChange}
               value={filters.priceFrom} // Bind the value to the filters state
             />
-          </div>
-          <button onClick={clearFilters}>Clear All Filters</button>
-          <button onClick={clearLocationFilter}>Clear Location Filter</button>
-        </div>
+          </div> 
+        <button className="cta" onClick={clearFilters}>Clear All Filters</button>
+          <button onClick={clearLocationFilter}>Clear Location Filter</button> 
+        </div> */}
       </div>
     </div>
   );
@@ -370,9 +442,9 @@ const PropertiesPage = () => {
   return loading ? (
     <Spinner />
   ) : (
-    <div className="main-properties">
-      <div className="propertiesHeader">
-        <h1 className="text-custom-gradient font-bold md:text-[55px] ss:text-[45px] text-[33px]">
+    <div className="main-properties px-0">
+      <div className="wrap-title-wrap-center">
+        <h1 className="page-h1 text-custom-gradient font-bold md:text-[55px] ss:text-[45px] text-[33px]">
           Our Properties
         </h1>
         <h3 className="text-4xl">Proxy will give you help hand with search for a new living</h3>
@@ -381,7 +453,7 @@ const PropertiesPage = () => {
           Clear Filters
         </button>
       </div>
-      <section className="px-2 lg:px-16 sm:py-12 py-4 max-w-[140rem] mx-auto bg-white">
+      <section className="px-4 lg:px-16 sm:py-12 py-4 max-w-[140rem] mx-auto bg-white">
         <div className="md:min-h-[750px] ss:min-h-[600px] min-h-[850px] min-w-[360px] mx-auto flex items-center relative propertiesMainSection">
           <div className="items-center w-full mx-auto flex flex-col max-w-[126rem]">
             <div className="container-xl lg:container m-auto px-4 py-6 min-w-[330px]">
@@ -400,10 +472,64 @@ const PropertiesPage = () => {
                 totalItems={totalItems}
                 onPageChange={handlePageChange}
               />
-            </div>
+            </div> 
           </div>
+       
         </div>
-      </section>
+      </section> 
+         <section className="mt-4 lg:my-8"> 
+         <CardGrid/>
+         </section>
+ <section className="md:min-h-[750px] bg-white mt-4 sm:mt-8 lg:mt-24  ss:min-h-[600px] min-h-[850px]  mx-auto flex items-center relative joinSection">
+ <div className="w-full block lg:grid lg:grid-cols-2">
+  <div className="items-center  mx-auto max-w-[86rem] px-4 lg:p-8 xl:p-12 ">
+    <div
+      className="flex items-center w-full md:mb-16 ss:mb-8  mb-16"
+      style={{ opacity: 1, transform: "none", willChange: "auto" }}
+    >
+      <h1 className="text-custom-gradient font-bold md:text-[55px] ss:text-[45px] text-[33px] md:mr-14 ss:mr-6 mr-5">
+        Want to join the team?
+      </h1>
+      <div
+        className="flex-1 relative items-center justify-center"
+        style={{ opacity: 1, transform: "none", willChange: "auto" }}
+      >
+        <div className="bg-main w-full h-[2px]" />
+      </div>
+    </div>
+    <div
+      className="w-full"
+      style={{ opacity: 1, transform: "none", willChange: "auto" }}
+    >
+      <div
+        className="flex1 flex justify-center items-start flex-col"
+        style={{ opacity: 1, transform: "none", willChange: "auto" }}
+      >
+        <div className="joinContainer -mt-4 xl:-mt-12">
+          <div className="joinText text-left">
+            <p>
+              Join our dynamic, team and unleash your full earning potential in
+              a company that's revolutionizing real estate. Our cutting-edge
+              technology ensures you’re always ahead of the curve, and our
+              lucrative referral program offers additional income opportunities.
+              Don't just work in real estate—thrive in it. Join us today and
+              transform your career!
+            </p>
+          </div>
+          <a href="/join" className="pt-12">
+            <button className="grow4 bg-custom-gradient buttonhalf md:text-[17px] ss:text-[16px] text-[14px] md:py-3.5 ss:py-3 py-3 md:px-24 ss:px-3 px-3 text-white  md:rounded-[6px] ss:rounded-[3px] rounded-[3px]  font-medium font-manier cursor-pointer">
+              Join Us
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="w-full">Image</div>
+  </div> 
+</section>
+
+      
     </div>
   );
 };
@@ -412,277 +538,7 @@ const PropertiesPage = () => {
 export default SectionWrapper(PropertiesPage, 'propertiesPage');
 
 
-// import SectionWrapper from "../../hoc/SectionWrapper";
-// // import RealEstateListing from "@components/properties"
-// import Link from "next/link";
-// import { useState, useEffect } from 'react';
-// // import PropertyCard from '@/components/PropertyCard';
-// import Spinner from '@/components/propertiesComponents/Spinner';
-// import Pagination from '@/components/propertiesComponents/Pagination';
-// import {SelectButton} from '@/components/select/SelectButton'
-// // Reusable PropertyCard component
-// const PropertyCard = ({ property }) => {
 
-//   return (
-//     <Link className="property" href={`properties/${property.id}`}>
-//       <img
-//         alt={property.name}
-//         loading="lazy"
-//         width={property.imageWidth}
-//         height={property.imageHeight}
-//         decoding="async"
-//         data-nimg={1}
-//         style={{ color: 'transparent' }}
-//         src={`${property.images[0]}`}
-//       />
-//       <div className="propertyInfo">
-//         <h2 className="text-white text-[1.1rem] font-bold">{property.name}</h2>
-//         <hr />
-//         <div className="propLocDist">
-//           <p className="inline-flex space-x-2">
-//             <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 384 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-//               <path d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z" />
-//             </svg>
-//             {property.location.city}, {property.location.zipcode}
-//           </p>
-//           <p>
-//             <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 640 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-//               <path d="M624 448h-80V113.45C544 86.19 522.47 64 496 64H384v64h96v384h144c8.84 0 16-7.16 16-16v-32c0-8.84-7.16-16-16-16zM312.24 1.01l-192 49.74C105.99 54.44 96 67.7 96 82.92V448H16c-8.84 0-16 7.16-16 16v32c0 8.84 7.16 16 16 16h336V33.18c0-21.58-19.56-37.41-39.76-32.17zM264 288c-13.25 0-24-14.33-24-32s10.75-32 24-32 24 14.33 24 32-10.75 32-24 32z" />
-//             </svg>
-//             {property.size}
-//           </p>
-//         </div>
-//       </div>
-//     </Link>
-//   );
-// };
-
-// // Arrays for Locations, Property Types, and Sizes
-// const locations = ["New York", "Los Angeles", "Chicago", "Houston", "Phoenix"];
-// const propertyTypes = [
-//   "Residential",
-//   "Commercial",
-//   "Industrial",
-//   "Land",
-//   "Multifamily",
-//   "Office",
-//   "Retail",
-//   "Mixed-Use",
-//   "Hospitality",
-//   "Agricultural",
-//   "Special Purpose",
-//   "Vacant Land",
-//   "Co-op",
-//   "Condominium",
-//   "Townhouse"
-// ];
-// const sizes = ["< 1000 sqft", "1000-2000 sqft", "2000-3000 sqft", "3000+ sqft"];
-
-
-// // Filter Component
-// export const Filters = ({ filters, setFilters }) => {
-//   const handleInputChange = (e) => {
-//     const { name, value } = e.target;
-//     setFilters((prevFilters) => ({
-//       ...prevFilters,
-//       [name]: value,
-//     }));
-//   };
-
-//   // const [filters, setFilters] = React.useState({
-//   //   location: "",
-//   //   type: "",
-//   //   size: "",
-//   //   priceFrom: "",
-//   //   priceTo: "",
-//   // });
-  
-//   // const filteredProperties = properties.filter((property) => {
-//   //   const matchesLocation = filters.location ? property.location === filters.location : true;
-//   //   const matchesType = filters.type ? property.type === filters.type : true;
-//   //   const matchesSize = filters.size ? property.size === filters.size : true;
-//   //   const matchesPriceFrom = filters.priceFrom ? property.price >= Number(filters.priceFrom) : true;
-//   //   const matchesPriceTo = filters.priceTo ? property.price <= Number(filters.priceTo) : true;
-  
-//   //   return matchesLocation && matchesType && matchesSize && matchesPriceFrom && matchesPriceTo;
-//   // });
-  
-//   return (
-//     <div className="filterSection my-4 lg:my-8">
-//       <div className="filterFields space-between lg:flex">
-//         <div className="filterFieldsOne">
-//           <SelectButton
-//             label="Location"
-//             name="location"
-//             items={locations}
-//             handleInputChange={handleInputChange}
-//           />
-//           <SelectButton
-//             label="Type"
-//             name="type"
-//             items={propertyTypes}
-//             handleInputChange={handleInputChange}
-//           />
-//           <SelectButton
-//             label="Size"
-//             name="size"
-//             items={sizes}
-//             handleInputChange={handleInputChange}
-//           />
-//         </div>
-//         <div className="filterFieldsTwo">
-//           <div className="price">
-//             <label htmlFor="price-to">Price To:</label>
-//             <input
-//               type="text"
-//               id="price-to"
-//               placeholder="$10000"
-//               name="priceTo"
-//               onChange={handleInputChange}
-//             />
-//           </div>
-//           <div className="price">
-//             <label htmlFor="price-from">Price From:</label>
-//             <input
-//               type="text"
-//               id="price-from"
-//               placeholder="$10000"
-//               name="priceFrom"
-//               onChange={handleInputChange}
-//             />
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-
-
-
-
-// const PropertiesPage = () => {
-//   const [properties, setProperties] = useState([]);
-//   const [loading, setLoading] = useState(true);
-//   const [page, setPage] = useState(1);
-//   const [pageSize, setPageSize] = useState(6);
-//   const [totalItems, setTotalItems] = useState(0);
-//   // const [properties] = useState([
-
-//   useEffect(() => {
-//     const fetchProperties = async () => {
-//       try {
-//         const res = await fetch(
-//           `/api/properties?page=${page}&pageSize=${pageSize}`
-//         );
-
-//         if (!res.ok) {
-//           console.log("FAILED_TO_FETCH_PROPERTIES")
-//           throw new Error('Failed to fetch data');
-//         }
-
-//         const data = await res.json();
-//         console.log("FETCHED_PROPERTIES", data.properties);
-//         setProperties(data.properties);
-//         setTotalItems(data.total);
-//       } catch (error) {
-//         console.log(error);
-//       } finally {
-//         setLoading(false);
-//       }
-//     };
-
-//     fetchProperties();
-//   }, [page, pageSize]);
-
-//   const handlePageChange = (newPage) => {
-//     setPage(newPage);
-//   };
-
-
-//   const [filters, setFilters] = useState({
-//     location: '',
-//     type: '',
-//     size: '',
-//     priceFrom: '',
-//     priceTo: '',
-//   });
-
-//   const [filteredProperties, setFilteredProperties] = useState(properties);
-
-//   // Filtering logic
-//   useEffect(() => {
-//     let filtered = properties;
-
-//     // Filter by location
-//     if (filters.location) {
-//       filtered = filtered.filter((property) =>
-//         property.location.includes(filters.location)
-//       );
-//     }
-
-//     // Filter by size
-//     if (filters.size) {
-
-//         console.log("FILTERED", filtered)
-
-//       filtered = filtered.filter((property) =>
-//         property.size.includes(filters.size)
-//       );
-//     }
-
-//     // Add more filter conditions for type, priceFrom, and priceTo here if needed
-
-//     setFilteredProperties(filtered);
-//   }, [filters, properties]);
-
-//   return loading ? (
-//     <Spinner />
-    
-//   ) : (<div className="main-properties">
-//     <div className="propertiesHeader">
-//         <h1 className="text-custom-gradient font-bold md:text-[55px] ss:text-[45px] text-[33px]">
-//           Our Properties
-//         </h1>
-//         <h3 className="text-4xl">Proxy will give you help hand with search for a new living</h3>
-//         <Filters filters={filters} setFilters={setFilters} />
-//       </div>
-//     <section className="px-2 lg:px-16 sm:py-12 py-4 max-w-[140rem] mx-auto bg-white">
-//   <span className="hash-span" id="propertiesmain">
-//     &nbsp;
-//   </span>
-//   <div className="md:min-h-[750px] ss:min-h-[600px] min-h-[850px]  min-w-[360px] mx-auto flex items-center relative propertiesMainSection bg-">
-//     <div className="items-center w-full mx-auto flex flex-col max-w-[126rem]">
-      
-//       <div className='container-xl lg:container m-auto px-4 py-6 min-w-[330px]'>
-//        {properties.length === 0 ? (
-//           <p>No properties found</p>
-//         ) : (
-//         <div className='grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3  xl:grid-cols-4 gap-6 bg-white'>
-//             {filteredProperties.map((property) => (
-//           <PropertyCard key={property.id} property={property} />
-//         ))}
-//     </div>
-//   )}
-//   <Pagination
-//     page={page}
-//     pageSize={pageSize}
-//     totalItems={totalItems}
-//     onPageChange={handlePageChange}
-//   />  
-//       </div>
-//     </div>
-//   </div>
-// </section>
-// </div>
-//   );
-// };
-
-
-// const PropertiesPage = () => {
-
-
-  
 
 
 //   const [properties] = useState([
@@ -789,36 +645,6 @@ export default SectionWrapper(PropertiesPage, 'propertiesPage');
 //   ]);
 
 
-  
 
-
-
-
-//   return (
-//     <section className="sm:px-16 px-6 sm:py-12 py-4 max-w-[95rem] mx-auto">
-//       <span className="hash-span" id="propertiesmain">
-//         &nbsp;
-//       </span>
-//       <section className="md:min-h-[750px] ss:min-h-[600px] min-h-[850px] mx-auto flex items-center relative propertiesMainSection">
-//         <div className="items-center w-full mx-auto flex flex-col max-w-[86rem]">
-//           <div className="propertiesHeader">
-//             <h1 className="text-custom-gradient font-bold md:text-[55px] ss:text-[45px] text-[33px]">
-//               Our Properties
-//             </h1>
-//             <h3>Proxy will give you help hand with search for a new living</h3>
-//             <Filters filters={filters} setFilters={setFilters} />
-//           </div>
-//           <div className="gap-y-4 sm:gap-y-8 flex md:flex-row  flex-block flex-col  w-full propSec flex-block sm:grid max-w-[700px]:grid-cols-2  max-w-[900px]:!grid-cols-3 lg:grid lg:grid-cols-3 xl:grid-cols-4">
-//             {filteredProperties.map((property) => (
-//               <PropertyCard key={property.id} property={property} />
-//             ))}
-//           </div>
-//         </div>
-//       </section>
-//     </section>
-//   );
-// };
-
-// export default PropertiesPage;
 
 //  <RealEstateListing />
