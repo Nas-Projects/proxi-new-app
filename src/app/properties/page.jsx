@@ -1,4 +1,5 @@
 'use client'
+
 import SectionWrapper from "../../hoc/SectionWrapper";
 import Link from "next/link";
 import { useState, useEffect } from 'react';
@@ -22,7 +23,7 @@ const PropertyCard = ({ property }) => (
       style={{ color: 'transparent' }}
       src={`${property.images[0]}`}
     />
-    <div className="propertyInfo">
+    <div className="propertyInfo slide-animation">
       <h2 className="text-white text-[1.1rem] font-bold">{property.name}</h2>
       <hr />
       <div className="propLocDist">
@@ -444,7 +445,7 @@ const PropertiesPage = () => {
   ) : (
     <div className="main-properties px-0">
       <div className="wrap-title-wrap-center">
-        <h1 className="page-h1 text-custom-gradient font-bold md:text-[55px] ss:text-[45px] text-[33px]">
+        <h1 className="page-h1 text-custom-gradient font-bold md:text-[55px] ss:text-[45px] text-[33px] slide-animation">
           Our Properties
         </h1>
         <h3 className="text-4xl">Proxy will give you help hand with search for a new living</h3>

@@ -300,9 +300,9 @@ export default function Navbar({}) {
                         }}
                         className={`${
                           loading
-                            ? 'bg-gray-200 border-gray-300'
-                            : 'bg-gray-500 hover:bg-white border-black'
-                        } w-36 h-8 py-1 text-white hover:text-black border rounded-md text-sm transition-all`}
+                            ? 'bg-gray-200/20 border-gray-300'
+                            : 'bg-white !text-black  border-black hover:bg-[var(--secondary-color)] hover:!text-white hover:border-pink-400'
+                        } w-36  h-8 lg:h-[3em] py-1 text-white border rounded-md text-sm transition-all`}
                       >
                         {loading ? <LoadingDots color="gray" /> : 'Logout'}
                       </button>

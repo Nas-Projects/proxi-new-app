@@ -2,9 +2,9 @@
 
 import SectionWrapper from "@hoc/SectionWrapper";
 import { motion } from 'framer-motion';
-import { fadeIn, textVariant } from '@utils/motion';
-import { aboutimg } from "@public/assets";
-import { layout } from "@styles/styles";
+import { fadeIn, textVariant } from '../utils/motion';
+import { aboutimg } from "../../public/assets";
+import { layout } from "../styles/styles";
 import Image from "next/image";
 
 const About = () => {

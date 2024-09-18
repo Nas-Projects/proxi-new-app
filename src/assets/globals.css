@@ -1,0 +1,345 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer utilities {
+  .text-custom-gradient {
+    background: linear-gradient(to bottom, #da1f88, #360b41);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+@layer utilities {
+  .bg-custom-gradient {
+    background: linear-gradient(to bottom, #da1f88, #360b41);
+    -webkit-background-fill-color: transparent;
+  }
+}
+
+@layer utilities {
+  .border-gradient {
+    position: relative;
+    z-index: 0;
+    display: inline-block;
+  }
+  .border-gradient::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, #da1f88, #360b41);
+    border-radius: inherit;
+    padding: 1px;
+    -webkit-mask: 
+      linear-gradient(#fff 0 0) content-box, 
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+            mask-composite: exclude;
+    pointer-events: none;
+  }
+  .border-gradient-sm::before {
+    padding: 1px;
+  }
+  .border-gradient-md::before {
+    padding: 2px;
+  }
+  .border-gradient-lg::before {
+    padding: 3px;
+  }
+}
+:root {
+  --black-gradient: linear-gradient(
+    144.39deg,
+    #ffffff -278.56%,
+    #6d6d6d -78.47%,
+    #11101d 91.61%
+  );
+  --card-shadow: 0px 20px 100px -10px rgba(66, 71, 91, 0.1);
+  --primary-color: #000000;
+  --secondary-color: #ff5a3c;
+  --color-1: #8cb2b2;
+  --heading-color: #071c1f;
+  --paragraph-color: #5c727d;
+  --heading-font: "Poppins", sans-serif;
+  --body-font: "Nunito Sans", sans-serif;
+  --border-color-1: #e5eaee;
+  --section-bg-1: #f2f6f7;
+  --section-bg-2: #171b2a;
+  --border-color-9: #e4ecf2;
+  --box-shadow-1: 0 16px 32px 0 rgba(7, 28, 31, 0.1);
+  --box-shadow-4: 0 5px 20px 0 rgba(23, 44, 82, 0.1);
+  --box-shadow-8: 0 10px 50px 0 rgba(46, 56, 220, 0.2);
+  --left--5: -5px;
+  --left-auto: auto;
+  --left-3-per: 3%;
+  --left-10-per: 10%;
+  --left-15-per: 15%;
+  --left-half: 50%;
+  --right--14: -14px;
+  --right--20: -20px;
+  --right-16: 16px;
+  --right-20: 20px;
+  --right-100: 100px;
+  --right-1-per: 1%;
+  --right-3-per: 3%;
+  --right-8-per: 8%;
+  --right-15-per: 15%;
+  --right-half: 50%;
+  --x--6: translateX(-6px);
+  --x--10: translateX(-10px);
+  --x--30: translateX(-30px);
+  --x--37: translateX(-37px);
+  --x--40: translateX(-40px);
+  --x--50: translateX(-50px);
+  --x--60: translateX(-60px);
+  --x--half: translateX(-50%);
+  --x-6: translateX(6px);
+  --x-10: translateX(10px);
+  --x-30: translateX(30px);
+  --x-37: translateX(37px);
+  --x-40: translateX(40px);
+  --x-50: translateX(50px);
+  --x-60: translateX(60px);
+  --x-half: translateX(50%);
+  --x-3d-half: translate3d(-50%, -50%, 0);
+}
+
+.custom-select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.custom-select option {
+  padding: 0.5rem;
+}
+
+.border-search {
+  border: 1px solid #B5B5B5;
+  outline: none;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero {
+  background-image: url('/assets/11.jpeg');
+  object-fit: cover;
+  background-position: center;
+  width: auto;
+  height: 85vh;
+}
+
+@media (max-width: 1060px) {
+  .hero {
+    background-image: url('/assets/12.jpg');
+    object-fit: cover;
+    width: auto;
+    max-height: 90vh;
+  }
+}
+
+ol {
+  list-style: decimal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+.show:hover button {
+  opacity: 1;
+}
+
+.search {
+  opacity: 0;
+  animation: fadeInAnimation 1s ease-in-out forwards;
+}
+
+@keyframes fadeInAnimation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .mobile {
+    height: 600px;
+  }
+}
+
+@keyframes fadeInFromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.fade-in-from-bottom {
+  animation: fadeInFromBottom 1s ease-out;
+}
+
+@keyframes fadeInFromBottom2 {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px); 
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-from-bottom2 {
+  animation: fadeInFromBottom2 1s ease-out;
+}
+
+@media (max-width: 480px) {
+  .grid-cols-2 > div {
+    grid-column: span 2;
+  }
+}
+
+.navsmooth {
+  transition: all 0.2s ease-in-out;
+}
+
+.box-shadow {
+  box-shadow: 0px 20px 100px -10px rgba(66, 71, 91, 0.1);
+}
+
+.sidebar {
+  -webkit-animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.hash-span {
+  margin-top: -70px;
+  padding-bottom: 70px;
+  display: block;
+}
+
+.grow {
+  transition: all .2s ease-in-out;
+}
+.grow:hover {
+  transform: scale(0.98);
+  background-color: #021b2c;
+}
+
+.grow2 {
+  transition: all .2s ease-in-out;
+}
+.grow2:hover {
+  transform: scale(0.98);
+}
+
+.grow3 {
+  transition: all .2s ease-in-out;
+}
+.grow3:hover {
+  transform: scale(1.05);
+}
+
+.grow4 {
+  transition: all .2s ease-in-out;
+}
+.grow4:hover {
+  transform: scale(1.02);
+}
+
+.grow5 {
+  transition: all .2s ease-in-out;
+}
+.grow5:hover {
+  transform: scale(1.01);
+}
+
+@media (max-width: 480px) {
+  .aboutimage {
+    align-items: center;
+    justify-content: center;
+  }  
+}
+
+.collapsed {
+  max-height: 50px;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+.expanded {
+  max-height: 1000px; 
+  transition: max-height 0.3s ease-in;
+}
+
+.menu-slide-enter {
+  transform: translateX(100%);
+}
+
+.menu-slide-enter-active {
+  transform: translateX(0);
+  transition: transform 0.4s ease-in-out;
+}
+
+.menu-slide-exit {
+  transform: translateX(0);
+}
+
+.menu-slide-exit-active {
+  transform: translateX(100%);
+  transition: transform 0.4s ease-in-out;
+}
+
+.text-secondary-color {
+  --tw-text-opacity: 1;
+  color: rgb(255 90 60 / var(--tw-text-opacity));
+}
+.border-secondary-color {
+  --tw-border-opacity: 1;
+  border-color: rgb(255 90 60 / var(--tw-border-opacity));
+}
+.bg-secondary-color {
+  --tw-bg-opacity: 1;
+  background-color: rgb(233 30 99 / 21%);
+}
+@media (min-width: 768px) {
+  .md\:p-70px {
+      padding: 4.375rem;
+  }
+}
+.p-30px {
+  padding: 1.875rem;
+}
+
+.w-15px {
+  width: .9375rem;
+}
+.h-0\.5 {
+  height: 0.125rem;
+}
+.opacity-50 {
+  opacity: 0.5;
+}
+
+/* --------------HOME PAGE ANIMtion AND STYLE ---------------- */
+/*! CSS Used from: https://html.themewin.com/pixells/quarter-tailwind-preview/quarter/assets/css/font-icons.css */

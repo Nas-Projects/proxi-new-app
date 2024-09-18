@@ -15,12 +15,18 @@ import youtube from './youtube.png';
 import arrow from './arrow.png';
 import menu from './menu.png';
 import warning from './warning.png';
+import hero1 from './11.jpeg';
+import hero2 from './12.jpeg';
+import hero3 from './13.jpeg';
 
 export {
     logo,
     logoalt,
     heroImg,
     aboutimg,
+    hero1,
+    hero2,
+    hero3,
     luxury,
     membership,
     contact,

@@ -1,4 +1,4 @@
-import { twitter, instagram, facebook, linkedin } from '@public/assets';
+import { twitter, instagram, facebook, linkedin } from '../../public/assets';
 
 
 import { FaRegBuilding } from "react-icons/fa";
@@ -79,19 +79,18 @@ export const SearchBtns = [
     link: "properties/office"
   },
   {
-    id: "investment",
-    name: "Investment Sales",
+    id: "sales",
+    name: "Sales",
     Icon: HiOutlineBuildingLibrary,
-    link: "properties/investmentsales"
+    link: "properties/sales"
   },
   {
-    id: "resources",
-    name: "Resources",
+    id: "rentals",
+    name: "Rentals",
     Icon: GrResources,
-    link: "properties/resources"
+    link: "properties/rentals"
   },
-  {
-    id: "modern",
+  { id: "modern",
     name: "Modern",
     Icon: RiBuilding2Line,
     link: "properties/modern"
@@ -102,8 +101,20 @@ export const SearchBtns = [
     Icon: BsBuildings,
     link: "properties/apartment"
   },
+  {
+    id: "blockchain",
+    name: "Blockchain",
+    Icon: HiOutlineBuildingLibrary,
+    link: "properties/blockchain"
+  },
+  
 ];
-
+// {
+  //   id: "resources",
+  //   name: "Resources",
+  //   Icon: GrResources,
+  //   link: "properties/resources"
+  // },
 export const socialMedia = [
   {
     id: "twitter",

@@ -15,7 +15,7 @@ export const GET = async (request) => {
 
     const total = await Property.countDocuments({});
     console.log("Property_countDocuments", total);
-    const rawproperties = await Property.find({}).skip(skip).limit(10);
+    const rawproperties = await Property.find({}).skip(skip).limit(8);
     console.log("Properties.find", rawproperties);
 
     const properties = rawproperties.map((property) => {

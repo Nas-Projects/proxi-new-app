@@ -25,26 +25,26 @@ const PropertyContactForm = ({ property }) => {
 
 const { // Session-level data
   // accessToken,
-  tokenType,
-  expiresIn,
-  expiresAt,
-  refreshToken,
+  // tokenType,
+  // expiresIn,
+  // expiresAt,
+  // refreshToken,
 
   // User-level data
-  userId,
-  aud,
-  role,
+  // userId,
+  // aud,
+  // role,
   email,
-  emailConfirmedAt,
+  // emailConfirmedAt,
   phone,
-  confirmedAt,
-  lastSignInAt,
-  createdAt,
-  updatedAt,
-  isAnonymous,
+  // confirmedAt,
+  // lastSignInAt,
+  // createdAt,
+  // updatedAt,
+  // isAnonymous,
 
   // Metadata
-  appMetadata,
+  // appMetadata,
   userMetadata,
 
   // Identities
