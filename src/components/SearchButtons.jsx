@@ -13,7 +13,7 @@ const ButtonCard = ({ name, Icon, index }) => {
                 variants={fadeIn('', 'spring', index * 0.2, 0.75)}
                 className='cursor-pointer bg-white/60 lg:bg-white/90 shadow-md pt-6 
                 pb-6 pl-8 pr-8 items-center justify-center flex
-                rounded-md w-[115px] w-[118px] lg:w-[130px] xl:w-[200px] lg:hover:bg-custom-gradient-indigo hover:bg-[#c2185b]'
+                rounded-md w-[115px] w-[118px] lg:w-[130px] xl:w-[200px] lg:hover:bg-custom-gradient hover:bg-[#c2185b]'
                 // style={{ width: '200px', height: '120px' }}
             >
                 {/* lg:hover:bg-custom-gradient-indigo */}

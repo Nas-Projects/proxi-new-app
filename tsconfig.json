@@ -27,6 +27,6 @@
       "@/components/*": ["./src/components/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/login/oldpage.jsx", "src/models/Notification.js", "src/UserContext.js", "src/components/navigationMenu/navigation.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/login/oldpage.jsx", "src/models/Notification.js", "src/UserContext.js", "src/components/navigationMenu/navigation.js", "src/components/FollowMessageButtons.js"],
   "exclude": ["node_modules"]
 }

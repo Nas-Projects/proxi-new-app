@@ -12,7 +12,7 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@medusajs/ui";
 // Reusable PropertyCard component
 const PropertyCard = ({ property }) => (
-  <Link className="property" href={`properties/${property.id}`}>
+  <Link className="property" href={`properties/${property._id}`}>
     <img
       alt={property.name}
       loading="lazy"
@@ -23,17 +23,17 @@ const PropertyCard = ({ property }) => (
       style={{ color: 'transparent' }}
       src={`${property.images[0]}`}
     />
-    <div className="propertyInfo slide-animation">
+    <div className="propertyInfo">
       <h2 className="text-white text-[1.1rem] font-bold">{property.name}</h2>
       <hr />
       <div className="propLocDist">
-        <p className="inline-flex space-x-2">
-          <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 384 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+        <p className="inline-flex space-x-2 -mt-4">
+          <svg className="mr-2 mt-[0.4em]" stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 384 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
             <path d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z" />
           </svg>
           {property.location.city}, {property.location.zipcode}
         </p>
-        <p>
+        <p className="">
           <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 640 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
             <path d="M624 448h-80V113.45C544 86.19 522.47 64 496 64H384v64h96v384h144c8.84 0 16-7.16 16-16v-32c0-8.84-7.16-16-16-16zM312.24 1.01l-192 49.74C105.99 54.44 96 67.7 96 82.92V448H16c-8.84 0-16 7.16-16 16v32c0 8.84 7.16 16 16 16h336V33.18c0-21.58-19.56-37.41-39.76-32.17zM264 288c-13.25 0-24-14.33-24-32s10.75-32 24-32 24 14.33 24 32-10.75 32-24 32z" />
           </svg>
@@ -73,7 +73,9 @@ const sizes = ["< 1000 sqft", "1000-2000 sqft", "2000-3000 sqft", "3000+ sqft"];
 // Filter Component
 export const Filters = ({ filters, setFilters }) => {
   const handleInputChange = (e) => {
+    console.log("E_TARGET", e.target)
     const { name, value } = e.target;
+    console.log("E_TARGET_NAME", e.target.name,"E_TARGET_VALUE", e.target.value )
     setFilters((prevFilters) => ({
       ...prevFilters,
       [name]: value,
@@ -102,14 +104,16 @@ export const Filters = ({ filters, setFilters }) => {
   return (
     <div className="filterSection my-4 lg:my-8 container-navbar">
       <div className="filterFields space-between lg:flex   lg:space-x-24 xl:space-x-44">
-        <div className="filterFieldsOne">
-          <SelectButton
+        <div className="filterFieldsOne ">
+          <div className="select-1">
+          <SelectButton htmlFor="location"
             label="Location"
             name="location"
             items={["All Locations", ...locations]} 
             handleInputChange={handleInputChange}
             value={filters.location} // Bind the value to the filters state
-          />
+          />  
+          </div>
           <SelectButton className="text-left"
             label="Type"
             name="type"
@@ -148,9 +152,9 @@ export const Filters = ({ filters, setFilters }) => {
                     type="text"
                     id="price-to"
                     placeholder="$10000000"
-                    name="proceTo"
+                    name="priceTo"
                     onChange={handleInputChange}
-                    value={filters.priceFrom} 
+                    value={filters.priceTo} 
                     className="bg-white"
                     // Bind the value to the filters state
                   />
@@ -258,7 +262,7 @@ const PropertiesPage = () => {
         }
 
         const data = await res.json();
-        setProperties(data.properties);
+        setProperties(data.rawproperties);
         setTotalItems(data.total);
       } catch (error) {
         console.error(error);
@@ -270,96 +274,7 @@ const PropertiesPage = () => {
     fetchProperties();
   }, [page, pageSize]);
 
-  // Filtering logic
-  // useEffect(() => {
-  //   let filtered = properties;
-  
-  //   // Filter by location (using city)
-  //   if (filters.location) {
-  //     filtered = filtered.filter((property) =>
-  //       property.location.city.toLowerCase().includes(filters.location.toLowerCase())
-  //     );
-  //   }
-  
-  //   // Filter by size (using square_feet)
-  //   // if (filters.size) {
-  //   //   const sizeRange = filters.size.split("-"); // Assuming sizes are formatted like "1000-2000 sqft"
-  //   //   if (sizeRange.length === 2) {
-  //   //     const [minSize, maxSize] = sizeRange.map(Number);
-  //   //     filtered = filtered.filter((property) =>
-  //   //       property.square_feet >= minSize && property.square_feet <= maxSize
-  //   //     );
-  //   //   } else if (filters.size.includes("<")) {
-  //   //     const maxSize = Number(filters.size.replace("<", ""));
-  //   //     filtered = filtered.filter((property) =>
-  //   //       property.square_feet <= maxSize // less than or equal to maxSize
-  //   //     );
-  //   //   } else if (filters.size.includes("+")) {
-  //   //     const minSize = Number(filters.size.replace("+", ""));
-  //   //     filtered = filtered.filter((property) =>
-  //   //       property.square_feet >= minSize // greater than or equal to minSize
-  //   //     );
-  //   //   }
-  //   // }
-  //   // Filter by size (using square_feet)
-  //   if (filters.size) {
-  //     const sizeRange = filters.size.split("-");
-      
-  //     if (sizeRange.length === 2) {
-  //       const [minSize, maxSize] = sizeRange.map(Number);
-  //       filtered = filtered.filter((property) =>
-  //         property.square_feet >= minSize && property.square_feet <= maxSize
-  //       );
-  //     } else if (filters.size.includes("<")) {
-  //       const maxSize = Number(filters.size.replace("<", ""));
-  //       filtered = filtered.filter((property) =>
-  //         property.square_feet <= maxSize // less than or equal to maxSize
-  //       );
-  //     } else if (filters.size.includes("+")) {
-  //       const minSize = Number(filters.size.replace("+", ""));
-  //       filtered = filtered.filter((property) =>
-  //         property.square_feet >= minSize // greater than or equal to minSize
-  //       );
-  //     }
-  //   }
-
-  
-  //   // Filter by type
-  //   if (filters.type) {
-  //     filtered = filtered.filter((property) =>
-  //       property.type.toLowerCase().includes(filters.type.toLowerCase())
-  //     );
-  //   }
-  
-  //   if (filters.priceFrom || filters.priceTo) {
-  //     filtered = filtered.filter((property) => {
-  //       let price = 0;
-        
-  //       // Prioritize monthly rate, then weekly, then fallback to a sale price if any
-  //       if (property.rates?.monthly) {
-  //         price = property.rates.monthly;
-  //       } else if (property.rates?.weekly) {
-  //         price = property.rates.weekly * 4; // Convert weekly rate to a monthly equivalent
-  //       } else if (property.price) {
-  //         price = property.price;
-  //       }
-        
-  //       const matchesPriceFrom = filters.priceFrom ? price >= Number(filters.priceFrom) : true;
-  //       const matchesPriceTo = filters.priceTo ? price <= Number(filters.priceTo) : true;
-    
-  //       return matchesPriceFrom && matchesPriceTo;
-  //     });
-  //   }
-    
-    
-  //   // Set filtered properties or show a message if none match
-  //   if (filtered.length === 0) {
-  //     setFilteredProperties([]);
-  //   } else {
-  //     setFilteredProperties(filtered);
-  //   }
-  // }, [filters, properties]);
-  
+  console
   useEffect(() => {
     let filtered = properties;
   
@@ -370,27 +285,64 @@ const PropertiesPage = () => {
       );
     }
   
-    // Filter by size (using square_feet)
-    if (filters.size) {
-      const sizeRange = filters.size.split("-");
+    // // Filter by size (using square_feet)
+    // if (filters.size) {
+    //   const sizeRange = filters.size.split("-");
       
-      if (sizeRange.length === 2) {
-        const [minSize, maxSize] = sizeRange.map(Number);
-        filtered = filtered.filter((property) =>
-          property.square_feet >= minSize && property.square_feet <= maxSize
-        );
-      } else if (filters.size.includes("<")) {
-        const maxSize = Number(filters.size.replace("<", ""));
-        filtered = filtered.filter((property) =>
-          property.square_feet <= maxSize // less than or equal to maxSize
-        );
-      } else if (filters.size.includes("+")) {
-        const minSize = Number(filters.size.replace("+", ""));
-        filtered = filtered.filter((property) =>
-          property.square_feet >= minSize // greater than or equal to minSize
-        );
-      }
-    }
+    //   if (sizeRange.length === 2) {
+    //     const [minSize, maxSize] = sizeRange.map(Number);
+    //     filtered = filtered.filter((property) =>
+    //       property.square_feet >= minSize && property.square_feet <= maxSize
+    //     );
+    //   } else if (filters.size.includes("<")) {
+    //     const maxSize = Number(filters.size.replace("<", ""));
+    //     console.log("FILTERED LES THAN OR EQUAL", minSize);
+    //     filtered = filtered.filter((property) =>
+    //       property.square_feet <= maxSize // less than or equal to maxSize
+    //     );
+    //   } else if (filters.size.includes("+")) {
+    //     const minSize = Number(filters.size.replace("+", ""));
+    //     console.log("FILTERED + SIZE", minSize);
+    //     filtered = filtered.filter((property) =>
+    //       property.square_feet >= minSize // greater than or equal to minSize
+    //     );
+    //   }
+    // }
+    // Filter by size (using square_feet)
+// Filter by size (using square_feet)
+if (filters.size) {
+  const sizeRange = filters.size.split(" ");
+  
+  // Extract size values only
+  const sizeValues = sizeRange[0].split("-");
+  
+  if (sizeValues.length === 2) {
+    const [minSize, maxSize] = sizeValues.map(size => parseInt(size)); // Convert to number
+    console.log("FILTERED SIZE RANGE", minSize, maxSize);
+    
+    filtered = filtered.filter((property) => {
+      console.log("Property square_feet:", property.name); // Log property value
+      return property.square_feet >= minSize && property.square_feet <= maxSize;
+    });
+  } else if (filters.size.includes("<")) {
+    const maxSize = parseInt(filters.size.replace("<", "").trim());
+    console.log("FILTERED LESS THAN OR EQUAL", maxSize);
+    
+    filtered = filtered.filter((property) => {
+      console.log("Property square_feet:", property.price); // Log property value
+      return property.square_feet <= maxSize; // less than or equal to maxSize
+    });
+  } else if (filters.size.includes("+")) {
+    const minSize = parseInt(filters.size.replace("+", "").trim());
+    console.log("FILTERED + SIZE", minSize);
+    
+    filtered = filtered.filter((property) => {
+      console.log("Property square_feet:", property.size); // Log property value
+      return property.square_feet >= minSize; // greater than or equal to minSize
+    });
+  }
+}
+
   
     // Filter by type
     if (filters.type) {
@@ -463,7 +415,7 @@ const PropertiesPage = () => {
               ) : (
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 bg-white">
                   {filteredProperties.map((property) => (
-                    <PropertyCard key={property.id} property={property} />
+                    <PropertyCard key={property._id} property={property} />
                   ))}
                 </div>
               )}
@@ -489,7 +441,7 @@ const PropertiesPage = () => {
       style={{ opacity: 1, transform: "none", willChange: "auto" }}
     >
       <h1 className="text-custom-gradient font-bold md:text-[55px] ss:text-[45px] text-[33px] md:mr-14 ss:mr-6 mr-5">
-        Want to join the team?
+       Wo Join the team?
       </h1>
       <div
         className="flex-1 relative items-center justify-center"
@@ -517,11 +469,11 @@ const PropertiesPage = () => {
               transform your career!
             </p>
           </div>
-          <a href="/join" className="pt-12">
-            <button className="grow4 bg-custom-gradient buttonhalf md:text-[17px] ss:text-[16px] text-[14px] md:py-3.5 ss:py-3 py-3 md:px-24 ss:px-3 px-3 text-white  md:rounded-[6px] ss:rounded-[3px] rounded-[3px]  font-medium font-manier cursor-pointer">
-              Join Us
-            </button>
-          </a>
+          <Link href="/join" className="pt-12">
+          <button className="uppercase text-sm md:text-base text-white relative group whitespace-nowrap font-normal mb-0 transition-all duration-300 border border-secondary-color hover:border-heading-color inline-block">
+             Join Us
+          </button>
+          </Link>
         </div>
       </div>
     </div>
@@ -537,113 +489,6 @@ const PropertiesPage = () => {
 
 
 export default SectionWrapper(PropertiesPage, 'propertiesPage');
-
-
-
-
-
-//   const [properties] = useState([
-//     // All 20 property objects
-//     {
-//       id: 1,
-//       title: 'Property 1',
-//       location: 'Location 1',
-//       size: '160 m2',
-//       imageSrc: 'https://proxy-gamma-virid.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fwhite_stairs.8a888d7c.jpg&w=3840&q=75',
-//       imageWidth: 3639,
-//       imageHeight: 5458,
-//     },
-//     {
-//         id: 2,
-//         title: 'Property 1',
-//         location: 'Location 1',
-//         size: '160 m2',
-//         imageSrc: 'https://proxy-gamma-virid.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fwhite_stairs.8a888d7c.jpg&w=3840&q=75',
-//         imageWidth: 3639,
-//         imageHeight: 5458,
-//       }, {
-//         id: 3,
-//         title: 'Property 1',
-//         location: 'Location 1',
-//         size: '160 m2',
-//         imageSrc: 'https://proxy-gamma-virid.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fwhite_stairs.8a888d7c.jpg&w=3840&q=75',
-//         imageWidth: 3639,
-//         imageHeight: 5458,
-//       }, {
-//         id: 4,
-//         title: 'Property 1',
-//         location: 'Location 1',
-//         size: '160 m2',
-//         imageSrc: 'https://proxy-gamma-virid.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fwhite_stairs.8a888d7c.jpg&w=3840&q=75',
-//         imageWidth: 3639,
-//         imageHeight: 5458,
-//       }, {
-//         id: 5,
-//         title: 'Property 1',
-//         location: 'Location 1',
-//         size: '160 m2',
-//         imageSrc: 'https://proxy-gamma-virid.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fwhite_stairs.8a888d7c.jpg&w=3840&q=75',
-//         imageWidth: 3639,
-//         imageHeight: 5458,
-//       }, {
-//         id: 6,
-//         title: 'Property 1',
-//         location: 'Location 1',
-//         size: '160 m2',
-//         imageSrc: 'https://proxy-gamma-virid.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fwhite_stairs.8a888d7c.jpg&w=3840&q=75',
-//         imageWidth: 3639,
-//         imageHeight: 5458,
-//       }, {
-//         id: 7,
-//         title: 'Property 1',
-//         location: 'Location 1',
-//         size: '160 m2',
-//         imageSrc: 'https://proxy-gamma-virid.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fwhite_stairs.8a888d7c.jpg&w=3840&q=75',
-//         imageWidth: 3639,
-//         imageHeight: 5458,
-//       }, {
-//         id: 8,
-//         title: 'Property 1',
-//         location: 'Location 1',
-//         size: '160 m2',
-//         imageSrc: 'https://proxy-gamma-virid.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fwhite_stairs.8a888d7c.jpg&w=3840&q=75',
-//         imageWidth: 3639,
-//         imageHeight: 5458,
-//       }, {
-//         id: 9,
-//         title: 'Property 1',
-//         location: 'Location 1',
-//         size: '160 m2',
-//         imageSrc: 'https://proxy-gamma-virid.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fwhite_stairs.8a888d7c.jpg&w=3840&q=75',
-//         imageWidth: 3639,
-//         imageHeight: 5458,
-//       }, {
-//         id: 10,
-//         title: 'Property 1',
-//         location: 'Location 1',
-//         size: '160 m2',
-//         imageSrc: 'https://proxy-gamma-virid.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fwhite_stairs.8a888d7c.jpg&w=3840&q=75',
-//         imageWidth: 3639,
-//         imageHeight: 5458,
-//       }, {
-//         id: 12,
-//         title: 'Property 1',
-//         location: 'Location 1',
-//         size: '160 m2',
-//         imageSrc: 'https://proxy-gamma-virid.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fwhite_stairs.8a888d7c.jpg&w=3840&q=75',
-//         imageWidth: 3639,
-//         imageHeight: 5458,
-//       }, {
-//         id: 13,
-//         title: 'Property 1',
-//         location: 'Location 1',
-//         size: '160 m2',
-//         imageSrc: 'https://proxy-gamma-virid.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fwhite_stairs.8a888d7c.jpg&w=3840&q=75',
-//         imageWidth: 3639,
-//         imageHeight: 5458,
-//       },
-//     // Add more properties here...
-//   ]);
 
 
 

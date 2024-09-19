@@ -1,7 +1,7 @@
 {
     "root": true,
     "project": {
-      "name": "omarihills"
+      "name": "proxy"
     },
     "api": {
     "projectId": "`${process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}`",

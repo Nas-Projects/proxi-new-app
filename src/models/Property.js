@@ -40,6 +40,12 @@ const PropertySchema = new Schema(
       zipcode: { type: String },
     },
     // Attributes for Retail Lease
+    category: {
+      type: String,
+      enum: ['Residential', 'Commercial'],
+      required: true,
+    },
+    
     retail: {
       address: { type: String },
       crossStreets: { type: String },
@@ -196,7 +202,7 @@ const PropertySchema = new Schema(
   }
 );
 
-const Property = mongoose.models.Property || mongoose.model('Property', PropertySchema);
+const Property = mongoose.models?.Property || mongoose.model('Property', PropertySchema);
 
 export default Property;
 

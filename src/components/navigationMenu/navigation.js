@@ -17,77 +17,41 @@ import {
 
 // Define the components array without TypeScript annotations
 const components = [
-  {
-    title: "Property Leasing",
-    href: "/docs/real-estate/property-listings",
-    description:
-      "Browse and explore available properties with detailed descriptions and images.",
-  },
-  {
-    title: "Properties Sales",
-    href: "/docs/real-estate/neighborhood-insights",
-    description:
-      "Get detailed information about different neighborhoods and their amenities.",
-  },
+ { title: "Property Leasing",
+  href: "/properties/rentals",
+  description: "Browse and explore available rental properties.",
+},
+{
+  title: "Properties Sales",
+  href: "/properties/sales",
+  description: "Explore properties available for sale.",
+},
+{
+  title: "Investment Opportunities",
+  href: "investment-opportunities",
+  description:
+    "Discover lucrative investment opportunities and potential returns in real estate.",
+},
   {
     title: "Market Trends",
-    href: "/docs/real-estate/market-trends",
+    href: "market-trends",
     description:
       "View the latest market trends and insights for different real estate sectors.",
   },
-  {
-    title: "Investment Opportunities",
-    href: "/docs/real-estate/investment-opportunities",
-    description:
-      "Discover lucrative investment opportunities and potential returns in real estate.",
-  },
+ 
   {
     title: "Virtual Tours",
-    href: "/docs/real-estate/virtual-tours",
+    href: "/properties",
     description:
       "Take virtual tours of properties to explore them from the comfort of your home.",
   },
   {
     title: "Client Reviews",
-    href: "/docs/real-estate/client-reviews",
+    href: "/client-reviews",
     description:
       "Read reviews and testimonials from clients who have used our real estate services.",
   },
-  // {
-  //   title: "Alert Dialog",
-  //   href: "/docs/primitives/alert-dialog",
-  //   description:
-  //     "A modal dialog that interrupts the user with important content and expects a response.",
-  // },
-  // {
-  //   title: "Hover Card",
-  //   href: "/docs/primitives/hover-card",
-  //   description:
-  //     "For sighted users to preview content available behind a link.",
-  // },
-  // {
-  //   title: "Progress",
-  //   href: "/docs/primitives/progress",
-  //   description:
-  //     "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
-  // },
-  // {
-  //   title: "Scroll-area",
-  //   href: "/docs/primitives/scroll-area",
-  //   description: "Visually or semantically separates content.",
-  // },
-  // {
-  //   title: "Tabs",
-  //   href: "/docs/primitives/tabs",
-  //   description:
-  //     "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
-  // },
-  // {
-  //   title: "Tooltip",
-  //   href: "/docs/primitives/tooltip",
-  //   description:
-  //     "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
-  // },
+ 
 ]
 
 export function NavigationMenuDemo() {

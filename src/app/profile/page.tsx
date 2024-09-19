@@ -1,5 +1,4 @@
-// src/app/profile/page.tsx
-"use client"
+'use client'
 
 import { redirect } from "next/navigation";
 import { getServerSession } from "next-auth";
@@ -8,6 +7,9 @@ import ProfileComponent from "@/components/ProfileComponent";
 import { fetchUserById } from "@/lib/data";
 import { useEffect } from "react";
 import supabase from '@/utils/supabase-browser';
+
+import { useUser } from "@supabase/auth-helpers-react";
+
 export default async function PrivatePage() {
   const { user } = useUser();
   const { mongoUser, setMongoUser } = useMongoUser();

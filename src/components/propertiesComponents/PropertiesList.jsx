@@ -4,14 +4,16 @@ import Spinner from './Spinner';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 export const RecentSale = () => {
-    return   <div className="lg:px-4 xl:mx-24 pt-24  pb-90px">
+    return   <div className="px-4 lg:px-4 xl:mx-24 pt-24  pb-90px">
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-5 lg:gap-30px items-center">
       {/* about 2 left */}
       <div className="mb-5">
         <div className="mb-30px">
-          <p className="text-sm my-4 md:text-15px lg:text-base text-secondary-color bg-highlight bg-opacity-10 capitalize mb-15px py-1px px-5 rounded-full inline-block font-semibold">
+          <h5 className="text-sm !text-left my-4 md:text-15px lg:text-base text-secondary-color 
+          bg-highlight !bg-pink-500 capitalize mb-15px py-1px px-5 
+          rounded-full inline-block font-semibold">
             <span className="leading-1.3 py-3">Just Closed</span>
-          </p>
+          </h5>
           <h2 className="text-left text-2xl sm:text-3xl md:text-26px lg:text-3xl xl:text-44px text-heading-color font-bold mb-15px">
             <span className="leading-1.3"> Today's Property Sale</span>
           </h2>
@@ -151,7 +153,7 @@ const PropertiesList = ({properties}) => {
         }
 
         const data = await res.json();
-        setProperties(data.properties);
+        setProperties(data.rawproperties);
         setTotalItems(data.total);
       } catch (error) {
         console.error(error);
@@ -167,30 +169,58 @@ const PropertiesList = ({properties}) => {
   return loading ? (
     <Spinner />
   ) : (
-    <section className="main-properties mt-[27em] md:mt-[17em] px-0 lg:-mt-[12em]">
+    <section className="main-properties  mt-[27em] md:mt-[17em] px-0 lg:-mt-[12em]">
       <div className="wrap-title-wrap-center">
         <h1 className="page-h1 text-custom-gradient font-bold md:text-[55px] ss:text-[45px] text-[33px] slide-animation">
            Real Estate Properties
         </h1>
-        <h3 className="text-4xl -mt-4  pb-6 text-gray-700">Proxy Smart Searches and Data access</h3>
+        <h2 className="text-3xl xl:-mt-2 pb-6 text-gray-600">Smart Searches and Data access</h2>
         {/* <Link href="/properties" className="">
         View all 
         </Link> */}
         </div>
-      <section className="px-4 lg:px-16 sm:py-12 py-4 max-w-[140rem] mx-auto bg-white">
+      <div className="lg:px-[4%] sm:py-12 py-4  mx-auto bg-white">
         <div className="md:min-h-[750px] ss:min-h-[600px] min-h-[850px] min-w-[360px] mx-auto flex items-center relative propertiesMainSection">
           <div className="items-center w-full mx-auto flex flex-col max-w-[126rem]">
-            <div className="container-xl lg:container m-auto px-4 py-6 min-w-[330px]">
-              {propertiesToMap.length === 0 ? (
+            <div className="container-xl lg:container m-auto md:px-4 py-6 min-w-[330px]">
+              {!propertiesToMap?.length ? (
                 <p>No properties found matching your criteria. Please adjust the price or location.</p>
               ) : (
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 bg-white">
+                <div className="grid min-[400px]:grid-cols-1 min-[600px]:grid-cols-2 gap-6 sm:grid-col-2 min-[600px]:grid-cols-2  md:gap-x-8 min-[920px]:grid-cols-3 gap-x-8 lg:grid-cols-3 min-[1511px]:grid-cols-4 xl:gap-x-10 bg-white ">
                   {propertiesToMap.map((property) => (
                     <PropertiesListCard key={property.id} property={property} />
                   ))}
                 </div>
               )}
-             <div className="flex py-4 lg:py-12 ">
+                 <div id="HERO-CTA-BUTTONS" className="mt-2 lg:mt-12  py-4 lg:py-12 z-20 ">
+                    <div className="!flex grid-cols-2 gap-x-4 ">
+                    <Link href="/properties">
+                
+                        <h5 className="uppercase text-sm md:text-base text-white relative group whitespace-nowrap font-normal mb-0 transition-all duration-300 border border-secondary-color hover:border-heading-color inline-block">
+                            <span className="inline-block absolute top-0 right-0 w-full h-full bg-custom-gradient  group-hover:bg-black hover:bg-primary-cogroup-lor z-1 group-hover:w-0 transition-all duration-300" />
+                             <a  href="/properties"  className="relative z-10 px-5 py-4 px-6  group-hover:text-heading-color leading-23px" >
+                              View more properties
+                           </a>
+                        </h5>
+                  
+                    </Link>
+                  <div>
+                <Link href="/contact">
+                    <h5 className="uppercase text-sm md:text-base text-white relative group 
+                        whitespace-nowrap font-normal mb-0 transition-all duration-300 border 
+                              border-black !text-black  hover:border-heading-color inline-block">
+                    <span className="inline-block absolute top-0 right-0 w-full h-full bg-white !text-black 
+                           group-hover:bg-black hover:bg-primary-cogroup-lor z-1 group-hover:w-0 transition-all duration-300" />
+                    <a href="/contact"
+                        className="relative  z-10 relative z-10 px-5 py-4 px-8  group-hover:text-heading-color leading-23px lg:py-17px group-hover:text-heading-color leading-23px" >
+                        Contact Us
+                        </a>
+                        </h5>
+                    </Link>
+                    </div>
+                    </div>
+                </div>
+             {/* <div className="flex py-4 lg:py-12 ">
                 <div className="!grid grid-cols-3 gap-x-6 lg:gap-x-4 ">
                     <div>
                         <h5 className="uppercase text-sm md:text-base text-white relative group whitespace-nowrap font-normal mb-0 transition-all duration-300 border border-secondary-color hover:border-heading-color inline-block">
@@ -215,13 +245,13 @@ const PropertiesList = ({properties}) => {
                         </h5>
                     </div>
                 </div>
-             </div>
+             </div> */}
              <RecentSale />
             </div> 
           </div>
        
         </div>
-        </section> 
+        </div> 
          {/* <section className="mt-4 lg:my-8"> 
          <CardGrid/>
          </section> */}

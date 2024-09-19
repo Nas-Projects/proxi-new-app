@@ -4,6 +4,7 @@
     import { useState } from 'react'
     import { Dialog, DialogPanel } from '@headlessui/react'
     import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import Link from 'next/link'
     
   
     export default function SectionBlockChain(){
@@ -123,7 +124,7 @@
                      <span className='text-custom-gradient'></span> Revolutionizing <br/>
                       Real Estate <br></br>with <span className='text-custom-gradient'>Blockchain</span> Technology
                     </h1>
-                    <p className="mt-6 text-lg leading-8 text-gray-600">
+                    <p className="mt-6 text-lg leading-8 text-gray-600  ">
                       At PROXY, we leverage blockchain technology to enrich the real estate experience, making transactions more secure, transparent, and efficient. Here are three compelling use cases that demonstrate how blockchain transforms the real estate landscape:
 
                     Transparent Property Transactions: Blockchain ensures that all property transactions are recorded on an immutable ledger, allowing buyers and sellers to verify ownership history and transaction details. This transparency minimizes fraud and builds trust among parties.
@@ -132,7 +133,35 @@
 
 
                     </p>
-                    <div className="mt-10 flex items-center gap-x-6">
+                    <div id="HERO-CTA-BUTTONS" className="lg:-pt-12  py-4 lg:py-12 z-20 ">
+                    <div className="!flex grid-cols-2 gap-x-4 ">
+                    <Link href="/blockchain">
+                
+                        <h5 className="uppercase text-sm md:text-base text-white relative group whitespace-nowrap font-normal mb-0 transition-all duration-300 border border-secondary-color hover:border-heading-color inline-block">
+                            <span className="inline-block absolute top-0 right-0 w-full h-full bg-custom-gradient  group-hover:bg-black hover:bg-primary-cogroup-lor z-1 group-hover:w-0 transition-all duration-300" />
+                             <a  href="/properties"  className="relative z-10 px-5 py-4 px-6  group-hover:text-heading-color leading-23px" >
+                             Read More
+                           </a>
+                        </h5>
+                  
+                    </Link>
+                  <div>
+                <Link href="/contact">
+                    <h5 className="uppercase text-sm md:text-base text-white relative group 
+                        whitespace-nowrap font-normal mb-0 transition-all duration-300 border 
+                              border-black !text-black  hover:border-heading-color inline-block">
+                    <span className="inline-block absolute top-0 right-0 w-full h-full bg-white !text-black 
+                           group-hover:bg-black hover:bg-primary-cogroup-lor z-1 group-hover:w-0 transition-all duration-300" />
+                    <a href="/contact"
+                        className="relative  z-10 relative z-10 px-5 py-4 px-8  group-hover:text-heading-color leading-23px lg:py-17px group-hover:text-heading-color leading-23px" >
+                        Contact Us
+                        </a>
+                        </h5>
+                    </Link>
+                    </div>
+                    </div>
+                </div>
+                    {/* <div className="mt-10 flex items-center gap-x-6">
                       <a
                         href="/blogs#proxy-s-implementation-of-blockchain-for-real-estate-innovation"
                         className="rounded-md bg-custom-gradient px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
@@ -142,7 +171,7 @@
                       <a href="/blockchain" className="text-sm font-semibold leading-6 text-gray-900">
                         Learn more <span aria-hidden="true">→</span>
                       </a>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>

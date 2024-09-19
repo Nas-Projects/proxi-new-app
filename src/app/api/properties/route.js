@@ -16,7 +16,7 @@ export const GET = async (request) => {
     const total = await Property.countDocuments({});
     console.log("Property_countDocuments", total);
     const rawproperties = await Property.find({}).skip(skip).limit(8);
-    console.log("Properties.find", rawproperties);
+    // console.log("Properties.find", rawproperties);
 
     const properties = rawproperties.map((property) => {
       return {
@@ -34,7 +34,7 @@ export const GET = async (request) => {
         description: property.description || "No description provided",
         beds: property.beds || "Not Available",
         baths: property.baths || "Not Available",
-        square_feet: property.square_feet || "Not Available",
+        square_feet: property?.square_feet ? property.square_feet.toString() : "Not Available",
         amenities: property.amenities || [],
         id: property._id.toString(),
         images: property.images || [],
@@ -59,10 +59,10 @@ export const GET = async (request) => {
         payments: property?.payments?.map((id) => id.toString()) || "Standard",
       };
     });
-
+    console.log("PROPERTIES_EXTRACTEDd", rawproperties);
     const result = {
       total,
-      properties,
+      rawproperties,
      };
 
    return new Response(JSON.stringify(result), { status: 200 });

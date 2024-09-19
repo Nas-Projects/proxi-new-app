@@ -24,7 +24,7 @@ import {
 
 const AboutProxy = () => {
   return (
-    <div className="relative py-4 mt-12 md:mt-[10em]  lg:mt-12 xlg:mt-12 xl:mb-24">
+    <div className="relative py-4 mt-24 md:mt-12 md:mt-[10em]  lg:mt-12 xlg:mt-12 xl:mb-24">
     <div className="w-full lg:mt-24 lg:mt-34 xl:justify-center
          xl:max-w-[80vw] lg:px-12 lg:ppt-24 pb-44 lg:pb-12 xl:pb-44 relative h-[80vh]">
        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 lg:gap-24">
@@ -34,7 +34,7 @@ const AboutProxy = () => {
             mb-8 md:hidden">
                 <h1 className="text-custom-gradient px-8 text-center font-bold md:text-[55px]
                 ss:text-[45px] text-[33px] md:mr-14 ss:mr-6 mr-5">
-                    WHO ARE WE ?
+                    Who are we?
                 </h1>
                 <motion.div variants={fadeIn('down', 'tween', 0.2, 0.5)}
                 className="flex-1 relative items-center justify-center">
@@ -64,9 +64,9 @@ const AboutProxy = () => {
            <motion.div variants={fadeIn('up', 'tween', 0.2, 0.5)}
             className="hidden md:flex items-center w-full md:mb-12 ss:mb-8 
             mb-8">
-                <h1 className="text-custom-gradient font-bold md:text-[55px]
+                <h1 className="mt-4 text-custom-gradient font-bold md:text-[55px]
                 ss:text-[45px] text-[33px] md:mr-14 ss:mr-6 mr-5">
-                    WHO ARE WE ?
+                    Who are we?
                 </h1>
                 <motion.div variants={fadeIn('down', 'tween', 0.2, 0.5)}
                 className="flex-1 relative items-center justify-center">
