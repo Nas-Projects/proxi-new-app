@@ -546,7 +546,7 @@ select{font-family:var(--body-font);transition:all 0.3s ease 0s;}
 
 .bg-secondary-color {
   --tw-bg-opacity: 1;
-  background-color: rgb(255 90 60 / var(--tw-bg-opacity));
+  background-color: #ee6392;
 }
 .w-15px {
   width: .9375rem;
@@ -3035,10 +3035,10 @@ h5{margin:0;}
 .lg\:px-10{padding-left:2.5rem;padding-right:2.5rem;}
 }
 /* --------BUTTON ANIMATION */
-.bg-secondary-color {
+/* .bg-secondary-color {
     --tw-bg-opacity: 1;
     background-color: var(--secondary-color);
-}
+} */
   @media (min-width: 1024px) {
       .lg\:pl-0 {
           padding-left: 0;

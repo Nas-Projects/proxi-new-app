@@ -22,12 +22,12 @@ const Home = ({heroDetails}) => {
   return (
     <div className="relative w-full">
 
-      <Hero 
-      //  heroDetails={heroDetails}
-        />
+        <Hero 
+        //  heroDetails={heroDetails}
+          />
 
-        <div className="absolute absolute top-[68vh] lg:top-[55vh] md:top-[70vh] xl:top-[72vh] z-20">
-          <SearchButtons />
+            <div className="absolute absolute top-[68vh] lg:top-[55vh] md:top-[70vh] xl:top-[72vh] z-20">
+              <SearchButtons />
             </div>
             <AboutProxy/>
             <PropertiesList />
@@ -61,9 +61,9 @@ const Home = ({heroDetails}) => {
                 </h1>
               </div>
           </div>
-          <div className="absolute top-[780px] z-10">
-            {/* <SearchButtons /> */}
-          </div>
+          {/* <div className="absolute top-[780px] z-10">
+            <SearchButtons />
+          </div> */}
         </div>
     
     

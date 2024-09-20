@@ -11,7 +11,7 @@ import Navbar from "@/components/Navbar";
 import { SessionContextProvider } from '@supabase/auth-helpers-react';
 import supabase from '@/utils/supabase-browser';
 import { useState } from "react";
-
+import FooterNew from "@/components/FooterNew";
 // import { SessionProvider } from '@supabase/auth-helpers-react';
 import { createClient } from '@/utils/supabase/client';
 
@@ -59,14 +59,15 @@ export default function RootLayout({
   return (
     <html lang="en">
 
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased relative`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
       <SessionContextProvider supabaseClient={supabaseClient}>
          <Navbar />
-        {children}
+        {children} 
+      <FooterNew/>
+      <Footer/>
        </SessionContextProvider>
       </body>
-      <Footer/>
+     
     </html>
   );
 }
