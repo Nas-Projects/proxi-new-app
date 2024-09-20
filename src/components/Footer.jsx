@@ -74,172 +74,352 @@ useEffect(() => {
       }
   };
 }, []);
-  return (
-    // <footer className="overflow-wrap mx-auto mt-32 bg-white">
-    //   <Container.Outer>
-    //     <div className="border-t border-zinc-100 pt-10 pb-16 ">
-    //       <Container.Inner>
-    //         <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
-    //           <div className="text-freevolve flex gap-6 overflow-hidden px-4 text-sm font-medium">
-    //             <NavLink href="/">Home</NavLink>
-    //             <NavLink href="/therapy">Therapy</NavLink>
-    //             <NavLink href="/exercises">Diets</NavLink>
-    //             <NavLink href="/videos">Contact</NavLink>
-    //             <NavLink href="/learn">Learn</NavLink>
-    //             <NavLink href="/contact">Contact</NavLink>
-    //             <NavLink href="/about">About</NavLink>
-    //           </div>
-    //           <p className="text-sm text-zinc-400 dark:text-zinc-500">
-    //             &copy; {new Date().getFullYear()}Omari Hills. All rights
-    //             reserved.
-    //           </p>
-    //         </div>
-    //       </Container.Inner>
-    //     </div>
-    //   </Container.Outer>
-    // </footer>
-    <div className='w-full bg-[#383c48]'>
-        <footer 
-        //  id="comp-kkr3gyea" ref={sectionRef} 
-        id="APP_FOOTER" ref={footerRef} 
-        aria-labelledby="footer-heading VrZrC0 cKxVkc">
-        <h2 id="footer-heading" className="sr-only">
-          Footer
-        </h2>
-        <div
-        //  id="comp-kkr3gyea" ref={sectionRef} 
-          className="mx-auto max-w-7xl xl:max-w-none px-10 sm:px-6 lg:px-0">
-          <div className="border-t border-gray-200 dark:border-gray-700 py-20">
-            <div className="grid grid-cols-1 md:grid-flow-col md:auto-rows-min md:grid-cols-12 md:gap-x-8 md:gap-y-16">
-              {/* Image section */}
-              <div className="col-span-1 md:col-span-2 lg:col-start-1 lg:row-start-1  hidden">
-                <img
-                  alt=""
-                  src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                  className="h-8 w-auto"
-                />
-              </div>
-
-              {/* Sitemap sections */}
-              <div className="col-span-6 mt-10 grid grid-cols-2 gap-8 sm:grid-cols-3 md:col-span-8 md:col-start-3 md:row-start-1 md:mt-0 lg:col-span-6 lg:col-start-2">
-                <div className="grid grid-cols-1 gap-y-12 sm:col-span-2 sm:grid-cols-2 sm:gap-x-8">
-                  <div>
-                    <h3 className="text-lg font-medium text-gray-900 dark:text-gray-400 sm:text-xl ">Products</h3>
-                    <ul role="list" className="mt-6 space-y-6">
-                      {footerNavigation.products.map((item) => (
-                        <li key={item.name} className="text-sm">
-                          <a href={item.href} className="text-gray-500 dark:text-gray-200 text-xl  hover:text-gray-100">
-                            {item.name}
-                          </a>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-medium text-gray-900 dark:text-gray-400 sm:text-xl sm:text-2xl ">Company</h3>
-                    <ul role="list" className="mt-6 space-y-6">
-                      {footerNavigation.company.map((item) => (
-                        <li key={item.name} className="text-sm">
-                          <a href={item.href} className="text-gray-500 dark:text-gray-200 text-xl  hover:text-gray-100">
-                            {item.name}
-                          </a>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-                <div>
-                  <h3 className="text-lg font-medium text-gray-900 dark:text-gray-400 sm:text-xl sm:text-2xl ">Customer Service</h3>
-                  <ul role="list" className="mt-6 space-y-6">
-                    {footerNavigation.customerService.map((item) => (
-                      <li key={item.name} className="text-sm">
-                        <a href={item.href} className="text-gray-500 dark:text-gray-200 text-xl  hover:text-gray-100">
-                          {item.name}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-
-              {/* Newsletter section */}
-              <div className="mt-12 md:col-span-8 md:col-start-3 md:row-start-2 md:mt-0 lg:col-span-4 lg:col-start-9 lg:row-start-1">
-                <h3 className="text-lg font-medium text-gray-900 dark:text-gray-400 sm:text-xl ">Sign up for our newsletter</h3>
-                <p className="mt-6 text-sm text-gray-500 dark:text-gray-300">The latest deals and savings, sent to your inbox weekly.</p>
-                <form className="mt-2 flex sm:max-w-md w-[82vw] lg:w-full ">
-                  <label htmlFor="email-address" className="sr-only">
-                    Email address
-                  </label>
-                  <input
-                    id="email-address"
-                    type="text"
-                    required
-                    autoComplete="email"
-                    className="w-full min-w-0 appearance-none rounded-md border border-gray-300 bg-white px-4 py-2 text-base text-gray-900 placeholder-gray-500 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
-                  />
-                  <div className="ml-4 flex-shrink-0">
-                    <button
-                      type="submit"
-                      className="flex w-full items-center justify-center rounded-md border border-transparent bg-white dark:text-black px-4 py-2 text-base font-medium dark:hover:text-white shadow-sm hover:bg-[var(--themeColorGray)] focus:outline-none focus:ring-2 focus:ring-indigo-100 focus:ring-offset-2"
-                    >
-                      Sign up
-                    </button>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-
-          <div className="border-t border-gray-100 py-10 text-center">
-
-            <div className="p-0 text-md-right d-sm-inline-block d-md-block border-right-social-icons col-12 text-center col-md-4 col-lg-5 ng-star-inserted inline-flex">
-              <ngc-social-icons>
-                {/**/}
-                <div className="social-icons-container ng-star-inserted flex gap-x-4">
-                  {/**/}
-                  <a
-                    aria-haspopup="true"
-                    className="facebook circle-outline picturefill-background ng-star-inserted"
-                    href="javascript:void(0);"
-                    tabIndex={0}
-                    id="footer-facebook"
-                  >
-                    <img
-                      alt="Facebook"
-                      src="//content.delta.com/content/www/us/en.damAssetRender.20211110T1419425980500.html/content/dam/delta_homepage_redesign/hpr_optimized_images/social_icons/Facebook-icon-contrast.svg"
-                    />
-                  </a>
-                  <a
-                    aria-haspopup="true"
-                    className="facebook circle-outline picturefill-background mr-0 ng-star-inserted"
-                    href="javascript:void(0);"
-                    tabIndex={0}
-                    id="footer-twitter"
-                  >
-                    <img
-                      alt="Twitter"
-                      src="//content.delta.com/content/www/us/en.damAssetRender.20211110T1419425450500.html/content/dam/delta_homepage_redesign/hpr_optimized_images/social_icons/Twitter-icon-contrast.svg"
-                    />
-                  </a>
-                  <a
-                    aria-haspopup="true"
-                    className="facebook circle-outline picturefill-background ng-star-inserted"
-                    href="javascript:void(0);"
-                    tabIndex={0}
-                    id="footer-facebook"
-                  >
-                    <img
-                      alt="Facebook"
-                      src="//content.delta.com/content/www/us/en.damAssetRender.20211110T1419425980500.html/content/dam/delta_homepage_redesign/hpr_optimized_images/social_icons/Facebook-icon-contrast.svg"
-                    />
-                  </a>
-                </div>
-              </ngc-social-icons>
-            </div>
-            <p className="text-sm text-gray-500">&copy; 2021 OmariHills, Inc. All rights reserved.</p>
-          </div>
+  return (<footer className="!relative bg-custom-gradient pt-187px pb-5 px-15px 3xl:px-[2%] 4xl:px-[5%] mt-95px bg-section-bg-2 text-sm lg:text-base text-white relative">
+  <div className="px-15px">
+    {/* footer top */}
+    <div className="container w-[90vw]lg:max-w-[75rem] absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
+      <div className="bg-black px-25px lg:px-60px py-50px bg-secondary-color text-white flex justify-center lg:justify-between items-center flex-col lg:flex-row gap-y-30px lg:gap-0 sm:whitespace-nowrap">
+        <div>
+          <h5 className="text-xl md:text-26px lg:text-3xl xl:text-4xl text-white font-bold mb-15px">
+            <span className="leading-1.3">Looking for a dream home?</span>
+          </h5>
+          <p className="text-white leading-1.8">
+            We can help you realize your dream of a new home
+          </p>
         </div>
-      </footer></div>
+        <div>
+          <h5 className="capitalize inline-block text-sm md:text-base text-primary-color hover:text-white hover:bg-primary-color relative group whitespace-nowrap font-normal transition-all duration-300 shadow-box-shadow-3 mb-0">
+            <span className="inline-block absolute top-0 right-0 w-full h-full bg-white group-hover:bg-secondary-color z-1 group-hover:w-0 transition-all duration-300" />
+            <a
+              href="contact.html"
+              className="relative z-10 px-5 md:px-25px lg:px-10 py-10px md:py-3 lg:py-17px group-hover:text-white leading-23px"
+            >
+              Explore Properties <i className="icon-next" />
+            </a>
+          </h5>
+        </div>
+      </div>
+    </div>
+    {/* footer main */}
+    <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-12 gap-x-30px text-sm lg:text-base text-white">
+      {/* footer about*/}
+      <div className="xl:col-start-1 xl:col-span-3 mb-60px lg:pr-35px">
+        <div className="mb-15px">
+          <a href="index.html">
+            <img
+              src="https://html.themewin.com/pixells/quarter-tailwind-preview/quarter/assets/img/logo-2.png"
+              alt=""
+            />
+          </a>
+          <p className="leading-1.8 mb-5 lg:mb-25px text-white">
+            Lorem Ipsum is simply dummy text of the and typesetting industry.
+            Lorem Ipsum is dummy text of the printing.
+          </p>
+          <ul className="space-y-2">
+            <li>
+              <p className="leading-1.8 text-white flex">
+                <i className="icon-placeholder mr-15px mt-1" />
+                <span>Brooklyn, New York, United States</span>
+              </p>
+            </li>
+            <li>
+              <a href="tel:+0123-456789" className="leading-1.8 flex">
+                <i className="icon-call mr-15px mt-1" />
+                <span>+0123-456789</span>
+              </a>
+            </li>
+            <li>
+              <a href="mailto:example@example.com" className="leading-1.8 flex">
+                <i className="icon-mail mr-15px mt-1" />
+                <span>example@example.com</span>
+              </a>
+            </li>
+          </ul>
+          <ul className="flex items-center gap-x-5 mt-5">
+            <li>
+              <a href="https://www.facebook.com" className="leading-1.8">
+                <i className="fab fa-facebook-f" />
+              </a>
+            </li>
+            <li>
+              <a href="https://x.com" className="leading-1.8">
+                <i className="fab fa-twitter" />
+              </a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com" className="leading-1.8">
+                <i className="fab fa-linkedin" />
+              </a>
+            </li>
+            <li>
+              <a href="https://www.youtube.com" className="leading-1.8">
+                <i className="fab fa-youtube" />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      {/* footer company*/}
+      <div className="xl:col-start-4 xl:col-span-2 mb-60px">
+        <h3 className="text-22px font-bold mb-25px text-white">
+          <span className="leading-1.3"> Company </span>
+        </h3>
+        <ul className="space-y-[15px]">
+          <li>
+            <a
+              href="about.html"
+              className="hover:text-secondary-color -translate-x-5 hover:translate-x-0 group leading-1.8"
+            >
+              <span className="text-secondary-color pr-15px opacity-0 group-hover:opacity-100 transition-all duration-300">
+                //
+              </span>
+              About
+            </a>
+          </li>
+          <li>
+            <a
+              href="blog.html"
+              className="hover:text-secondary-color -translate-x-5 hover:translate-x-0 group leading-1.8"
+            >
+              <span className="text-secondary-color pr-15px opacity-0 group-hover:opacity-100 transition-all duration-300">
+                //
+              </span>
+              Blog
+            </a>
+          </li>
+          <li>
+            <a
+              href="shop.html"
+              className="hover:text-secondary-color -translate-x-5 hover:translate-x-0 group leading-1.8"
+            >
+              <span className="text-secondary-color pr-15px opacity-0 group-hover:opacity-100 transition-all duration-300">
+                //
+              </span>
+              All Products
+            </a>
+          </li>
+          <li>
+            <a
+              href="locations.html"
+              className="hover:text-secondary-color -translate-x-5 hover:translate-x-0 group leading-1.8"
+            >
+              <span className="text-secondary-color pr-15px opacity-0 group-hover:opacity-100 transition-all duration-300">
+                //
+              </span>
+              Locations Map
+            </a>
+          </li>
+          <li>
+            <a
+              href="faq.html"
+              className="hover:text-secondary-color -translate-x-5 hover:translate-x-0 group leading-1.8"
+            >
+              <span className="text-secondary-color pr-15px opacity-0 group-hover:opacity-100 transition-all duration-300">
+                //
+              </span>
+              FAQ
+            </a>
+          </li>
+          <li>
+            <a
+              href="contact.html"
+              className="hover:text-secondary-color -translate-x-5 hover:translate-x-0 group leading-1.8"
+            >
+              <span className="text-secondary-color pr-15px opacity-0 group-hover:opacity-100 transition-all duration-300">
+                //
+              </span>
+              Contact us
+            </a>
+          </li>
+        </ul>
+      </div>
+      {/* footer services*/}
+      <div className="xl:col-start-6 xl:col-span-2 mb-60px">
+        <h3 className="text-22px font-bold mb-25px text-white">
+          <span className="leading-1.3"> Services </span>
+        </h3>
+        <ul className="space-y-[15px]">
+          <li>
+            <a
+              href="order-tracking.html"
+              className="hover:text-secondary-color -translate-x-5 hover:translate-x-0 group leading-1.8"
+            >
+              <span className="text-secondary-color pr-15px opacity-0 group-hover:opacity-100 transition-all duration-300">
+                //
+              </span>
+              Order tracking
+            </a>
+          </li>
+          <li>
+            <a
+              href="wishlist.html"
+              className="hover:text-secondary-color -translate-x-5 hover:translate-x-0 group leading-1.8"
+            >
+              <span className="text-secondary-color pr-15px opacity-0 group-hover:opacity-100 transition-all duration-300">
+                //
+              </span>
+              Wish List
+            </a>
+          </li>
+          <li>
+            <a
+              href="login.html"
+              className="hover:text-secondary-color -translate-x-5 hover:translate-x-0 group leading-1.8"
+            >
+              <span className="text-secondary-color pr-15px opacity-0 group-hover:opacity-100 transition-all duration-300">
+                //
+              </span>
+              Login
+            </a>
+          </li>
+          <li>
+            <a
+              href="account.html"
+              className="hover:text-secondary-color -translate-x-5 hover:translate-x-0 group leading-1.8"
+            >
+              <span className="text-secondary-color pr-15px opacity-0 group-hover:opacity-100 transition-all duration-300">
+                //
+              </span>
+              My account
+            </a>
+          </li>
+          <li>
+            <a
+              href="about.html"
+              className="hover:text-secondary-color -translate-x-5 hover:translate-x-0 group leading-1.8"
+            >
+              <span className="text-secondary-color pr-15px opacity-0 group-hover:opacity-100 transition-all duration-300">
+                //
+              </span>
+              Terms &amp; Conditions
+            </a>
+          </li>
+          <li>
+            <a
+              href="about.html"
+              className="hover:text-secondary-color -translate-x-5 hover:translate-x-0 group leading-1.8"
+            >
+              <span className="text-secondary-color pr-15px opacity-0 group-hover:opacity-100 transition-all duration-300">
+                //
+              </span>
+              Promotional Offers
+            </a>
+          </li>
+        </ul>
+      </div>
+      {/* footer customer care*/}
+      <div className="xl:col-start-8 xl:col-span-2 mb-60px">
+        <h3 className="text-22px font-bold mb-25px text-white">
+          <span className="leading-1.3"> Customer Care </span>
+        </h3>
+        <ul className="space-y-[15px]">
+          <li>
+            <a
+              href="login.html"
+              className="hover:text-secondary-color -translate-x-5 hover:translate-x-0 group leading-1.8"
+            >
+              <span className="text-secondary-color pr-15px opacity-0 group-hover:opacity-100 transition-all duration-300">
+                //
+              </span>
+              Login
+            </a>
+          </li>
+          <li>
+            <a
+              href="account.html"
+              className="hover:text-secondary-color -translate-x-5 hover:translate-x-0 group leading-1.8"
+            >
+              <span className="text-secondary-color pr-15px opacity-0 group-hover:opacity-100 transition-all duration-300">
+                //
+              </span>
+              My account
+            </a>
+          </li>
+          <li>
+            <a
+              href="wishlist.html"
+              className="hover:text-secondary-color -translate-x-5 hover:translate-x-0 group leading-1.8"
+            >
+              <span className="text-secondary-color pr-15px opacity-0 group-hover:opacity-100 transition-all duration-300">
+                //
+              </span>
+              Wish List
+            </a>
+          </li>
+          <li>
+            <a
+              href="order-tracking.html"
+              className="hover:text-secondary-color -translate-x-5 hover:translate-x-0 group leading-1.8"
+            >
+              <span className="text-secondary-color pr-15px opacity-0 group-hover:opacity-100 transition-all duration-300">
+                //
+              </span>
+              Order tracking
+            </a>
+          </li>
+          <li>
+            <a
+              href="faq.html"
+              className="hover:text-secondary-color -translate-x-5 hover:translate-x-0 group leading-1.8"
+            >
+              <span className="text-secondary-color pr-15px opacity-0 group-hover:opacity-100 transition-all duration-300">
+                //
+              </span>
+              FAQ
+            </a>
+          </li>
+          <li>
+            <a
+              href="contact.html"
+              className="hover:text-secondary-color -translate-x-5 hover:translate-x-0 group leading-1.8"
+            >
+              <span className="text-secondary-color pr-15px opacity-0 group-hover:opacity-100 transition-all duration-300">
+                //
+              </span>
+              Contact us
+            </a>
+          </li>
+        </ul>
+      </div>
+      {/* footer newsletter*/}
+      <div className="xl:col-start-10 xl:col-span-3 mb-60px">
+        <h3 className="text-22px font-bold mb-25px text-white">
+          <span className="leading-1.3"> Newsletter </span>
+        </h3>
+        <p className="leading-1.8 mb-5 lg:mb-25px text-white">
+          Subscribe to our weekly Newsletter and receive updates via email.
+        </p>
+        {/* subscription input  */}
+        <div>
+          <form className="w-full relative">
+            <input
+              type="text"
+              placeholder="Email*"
+              className="w-full text-sm text-paragraph-color pl-5 pr-50px placeholder:text-paragraph-color outline-none border-2 border-border-color-9 focus:border focus:border-secondary-color h-65px block rounded-none"
+            />
+            <button
+              type="submit"
+              className="absolute top-0 right-0 h-full px-18px text-white bg-secondary-color hover:bg-primary-color"
+            >
+              <i className="fas fa-location-arrow text-lg font-bold" />
+            </button>
+          </form>
+        </div>
+        {/* payment methods */}
+        <div>
+          <h3 className="text-base lg:text-lg font-bold mt-30px mb-15px text-white">
+            <span className="leading-1.3"> We Accept </span>
+          </h3>
+          <img
+            src="https://html.themewin.com/pixells/quarter-tailwind-preview/quarter/assets/img/icons/payment-4.png"
+            alt="Payment Image"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
   )
 }
 

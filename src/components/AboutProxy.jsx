@@ -18,15 +18,17 @@ import {
   Settings,
   FileCode,
   Github,
-  Users2Icon
+  Users2Icon,
+  Section
 } from "lucide-react";
 
 
 const AboutProxy = () => {
   return (
+   <section>
     <div className="relative py-4 mt-24 md:mt-12 md:mt-[10em]  lg:mt-12 xlg:mt-12 xl:mb-24">
     <div className="w-full lg:mt-24 lg:mt-34 xl:justify-center
-         xl:max-w-[80vw] lg:px-12 lg:ppt-24 pb-44 lg:pb-12 xl:pb-44 relative h-[80vh]">
+         xl:max-w-[95vw] lg:px-12 lg:ppt-24 pb-44 lg:pb-12 xl:pb-44 relative h-[80vh]">
        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 lg:gap-24">
          {/* about left */}
          <motion.div variants={fadeIn('up', 'tween', 0.2, 0.5)}
@@ -88,7 +90,7 @@ const AboutProxy = () => {
                </span>
              </p>
            </div>
-           <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-5 gap-y-4 pt-4 gap-x-2">
+           <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-5 gap-y-2 pt-4 gap-x-2">
              <li className="text-sm lg:text-base flex items-center gap-x-2">
              <Globe width={18} className="flaticon-mountain text-xl horver:text-[var(--secondary-color)] bg-color-6 w-45px h-45px flex items-center justify-center mr-25px rounded-100%" />
                <span className="leading-1.8">Global Reach</span>
@@ -136,6 +138,7 @@ const AboutProxy = () => {
 
    
        </div> 
+       </section>
 
   )
 };

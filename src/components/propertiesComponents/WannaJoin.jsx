@@ -1,20 +1,26 @@
 export default function WannaJoin() {
-    return <section className="px-[2%] md:min-h-[750px] bg-white mt-4 sm:mt-8 lg:mt-24  ss:min-h-[600px] 
-    min-h-[850px] mx-auto lg:!mx-[4%] flex items-center relative joinSection">
-     
-    <div className="w-full block lg:grid lg:grid-cols-2">
-     <div className="items-center  mx-auto max-w-[86rem] px-4 lg:p-8 xl:p-12 "> 
+    return( <section className="isolate bg-white px-6 py-24 sm:py-32 lg:px-8">
+    <div
+      aria-hidden="true"
+      className="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]"
+    >
       <div
-          style={{
-            clipPath:
-              'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
-          }}
-          className="relative left-1/2 -z-10 aspect-[1155/678] w-[36.125rem] max-w-none -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-40rem)] sm:w-[72.1875rem]"
-        />
+        style={{
+          clipPath:
+            'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
+        }}
+        className="relative left-1/2 -z-10 aspect-[1155/678] w-[36.125rem] max-w-none -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-40rem)] sm:w-[72.1875rem]"
+      />
+       <div className="mx-auto max-w-2xl text-center">
+      <div className="px-[2%] md:min-h-[750px] bg-white mt-4 sm:mt-8 lg:mt-24  ss:min-h-[600px] 
+    min-h-[850px] mx-auto lg:!mx-[4%] flex items-center relative ">
+     
+    <div className="w-full block lg:inline-lex">
+     <div className="items-center  mx-auto max-w-[86rem] px-4 lg:p-8 xl:p-12 "> 
+     
        <div
          className="flex items-center w-full md:mb-16 ss:mb-8  mb-16"
-         style={{ opacity: 1, transform: "none", willChange: "auto" }}
-       >
+         style={{ opacity: 1, transform: "none", willChange: "auto" }}>
          <h1 className="text-custom-gradient font-bold md:text-[55px] ss:text-[45px] text-[33px] md:mr-14 ss:mr-6 mr-5">
          XXX Join the team?
          </h1>
@@ -54,9 +60,11 @@ export default function WannaJoin() {
        </div>
      </div>
      <div class="w-full">
-     <image src="/what-is-blockchain-1.jpeg" alt="what-is-blockchain-1.jpeg"/>
+     <image src="/public/what-is-blockchain-1.jpeg" alt="what-is-blockchain-1.jpeg"/>
      </div> 
      </div>
-   </section>
-   
+   </div></div>
+  </div>
+</section>
+   ) 
 }
