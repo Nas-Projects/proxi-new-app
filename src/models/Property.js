@@ -39,6 +39,10 @@ const PropertySchema = new Schema(
       state: { type: String },
       zipcode: { type: String },
     },
+    amenities: {
+      type: [String], // Array of strings for amenities
+      default: []
+    },
     // Attributes for Retail Lease
     category: {
       type: String,

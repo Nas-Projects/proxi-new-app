@@ -5,39 +5,64 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "@/auth";
 import ProfileComponent from "@/components/ProfileComponent";
 import { fetchUserById } from "@/lib/data";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import supabase from '@/utils/supabase-browser';
 
 import { useUser } from "@supabase/auth-helpers-react";
+// import { getUser } from "../api/apiHelper";
 
-export default async function PrivatePage() {
-  const { user } = useUser();
-  const { mongoUser, setMongoUser } = useMongoUser();
+export default function PrivatePage() {
+  const[loading, setLoading] = useState(true);
+  const [mongoDBnUser, setMongoDBnUser] = useState(null);
+  const user  = useUser();
+  // const { mongoUser, setMongoUser } = useMongoUser();
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       if(user) {
+  //         const email = user.email
+  //       //  const mongoUser =  await getUser(email)
+        
+  //        setMongoDBnUser(mongoUser)
+  //         setLoading(false)
+  //       }
 
+      
+  //     } catch (error) {
+  //       console.error("Error fetching About Page data:", error);
+  //     } finally {
+  //       setLoading(false); // Set loading to false once data is fetched
+  //     }
+  //   };
+
+  //   if (!mongoDBnUser) {
+  //     fetchData();
+  //   }
+  // }, [mongoDBnUser]);
   useEffect(() => {
-    if (user && !mongoUser) {
-      fetch(`/api/users/${user.id}`)
+    if (user && !mongoDBnUser) {
+         fetch(`/api/users?email=${encodeURIComponent(user.email)}`)
         .then((res) => res.json())
-        .then((data) => setMongoUser(data));
+        .then((data) => setMongoDBnUser(data));
     }
-  }, [user, mongoUser, setMongoUser]);
-  console.log("SESSION_IN_USER_PROFILE_PAGE", mongoUser)
+  }, [user, mongoDBnUser, setMongoDBnUser]);
+  console.log("SESSION_IN_USER_PROFILE_PAGE", mongoDBnUser)
   if (!user) {
     return <div>Please log in</div>;
   }
 
-  if (!mongoUser) {
+  if (!mongoDBnUser) {
     return <div>Loading...</div>;
   }
 
-  const session = await getServerSession(authOptions);
-  console.log("SESSION_IN_USER_PROFILE_PAGE", session)
-  if (!session || !session.user?.id) {
-    redirect("/login");
-  }
+  // const session = await getServerSession(authOptions);
+  // console.log("SESSION_IN_USER_PROFILE_PAGE", session)
+  // if (!session || !session.user?.id) {
+  //   redirect("/login");
+  // }
 
 
-  if (!mongoUser) {
+  if (!mongoDBnUser) {
     return <div>Loading...</div>;
   }
 
@@ -50,7 +75,7 @@ export default async function PrivatePage() {
   //   console.log("User SESSION not found")
   // }
 
-  return <ProfileComponent user={user} />;
+  return <ProfileComponent user={mongoDBnUser} />;
 }
 
 {/*  
@@ -63,3 +88,7 @@ export default async function PrivatePage() {
 //     <p className="text-gray-600"><strong>Plan:</strong> {data.user.user_metadata.plan}</p>
 //   </div>
 // </div> */}
+
+function setLoading(arg0: boolean) {
+  throw new Error("Function not implemented.");
+}

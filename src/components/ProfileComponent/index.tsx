@@ -110,7 +110,7 @@ export default function ProfileComponent({
   }
 
   return (
-    <div className="min-h-screen pb-20">
+    <div className="relative min-h-screen pb-20 bg-black">
      <Profile
        success={success}
         setSucces={setSuccess}

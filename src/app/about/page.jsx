@@ -21,7 +21,7 @@ import { sanityClient } from "@/sanity/lib/client";
 
 export async function getAboutPage() {
   const query = groq`
-  *[_type == "aboutPage"][0] {
+  *[_type == "aboutPage"] {
     ...,
   }
   `;

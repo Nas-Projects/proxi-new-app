@@ -8,72 +8,68 @@ import { useSession, useUser } from '@supabase/auth-helpers-react';
 import { extractSubabaseUserInfo } from '@/utils/extractSubabaseUserInfo'; // Adjust the path as necessary
 import { extractSessionUserInfo } from '@/utils/extractSessionUserInfo';
 import clsx from 'clsx';
+import { Lasso } from 'lucide-react';
 
 const PropertyContactForm = ({ property }) => {
-  const  session  = useSession();
-  console.log("USER_SESSION: " + session)
-  const userSession = extractSessionUserInfo(session);
-  console.log("USER_INFO: " + userSession)
 
-  const [userName, setName] = useState('');
-  const [userEmail, setEmail] = useState('');
-  const [userPhone, setPhone] = useState('');
-  const [message, setMessage] = useState('');
-  const [wasSubmitted, setWasSubmitted] = useState(false);
+
 
   console.log("PROPERTY_OWER: ", property.owner)
 
-const { // Session-level data
-  // accessToken,
-  // tokenType,
-  // expiresIn,
-  // expiresAt,
-  // refreshToken,
 
-  // User-level data
-  // userId,
-  // aud,
-  // role,
-  email,
-  // emailConfirmedAt,
-  phone,
-  // confirmedAt,
-  // lastSignInAt,
-  // createdAt,
-  // updatedAt,
-  // isAnonymous,
-
-  // Metadata
-  // appMetadata,
-  userMetadata,
-
-  // Identities
-  identities } = userSession
-  const { 
-    firstName,
-    lastName,
-    license,
-    phoneVerified,
-    emailVerified,
-    sub,
-    userRole,
-    role: userMetaRole} = userMetadata
-
-
-    console.log(`Phone" ${phone}  ${firstName} ${lastName} ${license} ${phoneVerified} ${emailVerified} ${sub} ${userRole} ${userMetaRole}. ${license} ${phoneVerified} ${emailVerified} ${sub} ${userRole} ${userMetaRole}`)
-  useEffect(() => {
-    if (userSession) {
-      if(userSession.userMetadata){
-        setName(userSession.userMetadata.firstName || null);
-      } else {
-        setName(userSession.name || '');
-      }
-      console.log("USERSESSION_NAME: ", userSession.name, "USERSESSION_PHONE: ", userSession.phone, "USERSESSION_EMAIL: ", userSession.email)
+    // console.log(`Phone" ${phone}  Email ${email} First Name  ${firstName} Last Name ${lastName}  Lisence ${license} ${phoneVerified} ${emailVerified} ${sub} ${userRole} ${userMetaRole}. ${license} ${phoneVerified} ${emailVerified} ${sub} ${userRole} ${userMetaRole}`)
+    const session = useSession();
+    const userSession = extractSessionUserInfo(session);
   
-      setEmail(userSession.email || '');
-      // setPhone(userSession.phone || '');
-    }
-  }, [userSession]);
+    const [userName, setName] = useState('');
+    const [firstName, setFirstName] = useState(''); // Updated to use a consistent name
+    const [lastName, setLastName] = useState('');
+    const [userEmail, setEmail] = useState('');
+    const [userPhone, setPhone] = useState('');
+    const [message, setMessage] = useState('');
+    const [wasSubmitted, setWasSubmitted] = useState(false);
+  
+    useEffect(() => {
+      if (userSession) {
+        setFirstName(userSession.userMetadata?.firstName || '');
+        setLastName(userSession.userMetadata?.lastName || '');
+        setEmail(userSession.email || '');
+        setPhone(userSession.phone || '');   
+
+        const { 
+          accessToken,
+          tokenType,
+          expiresIn,
+          expiresAt,
+          refreshToken,
+          
+          // User-level data
+          userId,
+          aud,
+          role,
+          email = '', // Default to empty string if email is not available
+          emailConfirmedAt,
+          phone = '', // Default to empty string if phone is not available
+          confirmedAt,
+          lastSignInAt,
+          createdAt,
+          updatedAt,
+          isAnonymous,
+          
+          // Metadata
+          appMetadata,
+          userMetadata,
+          
+          // Identities
+          identities 
+        } = userSession  // Fallback to an empty object if userSession is null
+        
+
+      
+        console.log("USER_INFO: " + userSession)
+      
+      }
+    }, [userSession]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -82,9 +78,9 @@ const { // Session-level data
   //  console.log("property.owner._id", property.owner._id)
   //  setName(e.vaue);
   //  setPhone(e.vaue);
-
+    const name = firstName + " " + lastName;
     const data = {
-      name:userName,
+      name:name,
       email,
       userPhone,
       message,
@@ -123,152 +119,43 @@ const { // Session-level data
   };
 
   return (
-    <div className='bg-white p-6 rounded-lg shadow-md'>
+    <div className='bg-white p-6 rounded-lg shadow-md lg:mt-12'>
       {/* <h3 className='text-xl font-bold mb-6 text-custom-gradient'>Contact Property {property.owner}</h3> */}
       {!userSession?.accessToken ? (
         <p>You must be logged in to send a message</p>
       ) : wasSubmitted ? (
         <p className='text-green-500 mb-4'>
-          Your message has been sent successfully
+          Thank Your. Your message has been sent successfully
         </p>
       ) : (
-        // <div className="block lg:grid lg:grid-cols-2">
-        //    <form onSubmit={handleSubmit}>
-        //   <div className='mb-4'>
-        //   <div className={styles.limit360}>
-        //         <p className={styles.paragraphBig}>
-        //           Avg. responding time is 8 working hours. Our working time Mon - Fri (8:00 - 16:00)
-        //         </p>
-        //       </div>
-        //     <label
-        //       className='block text-gray-700 text-sm font-bold mb-2'
-        //       htmlFor='name'
-        //     >
-        //       Name:
-        //     </label>
-        //     <input
-        //       className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
-        //       id='userName'
-        //       type='text'
-        //       placeholder='Enter your name'
-        //       required
-        //       value={userName}
-        //       onChange={(e) => setName(e.target.value)}
-        //       readOnly // Optional: disable editing
-        //     />
-        //   </div>
-        //   <div className='mb-4'>
-        //     <label
-        //       className='block text-gray-700 text-sm font-bold mb-2'
-        //       htmlFor='email'
-        //     >
-        //       Email:
-        //     </label>
-        //     <input
-        //       className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
-        //       id='userEmail'
-        //       type='email'
-        //       placeholder='Enter your userEmail'
-        //       required
-        //       value={userEmail}
-        //       onChange={(e) => setEmail(e.target.value)}
-        //       readOnly // Optional: disable editing
-        //     />
-        //   </div>
-        //   <div className='mb-4'>
-        //     <label
-        //       className='block text-gray-700 text-sm font-bold mb-2'
-        //       htmlFor='phone'
-        //     >
-        //       Phone:
-        //     </label>
-        //     <input
-        //       className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
-        //       id='userPhone'
-        //       type='text'
-        //       placeholder='Enter your phone number'
-        //       value={userPhone}
-        //       onChange={(e) => setPhone(e.target.value)}
-        //     />
-        //   </div>
-        //   <div className='mb-4'>
-        //     <label
-        //       className='block text-gray-700 text-sm font-bold mb-2'
-        //       htmlFor='message'
-        //     >
-        //       Message:
-        //     </label>
-        //     <textarea
-        //       className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 h-44 focus:outline-none focus:shadow-outline'
-        //       id='message'
-        //       placeholder='Enter your message'
-        //       value={message}
-        //       onChange={(e) => setMessage(e.target.value)}
-        //       required
-        //     ></textarea>
-        //   </div>
-        //   <div>
-        //     <button
-        //       className='bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline flex items-center justify-center'
-        //       type='submit'
-        //     >
-        //       <FaPaperPlane className='mr-2' /> Send Message
-        //     </button>
-        //   </div>
-        // </form>
-        // <div className="agent-imag">
-
-        // </div>
-        // </div>
-        <Example />
-       
-      )}
-    </div>
-  );
-};
-
-export default PropertyContactForm;
-
-/*
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
-    ],
-  }
-  ```
-*/
-export function Example() {
-  return (
-    <div className="relative bg-white">
-      <div className="lg:absolute lg:inset-0 lg:left-1/2">
-        <img
-          alt=""
-          src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&crop=focalpoint&fp-x=.4&w=2560&h=3413&&q=80"
-          className="h-64 w-full bg-gray-50 object-cover sm:h-80 lg:absolute lg:h-full"
-        />
-      </div>
-      <div className="pb-24 pt-16 sm:pb-32 sm:pt-24 lg:mx-auto lg:grid lg:max-w-7xl lg:grid-cols-2 lg:pt-32">
+        <div className="relative bg-white">
+        <div className="lg:absolute lg:inset-0 lg:left-1/2">
+          <img
+            alt=""
+            src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&crop=focalpoint&fp-x=.4&w=2560&h=3413&&q=80"
+            className="h-64 w-full bg-gray-50 object-cover sm:h-80 lg:absolute lg:h-full"
+          />
+        </div>
+        <div className="pb-24 pt-16 sm:pb-32 sm:pt-24 lg:mx-auto lg:grid lg:max-w-7xl lg:grid-cols-2 lg:pt-32">
         <div className="px-6 lg:px-8">
           <div className="mx-auto max-w-xl lg:mx-0 lg:max-w-lg">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 text-custom-gradient">Let's work together</h2>
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 text-custom-gradient text-left">{property.seller_info ? property.seller_info.name :  "Meet Ryan"}</h2>
             {/* <p className={clsx(`${styles.paragraphBig} mt-2 text-lg leading-8 text-gray-600`)}> */}
-            <p className={clsx("paragraphBig mt-2 text-lg leading-8 text-gray-600")}>
-            I am the right agent for you—feel free to give me a call or send a message, and let’s start finding your dream home together
+            <p className={clsx("paragraphBig mt-2 text-lg text-left leading-8 text-gray-600")}>
+            {property.seller_info  && property.seller_info?.bio ? user.bio : "I am the right agent for you—feel free to give me a call or send a message, and let’s start finding your dream home together"}
             </p>
-            <form action="#" method="POST" className="mt-16">
+            <form onSubmit={handleSubmit}
+            //  action="#" method="POST" 
+             className="mt-16"
+             >
               <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
                 <div>
                   <label htmlFor="first-name" className="block text-sm font-semibold leading-6 text-gray-900">
                     First name
                   </label>
                   <div className="mt-2.5">
-                    <input
+                    <input  onChange={(e) => setFirstName(e.target.value)}
+                       value={firstName}
                       id="first-name"
                       name="first-name"
                       type="text"
@@ -282,7 +169,9 @@ export function Example() {
                     Last name
                   </label>
                   <div className="mt-2.5">
-                    <input
+                    <input    
+                      onChange={(e) => setLastName(e.target.value)}
+                      value={lastName}
                       id="last-name"
                       name="last-name"
                       type="text"
@@ -296,7 +185,9 @@ export function Example() {
                     Email
                   </label>
                   <div className="mt-2.5">
-                    <input
+                    <input  
+                    onChange={(e) => setEmail(e.target.value)}
+                       value={userEmail}
                       id="email"
                       name="email"
                       type="email"
@@ -310,7 +201,8 @@ export function Example() {
                     Company
                   </label>
                   <div className="mt-2.5">
-                    <input
+                    <input  onChange={(e) => setCompany(e.target.value)}
+                      //  value={ company ? company : "N/A" }
                       id="company"
                       name="company"
                       type="text"
@@ -329,7 +221,8 @@ export function Example() {
                     </p>
                   </div>
                   <div className="mt-2.5">
-                    <input
+                    <input  onChange={(e) => setPhonee(e.target.value)}
+                       value={userPhone}
                       id="phone"
                       name="phone"
                       type="tel"
@@ -349,7 +242,9 @@ export function Example() {
                     </p>
                   </div>
                   <div className="mt-2.5">
-                    <textarea
+                    <textarea  
+                      onChange={(e) => setMessage(e.target.value)}
+                      value={message}
                       id="message"
                       name="message"
                       rows={4}
@@ -409,15 +304,35 @@ export function Example() {
               <div className="mt-10 flex justify-end border-t border-gray-900/10 pt-8">
                 <button
                   type="submit"
-                  className="rounded-md bg-custom-gradient px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                  className="inline-flex gap-x-4  py-4 rounded-md bg-custom-gradient px-3.5  text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                 >
-                  Send message
+                  Send message  <FaPaperPlane className='mr-2' /> 
                 </button>
               </div>
             </form>
           </div>
+            </div>
+          </div>
         </div>
-      </div>
+    
+      )}
     </div>
-  )
-}
+  );
+};
+
+export default PropertyContactForm;
+
+/*
+  This example requires some changes to your config:
+  
+  ```
+  // tailwind.config.js
+  module.exports = {
+    // ...
+    plugins: [
+      // ...
+      require('@tailwindcss/forms'),
+    ],
+  }
+  ```
+*/

@@ -6,7 +6,7 @@ export default function SectionOurTeams() {
             role: 'Senior Developer',
             imageUrl:
               'https://images.unsplash.com/photo-1505840717430-882ce147ef2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
-            bio: 'Praesentium iure error aliquam voluptas ut libero. Commodi placeat sit iure nulla officiis. Ut ex sit repellat tempora. Qui est accusamus exercitationem natus ut voluptas. Officiis velit eos ducimus.',
+            bio: 'As a Senior Developer, I have a deep understanding of complex systems and a passion for creating innovative solutions.',
             xUrl: '#',
             linkedinUrl: '#',
           },
@@ -16,6 +16,7 @@ export default function SectionOurTeams() {
             imageUrl:"https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80",
             xUrl: '#',
             linkedinUrl: '#',
+            bio: ' My expertise lies in crafting robust applications, optimizing performance, and leading teams to deliver high-quality code. I am committed to driving projects forward and fostering a culture of continuous improvement. ',
         },
         {
             name: 'Leonard Krasner',
@@ -23,6 +24,7 @@ export default function SectionOurTeams() {
             imageUrl:"https://images.unsplash.com/photo-1505840717430-882ce147ef2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80",
             xUrl: '#',
             linkedinUrl: '#',
+            bio: 'I thrive in dynamic environments, utilizing best practices to ensure maintainability and scalability. With a focus on collaboration and mentorship.',
         },
         {
             name: 'Ema Krasner',
@@ -30,6 +32,7 @@ export default function SectionOurTeams() {
             imageUrl:"https://images.unsplash.com/photo-1509783236416-c9ad59bae472?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=800",
             xUrl: '#',
             linkedinUrl: '#',
+            bio: 'I am committed to driving projects forward and fostering a culture of continuous improvement.',
         },
      
     ]

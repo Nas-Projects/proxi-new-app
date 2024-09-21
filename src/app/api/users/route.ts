@@ -18,9 +18,10 @@ export const GET = async (request: NextRequest) => {
     await connectDB();
 
     const user = await User.findOne({ email });
-
+    console.log("MONG_USER", user);
+    
     if (user) {
-      return NextResponse.json({ exists: true });
+      return NextResponse.json(user); // Return the user data
     } else {
       return NextResponse.json({ exists: false });
     }

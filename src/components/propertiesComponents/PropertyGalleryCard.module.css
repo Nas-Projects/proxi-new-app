@@ -1,0 +1,106 @@
+/* PropertyGallery.module.css */
+
+
+ .galleryWrap.img {
+    vertical-align: middle;
+    max-width: 100%;
+    display: inline-block;
+  }
+  .ligtbox_gallery_big {
+    height: 100%;
+}
+.w-inline-block {
+    max-width: 100%;
+    display: inline-block;
+}
+#w-node {
+    grid-area: span 2 / span 1 / span 2 / span 1;
+}
+.detail-gallery-cell.large {
+    height: auto;
+}
+.detail_gallery_cell.large {
+    height: auto;
+}
+
+  .w-dyn-empty {
+    background-color: #ddd;
+    padding: 10px;
+  }
+  
+  .w-dyn-hide {
+    display: none !important;
+  }
+  
+  .galleryWrap {
+    margin-right: 0;
+  }
+  
+  .detailGalleryCell {
+    border-radius: 6px;
+    height: 220px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .galleryButtonWrap {
+    position: absolute;
+    top: auto;
+    bottom: 16px;
+    left: 16px;
+    right: 16px;
+  }
+  
+  .iconSmall {
+    flex: none;
+    width: 20px;
+    height: 20px;
+  }
+  
+  .ctaSecondary {
+    grid-column-gap: 8px;
+    background-color: white;
+    color: black ;
+    letter-spacing: normal;
+    border-radius: 6px;
+    justify-content: center;
+    align-items: center;
+    height: 46px;
+    padding: 12px 24px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 22px;
+    text-decoration: none;
+    transition: transform 0.2s;
+    display: flex;
+  }
+  
+  .ctaSecondary:hover {
+    transform: scale(1.03);
+  }
+  
+  .image {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .listWrapperCmsGallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 16px;
+  }
+  
+  @media screen and (max-width: 767px) {
+    .listWrapperCmsGallery {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  @media screen and (max-width: 479px) {
+    .listWrapperCmsGallery {
+      grid-template-columns: 1fr;
+    }
+  }
+  

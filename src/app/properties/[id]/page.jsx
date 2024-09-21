@@ -10,6 +10,8 @@ import BookmarkButton from '@/components/propertiesComponents/BookmarkButton';
 import PropertyContactForm from '@/components/propertiesComponents/PropertyContactForm';
 import ShareButtons from '@/components/propertiesComponents/ShareButtons';
 import Spinner from '@/components/propertiesComponents/Spinner';
+import PropertyGalleryCard from '@/components/propertiesComponents/PropertyGalleryCard';
+import MorgageCalculator from '@/components/propertiesComponents//MorgageCalculator'
 import { FaArrowLeft } from 'react-icons/fa';
 import {
   Breadcrumb,
@@ -32,6 +34,8 @@ import {
 } from 'react-icons/fa';
 import PropertyDetailsCard from "@/components/propertiesComponents/PropertyDetailsCard.jsx";
  import PropertyNeighborhoodDetails from "@/components/propertiesComponents/PropertyNeighborhoodDetails.jsx";
+ import PropertyAmenitiesDetails from "@/components/propertiesComponents/PropertyAmenitiesDetails";
+ import PropertyRatesOrPriceDetails from "@/components/propertiesComponents/PropertyRatesOrPriceDetails";
 import PropertyMap from '@/components/propertiesComponents/PropertyMap';
 import NewPropertyContactForm from '@/components/propertiesComponents/NewPropertyContactForm';
 const PropertyPage = () => {
@@ -96,77 +100,82 @@ const PropertyPage = () => {
          
          <div className="col-span-5">
             <PropertyImages images={property.images} />
+            <PropertyGalleryCard images={property} />
          </div>
         <div  className="cols-span-2 hidden lg:flex">
-           <PropertyDetailsCard property={property}/>
+           <PropertyDetailsCard property={property} classes={'sr-only lg:not-sr-only lg:h-[fit-content] lg:!fixed z-30'}/>
         </div>
          </section>
-          <div className="section breadcrumps">
- 
+
+   
+       <div className="section breadcrumps">
         </div>  
-          <PropertyDetailsCard property={property}/>
-          <div className="breadcrumb w-full bg-slate-200 py-4 px-6 lg:px-12 xl:px-24">
-            <BreadcrumbDemo 
-            marketCategory={marketCategory}
-            propertyName={property.name}
-            />
-        </div>
+        <PropertyDetailsCard property={property} classes={'!max-w-[40em] h-[fit-content] relative  lg:sr-only'}/>
 
-    <div className="px-6 pt-6 py-10 lg:px-12 xl:px-12 rounded-xl  lg:max-w-[60vw] lg:py-12 xl:my-18">
-       <h2 className="heading-two-property-detail font-bold !text-4xl py-4">Property description</h2>
-        <p className='paragraph-big'>{property.description} </p>
-     </div>   
+        <div className="breadcrumb w-full bg-slate-200 py-4 px-6 lg:px-12 xl:px-24">
+          <BreadcrumbDemo 
+              marketCategory={marketCategory}
+              propertyName={property.name}
+              />
+          </div> 
+            <div className="property-share">
+              <aside className='space-y-4 lg:grid lg:grid-cols-3'> 
+            <div className='inline-flex gap-x-4 py-4 px-4  mt-4 lg:ml-8'>
+              <h3 className='text-xl mainText text-center'>
+                Share Property
+              </h3>
+              <ShareButtons property={property} />
+            </div>
+                <BookmarkButton property={property} />
+              </aside>
+            </div>
+         
+        <div className="px-6 pt-6 py-10 lg:px-12 xl:px-12 rounded-xl  lg:max-w-[60vw] lg:py-12 xl:-my-4">
+          <h3 className="font-bold !text-4xl py-4">Property description</h3>
+            <p className='paragraph-big'>{property.description} </p>
+        </div>   
+        <section className='relative mx-4'>
+         <div className="px-4 lg:px-6 w-full lg:w-2/3 lg:h-[60vh]">
+            <h3 className="font-bold !text-4xl text-left pl-2 lg:px-4">Location</h3>
+            <div className='text-gray-500 mb-4 flex align-middle justify-start md:justify-start pt-4 pl-2 lg:pl-2'>
+                <FaMapMarker className='text-lg text-pink-600 mr-2 lg:pl-2' />
+                <p className='text-custom-gradient-secondary'>
+                  {property.location.street}, {property.location.city}{' '}
+                  {property.location.state}
+                </p>
+              </div>
+            <div className='bg-white p-6 rounded-lg shadow-md mt-6'>
+              <PropertyMap property={property} /> 
+            </div> 
+        </div> 
+      
+        </section>
+        <section className='relative mx-4 mt-6 lg:mt-24  px-4 lg:px-12'>
+           <PropertyNeighborhoodDetails property={property} />
+        </section>
+        <section className='relative mx-4 mt-4 lg:my-2  px-4 lg:px-12'>
+          <PropertyRatesOrPriceDetails property={property} />
+        </section>
+        <section className='relative mx-4 mt-4 lg:my-2  px-4 lg:px-12 z-20'>
+      {  property.amenities && <PropertyAmenitiesDetails property={property} />}
+        </section> 
+        <section className="relative  mt-4 lg:mt-24  px-2 lg:px-6 lg:px-12 xl:pt-24">
+          <MorgageCalculator/>
+        </section>
+        <section className='relative  mt-4 lg:mt-24  px-2 lg:px-6 lg:px-12 xl:pt-24'>
+        <PropertyContactForm property={property} />
+        </section> 
+       
           <div className='bg-blue-50 pt-6 py-12 lg:px-8 xl:px-12 rounded-xl px-8  lg:py-12 xl:my-24'> 
-         <div className="lg:grid lg:grid-cols-2 gap-x-4 ">
-              <div>
-                <PropertyNeighborhoodDetails property={property} />
-              <div className='bg-white/50 p-6 rounded-lg shadow-md mt-6'>
-                  <h3 className='text-lg font-bold mb-6 '>Amenities</h3>
-
-                  <ul className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 list-none space-y-2'>
-                    {property.amenities.map((amenity, index) => (
-                      <li key={index}>
-                        <FaCheck className='inline-block text-green-600 mr-2' /> {amenity}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                </div>
-              <div className="l...">
-                  <h1 className="heading-two-property-detail font-bold !text-4xl ">Location</h1>
-                  <div className='text-gray-500 mb-4 flex align-middle justify-center md:justify-start pt-4'>
-                      <FaMapMarker className='text-lg text-pink-600 mr-2' />
-                      <p className='text-custom-gradient-secondary'>
-                        {property.location.street}, {property.location.city}{' '}
-                        {property.location.state}
-                      </p>
-                    </div>
-                  <div className='bg-white p-6 rounded-lg shadow-md mt-6'>
-                    <PropertyMap property={property} /> 
-                  </div>
-             </div> 
-             {/* <PropertyDetails property={property} /> */}
-        </div>
-           
+   
             <div className='py-10 px-6'>
               <div className='grid grid-cols-1 md:grid-cols-70/30 w-full gap-6'>
-                <PropertyDetails property={property} />
-                <aside className='space-y-4 lg:grid lg:grid-cols-3'> 
-                <div>
-                <h3 className='text-xl font-bold text-center pt-2'>
-                  Share This Property:
-                </h3>
-                <ShareButtons property={property} />
-                </div>
-                
-                  <BookmarkButton property={property} />
-                </aside>
-                
-                  <PropertyContactForm property={property} />
+             <PropertyDetails property={property} />
+             
               </div>
             </div>
           </div>
-          <NewPropertyContactForm agentrInfo={property.seller_info} />
+          {/* <NewPropertyContactForm agentrInfo={property.seller_info} /> */}
         </>
       )}
     </>

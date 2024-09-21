@@ -104,7 +104,7 @@ export const Filters = ({ filters, setFilters }) => {
   return (
     <div className="filterSection my-4 lg:my-8 container-navbar">
       <div className="filterFields space-between lg:flex   lg:space-x-24 xl:space-x-44">
-        <div className="filterFieldsOne ">
+        <div className="filterFieldsOne relative">
           <div className="select-1">
           <SelectButton htmlFor="location"
             label="Location"
@@ -128,8 +128,21 @@ export const Filters = ({ filters, setFilters }) => {
             handleInputChange={handleInputChange}
             value={filters.size} // Bind the value to the filters state
           />
+         <div className="absolute -ml-4 top-[5em]">
+             <a href="/contact" className="cta dark-link w-inline-block">
+          <img
+            src="https://cdn.prod.website-files.com/63c93770199def60f97204e0/63c93770199def55cd720556_place.svg"
+            loading="lazy"
+            alt=""
+          />
+          <div>
+            Can't find your location?{" "}
+            <span className="span-grey-link">Ask us here</span>
+          </div>
+        </a>
         </div>
-        <div className="right-top-filters ">
+        </div>
+        <div className="right-top-filters lg:-mt-6">
           <div className="w-form">
              <div className="form-price-inputs">
               <div className="gap-[12px] flex">
@@ -402,6 +415,7 @@ if (filters.size) {
         </h1>
         <h3 className="text-4xl">Proxy will give you help hand with search for a new living</h3>
         <Filters filters={filters} setFilters={setFilters} />
+        
         <button className="clear-filters" onClick={clearFilters}>
           Clear Filters
         </button>

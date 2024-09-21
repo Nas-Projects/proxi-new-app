@@ -81,7 +81,7 @@ export default function Profile({
                   </button>
                 )}
                 <BlurImage
-                  src={user?.image ||'https://lh3.googleusercontent.com/a/ACg8ocK8u7goFLEyN64th7_pVzvLB9S_oc2nUizijmSc_6voqn0ryxUw=s96-c'}
+                  src={user?.image ? user?.image : '/assets/ryan_user_profile.png'}
                   alt={user?.name}
                   width={300}
                   height={300}
@@ -90,7 +90,7 @@ export default function Profile({
               <div className="mt-6 sm:flex-1 sm:min-w-0 sm:flex sm:items-center sm:justify-end sm:space-x-6 sm:pb-1">
                 <div className="flex min-w-0 flex-1 items-center space-x-2">
                   <h1 className="text-2xl font-semibold text-white truncate">
-                    {user?.username ||'Pick a name'}
+                    {user?.name  ? user.name : user.username}
                   </h1>
                   {user?.verified && (
                     <CheckInCircleIcon className="w-6 h-6 text-[#0070F3]" />

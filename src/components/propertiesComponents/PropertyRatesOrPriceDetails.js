@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styles from './PropertyNeighborhoodDetails.module.css'; // Import the CSS module
 import clsx from 'clsx';
 
-const DetailDropdown = ({}) => {
+const PropertyRatesOrPriceDetails = ({}) => {
   const [isOpen, setIsOpen] = useState(true);
 
   const toggleDropdown = () => {
@@ -126,5 +126,5 @@ const DetailDropdown = ({}) => {
   );
 };
 
-export default DetailDropdown;
+export default PropertyRatesOrPriceDetails;
 

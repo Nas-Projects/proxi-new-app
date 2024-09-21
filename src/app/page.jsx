@@ -8,9 +8,9 @@ import SearchButtons from '@/components/SearchButtons';
 import AboutProxy from '@/components/AboutProxy';
 import PropertiesList from '@/components/propertiesComponents/PropertiesList';
 import OurFocus from '@/components/propertiesComponents/OurFocus';
-import WannaJoin from '@/components/propertiesComponents/wannaJoin';
+import SectionContact from '@/components/propertiesComponents/SectionContact';
 import SectionBlockChain from '@/components/propertiesComponents/SectionBlockChain';
-import SectionGetInTouch from '@/components/propertiesComponents/SectionGetInTouch';
+import SectionJoin from '@/components/propertiesComponents/SectionJoin';
 import SectionTestimonial from '@/components/propertiesComponents/SectionTestimonial';
 import SectionOurTeams from '@/components/propertiesComponents/SectionOurTeams';
 import FeaturedListings from '@/components/propertiesComponents/FeaturedListings';
@@ -36,8 +36,9 @@ const Home = ({heroDetails}) => {
             <OurFocus/>
             <SectionTestimonial/>
             <SectionOurTeams />
-            <WannaJoin/>
-            <SectionGetInTouch/>
+            <SectionJoin/>
+            <SectionContact/>
+        
 
           <Link href="/contact">
             <div class="bg-pink-400  py-3 px-6 cursor-pointer rounded-l-md bottom-28 right-0 z-50 fixed grow2">
@@ -46,7 +47,7 @@ const Home = ({heroDetails}) => {
           </Link>
         {/* TURN THIS IN JOIN US HEADER x */}
 
-        <div className="flex sm:px-16 px-6 hero justify-center">
+        <div className="flex sm:px-16 px-6 hero justify-center hidden lg:flex">
           <div className='justify-center w-full mx-auto relative
             max-w-[86rem] flex md:pt-12 ss:pt-20 pt-20' 
             >
@@ -57,7 +58,7 @@ const Home = ({heroDetails}) => {
                   proxy- <span className="text-custom-gradient">
                   <br className="ss:flex hidden"></br>
                   reinventing the </span> <br className="ss:flex hidden"></br>
-                  real estate business.
+                  real estate busindess.
                 </h1>
               </div>
           </div>

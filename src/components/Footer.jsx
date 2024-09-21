@@ -169,7 +169,7 @@ useEffect(() => {
         <div className="px-15px">
           {/* footer top */}
           <div className="container w-[90vw]lg:max-w-[75rem] absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
-            <div className="py-4 md:rounded-xl bg-black px-25px lg:px-60px py-50px min-w-[600px]:!bg-indigo-400 bg-secondary-color text-white flex justify-center lg:justify-between items-center flex-col lg:flex-row gap-y-30px lg:gap-0 sm:whitespace-nowrap">
+            <div className="py-4 md:rounded-xl bg-black px-25px lg:px-60px py-50px max-w-[600px]:!bg-indigo-400  text-white flex justify-center lg:justify-between items-center flex-col lg:flex-row gap-y-30px lg:gap-0 sm:whitespace-nowrap">
               <div>
                 <h5 className="text-xl md:text-26px lg:text-3xl xl:text-4xl text-white font-bold mb-15px">
                   <span className="leading-1.3">Looking for a dream home?</span>

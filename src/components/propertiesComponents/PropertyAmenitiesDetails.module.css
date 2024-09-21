@@ -1,0 +1,17 @@
+.amenities {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px; /* Adjust as needed */
+  }
+  
+  .detail-tag {
+    display: flex;
+    align-items: center;
+  }
+  
+  .icon-regular {
+    width: 24px; /* Adjust as needed */
+    height: 24px; /* Adjust as needed */
+    margin-right: 8px; /* Adjust as needed */
+  }
+  

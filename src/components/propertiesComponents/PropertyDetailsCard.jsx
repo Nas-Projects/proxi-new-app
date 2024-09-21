@@ -1,9 +1,10 @@
 import React from 'react';
 import styles from './propertyDetailCard.module.css'; // Import the CSS module
+import clsx from 'clsx';
 
-const DetailCard = ({property}) => {
+const DetailCard = ({property, classes}) => {
   return (
-    <div className={styles.absoluteWrapStickyBox}>
+    <div className={clsx(classes && classes ,styles.absoluteWrapStickyBox)}>
       <div className={styles.detailCard}>
         <div className={styles.listItemWrap}>
           <div className={styles.listItem}>

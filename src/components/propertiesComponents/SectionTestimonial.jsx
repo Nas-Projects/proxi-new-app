@@ -31,17 +31,20 @@ export default function Example() {
               />
             </div>
             <div className="relative mx-auto max-w-2xl lg:mx-0">
-              <img alt="" src="https://tailwindui.com/img/logos/workcation-logo-white.svg" className="h-12 w-auto" />
+              <div className="flex gap-x-4 text-white">
+                <img alt="" src="/assets/contact.png" 
+              className="h-12 w-12 rounded-full" />
+              <span className="text-xl py-2">Grassroot Move Co</span>
+                </div>
               <figure>
                 <blockquote className="mt-6 text-lg font-semibold text-white sm:text-xl sm:leading-8">
                   <p>
-                    “Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo expedita voluptas culpa sapiente alias
-                    molestiae. Numquam corrupti in laborum sed rerum et corporis.”
+                    “Working with Proxy has been a game-changer for my real estate investments. Their innovative use of blockchain technology has streamlined the buying process and ensured transparency every step of the way. I feel secure knowing that my transactions are backed by a reliable and efficient system. The team at Proxy truly understands the market and provides exceptional support, making my experience smooth and rewarding.”
                   </p>
                 </blockquote>
                 <figcaption className="mt-6 text-base text-white">
-                  <div className="font-semibold">Judith Black</div>
-                  <div className="mt-1">CEO of Workcation</div>
+                  <div className="font-semibold">Judith Sailor</div>
+                  <div className="mt-1">CEO of Grassroot Move Co</div>
                 </figcaption>
               </figure>
             </div>

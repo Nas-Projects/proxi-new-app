@@ -30,6 +30,24 @@ const PropertyAddForm = () => {
     images: [],
   });
 
+//   // Convert amenities to camelCase
+// const camelCaseAmenities = amenities.map(amenity => 
+//   amenity.replace(/\s/g, '').replace(/(^\w|[A-Z])/g, (match, index) => index === 0 ? match.toLowerCase() : match)
+// );
+
+// // Now you can save the property with the camelCase amenities
+// const newProperty = new Property({
+//   owner: ownerId,
+//   name: propertyName,
+//   email: propertyEmail,
+//   type: propertyType,
+//   description: propertyDescription,
+//   amenities: camelCaseAmenities // Use the converted array
+// });
+
+// // Save the property
+// await newProperty.save();
+
   useEffect(() => {
     setMounted(true);
   }, []);

@@ -20,7 +20,13 @@ const nextConfig = {
         hostname: 'lh3.googleusercontent.com',
         // port: '',
         // pathname: '/u/**',
-    },
+       },
+       {
+        protocol: 'https',
+        hostname: 'cdn.prod.website-files.com',
+        // port: '',
+        // pathname: '/u/**',
+       },
       {
         protocol: 'https',
         hostname: 'cdn.sanity.io',

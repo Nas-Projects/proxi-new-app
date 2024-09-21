@@ -11,7 +11,8 @@ import { createClient } from '@/utils/supabase/client'
 import { useRouter } from 'next/navigation'
 import { useSession } from '@supabase/auth-helpers-react'
 import { extractSessionUserInfo } from '@/utils/extractSessionUserInfo'
-import { NavigationMenuDemo } from './navigationMenu/navigation'
+import { NavigationLeft } from './navigationMenu/navigation'
+import { MessageCircle } from 'lucide-react'
 
 const user = {
   name: 'Tom Cook',
@@ -26,8 +27,10 @@ const navigation = [
   { name: 'Calendar', href: '#', current: false },
 ]
 const userNavigation = [
-  { name: 'Your Profile', href: '#' },
-  { name: 'Settings', href: '#' },
+  { name: 'Your Profile', href: '/profile' },
+  { name: 'Messages', href: '/messages' },
+  { name: 'Settings', href: '/settings' },
+  { name: 'Dashboard', href: '/dashboard' },
   { name: 'Sign out', href: '#' },
 ]
 
@@ -81,6 +84,7 @@ export default function Navbar({}) {
         //   setUserProfile(profileData);
         // }
 
+        console.log('NAVBAR_User profile loaded  successfully:', userData);
         setUserProfile(userData.user);
       } catch (error) {
         console.error('Error fetching user profile:', error);
@@ -211,18 +215,18 @@ export default function Navbar({}) {
     //  const session= null
   return (
     <Disclosure as="nav" className="bg-white z-50 pt-2 max-w-[600px]:!min-h-[60vh]">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 ">
+      <div className="max-w-screen px-4 sm:px-6 lg:px-8 xl:px-12 ">
         <div className="flex h-16 justify-between">
           <div className="flex">
-            {/* <div className="-ml-2 mr-2 flex items-center md:hidden">
-              Mobile menu button
-              <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+            <div className="-ml-2 mr-2 flex items-center md:hidden">
+              
+              <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 mainText hover:bg-pink-100 hover:text-black focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                 <span className="absolute -inset-0.5" />
                 <span className="sr-only">Open main menu</span>
                 <Bars3Icon aria-hidden="true" className={`block h-6 w-6 group-data-[${open}]:hidden`} />
                 <XMarkIcon aria-hidden="true" className={`hidden h-6 w-6 group-data-[${open}]:block`} />
               </DisclosureButton>
-            </div> */}
+            </div>
             <Link href="/" className="flex flex-shrink-0 items-center">
               <img
                 alt="Your Company"
@@ -231,7 +235,7 @@ export default function Navbar({}) {
               />
             </Link>
             <div className="hidden md:ml-6 md:flex md:items-center md:space-x-4">
-              <NavigationMenuDemo />
+              <NavigationLeft />
               {/* {navigation.map((item) => (
                 <a
                   key={item.name}
@@ -248,7 +252,7 @@ export default function Navbar({}) {
             </div>
             
           </div>
-          <div className="flex items-center">
+          <div className="flex flex-end  items-center">
            { userProfile?.isAgent && <div className="flex-shrink-0">
               <button
                 type="button"
@@ -261,7 +265,7 @@ export default function Navbar({}) {
             <div className="hidden md:ml-4 md:flex md:flex-shrink-0 md:items-center">
               <button
                 type="button"
-                className="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                className="relative rounded-full bg-gray-100 p-1 text-gray-600  hover:text-pink-800 hover:text-black focus:outline-black focus:ring-2 focus:ring-black focus:ring-offset-2 focus:ring-offset-pink-800"
               >
                 <span className="absolute -inset-1.5" />
                 <span className="sr-only">View notifications</span>
@@ -274,10 +278,13 @@ export default function Navbar({}) {
                   <MenuButton className="relative flex rounded-full  text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                     <span className="absolute -inset-1.5" />
                     <span className="sr-only">Open user menu</span>
-                   { userProfile ?
+                   { userProfile !== null ?
                    <div className="flex space-y-4 space-x-4">
-                     { userProfile?.image ? <div className="flex w-8"
-                     ><img alt="" src={userProfile.user.imageUrl} className="h-8 w-8 rounded-full flex" /></div> :  <div className="flex w-8"><img alt="" src={'/omariIcon.jpg'} className="h-8 w-8 rounded-full flex" /></div> }
+                     { userProfile?.image &&  <div className="flex w-8"
+                     ><img alt="" src={userProfile.user.imageUrl} className="h-8 w-8 rounded-full flex" />
+                     
+                     </div> }
+                     {userProfile !== null  && !userProfile.image && <div className="flex w-8"><img alt="" src={'/assets/ryan_user_profile.png'} className="h-8 w-8 rounded-full flex" /></div> }
                       
 
 
@@ -292,7 +299,7 @@ export default function Navbar({}) {
                         {/* <MenuIcon className="h-6 w-6" aria-hidden="true" /> */}
                       </button>
                       
-                   {  userProfile ?  <button
+                   {  userProfile !== null ?  <button
                         disabled={loading}
                         onClick={() => {
                           setLoading(true);
@@ -378,8 +385,8 @@ export default function Navbar({}) {
         </div>
       </div>
 
-      <DisclosurePanel className="md:hidden">
-        <div className="space-y-1 px-2 pb-3 pt-2 sm:px-3">
+      <DisclosurePanel className="md:hidden p-4 mt-6">
+        <div className="space-y-1 px-2 pb-3 pt-2 sm:px-3 max-w-[24em]">
           {navigation.map((item) => (
             <DisclosureButton
               key={item.name}
@@ -387,45 +394,54 @@ export default function Navbar({}) {
               href={item.href}
               aria-current={item.current ? 'page' : undefined}
               className={classNames(
-                item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-black dark:hover:text-white',
-                'block rounded-md px-3 py-2 text-base font-medium',
+                item.current ? 'bg-pink-200 text-black !text-xl' : 'mainText hover:bg-pink-300 hover:text-black dark:hover:text-white',
+                'block rounded-md px-3 py-2 text-lg font-medium ',
               )}
             >
               {item.name}
             </DisclosureButton>
           ))}
         </div>
-        <div className="border-t border-gray-700 pb-3 pt-4">
+        <hr class="text-gray-400"/>
+        <div className="border-t border-gray-700 pb-3 pt-4 mt-4">
           <div className="flex items-center px-5 sm:px-6">
             <div className="flex-shrink-0">
-            { userProfile && userProfile?.image ?  <img alt="" src={userProfile.image} className="h-10 w-10 rounded-full" /> : <img alt="" src={user.imageUrl} className="h-10 w-10 rounded-full" />}
+            { userProfile !== null && userProfile?.image ?  <img alt="" src={userProfile.image} className="h-10 w-10 rounded-full" /> : <img alt="" src={user.imageUrl} className="h-10 w-10 rounded-full" />}
             </div>
             <div className="ml-3">
-             {userProfile &&  userProfile?.username ? <div className="text-base font-medium text-white">{userProfile?.first_nam}</div> : <><div className="text-base font-medium text-white">{userProfile?.first_name}</div>
+             {userProfile !== null &&  userProfile?.username ? <div className="text-lg font-medium text-white">{userProfile?.first_nam}</div> : <><div className="text-lg font-medium text-white">{userProfile?.first_name}</div>
               <div className="text-sm font-medium text-gray-400">{userProfile?.last_name}</div>
              </>}
             </div>
             <button
               type="button"
-              className="relative ml-auto flex-shrink-0 rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+              className="relative ml-auto flex-shrink-0 rounded-full p-1 mainText hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
             >
               <span className="absolute -inset-1.5" />
               <span className="sr-only">View notifications</span>
-              <BellIcon aria-hidden="true" className="h-6 w-6" />
+           <BellIcon aria-hidden="true" className="h-6 w-6" />
             </button>
+            <button  type="button"
+                className="relative rounded-full bg-gray-100 p-1 text-gray-600  hover:text-pink-800 hover:text-black focus:outline-black focus:ring-2 focus:ring-black focus:ring-offset-2 focus:ring-offset-pink-800"
+              >
+                <span className="absolute -inset-1.5" />
+                <span className="sr-only">View notifications</span>
+              
+              </button>
           </div>
-          <div className="mt-3 space-y-1 px-2 sm:px-3">
+         {userProfile !== null &&  <div className="mt-3 space-y-1 px-2 sm:px-3">
             {userNavigation.map((item) => (
               <DisclosureButton
                 key={item.name}
                 as="a"
                 href={item.href}
-                className="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white"
+                className="block rounded-md px-3 py-2 text-lg font-medium mainText hover:bg-gray-700 hover:text-white"
               >
-                {item.name}
+                {item.name !== "Messages" ? item.name  
+                : <div className="inline-flex gap-x-4">{item.name} <MessageCircle aria-hidden="true" className="h-6 w-6" />  </div> }
               </DisclosureButton>
             ))}
-          </div>
+          </div>}
         </div>
       </DisclosurePanel>
     </Disclosure>

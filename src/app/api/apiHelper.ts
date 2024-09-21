@@ -1,4 +1,4 @@
-import clientPromise from '@/lib/mongodb';
+import clientPromise from './apiHelpers/mongodb';
 import { remark } from 'remark';
 import remarkMdx from 'remark-mdx';
 import { serialize } from 'next-mdx-remote/serialize';
@@ -130,12 +130,12 @@ Et vivamus lorem pulvinar nascetur non. Pulvinar a sed platea rhoncus ac mauris 
 //     return null;
 //   }
 // }
-export async function getUser(username: string) {
+export async function getUser(email: string) {
   const client = await clientPromise;
   const db = client.db('property-pulse');
   const collection = db.collection('users');
 
-  const user = await collection.findOne({ username });
+  const user = await collection.findOne({ email });
     console.log("USER_IN_GET_USER", user);
   if (!user) return null;
 
