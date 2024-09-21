@@ -135,7 +135,7 @@ const PropertyAmenitiesDetails = ({ property }) => {
   console.log("PROPERTY_AMENITIES is", property.amenities);
 
   return (
-    <div className="lg:max-w-[35vw] lg:max-w-[45vw] !bg-white">
+    <div className="lg:max-w-[35vw] lg:max-w-[45vw] ">
       <div className={styles.detailToggle} onClick={toggleDropdown}>
         <div className={styles.dropdownTitleWrap}>
           <h3 className={styles.headingThreePropertyDetail}>Additional Amenities</h3>
