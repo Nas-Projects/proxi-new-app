@@ -124,18 +124,17 @@ const amenities = [
   "Coffee Maker"
 ];
 
-
 const PropertyAmenitiesDetails = ({ property }) => {
   const [isOpen, setIsOpen] = useState(true);
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
-  
+
   console.log("PROPERTY_AMENITIES is", property.amenities);
 
   return (
-    <div className="lg:max-w-[35vw] lg:max-w-[45vw] ">
+    <div className={clsx("lg:max-w-[35vw] lg:max-w-[45vw] mx-4 mt-6 lg:mt-24", isOpen ? 'mb-[6em]' : 'mb-12', "px-4 lg:px-12")}>
       <div className={styles.detailToggle} onClick={toggleDropdown}>
         <div className={styles.dropdownTitleWrap}>
           <h3 className={styles.headingThreePropertyDetail}>Additional Amenities</h3>
@@ -163,7 +162,7 @@ const PropertyAmenitiesDetails = ({ property }) => {
           <div className={styles.space24}>
             <div className="detail-tag-wrap flex">
               {amenitiesData
-                .filter(amenity => property.amenities.includes(amenity.label)) // Make sure this matches
+                .filter(amenity => property.amenities.includes(amenity.label))
                 .map((amenity, index) => (
                   <div key={index} className="detail-tag">
                     <img

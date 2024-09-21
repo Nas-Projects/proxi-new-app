@@ -55,7 +55,7 @@ const IconsArray = [
   },
 ];
 
-const DetailDropdown = ({ neighborhoodDetails }) => {
+const PropertyNeighborhoodDetails = ({ neighborhoodDetails }) => {
   const [isOpen, setIsOpen] = useState(true);
 
   const toggleDropdown = () => {
@@ -63,7 +63,7 @@ const DetailDropdown = ({ neighborhoodDetails }) => {
   };
 
   return (
-    <div className="lg:max-w-[35vw]">
+    <div className={clsx("lg:max-w-[35vw] mx-4 mt-6 lg:mt-24", isOpen ? 'mb-[6em]' : 'mb-12', "px-4 lg:px-12")}>
       <div className={styles.detailToggle} onClick={toggleDropdown}>
         <div className={styles.dropdownTitleWrap}>
           <h3 className={styles.headingThreePropertyDetail}>Neighbourhood</h3>
@@ -90,7 +90,7 @@ const DetailDropdown = ({ neighborhoodDetails }) => {
         <div className={styles.detailTab}>
           <div className={styles.space24}>
             {neighborhoodDetails.map((detail, index) => {
-              const icon = IconsArray.find(icon => icon.label.toLowerCase().replace(/ /g, '') === detail.amenity.toLowerCase().replace(/ /g, '')); // Match the icon based on the label
+              const icon = IconsArray.find(icon => icon.label.toLowerCase().replace(/ /g, '') === detail.amenity.toLowerCase().replace(/ /g, ''));
               return (
                 <div className="flex inline-flex gap-x-4" key={index}>
                   {icon && (
@@ -146,7 +146,7 @@ const DetailDropdown = ({ neighborhoodDetails }) => {
   );
 };
 
-export default DetailDropdown
+export default PropertyNeighborhoodDetails;
 
 // import React, { useState } from 'react';
 // import styles from './PropertyNeighborhoodDetails.module.css'; // Import the CSS module
