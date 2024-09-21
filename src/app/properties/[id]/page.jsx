@@ -151,7 +151,7 @@ const PropertyPage = () => {
       
         </section>
         <section className='relative mx-4 mt-6 lg:mt-24  px-4 lg:px-12'>
-           <PropertyNeighborhoodDetails property={property} />
+           <PropertyNeighborhoodDetails neighborhoodDetails={property. neighborhoodDetails} />
         </section>
         <section className='relative mx-4 mt-4 lg:my-2  px-4 lg:px-12'>
           <PropertyRatesOrPriceDetails property={property} />
