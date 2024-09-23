@@ -15,6 +15,7 @@ import SectionJoin from '@/components/propertiesComponents/SectionJoin';
 import SectionTestimonial from '@/components/propertiesComponents/SectionTestimonial';
 import SectionOurTeams from '@/components/propertiesComponents/SectionOurTeams';
 import FeaturedListings from '@/components/propertiesComponents/FeaturedListings';
+import ProperTiesForSale from '@/components/propertiesComponents/ProperTiesForSale';
 import Hero from '@/components/Hero';
 import Link from 'next/link';
 
@@ -27,9 +28,10 @@ const Home = ({heroDetails}) => {
         //  heroDetails={heroDetails}
           />
 
-            <div className="mx-auto lg::px-[7%] absolute absolute top-[69vh] lg:top-[55vh] md:top-[70vh] xl:top-[72vh] z-20">
+            <div className="mx-auto lg::px-[8%] absolute absolute top-[69vh] lg:top-[55vh] md:top-[70vh] xl:top-[72vh] z-20">
               <SearchButtons />
             </div>
+            <ProperTiesForSale/>
             <AboutProxy/>
             <PropertiesList />
             <FeaturedListings />

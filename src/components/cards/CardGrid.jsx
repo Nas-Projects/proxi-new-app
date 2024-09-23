@@ -4,7 +4,7 @@ const sectionArray = [
     {
       title: "View our properties",
       description: "Become a member and join a growing community of people looking for building. Share your stories and be paid.",
-      href: '/properties',
+      href: '/#',
       cta: "View now",
       icon: "button",
       btnColor: "bg-custom-gradient",
@@ -24,6 +24,7 @@ const sectionArray = [
       cta: "+1 776 336 733",
       icon: "arrow-topblue",
       bg:"bg-custom-gradient",
+      href:'/contact',
       txtColor:"text-white"
     }
   ];

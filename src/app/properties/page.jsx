@@ -423,14 +423,14 @@ if (filters.size) {
         </button> */}
 
       </div>
-      <section className="px-4 lg:px-16 sm:py-12 py-4 max-w-[140rem] mx-auto bg-white">
+      <section className="min-[700px]:px-0 sm:px-0 lg:px-16 sm:py-12 py-4 max-w-[180rem] mx-auto bg-white">
         <div className="md:min-h-[350px] ss:min-h-[400px] min-h-[550px] min-w-[360px] mx-auto flex items-center relative propertiesMainSection">
           <div className="items-center w-full mx-auto flex flex-col max-w-[126rem]">
             <div className="container-xl lg:container m-auto px-4 py-6 min-w-[330px]">
               {filteredProperties.length === 0 ? (
                 <p>No properties found matching your criteria. Please adjust the price or location.</p>
               ) : (
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 bg-white">
+                <div className="grid grid-cols-1 min-[712px]:grid-cols-2 min-[1079px]:grid-cols-3 min-[1475px]:!grid-cols-4 gap-6 bg-white">
                   {filteredProperties.map((property) => (
                     <PropertyListCard key={property._id} property={property} />
                   ))}
@@ -494,11 +494,20 @@ if (filters.size) {
                   transform your career!
                 </p>
               </div>
-              <Link href="/join" className="pt-12">
-              <button className="uppercase text-sm md:text-base text-white relative group whitespace-nowrap font-normal mb-0 transition-all duration-300 border border-secondary-color hover:border-heading-color inline-block">
-                Join Us
-              </button>
-              </Link>
+
+             <div className="flex-start">
+              <h5 className="uppercase text-sm md:text-base text-white relative group whitespace-nowrap font-normal mb-0 transition-all duration-300 border border-secondary-color hover:border-heading-color inline-block">
+                <span className="inline-block absolute top-0 right-0 w-full h-full bg-custom-gradient group-hover:bg-black hover:bg-primary-cogroup-lor z-1 group-hover:w-0 transition-all duration-300" />
+                <Link href="/join"
+                 
+                  className="relative z-10 px-5 md:px-25px lg:px-10 py-10px md:py-3 lg:py-17px group-hover:text-heading-color leading-23px"
+                >
+                 Join Proxy
+                </Link>
+              </h5>
+            </div>
+
+            
             </div>
           </div>
         </div>

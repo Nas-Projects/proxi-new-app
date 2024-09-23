@@ -269,7 +269,7 @@ const DetailCard = ({ property, classes }) => {
           </div>
           <div className="space-12" />
           <div className={styles.detailCardAuthor}>
-            <div className="detail-card-avatar">
+            <div className="detail-card-avatar w-24 h-24 ">
               <img
                 src="/agent-1.webp"
                 loading="lazy"
@@ -279,9 +279,9 @@ const DetailCard = ({ property, classes }) => {
                 className="image"
               />
             </div>
-            <div className="block">
+            <div className="text-left block">
               <div className="paragraph-small text-bold">Real Estate Broker</div>
-              <p className="paragraph-small">Book an appointment with me!</p>
+              <p className="paragraph-small">Book a viewing with me!</p>
               <div className="space-04" />
               <a href="/contact" className="link-block-appointment w-inline-block">
                 <p className="paragraph-small text-color-accent text-custom-gradient">

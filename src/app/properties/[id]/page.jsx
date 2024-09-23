@@ -11,8 +11,9 @@ import PropertyContactForm from '@/components/propertiesComponents/PropertyConta
 import ShareButtons from '@/components/propertiesComponents/ShareButtons';
 import Spinner from '@/components/propertiesComponents/Spinner';
 import PropertyGalleryCard from '@/components/propertiesComponents/PropertyGalleryCard';
+import OtherProperties from '@/components/propertiesComponents/OtherProperties'
 import MorgageCalculator from '@/components/propertiesComponents//MorgageCalculator'
-import { FaArrowLeft } from 'react-icons/fa';
+import { FaArrowLeft, FaTimes } from 'react-icons/fa';
 import {
   Breadcrumb,
   BreadcrumbEllipsis,
@@ -96,12 +97,14 @@ const PropertyPage = () => {
 
             </div>
           </div>
-          <section className='block relative lg:grid lg:grid-cols-7'>
-         
+        <div className="main-container w-container">
+         {/* ------ Property-Main Container */}
+        <section className='block relative lg:grid lg:grid-cols-7'>
          <div className="col-span-5">
             <PropertyImages images={property.images} />
             <PropertyGalleryCard images={property} />
          </div>
+
         <div  className="cols-span-2 hidden lg:flex">
            <PropertyDetailsCard property={property} classes={'sr-only lg:not-sr-only lg:h-[fit-content] lg:!fixed z-30'}/>
         </div>
@@ -113,15 +116,15 @@ const PropertyPage = () => {
         <PropertyDetailsCard property={property} classes={'!max-w-[40em] h-[fit-content] relative  lg:sr-only'}/>
 
         <div className="breadcrumb w-full bg-slate-200 py-4 px-6 lg:px-12 xl:px-24">
-          <BreadcrumbDemo 
+            <BreadcrumbDemo 
               marketCategory={marketCategory}
               propertyName={property.name}
               />
           </div> 
             <div className="property-share">
               <aside className='space-y-4 lg:grid lg:grid-cols-3'> 
-            <div className='inline-flex gap-x-4 py-4 px-4  mt-4 lg:ml-8'>
-              <h3 className='text-xl mainText text-center'>
+            <div className='inline-flex gap-x-4 py-4 mt-4 '>
+              <h3 className='text-xl text-left mainText text-center'>
                 Share Property
               </h3>
               <ShareButtons property={property} />
@@ -129,7 +132,46 @@ const PropertyPage = () => {
                 <BookmarkButton property={property} />
               </aside>
             </div>
-         
+       <div className='my-12 bg-white/70 p-6 rounded-lg shadow-md text-center md:text-left max-w-4xl'>
+          { property.rates &&  <h1 className='text-3xl font-bold mb-4'> Rates & Options</h1>}
+          { property.askingPrice &&  <h1 className='text-3xl font-bold mb-4'>Asking Price <span>{property.askingPrice}</span></h1>}
+
+        {/* <h3 className='text-lg font-bold my-6 bg-gray-800 text-white p-2'>
+          Rates & Options
+        </h3> */}
+        <div className='flex flex-col md:flex-row justify-around '>
+          <div className='flex items-center justify-center mb-4 border-b border-gray-200 md:border-b-0 pb-4 md:pb-0'>
+            <div className='text-gray-500 mr-2 font-bold'>Nightly</div>
+            <div className='text-xl text-left sm:text-2xl font-bold text-custom-gradient'>
+              {property.rates.nightly ? (
+                `$${property.rates.nightly.toLocaleString()}`
+              ) : (
+                <FaTimes className='text-red-700' />
+              )}
+            </div>
+          </div>
+          <div className='flex items-center justify-center mb-4 border-b border-gray-200 md:border-b-0 pb-4 md:pb-0'>
+            <div className='text-gray-500 mr-2 font-bold'>Weekly</div>
+            <div className='text-xl sm:text-2xl font-bold text-teal-500'>
+              {property.rates.weekly ? (
+                `$${property.rates.weekly.toLocaleString()}`
+              ) : (
+                <FaTimes className='text-red-700' />
+              )}
+            </div>
+          </div>
+          <div className='flex items-center justify-center mb-4 pb-4 md:pb-0'>
+            <div className='text-gray-500 mr-2 font-bold'>Monthly</div>
+            <div className='text-xl sm:text-2xl font-bold text-custom-gradient'>
+              {property.rates.monthly ? (
+                `$${property.rates.monthly.toLocaleString()}`
+              ) : (
+                <FaTimes className='text-red-700' />
+              )}
+            </div>
+          </div>
+        </div>
+     </div>
         <div className="px-6 pt-6 py-10 lg:px-12 xl:px-12 rounded-xl  lg:max-w-[60vw] lg:py-12 xl:-my-4">
           <h3 className="font-bold !text-4xl py-4">Property description</h3>
             <p className='paragraph-big'>{property.description} </p>
@@ -159,6 +201,19 @@ const PropertyPage = () => {
         <section className='relative mx-4 lg:my-2   z-20'>
       {  property.amenities && <PropertyAmenitiesDetails property={property} />}
         </section> 
+        <section className='text-left relative mx-4 lg:my-2 z-20'> 
+        <div className='bg-white p-6 rounded-lg shadow-md mt-6'>
+        <h3 className='text-lg font-bold mb-6'>Additional Amenities</h3>
+
+        <ul className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 list-none space-y-2'>
+          {property.amenities.map((amenity, index) => (
+            <li key={index}>
+              <FaCheck className='inline-block text-green-600 mr-2' /> {amenity}
+            </li>
+          ))}
+        </ul>
+      </div>     </section> 
+        
         <section className="relative">
           <MorgageCalculator/>
         </section>
@@ -168,16 +223,21 @@ const PropertyPage = () => {
        
           <div className='bg-blue-50 pt-6 py-12 lg:px-8 xl:px-12 rounded-xl px-8  lg:py-12 xl:my-24'> 
    
-            <div className='py-10 px-6'>
+            {/* <div className='py-10 px-6'>
               <div className='grid grid-cols-1 md:grid-cols-70/30 w-full gap-6'>
              <PropertyDetails property={property} />
              
-              </div>
-            </div>
+              </div> 
+            </div> */}
           </div>
+         {/* --------Property--main End */}
+          
+        </div>
+     
           {/* <NewPropertyContactForm agentrInfo={property.seller_info} /> */}
         </>
       )}
+      <OtherProperties />
     </>
   );
 };

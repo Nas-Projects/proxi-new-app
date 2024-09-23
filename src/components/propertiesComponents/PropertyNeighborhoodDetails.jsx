@@ -63,7 +63,7 @@ const PropertyNeighborhoodDetails = ({ neighborhoodDetails }) => {
   };
 
   return (
-    <div className={clsx("lg:max-w-[38em] mx-4 mt-6 lg:mt-24 max-w-[50em]", isOpen ? 'mb-[13em]' : '!mb-0', "px-4 lg:px-12")}>
+    <div className={clsx("lg:max-w-[38em] lg:max-w-[42vw] mx-4 mt-6 lg:mt-24", isOpen ? 'mb-[17em] bg-white/70 rounded-[30px]' : "mb-0 px-4 lg:pr-12")}>
       <div className={styles.detailToggle} onClick={toggleDropdown}>
         <div className={styles.dropdownTitleWrap}>
           <h3 className={styles.headingThreePropertyDetail}>Neighbourhood</h3>
@@ -87,8 +87,9 @@ const PropertyNeighborhoodDetails = ({ neighborhoodDetails }) => {
         </div>
       </div>
       {isOpen && (
-        <div className={styles.detailTab}>
-          <div className={styles.space24}>
+     <div className={clsx(isOpen && 'bg-white', styles.detailTab)}>
+          <div  className={clsx(isOpen && 'z-30 p-[0.5em] pb-4 !bg-white rounded-[30px]', styles.space24)}>
+          {/* <div className={styles.space24}> */}
             {neighborhoodDetails.map((detail, index) => {
               const icon = IconsArray.find(icon => icon.label.toLowerCase().replace(/ /g, '') === detail.amenity.toLowerCase().replace(/ /g, ''));
               return (

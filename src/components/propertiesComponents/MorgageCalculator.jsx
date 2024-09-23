@@ -29,7 +29,7 @@ export default function MortgageCalculator() {
   };
 
   return (
-    <div className="max-w-[36em] mx-6 text-left mx-4 lg:mx-12 px-4 lg:px-6">
+    <div className="max-w-[46em] lg:mx-6 text-left  lg:mx-12 px-4 lg:px-6">
       <div className="detail">
       <div className={styles.detailToggle} onClick={toggleDropdown}>
         <div className={styles.dropdownTitleWrap}>
@@ -54,7 +54,7 @@ export default function MortgageCalculator() {
         </div>
       </div>
         {isOpen && (
-          <div className="detail-tab bg-[#ffbed442]">
+          <div className="detail-tab bg-[#ffbed442] rounded-2xl">
             <div className="space-24" />
             <div className="payment-card !bg-[#ffbed442]">
               <div className="block">
@@ -75,9 +75,10 @@ export default function MortgageCalculator() {
                     aria-label="Email Form 2"
                   >
                     <div className="w-layout-grid form-input-grid payment">
-                      <div className="input-wrap payment w-select">
+                 
+                      <div className="input-wrap payment">
                         <input
-                          className="payment-text-field w-input"
+                          className="payment-text-field w-input-morgage px-6 focus:!ring-pink-500"
                           maxLength={256}
                           name="Contribution-2"
                           data-name="Contribution 2"
@@ -87,10 +88,14 @@ export default function MortgageCalculator() {
                           value={contribution}
                           onChange={(e) => setContribution(e.target.value)}
                         />
+                      <div className="input-icon-morgage">
+                        <div className="input-icon-text ">$</div>
+                      </div>
+
                       </div>
                       <div className="input-wrap payment">
                         <input
-                          className="payment-text-field w-input w-select px-6 focus:!ring-pink-500"
+                          className="payment-text-field w-input-morgage px-6 focus:!ring-pink-500"
                           maxLength={256}
                           name="Own-contribution-2"
                           data-name="Own Contribution 2"
@@ -100,6 +105,10 @@ export default function MortgageCalculator() {
                           value={ownContribution}
                           onChange={(e) => setOwnContribution(e.target.value)}
                         />
+                     <div className="input-icon-morgage">
+                        <div className="input-icon-text ">$</div>
+                      </div>
+
                       </div>
                     </div>
                     <div className="w-layout-grid rate-grid xl:!grid-cols-3">

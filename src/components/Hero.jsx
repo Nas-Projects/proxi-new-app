@@ -54,15 +54,15 @@ export default function Hero() {
                         <br class="ss:flex hidden"/>Reinventing</span> 
                         <br/>
                      <br class="ss:flex hidden"/><span className="text-slate-600">real estate<span className='text-slate-600'> business.</span></span></h1>
-                      <div className="slogan-cta">
-                       <h1 className="mt-4 text-3xl md:text-40px lg:text-50px 4xl:text-65px leading-30px md:leading-10 
+                      <div className="slogan-cta pt-4">
+                       <h1 className="mt-4 text-2xl md:text-40px lg:text-50px 4xl:text-65px leading-30px md:leading-10 
                            lg:leading-50px 4xl:leading-65px font-bold mb-5 animated"> <span className="leading-30px md:leading-10 lg:leading-50px 
                               xl:text-4xl text-gay-300">
                             Find Your Dream
                             <br />
                         </span>
                     </h1>
-                    <p className="!text-slate-600 max-w-2xl text-sm lg:text-base  mb-5 max-w-450px animated xl:text-2xl">
+                    <p className="-mt-4 !text-slate-600 max-w-2xl text-sm lg:text-base  mb-5 max-w-450px animated xl:text-2xl">
                       <span className="leading-25px lg:leading-1.8">
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit,
                         sed do eiusmod tempor incididunt ut labore.
@@ -109,7 +109,7 @@ export default function Hero() {
                 
                 </div>
               </div>
-                 <div className="mt-10 lg:mt-0 search-right container w-full relative z-xl">
+                 <div className="mx-4  mt-10 lg:mt-0 search-right  max-w-[95vw] container w-full relative z-xl">
                   <HeroSearchForm/>
                 </div>
             </div>

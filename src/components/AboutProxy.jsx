@@ -26,7 +26,7 @@ import {
 const AboutProxy = () => {
   return (
    <section>
-    <div className="relative py-[7vh] mt-24 md:mt-12 md:mt-[10em]  lg:mt-12 xlg:mt-12 xl:mb-24">
+    <div className="relative py-[7vh] mt-24 md:mt-12 md:mt-[10em] md:py-0 lg:mt-12 xlg:mt-12 xl:mb-24">
     <div className="w-full lg:mt-24 lg:mt-34 xl:justify-center
          xl:max-w-[95vw] lg:px-12 lg:ppt-24 pb-44 lg:pb-12 xl:pb-44 relative h-[80vh]">
        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 lg:gap-24">
@@ -118,7 +118,7 @@ const AboutProxy = () => {
                </span>
              </p>
            </div>
-           <div>
+           <div className="flex-start sr-only xl:not-sr-only">
              <h5 className="uppercase text-sm md:text-base text-white relative group whitespace-nowrap font-normal mb-0 transition-all duration-300 border border-secondary-color hover:border-heading-color inline-block">
                <span className="inline-block absolute top-0 right-0 w-full h-full bg-custom-gradient group-hover:bg-black hover:bg-primary-cogroup-lor z-1 group-hover:w-0 transition-all duration-300" />
                <a

@@ -11,9 +11,12 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@medusajs/ui";
 // Reusable PropertyCard component
-const PropertyCard = ({ property }) => (
+const PropertiesListCard = ({ property }) => {
+  console.log("PropertyCard", property
+
+  )
   // <Link className="property h-[520px] w-[379px] min-[600px]:h-[420px] min-[600px]:w-[30%] md:h-[280px] md:h-[470px] md:w-[319px] lg:md:h-[500px] xl:w-[299px]" href={`properties/${property._id}`}>
-  <Link className="property h-[520px] w-[379px] sm:w-[289px] relative isolate flex flex-col justify-end  rounded-2xl bg-gray-900  pb-8 min-[1400px]:w-[309px] xl:sm:w-[359px] " href={`properties/${property._id}`}> 
+ return ( <Link className="property h-[420px] w-[329px] max-[1380px]:w-[309px]  max-[1351px]:w-[299px]  max-[1550px]:w-[300px]  min-[1550px]:h-[444px]  relative isolate flex flex-col justify-end  rounded-2xl bg-gray-900  pb-8  mx-2" href={`properties/${property._id}`}> 
   <img
     alt={property.name}
     loading="lazy"
@@ -34,17 +37,17 @@ const PropertyCard = ({ property }) => (
         </svg>
         {property.location.city}, {property.location.zipcode}
       </p>
-      <p className="">
+      <p className="inline-flex gap-x-4 ">
         <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 640 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
           <path d="M624 448h-80V113.45C544 86.19 522.47 64 496 64H384v64h96v384h144c8.84 0 16-7.16 16-16v-32c0-8.84-7.16-16-16-16zM312.24 1.01l-192 49.74C105.99 54.44 96 67.7 96 82.92V448H16c-8.84 0-16 7.16-16 16v32c0 8.84 7.16 16 16 16h336V33.18c0-21.58-19.56-37.41-39.76-32.17zM264 288c-13.25 0-24-14.33-24-32s10.75-32 24-32 24 14.33 24 32-10.75 32-24 32z" />
         </svg>
-        {property.size}
+        <span className="-mt-2">{property.square_feet}</span>
       </p>
     </div>
   </div>
 </Link>
 
-);
+)}
 
 
-export default PropertyCard
+export default PropertiesListCard

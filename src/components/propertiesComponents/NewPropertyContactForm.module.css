@@ -177,7 +177,7 @@
   
   .cta {
     grid-column-gap: 8px;
-    background-color: var(--midnight-blue);
+    /* background-color: var(--midnight-blue); */
     color: var(--background);
     letter-spacing: normal;
     border-radius: 6px;

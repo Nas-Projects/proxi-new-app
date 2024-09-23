@@ -1,6 +1,7 @@
 import React from 'react';
 import { cn } from "@/lib/utils";
 import clsx from 'clsx';
+import Link from 'next/link';
 
 const Card = ({ title, description, href, cta, icon, bg, btnColor,  txtColor, btntxtColor }) => {
   const renderIcon = () => {
@@ -30,9 +31,9 @@ const Card = ({ title, description, href, cta, icon, bg, btnColor,  txtColor, bt
       <div className="flex flex-col items-start">
         <h2 className="text-xl font-bold mb-2">{title}</h2>
         <p className="text-base mb-4">{description}</p>
-        <a href={href} className={clsx( btnColor ? btnColor : "text-blue-500" , "card-link  underline")}>
+        <Link href={href} className={clsx( btnColor ? btnColor : "text-blue-500" , "card-link  underline")}>
            {renderIcon()}
-        </a>
+        </Link>
       </div>
     </div>
   );

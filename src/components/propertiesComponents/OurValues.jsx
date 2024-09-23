@@ -41,7 +41,7 @@ export default function OurValues(){
                 <h1 className="text-custom-gradient font-bold md:text-[55px] ss:text-[45px] text-[33px] md:mr-14 ss:mr-6 mr-5">Our values</h1>
                 <div className="flex-1 relative items-center justify-center">
                   <div className="bg-main w-full h-[2px]"></div>
-                </div>
+                </div> 
               </div>
         <div className="mx-auto mt-6 grid max-w-2xl auto-rows-fr grid-cols-1 gap-8 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-2 xl:grid-cols-3">
           {values.map((value) => (

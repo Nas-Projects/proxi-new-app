@@ -134,10 +134,10 @@ const PropertyAmenitiesDetails = ({ property }) => {
   console.log("PROPERTY_AMENITIES is", property.amenities);
 
   return (
-    <div className={clsx("lg:max-w-[38em] lg:max-w-[42vw] mx-4 mt-6 lg:mt-24", isOpen ? 'mb-[9em]' : 'mb-12', "px-4 lg:px-12")}>
+    <div className={clsx("lg:max-w-[38em] lg:max-w-[42vw] mx-4 mt-6 lg:mt-10", isOpen ? 'mb-[17em] bg-white/70 rounded-[30px]' : 'mb-4', "px-4 lg:pr-12")}>
       <div className={styles.detailToggle} onClick={toggleDropdown}>
         <div className={styles.dropdownTitleWrap}>
-          <h3 className={styles.headingThreePropertyDetail}>Additional Amenities</h3>
+          <h3 className={styles.headingThreePropertyDetail}>Amenities</h3>
           <div className={styles.dropdownIconWrap}>
             <div className={styles.dropdownText}>
               <div className={`${styles.showText} ${isOpen ? styles.hidden : ''}`}>
@@ -158,9 +158,9 @@ const PropertyAmenitiesDetails = ({ property }) => {
         </div>
       </div>
       {isOpen && (
-        <div className={styles.detailTab}>
+        <div className={clsx(isOpen && 'mb-[17em] bg-white', styles.detailTab)}>
           <div className={styles.space24}>
-            <div className="detail-tag-wrap flex">
+            <div  className={clsx(isOpen && 'z-30 p-[0.5em] pb-4 bg-white rounded-[30px]', 'detail-tag-wrap flex')}>
               {amenitiesData
                 .filter(amenity => property.amenities.includes(amenity.label))
                 .map((amenity, index) => (
