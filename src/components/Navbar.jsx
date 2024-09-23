@@ -25,9 +25,14 @@ const user = {
     'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
 }
 const navigation = [
-  { name: 'Propertiess', href: '/properties', current: true },
+  { name: 'Properties', href: '/properties', current: true },
+  { name: 'Sales', href: '/properties/search-results?location=&propertyType=sale"', current: false },
+  { name: 'Rentals', href: '/properties/search-results?location=&propertyType=rentals"', current: false },
+  { name: 'Comercial', href: '/properties/propertyCategory=Commercial"', current: false },
   { name: 'About', href: '/about', current: false },
+  { name: 'Agents', href: '/agents', current: false },
   { name: 'Contact', href: '/contact', current: false },
+  { name: 'Blogs', href: '/blogs', current: false },
   { name: 'Calendar', href: '#', current: false },
 ]
 const userNavigation = [
@@ -35,6 +40,7 @@ const userNavigation = [
   { name: 'Messages', href: '/messages' },
   { name: 'Settings', href: '/settings' },
   { name: 'Dashboard', href: '/dashboard' },
+  { name: 'Calendar', href: '#', current: false },
   { name: 'Sign out', href: '#' },
 ]
 

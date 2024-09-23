@@ -33,6 +33,7 @@ function MailIcon(props) {
 }
 
 export default  function AboutPage({aboutPagedata}) {
+  console.log("ABOUTTT_COMPONENTDATA", aboutPagedata)
   const [pageData, setPageData] = useState(null);
   // const [loading, setLoading] = useState(true);
   const sectionRef = useRef(null);
@@ -47,15 +48,17 @@ let section1
 let section2 
 let section3
 
-  // useEffect(() => {
-    if (aboutPagedata) {
+  useEffect(() => {
+    console.log("About PageComponent_1", pageData);
+    if (aboutPagedata.length >= 0) {
       section1 = aboutPagedata.sections[0];
       section2 = aboutPagedata.sections[1];
       section3 = aboutPagedata.sections[2];
+      setPageData(section1, section2, section3)
       //  setLoading(false)
-      console.log("About PageComponent dataound in props, fetching from API...",aboutPagedata);
+      console.log("About PageComponent dataound SetPageData", pageData);
     }
-  // }, [aboutPagedata]);
+  }, [aboutPagedata]);
       
 
   // if (loading) {

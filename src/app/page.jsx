@@ -28,7 +28,7 @@ const Home = ({heroDetails}) => {
         //  heroDetails={heroDetails}
           />
 
-            <div className="mx-auto lg::px-[8%] absolute absolute top-[69vh] lg:top-[55vh] md:top-[70vh] xl:top-[72vh] z-20">
+            <div className="mx-auto lg:px-[10%] absolute absolute top-[69vh] lg:top-[68vh] lg:mx-auto md:top-[70vh] xl:top-[72vh] z-20">
               <SearchButtons />
             </div>
             <ProperTiesForSale/>

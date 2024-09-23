@@ -43,7 +43,10 @@ export const GET = async (request, { params }) => {
       query.type = "Investment Sale"; // Check for Investment Sale
     } else if (type === 'Retail') {
       query.type = "Retail"; // Check for Retail
-    } else if (type === 'office') {
+    } else if (type === 'Commercial') {
+      query.category = "Commercial"; // Check for Retail
+    }
+     else if (type === 'office') {
       query.type = "Office"; // Check for Office
     } else if (type !== 'all') {
       query.type = type; // Set the type if it's not 'all'
