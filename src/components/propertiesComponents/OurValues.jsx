@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function OurValues(){
 
     const values = [
@@ -35,7 +37,7 @@ export default function OurValues(){
 
       const ValuesSection = () => {
         return (
-          <section className=" md:min-h-[750px] ss:min-h-[600px] min-h-[850px] mx-auto flex items-center relative valuesSection">
+          <section className="main-container md:min-h-[750px] ss:min-h-[600px] min-h-[850px] mx-auto flex items-center relative valuesSection">
             <div className="items-center w-full mx-auto max-w-[86rem]">
               <div className="md:pt8 px-5 flex items-center w-full md:mb-16 ss:mb-8 mb-16">
                 <h1 className="text-custom-gradient font-bold md:text-[55px] ss:text-[45px] text-[33px] md:mr-14 ss:mr-6 mr-5">Our values</h1>
@@ -43,13 +45,27 @@ export default function OurValues(){
                   <div className="bg-main w-full h-[2px]"></div>
                 </div> 
               </div>
-        <div className="mx-auto mt-6 grid max-w-2xl auto-rows-fr grid-cols-1 gap-8 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-2 xl:grid-cols-3">
+          <div style={{ opacity: 1 }} className="max-[500px]:h-[300px] feature-video w-background-video w-background-video-atom">
+              <Image src="/happy_customers_ezg.gif"
+                id="62f790eb-875e-81bd-7239-4dc64c2fbbee-video"
+                height="1080"
+                width="1920"
+                autoPlay=""
+                loop=""
+                style={{
+                  backgroundImage:
+                    'url("/happy_customers_ezg")'
+                }}  data-object-fit="cover"
+              />
+            </div>
+
+        <div className="mx-auto mt-6 grid max-w-2xl auto-rows-fr grid-cols-1 gap-8 sm:mt-10 xl:mt-20 lg:mt-4 lg:max-w-none lg:grid-cols-2 xl:grid-cols-3">
           {values.map((value) => (
             <article key={value.id}
-              className="relative isolate flex flex-col overflow-hidden rounded-2xl  px-8 pb-8">
+              className="!group hover:border border-pink-400 relative isolate flex flex-col overflow-hidden rounded-2xl  px-8 pb-8">
                 <div className="inline-flex gap-x-4">
-                    <div className="mt-[1em]" dangerouslySetInnerHTML={{ __html: value.icon }} />
-                    <h3 className="mt-3 mainText text-md xl:text-lg font-semibold leading-6 text-white">
+                    <div className="mt-[1em] gorup-hover:text-pink-500" dangerouslySetInnerHTML={{ __html: value.icon }} />
+                    <h3 className="mt-3 !text-left mainText !text-md xl:!text-[23px] font-semibold leading-6 text-white">
                         <a href={value?.href}>
                         <span className="!text-left absolute inset-0" />
                         {value.title}
@@ -65,11 +81,13 @@ export default function OurValues(){
           </section>
         );
       };
-    return (<section className="sm:px-16 -mt-12  max-w-[99vw] mx-auto">  
-            <div className="container px-[4%] lg:px-[8%]  pt-30 pb-90px">
+    return (
+         <section className="sm:px-16 -mt-12  max-w-[99vw] mx-auto">  
+           <div className="container px-[4%] lg:px-[8%]  pt-30 pb-90px">
             <ValuesSection/>
-            </div>
-            </section>)
+          </div>
+        </section>
+        )
     
   
 }

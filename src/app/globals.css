@@ -2045,6 +2045,8 @@ body:not(.device-mobile-optimized) .gallery>*{flex:var(--column-flex) 1 0%;left:
 body {
   overflow-x: hidden;
   color: var(--midnight-blue) !important;
+    transition: all 0.7s ease 0s !important;
+
 }
 
 section {
@@ -2395,7 +2397,9 @@ div {
 }
 @media (max-width: 1100px) {
   body, html {
-      font-size: 14px;
+      font-size: 14px;  
+     transition: all 0.5s ease 0s !important;
+   
   }
 }
 /* #SITE_HEADER {
@@ -3568,8 +3572,174 @@ div,span{border:0;font-family:inherit;font-size:100%;font-style:inherit;font-wei
   --cm-sys-color-charts-title: #3c4043;
   --cm-sys-color-charts-subtitle: #5f6368;
 }
+@media (prefers-color-scheme: dark) {
+  :root {
+      --leo-effect-elevation-05: 0px 1px 0px 0px var(--leo-color-elevation-primary), 0px 8px 36px -2px var(--leo-color-elevation-secondary);
+      --leo-effect-elevation-04: 0px 1px 0px 0px var(--leo-color-elevation-primary), 0px 4px 24px -1px var(--leo-color-elevation-secondary);
+      --leo-effect-elevation-03: 0px 1px 0px 0px var(--leo-color-elevation-primary), 0px 4px 16px -2px var(--leo-color-elevation-secondary);
+      --leo-effect-elevation-02: 0px 1px 0px 0px var(--leo-color-elevation-primary), 0px 4px 8px -1px var(--leo-color-elevation-secondary);
+      --leo-effect-elevation-01: 0px 1px 0px 0px var(--leo-color-elevation-primary), 0px 1px 4px 0px var(--leo-color-elevation-secondary);
+      --leo-effect-notificationbackdrop: inset 0px 0px 1px 0px rgba(255, 255, 255, 0.1), 0px 1px 1px 0px var(--leo-color-elevation-primary), 0px 4px 8px 0px var(--leo-color-elevation-secondary);
+      --leo-effect-focus-state: 0px 0px 0px 1px rgba(255, 255, 255, 0.3), 0px 0px 0px 2px rgb(84, 47, 229);
+      --leo-color-material-ultrathin: rgba(13, 18, 20, 0.35);
+      --leo-color-material-thin: rgba(13, 18, 20, 0.51);
+      --leo-color-material-regular: rgba(13, 18, 20, 0.69);
+      --leo-color-material-thick: rgba(13, 18, 20, 0.85);
+      --leo-color-tor-window-70: rgb(246, 232, 255);
+      --leo-color-tor-window-60: rgb(227, 179, 255);
+      --leo-color-tor-window-50: rgb(199, 108, 246);
+      --leo-color-tor-window-40: rgb(145, 94, 174);
+      --leo-color-tor-window-30: rgb(120, 69, 147);
+      --leo-color-tor-window-20: rgb(76, 15, 103);
+      --leo-color-tor-window-10: rgb(53, 11, 73);
+      --leo-color-private-window-70: rgb(238, 235, 255);
+      --leo-color-private-window-60: rgb(204, 190, 254);
+      --leo-color-private-window-50: rgb(163, 128, 255);
+      --leo-color-private-window-40: rgb(123, 99, 191);
+      --leo-color-private-window-30: rgb(101, 75, 165);
+      --leo-color-private-window-20: rgb(61, 18, 123);
+      --leo-color-private-window-10: rgb(42, 13, 88);
+      --leo-color-pink-70: rgb(255, 231, 239);
+      --leo-color-pink-60: rgb(255, 173, 204);
+      --leo-color-pink-50: rgb(248, 85, 162);
+      --leo-color-pink-40: rgb(194, 69, 128);
+      --leo-color-pink-30: rgb(163, 37, 100);
+      --leo-color-pink-20: rgb(94, 14, 54);
+      --leo-color-pink-10: rgb(67, 10, 38);
+      --leo-color-purple-70: rgb(236, 236, 254);
+      --leo-color-purple-60: rgb(195, 194, 253);
+      --leo-color-purple-50: rgb(147, 136, 255);
+      --leo-color-purple-40: rgb(112, 100, 211);
+      --leo-color-purple-30: rgb(89, 73, 185);
+      --leo-color-purple-20: rgb(50, 20, 132);
+      --leo-color-purple-10: rgb(35, 14, 94);
+      --leo-color-blue-70: rgb(226, 240, 255);
+      --leo-color-blue-60: rgb(160, 205, 255);
+      --leo-color-blue-50: rgb(57, 159, 255);
+      --leo-color-blue-40: rgb(16, 117, 201);
+      --leo-color-blue-30: rgb(0, 97, 170);
+      --leo-color-blue-20: rgb(11, 53, 93);
+      --leo-color-blue-10: rgb(7, 37, 66);
+      --leo-color-teal-70: rgb(221, 249, 254);
+      --leo-color-teal-60: rgb(125, 218, 232);
+      --leo-color-teal-50: rgb(0, 175, 195);
+      --leo-color-teal-40: rgb(7, 127, 141);
+      --leo-color-teal-30: rgb(0, 108, 120);
+      --leo-color-teal-20: rgb(12, 59, 66);
+      --leo-color-teal-10: rgb(8, 41, 46);
+      --leo-color-green-70: rgb(224, 252, 222);
+      --leo-color-green-60: rgb(148, 223, 145);
+      --leo-color-green-50: rgb(42, 186, 50);
+      --leo-color-green-40: rgb(60, 130, 60);
+      --leo-color-green-30: rgb(25, 114, 30);
+      --leo-color-green-20: rgb(18, 63, 19);
+      --leo-color-green-10: rgb(9, 44, 9);
+      --leo-color-yellow-70: rgb(252, 243, 217);
+      --leo-color-yellow-60: rgb(243, 194, 17);
+      --leo-color-yellow-50: rgb(189, 150, 0);
+      --leo-color-yellow-40: rgb(140, 111, 3);
+      --leo-color-yellow-30: rgb(117, 91, 0);
+      --leo-color-yellow-20: rgb(64, 50, 9);
+      --leo-color-yellow-10: rgb(45, 35, 7);
+      --leo-color-red-70: rgb(255, 232, 231);
+      --leo-color-red-60: rgb(255, 177, 176);
+      --leo-color-red-50: rgb(255, 90, 99);
+      --leo-color-red-40: rgb(225, 31, 61);
+      --leo-color-red-30: rgb(179, 0, 42);
+      --leo-color-red-20: rgb(98, 15, 24);
+      --leo-color-red-10: rgb(70, 10, 16);
+      --leo-color-secondary-70: rgb(255, 233, 225);
+      --leo-color-secondary-60: rgb(255, 180, 155);
+      --leo-color-secondary-50: rgb(255, 96, 34);
+      --leo-color-secondary-40: rgb(205, 68, 0);
+      --leo-color-secondary-30: rgb(163, 53, 0);
+      --leo-color-secondary-20: rgb(89, 31, 9);
+      --leo-color-secondary-10: rgb(63, 21, 6);
+      --leo-color-primary-70: rgb(233, 238, 255);
+      --leo-color-primary-60: rgb(183, 198, 255);
+      --leo-color-primary-50: rgb(124, 145, 255);
+      --leo-color-primary-40: rgb(84, 95, 248);
+      --leo-color-primary-30: rgb(63, 57, 232);
+      --leo-color-primary-20: rgb(33, 22, 143);
+      --leo-color-primary-10: rgb(22, 16, 101);
+      --leo-color-gray-70: rgb(235, 238, 240);
+      --leo-color-gray-60: rgb(190, 202, 208);
+      --leo-color-gray-50: rgb(161, 178, 186);
+      --leo-color-gray-40: rgb(98, 117, 126);
+      --leo-color-gray-30: rgb(84, 103, 113);
+      --leo-color-gray-20: rgb(48, 57, 61);
+      --leo-color-gray-10: rgb(33, 39, 42);
+      --leo-color-elevation-secondary: rgba(0, 0, 0, 0.8);
+      --leo-color-elevation-primary: rgba(255, 255, 255, 0.15);
+      --leo-color-systemfeedback-error-background: rgb(70, 10, 16);
+      --leo-color-systemfeedback-error-icon: rgb(255, 177, 176);
+      --leo-color-systemfeedback-error-text: rgb(255, 177, 176);
+      --leo-color-systemfeedback-warning-background: rgb(45, 35, 7);
+      --leo-color-systemfeedback-warning-icon: rgb(243, 194, 17);
+      --leo-color-systemfeedback-warning-text: rgb(243, 194, 17);
+      --leo-color-systemfeedback-success-background: rgb(9, 44, 9);
+      --leo-color-systemfeedback-success-icon: rgb(148, 223, 145);
+      --leo-color-systemfeedback-success-text: rgb(148, 223, 145);
+      --leo-color-systemfeedback-info-background: rgb(7, 37, 66);
+      --leo-color-systemfeedback-info-icon: rgb(160, 205, 255);
+      --leo-color-systemfeedback-info-text: rgb(160, 205, 255);
+      --leo-color-dialogs-button-transparent-hover: rgba(13, 18, 20, 0.5);
+      --leo-color-dialogs-button-transparent-default: rgba(13, 18, 20, 0.35);
+      --leo-color-dialogs-divider: rgba(33, 39, 42, 0.65);
+      --leo-color-dialogs-frosted-glass-background: rgba(13, 18, 20, 0.9);
+      --leo-color-dialogs-scrim-background: rgba(33, 39, 42, 0.7);
+      --leo-color-divider-interactive: rgba(84, 95, 248, 0.4);
+      --leo-color-divider-strong: rgba(161, 178, 186, 0.4);
+      --leo-color-divider-subtle: rgba(104, 123, 133, 0.4);
+      --leo-color-page-background: rgb(0, 0, 0);
+      --leo-color-container-disabled: rgba(195, 201, 211, 0.18);
+      --leo-color-container-interactive: rgb(22, 16, 101);
+      --leo-color-container-highlight: rgb(33, 39, 42);
+      --leo-color-container-background: rgb(13, 18, 20);
+      --leo-color-button-success-background: rgb(60, 130, 60);
+      --leo-color-button-error-background: rgb(225, 31, 61);
+      --leo-color-button-disabled: rgba(104, 123, 133, 0.3);
+      --leo-color-button-background: rgb(63, 57, 232);
+      --leo-color-icon-disabled: rgba(104, 123, 133, 0.5);
+      --leo-color-icon-interactive: rgb(124, 145, 255);
+      --leo-color-icon-default: rgb(161, 178, 186);
+      --leo-color-text-disabled: rgba(235, 238, 240, 0.5);
+      --leo-color-text-interactive-visited: rgb(248, 85, 162);
+      --leo-color-text-interactive: rgb(124, 145, 255);
+      --leo-color-text-tertiary: rgb(161, 178, 186);
+      --leo-color-text-secondary: rgb(218, 223, 225);
+      --leo-color-text-primary: rgb(243, 245, 247);
+      --leo-color-legacy-divider1: rgb(59, 62, 79);
+      --leo-color-legacy-focus-border: rgb(160, 165, 235);
+      --leo-color-legacy-disabled: rgb(52, 58, 64);
+      --leo-color-legacy-interactive8: rgb(94, 97, 117);
+      --leo-color-legacy-interactive7: rgb(240, 242, 255);
+      --leo-color-legacy-interactive6: rgb(115, 122, 222);
+      --leo-color-legacy-interactive5: rgb(76, 84, 210);
+      --leo-color-legacy-interactive4: rgb(53, 61, 171);
+      --leo-color-legacy-interactive3: rgb(255, 118, 84);
+      --leo-color-legacy-interactive2: rgb(251, 84, 43);
+      --leo-color-legacy-interactive1: rgb(234, 58, 13);
+      --leo-color-legacy-text3: rgb(132, 136, 156);
+      --leo-color-legacy-text2: rgb(194, 196, 207);
+      --leo-color-legacy-text1: rgb(240, 242, 255);
+      --leo-color-legacy-background2: rgb(23, 23, 31);
+      --leo-color-legacy-background1: rgb(30, 32, 41);
+  }
+}
+.feature-video {
+  z-index: 1;
+  border-radius: 6px;
+  height: 504px;
+  overflow: hidden;
+}
 
-
+.w-background-video {
+  color: #fff;
+  height: 500px;
+  position: relative;
+  overflow: hidden;
+}
 /* Google Button  */
 .user-session-package .icon-button {
   -webkit-box-pack: center;
@@ -4494,6 +4664,74 @@ p{margin-bottom:0;}
 .houe-grid{grid-template-columns:1fr;}
 .house-button-wrap{grid-row-gap:16px;text-align:center;flex-direction:column;align-items:center;}
 .wrap-detail-value{font-size:18px;}
+}
+
+* {
+  transition: all 0.9s ease 0s !important;
+}
+
+
+/* -------SERVICES ------ */
+.buy-service-wrap{display:flex;}
+.buy-service-left{color:#fff;width:100%;padding:80px 60px;}
+.buy-service-right{grid-row-gap:24px;text-align:center;background-color:#fff;flex-direction:column;justify-content:center;align-items:stretch;width:100%;max-width:450px;padding:60px;display:flex;}
+.space-16{height:16px;}
+.no-margin{margin-bottom:0;margin-left:0;margin-right:0;}
+.buy-service-separator{grid-column-gap:10px;grid-row-gap:10px;align-items:center;margin-top:48px;margin-bottom:48px;display:flex;}
+.separator-line{background-color:#fff;width:100%;max-width:425px;height:1px;}
+.separator-text{flex:none;font-size:14px;font-weight:700;line-height:22px;}
+.checklist-wrap{grid-column-gap:48px;grid-row-gap:48px;grid-template-rows:auto;grid-template-columns:1fr 1fr;grid-auto-columns:1fr;align-items:flex-start;display:grid;}
+.checklist{grid-row-gap:8px;flex-direction:column;align-items:flex-start;display:flex;}
+.checklist-item{grid-column-gap:8px;grid-row-gap:8px;align-items:center;display:flex;}
+.checklist-icon{flex:none;justify-content:center;align-items:center;width:24px;height:24px;display:flex;}
+@media screen and (max-width: 991px){
+h1{font-size:58px;line-height:64px;}
+.buy-service-wrap{flex-direction:column;}
+.buy-service-right{max-width:none;}
+}
+@media screen and (max-width: 767px){
+.checklist-wrap{grid-template-columns:1fr;}
+}
+@media screen and (max-width: 479px){
+h1{font-size:40px;line-height:50px;}
+h2{font-size:30px;line-height:40px;}
+.main-container{padding-left:16px;padding-right:16px;}
+.buy-service-left,.buy-service-right{padding:40px 24px;}
+.buy-service-separator{flex-wrap:wrap;}
+.separator-text{flex:1;}
+}
+
+/* TESTIMONIA SECTION -----2  */
+.w-node-texstimonial {
+  grid-area: span 1 / span 1 / span 1 / span 1;
+  align-self: center;
+}
+.limit-560 {
+  width: 100%;
+  max-width: 560px;
+}
+.customer-image-card {
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
+  border: 1px solid var(--background-blue);
+  background-color: #fff;
+  border-radius: 6px;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 455px;
+  padding: 32px 32px 16px;
+  display: flex;
+  position: absolute;
+  top: auto;
+  bottom: -70px;
+  left: auto;
+  right: 2%;
+  box-shadow: 0 4px 64px rgba(0, 0, 0, .15);
+}
+.customer-image-wrap {
+  width: 100%;
+  max-width: 560px;
+  position: relative;
 }
 /*! CSS Used fontfaces */
 /* @font-face{font-family:'Poppins';font-style:italic;font-weight:100;src:url(https://fonts.gstatic.com/s/poppins/v21/pxiAyp8kv8JHgFVrJJLmE0tMMPKhSkFEkm8.woff2) format('woff2');unicode-range:U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}

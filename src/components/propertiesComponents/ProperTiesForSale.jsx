@@ -1,27 +1,39 @@
 import { useEffect, useState } from 'react';
-import PropertiesListCard from './PropertiesListCard';
+// import PropertyCard from './PropertiesListCard'; // Make sure this import is correct
+import SectionHeader from './SectionHeader';
+import LoadingDots from '../LoadingDots';
 import Link from 'next/link';
-const ProperTiesForSale = () => {
+
+const PropertiesForSale = () => {
+  const [loading, setLoading] = useState(true);
   const [properties, setProperties] = useState([]);
-  const page = 1
-  const pageSize = 4
+  const page = 1;
+  const pageSize = 4;
+
   useEffect(() => {
     const fetchProperties = async () => {
       const response = await fetch(`/api/properties/type/forSale?page=${page}&pageSize=${pageSize}`);
-      // console.log("PROPERTIES_RESPONSE: ", response)
       const data = await response.json();
-      console.log("PROPERTIES_RESPONSE: ", data.properties)
-
+      console.log("PROPERTIES_RESPONSE: ", data.properties);
       setProperties(data.properties);
+      setLoading(false); // Set loading to false after fetching data
     };
 
     fetchProperties();
   }, []);
 
+  if (loading) {
+    return <LoadingDots />; // Show loading dots while loading
+  }
+
   return (
     <div className="property-list mt-[15vh] lg:mt-[10vh] max-auto mx-4 md:mx-8 lg:mx-12 xl:mx-24 justify-center">
-      <h1 className='text-center py-12 '>Properties for Sale</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+      <SectionHeader
+        title="Properties For Sale"
+        subtitle="Find the right location"
+        description="We believe Nordi Living can make the world a much better place by choosing the right houses for the right people."
+      />
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 px-4">
         {properties.map((property) => (
           <PropertyCard property={property} key={property._id} />
         ))}
@@ -30,7 +42,7 @@ const ProperTiesForSale = () => {
   );
 };
 
-export default ProperTiesForSale;
+export default PropertiesForSale;
 
 
 export const PropertyCard = ({ property }) => (

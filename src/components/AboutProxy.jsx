@@ -21,23 +21,39 @@ import {
   Users2Icon,
   Section
 } from "lucide-react";
+import Link from "next/link";
 
 
 const AboutProxy = () => {
   return (
-   <section>
-    <div className="relative py-[7vh] mt-24 md:mt-12 md:mt-[10em] md:py-0 lg:mt-12 xlg:mt-12 xl:mb-24">
+   <section className="xl:max-w-[96vw] min-[1500px]:px-[5vw] lg:mb-24">
+    <div className="relative py-[2vh] lg:mt-[3em]] md:mt-12 md:mt-[4em] md:py-0 lg:mt-12 xlg:mt-12 xl:mb-24">
     <div className="w-full lg:mt-24 lg:mt-34 xl:justify-center
-         xl:max-w-[95vw] lg:px-12 lg:ppt-24 pb-44 lg:pb-12 xl:pb-44 relative h-[80vh]">
-       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 lg:gap-24">
+         xl:max-w-[99vw] lg:px-6 lg:ppt-24 pb-44 lg:pb-12 xl:pb-44 relative h-[80vh]">
+       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 lg:gap-12 xl:gap-x-20">
          {/* about left */}
          <motion.div variants={fadeIn('up', 'tween', 0.2, 0.5)}
-            className="flex py-2 items-center w-full md:mb-12 ss:mb-8 
-            mb-8 md:hidden">
-                <h1 className="text-custom-gradient px-8 text-center font-bold md:text-[55px]
+            className="flex py-2 items-center w-full-mb-12 md:hidden pl-4">
+              <div class="section-header text-mainText opacity-1">
+                <h1 class="!text-left text-center py-[-4]">Who Are We?</h1>
+                <div data-w-id="c61ae90e-5b42-2ae8-3af4-27a1254fdfcd"
+                        className="title-wrap pb-12 max-w-xl lg:max-w-[34vw]"
+                        style={{
+                          opacity: 1,
+                          transform:
+                            "translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)",
+                          transformStyle: "preserve-3d"
+                        }}
+                      >
+                    
+                        <div className="space-08" />
+                      </div>
+                   </div>     
+                
+                {/* <h1 className="text-custom-gradient px-8 text-center font-bold md:text-[55px]
                 ss:text-[45px] text-[33px] md:mr-14 ss:mr-6 mr-5">
                     Who are we?
-                </h1>
+                </h1> */}
                 <motion.div variants={fadeIn('down', 'tween', 0.2, 0.5)}
                 className="flex-1 relative items-center justify-center">
                     <div className='bg-main w-full h-[2px]' />
@@ -64,12 +80,23 @@ const AboutProxy = () => {
          <div className="px-8"> 
            <div className="mb-5  -mt-[0em] lg:mt-[1em] lg:mt-24">
            <motion.div variants={fadeIn('up', 'tween', 0.2, 0.5)}
-            className="hidden md:flex items-center w-full md:mb-12 ss:mb-8 
-            mb-8">
-                <h1 className="mt-4 text-custom-gradient font-bold md:text-[55px]
-                ss:text-[45px] text-[33px] md:mr-14 ss:mr-6 mr-5">
-                    Who are we?
-                </h1>
+            className="hidden md:flex items-center w-full -mb-8">
+                 <div class="section-header text-mainText opacity-1">
+                <h1 class="!text-left text-center py-12 md:pt-8 md:pb-4 lg:pt-4 lg:pb-[-4em] max-[1400px]:text-[63px] ">Who Are We?</h1>
+                <div data-w-id="c61ae90e-5b42-2ae8-3af4-27a1254fdfcd"
+                        className="title-wrap pb-12 max-w-xl lg:max-w-[34vw]"
+                        style={{
+                          opacity: 1,
+                          transform:
+                            "translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)",
+                          transformStyle: "preserve-3d"
+                        }}
+                      >
+                    
+                        <div className="space-08" />
+                      </div>
+                   </div>
+                  <div class="space-08"></div>
                 <motion.div variants={fadeIn('down', 'tween', 0.2, 0.5)}
                 className="flex-1 relative items-center justify-center">
                     <div className='bg-main w-full h-[2px]' />
@@ -110,7 +137,7 @@ const AboutProxy = () => {
                <span className="leading-1.8  text-left">Decentralize properties via tech</span>
              </li>
            </ul>
-           <div className="mt-12 bg-highlight bg-opacity-5 mt-30 mb-10">
+           <div className="mt-12 bg-highlight bg-opacity-5  mb-10">
              <p className="text-sm lg:text-base p-5 border-l-4 border-secondary-color">
                <span className="leading-1.8">
                  "Enimad minim veniam quis nostrud exercitation <br />
@@ -118,8 +145,9 @@ const AboutProxy = () => {
                </span>
              </p>
            </div>
-           <div className="flex-start sr-only xl:not-sr-only">
-             <h5 className="uppercase text-sm md:text-base text-white relative group whitespace-nowrap font-normal mb-0 transition-all duration-300 border border-secondary-color hover:border-heading-color inline-block">
+           <div className="flex sr-only xl:not-sr-only">
+            <div className="grid grid-cols-2 gap-x-4">
+            <h5 className="uppercase text-sm md:text-base text-white relative group whitespace-nowrap font-normal mb-0 transition-all duration-300 border border-secondary-color hover:border-heading-color inline-block">
                <span className="inline-block absolute top-0 right-0 w-full h-full bg-custom-gradient group-hover:bg-black hover:bg-primary-cogroup-lor z-1 group-hover:w-0 transition-all duration-300" />
                <a
                  href="/services"
@@ -128,6 +156,18 @@ const AboutProxy = () => {
                  OUR SERVICES
                </a>
              </h5>
+             
+              <h5 className="uppercase text-sm md:text-base text-white relative group whitespace-nowrap font-normal mb-0 transition-all duration-300 border border-secondary-color hover:border-heading-color inline-block">
+               <span className="inline-block absolute top-0 right-0 w-full h-full bg-black group-hover:bg-black hover:bg-primary-cogroup-lor z-1 group-hover:w-0 transition-all duration-300" />
+               <Link href="/services" 
+                 className="relative z-10 px-5 md:px-25px lg:px-10 py-10px md:py-3 lg:py-17px group-hover:text-heading-color leading-23px"
+               >
+                 Our Paradigm
+                </Link>
+             </h5>
+            
+            </div>
+            
            </div>
          </div>
        </div>

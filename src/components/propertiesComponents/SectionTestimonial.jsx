@@ -50,7 +50,88 @@ export default function Example() {
             </div>
           </div>
         </div>
+        <TestimonialSection2/>
       </div>
     )
   }
   
+
+
+
+  const TestimonialSection2 = () => {
+    return (
+    <div className="grid grid-cols-2  customers-halves my-12 mx-4  lg:mx-8">
+    <div id="w-node-texstimonial" className="px-8 limit-560 customers-limit py-16 lg:px-12 lg:py-24 xl:py-32"
+      style={{
+        opacity: 1,
+        transform:
+          "translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)",
+        transformStyle: "preserve-3d"
+      }}
+   
+    >
+      <h3>Made for real people</h3>
+      <p className="paragraph-big">
+      At Proxy, we are committed to transforming lives by matching the perfect homes with the ideal tenants.
+      </p>
+      <div className="group cta-link-wrap py-4 xm:py-8 lg:py-12 ">
+        <a href="#" className=" cta blue-link w-inline-block bg-custom-gradient">
+          <div className="group-hover:!text-white">Why Nordi Living</div>
+          <img
+            src="https://cdn.prod.website-files.com/63c93770199def60f97204e0/63c93770199defcec7720558_CTA%20Icon.svg"
+            loading="lazy"
+            alt=""
+            className="icon-cta"
+          />
+        </a>
+      </div>
+    </div>
+    <div
+      id="w-node-_12b25364-80e8-ad15-598c-20bb85ec3e90-327204e2"
+      data-w-id="12b25364-80e8-ad15-598c-20bb85ec3e90"
+      style={{
+        opacity: 1,
+        transform:
+          "translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)",
+        transformStyle: "preserve-3d"
+      }}
+      className="customer-image-wrap"
+    >
+      <div
+        id="w-node-_7ad3d09c-758b-689a-c101-29823b540691-327204e2"
+        className="customer-image"
+      >
+        <img
+          src="https://cdn.prod.website-files.com/63c93770199def60f97204e0/63c93770199def2b80720537_Real%20People%201.webp"
+          loading="lazy"
+          sizes="(max-width: 479px) 93vw, (max-width: 767px) 90vw, 560px"
+          srcSet="https://cdn.prod.website-files.com/63c93770199def60f97204e0/63c93770199def2b80720537_Real%2520People%25201-p-500.jpg  500w,https://cdn.prod.website-files.com/63c93770199def60f97204e0/63c93770199def2b80720537_Real%2520People%25201-p-800.jpg  800w,https://cdn.prod.website-files.com/63c93770199def60f97204e0/63c93770199def2b80720537_Real%2520People%25201-p-1080.jpg  1080w,https://cdn.prod.website-files.com/63c93770199def60f97204e0/63c93770199def2b80720537_Real%20People%201.webp  1120w"
+          alt=""
+          className="image"
+        />
+      </div>
+      <div
+        data-w-id="efbb0216-d027-fdbb-0f17-10daef8c5a03"
+        style={{
+          opacity: 1,
+          transform:
+            "translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)",
+          transformStyle: "preserve-3d"
+        }}
+        className="customer-image-card"
+      >
+        <p className="paragraph-big text-bold">
+         Proxy really changed our lifes
+        </p>
+        <p>
+        Proxy has truly transformed our lives. With the help of their dedicated team, we found an amazing house at an unbeatable price—something we couldn’t find anywhere else..
+        </p>
+        <a href="/blog" className="bg-custom-gradient cta blue-link w-inline-block">
+          <div>Read Study</div>
+        </a>
+      </div>
+    </div>
+    </div>
+   )
+  
+  }
