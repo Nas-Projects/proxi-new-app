@@ -38,7 +38,7 @@ export default function Hero() {
                     tracking-tight !text-left">
                     PROXY 
                     </h1>
-                  <p className="maintext -mt-5 font-bold  text-sm md:text-15px lg:text-base 
+                  <p className="mainText -mt-5 font-bold  text-sm md:text-15px lg:text-base 
                     xl:text-xl font-bold mb-5 text-white animated font-bold">
                     <i className="fas fa-home" />
                     Real Estate Agency
@@ -53,9 +53,9 @@ export default function Hero() {
                      <span className="">
                         <br class="ss:flex hidden"/>Reinventing</span> 
                         <br/>
-                     <br class="ss:flex hidden"/><span className="text-slate-600">real estate<span className='mainText'> business.</span></span></h1>
+                     <br class="ss:flex hidden"/><span className="text-slate-600">real estate<span className='text-slate-600'> business.</span></span></h1>
                       <div className="slogan-cta">
-                       <h1 className="text-3xl md:text-40px lg:text-50px 4xl:text-65px leading-30px md:leading-10 
+                       <h1 className="mt-4 text-3xl md:text-40px lg:text-50px 4xl:text-65px leading-30px md:leading-10 
                            lg:leading-50px 4xl:leading-65px font-bold mb-5 animated"> <span className="leading-30px md:leading-10 lg:leading-50px 
                               xl:text-4xl text-gay-300">
                             Find Your Dream

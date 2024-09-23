@@ -7,6 +7,7 @@ import hero13 from '../../public/assets/13.jpeg'
 import SearchButtons from '@/components/SearchButtons';
 import AboutProxy from '@/components/AboutProxy';
 import PropertiesList from '@/components/propertiesComponents/PropertiesList';
+import OurValues from '@/components/propertiesComponents/OurValues';
 import OurFocus from '@/components/propertiesComponents/OurFocus';
 import SectionContact from '@/components/propertiesComponents/SectionContact';
 import SectionBlockChain from '@/components/propertiesComponents/SectionBlockChain';
@@ -26,14 +27,15 @@ const Home = ({heroDetails}) => {
         //  heroDetails={heroDetails}
           />
 
-            <div className="absolute absolute top-[68vh] lg:top-[55vh] md:top-[70vh] xl:top-[72vh] z-20">
+            <div className="mx-auto lg::px-[7%] absolute absolute top-[69vh] lg:top-[55vh] md:top-[70vh] xl:top-[72vh] z-20">
               <SearchButtons />
             </div>
             <AboutProxy/>
             <PropertiesList />
             <FeaturedListings />
             <SectionBlockChain/>
-            <OurFocus/>
+            <OurValues/>
+            {/* <OurFocus/> */}
             <SectionTestimonial/>
             <SectionOurTeams />
             <SectionJoin/>
@@ -41,7 +43,7 @@ const Home = ({heroDetails}) => {
         
 
           <Link href="/contact">
-            <div class="bg-pink-400  py-3 px-6 cursor-pointer rounded-l-md bottom-28 right-0 z-50 fixed grow2">
+            <div class="bg-pink-400 py-3 px-6 cursor-pointer rounded-l-md bottom-28 right-0 z-50 fixed grow2">
               <p class="text-white text-[20px] font-semibold">Contact Us</p>
             </div>
           </Link>

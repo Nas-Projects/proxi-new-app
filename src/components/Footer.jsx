@@ -165,11 +165,11 @@ useEffect(() => {
 }, []);
 // mt-95px 
   return ( 
-      <footer aria-labelledby="footer-heading" className="!relative bg-custom-gradient  pt-24 lg:pt-24 lg:pt-[187px] pb-5 px-15px 3xl:px-[2%] 4xl:px-[5%] bg-section-bg-2 text-sm lg:text-base text-white relative">
+      <footer aria-labelledby="footer-heading" className="!relative bg-custom-gradient  pt-24 lg:pt-24 lg:pt-[127px] pb-5 px-15px 3xl:px-[2%] 4xl:px-[5%] bg-section-bg-2 text-sm lg:text-base text-white relative">
         <div className="px-15px">
           {/* footer top */}
           <div className="container w-[90vw]lg:max-w-[75rem] absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
-            <div className="py-4 md:rounded-xl bg-black px-25px lg:px-60px py-50px max-w-[600px]:!bg-indigo-400  text-white flex justify-center lg:justify-between items-center flex-col lg:flex-row gap-y-30px lg:gap-0 sm:whitespace-nowrap">
+            <div className="pt-12  pb-6 md:py-4 md:rounded-xl bg-black px-25px lg:px-60px py-50px max-w-[600px]:!bg-indigo-400  text-white flex justify-center lg:justify-between items-center flex-col lg:flex-row gap-y-30px lg:gap-0 sm:whitespace-nowrap">
               <div>
                 <h5 className="text-xl md:text-26px lg:text-3xl xl:text-4xl text-white font-bold mb-15px">
                   <span className="leading-1.3">Looking for a dream home?</span>
@@ -192,7 +192,7 @@ useEffect(() => {
             </div>
           </div>
           {/* footer main */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-12 gap-x-30px text-sm lg:text-base text-white">
+          <div className="pt-6 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-12 gap-x-30px text-sm lg:text-base text-white">
             {/* footer about*/}
             <div className="xl:col-start-1 xl:col-span-3 mb-60px lg:pr-35px">
               <div className="mb-15px ml-2 ">

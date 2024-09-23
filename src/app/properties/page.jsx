@@ -10,6 +10,8 @@ import  CardGrid  from '@/components/cards/CardGrid.jsx';
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@medusajs/ui";
+import Image from 'next/image';
+import PropertyListCard from '@/components/propertiesComponents/PropertiesListCard';
 // Reusable PropertyCard component
 const PropertyCard = ({ property }) => (
   <Link className="property" href={`properties/${property._id}`}>
@@ -135,8 +137,8 @@ export const Filters = ({ filters, setFilters }) => {
             loading="lazy"
             alt=""
           />
-          <div>
-            Can't find your location?{" "}
+          <div className="text-slate-500">
+            Can&apos;t find your location?
             <span className="span-grey-link">Ask us here</span>
           </div>
         </a>
@@ -413,15 +415,16 @@ if (filters.size) {
         <h1 className="page-h1 text-custom-gradient font-bold md:text-[55px] ss:text-[45px] text-[33px] slide-animation">
           Our Properties
         </h1>
-        <h3 className="text-4xl">Proxy will give you help hand with search for a new living</h3>
+        <h2 className="text-4xl text-custom-gradient">Proxy <span className="text-slate-600 text-4xl ">will give you help hand with search for a new living</span></h2>
         <Filters filters={filters} setFilters={setFilters} />
         
-        <button className="clear-filters" onClick={clearFilters}>
+        {/* <button className="clear-filters" onClick={clearFilters}>
           Clear Filters
-        </button>
+        </button> */}
+
       </div>
       <section className="px-4 lg:px-16 sm:py-12 py-4 max-w-[140rem] mx-auto bg-white">
-        <div className="md:min-h-[750px] ss:min-h-[600px] min-h-[850px] min-w-[360px] mx-auto flex items-center relative propertiesMainSection">
+        <div className="md:min-h-[350px] ss:min-h-[400px] min-h-[550px] min-w-[360px] mx-auto flex items-center relative propertiesMainSection">
           <div className="items-center w-full mx-auto flex flex-col max-w-[126rem]">
             <div className="container-xl lg:container m-auto px-4 py-6 min-w-[330px]">
               {filteredProperties.length === 0 ? (
@@ -429,7 +432,7 @@ if (filters.size) {
               ) : (
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 bg-white">
                   {filteredProperties.map((property) => (
-                    <PropertyCard key={property._id} property={property} />
+                    <PropertyListCard key={property._id} property={property} />
                   ))}
                 </div>
               )}
@@ -444,57 +447,64 @@ if (filters.size) {
        
         </div>
       </section> 
-         <section className="mt-4 lg:my-8"> 
-         <CardGrid/>
-         </section>
- <section className="md:min-h-[750px] bg-white mt-4 sm:mt-8 lg:mt-24  ss:min-h-[600px] min-h-[850px]  mx-auto flex items-center relative joinSection">
- <div className="w-full block lg:grid lg:grid-cols-2">
-  <div className="items-center  mx-auto max-w-[86rem] px-4 lg:p-8 xl:p-12 ">
-    <div
-      className="flex items-center w-full md:mb-16 ss:mb-8  mb-16"
-      style={{ opacity: 1, transform: "none", willChange: "auto" }}
-    >
-      <h1 className="text-custom-gradient font-bold md:text-[55px] ss:text-[45px] text-[33px] md:mr-14 ss:mr-6 mr-5">
-       Wo Join the team?
-      </h1>
-      <div
-        className="flex-1 relative items-center justify-center"
-        style={{ opacity: 1, transform: "none", willChange: "auto" }}
-      >
-        <div className="bg-main w-full h-[2px]" />
+      <section className="mt-4 lg:my-8"> 
+        <CardGrid/>
+      </section>
+    <section className="bg-white my-12 lg:my-24 mx-auto flex items-center relative joinSection">
+    <div className="w-full block lg:grid  lg:drid grid-cols-3">
+    <div action="#" method="POST" className="col-span-2 h-full w-full z-10">
+        <Image src="/what-is-blockchain-1.jpeg" 
+          width={500}
+          height={300}
+          alt="what-is-blockchain-1.jpeg" 
+          className="h-full w-full object-cover"
+          />
       </div>
-    </div>
-    <div
-      className="w-full"
-      style={{ opacity: 1, transform: "none", willChange: "auto" }}
-    >
-      <div
-        className="flex1 flex justify-center items-start flex-col"
-        style={{ opacity: 1, transform: "none", willChange: "auto" }}
-      >
-        <div className="joinContainer -mt-4 xl:-mt-12">
-          <div className="joinText text-left">
-            <p>
-              Join our dynamic, team and unleash your full earning potential in
-              a company that's revolutionizing real estate. Our cutting-edge
-              technology ensures you’re always ahead of the curve, and our
-              lucrative referral program offers additional income opportunities.
-              Don't just work in real estate—thrive in it. Join us today and
-              transform your career!
-            </p>
+      <div className="col-span-1 items-center  mx-auto max-w-[86rem] px-4 lg:p-8 xl:p-12">
+        <div
+          className="flex items-center w-full md:mb-16 ss:mb-8  mb-16"
+          style={{ opacity: 1, transform: "none", willChange: "auto" }}
+        >
+          <h1 className="text-custom-gradient font-bold md:text-[55px] ss:text-[45px] text-[33px] md:mr-14 ss:mr-6 mr-5">
+          Want to join the team?
+          </h1>
+          <div
+            className="flex-1 relative items-center justify-center"
+            style={{ opacity: 1, transform: "none", willChange: "auto" }}
+          >
+            <div className="bg-main w-full h-[2px]" />
           </div>
-          <Link href="/join" className="pt-12">
-          <button className="uppercase text-sm md:text-base text-white relative group whitespace-nowrap font-normal mb-0 transition-all duration-300 border border-secondary-color hover:border-heading-color inline-block">
-             Join Us
-          </button>
-          </Link>
+        </div>
+        <div
+          className="w-full"
+          style={{ opacity: 1, transform: "none", willChange: "auto" }}
+        >
+          <div
+            className="flex1 flex justify-center items-start flex-col"
+            style={{ opacity: 1, transform: "none", willChange: "auto" }}
+          >
+            <div className="joinContainer -mt-4 xl:-mt-12">
+              <div className="joinText text-left">
+                <p>
+                  Join our dynamic, team and unleash your full earning potential in
+                  a company that's revolutionizing real estate. Our cutting-edge
+                  technology ensures you&apos;re always ahead of the curve, and our
+                  lucrative referral program offers additional income opportunities.
+                  Don't just work in real estate—thrive in it. Join us today and
+                  transform your career!
+                </p>
+              </div>
+              <Link href="/join" className="pt-12">
+              <button className="uppercase text-sm md:text-base text-white relative group whitespace-nowrap font-normal mb-0 transition-all duration-300 border border-secondary-color hover:border-heading-color inline-block">
+                Join Us
+              </button>
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-  <div class="w-full">Image</div>
-  </div> 
-</section>
+      </div> 
+    </section>
 
       
     </div>

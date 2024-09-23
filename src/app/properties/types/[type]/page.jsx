@@ -1,17 +1,18 @@
 
 import { getPropertiesByType } from '../../../../lib/getPropertiesByType';
 
+
 const PropertiesByTypePage = async ({ params }) => {
-  const { type } = params; // Get the type from the URL
-  const properties = await getPropertiesByType(type); // Fetch properties based on the type
+  const { type } = params;
+  const properties = await getPropertiesByType(type);
 
   return (
     <div>
-      <h1>{type === 'rentals' ? 'Rental Properties' : 'Properties for Sale'}</h1>
+      <h1>{type.charAt(0).toUpperCase() + type.slice(1)} Properties</h1>
       <ul>
         {properties.map((property) => (
-          <li key={property.id}>
-            <a href={`/properties/${property.id}`}>{property.title}</a>
+          <li key={property._id}>
+            <a href={`/properties/${property._id}`}>{property.name}</a>
           </li>
         ))}
       </ul>

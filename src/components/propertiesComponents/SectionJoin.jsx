@@ -89,13 +89,22 @@
   ```
 */
 
+import Image from 'next/image';
 import Link from 'next/link';
 export default function SectionJoin() {
   return (
     <div className="relative isolate bg-custom-gradient">
-      <div className="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2">
-        <div className="relative px-6 pb-20 pt-24 sm:pt-32 lg:static lg:px-8 lg:py-48">
-          <div className="mx-auto max-w-xl lg:mx-0 lg:max-w-lg">
+      <div className="max-[600px]:pb-16 grid lg:max-w-[89vw] grid-cols-1 lg:grid-cols-3">
+      <div  className="col-span-2 h-full w-full z-10">
+        <Image src="/what-is-blockchain-1.jpeg" 
+          width={600}
+          height={300}
+          alt="what-is-blockchain-1.jpeg" 
+          className="h-full w-full object-cover"
+          />
+      </div>
+        <div className="col-span-1 relative px-6 lg:py-48 xl:pl-24">
+          <div className="mx-auto max-w-4xl  lg:max-w-4xl xl:max-w-4xl">
             <div className="absolute inset-y-0 left-0 -z-10 w-full overflow-hidden ring-1 ring-white/5 lg:w-1/2">
               <svg
                 aria-hidden="true"
@@ -131,15 +140,15 @@ export default function SectionJoin() {
                 />
               </div>
             </div>
-            <h2 className="text-3xl font-bold tracking-tight text-white">Want to Join ?</h2>
-            <p className="mt-6 text-lg leading-8 text-gray-300">
-            Join our dynamic, team and unleash your full earning potential in
-                       a company that's revolutionizing real estate. Our cutting-edge
-                       technology ensures you’re always ahead of the curve, and our
-                       lucrative referral program offers additional income opportunities.
-                       Don't just work in real estate—thrive in it. Join us today and
-                       transform your career!
-            </p>
+               <h2 className="max-[600px]:pt-8 text-3xl font-bold tracking-tight text-white">Want to Join ?</h2>
+                <p className="mt-6 text-lg leading-8 text-gray-300">
+                Join our dynamic, team and unleash your full earning potential in
+                          a company that's revolutionizing real estate. Our cutting-edge
+                          technology ensures you’re always ahead of the curve, and our
+                          lucrative referral program offers additional income opportunities.
+                          Don't just work in real estate—thrive in it. Join us today and
+                          transform your career!
+                </p>
             <dl className="mt-10 space-y-4 text-base leading-7 text-gray-300">
               <div className="flex gap-x-4">
               <div id="HERO-CTA-BUTTONS" className="lg:-mt-12  py-4 lg:py-12 z-20 ">
@@ -174,11 +183,7 @@ export default function SectionJoin() {
             </dl>
           </div>
         </div>
-        <div action="#" method="POST" className="h-full w-full z-10">
-        <image src="/assets/what-is-blockchain-1.jpeg" 
-        alt="what-is-blockchain-1.jpeg" 
-        className="absolute top-0 inset-x-0 h-full w-full object-cover"/>
-         </div>
+       
       </div>
     </div>
   )

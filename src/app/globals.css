@@ -248,7 +248,7 @@
   --customBackgroundColor:linear-gradient(to bottom, #da1f88, #360b41);
 }
 
-.maintext{
+.mainText{
   color:var(--agedBlack) !important
 }
 /* @media (prefers-color-scheme: dark) {
@@ -4409,4 +4409,12 @@ input.w-button {
     cursor: pointer;
     text-decoration: none !important;
     white-space: nowrap;
+}
+
+.border-gray-200 {
+  --tw-border-opacity: 1;
+  border-color: rgb(229 231 235 / var(--tw-border-opacity));
+}
+.border-l {
+  border-left-width: 1px;
 }

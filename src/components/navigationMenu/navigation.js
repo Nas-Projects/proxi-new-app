@@ -18,23 +18,24 @@ import {
 // Define the components array without TypeScript annotations
 const components = [
  { title: "Property Leasing",
-  href: "/properties/rentals",
+ href: "/properties/search-results?location=&propertyType=",
   description: "Browse and explore available rental properties.",
 },
 {
   title: "Properties Sales",
-  href: "/properties/sales",
+  href: "/properties/search-results?location=&propertyType=sale",
   description: "Explore properties available for sale.",
 },
 {
   title: "Investment Opportunities",
-  href: "investment-opportunities",
+  href: "/properties/search-results?location=&propertyType=sale",
   description:
     "Discover lucrative investment opportunities and potential returns in real estate.",
 },
   {
     title: "Market Trends",
     href: "market-trends",
+    href:"/blog/market-trends",
     description:
       "View the latest market trends and insights for different real estate sectors.",
   },

@@ -34,7 +34,7 @@
           <div className="flex flex-col space-y-1.5 p-6">
             <h3 className="font-semibold leading-none tracking-tight">Login</h3>
             <p className="text-sm text-muted-foreground">
-              Make changes to your account here. Click save when you're done.
+              Make changes to your account here. Click save when you&apos;re done.
             </p>
           </div>
           <div className="p-6 pt-0 space-y-2">

@@ -13,7 +13,11 @@ import { useSession } from '@supabase/auth-helpers-react'
 import { extractSessionUserInfo } from '@/utils/extractSessionUserInfo'
 import { NavigationLeft } from './navigationMenu/navigation'
 import { MessageCircle } from 'lucide-react'
-
+import  NavbarUserAvatarComponent  from './NavbarUserAvatarComponent'
+//  console.log('NAVBAR_User profile loaded  successfully:', userData);
+//         console.log('NAVBAR_User profileUSER:', userData.user.identities[0]);
+//         console.log('NAVBAR_User_profile_IDENTITIES:', userData.user.identities[0]);
+//         console.log('NAVBAR_User_profile_IDENTITIES_DOT_INDENTITY_DATA:', userData.user.identities[0]?.identity_data);
 const user = {
   name: 'Tom Cook',
   email: 'tom@example.com',
@@ -44,13 +48,16 @@ export default function Navbar({}) {
   const [lastScrollTop, setLastScrollTop] = useState(0);
   const [isSocialVisible, setIsSocialVisible] = useState(true);
   const [open, setIsNavOpen] = useState(false); // New state for managing the nav checkbox
+
+
+
   const [loading, setLoading] = useState(false);
   const [userProfile, setUserProfile] = useState(null);
   const [errorMessage, setErrorMessage] = useState(null);
+  // const { data: session } = useSession();
 
   const router = useRouter();
   const  session  = useSession(); // destructuring session and error
-  const userInfo = extractSessionUserInfo(session);
 
   useEffect(() => {
     const fetchUserProfile = async () => {
@@ -59,7 +66,7 @@ export default function Navbar({}) {
         return;
       }
 
-      const supabase = createClient();
+      const supabase = createClient(); // Initialize your Supabase client
 
       try {
         const { data: userData, error: userError } = await supabase.auth.getUser();
@@ -70,22 +77,16 @@ export default function Navbar({}) {
           return;
         }
 
-        // You can fetch additional profile information if needed
-        // const { data: profileData, error: profileError } = await supabase
-        //   .from('user_profiles')
-        //   .select('*')
-        //   .eq('id', userData.user.id)
-        //   .single();
+        console.log('User profile loaded successfully:', userData);
+        const identity = userData.user.identities[0];
 
-        // if (profileError) {
-        //   setErrorMessage('Error loading user profile.');
-        //   setUserProfile(null);
-        // } else {
-        //   setUserProfile(profileData);
-        // }
-
-        console.log('NAVBAR_User profile loaded  successfully:', userData);
-        setUserProfile(userData.user);
+        if (identity) {
+          const userInfo = extractSessionUserInfo(session);
+          console.log('User profile EXTRACTED in CUstom  FUNC:', userInfo);
+          setUserProfile(userInfo); // Set user profile data here
+        } else {
+          setUserProfile(null); // Handle case where identity data doesn't exist
+        }
       } catch (error) {
         console.error('Error fetching user profile:', error);
         setErrorMessage('An error occurred while fetching the user profile.');
@@ -94,7 +95,51 @@ export default function Navbar({}) {
     };
 
     fetchUserProfile();
-  }, [session]); // Adding session as a dependency to run the effect when session changes
+  }, [session]);
+
+  // useEffect(() => {
+  //   const fetchUserProfile = async () => {
+  //     if (!session) {
+  //       setUserProfile(null);
+  //       return;
+  //     }
+
+  //     const supabase = createClient();
+
+  //     try {
+  //       const { data: userData, error: userError } = await supabase.auth.getUser();
+
+  //       if (userError || !userData?.user) {
+  //         setErrorMessage('Error loading authenticated user.');
+  //         setUserProfile(null);
+  //         return;
+  //       }
+
+  //       // You can fetch additional profile information if needed
+  //       // const { data: profileData, error: profileError } = await supabase
+  //       //   .from('user_profiles')
+  //       //   .select('*')
+  //       //   .eq('id', userData.user.id)
+  //       //   .single();
+
+  //       // if (profileError) {
+  //       //   setErrorMessage('Error loading user profile.');
+  //       //   setUserProfile(null);
+  //       // } else {
+  //       //   setUserProfile(profileData);
+  //       // }
+
+       
+  //       setUserProfile(userData.user);
+  //     } catch (error) {
+  //       console.error('Error fetching user profile:', error);
+  //       setErrorMessage('An error occurred while fetching the user profile.');
+  //       setUserProfile(null);
+  //     }
+  //   };
+
+  //   fetchUserProfile();
+  // }, [session]); // Adding session as a dependency to run the effect when session changes
 
   useEffect(() => {
     const handleScroll = () => {
@@ -110,109 +155,9 @@ export default function Navbar({}) {
 
   if (loading) return <LoadingDots />; // Show loading spinner while loading
 
-  // useEffect(() => {
-  //   async function fetchUserProfile() {
-  //     const supabase = createClient();
-
-  //     // Get the authenticated user
-  //     const { data: userData, error: userError } = await supabase.auth.getUser();
-  //     const {user} = userData;
-  //     console.log("User_profile_loaded_supabase_auth_successfully:", userData);
-  //     console.log("User_profile_loaded_supabase_USER:", user)
-
-  //     if (userError || !userData?.user) {
-  //       console.log("NAV_Error loading authenticated user.");
-  //       setErrorMessage("NAV_Error loading authenticated user.");
-  //       return;
-  //     }
-
-  //     // Fetch the user profile from user_profiles table
-  //     // const { data: profileData, error: profileError } = await supabase //when we set profiles in Supabase
-  //     //   .from('user_profiles')
-  //     //   .select('*')
-  //     //   .eq('id', userData.user.id)
-  //     //   .single();
-
-
-  //     if (profileError) {
-  //       setErrorMessage("Error loading user profile.");
-  //     } else {
-  //       console.log("User_profile_loaded successfully:", userData);
-  //       setUserProfile(user);
-  //     }
-  //   }
-
-  //   fetchUserProfile();
-  // }, []);
-
-  
-
-  // if (errorMessage) {
-  //   console.log("NAV_BAR", errorMessage)
-  // }
-
-  // if (!userProfile) {
-  //   setUserProfile({})
-  // }
-
- 
-
-//  const additionalNavItems = [
-//   {name:'Subscription'}, 
-//  {href:'/subscription'},
-//  {name:'Tracks', href:'/tracks'},
-//   {name:'Tracks', href:'/tracks'},
-//   {name:'Profile', href:"/profile"},
-//   {name:'Login', href:'/login'},
-//   {name:'Social', href:'/social'}  
-// ]
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     const st = window.scrollY || document.documentElement.scrollTop;
-
-  //     if (st > lastScrollTop) {
-  //       // Downscroll code
-  //       setIsScrollingUp(false);
-  //     } else {
-  //       // Upscroll code
-  //       if (st > 0) {
-  //         setIsScrollingUp(true);
-  //       }
-  //       if (st === 0 || st <= 9) {
-  //         setIsTop(true);
-  //         console.log("IS_TOP-", isTop)
-  //       } else {
-  //         setIsTop(false);
-  //         console.log("IS_TOP-", isTop)
-  //       }
-  //     }
-  //     setLastScrollTop(st <= 0 ? 0 : st); // For Mobile or negative scrolling
-  //   };
-
-  //   window.addEventListener('scroll', handleScroll, { passive: true });
-
-  //   return () => window.removeEventListener('scroll', handleScroll);
-  // }, [lastScrollTop]);
-
-
-  // const baseStyle = 'h-[6.1em] sm:h-[8em] lg:!h-[12em] z-50 mt-20 !z-50';
    const baseStyle = 'h-[4.1em] sm:h-[4em] lg:!h-[8em] z-50 mt-0 !z-50';
   const applyStyle = '!sticky bg-black !top-0 !z-30 !inset-x-0 lg:h-[5em] lg:pl-[1em] lg:pt-[0%] z-50';
 
-  // const handleNavToggle = () => {
-  //   setIsNavOpen(!isNavOpen);
-  // };
-
-  // const handleNavItemClick = () => {
-  //   setIsNavOpen(false);
-  // };
-// useEffect(() => {
-//   setLoading(false)
-// },[])
-
-    //   // const { data: session, status } = useSession();
-    //   const [loading, setLoading] = useState(false);
-    //  const session= null
   return (
     <Disclosure as="nav" className="bg-white z-50 pt-2 max-w-[600px]:!min-h-[60vh]">
       <div className="max-w-screen px-4 sm:px-6 lg:px-8 xl:px-12 ">
@@ -373,15 +318,6 @@ export default function Navbar({}) {
               </Menu>
             </div>
           </div>
-          {/* <div className="-ml-2 mr-2 flex items-center md:hidden">
-      
-              <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
-                <span className="absolute -inset-0.5" />
-                <span className="sr-only">Open main menu</span>
-                <Bars3Icon aria-hidden="true" className={`block h-6 w-6 group-data-[${open}]:hidden`} />
-                <XMarkIcon aria-hidden="true" className={`hidden h-6 w-6 group-data-[${open}]:block`} />
-              </DisclosureButton>
-            </div> */}
         </div>
       </div>
 
@@ -404,12 +340,16 @@ export default function Navbar({}) {
         </div>
         <hr class="text-gray-400"/>
         <div className="border-t border-gray-700 pb-3 pt-4 mt-4">
-          <div className="flex items-center px-5 sm:px-6">
+          <NavbarUserAvatarComponent userProfile={userProfile}/>
+          {/* <div className="flex items-center px-5 sm:px-6">
             <div className="flex-shrink-0">
-            { userProfile !== null && userProfile?.image ?  <img alt="" src={userProfile.image} className="h-10 w-10 rounded-full" /> : <img alt="" src={user.imageUrl} className="h-10 w-10 rounded-full" />}
+            { userProfile !== null && userProfile?.image ?  <img alt="" src={userProfile.image} className="h-10 w-10 rounded-full" /> :
+            <div className='inline-flex gap-x-4'><img alt="proxy-admin-avatar" src={'/assets/ryan_user_profile.png'} className="h-16 w-16 rounded-full" />
+            <h1>{userProfile.user.identities[0]?.identity_data.last_name}</h1>
+            </div> }
             </div>
             <div className="ml-3">
-             {userProfile !== null &&  userProfile?.username ? <div className="text-lg font-medium text-white">{userProfile?.first_nam}</div> : <><div className="text-lg font-medium text-white">{userProfile?.first_name}</div>
+             {userProfile !== null &&  userProfile?.username ? <div className="text-lg font-medium text-white">{userProfile?.first_name}</div> : <><div className="text-lg font-medium text-white">{userProfile?.name}</div>
               <div className="text-sm font-medium text-gray-400">{userProfile?.last_name}</div>
              </>}
             </div>
@@ -428,7 +368,7 @@ export default function Navbar({}) {
                 <span className="sr-only">View notifications</span>
               
               </button>
-          </div>
+          </div> */}
          {userProfile !== null &&  <div className="mt-3 space-y-1 px-2 sm:px-3">
             {userNavigation.map((item) => (
               <DisclosureButton

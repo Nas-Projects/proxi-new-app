@@ -63,7 +63,7 @@ const PropertyNeighborhoodDetails = ({ neighborhoodDetails }) => {
   };
 
   return (
-    <div className={clsx("lg:max-w-[35vw] mx-4 mt-6 lg:mt-24", isOpen ? 'mb-[6em]' : 'mb-12', "px-4 lg:px-12")}>
+    <div className={clsx("lg:max-w-[38em] mx-4 mt-6 lg:mt-24 max-w-[50em]", isOpen ? 'mb-[13em]' : '!mb-0', "px-4 lg:px-12")}>
       <div className={styles.detailToggle} onClick={toggleDropdown}>
         <div className={styles.dropdownTitleWrap}>
           <h3 className={styles.headingThreePropertyDetail}>Neighbourhood</h3>

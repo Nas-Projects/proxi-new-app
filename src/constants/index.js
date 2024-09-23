@@ -76,37 +76,43 @@ export const SearchBtns = [
     id: "office",
     name: "Office",
     Icon: FaRegBuilding,
-    link: "properties/office"
+    link: "/properties/search-results?location=&propertyType=Studio"
   },
   {
     id: "sales",
     name: "Sales",
     Icon: HiOutlineBuildingLibrary,
-    link: "properties/sales"
+    link: "/properties/search-results?location=&propertyType=sale",
   },
   {
     id: "rentals",
     name: "Rentals",
     Icon: GrResources,
-    link: "properties/rentals"
+    link: "/properties/search-results?location=&propertyType=rentals"
   },
   { id: "modern",
     name: "Modern",
     Icon: RiBuilding2Line,
-    link: "properties/modern"
+    link: "/properties/search-results?location=&propertyType=modern"
   },
   {
     id: "apartment",
     name: "Apartment",
     Icon: BsBuildings,
-    link: "properties/apartment"
+    link: "/properties/search-results?location=&propertyType=apartment"
   },
   {
     id: "blockchain",
     name: "Blockchain",
     Icon: HiOutlineBuildingLibrary,
-    link: "properties/blockchain"
+    link: "/properties/search-results?location=&propertyType=blockchain"
   },
+  // {
+  //   id: "studios",
+  //   name: "Studios",
+  //   Icon: FaRegBuilding,
+  //   link: "/properties/search-results?location=&propertyType=Studio"
+  // },
   
 ];
 // {

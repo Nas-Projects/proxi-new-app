@@ -1,3 +1,5 @@
+'use client'
+
 import Link from "next/link";
 import { useEffect } from "react";
 
@@ -8,21 +10,21 @@ const Messages = () =>{
 
   useEffect(() => {
     // Ensure the code only runs in the browser
-    const images = document.querySelectorAll('img');
-    const urls = Array.from(images).map(img => img.getAttribute('src') || img.srcSet.split(', ')[0]);
+    // const images = document.querySelectorAll('img');
+    // const urls = Array.from(images).map(img => img.getAttribute('src') || img.srcSet.split(', ')[0]);
 
     // Optional: You can log or handle the URLs here
-    console.log(urls);
+  //   console.log(urls);
     
-    // You can also trigger the download here
-    urls.forEach((url, index) => {
-      const a = document.createElement('a');
-      a.href = decodeURIComponent(url);
-      a.download = `image-${index}.jpg`;
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-    });
+  //   // You can also trigger the download here
+  //   urls.forEach((url, index) => {
+  //     const a = document.createElement('a');
+  //     a.href = decodeURIComponent(url);
+  //     a.download = `image-${index}.jpg`;
+  //     document.body.appendChild(a);
+  //     a.click();
+  //     document.body.removeChild(a);
+  //   });
 
   }, []); // Runs once on component mount
 

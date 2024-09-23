@@ -66,9 +66,9 @@ const oldnav= [
   { name: "Settings", href: "/naser2s-projects/omarihills/settings" },
 ];
 const navLinks= [
-  {name:'Subscription', 
- href:'/subscription'},
- {name:'Tracks', href:'/tracks'},
+  {name:'Subscription'}, 
+  {href:'/subscription'},
+  {name:'Tracks', href:'/tracks'},
   {name:'Tracks', href:'/tracks'},
   {name:'Profile', href:"/profile"},
   {name:'Login', href:'/login'},

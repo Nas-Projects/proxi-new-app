@@ -4,16 +4,17 @@ import SectionWrapper from "../hoc/SectionWrapper";
 import { motion } from 'framer-motion';
 import { fadeIn } from '../utils/motion';
 import { SearchBtns } from "../constants";
+import Link from "next/link";
 
-const ButtonCard = ({ name, Icon, index }) => {
+const ButtonCard = ({ name, Icon, index, href }) => {
     return (
-        <div className="grow4  group hover:shadow-lg ring-1 ring-inset ring-[#da1f88] rounded-xl
+        <Link href={href} className="grow4  group hover:shadow-lg ring-1 ring-inset ring-[#da1f88] rounded-xl
          placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-pink-600 lg:focus:ring-2 lg:focus:ring-pink-300">
             <motion.div
                 variants={fadeIn('', 'spring', index * 0.2, 0.75)}
                 className='cursor-pointer bg-white/60 lg:bg-white/90 shadow-md pt-6 
                 pb-6 pl-8 pr-8 items-center justify-center flex
-                rounded-md w-[115px] w-[118px] lg:w-[130px] xl:w-[200px] lg:hover:bg-custom-gradient hover:bg-[#c2185b]'
+                rounded-md lg:w-[130px] xl:w-[200px] lg:hover:bg-custom-gradient hover:bg-[#c2185b]'
                 // style={{ width: '200px', height: '120px' }}
             >
                 {/* lg:hover:bg-custom-gradient-indigo */}
@@ -26,15 +27,14 @@ const ButtonCard = ({ name, Icon, index }) => {
                     </p>
                 </div>
             </motion.div>
-        </div>
+        </Link>
     );
 };
 
 
 const SearchButtons = () => {
   return (
-    <section className="md:min-h-[100px]
-    mx-auto flex items-center relative">
+    <section className="md:min-h-[100px] px-6 mt-[6vh] mx-auto flex items-center relative">
         <div className='items-center w-full mx-auto flex 
         max-w-[86rem]'>
             <div className="flex items-center w-full justify-center">
@@ -43,6 +43,7 @@ const SearchButtons = () => {
                       <ButtonCard 
                         key={item.id}
                         index={index}
+                        href={item.link}
                         name={item.name}
                         Icon={item.Icon}
                       />
@@ -54,4 +55,5 @@ const SearchButtons = () => {
   )
 };
 
-export default SectionWrapper(SearchButtons, '');
+export default SearchButtons;
+// export default SectionWrapper(SearchButtons, '');

@@ -2,7 +2,20 @@
 import connectDB from '../config/database'; // Your database connection
 
 export const getPropertiesByType = async (type) => {
-  const query = type === 'rentals' ? { isForRent: true } : { isForSale: true };
-  const properties = await connectDB.collection('properties').find(query).toArray();
+  let query = {};
+
+  switch (type.toLowerCase()) {
+    case 'apartment':
+      query = { type: 'Apartment', forRent: true }; // Ensure this matches your property documents
+      break;
+    case 'rental':
+      query = { forRent: true }; // This may return all rentals regardless of type
+      break;
+    // Add other cases as needed
+    default:
+      query = {};
+  }
+
+  const properties = await Property.find(query); // Fetch properties based on the query
   return properties;
 };

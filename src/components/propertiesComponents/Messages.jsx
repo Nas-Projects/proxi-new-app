@@ -1,7 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
-import Spinner from '@/components/Spinner';
-import Message from '@/components/Message';
+import Spinner from '../../components/propertiesComponents/Spinner';
+import Message from '../../components/propertiesComponents/Message';
 
 const Messages = () => {
   const [messages, setMessages] = useState([]);
@@ -11,9 +11,10 @@ const Messages = () => {
     const getMessages = async () => {
       try {
         const res = await fetch('/api/messages');
-
+        console.log("MESSAGE_RES: ", data);
         if (res.status === 200) {
           const data = await res.json();
+          console.log("MESSAGE: ", data);
           setMessages(data);
         }
       } catch (error) {
@@ -29,7 +30,7 @@ const Messages = () => {
   return loading ? (
     <Spinner loading={loading} />
   ) : (
-    <section className='bg-blue-50'>
+    <section className='!relative block min-h-[60vh] bg-blue-50'>
       <div className='container m-auto py-24 max-w-6xl'>
         <div className=' containerInner'>
           <h1 className='text-3xl font-bold mb-4'>Your Messages</h1>

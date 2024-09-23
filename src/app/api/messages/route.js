@@ -16,21 +16,21 @@ export const GET = async () => {
     const sessionUser = await getSessionUser();
     console.log("MESSAGE_GET_User ID is required ---GET MESSAGES", sessionUser)
 
-    if (!sessionUser || !sessionUser.user) {
+    if (!sessionUser) {
       return new Response(JSON.stringify('User ID is required'), {
         status: 401,
       });
     }
 
-    const { userId } = sessionUser;
+    const { email } = sessionUser;
 
-    const readMessages = await Message.find({ recipient: userId, read: true })
+    const readMessages = await Message.find({ recipient: email, read: true })
       .sort({ createdAt: -1 }) // Sort read messages in asc order
       .populate('sender', 'username')
       .populate('property', 'name');
 
     const unreadMessages = await Message.find({
-      recipient: userId,
+      recipient: email,
       read: false,
     })
       .sort({ createdAt: -1 }) // Sort read messages in asc order

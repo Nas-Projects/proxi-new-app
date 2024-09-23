@@ -26,7 +26,7 @@ import {
 const AboutProxy = () => {
   return (
    <section>
-    <div className="relative py-4 mt-24 md:mt-12 md:mt-[10em]  lg:mt-12 xlg:mt-12 xl:mb-24">
+    <div className="relative py-[7vh] mt-24 md:mt-12 md:mt-[10em]  lg:mt-12 xlg:mt-12 xl:mb-24">
     <div className="w-full lg:mt-24 lg:mt-34 xl:justify-center
          xl:max-w-[95vw] lg:px-12 lg:ppt-24 pb-44 lg:pb-12 xl:pb-44 relative h-[80vh]">
        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 lg:gap-24">

@@ -5,6 +5,7 @@
     import { Dialog, DialogPanel } from '@headlessui/react'
     import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
+import Image from 'next/image'
     
   
     export default function SectionBlockChain(){
@@ -19,7 +20,7 @@ import Link from 'next/link'
     ]
       return (
         <div className="relative bg-white">
-          <header className="absolute inset-x-0 top-0 z-50">
+          {/* <header className="absolute inset-x-0 top-0 z-50">
             <div className="mx-auto max-w-7xl">
               <div className="px-6 pt-6 lg:max-w-2xl lg:pl-8 lg:pr-0">
                 <nav aria-label="Global" className="flex items-center justify-between lg:justify-start">
@@ -95,11 +96,11 @@ import Link from 'next/link'
                 </div>
               </DialogPanel>
             </Dialog>
-          </header>
+          </header> */}
     
           <div className="relative">
             <div className="mx-auto max-w-7xl">
-              <div className="relative z-10 pt-14 lg:w-full lg:max-w-2xl">
+              <div className="relative z-10mt-4 mx-4  md:pt-14 lg:w-full lg:max-w-2xl">
                 <svg
                   viewBox="0 0 100 100"
                   preserveAspectRatio="none"
@@ -109,7 +110,7 @@ import Link from 'next/link'
                   <polygon points="0,0 90,0 50,100 0,100" />
                 </svg>
     
-                <div className="relative px-6 py-32 sm:py-40 lg:px-8 lg:py-56 lg:pr-0">
+                <div className="relative px-6 pt-8 pb-12 sm:py-40 lg:px-8 lg:pb-56 lg:pt-24 lg:pr-0">
                   <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl">
                     <div className="hidden sm:mb-10 sm:flex">
                       <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-500 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
@@ -120,8 +121,8 @@ import Link from 'next/link'
                         </a>
                       </div>
                     </div>
-                    <h1 className="text-left text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-                     <span className='text-custom-gradient'></span> Revolutionizing <br/>
+                    <h1 className="text-left pt-4 pb-6 text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+                     <span className='text-custom-gradient text-left'></span>Revolutionizing <br/>
                       Real Estate <br></br>with <span className='text-custom-gradient'>Blockchain</span> Technology
                     </h1>
                     <p className="mt-6 text-lg leading-8 text-gray-600  ">
@@ -177,10 +178,13 @@ import Link from 'next/link'
               </div>
             </div>
             <div className="bg-gray-50 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-              <img
+              
+            <Image
                 alt=""
                 src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1587&q=80"
                 className="aspect-[3/2] object-cover lg:aspect-auto lg:h-full lg:w-full"
+                width={500}
+                height={300}
               />
             </div>
           </div>

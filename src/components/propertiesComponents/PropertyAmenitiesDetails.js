@@ -134,7 +134,7 @@ const PropertyAmenitiesDetails = ({ property }) => {
   console.log("PROPERTY_AMENITIES is", property.amenities);
 
   return (
-    <div className={clsx("lg:max-w-[35vw] lg:max-w-[45vw] mx-4 mt-6 lg:mt-24", isOpen ? 'mb-[6em]' : 'mb-12', "px-4 lg:px-12")}>
+    <div className={clsx("lg:max-w-[38em] lg:max-w-[42vw] mx-4 mt-6 lg:mt-24", isOpen ? 'mb-[9em]' : 'mb-12', "px-4 lg:px-12")}>
       <div className={styles.detailToggle} onClick={toggleDropdown}>
         <div className={styles.dropdownTitleWrap}>
           <h3 className={styles.headingThreePropertyDetail}>Additional Amenities</h3>

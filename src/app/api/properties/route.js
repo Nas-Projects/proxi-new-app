@@ -4,6 +4,7 @@ import { getSessionUser } from '@/utils/getSessionUser';
 import cloudinary from '@/config/cloudinary';
 
 // GET /api/properties
+console.log("PROPERTY_REQUEST api/properties/routes" )
 export const GET = async (request) => {
   try {
     await connectDB();
