@@ -127,6 +127,13 @@ export function NavigationLeft() {
         <NavigationMenuItem>
           <Link href="/contact" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+              Agents
+            </NavigationMenuLink>
+          </Link>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <Link href="/contact" legacyBehavior passHref>
+            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
               Contact
             </NavigationMenuLink>
           </Link>

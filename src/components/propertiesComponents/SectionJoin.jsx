@@ -153,7 +153,7 @@ export default function SectionJoin() {
               <div className="flex gap-x-4">
               <div id="HERO-CTA-BUTTONS" className="lg:-mt-12  py-4 lg:py-12 z-20 ">
                     <div className="!flex grid-cols-2 gap-x-4 ">
-                    <Link href="/Contact">
+                    <Link href="/contact">
                 
                         <h5 className="uppercase text-sm md:text-base text-white relative group whitespace-nowrap font-normal mb-0 transition-all duration-300 border border-secondary-color hover:border-heading-color inline-block">
                             <span className="inline-block absolute top-0 right-0 w-full h-full bg-custom-gradient  group-hover:bg-black hover:bg-primary-cogroup-lor z-1 group-hover:w-0 transition-all duration-300" />

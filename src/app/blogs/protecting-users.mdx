@@ -1,0 +1,61 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import Image from 'next/image'
+import { HeroPattern } from '@/components/HeroPattern'
+import authorImg from '@/images/nas_about.png'
+import NasImg from '@/images/nasportrait.jpg'
+import meetTheMan from '@/images/blogsImages/meetTheMan.jpeg'
+import meetTheManWork from '@/images/blogsImages/meetTheManWork.jpeg'
+
+import protect from '@/images/blogsImages/social_blog_3.jpeg'
+
+export const meta = {
+  author: { name: 'Nasser Sanou', href: '/about', image: authorImg },
+  date: '2022-11-23',
+  title: 'Protecting users',
+  tag: 'Technology',
+  subtitle: 'Ease into 2023 with a gentle mindset and sustainable goals',
+  description:
+    'Resolution made a list of ambitious resolutions, only to ditch them a few weeks later? We’ve been there too. This year, we found the best apps for sticking to New Year’s resolutions all year long. No tough love. No shame. Just a whole lot of kindness.',
+  layout: 'article',
+  moto: 'Ease into 2023 with a gentle mindset and sustainable goals',
+  images: [protect, meetTheManWork],
+  quote:
+    '9 out of 10 people breathe unclean air worldwide. Unfortunately this is mostly happening in low-income countries. This is where we come in.',
+}
+
+export default (props) => <ArticleLayout meta={meta} {...props} />
+
+“I’m a little bit obsessed with air,” says Engineer Bainomugisha as he fixes a small, black box to the back of a motorbike taxi in the bustling capital city of Kampala, Uganda. To the untrained eye this may look like a fairly ordinary box but this contraption is being used to tackle dangerous pollution levels on Kampala’s city streets. Combined with AI, it has the potential to improve the lives and air quality for millions of people across Uganda.
+
+## “9 out of 10 people breathe unclean air worldwide. Unfortunately this is mostly happening in low-income countries. This is where we come in.”
+
+Growing up in rural Uganda, Engineer first encountered the pollution facing Kampala when he traveled 300km from his family home to study computer science at Makerere University in the country’s capital. With a natural passion for technology, he often woke in the early hours of the morning to practice writing software on one of the few computers in his university’s lab. Little did he know that one day he’d use what he had learned to help people better protect themselves from pollution in Kampala and beyond.
+
+Engineer now heads up the Department of Computer Science at the same university and leads their pioneering AirQo project ― an initiative that combines human ingenuity, AI models and boxes packed with air monitoring technology to predict pollution patterns in Kampala.
+
+<Image
+  className="story-card--short-image  resolutions-theme-background"
+  src={protect}
+  alt="protect"
+  width={200}
+  height={300}
+/>
+
+## 2. See how what you do affects how you feel
+
+Along with a dedicated team of students, Engineer installs air sensors on top of buildings and the backs of motorbike taxis ― known as boda bodas and one of the city’s most common forms of transportation ― to collect pollution data from all over the city. The team then uses cloud-based AI software to analyze air particle data in real-time and predict local pollution. These forecasts offer Kampala’s communities a way to reduce their risk of exposure and are being used by government agencies to improve air quality on the ground.
+
+Engineer and the team at Makerere University are one of 20 organizations selected from more than 2,600 applicants to receive a grant through the Google AI Impact Challenge: the Google.org initiative to help nonprofits, startups, and researchers use the power of AI to address social and environmental challenges. Through this program, the Makerere team also received coaching and mentorship from Google and DeepMind AI experts over the course of a 9-month AI accelerator.
+
+## 3. Challenges
+
+While the network of air sensors currently criss-crosses Kampala on the back of boda bodas, Engineer hopes that one day this technology will reduce pollution on streets across the continent, so that this generation and the next will know what it means to breathe fresh air.
+
+<Image
+  className="story-card--short-image  resolutions-theme-background"
+  src={protect}
+  width={200}
+  height={300}
+  alt="mage"
+
+/>

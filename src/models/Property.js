@@ -24,7 +24,7 @@ const PropertySchema = new Schema(
     },
     type: {
       type: String,
-      enum: ['Retail', 'Office', 'Investment Sale'],
+      enum: ['Retail', 'Office', 'Investment Sale', "Rental", "Residential", "Commercial"],
       required: true,
       default: 'Property type not provided',
     },

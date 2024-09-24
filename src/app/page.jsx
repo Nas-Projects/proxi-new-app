@@ -29,7 +29,7 @@ const Home = ({heroDetails}) => {
           />
 
             <div className="mx-auto lg:px-[10%] absolute absolute top-[69vh] lg:top-[68vh] lg:mx-auto md:top-[70vh] xl:top-[72vh] z-20">
-              <SearchButtons />
+            <SearchButtons />
             </div>
             <ProperTiesForSale/>
             <AboutProxy/>

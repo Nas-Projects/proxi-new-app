@@ -67,11 +67,8 @@ const staticAgents = [
   export async function getAgents() {
     const query = groq`
       *[_type == "agent"] {
-        name,
-        role,
-        image,
-        xUrl,
-        linkedinUrl
+        ...,
+       socials[]->
       }
     `;
     const agentsData = await sanityClient.fetch(query);
@@ -92,9 +89,10 @@ const staticAgents = [
           
           if (!agentsData || agentsData.length === 0) {
             setFetchResults("No valid agents found");
+            console.log("AGENTS_FETCHED-->", agentsData);
             setPeople(staticAgents); // Optionally keep static agents
           } else {
-            setFetchResults("Valid agents found");
+            setFetchResults("200 ok");
             setPeople(agentsData.map(person => ({
               ...person,
               imageUrl: person.image ? urlFor(person.image).url() : staticAgents[0].imageUrl // Use urlFor if image exists
@@ -112,12 +110,12 @@ const staticAgents = [
     }, []);
   
     return (
-      <div className={clsx(loading ? "bg-custom-gradient-dark" : "bg-gray-900", "py-24 sm:py-32")}>
+      <div className={clsx(loading ? "bg-custom-gradient-dark" : "bg-gray-900", "bg-custom-gradient-dark py-24 sm:py-32")}>
         <div className="mx-auto max-w-7xl px-6 text-center lg:px-8">
-          <h1 className='text-3xl text-orange-400'>{loading ? "Dear User, here are some agents while we're fetching new data for you" : fetchResultsText}</h1>
+          <h1 className='text-3xl text-orange-100'>{loading ? "Dear User, here are some agents while we're fetching new data for you" : "Available Agents"}</h1>
           <div className="mx-auto max-w-2xl">
-            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">Meet our team</h2>
-            <p className="mt-4 text-lg leading-8 text-gray-400">We are a dynamic group of individuals who are passionate about what we do.</p>
+            <h2 className="text-3xl font-bold tracking-tight  sm:text-4xl text-custom-gradient mt-12 ">Meet our team</h2>
+            <p className="mt-4 text-lg leading-8 text-gray-200">We are a dynamic group of individuals who are passionate about what we do.</p>
           </div>
           <ul
             role="list"
@@ -128,20 +126,19 @@ const staticAgents = [
                 <Link href={`/agents/${stringSlugifier(person.name)}`}>
                   <img alt={person.name} src={person.imageUrl} className="mx-auto h-48 w-48 rounded-full md:h-56 md:w-56" />
                   <h3 className="mt-6 text-base font-semibold leading-7 tracking-tight text-white">{person.name}</h3>
-                  <p className="text-sm leading-6 text-gray-400">{person.role}</p>
+                { fetchResultsText === "200 ok"&&  <p className="!text-base leading-6 text-gray-400"><p className=" leading-6 text-gray-400">Realeste {person.userRole}</p></p> }
+                  {<p className="text-sm leading-6 text-gray-400">{person.role}</p>}
                   <ul role="list" className="mt-6 flex justify-center gap-x-6">
-                    <li>
-                      <a href={person.xUrl} className="text-gray-400 hover:text-gray-300">
-                        <span className="sr-only">X</span>
-                        {/* SVG for X icon */}
-                      </a>
-                    </li>
-                    <li>
-                      <a href={person.linkedinUrl} className="text-gray-400 hover:text-gray-300">
-                        <span className="sr-only">LinkedIn</span>
-                        {/* SVG for LinkedIn icon */}
-                      </a>
-                    </li>
+                    {
+                      person?.socials && person.socials.map((social) => (
+                        <li key={social._key}>
+                          <a href={social.url} className="text-gray-400 hover:text-gray-300">
+                            <span className="sr-only">{social.name}</span>
+                            {/* SVG for X icon */}
+                          </a>
+                        </li>
+                      ))
+                    }
                   </ul>
                 </Link>
               </li>
@@ -151,43 +148,3 @@ const staticAgents = [
       </div>
     );
   }
-
-//  <div className={clsx( loading ? "bg-custom-gradient-dark" :"bg-gray-900",  "py-24 sm:py-32")}>
-//       <div className="mx-auto max-w-7xl px-6 text-center lg:px-8">
-//         <h1 className='text-3xl text-orange-400'>{ loading ? "Dear User, here are some agents while we're fetching new data for you" : fetchResultsText }</h1>
-//         <div className="mx-auto max-w-2xl">
-//           <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">Meet our team</h2>
-//           <p className="mt-4 text-lg leading-8 text-gray-400">
-//             We&quot;re a dynamic group of individuals who are passionate about what we do.
-//           </p>
-//         </div>
-//         <ul
-//           role="list"
-//           className="mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-6 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 lg:gap-8"
-//         >
-//           {people.map((person) => (
-//             <li key={person.name} className="rounded-2xl bg-gray-800 px-8 py-10">
-//               <Link href={`/agents/${stringSlugifier(person.name)}`}>
-//               <img alt={person.name} src={person.imageUrl} className="mx-auto h-48 w-48 rounded-full md:h-56 md:w-56" />
-//               <h3 className="mt-6 text-base font-semibold leading-7 tracking-tight text-white">{person.name}</h3>
-//               <p className="text-sm leading-6 text-gray-400">{person.role}</p>
-//               <ul role="list" className="mt-6 flex justify-center gap-x-6">
-//                 <li>
-//                   <a href={person.xUrl} className="text-gray-400 hover:text-gray-300">
-//                     <span className="sr-only">X</span>
-//                     {/* SVG for X icon */}
-//                   </a>
-//                 </li>
-//                 <li>
-//                   <a href={person.linkedinUrl} className="text-gray-400 hover:text-gray-300">
-//                     <span className="sr-only">LinkedIn</span>
-//                     {/* SVG for LinkedIn icon */}
-//                   </a>
-//                 </li>
-//               </ul>
-//               </Link>
-//             </li>
-//           ))}
-//         </ul>
-//       </div>
-//     </div>

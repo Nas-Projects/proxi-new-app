@@ -15,10 +15,10 @@ const SectionHeader = ({ title, subtitle, description }) => {
         }}
         className="title-wrap pb-12 max-w-xl lg:max-w-[34vw]"
       >
-        <h2 className="text-left">{subtitle}</h2>
+     { subtitle &&  <h2 className="text-left">{subtitle}</h2>}
         <div className="space-08" />
         <div className="limit-560">
-          <p className="paragraph-big text-left">{description}</p>
+        {  description && <p className="paragraph-big text-left">{description}</p>}
         </div>
       </div>
     </div>

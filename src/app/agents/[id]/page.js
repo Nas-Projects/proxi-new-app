@@ -6,6 +6,7 @@ import Link from 'next/link';
 import stringSlugifier from '@/lib/StringSlugifier';
 import { sanityClient } from '@/sanity/lib/client';
 import { useRouter } from 'next/navigation';
+import AgentComponent from  "@/components/propertiesComponents/AgentPage.jsx"
 // import FollowMessageButtons from '@/components/FollowMessageButtons';
 const staticAgent = {
   name: 'Leonard Krasner',
@@ -45,7 +46,8 @@ export default function Agents({ params }) {
   }, [id]); // Add id as a dependency
 //  href={`/agents/${stringSlugifier(person.name)}`}
   return (
-    <div className={clsx(loading ? "bg-custom-gradient-dark" : "bg-gray-900", "py-24 sm:py-32")}>
+    <div className={clsx(loading ? "bg-custom-gradient-dark" : "bg-gray-900", "")}>
+      <AgentComponent/>
         {/* <div  className="lg:inline-flex grid grid-cols-1 gap-y-16 grid-cols-2 lg:gap-y-12"> */}
         {/* <div className="mx-auto max-w-7xl px-6 text-center lg:px-8">
         <h1 className='text-3xl text-orange-400'>{loading ? "Dear User, here are some agents while we're fetching new data for you" : fetchResultsText}</h1>

@@ -1,0 +1,76 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import Image from 'next/image'
+import { HeroPattern } from '@/components/HeroPattern'
+import authorImg from '@/images/nas_about.png'
+import NasImg from '@/images/nasportrait.jpg'
+import buildingForEveryone from '@/images/blogsImages/building_for_everyone.png'
+import buildingForEveryone2 from '@/images/blogsImages/building_for_everyone_2.png'
+import buildingForEveryone3 from '@/images/blogsImages/building_for_everyone_3.png'
+
+export const meta = {
+  author: { name: 'Nasser Sanou', href: '/about', image: authorImg },
+  date: '2022-11-23',
+  tag: 'Sustainability',
+  title:
+    'Google’s Head of Product Inclusion & Equity shares an excerpt from her recent book',
+  theme: { bg: 'sahara_bg', tag: 'bg-white' },
+  subtitle: 'Ease into 2023 with a gentle mindset and sustainable goals',
+  description:
+    'Resolution made a list of ambitious resolutions, only to ditch them a few weeks later? We’ve been there too. This year, we found the best apps for sticking to New Year’s resolutions all year long. No tough love. No shame. Just a whole lot of kindness.',
+  layout: 'article',
+  moto: 'Ease into 2023 with a gentle mindset and sustainable goals',
+  images: [buildingForEveryone, buildingForEveryone2, buildingForEveryone3],
+  quote:
+    'Equity, and inclusion are good for business and for all productive human endeavors.',
+}
+
+export default (props) => <ArticleLayout meta={meta} {...props} />
+
+## “9 out of 10 people breathe unclean air worldwide. Unfortunately this is mostly happening in low-income countries. This is where we come in.”
+
+In the second installment of our Bookshelf series, Head of Product Inclusion & Equity Annie Jean-Baptiste shares an adapted selection from Building for Everyone: Expand Your Market with Design Practices from Google’s Product Inclusion Team..
+
+At Google, we build products for the world. The people we design for come from different races, places, ethnicities, socio-economic positions, abilities, and more. Equity is not a moment or a point in time—it should be embedded into everything we say, do, and build. When we’re intentional about creating infrastructure to build for everyone—with everyone—that’s when product inclusion happens.
+
+<Image
+  className="story-card--short-image  resolutions-theme-background"
+  src={buildingForEveryone3}
+  alt="buildingForEveryone3"
+  width={200}
+   height={200}
+
+/>
+
+When creating products I recommend you always ask: Who else? Who else should be involved? Whose voice needs to be a part of the process? As designers, developers, marketers, and creators, we have an opportunity to create products and services that make people feel seen. In order to do that, we must admit that we don’t know everything, and ensure that we include diverse perspectives, particularly the historically marginalized, at key points in the process—ideation, research, design, testing, and marketing. A human-centered approach means being humble, asking questions, and letting those with the lived experiences guide the way. Center the experiences of underrepresented communities, and build with, not for.
+
+Across industries, we’ve heard that inclusion is “the right thing to do.” Good people and ethical organizations believe in and practice diversity, equity, and inclusion. This is certainly true, but it oversimplifies the reason why people and organizations should care about and embrace these virtues.
+
+# Expanding diversity and inclusion to products and services
+
+1. Bought or planned to buy the product or service
+2. Considered the product or service
+3. Looked for more information about the product or service
+4. Compared pricing for the product or service
+5. Asked friends or family about the product or service
+6. Looked for ratings and reviews of the product or service
+7. Visited the brand’s site or social media page
+8. Visited a site/app or store to check out the product
+
+Diversity, equity, and inclusion matter for two reasons. The first is a human reason—people matter. Diversity enriches the world with different languages, perspectives, customs, foods, clothing, art, innovation, and much more. Equity and inclusion are essential for making people feel welcome, appreciated, and empowered; in a way, they enable everyone to flourish and to contribute in all ways that make them unique.
+
+<Image
+  className="story-card--short-image  resolutions-theme-background"
+  src={buildingForEveryone2}
+  alt="image"
+  width={200}
+  height={200}
+
+/>
+
+## A team approach
+
+The second is a business reason—diversity, equity, and inclusion are good for business and for all productive human endeavors. Organizations that engage with people representing a wide range of demographics reap ideas and innovations that vastly improve their products and services and even open their eyes to new markets and entirely new businesses. As a result, they grow their customer base, increase innovation, and build momentum—gaining a competitive advantage over less inclusive players.
+
+To create for the world we live in, we must build in an environment that reflects that world. We cannot build for people without understanding them, their needs, their preferences, and what disappoints and upsets them and makes them feel excluded. The world is changing, and this change is accelerating. You can witness it happening around you—in the news and entertainment programming you tune in to, the advertisements you see, and hopefully in your neighborhood and workplace.
+
+I encourage you to embrace this change, and I challenge you to take the lead in promoting this positive transformation by creating products and services that represent the makeup of this ever-evolving world. The first step is to develop an understanding of your users (customers or clients)—who they are, where they come from, what’s important to them, and how their core needs align with your organization’s and your work’s mission. Having this understanding is the key to unlocking value, thereby opening the doors to growth and innovation.
