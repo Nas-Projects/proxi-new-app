@@ -5,10 +5,10 @@ import newyearresolution1 from '@/images/blogsImages/resolution_keep.png'
 import clsx from 'clsx'
 import { formatDate } from '@/lib/formatDate'
 
-import useWindowDimensions from '@/lib/useWindowSize'
+// import useWindowDimensions from '@/lib/useWindowSize'
 
 export function BlogCard({ blog }) {
-  const { width, height } = useWindowDimensions()
+  // const { width, height } = useWindowDimensions()
   function BlogCardMobile({ className, ...props }) {
     return (
       <div
@@ -147,7 +147,7 @@ export function BlogCard({ blog }) {
                   )}
                 >
                   <Image
-                    fill
+                    // fill
                     src={blog.image.src}
                     alt=""
                     //  width={100%}
@@ -155,8 +155,8 @@ export function BlogCard({ blog }) {
                     className="absolute inset-0 h-full w-full rounded-2xl bg-gray-50 object-center"
                     priority
                     optimized={'true'}
-                    // width={300}
-                    // height={300}
+                    width={300}
+                    height={300}
                   />
                 </div>
               </div>

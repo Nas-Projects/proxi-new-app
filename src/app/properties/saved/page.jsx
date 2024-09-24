@@ -1,7 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
-import PropertyCard from '@/components/PropertyCard';
-import Spinner from '@/components/Spinner';
+import PropertyCard from '../../../components/ProfileComponents/PropertyCard';
+import Spinner from '../../../components/ProfileComponentscomponents/Spinner';
 import { toast } from 'react-toastify';
 
 const SavedPropertiesPage = () => {

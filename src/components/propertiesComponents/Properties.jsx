@@ -1,7 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
 import PropertyCard from '@/components/PropertyCard';
-import Spinner from '@/components/Spinner';
+import Spinner from '../../../components/ProfileComponents/Spinner';
 import Pagination from '@/components/Pagination';
 
 const Properties = () => {

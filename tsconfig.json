@@ -25,7 +25,9 @@
       "@/config/*": ["./src/config/*"],
       "@/utils/*": ["./src/utils/*"],
       "@/components/*": ["./src/components/*"],
-      "@/images/*": ["./src/images/*"]
+      "@/images/*": ["./src/images/*"],
+      // "@/sanityLibrary/*": ["./src/sanity/*"],
+      // "@/env/*": [".env/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/login/oldpage.jsx", "src/models/Notification.js", "src/UserContext.js", "src/components/navigationMenu/navigation.js", "src/components/FollowMessageButtons.js"],

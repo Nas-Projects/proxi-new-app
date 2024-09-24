@@ -3,10 +3,19 @@
 // }
 
 export const formatDate = (dateString) => {
-  return new Date(`${dateString}T00:00:00Z`).toLocaleDateString('en-US', {
+  // Create a Date object directly from the dateString
+  const date = new Date(dateString);
+
+  // Check for invalid date
+  if (isNaN(date.getTime())) {
+    console.error("Invalid date:", dateString);
+    return "Invalid Date";
+  }
+
+  return date.toLocaleDateString('en-US', {
     day: 'numeric',
     month: 'long',
     year: 'numeric',
     timeZone: 'UTC',
-  })
-}
+  });
+};
