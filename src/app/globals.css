@@ -354,7 +354,7 @@ body {
 
 @media (max-width: 1060px) {
   .hero {
-    background-image: url('/assets/heroImg.jpg');
+    /* background-image: url('/assets/heroImg.jpg'); */
     object-fit: cover;
     width: auto;
     max-height: 90vh;
@@ -362,14 +362,14 @@ body {
 }
 @media (max-width: 1460px) {
   .hero {
-    background-image: url('/assets/heroImg.jpg');
+    /* background-image: url('/assets/heroImg.jpg'); */
     object-fit: cover;
     width: auto;
     max-height: 90vh;
   }
 }
 .hero {
-  background-image: url('/assets/heroImg.jpg');
+  /* background-image: url('/assets/heroImg.jpg'); */
   object-fit: cover;
   background-position: center;
   width: auto;
@@ -557,7 +557,7 @@ select{font-family:var(--body-font);transition:all 0.3s ease 0s;}
 
 .bg-secondary-color {
   --tw-bg-opacity: 1;
-  background-color: #ee6392;
+  background-color: #fd90b5;
 }
 .w-15px {
   width: .9375rem;
@@ -700,9 +700,9 @@ ol {
   }
 }
 
-.fade-in-from-bottom2 {
+/* .fade-in-from-bottom2 {
   animation: fadeInFromBottom2 1s ease-out;
-}
+} */
 
 @media (max-width: 480px) {
   .grid-cols-2 > div {

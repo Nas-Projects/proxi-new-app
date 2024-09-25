@@ -27,13 +27,14 @@ const PropertiesForSale = () => {
   }
 
   return (
-    <div className="property-list mt-[15vh] lg:mt-[10vh] max-auto mx-4 md:mx-8 lg:mx-12 xl:mx-24 justify-center">
+    <div className="property-list mt-[15vh] lg:mt-[2vh] 
+    max-auto mx-4 md:mx-8 lg:mx-12 xl:mx-[0em] min-[1600px]:mx-[8em] justify-center">
       <SectionHeader
         title="Properties For Sale"
         subtitle="Find the right location"
-        description="We believe Nordi Living can make the world a much better place by choosing the right houses for the right people."
+        description="We believe Proxy Realestatecan make the world a much better place by choosing the right houses for the right people."
       />
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 px-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 px-4 xl:mx-12 xl:mt-[-3em]">
         {properties.map((property) => (
           <PropertyCard property={property} key={property._id} />
         ))}

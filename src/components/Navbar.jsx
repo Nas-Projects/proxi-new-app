@@ -186,7 +186,7 @@ export default function Navbar({}) {
               />
             </Link>
             <div className="hidden md:ml-6 md:flex md:items-center md:space-x-4">
-              <NavigationLeft />
+             <NavigationLeft />
               {/* {navigation.map((item) => (
                 <a
                   key={item.name}

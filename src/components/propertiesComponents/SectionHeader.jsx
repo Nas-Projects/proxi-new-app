@@ -4,8 +4,8 @@ const SectionHeader = ({ title, subtitle, description }) => {
   console.log("SECTION_TITLE", title, subtitle, description);
   
   return (
-    <div className="section-header text-mainText opacity-1">
-      <h1 className='!text-left text-center py-12'>{title}</h1>
+    <div className="section-header text-mainText opacity-1 fade-in-from-bottom ">
+      <h1 className='!text-left text-center py-6'>{title}</h1>
       <div
         data-w-id="c61ae90e-5b42-2ae8-3af4-27a1254fdfcd"
         style={{

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -194,9 +194,9 @@ ol {
     transform: translateY(0);
   }
 }
-.fade-in-from-bottom {
+/* .fade-in-from-bottom {
   animation: fadeInFromBottom 1s ease-out;
-}
+} */
 
 @keyframes fadeInFromBottom2 {
   0% {
@@ -209,9 +209,9 @@ ol {
   }
 }
 
-.fade-in-from-bottom2 {
+/* .fade-in-from-bottom2 {
   animation: fadeInFromBottom2 1s ease-out;
-}
+} */
 
 @media (max-width: 480px) {
   .grid-cols-2 > div {
@@ -339,7 +339,7 @@ ol {
 }
 .opacity-50 {
   opacity: 0.5;
-}
+} */
 
 /* --------------HOME PAGE ANIMtion AND STYLE ---------------- */
 /*! CSS Used from: https://html.themewin.com/pixells/quarter-tailwind-preview/quarter/assets/css/font-icons.css */

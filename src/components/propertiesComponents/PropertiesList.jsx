@@ -9,11 +9,9 @@ export const RecentSale = () => {
       {/* about 2 left */}
       <div className="mb-5">
         <div className="mb-30px">
-          <h5 className="text-sm !text-left my-4 md:text-15px lg:text-base text-secondary-color 
-          bg-highlight !bg-pink-500 capitalize mb-15px py-1px px-5 
-          rounded-full inline-block font-semibold">
-            <span className="leading-1.3 py-3">Just Closed</span>
-          </h5>
+        <span className="my-4 inline-flex float-left rounded-full bg-red-50 px-2 py-1 text-xs font-medium text-pink-700 ring-1 ring-inset ring-red-600/10">
+        Just Sold
+      </span>
           <h2 className="text-left text-2xl sm:text-3xl md:text-26px lg:text-3xl xl:text-44px text-heading-color font-bold mb-15px">
             <span className="leading-1.3"> Today's Property Sale</span>
           </h2>
@@ -169,9 +167,9 @@ const PropertiesList = ({properties}) => {
   return loading ? (
     <Spinner />
   ) : (
-    <section className="main-properties mt-[20em] md:mt-[-17em] xl:mt-[-6.5em] px-0 lg:-mt-[12em] min-[439px]:w-[99vw]">
-      <div className="wrap-title-wrap-center xl:mb-4">
-        <h1 className="page-h1 text-custom-gradient font-bold md:text-[55px] ss:text-[45px] text-[33px] slide-animation">
+    <section className="main-properties mt-[20em] md:mt-[-17em] xl:mt-[-12.5em] px-0 lg:-mt-[12em] min-[439px]:w-[99vw]">
+      <div className="wrap-title-wrap-center xl:mb-4 fade-in-from-bottom ">
+        <h1 className="!text-left text-center py-6 text-custom-gradient font-bold slide-animation">
            Real Estate Properties
         </h1>
         <h2 className="text-3xl xl:-mt-2 pb-6 text-gray-600 ">Smart Searches & Data access</h2>

@@ -57,7 +57,7 @@ export default function CustomerReviewsPage() {
         {/* <SectionHeader
           title="Customer Reviews"
           subtitle="Some happy cunstomers"
-            // description="We believe Nordi Living can make the world a much better place by choosing the right houses for the right people."
+            // description="We believe Proxy Realestatecan make the world a much better place by choosing the right houses for the right people."
           /> */}
           <div className="title pt-[-4em] pb-8 sm:pt-0 sm:pb-24 ">
           <h1 className="!text-left text-center ">Customer Reviews</h1>

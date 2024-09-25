@@ -105,7 +105,7 @@ export const SearchBtns = [
     id: "blockchain",
     name: "Blockchain",
     Icon: HiOutlineBuildingLibrary,
-    link: "/properties/search-results?location=&propertyType=blockchain"
+    link: "//blogs/how-blockchain-is-transforming-real-estate-transactions"
   },
   // {
   //   id: "studios",

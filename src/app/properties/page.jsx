@@ -502,7 +502,7 @@ if (filters.size) {
                  
                   className="relative z-10 px-5 md:px-25px lg:px-10 py-10px md:py-3 lg:py-17px group-hover:text-heading-color leading-23px"
                 >
-                 Join Proxy
+                 Join ggggdgd
                 </Link>
               </h5>
             </div>

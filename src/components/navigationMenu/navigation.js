@@ -35,7 +35,7 @@ const components = [
   {
     title: "Market Trends",
     href: "market-trends",
-    href:"/blog/market-trends",
+    href:"/blogs/the-future-of-real-estate-trends-to-watch-in-2024",
     description:
       "View the latest market trends and insights for different real estate sectors.",
   },
@@ -76,9 +76,9 @@ export function NavigationLeft() {
                       className="h-full w-full z-20 object-cover group-data-[state=open]:rotate-180"
                           alt="what-is-blockchain-1.jpeg" 
                          />
-                    <div className="mb-2 mt-4 text-lg font-medium">
+                    <Link href="/about" className="mb-2 mt-4 text-lg font-medium">
                       About Proxy
-                    </div>
+                    </Link>
                     <p className="text-sm leading-tight text-muted-foreground">
                       An elegant real estate solutions use with blockchain technology.
                     </p>
@@ -92,7 +92,7 @@ export function NavigationLeft() {
                 <h4 className="group-hover:p-2 group-hover:rounded-md text-sm text-gray-500 font-normal group-hover:bg-pink-100 ">Meet our team of experienced real estate professionals.</h4>
               </ListItem>
             
-              <ListItem href="/agent-network" title="Agent Network"  className="hover:text-pink-500">
+              <ListItem href="/agents" title="Agent Network"  className="hover:text-pink-500">
                 Learn about our extensive network of in-house real estate agents.
               </ListItem>
               <ListItem href="/contact" title="Contact Us"  className="hover:text-pink-500">
@@ -125,7 +125,7 @@ export function NavigationLeft() {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <Link href="/contact" legacyBehavior passHref>
+          <Link href="/agents" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
               Agents
             </NavigationMenuLink>

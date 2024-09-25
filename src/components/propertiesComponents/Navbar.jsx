@@ -64,10 +64,10 @@ const Navbar = () => {
           <div className='flex flex-1 items-center justify-center md:items-stretch md:justify-start'>
             {/* <!-- Logo --> */}
             <Link className='flex flex-shrink-0 items-center' href='/'>
-              <Image className='h-10 w-auto' src={logo} alt='PropertyPulse' />
+              <Image className='h-10 w-auto' src={logo} alt='Proxy logo' />
 
               <span className='hidden md:block text-white text-xl sm:text-2xl font-bold ml-2'>
-                PropertyPulse
+                Proxy Realestate
               </span>
             </Link>
             {/* <!-- Desktop Menu Hidden below md screens --> */}

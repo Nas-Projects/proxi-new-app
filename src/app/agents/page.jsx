@@ -114,7 +114,7 @@ const staticAgents = [
         <div className="mx-auto max-w-7xl px-6 text-center lg:px-8">
           <h1 className='text-3xl text-orange-100'>{loading ? "Dear User, here are some agents while we're fetching new data for you" : "Available Agents"}</h1>
           <div className="mx-auto max-w-2xl">
-            <h2 className="text-3xl font-bold tracking-tight  sm:text-4xl text-custom-gradient mt-12 ">Meet our team</h2>
+            <h2 className="text-3xl font-bold tracking-tight  sm:text-4xl text-custom-gradient mt-12 !text-white ">Meet our team</h2>
             <p className="mt-4 text-lg leading-8 text-gray-200">We are a dynamic group of individuals who are passionate about what we do.</p>
           </div>
           <ul

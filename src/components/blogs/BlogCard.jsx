@@ -29,11 +29,12 @@ export function BlogCard({ blog }) {
                   )}
                 >
                   <Image
-                    fill
-                    src={blog.image.src}
+                   width={300}
+                   height={300}
+                   src={blog.image.src}
                     alt=""
                     sizes="(min-width: 640px) 36rem, 22rem"
-                    className="absolute inset-0 h-full w-full object-cover"
+                    className="inset-0 h-full min-w-[330px] w-full object-cover"
                     priority
                     optimized={'true'}
                     // width={300}
@@ -112,7 +113,7 @@ export function BlogCard({ blog }) {
                 <div className="section-content relative mx-4 -mt-0  px-2 lg:px-4 xl:px-6">
                   <p
                     className={clsx([
-                      'blog_list_card_tag mx-auto flex o max-w-7xl',
+                      'blog_list_card_tag mx-auto flex o max-w-7xl text-slate-200',
                       blog.theme && blog.theme.text,
                       blog.theme ? blog.theme.tagStyle : 'px-2 py-1',
                       'blog_list_card_tag',
@@ -128,7 +129,7 @@ export function BlogCard({ blog }) {
                   <p className="typography-news-copy text-left  pt-4 text-slate-400 dark:text-slate-300/50">
                     {blog.description}
                   </p>
-                  <p className="read-time blue-3 text-left  mt-4">
+                  <p className="read-time text-pink-500 text-left  mt-4">
                     {blog.readTime} mins read
                   </p>
                 </div>

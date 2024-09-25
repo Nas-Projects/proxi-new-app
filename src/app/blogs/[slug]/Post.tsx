@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { LinkIcon } from "lucide-react";
@@ -18,6 +18,7 @@ import { extractTextFromPortableTextBlock, slugify } from "../../../utils/text";
 import { TryInboxZero } from "../components/TryInboxZero";
 import { ReadMore } from "../components/ReadMore";
 import { formatDate } from "@/lib/formatDate";
+import { getSocialIcon } from "@/components/SocialIcons";
 
 const builder = imageUrlBuilder(sanityClient);
 
@@ -55,15 +56,15 @@ export function Post({ post }: { post: PostType }) {
       
   return (
     <BlogLayout>
-      <article className="mx-auto grid w-full max-w-screen-xl xl:max-w-[85vw] gap-5 px-0 pt-2 md:pt-4 xl:pt-6 md:grid-cols-4 md:pt-24 lg:gap-4 lg:px-20">
+      <article className="mx-auto grid w-full max-w-screen-xl min-[1100px]:max-w-[98vw]  gap-5 px-0 pt-2 md:pt-4 xl:pt-6 md:grid-cols-4 md:pt-24 lg:gap-4 lg:px-20">
         <main className="md:col-span-3">
           <Card>
             <CardContent className="p-10">
               <Prose>
             <section className="ContributionPageHeader_root__AtBMO shared_sectionContainer2___zZ0P shared_container2__iZo6U shared_container1__yecs8 shared_sectionContainerPadding2__wvg1y">
                 <div className="ContributionPageHeader_headerInfo__u6Wz0">
-                    <h1 className="ContributionPageHeader_pageTitle__R5EDY shared_header3__shUgs shared_header__67AqL">
-                    How to Create a Sitemap when using Next.js
+                    <h1 className="ContributionPageHeader_pageTitle__R5EDY shared_header3__shUgs shared_header__67AqL text-left">
+                    {post.title}
                     </h1>
                 </div>
                 <div className="HelpTicketPage_headerMeta__R5ZUy shared_text3__MQrA6 shared_fg3__NXgMk gap-x-4">
@@ -192,50 +193,46 @@ export function Post({ post }: { post: PostType }) {
               <TryInboxZero />
             </div>
 
-            <Card className="mb-4">
-              <CardContent className="pt-6">
-                <h3 className="mb-2 text-base font-semibold">Written by</h3>
-                <div className="flex items-center">
+            <Card className="mb-4 mt-4 lg:w-[21vw]">
+             <CardContent className="mt-2 ">
+                <h3 className="mb-1 !text-[20px] font-semibold pt-4 text-gray-600 ">Written by</h3>
+                  <div className="flex items-center">
                   {post.authorImage && (
                     <Image
                       src={builder
                         .image(post.authorImage)
-                        .width(40)
-                        .height(40)
+                        .width(60)
+                        .height(60)
                         .url()}
                       alt={post.authorName ?? ""}
-                      className="mr-3 h-10 w-10 rounded-full"
-                      width={40}
-                      height={40}
+                      className="mr-3 h-10 w-10 rounded-full -mt-24"
+                      width={60}
+                      height={60}
                     />
                   )}
-                  <div>
-                    <p className="font-medium">{post.authorName}</p>
-                    {post.authorTwitter && (
-                      <Link
-                        href={`https://twitter.com/${post.authorTwitter}`}
-                        className="text-sm text-gray-500"
-                        target="_blank"
-                      >
-                        @{post.authorTwitter}
-                      </Link>
-                    )}
-                     {post.author.socialLinks &&  post.author.socialLinks.map((link) => {
-                        return   <Link
-                                    href={`https://twitter.com/${post.authorTwitter}`}
-                                    className="text-sm text-gray-500"
-                                    target="_blank"
-                                    >
-                                    @{post.authorTwitter}
-                                    </Link>
-                     })
-                    }
-                     
-                      
-                    
+             <div className="pt-0">
+                <p className="font-medium">{post.authorName}</p>
+                  <div className="block">
+                    <p className="text-slate-600">{post.author.bio.trim()}</p>  
+                  <div className="inline-flex mt-2">
+                     {post.author.socialLinks.map((link, index) => {
+                        console.log("SOPCIAL LINKS", link)
+                        return <div className="rounded-full">
+                         {link.url ? ( // Ensure there's a valid URL
+                             <Link key={index} href={link.url} target="_blank" rel="noopener noreferrer">
+                             {getSocialIcon(link.platform)} {/* Get the corresponding icon */}
+                             </Link>
+                         ) : null} 
+                           </div>
+                        })
+                      } 
+                  
                   </div>
                 </div>
-              </CardContent>
+             </div>
+          </div>
+         </CardContent>
+         
             </Card>
 
             {post.body && (
@@ -248,36 +245,42 @@ export function Post({ post }: { post: PostType }) {
        
           </div>
         </aside>
-        <CardContent className="pt-6 lg:hidden">
-           <div className="flex items-center">
+        <CardContent className="-mt-2 lg:hidden">
+           <div className="flex items-center mt-[-2em]">
                   {post.authorImage && (
                     <Image
                       src={builder
                         .image(post.authorImage)
-                        .width(40)
-                        .height(40)
+                        .width(60)
+                        .height(60)
                         .url()}
                       alt={post.authorName ?? ""}
-                      className="mr-3 h-10 w-10 rounded-full"
-                      width={40}
-                      height={40}
+                      className="mr-3 h-10 w-10 rounded-full -mt-8"
+                      width={60}
+                      height={60}
                     />
                   )}
-                  <div>
-                  <p className="font-medium">{post.authorName}</p>
-                    {post.authorTwitter && (
-                      <div className="lg:hidden">
-                      <Link
-                        href={`https://twitter.com/${post.authorTwitter}`}
-                        className="text-sm text-gray-500"
-                        target="_blank"
-                      >
-                        @{post.authorTwitter}
-                      </Link>
-                        </div>
-                    )}
+             <div className="pt-6">
+                <p className="font-medium">{post.authorName}</p>
+                  <div className="block">
+                    <p className="text-slate-500">{post.author.bio}</p>  
+                  <div className="inline-flex mt-2">
+                  {post.author.socialLinks.map((link, index) => {
+                        console.log("SOPCIAL LINKS", link)
+                        return <div className="rounded-full">
+                         {link.url ? ( // Ensure there's a valid URL
+                             <Link key={index} href={link.url} target="_blank" rel="noopener noreferrer">
+                             {getSocialIcon(link.platform)} {/* Get the corresponding icon */}
+                             </Link>
+                         ) : null} 
+                           </div>
+                        })
+                      } 
+                  
                   </div>
                 </div>
+             </div>
+          </div>
          </CardContent>
       </article>
     </BlogLayout>

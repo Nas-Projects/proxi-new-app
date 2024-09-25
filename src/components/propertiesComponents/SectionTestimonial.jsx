@@ -74,9 +74,9 @@ export default function SectionTestimonial() {
       <p className="paragraph-big">
       At Proxy, we are committed to transforming lives by matching the perfect homes with the ideal tenants.
       </p>
-      <div className="group cta-link-wrap py-4 xm:py-8 lg:py-12 ">
-        <a href="#" className=" cta blue-link w-inline-block bg-custom-gradient">
-          <div className="group-hover:!text-white">Why Nordi Living</div>
+      <div className="group cta-link-wrap py-4 xm:py-8 lg:py-12  !max-w-3xl">
+        <a href="#" className="!text-white  cta blue-link w-inline-block bg-custom-gradient">
+          <div className="group-hover:!text-white">Why Proxy Realestate</div>
           <img
             src="https://cdn.prod.website-files.com/63c93770199def60f97204e0/63c93770199defcec7720558_CTA%20Icon.svg"
             loading="lazy"

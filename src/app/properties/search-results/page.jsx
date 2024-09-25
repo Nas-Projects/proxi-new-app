@@ -72,7 +72,7 @@ const SearchResultsPage = () => {
             >
               <FaArrowAltCircleLeft className='mr-2 mb-1  h-8 w-8 hover:text-custom-gradient  ' /> Back To Properties
             </Link>
-            <h1 className='text-xl sm:text-2xl mb-4 lg:text-4xl mainText inline-flex gap-x-4'> <span className="text-slate-400"> {location &&  <span> - {location} </span> } </span>  {propertyType && <span className="text-custom-gradient"> {propertyType}<span className='text-custom-gradient pr-3'>&apos;s</span></span>} Search Results</h1>
+            <h1 className='text-xl sm:text-2xl mb-4 lg:text-5xl mainText inline-flex gap-x-4'> <span className="text-slate-400"> {location &&  <span> - {location} </span> } </span>  {propertyType && <span className="text-custom-gradient"> {propertyType}<span className='text-custom-gradient pr-3'></span></span>}  Results</h1>
             {properties.length === 0 ? (
               <p className='lg:text-3xl text-slate-600 '>No search results found  for 
                <div className=" inline-flex pl-2">

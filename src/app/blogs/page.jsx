@@ -76,7 +76,7 @@ export default function BlogsPage() {
   }
 
   return (
-    <section className="main-container px-0 bg-black !max-w-full">
+    <section className="main-container px-0 bg-black !max-w-full min-h-[50vh]">
       <Head>
         <title>Blogs - Proxy Realestate</title>
         <meta
@@ -85,7 +85,7 @@ export default function BlogsPage() {
         />
       </Head>
 
-      <div className="">
+      <div className="py-24">
         <div className="blog-list ">
           <div className="w-full lg:py-20 lg:px-24 xl:px-[5vw]">
             <div

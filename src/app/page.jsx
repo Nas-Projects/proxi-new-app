@@ -24,28 +24,26 @@ const Home = ({heroDetails}) => {
   return (
     <div className="relative w-full">
 
-        <Hero 
-        //  heroDetails={heroDetails}
+        <Hero   //  heroDetails={heroDetails}
           />
 
-            <div className="mx-auto lg:px-[10%] absolute absolute top-[69vh] lg:top-[68vh] lg:mx-auto md:top-[70vh] xl:top-[72vh] z-20">
-            <SearchButtons />
-            </div>
-            <ProperTiesForSale/>
-            <AboutProxy/>
-            <PropertiesList />
-            <FeaturedListings />
-            <SectionBlockChain/>
-            <OurValues/>
-            {/* <OurFocus/> */}
-            <SectionTestimonial/>
-            <div className="section buy-service">
-  <div className="main-container large w-container">
-    <div
+          <div className="mx-auto lg:px-[10%] absolute absolute top-[69vh] lg:top-[68vh] lg:mx-auto md:top-[70vh] xl:top-[67vh] z-20">
+          <SearchButtons />
+          </div>
+          <ProperTiesForSale/>
+          <AboutProxy/>
+          <PropertiesList />
+          {/* <FeaturedListings /> */}
+          <SectionBlockChain/>
+          <OurValues/> 
+          {/* <OurFocus/> */}
+          <SectionTestimonial/>
+   <div className="section buy-service">
+       <div className="main-container large w-container">
+      <div
       data-w-id="b613acd8-a7a8-18c7-bb65-e5559fefd061"
       className="buy-service-wrap"
-      style={{ opacity: 1 }}
-    >
+      style={{ opacity: 1 }}>
       <div className="buy-service-left bg-custom-gradient">
         <div className="block ">
           <h2 className='!text-white'>Proxy landlord & brokers' service</h2>
@@ -150,7 +148,7 @@ const Home = ({heroDetails}) => {
                   className="image"
                 />
               </div>
-              <p>You'll get free NordiLiving merch</p>
+              <p>You'll get free Proxy Realestate merch</p>
             </div>
           </div>
         </div>

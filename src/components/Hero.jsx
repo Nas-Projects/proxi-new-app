@@ -2,63 +2,75 @@ import Link from "next/link";
 import HeroSearchForm from "./propertiesComponents/HeroSearchForm";
 
 export default function Hero() {
-    return   <div className="hero hero-primary overflow-hidden relative z-0">
-   
+    return(<div className="hero hero-primary overflow-hidden relative z-0 bg-white">
+        <img src="/beams-basic.png" alt="" class="absolute left-1/2 top-0 -ml-[39rem] w-[113.125rem] max-w-none"></img>
     <div className="hero-slider-container swiper-container relative">
       <div className="primary-slider home-3 swiper-fade swiper-initialized swiper-horizontal swiper-watch-progress swiper-backface-hidden">
         <div
-          className="swiper-wrapper"
-          id="swiper-wrapper-510e237465d3af044"
+          // className="swiper-wrapper"
+          // id="swiper-wrapper-510e237465d3af044"
           aria-live="polite"
         >
           {/* Hero  1 */}
-          <div   className="swiper-slide relative z-0 pt-[6vh]  md:pt-24 pb-100px 
+          {/* <div   className="swiper-slide relative z-0 pt-[6vh]  md:pt-24 pb-100px 
             4xl:h-screen 4xl:min-h-[800px] overflow-hidden flex flex-col 
             justify-center bg-cover bg-center bg-no-repeat swiper-slide-visible 
-            swiper-slide-fully-visible swiper-slide-active"
-            style={{
-              width: '100%',
-              opacity: 1,
-              transform: "translate3d(0px, 0px, 0px)"
-            }}
+            swiper-slide-fully-visible swiper-slide-active" */}
+         <div   className="swiper-slide relative z-0 pt-[6vh]  md:pt-24 pb-100px 
+            4xl:h-screen 4xl:min-h-[800px] overflow-hidden flex flex-col 
+            justify-center bg-cover bg-center bg-no-repeat swiper-slide-active"
+            // style={{
+            //   width: '100%',
+            //   opacity: 1,
+            //   transform: "translate3d(0px, 0px, 0px)"
+            // }}
             role="group"
             aria-label="1 / 3"
             data-swiper-slide-index={0}
           >
-            <div className="absolute top-0 left-0 w-full h-full  z-0" />
+           <div className="absolute top-0 left-0 w-full h-full  z-0" />
            
-           <div className="flex-block lg:grid  grid-cols-2">
+           <div className="xl:mt-12 flex-block lg:grid  grid-cols-2 group">
             <div className="container w-full relative z-xl !text-left">
               <div className="-mt-[24">
-               <div className="slide-animation flex flex-col justify-center xl:mx-3 px-6 lg:px-10  ">
+              {/* <div className="slide-animation flex flex-col justify-center xl:mx-3 px:px-2 md:px-6 lg:px-10  "> */}
+              {/* fade-in-from-bottom  */}
+               <div className="flex flex-col justify-center xl:mx-3 px:px-2 md:px-6 lg:px-10  ">
                 <div className="logo-agnecy ml-10 !text-left">
                    <h1 className="text-custom-gradient 
-                    md:text-[82px] ss:text-[70px] text-[52px] md:leading-[90px] fade-in-from-bottom 
+                    md:text-[82px] ss:text-[70px] text-[52px] md:leading-[90px]
                     ss:leading-[70px] leading-[55px] mb-4 font-black
                     tracking-tight !text-left">
                     PROXY 
                     </h1>
-                  <p className="mainText -mt-5 font-bold  text-sm md:text-15px lg:text-base 
+                  <p className="mainText mt-[-0.9em] pl-[0.1em]  lg:mt-[-1.6em] lg:pl-[0.3em] font-bold  text-[20px] md:text-15px lg:text-base 
                     xl:text-xl font-bold mb-5 text-white animated font-bold">
                     <i className="fas fa-home" />
                     Real Estate Agency
-                </p>
+                 </p>
                 </div>
              
-              <div className="px-4 py-12 lg:py-6 rounded-xl -mt-10">
-                <div className="max-w-3xl mx-4">
-                  <h1 class="text-black md:text-[82px] ss:text-[70px] text-[52px] 
-                  md:leading-[90px] fade-in-from-bottom ss:leading-[70px] 
-                  leading-[55px] maintext tracking-tight">
-                     <span className="">
+              <div className="group px-4 lg:px-6 py-12 lg:py-6  xl:pt-[5vh] rounded-xl -mt-10  fade-in-from-bottom">
+                <div className="max-w-3xl mx-4 leading-[54px] group-hover:text-pink-500">
+                  <h1 class="!text-left text-black md:text-[82px] lg:ss:text-[70px] lg:text-[52px] 
+                   lg:ss:leading-[70px] leading-[55px] maintext tracking-tight group-hover:text-pink-500">
+                     <span className="text-slate-600">
                         <br class="ss:flex hidden"/>Reinventing</span> 
                         <br/>
-                     <br class="ss:flex hidden"/><span className="text-slate-600">real estate<span className='text-slate-600'> business.</span></span></h1>
-                      <div className="slogan-cta pt-4">
-                       <h1 className="mt-4 text-2xl md:text-40px lg:text-50px 4xl:text-65px leading-30px md:leading-10 
-                           lg:leading-50px 4xl:leading-65px font-bold mb-5 animated"> <span className="leading-30px md:leading-10 lg:leading-50px 
+                     <br class="ss:flex hidden"/>
+                     <span className="text-slate-600">
+                          real estate
+                      <span className='text-slate-600 max-[500px]:pl-4'> 
+                        business.
+                      </span>
+                     </span>
+                   </h1>
+                  <div className="slogan-cta pt-4 group-hover:text-pink-500">
+                    <h1 className="mt-4 text-2xl md:text-40px lg:text-50px 4xl:text-65px leading-30px md:leading-10 
+                        lg:leading-50px 4xl:leading-65px font-bold mb-5 animated"> 
+                      <span className="text-2xl lg:leading-30px md:leading-10 lg:leading-50px 
                               xl:text-4xl text-gay-300">
-                            Find Your Dream
+                              Find Your Dream
                             <br />
                         </span>
                     </h1>
@@ -68,7 +80,7 @@ export default function Hero() {
                         sed do eiusmod tempor incididunt ut labore.
                      </span>
                     </p>
-          <div id="HERO-CTA-BUTTONS" className="lg:-mt-12  py-4 lg:py-12 z-20 ">
+                <div id="HERO-CTA-BUTTONS" className="lg:-mt-12  py-4 lg:py-12  ">
                     <div className="!flex grid-cols-2 gap-x-4 ">
                     <Link href="/properties">
                 
@@ -109,7 +121,7 @@ export default function Hero() {
                 
                 </div>
               </div>
-                 <div className="mx-4  mt-10 lg:mt-0 search-right  max-w-[95vw] container w-full relative z-xl">
+               <div className="mx-4  mt-10 lg:mt-0 search-right  max-w-[95vw] container w-full relative z-xl fade-in-from-bottom">
                   <HeroSearchForm/>
                 </div>
             </div>
@@ -166,6 +178,6 @@ export default function Hero() {
         />
       </div>
     </div>
-  </div>
+  </div>)
 
 }

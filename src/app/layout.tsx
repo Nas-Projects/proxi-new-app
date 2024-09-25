@@ -59,13 +59,13 @@ export default function RootLayout({
   return (
     <html lang="en">
 
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased !min-h-[100vh]`}>
       <SessionContextProvider supabaseClient={supabaseClient}>
          <Navbar />
         {children} 
       <FooterNew/>
       <Footer/>
-       </SessionContextProvider>
+     </SessionContextProvider>
       </body>
      
     </html>
