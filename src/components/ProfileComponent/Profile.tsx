@@ -12,7 +12,7 @@ XIcon
 // import TextareaAutosize from 'react-textarea-autosize';
 import { Link } from 'lucide-react';
  import BlurImage from '@/components/blur-image';
-import { getGradient } from '../../lib/gradients';
+import { getGradient } from '@/lib/gradients';
 // import { MDXRemote } from 'next-mdx-remote';
 import Profiletabs from './Profiletabs';
 import TabsDemo from '@/components/tabs/TabsDemo';
