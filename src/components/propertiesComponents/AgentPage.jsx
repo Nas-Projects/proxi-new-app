@@ -247,63 +247,11 @@ export const AgentProfileCard = ({agent}) => {
           <CheckInCircleIcon className="w-6 h-6 text-[#0070F3]" />
         )}
       </div>
-      {/* {agent?.verified ? (
-    
-        <div className="mt-6 inline-flex 
-          justify-stretch space-x-4  sm:space-y-0 sm:space-x-4">
-             <div className='space-x-2'>  
-              <Link  href="/_blank" className="inline-flex justify-center px-4
-                py-2 border border-gray-800 hover:border-sky-400 shadow-sm text-sm 
-                font-medium rounded-md text-white font-mono
-                 focus:outline-none focus:ring-0 transition-all">
-                  <InstagramLogoIcon  className="fill-white h-5 w-5 mr-2 lg:mr-3"/>
-                  <h2 className='text-white !text-sm mb-0'>Intagram Profile</h2>
-                </Link>
-               </div>
-
-               <div>   
-                <Link
-                  href={`https://github.com/${agent?.username}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex justify-center px-4 py-2 
-                  border border-gray-800 hover:border-white 
-                  shadow-sm text-sm font-medium rounded-md text-white font-mono focus:outline-none
-                   focus:ring-0 transition-all"
-                >
-                  <GitHubIcon className="mr-3 h-5 w-5 !text-white fill-white storke-white mr-2 lg:mr-3" />
-                  <h2 className='text-white !text-sm mb-0'>View GitHub Profile</h2>
-                </Link> 
-                 </div>
-             </div>  
-          
-              
-         
      
-        ) : ( 
-          <div className="mt-6 flex flex-col justify-stretch space-y-3 sm:flex-row sm:space-y-0 sm:space-x-4">
-            <Link
-              href="https://github.com/vercel/mongodb-starter"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex justify-center px-4 py-2 border border-gray-800 hover:border-white shadow-sm text-sm font-medium rounded-md text-white font-mono bg-black focus:outline-none focus:ring-0 transition-all"
-            >
-              <GitHubIcon className="mr-3 h-5 w-5 text-white" />
-              <span className="text-white flex">{agent.license}</span>
-            </Link>
-          </div>
-        )} */}
     </div>
   </div>
 </div>
 
-        {/* <div id="background-image" className='bg-pink-400 '>
-                   <img class="h-32 w-32 rounded-full border-4 border-white dark:border-gray-800 mx-auto my-4"
-              src="https://randomuser.me/api/portraits/women/21.jpg" alt=""/>
-        </div> */}
-
-
- 
           <div class="py-2 md:pt-6">
               <h1 class="font-bold text-2xl text-gray-800 text-white/80 dark:text-white mb-1">Realestate Agent</h1>
               <div class="inline-flex text-gray-200 dark:text-gray-700 dark:text-gray-300 items-center">
