@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "npm run build",
+    "build": "next build",  
     "lint": "next lint"
   },
   "browserslist": "defaults, not ie <= 11",
