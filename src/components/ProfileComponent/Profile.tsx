@@ -62,7 +62,7 @@ export default function Profile({
   console.log("DYNAMIC_PROFILE_SESSION", user.username === session?.user?.username)
   return ( <div className="min-h-screen pb-20">
         <div>
-            <div
+           <div
               className={`h-48 w-full lg:h-64 
               ${getGradient(user.username || user?.name)}`}
             />

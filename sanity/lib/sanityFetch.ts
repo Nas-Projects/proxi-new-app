@@ -40,3 +40,5 @@ console.log(`sanity_fetch query: ${query}`);
       },
     });
 }
+
+

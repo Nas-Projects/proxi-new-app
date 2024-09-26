@@ -13,6 +13,16 @@ import {
   XMarkIcon,
 } from '@heroicons/react/24/outline'
 
+import Link from 'next/link';
+import { TryInboxZero } from '@/components/TryInboxZero';
+import { Card, CardContent } from '@/components/ui/card';
+import { GitHubIcon } from '../SocialIcons';
+import { CheckInCircleIcon } from '../nassersIcons';
+import { getGradient } from '@/lib/gradients';
+import BlurImage from '../blur-image';
+import { InstagramLogoIcon } from '@radix-ui/react-icons';
+import AgentsTabs from "@/components/AgentsTabs.jsx"
+import clsx from 'clsx';
 const navigation = [
   { name: 'Dashboard', href: '/dashboard', icon: HomeIcon, current: true },
   { name: 'Team', href: '/teams', icon: UsersIcon, current: false },
@@ -30,25 +40,19 @@ const teams = [
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
+export const profileWidth = 'max-w-5xl mx-auto px-4 sm:px-6 lg:px-8';
 
-export default function AgentPage() {
+export default function AgentPage({agent}) {
+  console.log("AGENT_AgentPage Passed down:", agent);
   const [sidebarOpen, setSidebarOpen] = useState(false)
 
   return (
-    <>
-      {/*
-        This example requires updating your template:
-
-        ```
-        <html class="h-full bg-white">
-        <body class="h-full">
-        ```
-      */}
+    <div id="AGENT_PAGE" className='justify-center content-center w-full min-h-screen pb-44'>
       <div>
-        <Dialog open={sidebarOpen} onClose={setSidebarOpen} className="relative z-50 lg:hidden">
+        <Dialog open={sidebarOpen} onClose={setSidebarOpen} className="relative z-50 !hidden  lg:hidden">
           <DialogBackdrop
             transition
-            className="fixed inset-0 bg-gray-900/80 transition-opacity duration-300 ease-linear data-[closed]:opacity-0"
+            className="inline-flex bg-gray-900/80 transition-opacity duration-300 ease-linear data-[closed]:opacity-0"
           />
 
           <div className="fixed inset-0 flex">
@@ -138,95 +142,36 @@ export default function AgentPage() {
           </div>
         </Dialog>
 
-        {/* Static sidebar for desktop */}
-        <div className="hidden lg:sticky lg:inset-y-0 -ml-1 lg:top-[3.9em]  lg:h-[99vh] lg:z-50 lg:flex lg:w-72 lg:flex-col">
-          {/* Sidebar component, swap this element with another sidebar if you like */}
-          <div className="flex grow flex-col gap-y-5 overflow-y-auto border-r border-gray-200 bg-white px-6">
-            <div className="flex h-16 shrink-0 items-center">
-              {/* <img
-                alt="Your Company"
-                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                className="h-8 w-auto"
-              /> */}
-            </div>
-            <nav className="flex flex-1 flex-col">
-              <ul role="list" className="flex flex-1 flex-col gap-y-7">
-                <li>
-                  <ul role="list" className="-mx-2 space-y-1">
-                    {navigation.map((item) => (
-                      <li key={item.name}>
-                        <a
-                          href={item.href}
-                          className={classNames(
-                            item.current
-                              ? 'bg-gray-50 text-custom-gradient-secondary'
-                              : 'text-gray-700 hover:bg-gray-50 hover:text-custom-gradient-secondary',
-                            'group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6',
-                          )}
-                        >
-                          <item.icon
-                            aria-hidden="true"
-                            className={classNames(
-                              item.current ? 'text-pink-500' : 'text-gray-400 group-hover:text-custom-gradient-secondary',
-                              'h-6 w-6 shrink-0',
-                            )}
-                          />
-                          {item.name}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </li>
-                <li>
-                  <div className="text-xs font-semibold leading-6 text-gray-400">Your teams</div>
-                  <ul role="list" className="-mx-2 mt-2 space-y-1">
-                    {teams.map((team) => (
-                      <li key={team.name}>
-                        <a
-                          href={team.href}
-                          className={classNames(
-                            team.current
-                              ? 'bg-gray-50 text-custom-gradient-secondary'
-                              : 'text-gray-700 hover:bg-gray-50 hover:text-custom-gradient-secondary',
-                            'group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6',
-                          )}
-                        >
-                          <span
-                            className={classNames(
-                              team.current
-                                ? 'border-indigo-600 text-custom-gradient-secondary'
-                                : 'border-gray-200 text-gray-400 group-hover:border-indigo-600 group-hover:text-custom-gradient-secondary',
-                              'flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border bg-white text-[0.625rem] font-medium',
-                            )}
-                          >
-                            {team.initial}
-                          </span>
-                          <span className="truncate">{team.name}</span>
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </li>
-                <li className="-mx-6 mt-auto">
-                  <a
-                    href="#"
-                    className="flex items-center gap-x-4 px-6 py-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-50"
-                  >
-                    <img
-                      alt=""
-                      src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                      className="h-8 w-8 rounded-full bg-gray-50"
-                    />
-                    <span className="sr-only">Your profile</span>
-                    <span aria-hidden="true">Tom Cook</span>
-                  </a>
-                </li>
-              </ul>
-            </nav>
-          </div>
+     
+        {/* lg:pl-72 xl:pr-96 inline-flex*/}
+        <main className="justify-center content-center sm:-mt-4 lg:px-24 xl:px-34  min-[1500px]:px-44  gap-x-4">
+       
+        {/* -------LEFT BAR BEGIN ------- */}
+      
+         <div className=" lg:relative  lg:flex-col">
+         
+        <AgentProfileCard agent={agent} /> 
         </div>
+        <aside className="!hidden md:relative block w-96 overflow-y-auto border-l border-gray-200 px-4 py-6 sm:px-6 lg:px-8 xl:block">
+        {/* <aside className="hidden md:block xl:ml-6"> */}
+          <div className="sticky top-20">
+            <div className="mb-4">
+              <TryInboxZero />
+            </div>
 
-        <div className="sticky top-0 z-40 flex items-center gap-x-6 bg-white px-4 py-4 shadow-sm sm:px-6 lg:hidden">
+            {agent?.role && (
+              <Card>
+                <CardContent className="pt-6">
+                    Email Me
+                  {/* <TableOfContents body={post.content} /> */}
+                </CardContent>
+              </Card>
+            )}
+       
+          </div>
+        {/* </aside> */}
+        </aside>   
+        {/* <div className="hidden sticky top-0 z-40 flex items-center gap-x-6 bg-white px-4 py-4 shadow-sm sm:px-6 lg:hidden">
           <button type="button" onClick={() => setSidebarOpen(true)} className="-m-2.5 p-2.5 text-gray-700 lg:hidden">
             <span className="sr-only">Open sidebar</span>
             <Bars3Icon aria-hidden="true" className="h-6 w-6" />
@@ -240,18 +185,194 @@ export default function AgentPage() {
               className="h-8 w-8 rounded-full bg-gray-50"
             />
           </a>
-        </div>
+        </div> */}
+        
+{/* 
+        -------LEFT BAR END ------- */}
+ 
 
-        <main className="lg:pl-72">
-          <div className="xl:pr-96">
-            <div className="px-4 py-10 sm:px-6 lg:px-8 lg:py-6">{/* Main area */}</div>
-          </div>
+      
         </main>
 
-        <aside className="fixed inset-y-0 right-0 hidden w-96 overflow-y-auto border-l border-gray-200 px-4 py-6 sm:px-6 lg:px-8 xl:block">
-          {/* Secondary column (hidden on smaller screens) */}
-        </aside>
       </div>
-    </>
+    </div>
   )
+}
+
+
+
+
+
+export const AgentProfileCard = ({agent}) => {
+  return          <div className="">
+  <div className="sm:pr-4 py-0 sm:px-6 lg:pr-8 pb-24">
+       {/* <!-- Card start --> */}
+  <div class="max-[600px]:min-w-[90vw] sm:w-3xl lg:min-w-[384px] lg:max-w-[30vw] xl:min-w-[37vw] mx-auto dark:bg-gray-900 rounded-lg overflow-hidden shadow-sm hover:shadow-lg">
+  <div class="border-b px-4 pb-6">
+   <div class="text-center my-4">
+       {/* ----Profile --Header */}
+       <div>
+ <div
+    className={`h-48 w-full lg:h-64 
+    ${getGradient(agent.username || agent?.name)}`}
+  />
+  <div
+    className={`${profileWidth} -mt-12 sm:-mt-16 sm:flex sm:items-end sm:space-x-5`}
+  >
+    <div className="relative group h-24 w-24 rounded-full overflow-hidden sm:h-32 sm:w-32">
+      {/* {settingsPage && (
+        <button
+          className="absolute bg-gray-800 bg-opacity-50 hover:bg-opacity-70 w-full h-full z-10 transition-all flex items-center justify-center"
+          onClick={() =>
+            alert('Image upload has been disabled for demo purposes.')
+          }
+        >
+          <UploadIcon className="h-6 w-6 text-white" />
+        </button>
+      )} */}
+      <BlurImage
+        src={agent?.image?.asset?.url ? agent.image.asset.url : 'https://randomuser.me/api/portraits/women/21.jpg'}
+        alt={agent?.name}
+        width={300}
+        height={300}
+      />
+    </div>
+    <div className="mt-6 sm:flex-1 sm:min-w-0 sm:flex sm:items-center 
+                     sm:justify-end sm:space-x-6 sm:pb-1 gap-x-4">
+      <div className="flex min-w-0 flex-1 items-center space-x-2 mt-[-2em]">
+        <h3 className="font-bold text-2xl text-gray-800 text-white dark:text-white mb-1  truncate">
+          {agent?.name  ? agent.name : agent.username}
+        </h3>
+        {!agent?.verified && (
+          <CheckInCircleIcon className="w-6 h-6 text-[#0070F3]" />
+        )}
+      </div>
+      {/* {agent?.verified ? (
+    
+        <div className="mt-6 inline-flex 
+          justify-stretch space-x-4  sm:space-y-0 sm:space-x-4">
+             <div className='space-x-2'>  
+              <Link  href="/_blank" className="inline-flex justify-center px-4
+                py-2 border border-gray-800 hover:border-sky-400 shadow-sm text-sm 
+                font-medium rounded-md text-white font-mono
+                 focus:outline-none focus:ring-0 transition-all">
+                  <InstagramLogoIcon  className="fill-white h-5 w-5 mr-2 lg:mr-3"/>
+                  <h2 className='text-white !text-sm mb-0'>Intagram Profile</h2>
+                </Link>
+               </div>
+
+               <div>   
+                <Link
+                  href={`https://github.com/${agent?.username}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex justify-center px-4 py-2 
+                  border border-gray-800 hover:border-white 
+                  shadow-sm text-sm font-medium rounded-md text-white font-mono focus:outline-none
+                   focus:ring-0 transition-all"
+                >
+                  <GitHubIcon className="mr-3 h-5 w-5 !text-white fill-white storke-white mr-2 lg:mr-3" />
+                  <h2 className='text-white !text-sm mb-0'>View GitHub Profile</h2>
+                </Link> 
+                 </div>
+             </div>  
+          
+              
+         
+     
+        ) : ( 
+          <div className="mt-6 flex flex-col justify-stretch space-y-3 sm:flex-row sm:space-y-0 sm:space-x-4">
+            <Link
+              href="https://github.com/vercel/mongodb-starter"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex justify-center px-4 py-2 border border-gray-800 hover:border-white shadow-sm text-sm font-medium rounded-md text-white font-mono bg-black focus:outline-none focus:ring-0 transition-all"
+            >
+              <GitHubIcon className="mr-3 h-5 w-5 text-white" />
+              <span className="text-white flex">{agent.license}</span>
+            </Link>
+          </div>
+        )} */}
+    </div>
+  </div>
+</div>
+
+        {/* <div id="background-image" className='bg-pink-400 '>
+                   <img class="h-32 w-32 rounded-full border-4 border-white dark:border-gray-800 mx-auto my-4"
+              src="https://randomuser.me/api/portraits/women/21.jpg" alt=""/>
+        </div> */}
+
+
+ 
+          <div class="py-2 md:pt-6">
+              <h1 class="font-bold text-2xl text-gray-800 text-white/80 dark:text-white mb-1">Realestate Agent</h1>
+              <div class="inline-flex text-gray-200 dark:text-gray-700 dark:text-gray-300 items-center">
+                  <svg class="h-5 w-5 text-gray-400 dark:text-gray-600 mr-1" fill="currentColor"
+                      xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                      <path class="" d="M5.64 16.36a9 9 0 1 1 12.72 0l-5.65 5.66a1 1 0 0 1-1.42 0l-5.65-5.66zm11.31-1.41a7 7 0 1 0-9.9 0L12 19.9l4.95-4.95zM12 14a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm0-2a2 2 0 1 0 0-4 2 2 0 0 0 0 4z" />
+                  </svg>
+                  New York, NY
+              </div>
+          </div>
+      </div>
+      {/* <FollowMessageButtons /> */}
+      <div className="flex gap-2 px-2 gap-x-4 md:gap-x-5 md:gap-x-6">
+          <button
+              class="flex-1  max-w-[9em] ] rounded-full bg-blue-600 dark:bg-blue-800 text-white dark:text-white antialiased font-bold hover:bg-blue-800 dark:hover:bg-blue-900 px-4 py-2">
+              Follow
+          </button>  
+        
+          <Link  href={clsx(`mailto:${agent.email}?subject=Inquiry about property&body=Hello, I would like to inquire about..."`)}>
+                <button className="bg-white flex-1 rounded-full  dark:bg-blue-800 text-black
+                 dark:text-white antialiased font-bold 
+                hover:bg-custom-gradient hover:text-white dark:hover:border-sky-200 px-4 py-2">
+                  Message
+                </button>
+            
+          </Link> 
+         <button className="fflex-1 bg-white text-black rounded-full border-2 border-gray-400 dark:border-gray-700 font-semibold text-black dark:text-white px-4 py-2">
+          <Link href={clsx(`tel:+1-${agent.phone}`)}>    
+                 Call
+          </Link>
+         </button>
+      </div>
+  </div>
+  <div class="px-4 py-4">
+      <div class="flex gap-2 items-center text-gray-200 dark:text-gray-300 mb-4">
+          <svg class="h-6 w-6 text-gray-200 dark:text-gray-400" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+              <path class=""
+                  d="M12 12a5 5 0 1 1 0-10 5 5 0 0 1 0 10zm0-2a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm9 11a1 1 0 0 1-2 0v-2a3 3 0 0 0-3-3H8a3 3 0 0 0-3 3v2a1 1 0 0 1-2 0v-2a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v2z" />
+          </svg>
+          <span><strong class="text-slate-200 dark:text-white">12</strong> Followers you know</span>
+      </div>
+      <div class="flex">
+          <div class="flex justify-end mr-2">
+              <img class="border-2 border-white dark:border-gray-800 rounded-full h-10 w-10 -mr-2"
+                  src="https://randomuser.me/api/portraits/men/32.jpg" alt=""/>
+              <img class="border-2 border-white dark:border-gray-800 rounded-full h-10 w-10 -mr-2"
+                  src="https://randomuser.me/api/portraits/women/31.jpg" alt=""/>
+              <img class="border-2 border-white dark:border-gray-800 rounded-full h-10 w-10 -mr-2"
+                  src="https://randomuser.me/api/portraits/men/33.jpg" alt=""/>
+              <img class="border-2 border-white dark:border-gray-800 rounded-full h-10 w-10 -mr-2"
+                  src="https://randomuser.me/api/portraits/women/32.jpg" alt=""/>
+              <img class="border-2 border-white dark:border-gray-800 rounded-full h-10 w-10 -mr-2"
+                  src="https://randomuser.me/api/portraits/men/44.jpg" alt=""/>
+              <img class="border-2 border-white dark:border-gray-800 rounded-full h-10 w-10 -mr-2"
+                  src="https://randomuser.me/api/portraits/women/42.jpg" alt=""/>
+              <span
+                  class="flex items-center justify-center bg-white dark:bg-gray-800 text-sm text-gray-100 dark:text-white font-semibold border-2 border-gray-200 dark:border-gray-700 rounded-full h-10 w-10">
+                  +999
+              </span>
+          </div>
+      </div>
+  </div>
+  <div id="agent-tabs">
+  <AgentsTabs/>
+  </div>
+</div>
+{/* <!-- Card end --> */}
+
+</div>
+</div>
 }

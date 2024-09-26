@@ -58,3 +58,24 @@ export const postSlugsQuery = groq`*[_type == "post"] {
   "slug": slug.current,
   date
 }`;
+
+
+
+
+// Get a single agent by ID
+export const agentByIdQuery = groq`
+*[_type == "agent" && _id == $id][0] {
+  _id,
+  name,
+  email,
+  phone,
+  image {
+    asset -> { url }
+  },
+  bio,
+  socials[]-> {
+    platform,
+    url
+  }
+}
+`;

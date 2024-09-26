@@ -235,10 +235,10 @@ export function Post({ post }: { post: PostType }) {
          
             </Card>
 
-            {post.body && (
+            {post.content && (
               <Card>
                 <CardContent className="pt-6">
-                  <TableOfContents body={post.body} />
+                  <TableOfContents body={post.content} />
                 </CardContent>
               </Card>
             )}
