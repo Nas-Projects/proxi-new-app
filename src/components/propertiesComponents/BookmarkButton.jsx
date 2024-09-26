@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
 import { FaBookmark } from 'react-icons/fa';
-import { useUser, useSession } from '@supabase/auth-helpers-react';
+import {useSession } from '@supabase/auth-helpers-react';
 import { extractSessionUserInfo } from '@/utils/extractSessionUserInfo';
 
 const BookmarkButton = ({ property }) => {

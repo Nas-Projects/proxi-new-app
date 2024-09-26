@@ -13,7 +13,7 @@ export const RecentSale = () => {
         Just Sold
       </span>
           <h2 className="text-left text-2xl sm:text-3xl md:text-26px lg:text-3xl xl:text-44px text-heading-color font-bold mb-15px">
-            <span className="leading-1.3"> Today's Property Sale</span>
+            <span className="leading-1.3"> Today&apos;s Property Sale</span>
           </h2>
           <p className="text-sm lg:text-base max-w-500px lg:text-left my-4 pr-6">
             Proxy allow you to design unlimited panels and real estate custom
@@ -102,8 +102,8 @@ export const RecentSale = () => {
 
 
 // Arrays for Locations, Property Types, and Sizes
-const locations = ["New York", "Los Angeles", "Austin", "Phoenix", "San Francisco", "Miami", "Lost Angeles", "Chicago", "Houston", "Phoenix","Seattle", "Miami", "Denver", "Boston",  "Brooklyn", "Queens"];
-const propertyTypes = [
+export const locations = ["New York", "Los Angeles", "Austin", "Phoenix", "San Francisco", "Miami", "Lost Angeles", "Chicago", "Houston", "Phoenix","Seattle", "Miami", "Denver", "Boston",  "Brooklyn", "Queens"];
+export const propertyTypes = [
   "Residential",
   "Commercial",
   "Industrial",
@@ -125,12 +125,12 @@ const propertyTypes = [
   "Townhouse",
   "Cottage Or Cabin",
 ];
-const sizes = ["< 1000 sqft", "1000-2000 sqft", "2000-3000 sqft", "3000+ sqft"];
+export const sizes = ["< 1000 sqft", "1000-2000 sqft", "2000-3000 sqft", "3000+ sqft"];
 
 
 
 
-const PropertiesList = ({properties}) => {
+const PropertiesList = ({}) => {
   const [propertiesToMap, setProperties] = useState([]);
   const [loading, setLoading] = useState(true);
   
@@ -186,7 +186,7 @@ const PropertiesList = ({properties}) => {
               ) : (
                 <div className="grid min-[400px]:grid-cols-1 min-[600px]:grid-cols-2 gap-6 sm:grid-col-2 min-[600px]:grid-cols-2  md:gap-x-8 min-[920px]:grid-cols-3 gap-x-8 lg:grid-cols-3 min-[1511px]:grid-cols-4 xl:gap-x-10 bg-white ">
                   {propertiesToMap.map((property) => (
-                    <PropertiesListCard key={property.id} property={property} />
+                    <PropertiesListCard key={property.id} property={property} totsl={totalItems}/>
                   ))}
                 </div>
               )}

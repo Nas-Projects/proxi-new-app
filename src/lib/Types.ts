@@ -1,5 +1,3 @@
-// types.ts
-
 import mongoose from 'mongoose';
 
 // Existing types
@@ -35,10 +33,14 @@ export type UserFlags = {
   canList: boolean;
 };
 
+export type PaymentDetails = {
+  [key: string]: string; // Define the key-value pair for payment details
+};
+
 export type Payment = {
   id: string;
   method: string;
-  details: Map<string, string>;
+  details: PaymentDetails;
   createdAt: Date;
 };
 
@@ -46,7 +48,6 @@ export type Payment = {
 export type UserRole = 'Admin' | 'Agent' | 'Broker' | 'Lawyer' | 'Owner' | 'Prospect' | 'Other';
 
 export type UserProfileMongoDBWithExtras = {
-  // Existing fields
   savedPosts: UserPost[];
   likes: UserLike[];
   comments: UserComment[];
@@ -61,7 +62,6 @@ export type UserProfileMongoDBWithExtras = {
   createdAt?: Date;
   updatedAt?: Date;
   posts?: mongoose.Types.ObjectId[] | UserPost[]; // Reference to Post model
-  // New fields from the updated user model
   badges?: IBadge[];
   emailVerified: boolean;
   isBlockchainBased: boolean;
@@ -74,20 +74,10 @@ export type UserProfileMongoDBWithExtras = {
   groupOwnedProperties?: mongoose.Types.ObjectId[] | null; // Array of Property ObjectIds
   userRole: UserRole;
   role: string; // e.g., 'authenticated' or 'unauthenticated'
-
-  // Additional fields if any
-  [key: string]: any; // For any other unspecified fields
+  [key: string]: unknown; // For any other unspecified fields
 };
 
 // Badge interface
-export interface IBadge {
-  name: string;
-  description?: string;
-  earnedAt?: Date;
-}
-
-
-// Define Badge interface
 export interface IBadge {
   name: string;
   description?: string;

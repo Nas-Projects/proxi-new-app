@@ -81,7 +81,7 @@ export const AuthorIconAndName = ({
 }) => {
   const imgStyle = valueStyleMap[imageKind] ?? 'rounded'
   const imgSize = valueKindMap[size] ?? 'small'
-  const { name, proffession } = author
+  const { name } = author
   // const h = {
   //   small: 10,
   // }

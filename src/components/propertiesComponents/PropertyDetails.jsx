@@ -1,7 +1,7 @@
 import {
-  FaBed,
-  FaBath,
-  FaRulerCombined,
+  // FaBed,
+  // FaBath,
+  // FaRulerCombined,
   FaTimes,
   FaCheck,
   FaMapMarker,

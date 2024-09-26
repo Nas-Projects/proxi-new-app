@@ -1,20 +1,18 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useCallback } from 'react'
 
 export function useWindowDimensions() {
   const hasWindow = typeof window !== 'undefined'
 
-  function getWindowDimensions() {
+  const getWindowDimensions = useCallback(() => {
     const width = hasWindow ? window.innerWidth : null
     const height = hasWindow ? window.innerHeight : null
     return {
       width,
       height,
     }
-  }
+  }, [hasWindow])
 
-  const [windowDimensions, setWindowDimensions] = useState(
-    getWindowDimensions()
-  )
+  const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions())
 
   useEffect(() => {
     if (hasWindow) {

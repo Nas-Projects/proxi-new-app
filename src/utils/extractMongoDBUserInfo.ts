@@ -1,6 +1,8 @@
-// utils/extractMongoDBUserInfo.ts
-
-import { Document } from 'mongoose';
+interface Flags {
+  canSell: boolean;
+  canRent: boolean;
+  canList: boolean;
+}
 
 interface UserInfo {
   userId: string;
@@ -17,31 +19,23 @@ interface UserInfo {
   realEstateLicense?: string;
   lawyerLicense?: string;
   walletAddress?: string | null;
-  flags: {
-    canSell: boolean;
-    canRent: boolean;
-    canList: boolean;
-  };
+  flags: Flags;
   userRole: string;
   role: string;
   supabaseUserId?: string;
   googleUserId?: string;
-  // Add other fields as needed
 }
 
 export function extractMongoDBUserInfo(
-  user: any // You can replace 'any' with a more specific type if available
+  user: Partial<UserInfo> | null
 ): UserInfo | null {
   if (!user) {
     return null;
   }
 
-  // Convert MongoDB ObjectId to string
   const userId = user._id?.toString() || '';
   const email = user.email || '';
   const role = user.role || 'unauthenticated';
-
-  // Extract fields or provide defaults
   const name = user.first_name || user.name || email;
   const username = user.username || '';
   const bio = user.bio || '';
@@ -86,6 +80,5 @@ export function extractMongoDBUserInfo(
     role,
     supabaseUserId,
     googleUserId,
-    // Include other properties as needed
   };
 }

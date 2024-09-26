@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function OtherProperties({properties}) {
+export default function OtherProperties({}) {
     return <div className="mb-44 main-container w-container">
     <div className="house-button-wrap">
       <h4 className="no-margin ">Other properties</h4>

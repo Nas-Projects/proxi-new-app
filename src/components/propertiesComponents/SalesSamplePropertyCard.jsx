@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const SalesSamplePropertyCard = ({ property }) => (
     <Link className="property" href={`properties/${property._id}`}>
       <img
@@ -31,3 +33,5 @@ const SalesSamplePropertyCard = ({ property }) => (
     </Link>
   );
   
+
+  export default SalesSamplePropertyCard

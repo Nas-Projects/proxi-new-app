@@ -1,5 +1,4 @@
 
-import connectDB from '../config/database'; // Your database connection
 
 export const getPropertiesByType = async (type) => {
   let query = {};

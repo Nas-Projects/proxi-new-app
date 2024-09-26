@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react"; // Import the 'React' module
 
-const ProductTabs = ({ execution = [], equipments }) => {
+const ProductTabs = ({ execution = [] }) => {
   const [accordionItems, setAccordionItems] = useState([]);
 
   useEffect(() => {

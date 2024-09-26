@@ -1,14 +1,12 @@
 'use client';
-import styles from './NewPropertyContactForm.module.css'; // Import the CSS module
 
 import { useState, useEffect } from 'react';
 import { FaPaperPlane } from 'react-icons/fa';
 import { toast } from 'react-toastify';
-import { useSession, useUser } from '@supabase/auth-helpers-react';
-import { extractSubabaseUserInfo } from '@/utils/extractSubabaseUserInfo'; // Adjust the path as necessary
+import { useSession } from '@supabase/auth-helpers-react';
+// import { extractSubabaseUserInfo } from '@/utils/extractSubabaseUserInfo'; // Adjust the path as necessary
 import { extractSessionUserInfo } from '@/utils/extractSessionUserInfo';
 import clsx from 'clsx';
-import { Lasso } from 'lucide-react';
 
 const PropertyContactForm = ({ property }) => {
 
@@ -21,7 +19,7 @@ const PropertyContactForm = ({ property }) => {
     const session = useSession();
     const userSession = extractSessionUserInfo(session);
   
-    const [userName, setName] = useState('');
+    // const [userName, setName] = useState('');
     const [firstName, setFirstName] = useState(''); // Updated to use a consistent name
     const [lastName, setLastName] = useState('');
     const [userEmail, setEmail] = useState('');
@@ -36,33 +34,33 @@ const PropertyContactForm = ({ property }) => {
         setEmail(userSession.email || '');
         setPhone(userSession.phone || '');   
 
-        const { 
-          accessToken,
-          tokenType,
-          expiresIn,
-          expiresAt,
-          refreshToken,
+        // const { 
+        //   accessToken,
+        //   tokenType,
+        //   expiresIn,
+        //   expiresAt,
+        //   refreshToken,
           
-          // User-level data
-          userId,
-          aud,
-          role,
-          email = '', // Default to empty string if email is not available
-          emailConfirmedAt,
-          phone = '', // Default to empty string if phone is not available
-          confirmedAt,
-          lastSignInAt,
-          createdAt,
-          updatedAt,
-          isAnonymous,
+        //   // User-level data
+        //   userId,
+        //   aud,
+        //   role,
+        //   email = '', // Default to empty string if email is not available
+        //   emailConfirmedAt,
+        //   phone = '', // Default to empty string if phone is not available
+        //   confirmedAt,
+        //   lastSignInAt,
+        //   createdAt,
+        //   updatedAt,
+        //   isAnonymous,
           
-          // Metadata
-          appMetadata,
-          userMetadata,
+        //   // Metadata
+        //   appMetadata,
+        //   userMetadata,
           
-          // Identities
-          identities 
-        } = userSession  // Fallback to an empty object if userSession is null
+        //   // Identities
+        //   identities 
+        // } = userSession  // Fallback to an empty object if userSession is null
         
 
       

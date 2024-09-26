@@ -1,20 +1,20 @@
 'use client';
 
-import clsx from 'clsx';
-import Hero11 from '../../public/assets/11.jpeg'
-import hero12 from '../../public/assets/12.jpeg'
-import hero13 from '../../public/assets/13.jpeg'
+// import clsx from 'clsx';
+// import Hero11 from '../../public/assets/11.jpeg'
+// import hero12 from '../../public/assets/12.jpeg'
+// import hero13 from '../../public/assets/13.jpeg'
 import SearchButtons from '@/components/SearchButtons';
 import AboutProxy from '@/components/AboutProxy';
 import PropertiesList from '@/components/propertiesComponents/PropertiesList';
 import OurValues from '@/components/propertiesComponents/OurValues';
-import OurFocus from '@/components/propertiesComponents/OurFocus';
+// import OurFocus from '@/components/propertiesComponents/OurFocus';
 import SectionContact from '@/components/propertiesComponents/SectionContact';
 import SectionBlockChain from '@/components/propertiesComponents/SectionBlockChain';
 import SectionJoin from '@/components/propertiesComponents/SectionJoin';
 import SectionTestimonial from '@/components/propertiesComponents/SectionTestimonial';
 import SectionOurTeams from '@/components/propertiesComponents/SectionOurTeams';
-import FeaturedListings from '@/components/propertiesComponents/FeaturedListings';
+// import FeaturedListings from '@/components/propertiesComponents/FeaturedListings';
 import ProperTiesForSale from '@/components/propertiesComponents/ProperTiesForSale';
 import Hero from '@/components/Hero';
 import Link from 'next/link';

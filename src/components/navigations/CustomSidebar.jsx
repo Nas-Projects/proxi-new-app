@@ -3,20 +3,20 @@
 import { Fragment, useEffect, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 
-import { useRef } from 'react'
+// import { useRef } from 'react'
 
 import Link from 'next/link'
-import { GotoItem, RegularButton } from '../GotoItem'
-import clsx from 'clsx'
+// import { GotoItem, RegularButton } from '../GotoItem'
+// import clsx from 'clsx'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 
 
-import { OmariAvatar, OmariMasterIcon } from '../OmariMasterIcon'
+// import { OmariAvatar, OmariMasterIcon } from '../OmariMasterIcon'
 
-import { urlFor } from "@/sanity/lib/image.js";
+// import { urlFor } from "@/sanity/lib/image.js";
 import {
-  Bars3Icon,
-  BellIcon,
+  // Bars3Icon,
+  // BellIcon,
   CalendarIcon,
   ChartPieIcon,
   Cog6ToothIcon,
@@ -78,43 +78,43 @@ export default function CustomSidebar({  }) {
 
 
 
-  const [tabs, setTabs] = useState(tabsPanel)
-  const [isLiked, setIsLiked] = useState([{ id: 1, liked: true }])
-  const [currentTab, setCurrent] = useState('Women')
+  // const [tabs, setTabs] = useState(tabsPanel)
+  // const [isLiked, setIsLiked] = useState([{ id: 1, liked: true }])
+  // const [currentTab, setCurrent] = useState('Women')
   // const [allDiets, setAllDiets] = useState(all)
   // const [men, setMenDiets] = useState(menExercises)
   // const [women, setWomen] = useState(womenExercises)
 
-  function setCurrentTab(tabName) {
-    console.log('TAB NAME', tabName)
-    const tabsState = [...tabs].map((tab) => {
-      tab.current = false
-      if (tab.name == tabName) {
-        tab.current = true
-        setCurrent(tabName)
-        console.log('TabNAMe', tabName)
-        // let completedtask = tasks[task.id].taskCompleted === true
-        // setCompletedTasks([...completedTasks], completedtask)
-      }
+  // function setCurrentTab(tabName) {
+  //   console.log('TAB NAME', tabName)
+  //   const tabsState = [...tabs].map((tab) => {
+  //     tab.current = false
+  //     if (tab.name == tabName) {
+  //       tab.current = true
+  //       setCurrent(tabName)
+  //       console.log('TabNAMe', tabName)
+  //       // let completedtask = tasks[task.id].taskCompleted === true
+  //       // setCompletedTasks([...completedTasks], completedtask)
+  //     }
 
-      return tab
-    })
+  //     return tab
+  //   })
 
-    console.log('updatedTasks', tabsState)
-    setTabs(tabsState)
-  }
+  //   console.log('updatedTasks', tabsState)
+  //   setTabs(tabsState)
+  // }
 
   const [sidebarOpen, setSidebarOpen] = useState(true)
-  const sectAboutRef = useRef(null)
-  const sectAboutMeRef = useRef(null)
-  const podcastsRef = useRef(null)
-  const sectProjectRef = useRef(null)
-  const blogsRef = useRef(null)
-  const learnCode = useRef(null)
-  const contactRef = useRef(null)
-  const podcastRef = useRef(null)
-  const socialsRef = useRef(null)
-  const githubRef = useRef(null)
+  // const sectAboutRef = useRef(null)
+  // const sectAboutMeRef = useRef(null)
+  // const podcastsRef = useRef(null)
+  // const sectProjectRef = useRef(null)
+  // const blogsRef = useRef(null)
+  // const learnCode = useRef(null)
+  // const contactRef = useRef(null)
+  // const podcastRef = useRef(null)
+  // const socialsRef = useRef(null)
+  // const githubRef = useRef(null)
 
   return (
     <>

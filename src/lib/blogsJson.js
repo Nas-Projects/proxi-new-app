@@ -3,10 +3,9 @@ import resolutions from '@/images/blogsImages/resolution_keep.png'
 import office from '@/images/blogsImages/office.png'
 import work from '@/images/blogsImages/work_space.png'
 import author from '../../public/assets/ryan_user_profile.png'
-import BlackNewYorkers from '@/images/blogsImages/black-New-yorkers.webp'
+
 import { ChatBubbleIcon } from '@/components/icons/ChatBubbleIcon'
 import build from '@/images/blogsImages/social_blog_1.jpeg'
-import unlock from '@/images/blogsImages/social_blog_2.jpeg'
 import protect from '@/images/blogsImages/social_blog_3.jpeg'
 import meetTheMan from '@/images/blogsImages/meetTheMan.jpeg'
 

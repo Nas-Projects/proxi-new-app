@@ -1,16 +1,16 @@
 import Head from 'next/head'
 
-import { Card } from '@/components/Card'
-import { Section } from '@/components/Section'
-import { SimpleLayout } from '@/components/SimpleLayout'
+// import { Card } from '@/components/Card'
+// import { Section } from '@/components/Section'
+// import { SimpleLayout } from '@/components/SimpleLayout'
 import { getItems } from '@/lib/getItems'
 
 // import { Galery } from '@/components/Gallery'
-import Link from 'next/link'
+// import Link from 'next/link'
 // import { Title } from '@/components/Title'
-// import { DirectorCredentials } from '@/components/DirectorCredentials'
-import { Container } from '@/components/Container'
-import Image from 'next/image'
+// // import { DirectorCredentials } from '@/components/DirectorCredentials'
+// import { Container } from '@/components/Container'
+// import Image from 'next/image'
 import Page from '@/components/Page'
 import { findFeatured } from '@/lib/findFeatured'
 const people = [
@@ -55,7 +55,7 @@ export default function Fitness({ fitness, featured }) {
               About the team
             </h2>
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              We’re a dynamic group of individuals who are passionate about what
+              We&apos;re a dynamic group of individuals who are passionate about what
               we do and dedicated to delivering the best results for our
               clients.
             </p>

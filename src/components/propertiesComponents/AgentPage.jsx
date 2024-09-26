@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { Dialog, DialogBackdrop, DialogPanel, TransitionChild } from '@headlessui/react'
 import {
-  Bars3Icon,
+  // Bars3Icon,
   CalendarIcon,
   ChartPieIcon,
   DocumentDuplicateIcon,
@@ -16,11 +16,11 @@ import {
 import Link from 'next/link';
 import { TryInboxZero } from '@/components/TryInboxZero';
 import { Card, CardContent } from '@/components/ui/card';
-import { GitHubIcon } from '../SocialIcons';
+// import { GitHubIcon } from '../SocialIcons';
 import { CheckInCircleIcon } from '../nassersIcons';
 import { getGradient } from '@/lib/gradients';
 import BlurImage from '../blur-image';
-import { InstagramLogoIcon } from '@radix-ui/react-icons';
+// import { InstagramLogoIcon } from '@radix-ui/react-icons';
 import AgentsTabs from "@/components/AgentsTabs.jsx"
 import clsx from 'clsx';
 const navigation = [

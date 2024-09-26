@@ -2,7 +2,6 @@
 
 import connectDB from '../config/database';
 console.log("Fetching_properties for category:")
-import connectDB from '../config/database';
 
 export const GET = async (request, { params }) => {
   const { category } = params;

@@ -1,7 +1,6 @@
 import { Text, clx } from "@medusajs/ui";
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 
-// @ts-nocheck
 type AccordionItemProps = {
   title: string;
   subtitle?: string;
@@ -9,8 +8,7 @@ type AccordionItemProps = {
   type?: string;
   className?: string;
   required?: boolean;
-  benefits?: Array<any>;
-  equipments?: Array<any>;
+  benefits?: Array<{ isOpen?: boolean; ifo: string }>; // Added a specific type for benefits array
   tooltip?: string;
   forceMountContent?: true;
   headingSize?: "small" | "medium" | "large";
@@ -34,30 +32,22 @@ const Accordion: React.FC<AccordionProps> & {
 
 const Item: React.FC<AccordionItemProps> = ({
   title,
-  subtitle,
-  type,
   description,
   children,
   className,
-  benefits,
-  equipments,
+  benefits = [], // Set a default empty array for benefits
   headingSize = "large",
-  customTrigger = undefined,
-  forceMountContent = undefined,
+  customTrigger,
+  forceMountContent,
   triggerable,
   ...props
 }) => {
   const [accordionItem, setAccordionItem] = useState(
-    benefits?.map((item) => ({ isOpen: false, ...item })) || []
+    benefits.map((item) => ({ isOpen: false, ...item }))
   );
   const [isOpen, setIsOpen] = useState(true);
 
-  const handleToggle = () => {
-    alert('Toggle toggle ' + (isOpen ? 'OPEN' : 'CLOSED'));
-    setIsOpen(!isOpen);
-  };
-
-  const handleAccordionItem = (index) => {
+  const handleAccordionItem = useCallback((index: number) => {
     setAccordionItem((prevFaqs) =>
       prevFaqs.map((faq, i) => {
         if (i === index) {
@@ -67,16 +57,13 @@ const Item: React.FC<AccordionItemProps> = ({
         }
       })
     );
-  };
-
-  console.log("PRODUCT", benefits);
+  }, []);
 
   return (
     <div
       {...props}
       className={clx(
-        "border-grey-20 group border-t last:mb-0 last:border-b",
-        "py-3",
+        "border-grey-20 group border-t last:mb-0 last:border-b py-3",
         className
       )}
     >
@@ -90,7 +77,7 @@ const Item: React.FC<AccordionItemProps> = ({
               <div key={index} className="p-4 border rounded">
                 <h4
                   className={`flex items-center justify-between cursor-pointer ${
-                    item.isOpen ? 'text-green-400 font-medium transition-transform motion-reduce:transform-none' : ''
+                    item.isOpen ? 'text-green-400 font-medium transition-transform' : ''
                   }`}
                   onClick={() => handleAccordionItem(index)}
                 >
@@ -114,10 +101,10 @@ const Item: React.FC<AccordionItemProps> = ({
                 {item.isOpen && (
                   <div
                     className={clx(
-                      "radix-state-closed:animate-accordion-close radix-state-open:animate-accordion-open radix-state-closed:pointer-events-none px-1"
+                      "radix-state-closed:animate-accordion-close radix-state-open:animate-accordion-open px-1"
                     )}
                   >
-                    <div className="inter-base-regular group-radix-state-closed:animate-accordion-close">
+                    <div className="inter-base-regular">
                       {description && <Text>{description}</Text>}
                       <div className="w-full">{children}</div>
                     </div>

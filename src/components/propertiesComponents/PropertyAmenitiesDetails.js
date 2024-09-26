@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styles from './PropertyNeighborhoodDetails.module.css'; // Import the CSS module
 import clsx from 'clsx';
-const amenitiesData = [
+export const amenitiesData = [
   {
     src: 'https://cdn.prod.website-files.com/63c93770199def60f97204e0/63c93770199def62e8720573_lightbulb-flash-line.svg',
     alt: 'Low energy consumption',
@@ -54,7 +54,7 @@ const amenitiesData = [
   },
 ];
 
-const amenitiesDataForForm = [
+export const  amenitiesDataForForm = [
   {
     src: 'https://cdn.prod.website-files.com/63c93770199def60f97204e0/63c93770199def62e8720573_lightbulb-flash-line.svg',
     alt: 'Low energy consumption',
@@ -107,7 +107,7 @@ const amenitiesDataForForm = [
   },
 
 ];
-const amenities = [
+export const amenities = [
   "Wifi",
   "Full kitchen",
   "Washer & Dryer",

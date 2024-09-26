@@ -1,4 +1,4 @@
-import mongoose, { models, Schema, model } from 'mongoose';
+import  { models, Schema, model } from 'mongoose';
 
 const LikeSchema = new Schema({
   contentId: { 

@@ -1,4 +1,4 @@
-import PropertyAddForm from '../../../components/ProfileComponents/PropertyAddForm';
+import PropertyAddForm from '@/components/propertiesComponents/PropertyAddForm';
 
 const PropertyAddPage = () => {
   return (

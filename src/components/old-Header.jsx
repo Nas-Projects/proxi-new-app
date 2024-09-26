@@ -1,12 +1,12 @@
 import { Fragment, useEffect, useRef } from 'react'
-import Image from 'next/image'
+// import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { Popover, Transition } from '@headlessui/react'
 import clsx from 'clsx'
 
 import { Container } from '@/components/Container'
-import avatarImage from '@/images/avatar.jpg'
+// import avatarImage from '@/images/avatar.jpg'
 import { Logo } from './Logoi'
 
 function CloseIcon(props) {
@@ -38,7 +38,7 @@ function ChevronDownIcon(props) {
   )
 }
 
-function SunIcon(props) {
+export function SunIcon(props) {
   return (
     <svg
       viewBox="0 0 24 24"
@@ -57,7 +57,7 @@ function SunIcon(props) {
   )
 }
 
-function MoonIcon(props) {
+export function MoonIcon(props) {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
       <path

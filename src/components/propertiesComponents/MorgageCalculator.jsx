@@ -3,9 +3,9 @@ import styles from './PropertyNeighborhoodDetails.module.css'; //
 export default function MortgageCalculator() {
   const [contribution, setContribution] = useState('');
   const [ownContribution, setOwnContribution] = useState('');
-  const [totalMortgageCost, setTotalMortgageCost] = useState(741000); // Example cost
-  const [mortgageRate, setMortgageRate] = useState(3.99); // Example rate
-  const [buyingCosts, setBuyingCosts] = useState(5450); // Example buying costs
+  const [totalMortgageCost, setTotalMortgageCost] = useState(); // Example cost
+  const [mortgageRate, setMortgageRate] = useState(); // Example rate
+  const [buyingCosts, setBuyingCosts] = useState(); // Example buying costs
   const [monthlyPayment, setMonthlyPayment] = useState(null);
   const [isOpen, setIsOpen] = useState(true); // State to track dropdown
 
@@ -15,7 +15,9 @@ export default function MortgageCalculator() {
     const contributionNum = parseFloat(contribution) || 0;
     const ownContributionNum = parseFloat(ownContribution) || 0;
     const mortgageAmount = totalMortgageCost - ownContributionNum - contributionNum;
-
+    setTotalMortgageCost(741000)
+    setMortgageRate(3.99)
+    setBuyingCosts(5450)
     const monthlyInterestRate = mortgageRate / 100 / 12;
     const numberOfPayments = 30 * 12; // Assuming a 30-year mortgage
 

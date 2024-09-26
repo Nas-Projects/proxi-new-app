@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-import { Fragment, useEffect, useId, useRef, useState } from 'react'
+import { Fragment, useEffect, useRef, useState } from 'react'
 
 import { Tab } from '@headlessui/react'
 import clsx from 'clsx'
@@ -41,10 +41,10 @@ export function Carousel({ className, imageRatio, images }) {
     console.log('next')
   }
 
-  const prevSlide = () => {
-    setCurrentSlide(currentSlide === 0 ? slideLength - 1 : currentSlide - 1)
-    console.log('prev')
-  }
+  // const prevSlide = () => {
+  //   setCurrentSlide(currentSlide === 0 ? slideLength - 1 : currentSlide - 1)
+  //   console.log('prev')
+  // }
   function auto() {
     slideInterval = setInterval(nextSlide, intervalTime)
   }
@@ -139,7 +139,7 @@ export function Carousel({ className, imageRatio, images }) {
   )
 }
 
-const headerAnimation = {
+export const headerAnimation = {
   initial: { opacity: 0, transition: { duration: 0.3 } },
   animate: { opacity: 1, transition: { duration: 0.3, delay: 0.3 } },
   exit: { opacity: 0, transition: { duration: 0.3 } },
@@ -162,7 +162,7 @@ const bodyVariantForwards = (custom) => ({
   transition: { duration: 0.4 },
 })
 
-const bodyAnimation = {
+export const bodyAnimation = {
   initial: 'initial',
   animate: 'animate',
   exit: 'exit',
@@ -233,7 +233,7 @@ export function PhoneFrame({
         className="pointer-events-none absolute inset-0 h-full w-full"
         unoptimized
         // priority={priority}
-        priority
+        priority={priority}
       />
     </div>
   )
@@ -267,10 +267,10 @@ export function ContentSlider({ texts }) {
     console.log('next')
   }
 
-  const prevSlide = () => {
-    setCurrentSlide(currentSlide === 0 ? slideLength - 1 : currentSlide - 1)
-    console.log('prev')
-  }
+  // const prevSlide = () => {
+  //   setCurrentSlide(currentSlide === 0 ? slideLength - 1 : currentSlide - 1)
+  //   console.log('prev')
+  // }
   function auto() {
     slideInterval = setInterval(nextSlide, intervalTime)
   }

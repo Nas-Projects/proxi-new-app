@@ -3,8 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "postinstall": "npm install --legacy-peer-deps --force",
     "dev": "next dev",
-    "build": "next build",
+    "build": "npm install --legacy-peer-deps --force && next build",
     "lint": "next lint"
   },
   "browserslist": "defaults, not ie <= 11",

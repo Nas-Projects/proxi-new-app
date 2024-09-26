@@ -1,6 +1,6 @@
 import mongoose from 'mongoose'; // Import the entire mongoose package
 
-const { Schema, model, models } = mongoose; // Destructure the necessary exports from mongoose
+const { Schema } = mongoose; // Destructure the necessary exports from mongoose
 
 const PropertySchema = new Schema(
   {

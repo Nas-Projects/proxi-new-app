@@ -1,15 +1,15 @@
 'use client'
 
-import SectionWrapper from "../../hoc/SectionWrapper";
+// import SectionWrapper from "../../hoc/SectionWrapper";
 import Link from "next/link";
-import { useState, useEffect } from 'react';
-import Spinner from '@/components/propertiesComponents/Spinner';
-import Pagination from '@/components/propertiesComponents/Pagination';
-import { SelectButton } from '@/components/select/SelectButton';
-import  CardGrid  from '@/components/cards/CardGrid.jsx';
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Button } from "@medusajs/ui";
+// import { useState, useEffect } from 'react';
+// import Spinner from '@/components/propertiesComponents/Spinner';
+// import Pagination from '@/components/propertiesComponents/Pagination';
+// import { SelectButton } from '@/components/select/SelectButton';
+// import  CardGrid  from '@/components/cards/CardGrid.jsx';
+// import { Input } from "@/components/ui/input";
+// import { Label } from "@/components/ui/label";
+// import { Button } from "@medusajs/ui";
 // Reusable PropertyCard component
 const PropertiesListCard = ({ property }) => {
   console.log("PropertyCard", property

@@ -19,13 +19,13 @@ export function ArrowRight({ className, color }) {
   // console.log('Arrow Class: ' + color)
   return (
     <div id="svg-style" className={clsx(className)}>
-      <svg
+      <svg 
         className={clsx(color, 'h-5 w-5 flex-shrink-0 text-gray-500')}
         x-description="Heroicon name: mini/chevron-right"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 20 20"
         fill={clsx(color ? color : 'currentColor')}
-        aria-hidden="true"
+        aria-hidden="true" {...props}
       >
         <path
           fillRule="evenodd"
@@ -36,7 +36,7 @@ export function ArrowRight({ className, color }) {
     </div>
   )
 }
-export function ArrowLeftIcon({ className }, props, color, size) {
+export function ArrowLeftIcon({ className }, size) {
   return (
     <div id="svg-style" className={clsx(className)}>
       <svg
