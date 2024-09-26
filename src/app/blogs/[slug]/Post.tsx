@@ -215,9 +215,9 @@ export function Post({ post }: { post: PostType }) {
                   <div className="block">
                     <p className="text-slate-600">{post.author.bio.trim()}</p>  
                   <div className="inline-flex mt-2">
-                     {post.author.socialLinks.map((link, index) => {
+                     {post.author?.socialLinks && post.author.socialLinks.map((link, index) => {
                         console.log("SOPCIAL LINKS", link)
-                        return <div className="rounded-full">
+                        return <div className="rounded-full" key={index}>
                          {link.url ? ( // Ensure there's a valid URL
                              <Link key={index} href={link.url} target="_blank" rel="noopener noreferrer">
                              {getSocialIcon(link.platform)} {/* Get the corresponding icon */}

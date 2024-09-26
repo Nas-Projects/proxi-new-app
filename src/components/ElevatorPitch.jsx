@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { useEffect, useRef } from "react";
 import { FadeIn, FadeInStagger } from "./FadeIn";
-import elevatorPitch from "../../sanity/schemaTypes/elevatorPitch";
+// import elevatorPitch from "../../sanity/schemaTypes/elevatorPitch";
 // import './your-stylesheet.css';  // Ensure this import is correct
 
 export default function ElevatorPitch({ElevatorPitch}) {

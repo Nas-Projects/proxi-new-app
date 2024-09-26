@@ -1,6 +1,6 @@
 'use client'
 
-import SectionWrapper from "../../hoc/SectionWrapper";
+// import SectionWrapper from "../../hoc/SectionWrapper";
 import Link from "next/link";
 import { useState, useEffect } from 'react';
 import Spinner from '@/components/propertiesComponents/Spinner';

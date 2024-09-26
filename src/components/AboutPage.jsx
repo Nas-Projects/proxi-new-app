@@ -1,13 +1,13 @@
 "use client" 
 
-import Head from 'next/head'
+// import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import clsx from 'clsx'
 import { useEffect, useRef, useState } from "react";
 import { urlFor } from "@/sanity/lib/image.js";
 
-function SocialLink({ className, href, children, icon: Icon }) {
+export function SocialLink({ className, href, children, icon: Icon }) {
   return (
     <li className={clsx(className, 'flex')}>
       <Link
@@ -21,7 +21,7 @@ function SocialLink({ className, href, children, icon: Icon }) {
   )
 }
 
-function MailIcon(props) {
+export function MailIcon(props) {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
       <path

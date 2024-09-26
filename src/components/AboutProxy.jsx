@@ -1,25 +1,25 @@
 'use client';
 import SectionWrapper from "../hoc/SectionWrapper";
 import { motion } from 'framer-motion';
-import { fadeIn, textVariant } from '../utils/motion';
-import { aboutimg } from "../../public/assets";
-import { layout } from "../styles/styles";
-import Image from "next/image";
+import { fadeIn } from '../utils/motion';
+// import { aboutimg } from "../../public/assets";
+// import { layout } from "../styles/styles";
+// import Image from "next/image";
 import {
-  ArrowLeft,
-  BarChart3,
-  Edit3,
+  // ArrowLeft,
+  // BarChart3,
+  // Edit3,
   Globe,
-  Layout,
-  LayoutDashboard,
-  Megaphone,
-  Menu,
+  // Layout,
+  // LayoutDashboard,
+  // Megaphone,
+  // Menu,
   Newspaper,
-  Settings,
-  FileCode,
-  Github,
+  // Settings,
+  // FileCode,
+  // Github,
   Users2Icon,
-  Section
+  // Section
 } from "lucide-react";
 import Link from "next/link";
 
@@ -113,7 +113,9 @@ const AboutProxy = () => {
              </h2>
              <p className="text-sm lg:text-base max-w-500px">
                <span className="text-left leading-1.8 lg:leading-1.8">
-               At PROXY, we are revolutionizing the real estate landscape by blending cutting-edge technology, efficient algorithms, and blockchain solutions. Our is for agents,  owners & clients in.... the rental maram of over 39,000 prof.. than 70 countries.
+               At PROXY, we are revolutionizing the real estate landscape by blending cutting-edge technology,
+                efficient algorithms, and blockchain solutions. Our is for agents, owners & clients in....
+                 the rental maram of over 39,000 prof.. than 70 countries.
                </span>
              </p>
            </div>
@@ -140,8 +142,8 @@ const AboutProxy = () => {
            <div className="mt-12 bg-highlight bg-opacity-5  mb-10">
              <p className="text-sm lg:text-base p-5 border-l-4 border-secondary-color">
                <span className="leading-1.8">
-                 "Enimad minim veniam quis nostrud exercitation <br />
-                 llamco laboris. Lorem ipsum dolor sit amet"
+                 Enimad minim veniam quis nostrud exercitation <br />
+                 llamco laboris. Lorem ipsum dolor sit amet
                </span>
              </p>
            </div>

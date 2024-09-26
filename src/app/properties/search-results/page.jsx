@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { FaArrowAltCircleLeft } from 'react-icons/fa';
-import PropertyCard from '@/components/propertiesComponents/PropertyCard';
+// import PropertyCard from '@/components/propertiesComponents/PropertyCard';
 import PropertyListCard from '@/components/propertiesComponents/PropertiesListCard'
 
 import Spinner from '@/components/propertiesComponents/Spinner';

@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "../globals.css";
-import  CustomSidebar  from "@/components/navigations/CustomSidebar";
-import  SideBar  from "@/components/navigations/SideBar";
+// import  CustomSidebar  from "@/components/navigations/CustomSidebar";
+// import  SideBar  from "@/components/navigations/SideBar";
 import ProfileLayout from "@/components/ProfileComponent/ProfileLayout";
 
 const geistSans = localFont({

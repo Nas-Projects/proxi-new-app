@@ -23,7 +23,7 @@ export default function Example() {
               <p className="text-base font-semibold leading-8 text-pink-600">404</p>
               <h1 className="mt-4 text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl">Page work in process</h1>
               <p className="mt-6 text-base leading-7 text-gray-600">
-                Sorry, we couldn’t find the page you’re looking for.
+                Sorry, we couldn&apos;t find the page you&apos;re looking for.
               </p>
               <div className="mt-10">
                 <Link href="/" className="text-sm font-semibold leading-7 text-pink-600">

@@ -1,15 +1,16 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
-import newyearresolution1 from '@/images/blogsImages/resolution_keep.png'
+// import newyearresolution1 from '@/images/blogsImages/resolution_keep.png'
 import clsx from 'clsx'
-import { formatDate } from '@/lib/formatDate'
+// import { formatDate } from '@/lib/formatDate'
 
 // import useWindowDimensions from '@/lib/useWindowSize'
 
 export function BlogCard({ blog }) {
   // const { width, height } = useWindowDimensions()
   function BlogCardMobile({ className, ...props }) {
+    console.log(props, className)
     return (
       <div
         id="blog-card-mobile"
@@ -97,7 +98,8 @@ export function BlogCard({ blog }) {
       </div>
     )
   }
-  function BlogCarDesktop({ large = false, className, ...props }) {
+  function BlogCarDesktop({ large = false, className }) {
+    console.log(large,  className)
     return (
       <div
         id="blog-card-desktop"

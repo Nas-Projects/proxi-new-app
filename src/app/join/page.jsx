@@ -1,10 +1,6 @@
 "use client"
 
-import Head from 'next/head'
-import Image from 'next/image'
-import Link from 'next/link'
-import clsx from 'clsx'
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 // import fetchAboutPage from '../../api/fetchAboutPage.ts'
 import JoinUsComponent from '@/components/JoinUsComponent'
 

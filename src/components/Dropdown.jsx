@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { Fragment } from 'react'
 
 export default function Dropdown({ text, content }) {
+  console.log('Content', content)
   const solutions = [
     {
       name: 'Insights',

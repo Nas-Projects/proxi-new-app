@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef} from 'react';
 import Image from 'next/image';
 import  { urlFor } from "@/sanity/lib/image.js";
 const SlidingImage = ({hero}) => {

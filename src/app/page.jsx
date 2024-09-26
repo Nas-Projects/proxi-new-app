@@ -19,7 +19,7 @@ import ProperTiesForSale from '@/components/propertiesComponents/ProperTiesForSa
 import Hero from '@/components/Hero';
 import Link from 'next/link';
 
-const Home = ({heroDetails}) => {
+const Home = ({}) => {
 
   return (
     <div className="relative w-full">

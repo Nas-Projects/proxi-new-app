@@ -93,6 +93,7 @@ export function CardWithForm() {
 
 
 const TaskForm = ({ userId, showTodoForm, setShowTodoForm  }) => {
+  console.log(showTodoForm, setShowTodoForm )
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [assignedTo, setAssignedTo] = useState('');

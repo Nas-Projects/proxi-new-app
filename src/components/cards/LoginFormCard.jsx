@@ -110,7 +110,7 @@ className="mt-2 ring-offset-background focus-visible:outline-none focus-visible:
   <div className="flex flex-col space-y-1.5 p-6">
     <h3 className="font-semibold leading-none tracking-tight">Password</h3>
     <p className="text-sm text-muted-foreground">
-      Change your password here. After saving, you'll be logged out.
+      Change your password here. After saving, you&apos;ll be logged out.
     </p>
   </div>
   <div className="p-6 pt-0 space-y-2">

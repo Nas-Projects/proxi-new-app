@@ -1,5 +1,5 @@
-import { FaceFrownIcon } from "@heroicons/react/24/outline";
-import { FaFacebook } from "react-icons/fa";
+// import { FaceFrownIcon } from "@heroicons/react/24/outline";
+// import { FaFacebook } from "react-icons/fa";
 
 export function TwitterIcon(props) {
   return (

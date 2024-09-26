@@ -6,11 +6,11 @@ import "./globals.css";
 import  Footer  from '@/components/Footer'
 // import '../styles/tailwind.css'
 import 'focus-visible'
-import { NewHeader } from '../components/NewHeader'
+// import { NewHeader } from '../components/NewHeader'
 import Navbar from "@/components/Navbar";
 import { SessionContextProvider } from '@supabase/auth-helpers-react';
-import supabase from '@/utils/supabase-browser';
-import { useState } from "react";
+// import supabase from '@/utils/supabase-browser';
+// import { useState } from "react";
 import FooterNew from "@/components/FooterNew";
 // import { SessionProvider } from '@supabase/auth-helpers-react';
 import { createClient } from '@/utils/supabase/client';

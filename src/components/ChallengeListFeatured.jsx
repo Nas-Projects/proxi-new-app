@@ -3,7 +3,7 @@ import Link from 'next/link';
 import React from 'react';
 import { FadeIn, FadeInStagger } from './FadeIn'
 import  { urlFor } from "@/sanity/lib/image.js";
-const challenges = [
+export const challenges = [
   {
     id: '18055044-82ff-4f88-b041-dffb4e04182d',
     title: 'Core & Abs Challenge',

@@ -13,7 +13,9 @@ export default function ArrowDownIcon(props) {
   )
 }
 
-export function ArrowUpIcon(props) {}
+export function ArrowUpIcon(props) {
+  console.log(props)
+}
 
 export function ArrowRight({ className, color }) {
   // console.log('Arrow Class: ' + color)

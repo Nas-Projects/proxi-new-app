@@ -7,7 +7,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Label } from "@/components/ui/label";
+// import { Label } from "@/components/ui/label";
 import {
   Tabs,
   TabsContent,
@@ -83,7 +83,7 @@ function AgentsTabs() {
     <Tabs defaultValue="bio" className="min-w-[400px] sm:w-full !bg-black mt-4 shadow-xl ring ring-1 pt-4 ring-slate-600  hover:ring-sky-400">
       <TabsList className="grid w-full grid-cols-3 !bg-black border-b border-gray-900/50">
         {tabs.map((tab, index) => (
-          <TabsTrigger key={tab.value} value={tab.value} className={clsx( tab.current && "text-orange-400", "text-slate-200")}>
+          <TabsTrigger key={index} value={tab.value} className={clsx( tab.current && "text-orange-400", "text-slate-200")}>
             {tab.label}
           </TabsTrigger>
         ))}

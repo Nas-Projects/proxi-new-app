@@ -26,19 +26,19 @@ function CloseIcon(props) {
   )
 }
 
-function ChevronDownIcon(props) {
-  return (
-    <svg viewBox="0 0 8 6" aria-hidden="true" {...props}>
-      <path
-        d="M1.75 1.75 4 4.25l2.25-2.5"
-        fill="none"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  )
-}
+// function ChevronDownIcon(props) {
+//   return (
+//     <svg viewBox="0 0 8 6" aria-hidden="true" {...props}>
+//       <path
+//         d="M1.75 1.75 4 4.25l2.25-2.5"
+//         fill="none"
+//         strokeWidth="1.5"
+//         strokeLinecap="round"
+//         strokeLinejoin="round"
+//       />
+//     </svg>
+//   )
+// }
 
 function MobileNavItem({ href, children }) {
   return (
@@ -204,7 +204,7 @@ function clamp(number, a, b) {
   return Math.min(Math.max(number, min), max)
 }
 
-function AvatarContainer({ className, homePage, ...props }) {
+export function AvatarContainer({ className, homePage, ...props }) {
   return (
     <div
       className={clsx(
@@ -217,7 +217,7 @@ function AvatarContainer({ className, homePage, ...props }) {
   )
 }
 
-function Avatar({ large = false, className, homePage, ...props }) {
+export function Avatar({ large = false, className, homePage, ...props }) {
   return (
     <>
       <div
@@ -419,37 +419,37 @@ export function Header() {
       }
     }
 
-    function updateAvatarStyles() {
-      if (!isHomePage) {
-        console.log('IS-HOMEPAGE0???', isHomePage)
-        return
-      }
+    // function updateAvatarStyles() {
+    //   if (!isHomePage) {
+    //     console.log('IS-HOMEPAGE0???', isHomePage)
+    //     return
+    //   }
 
-      let fromScale = 1
-      let toScale = 36 / 64
-      let fromX = 0
-      let toX = 2 / 16
+    //   let fromScale = 1
+    //   let toScale = 36 / 64
+    //   let fromX = 0
+    //   let toX = 2 / 16
 
-      let scrollY = downDelay - window.scrollY
+    //   let scrollY = downDelay - window.scrollY
 
-      let scale = (scrollY * (fromScale - toScale)) / downDelay + toScale
-      scale = clamp(scale, fromScale, toScale)
+    //   let scale = (scrollY * (fromScale - toScale)) / downDelay + toScale
+    //   scale = clamp(scale, fromScale, toScale)
 
-      let x = (scrollY * (fromX - toX)) / downDelay + toX
-      x = clamp(x, fromX, toX)
+    //   let x = (scrollY * (fromX - toX)) / downDelay + toX
+    //   x = clamp(x, fromX, toX)
 
-      setProperty(
-        '--avatar-image-transform',
-        `translate3d(${x}rem, 0, 0) scale(${scale})`
-      )
+    //   setProperty(
+    //     '--avatar-image-transform',
+    //     `translate3d(${x}rem, 0, 0) scale(${scale})`
+    //   )
 
-      let borderScale = 1 / (toScale / scale)
-      let borderX = (-toX + x) * borderScale
-      let borderTransform = `translate3d(${borderX}rem, 0, 0) scale(${borderScale})`
+    //   let borderScale = 1 / (toScale / scale)
+    //   let borderX = (-toX + x) * borderScale
+    //   let borderTransform = `translate3d(${borderX}rem, 0, 0) scale(${borderScale})`
 
-      setProperty('--avatar-border-transform', borderTransform)
-      setProperty('--avatar-border-opacity', scale === toScale ? 1 : 0)
-    }
+    //   setProperty('--avatar-border-transform', borderTransform)
+    //   setProperty('--avatar-border-opacity', scale === toScale ? 1 : 0)
+    // }
 
     function updateStyles() {
       updateHeaderStyles()

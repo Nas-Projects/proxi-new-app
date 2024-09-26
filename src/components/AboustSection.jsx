@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useEffect, useRef } from "react";
-import { FadeIn, FadeInStagger } from "./FadeIn";
+import {  FadeInStagger } from "./FadeIn";
 import { urlFor } from "@/sanity/lib/image.js";
 import {TextTrimmer} from '@/utils/TextTrimmer';
 

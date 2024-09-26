@@ -3,9 +3,9 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { createClient } from '@/utils/supabase/client';
-import Image from 'next/image';
-import LoadingDots from '@/components/LoadingDots';
-import { signIn } from 'next-auth/react';
+// import Image from 'next/image';
+// import LoadingDots from '@/components/LoadingDots';
+// import { signIn } from 'next-auth/react';
 import { GoogleButton } from '@/components/button';
 import SelectButton from '@/components/Select/SelectButton';
 

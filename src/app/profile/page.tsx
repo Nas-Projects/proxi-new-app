@@ -1,12 +1,12 @@
 'use client'
 
-import { redirect } from "next/navigation";
-import { getServerSession } from "next-auth";
-import { authOptions } from "@/auth";
+// import { redirect } from "next/navigation";
+// import { getServerSession } from "next-auth";
+// import { authOptions } from "@/auth";
 import ProfileComponent from "@/components/ProfileComponent";
-import { fetchUserById } from "@/lib/data";
+// import { fetchUserById } from "@/lib/data";
 import { useEffect, useState } from "react";
-import supabase from '@/utils/supabase-browser';
+// import supabase from '@/utils/supabase-browser';
 
 import { useUser } from "@supabase/auth-helpers-react";
 // import { getUser } from "../api/apiHelper";

@@ -4,13 +4,13 @@ import React, { forwardRef, Fragment, useState } from 'react'
 
 import { Transition } from '@headlessui/react'
 import {
-  BuildingOffice2Icon,
-  EnvelopeIcon,
-  PhoneIcon,
+  // BuildingOffice2Icon,
+  // EnvelopeIcon,
+  // PhoneIcon,
   HandThumbUpIcon,
-  HandThumbDownIcon,
+  // HandThumbDownIcon,
 } from '@heroicons/react/24/outline'
-import { Container } from '@/components/Container'
+// import { Container } from '@/components/Container'
 const variantStyles = {
   primary:
     'bg-zinc-800 font-semibold text-zinc-100 hover:bg-zinc-700 active:bg-zinc-800 active:text-zinc-100/70 dark:bg-zinc-700 dark:hover:bg-zinc-600 dark:active:bg-zinc-700 dark:active:text-zinc-100/70',
@@ -41,7 +41,7 @@ export function Button({ variant = 'primary', className, href, ...props }) {
 //     />
 //   )
 // }
-function CheckIcon(props) {
+export function CheckIcon(props) {
   return (
     <svg viewBox="0 0 20 20" aria-hidden="true" {...props}>
       <circle cx="10" cy="10" r="10" strokeWidth="0" />
@@ -69,7 +69,7 @@ const FeedbackForm = forwardRef(function FeedbackForm(
   { onSubmit, likes, message, question },
 
   ref,
-  props
+  // props
 ) {
   return (
     <div id="FEEDBACK-FORM" ref={ref}>
@@ -117,7 +117,7 @@ export const FeedbackMessage = forwardRef(function FeedbackMessage(
   feedbackStatus
 ) {
   let colors = {}
-  const statusMessageColor = colors[feedbackStatus]
+  // const statusMessageColor = colors[feedbackStatus]
   console.log('MESSAGE props.FeedbackStatus', _props.feedbackStatus)
   return (
     <div ref={ref} className=" justify-center md:justify-start">

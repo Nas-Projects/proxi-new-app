@@ -1,4 +1,4 @@
-export const SuccessIcon = function (props) {
+export const SuccessIcon = function () {
   return (
     <div className="h-18 w-18 mx-auto flex items-center justify-center rounded-full bg-teal-100 p-2">
       <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-green-100">

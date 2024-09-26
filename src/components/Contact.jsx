@@ -25,7 +25,7 @@ const Modal = () => {
 
 const Contact = () => {
 
-    const formRef = useRef();
+    // const formRef = useRef();
     const [Loading, setLoading] = useState(false);
     const [modalOpen, setModalOpen] = useState(false);
     const [scrollPosition, setScrollPosition] = useState(0);
@@ -126,7 +126,7 @@ const Contact = () => {
                 md:leading-[22px]'>
                 Got any more inquiries, complaints, sponsorship 
                 proposals, payment disputes and any other general 
-                info? Contact us today and we'll get back to you 
+                info? Contact us today and we&apos;ll get back to you 
                 very, very swiftly.
                 </p>
             </motion.div>

@@ -1,4 +1,4 @@
-import Link from 'next/link'
+// import Link from 'next/link'
 import { GotoItem } from './GotoItem'
 
 export const FeaturedContent = ({ featured }) => {

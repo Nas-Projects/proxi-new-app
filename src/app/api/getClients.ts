@@ -10,9 +10,9 @@ const query = groq`
   }
 `;
 
-type Data = {
-  client: [];
-};
+// type Data = {
+//   client: [];
+// };
 
 export default async function handler(
   // req: NextApiRequest,
