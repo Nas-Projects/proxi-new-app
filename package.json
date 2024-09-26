@@ -9,6 +9,7 @@
   },
   "browserslist": "defaults, not ie <= 11",
   "dependencies": {
+    "@uploadthing/react": "^6.0.2",
     "@headlessui/react": "^0.0.0-insiders.5b365f5",
     "@heroicons/react": "^2.0.17",
     "@hookform/resolvers": "^3.9.0",

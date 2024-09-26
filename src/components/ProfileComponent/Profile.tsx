@@ -7,7 +7,7 @@ import { Link } from 'lucide-react';
 import BlurImage from '@/components/blur-image';
 import { getGradient } from '@/lib/gradients';
 // import { MDXRemote } from 'next-mdx-remote';
-import Profiletabs from './Profiletabs';
+// import Profiletabs from '../Profiletabs';
 import TabsDemo from '@/components/tabs/TabsDemo';
 interface UserProfileProps {
   user: UserProfileMongoDBWithExtras; // Replace with a more specific user type based on your data
@@ -142,7 +142,7 @@ export default function Profile({
         </div>
       </div>
 
-      <Profiletabs username={user.username} profile={user} session={session} />
+      {/* <Profiletabs username={user.username} profile={user} session={session} /> */}
       <TabsDemo />
 
       <div className="mt-6 sm:mt-2 2xl:mt-5">
