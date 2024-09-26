@@ -1,6 +1,6 @@
 // components/Filters.jsx
 
-import { SelectButton } from './select/SelectButton';
+import  SelectButton  from './Select/SelectButton';
 import { Input } from './ui/input';
 import { Button } from '@medusajs/ui';
 
