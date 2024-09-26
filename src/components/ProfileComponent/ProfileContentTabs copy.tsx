@@ -1,11 +1,11 @@
 "use client";
 
-import { Tabs, TabsList, TabsTrigger } from "../../ui/tabs";
-import { UserWithExtras } from "../../../lib/definitions";
-import { cn } from "../../../lib/utils";
+import { Tabs, TabsList, TabsTrigger } from "../ui/tabs";
+import { UserProfileMongoDBWithExtras } from "@/lib/Types";
+import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Separator } from "../../ui/separator";
+// import { Separator } from "../ui/";
 import { Bookmark, Clapperboard, Contact, Grid3X3 } from "lucide-react";
 
 const profileTabs = [
@@ -35,7 +35,7 @@ function ProfileTabs({
   profile,
   isCurrentUser,
 }: {
-  profile: UserWithExtras;
+  profile: UserProfileMongoDBWithExtras;
   isCurrentUser: boolean;
 }) {
   const pathname = usePathname();
@@ -65,14 +65,14 @@ function ProfileTabs({
                 asChild
               >
                 <Link href={`/dashboard/${profile.username}/${tab.href}`}>
-                  <Separator
+                  {/* <Separator
                     className={cn(
                       "!h-px w-16",
                       isActive
                         ? "!bg-neutral-700 dark:!bg-white"
                         : "dark:!bg-neutral-800 bg-zinc-300"
                     )}
-                  />
+                  /> */}
                   <div className="flex items-center gap-x-1">
                     <tab.Icon className="h-3 w-3" />
                     <p className="font-bold text-xs tracking-widest uppercase">
