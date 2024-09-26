@@ -4,7 +4,7 @@ const uri = process.env.MONGODB_URI as string;
 const options = {};
 
 declare global {
-  var _mongoClientPromise: Promise<MongoClient>;
+  let _mongoClientPromise: Promise<MongoClient>;
 }
 
 class Singleton {

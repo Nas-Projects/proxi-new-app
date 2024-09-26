@@ -1,32 +1,33 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next";
 import { groq } from "next-sanity";
-import { sanityClient } from "../sanity/lib/client";
-// import { Project, Skill } from "../../typings";
+import { sanityClient } from "@/sanity/lib/client";
 
-console.log("GOT_HERE_TO GET__TRACKS", sanityClient);
+// Define the GROQ query
 const query = groq`
-*[_type == "aboutPage"][0] {
-  ...,
-}
+  *[_type == "aboutPage"][0] {
+    ...,
+  }
 `;
 
 type Data = {
-  aboutPageData: {};
+  aboutPageData: Object;
 };
 
+// Updated handler function
 export default async function handler(
-  req: NextApiRequest,
+  _req: NextApiRequest, // We’re not using `req` but still need to include it for the function signature
   res: NextApiResponse<Data>
 ) {
-  const aboutPageData = await sanityClient.fetch(query);
+  try {
+    // Fetch the data from Sanity using the query
+    const aboutPageData = await sanityClient.fetch(query);
 
+    // Respond with the fetched data and a 200 status code
+    res.status(200).json({ aboutPageData });
+  } catch (error) {
+    console.error("Error fetching about page data:", error);
 
-  // console.log("GET__TRACKS", JSON.stringify(tracks));
-
-  // res.status(200)
-  return  aboutPageData ;
+    // If something goes wrong, send a 500 error response
+    res.status(500).json({ aboutPageData: {} });
+  }
 }
-
-
-

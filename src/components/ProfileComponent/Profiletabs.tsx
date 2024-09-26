@@ -5,7 +5,7 @@ import ProfileHeader from "./ProfileHeader";
 import ProfileContentTabs from "./ProfileContentTabs";
 import UserAvatar from "./UserAvatar";
 import { Button, buttonVariants } from "../button";
-import { SupabaseUserProfile } from "../../lib/Types";
+import { UserProfileMongoDBWithExtras } from "@/lib/Types";
 // import { fetchProfile } from "@/lib/data";
 import { MoreHorizontal, Settings} from "lucide-react";
 import type { Metadata, ResolvingMetadata } from "next";
@@ -21,7 +21,7 @@ import TaskForm from "@/components/TaskForm";
 type Props = {
    username: string;
    children: React.ReactNode;
-   profile: SupabaseUserProfile; // Use the defined `UserProfile` type here
+   profile: UserProfileMongoDBWithExtras; // Use the defined `UserProfile` type here
    session: {
      user: {
        id: string;
@@ -33,7 +33,7 @@ type Props = {
 };
 
 export async function generateMetadata(
-  profile: SupabaseUserProfile,
+  profile: UserProfileMongoDBWithExtras,
   { username }: Props,
   parent: ResolvingMetadata
 ): Promise<Metadata> {

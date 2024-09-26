@@ -1,5 +1,5 @@
 import connectDB from '@/config/database';
-import Property from '../../../../../models/Property'; // Adjust the import path as necessary
+import Property from '@/models/Property'; // Adjust the import path as necessary
 
 // src/app/api/properties/type/[type]/route.js
 

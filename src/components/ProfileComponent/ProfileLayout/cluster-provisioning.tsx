@@ -1,4 +1,5 @@
-import { LoadingDots, AlertCircleIcon } from '@/components/icons';
+import LoadingDots from '@/components/LoadingDots';
+import  AlertCircleIcon  from '@/components/icons';
 import Link from 'next/link';
 import { MouseEvent, useState } from 'react';
 

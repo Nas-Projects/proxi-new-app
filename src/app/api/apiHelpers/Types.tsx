@@ -7,23 +7,23 @@ import User from "@/models/User";
   import Post from "@/models/Post"
 
   // Define types for Comments and Likes with additional user information
-  export type CommentWithExtras = Comment & { user: User };
-  export type LikeWithExtras = Like & { user: User };
+  export type CommentWithExtras = Comment & { user:typeof  User };
+  export type LikeWithExtras = typeof Like & { user: typeof User };
   
   // Define type for Posts with additional information
-  export type PostWithExtras = Post & {
+  export type PostWithExtras = typeof  Post & {
     comments: CommentWithExtras[];
     likes: LikeWithExtras[];
     savedBy: SavedPost[];
-    user: User;
+    user: typeof User;
   };
   
   // Define types for Follows, including user information
-  export type FollowerWithExtras = Follows & { follower: User };
-  export type FollowingWithExtras = Follows & { following: User };
+  export type FollowerWithExtras = Follows & { follower:typeof  User };
+  export type FollowingWithExtras = Follows & { following: typeof User };
   
   // Define the main `UserProfile` type that you'll use in your components
-  export type UserProfile = User & {
+  export type UserProfile = typeof User & {
     posts: PostWithExtras[];
     savedPosts: SavedPost[];
     followedBy: FollowerWithExtras[];

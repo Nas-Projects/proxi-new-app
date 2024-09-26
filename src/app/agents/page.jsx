@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import clsx from 'clsx';
 import Link from 'next/link';
-import stringSlugifier from '@/lib/StringSlugifier';
+// import stringSlugifier from '@/lib/StringSlugifier';
 import { groq } from "next-sanity";
 import { sanityClient } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image.js";
@@ -38,7 +38,7 @@ const staticAgents = [
         xUrl: '#',
         linkedinUrl: '#',
         username: '@arietou_22',
-        Verified: true,
+        verified: true,
     },
     {
         name: 'Leonard Krasner',
@@ -47,7 +47,7 @@ const staticAgents = [
         xUrl: '#',
         linkedinUrl: '#',
         username: '@arietou_22',
-        Verified: true,
+        verified: true,
     },
     {
         name: 'Ema Krasner',
@@ -56,7 +56,7 @@ const staticAgents = [
         xUrl: '#',
         linkedinUrl: '#',
         username: '@arietou_22',
-        Verified: true,
+        verified: true,
     },
     // {
     //     name: 'Jakie Dorseyr',
@@ -85,7 +85,7 @@ const staticAgents = [
   export default function Agents() {
     const [people, setPeople] = useState(staticAgents);
     const [loading, setLoading] = useState(true);
-    const [fetchResultsText, setFetchResults] = useState('null');
+    // const [fetchResultsText, setFetchResults] = useState('null');
   
     useEffect(() => {
       const fetchAgents = async () => {
@@ -94,11 +94,11 @@ const staticAgents = [
           console.log("AGENTS_FETCHED-->", agentsData);
           
           if (!agentsData || agentsData.length === 0) {
-            setFetchResults("No valid agents found");
+            // setFetchResults("No valid agents found");
             console.log("AGENTS_FETCHED-->", agentsData);
             setPeople(staticAgents); // Optionally keep static agents
           } else {
-            setFetchResults("200 ok");
+            // setFetchResults("200 ok");
             console.log("AGENTS", agentsData)
             setPeople(agentsData.map(person => ({
               ...person,
@@ -154,68 +154,68 @@ const staticAgents = [
 
 
   import { ChevronRightIcon } from '@heroicons/react/20/solid'
-import { Verified } from 'lucide-react';
 
-const people = [
-  {
-    name: 'Leslie Alexander',
-    email: 'leslie.alexander@example.com',
-    role: 'Co-Founder / CEO',
-    imageUrl:
-      'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    href: '#',
-    lastSeen: '3h ago',
-    lastSeenDateTime: '2023-01-23T13:23Z',
-  },
-  {
-    name: 'Michael Foster',
-    email: 'michael.foster@example.com',
-    role: 'Co-Founder / CTO',
-    imageUrl:
-      'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    href: '#',
-    lastSeen: '3h ago',
-    lastSeenDateTime: '2023-01-23T13:23Z',
-  },
-  {
-    name: 'Dries Vincent',
-    email: 'dries.vincent@example.com',
-    role: 'Business Relations',
-    imageUrl:
-      'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    href: '#',
-    lastSeen: null,
-  },
-  {
-    name: 'Lindsay Walton',
-    email: 'lindsay.walton@example.com',
-    role: 'Front-end Developer',
-    imageUrl:
-      'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    href: '#',
-    lastSeen: '3h ago',
-    lastSeenDateTime: '2023-01-23T13:23Z',
-  },
-  {
-    name: 'Courtney Henry',
-    email: 'courtney.henry@example.com',
-    role: 'Designer',
-    imageUrl:
-      'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    href: '#',
-    lastSeen: '3h ago',
-    lastSeenDateTime: '2023-01-23T13:23Z',
-  },
-  {
-    name: 'Tom Cook',
-    email: 'tom.cook@example.com',
-    role: 'Director of Product',
-    imageUrl:
-      'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    href: '#',
-    lastSeen: null,
-  },
-]
+
+// export const people = [
+//   {
+//     name: 'Leslie Alexander',
+//     email: 'leslie.alexander@example.com',
+//     role: 'Co-Founder / CEO',
+//     imageUrl:
+//       'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+//     href: '#',
+//     lastSeen: '3h ago',
+//     lastSeenDateTime: '2023-01-23T13:23Z',
+//   },
+//   {
+//     name: 'Michael Foster',
+//     email: 'michael.foster@example.com',
+//     role: 'Co-Founder / CTO',
+//     imageUrl:
+//       'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+//     href: '#',
+//     lastSeen: '3h ago',
+//     lastSeenDateTime: '2023-01-23T13:23Z',
+//   },
+//   {
+//     name: 'Dries Vincent',
+//     email: 'dries.vincent@example.com',
+//     role: 'Business Relations',
+//     imageUrl:
+//       'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+//     href: '#',
+//     lastSeen: null,
+//   },
+//   {
+//     name: 'Lindsay Walton',
+//     email: 'lindsay.walton@example.com',
+//     role: 'Front-end Developer',
+//     imageUrl:
+//       'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+//     href: '#',
+//     lastSeen: '3h ago',
+//     lastSeenDateTime: '2023-01-23T13:23Z',
+//   },
+//   {
+//     name: 'Courtney Henry',
+//     email: 'courtney.henry@example.com',
+//     role: 'Designer',
+//     imageUrl:
+//       'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+//     href: '#',
+//     lastSeen: '3h ago',
+//     lastSeenDateTime: '2023-01-23T13:23Z',
+//   },
+//   {
+//     name: 'Tom Cook',
+//     email: 'tom.cook@example.com',
+//     role: 'Director of Product',
+//     imageUrl:
+//       'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+//     href: '#',
+//     lastSeen: null,
+//   },
+// ]
 
 export function AgentList({agents}) {
 

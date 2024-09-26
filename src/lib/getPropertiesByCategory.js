@@ -1,15 +1,11 @@
-// lib/api.js
-
 import connectDB from '../config/database';
-console.log("Fetching_properties for category:")
+import Property from '../models/Property'; // Assuming you have a Property model
 
-export const GET = async (request, { params }) => {
-  const { category } = params;
+// Exporting the getPropertiesByCategory function
+export const getPropertiesByCategory = async (category) => {
+  let query = {};
 
-  console.log("Fetching properties for category:", category); 
-
-  let query;
-  switch (category) {
+  switch (category.toLowerCase()) {
     case 'residential':
       query = { isForRent: true };
       break;
@@ -44,20 +40,17 @@ export const GET = async (request, { params }) => {
       query = {};
   }
 
-  console.log("Query object:", JSON.stringify(query, null, 2)); 
-
   try {
+    // Connecting to the database
     await connectDB();
 
-    const totalProperties = await Property.countDocuments({});
-    console.log("Total properties in collection:", totalProperties);
-
+    // Fetch properties based on the query
     const properties = await Property.find(query).exec();
     console.log("Fetched properties:", properties);
 
-    return new Response(JSON.stringify(properties), { status: 200 });
+    return properties;
   } catch (error) {
     console.error("Error fetching properties by category:", error);
-    return new Response("Internal Server Error", { status: 500 });
+    throw new Error('Error fetching properties by category');
   }
 };

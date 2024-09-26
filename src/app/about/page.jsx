@@ -22,7 +22,7 @@ export default function AboutPage() {
   const [section3, setSection3] = useState(null);
   const [section4, setSection4] = useState(null);
   const [section5, setSection5] = useState(null);
-  const [section6, setSection6] = useState(null);
+  // const [section6, setSection6] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -39,7 +39,7 @@ export default function AboutPage() {
             setSection3(data.sections[2]);
             setSection4(data.sections[3]);
             setSection5(data.sections[4]);
-            setSection6(data.sections[5]);
+            // setSection6(data.sections[5]);
 
             setLoading(false);
           }
@@ -493,42 +493,42 @@ const timeline = [
     dateTime: '2025-12',
   },
 ]
-const jobOpenings = [
-  {
-    id: 1,
-    role: 'Full-time designer',
-    href: '#',
-    description:
-      'Quos sunt ad dolore ullam qui. Enim et quisquam dicta molestias. Corrupti quo voluptatum eligendi autem labore.',
-    salary: '$75,000 USD',
-    location: 'San Francisco, CA',
-  },
-  {
-    id: 2,
-    role: 'Laravel developer',
-    href: '#',
-    description:
-      'Et veniam et officia dolorum rerum. Et voluptas consequatur magni sapiente amet voluptates dolorum. Ut porro aut eveniet.',
-    salary: '$125,000 USD',
-    location: 'San Francisco, CA',
-  },
-  {
-    id: 3,
-    role: 'React Native developer',
-    href: '#',
-    description:
-      'Veniam ipsam nisi quas architecto eos non voluptatem in nemo. Est occaecati nihil omnis delectus illum est.',
-    salary: '$105,000 USD',
-    location: 'San Francisco, CA',
-  },
-]
-const footerNavigation = {
-  solutions: [
-    { name: 'Marketing', href: '#' },
-    { name: 'Analytics', href: '#' },
-    { name: 'Commerce', href: '#' },
-    { name: 'Insights', href: '#' },
-  ],
+// const jobOpenings = [
+//   {
+//     id: 1,
+//     role: 'Full-time designer',
+//     href: '#',
+//     description:
+//       'Quos sunt ad dolore ullam qui. Enim et quisquam dicta molestias. Corrupti quo voluptatum eligendi autem labore.',
+//     salary: '$75,000 USD',
+//     location: 'San Francisco, CA',
+//   },
+//   {
+//     id: 2,
+//     role: 'Laravel developer',
+//     href: '#',
+//     description:
+//       'Et veniam et officia dolorum rerum. Et voluptas consequatur magni sapiente amet voluptates dolorum. Ut porro aut eveniet.',
+//     salary: '$125,000 USD',
+//     location: 'San Francisco, CA',
+//   },
+//   {
+//     id: 3,
+//     role: 'React Native developer',
+//     href: '#',
+//     description:
+//       'Veniam ipsam nisi quas architecto eos non voluptatem in nemo. Est occaecati nihil omnis delectus illum est.',
+//     salary: '$105,000 USD',
+//     location: 'San Francisco, CA',
+//   },
+// ]
+// const footerNavigation = {
+//   solutions: [
+//     { name: 'Marketing', href: '#' },
+//     { name: 'Analytics', href: '#' },
+//     { name: 'Commerce', href: '#' },
+//     { name: 'Insights', href: '#' },
+//   ],
   support: [
     { name: 'Pricing', href: '#' },
     { name: 'Documentation', href: '#' },

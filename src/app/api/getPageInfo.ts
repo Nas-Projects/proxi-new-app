@@ -13,8 +13,8 @@ type Data = {
 };
 
 export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<Data>
+  // req: NextApiRequest,
+  // res: NextApiResponse<Data>
 ) {
   const pageInfo = await sanityClient.fetch(pageInfoQuery);
 

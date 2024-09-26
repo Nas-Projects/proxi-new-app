@@ -3,89 +3,179 @@ import { remark } from 'remark';
 import remarkMdx from 'remark-mdx';
 import { serialize } from 'next-mdx-remote/serialize';
 import type { MDXRemoteSerializeResult } from 'next-mdx-remote';
-import mongoose from 'mongoose';
+
 import { revalidatePath, unstable_noStore as noStore, unstable_noStore } from 'next/cache';
 
 // import { ObjectId } from 'mongodb';
 // import clientPromise from '@/lib/mongodb'; //
 
+import clientPromise from './apiHelpers/mongodb';
 
 export interface UserProps {
   name: string;
-  username: any;
+  username: string;
   email: string;
   image: string;
   bio: string;
-  bioMdx: MDXRemoteSerializeResult<Record<string, unknown>>;
   followers: number;
   verified: boolean;
   website?: string;
   gender?: string;
   emailVerified?: Date;
-  createdAt: string | null; // Allow null
-  updatedAt: string | null; // Allow null
-  posts: string[]; // Array of post IDs as strings
-  savedPosts: string[]; // Array of saved post IDs as strings
+  createdAt: string | null;
+  updatedAt: string | null;
+  posts: string[];
+  savedPosts: string[];
   savedItems: {
-    contentId: string; // Converted to string for serialization
+    contentId: string;
     contentType: 'Blog' | 'Project' | 'EntrepreneurProject' | 'Post';
   }[];
-  likes: string[]; // Array of like IDs as strings
-  followedBy: string[]; // Array of user IDs who follow this user as strings
-  following: string[]; // Array of user IDs this user is following as strings
-  accounts: string[]; // Array of account IDs as strings
-  sessions: string[]; // Array of session IDs as strings
+  likes: string[];
+  followedBy: string[];
+  following: string[];
+  accounts: string[];
+  sessions: string[];
   messages: {
-    senderId: string; // Converted to string for serialization
-    receiverId: string; // Converted to string for serialization
+    senderId: string;
+    receiverId: string;
     content: string;
-    timestamp: string; // Converted to string for serialization
+    timestamp: string;
   }[];
   tickets: {
-    userId: string; // Converted to string for serialization
-    projectId: string; // Converted to string for serialization
+    userId: string;
+    projectId: string;
     status: 'open' | 'accepted' | 'resolved';
     requestDetails: string;
     responses: {
-      adminId?: string; // Converted to string for serialization, optional
+      adminId?: string;
       responseContent?: string;
-      timestamp: string; // Converted to string for serialization
+      timestamp: string;
     }[];
   }[];
-  bookmarks: string[]; // Array of bookmarked project IDs as strings
-  projectsStarted: string[]; // Array of started project IDs as strings
-  plans: string[]; // Array of plan IDs as strings
-  payments: string[]; // Array of payment IDs as strings
-  entrepreneurProjects: string[]; // Array of entrepreneur project IDs as strings
-  // comments: {
-  //   contentId: string; // Converted to string for serialization
-  //   contentType: 'Blog' | 'Project' | 'EntrepreneurProject' | 'Post';
-  //   comment: string;
-  //   avatar: string; // Store the avatar URL directly
-  //   username: string; // Store the username directly
-  //   reactions: string[]; // Array to store reactions like "👍", "❤️", etc.
-  //   replies: {
-  //     userId: any;
-  //     createdAt: any;
-  //     updatedAt: any;
-  //     senderId: string; // Converted to string for serialization
-  //     body: string;
-  //     avatar: string; // Store the avatar URL directly
-  //     username: string; // Store the username directly
-  //     likes: string[]; // Array of user IDs who liked the reply as strings
-  //     timestamp: string; // Converted to string for serialization
-  //     commentId: string; // Converted to string for serialization
-  //   }[];
-    // likes: string[]; // Array of user IDs who liked the comment as strings
-    // isPinned: boolean; // Indicates if the comment is pinned
-  //   createdAt: string; // Converted to string for serialization
-  //   updatedAt: string; // Converted to string for serialization
-  // }[];
+  bookmarks: string[];
+  projectsStarted: string[];
+  plans: string[];
+  payments: string[];
+  entrepreneurProjects: string[];
 }
 
-// export interface UsersProps {
-// users: UserProps[];
+// export async function getUser(email: string) {
+//   const client = await clientPromise;
+//   const db = client.db('property-pulse');
+//   const collection = db.collection('users');
+
+//   const user = await collection.findOne({ email });
+//   console.log("USER_IN_GET_USER", user);
+//   if (!user) return null;
+
+//   const parsedUser = {
+//     _id: user._id.toString(),
+//     id: user._id.toString(),
+//     email: user.email,
+//     username: user.username,
+//     image: user.image,
+//     bookmarks: user.bookmarks,
+//     projectsStarted: user.projectsStarted,
+//     createdAt: user.createdAt ? user.createdAt.toISOString() : null,
+//     updatedAt: user.updatedAt ? user.updatedAt.toISOString() : null,
+//     followedBy: user.followedBy.map((id: { toString: () => string }) => id.toString()),
+//     following: user.following.map((id: { toString: () => string }) => id.toString()),
+//     phone: user.phone,
+//     bio: user.bio,
+//     website: user.website,
+//     emailVerified: user.emailVerified ? user.emailVerified.toString() : null,
+//     posts: user.posts?.map((id: { toString: () => string }) => id.toString()),
+//     savedPosts: user.savedPosts?.map((id: { toString: () => string }) => id.toString()),
+//     savedItems: user.savedItems?.map((item: { contentId: { toString: () => string }; contentType: string }) => ({
+//       contentId: item.contentId.toString(),
+//       contentType: item.contentType
+//     })),
+//     likes: user.likes?.map((id: { toString: () => string }) => id.toString()),
+//     accounts: user.accounts?.map((id: { toString: () => string }) => id.toString()),
+//     sessions: user.sessions?.map((id: { toString: () => string }) => id.toString()),
+//     payments: user.payments?.map((id: { toString: () => string }) => id.toString()),
+//     plan: user.plan ? user.plan.toString() : null,
+//   };
+  
+//   console.log("IN_GET_USER_lib_api_user", parsedUser);
+//   return parsedUser;
 // }
+// export interface UserProps {
+//   name: string;
+//   username: any;
+//   email: string;
+//   image: string;
+//   bio: string;
+//   bioMdx: MDXRemoteSerializeResult<Record<string, unknown>>;
+//   followers: number;
+//   verified: boolean;
+//   website?: string;
+//   gender?: string;
+//   emailVerified?: Date;
+//   createdAt: string | null; // Allow null
+//   updatedAt: string | null; // Allow null
+//   posts: string[]; // Array of post IDs as strings
+//   savedPosts: string[]; // Array of saved post IDs as strings
+//   savedItems: {
+//     contentId: string; // Converted to string for serialization
+//     contentType: 'Blog' | 'Project' | 'EntrepreneurProject' | 'Post';
+//   }[];
+//   likes: string[]; // Array of like IDs as strings
+//   followedBy: string[]; // Array of user IDs who follow this user as strings
+//   following: string[]; // Array of user IDs this user is following as strings
+//   accounts: string[]; // Array of account IDs as strings
+//   sessions: string[]; // Array of session IDs as strings
+//   messages: {
+//     senderId: string; // Converted to string for serialization
+//     receiverId: string; // Converted to string for serialization
+//     content: string;
+//     timestamp: string; // Converted to string for serialization
+//   }[];
+//   tickets: {
+//     userId: string; // Converted to string for serialization
+//     projectId: string; // Converted to string for serialization
+//     status: 'open' | 'accepted' | 'resolved';
+//     requestDetails: string;
+//     responses: {
+//       adminId?: string; // Converted to string for serialization, optional
+//       responseContent?: string;
+//       timestamp: string; // Converted to string for serialization
+//     }[];
+//   }[];
+//   bookmarks: string[]; // Array of bookmarked project IDs as strings
+//   projectsStarted: string[]; // Array of started project IDs as strings
+//   plans: string[]; // Array of plan IDs as strings
+//   payments: string[]; // Array of payment IDs as strings
+//   entrepreneurProjects: string[]; // Array of entrepreneur project IDs as strings
+//   // comments: {
+//   //   contentId: string; // Converted to string for serialization
+//   //   contentType: 'Blog' | 'Project' | 'EntrepreneurProject' | 'Post';
+//   //   comment: string;
+//   //   avatar: string; // Store the avatar URL directly
+//   //   username: string; // Store the username directly
+//   //   reactions: string[]; // Array to store reactions like "👍", "❤️", etc.
+//   //   replies: {
+//   //     userId: any;
+//   //     createdAt: any;
+//   //     updatedAt: any;
+//   //     senderId: string; // Converted to string for serialization
+//   //     body: string;
+//   //     avatar: string; // Store the avatar URL directly
+//   //     username: string; // Store the username directly
+//   //     likes: string[]; // Array of user IDs who liked the reply as strings
+//   //     timestamp: string; // Converted to string for serialization
+//   //     commentId: string; // Converted to string for serialization
+//   //   }[];
+//     // likes: string[]; // Array of user IDs who liked the comment as strings
+//     // isPinned: boolean; // Indicates if the comment is pinned
+//   //   createdAt: string; // Converted to string for serialization
+//   //   updatedAt: string; // Converted to string for serialization
+//   // }[];
+// }
+
+// // export interface UsersProps {
+// // users: UserProps[];
+// // }
 
 
 export interface ResultProps {
@@ -93,43 +183,28 @@ export interface ResultProps {
   users: UserProps[];
 }
 
-export async function getMdxSource(postContents: string) {
-  // Use remark plugins to convert markdown into HTML string
-  const processedContent = await remark()
-    // Native remark plugin that parses markdown into MDX
-    .use(remarkMdx)
-    .process(postContents);
+// export async function getMdxSource(postContents: string) {
+//   // Use remark plugins to convert markdown into HTML string
+//   const processedContent = await remark()
+//     // Native remark plugin that parses markdown into MDX
+//     .use(remarkMdx)
+//     .process(postContents);
 
-  // Convert converted html to string format
-  const contentHtml = String(processedContent);
+//   // Convert converted html to string format
+//   const contentHtml = String(processedContent);
 
-  // Serialize the content string into MDX
-  const mdxSource = await serialize(contentHtml);
+//   // Serialize the content string into MDX
+//   const mdxSource = await serialize(contentHtml);
 
-  return mdxSource;
-}
+//   return mdxSource;
+// }
 
 export const placeholderBio = `
 Tincidunt quam neque in cursus viverra orci, dapibus nec tristique. Nullam ut sit dolor consectetur urna, dui cras nec sed. Cursus risus congue arcu aenean posuere aliquam.
 
 Et vivamus lorem pulvinar nascetur non. Pulvinar a sed platea rhoncus ac mauris amet. Urna, sem pretium sit pretium urna, senectus vitae. Scelerisque fermentum, cursus felis dui suspendisse velit pharetra. Augue et duis cursus maecenas eget quam lectus. Accumsan vitae nascetur pharetra rhoncus praesent dictum risus suspendisse.`;
 
-// export async function getUser(username: string): Promise<UserProps | null> {
-//   const client = await clientPromise;
-//   const collection = client.db('test').collection('users');
-//   const results = await collection.findOne<UserProps>(
-//     { username },
-//     { projection: { _id: 0, emailVerified: 0 } }
-//   );
-//   if (results) {
-//     return {
-//       ...results,
-//       bioMdx: await getMdxSource(results.bio || placeholderBio)
-//     };
-//   } else {
-//     return null;
-//   }
-// }
+
 export async function getUser(email: string) {
   const client = await clientPromise;
   const db = client.db('property-pulse');
@@ -139,19 +214,7 @@ export async function getUser(email: string) {
     console.log("USER_IN_GET_USER", user);
   if (!user) return null;
 
-  // return {
-  //   ...user,
-  //   id: user._id.toString(),
-  //   createdAt: user.createdAt ? user.createdAt.toISOString() : null,
-  //   updatedAt: user.updatedAt ? user.updatedAt.toISOString() : null,
-  // };
-  // const userData = {
-  //   ...user,
-  //   id: user._id.toString(),
-  //   createdAt: user.createdAt ? user.createdAt.toISOString() : null,
-  //   updatedAt: user.updatedAt ? user.updatedAt.toISOString() : null,
-  // };
-  // Convert all non-plain fields
+  
 const parsedUser = {
   _id: user._id.toString(),
   id: user._id.toString(),
@@ -196,94 +259,18 @@ const userData = {
   createdAt: user.createdAt ? user.createdAt.toISOString() : null,
   updatedAt: user.updatedAt ? user.updatedAt.toString() : null,
   followedBy: user.followedBy.map((id: { toString: () => any; }) => id.toString()),
-  following: user.following.map(id => id.toString()),
+  following: user.following.map((id: { toString: () => any; }) => id.toString()),
 };
   // Revalidate the path before returning the user data
   console.log("IN_GET_USER_lib_api_user", userData)
   // unstable_noStore()
   noStore()
- revalidatePath(`/${username}`);
+ revalidatePath(`/${user.username}`);
 
 
   return userData;
   
 }
-
-// export async function getProject(username: string) {
-//   const client = await clientPromise;
-//   const db = client.db('property-pulse');
-//   const collection = db.collection('projects');
-
-//   const project = await collection.findOne({ username });
-//     console.log("GET-A-PROJECT", project);
-//   if (!project) return null;
-
-//   return {
-//     ...project,
-//     id: project._id.toString(),
-//     createdAt: project.createdAt ? project.createdAt.toISOString() : null,
-//     updatedAt: project.updatedAt ? project.updatedAt.toISOString() : null,
-//   };
-// }
-
-
-
-// export async function getProjects(username: string) {
-//   const client = await clientPromise;
-//   const db = client.db('property-pulse');
-//   const collection = client.db('property-pulse').collection('projects');
-
-//   const projects = await collection.findOne({ username });
-//     console.log("GET-A-PROJECTS", projects);
-//   if (!projects) return null;
-
-//   return {
-//     ...projects,
-//     id: projects._id.toString(),
-//     createdAt: projects.createdAt ? projects.createdAt.toISOString() : null,
-//     updatedAt: projects.updatedAt ? projects.updatedAt.toISOString() : null,
-//   };
-// }
-// export async function getUser(username: string): Promise<UserProps | null> {
-//   const client = await clientPromise;
-//     { username },
-//     { projection: { _id: 0, emailVerified: 0 } }
-//   );
-
-//   if (results) {
-//     // Handle the comments field safely
-//     // const comments = results.comments && results.comments.length > 0
-//     //   ? results.comments.macp((comment) => ({
-//     //       ...comment,
-//     //       contentId: comment.contentId.toString(),
-//     //       createdAt: new Date(comment.createdAt).toISOString(),
-//     //       updatedAt: new Date(comment.updatedAt).toISOString(),
-//     //       replies: comment.replies && comment.replies.length > 0
-//     //         ? comment.replies.map((reply) => ({
-//     //             ...reply,
-//     //             commentId: reply.commentId.toString(),
-//     //             userId: reply.userId.toString(),
-//     //             createdAt: new Date(reply.createdAt).toISOString(),
-//     //             updatedAt: new Date(reply.updatedAt).toISOString(),
-//     //           }))
-//     //         : [],
-//     //     }))
-//     //   : [];
-
-//     return {
-//       ...results,
-//       createdAt: results.createdAt ? new Date(results.createdAt).toISOString() : null,
-//       updatedAt: results.updatedAt ? new Date(results.updatedAt).toISOString() : null,
-//       // comments: comments,
-//       bioMdx: await getMdxSource(results.bio || placeholderBio),
-//     };
-//   } else {
-//     return null;
-//   }
-// }
-
-
-
 
 
 export async function getFirstUser(): Promise<UserProps | null> {
@@ -298,7 +285,7 @@ export async function getFirstUser(): Promise<UserProps | null> {
   if (results) {
     return {
       ...results,
-      bioMdx: await getMdxSource(results.bio || placeholderBio)
+      // bioMdx: placeholderBio
     };
   } else {
     return null;

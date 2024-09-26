@@ -1,8 +1,8 @@
-import  fetchExercices  from '../../../api/fetchExercices'
+
 
 import Link from 'next/link'
 
-const Profile = () => {
+const Settings = () => {
   return <div>
     <main className="px-5 md:px-8 min-h-[calc(100vh-theme(height.header))]">
   <div className="max-w-container mx-auto">
@@ -1657,19 +1657,6 @@ const Profile = () => {
 
 }
 
-export default  Profile
+export default  Settings
 
 
-export const getStaticProps = async () => {
- 
-  const exrercises  = await fetchExercices();
-  
-  console.log("TRACKS IN STATIC", exrercises )
-
-  return {
-    props: {
-      exrercises,
-    },
-    revalidate: 5,
-  };
-};
