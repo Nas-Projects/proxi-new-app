@@ -220,16 +220,7 @@ export const AgentProfileCard = ({agent}) => {
     className={`${profileWidth} -mt-12 sm:-mt-16 sm:flex sm:items-end sm:space-x-5`}
   >
     <div className="relative group h-24 w-24 rounded-full overflow-hidden sm:h-32 sm:w-32">
-      {/* {settingsPage && (
-        <button
-          className="absolute bg-gray-800 bg-opacity-50 hover:bg-opacity-70 w-full h-full z-10 transition-all flex items-center justify-center"
-          onClick={() =>
-            alert('Image upload has been disabled for demo purposes.')
-          }
-        >
-          <UploadIcon className="h-6 w-6 text-white" />
-        </button>
-      )} */}
+  
       <BlurImage
         src={agent?.image?.asset?.url ? agent.image.asset.url : 'https://randomuser.me/api/portraits/women/21.jpg'}
         alt={agent?.name}
