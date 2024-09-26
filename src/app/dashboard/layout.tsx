@@ -5,12 +5,12 @@ import "../globals.css";
 // import  SideBar  from "@/components/navigations/SideBar";
 import ProfileLayout from "@/components/ProfileComponent/ProfileLayout";
 
-const geistSans = localFont({
+export const geistSans = localFont({
   src: "../fonts/GeistVF.woff",
   variable: "--font-geist-sans",
   weight: "100 900",
 });
-const geistMono = localFont({
+export const geistMono = localFont({
   src: "../fonts/GeistMonoVF.woff",
   variable: "--font-geist-mono",
   weight: "100 900",

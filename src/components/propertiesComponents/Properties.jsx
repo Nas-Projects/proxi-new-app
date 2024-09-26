@@ -8,7 +8,7 @@ const Properties = () => {
   const [properties, setProperties] = useState([]);
   const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(1);
-  const [pageSize, setPageSize] = useState(6);
+  const [pageSize, setPageSize] = useState(0);
   const [totalItems, setTotalItems] = useState(0);
 
   useEffect(() => {
@@ -24,6 +24,7 @@ const Properties = () => {
 
         const data = await res.json();
         setProperties(data.properties);
+        setPageSize(6)
         setTotalItems(data.total);
       } catch (error) {
         console.log(error);

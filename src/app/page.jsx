@@ -46,15 +46,15 @@ const Home = ({}) => {
       style={{ opacity: 1 }}>
       <div className="buy-service-left bg-custom-gradient">
         <div className="block ">
-          <h2 className='!text-white'>Proxy landlord & brokers' service</h2>
+          <h2 className='!text-white'>Proxy landlord & brokers&apos; service</h2>
           <div className="space-16" />
           <p className="paragraph-big">
-          Proxy Landlord & Brokers' Service connects property owners with qualified tenants and expert brokers, streamlining the rental process. Our dedicated team ensures a seamless experience, maximizing returns while minimizing hassle.
+          Proxy Landlord & Brokers&apos; Service connects property owners with qualified tenants and expert brokers, streamlining the rental process. Our dedicated team ensures a seamless experience, maximizing returns while minimizing hassle.
           </p>
         </div>
         <div className="buy-service-separator">
           <p className="separator-text">
-            What's included? Absolutely everything.
+            What&apos;s included? Absolutely everything.
           </p>
           <div className="separator-line" />
         </div>
@@ -148,7 +148,7 @@ const Home = ({}) => {
                   className="image"
                 />
               </div>
-              <p>You'll get free Proxy Realestate merch</p>
+              <p>You&apos;ll get free Proxy Realestate merch</p>
             </div>
           </div>
         </div>

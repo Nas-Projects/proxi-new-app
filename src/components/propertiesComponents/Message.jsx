@@ -229,7 +229,7 @@ const Message = ({ message }) => {
           <div>
             <p className="message-body">
               I hope you are Doing well this time i am in the hospital my team
-              partner has operated today. Maybe today I can't share with you the
+              partner has operated today. Maybe today I can&apos;t share with you the
               work today please extend one day delivery time and I will share
               you the work after some hours
             </p>

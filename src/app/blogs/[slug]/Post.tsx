@@ -34,24 +34,6 @@ export function Post({ post }: { post: PostType }) {
         const [width, height] = dimensions.split("x").map(Number);
         return { assetId, dimensions: { width, height } };
       };
-      
-      // const handleImage = (value) => {
-      //   if (!value.asset || !value.asset._ref) {
-      //     console.error("No valid asset reference found for image:", value);
-      //     return null;
-      //   }
-      
-      //   const dimensions = decodeAssetId(value.asset._ref);
-      //   return (
-      //     <Image
-      //       src={builder.image(value).width(800).url() || urlFor(value).width(800).url()}
-      //       alt={value.alt || ""}
-      //       width={dimensions?.width || 800}
-      //       height={dimensions?.height || 600}
-      //       className="h-auto w-full"
-      //     />
-      //   );
-      // };
 
       
   return (
@@ -126,43 +108,7 @@ export function Post({ post }: { post: PostType }) {
                           );
                         },
                       },
-                    //   types: {
-                    //     image: ({ value }) => {
-                    //       // https://www.sanity.io/answers/how-to-get-the-width-height-or-dimensions-of-uploaded-image-with-sanity-and-next-js-to-prevent-cls
-                    //       const pattern = /^image-([a-f\d]+)-(\d+x\d+)-(\w+)$/;
-
-                    //       const decodeAssetId = (id: string) => {
-                    //         const match = pattern.exec(id);
-                    //         if (!match) {
-                    //           console.error(`Invalid asset ID: ${id}`);
-                    //           return null;
-                    //         }
-                    //         const [, assetId, dimensions, format] = match;
-                    //         const [width, height] = dimensions
-                    //           .split("x")
-                    //           .map((v) => Number.parseInt(v, 10));
-
-                    //         return {
-                    //           assetId,
-                    //           dimensions: { width, height },
-                    //           format,
-                    //         };
-                    //       };
-
-                    //       const { dimensions } =
-                    //         decodeAssetId(value.asset?._id) || {};
-
-                    //       return (
-                    //         <Image
-                    //           src={builder.image(value).width(800).url()}
-                    //           alt={value.alt || ""}
-                    //           width={dimensions?.width || 800}
-                    //           height={dimensions?.height || 600}
-                    //           className="h-auto w-full"
-                    //         />
-                    //       );
-                    //     },
-                    //   },
+             
                       marks: {
                         link: ({ children, value }) => {
                           const href = value?.href;
@@ -265,9 +211,9 @@ export function Post({ post }: { post: PostType }) {
                   <div className="block">
                     <p className="text-slate-500">{post.author.bio}</p>  
                   <div className="inline-flex mt-2">
-                  {post.author.socialLinks.map((link, index) => {
+                  {post.author?.socialLinks && post.author.socialLinks.map((link, index) => {
                         console.log("SOPCIAL LINKS", link)
-                        return <div className="rounded-full">
+                        return <div className="rounded-full" key={index}>
                          {link.url ? ( // Ensure there's a valid URL
                              <Link key={index} href={link.url} target="_blank" rel="noopener noreferrer">
                              {getSocialIcon(link.platform)} {/* Get the corresponding icon */}
@@ -287,9 +233,8 @@ export function Post({ post }: { post: PostType }) {
   );
 }
 
-const createHeadingComponent =
-  (Tag: "h2" | "h3") =>
-  ({ children, value }: PortableTextComponentProps<PortableTextBlock>) => {
+const createHeadingComponent = (Tag: "h2" | "h3") => {
+  const HeadingComponent = ({ children, value }: PortableTextComponentProps<PortableTextBlock>) => {
     const text = extractTextFromPortableTextBlock(value);
     const id = slugify(text);
 
@@ -304,3 +249,9 @@ const createHeadingComponent =
       </Tag>
     );
   };
+
+  // Assign a display name to the component for easier debugging
+  HeadingComponent.displayName = `HeadingComponent(${Tag})`;
+
+  return HeadingComponent;
+};

@@ -5,7 +5,7 @@
 // import { FaBookmark } from 'react-icons/fa';
 import Link from 'next/link';
 
-const AnimatedGallery = ({ property }) => {
+const AnimatedGallery = ({}) => {
 
 return <div className="blocks blocks--full-width !mb-0">
   <div className="blocks__row">

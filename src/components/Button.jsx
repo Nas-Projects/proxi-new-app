@@ -114,7 +114,7 @@ const FeedbackForm = forwardRef(function FeedbackForm(
 export const FeedbackMessage = forwardRef(function FeedbackMessage(
   _props,
   ref,
-  feedbackStatus
+  // feedbackStatus
 ) {
   let colors = {}
   // const statusMessageColor = colors[feedbackStatus]

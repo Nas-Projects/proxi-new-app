@@ -5,18 +5,18 @@ import clsx from 'clsx'
 
 import {
   Bars3Icon,
-  CurrencyDollarIcon,
-  GlobeAmericasIcon,
+  // CurrencyDollarIcon,
+  // GlobeAmericasIcon,
   MagnifyingGlassIcon,
   ShoppingBagIcon,
   UserIcon,
-  XMarkIcon,
+  // XMarkIcon,
 } from '@heroicons/react/24/outline'
 
-import { Container } from '@/components/Container'
+// import { Container } from '@/components/Container'
 // import avatarImage from '../../public/amit-avatar.jpg'
 
-import { Fragment, useEffect, useRef, useState } from 'react'
+import {  useEffect, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 // import ToggleICon from './ToggleIcon'
@@ -318,13 +318,13 @@ function ModeToggle() {
   )
 }
 
-function clamp(number, a, b) {
+export function clamp(number, a, b) {
   let min = Math.min(a, b)
   let max = Math.max(a, b)
   return Math.min(Math.max(number, min), max)
 }
 
-function AvatarContainer({ className, homePage, ...props }) {
+export function AvatarContainer({ className, homePage, ...props }) {
   return (
     <div
       className={clsx(
@@ -520,15 +520,15 @@ export function NewHeader() {
   const [isNavOpen, setIsNavOpen] = useState(false); // New state for managing the nav checkbox
 
  const navigation = [{name:'About', href:'/about'}, {name:'Exercises', href:'/exercises'}, {href:"/contact", name:'Contact'} ]
- const paradigms = [{name:'Tracks', href:'/tracks'}, {name:'Settings', href:"/settings"},{name:'Login', href:'/auth'} ]
- const additionalNavItems = [
-  {name:'Subscription', 
- href:'/subscription'},
- {name:'Tracks', href:'/tracks'},
-  {name:'Tracks', href:'/tracks'},
-  {name:'Profile', href:"/profile"},
-  {name:'Login', href:'/login'},
-  {name:'Social', href:'/social'}  ]
+//  const paradigms = [{name:'Tracks', href:'/tracks'}, {name:'Settings', href:"/settings"},{name:'Login', href:'/auth'} ]
+//  const additionalNavItems = [
+//   {name:'Subscription', 
+//  href:'/subscription'},
+//  {name:'Tracks', href:'/tracks'},
+//   {name:'Tracks', href:'/tracks'},
+//   {name:'Profile', href:"/profile"},
+//   {name:'Login', href:'/login'},
+//   {name:'Social', href:'/social'}  ]
 
   useEffect(() => {
     console.log("IS_START_IS_STOP",isTop) 
@@ -783,177 +783,177 @@ export function NewHeader() {
 
 
 
-const DinamicElements = () => {
-  return      <header className="relative bg-white">
-  <nav aria-label="Top" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-    <div className="border-b border-gray-200">
-      <div className="flex h-16 items-center justify-between">
-        <div className="flex flex-1 items-center lg:hidden">
-          <button
-            type="button"
-            // onClick={() => setOpen(true)}
-            className="-ml-2 rounded-md bg-white p-2 text-gray-400"
-          >
-            <span className="sr-only">Open menu</span>
-            <Bars3Icon aria-hidden="true" className="h-6 w-6" />
-          </button>
+// const DinamicElements = () => {
+//   return      <header className="relative bg-white">
+//   <nav aria-label="Top" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+//     <div className="border-b border-gray-200">
+//       <div className="flex h-16 items-center justify-between">
+//         <div className="flex flex-1 items-center lg:hidden">
+//           <button
+//             type="button"
+//             // onClick={() => setOpen(true)}
+//             className="-ml-2 rounded-md bg-white p-2 text-gray-400"
+//           >
+//             <span className="sr-only">Open menu</span>
+//             <Bars3Icon aria-hidden="true" className="h-6 w-6" />
+//           </button>
 
-          <a href="#" className="ml-2 p-2 text-gray-400 hover:text-gray-500">
-            <span className="sr-only">Search</span>
-            <MagnifyingGlassIcon aria-hidden="true" className="h-6 w-6" />
-          </a>
-        </div>
+//           <a href="#" className="ml-2 p-2 text-gray-400 hover:text-gray-500">
+//             <span className="sr-only">Search</span>
+//             <MagnifyingGlassIcon aria-hidden="true" className="h-6 w-6" />
+//           </a>
+//         </div>
 
-        {/* Flyout menus */}
-        <Popover.Group className="hidden lg:block lg:flex-1 lg:self-stretch">
-          <div className="flex h-full space-x-8">
-            {navigation.categories.map((category) => (
-              <Popover key={category.name} className="flex">
-                <div className="relative flex">
-                  <Popover.Button className="group relative z-10 flex items-center justify-center text-sm font-medium text-gray-700 transition-colors duration-200 ease-out hover:text-gray-800 data-[open]:text-indigo-600">
-                    {category.name}
-                    <span
-                      aria-hidden="true"
-                      className="absolute inset-x-0 bottom-0 h-0.5 transition-colors duration-200 ease-out group-data-[open]:bg-indigo-600 sm:mt-5 sm:translate-y-px sm:transform"
-                    />
-                  </Popover.Button>
-                </div>
+//         {/* Flyout menus */}
+//         <Popover.Group className="hidden lg:block lg:flex-1 lg:self-stretch">
+//           <div className="flex h-full space-x-8">
+//             {navigation.categories.map((category) => (
+//               <Popover key={category.name} className="flex">
+//                 <div className="relative flex">
+//                   <Popover.Button className="group relative z-10 flex items-center justify-center text-sm font-medium text-gray-700 transition-colors duration-200 ease-out hover:text-gray-800 data-[open]:text-indigo-600">
+//                     {category.name}
+//                     <span
+//                       aria-hidden="true"
+//                       className="absolute inset-x-0 bottom-0 h-0.5 transition-colors duration-200 ease-out group-data-[open]:bg-indigo-600 sm:mt-5 sm:translate-y-px sm:transform"
+//                     />
+//                   </Popover.Button>
+//                 </div>
 
-                <Popover.Panel
-                  transition
-                  className="absolute inset-x-0 top-full z-20 transition data-[closed]:opacity-0 data-[enter]:duration-200 data-[leave]:duration-150 data-[enter]:ease-out data-[leave]:ease-in"
-                >
-                  {/* Presentational element used to render the bottom shadow, if we put the shadow on the actual panel it pokes out the top, so we use this shorter element to hide the top of the shadow */}
-                  <div aria-hidden="true" className="absolute inset-0 top-1/2 bg-white shadow" />
+//                 <Popover.Panel
+//                   transition
+//                   className="absolute inset-x-0 top-full z-20 transition data-[closed]:opacity-0 data-[enter]:duration-200 data-[leave]:duration-150 data-[enter]:ease-out data-[leave]:ease-in"
+//                 >
+//                   {/* Presentational element used to render the bottom shadow, if we put the shadow on the actual panel it pokes out the top, so we use this shorter element to hide the top of the shadow */}
+//                   <div aria-hidden="true" className="absolute inset-0 top-1/2 bg-white shadow" />
 
-                  <div className="relative bg-white">
-                    <div className="mx-auto max-w-7xl px-8">
-                      <div className="grid grid-cols-2 gap-x-8 gap-y-10 py-16">
-                        <div className="grid grid-cols-2 grid-rows-1 gap-8 text-sm">
-                          {category.featured.map((item, itemIdx) => (
-                            <div
-                              key={item.name}
-                              className={classNames(
-                                itemIdx === 0 ? 'aspect-w-2 col-span-2' : '',
-                                'group aspect-h-1 aspect-w-1 relative overflow-hidden rounded-md bg-gray-100',
-                              )}
-                            >
-                              <img
-                                alt={item.imageAlt}
-                                src={item.imageSrc}
-                                className="object-cover object-center group-hover:opacity-75"
-                              />
-                              <div className="flex flex-col justify-end">
-                                <div className="bg-white bg-opacity-60 p-4 text-sm">
-                                  <a href={item.href} className="font-medium text-gray-900">
-                                    <span aria-hidden="true" className="absolute inset-0" />
-                                    {item.name}
-                                  </a>
-                                  <p aria-hidden="true" className="mt-0.5 text-gray-700 sm:mt-1">
-                                    Shop now
-                                  </p>
-                                </div>
-                              </div>
-                            </div>
-                          ))}
-                        </div>
-                        <div className="grid grid-cols-3 gap-x-8 gap-y-10 text-sm text-gray-500">
-                          {category.sections.map((column, columnIdx) => (
-                            <div key={columnIdx} className="space-y-10">
-                              {column.map((section) => (
-                                <div key={section.name}>
-                                  <p
-                                    id={`${category.id}-${section.id}-heading`}
-                                    className="font-medium text-gray-900"
-                                  >
-                                    {section.name}
-                                  </p>
-                                  <ul
-                                    role="list"
-                                    aria-labelledby={`${category.id}-${section.id}-heading`}
-                                    className="mt-4 space-y-4"
-                                  >
-                                    {section.items.map((item) => (
-                                      <li key={item.name} className="flex">
-                                        <a href={item.href} className="hover:text-gray-800">
-                                          {item.name}
-                                        </a>
-                                      </li>
-                                    ))}
-                                  </ul>
-                                </div>
-                              ))}
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </Popover.Panel>
-              </Popover>
-            ))}
+//                   <div className="relative bg-white">
+//                     <div className="mx-auto max-w-7xl px-8">
+//                       <div className="grid grid-cols-2 gap-x-8 gap-y-10 py-16">
+//                         <div className="grid grid-cols-2 grid-rows-1 gap-8 text-sm">
+//                           {category.featured.map((item, itemIdx) => (
+//                             <div
+//                               key={item.name}
+//                               className={classNames(
+//                                 itemIdx === 0 ? 'aspect-w-2 col-span-2' : '',
+//                                 'group aspect-h-1 aspect-w-1 relative overflow-hidden rounded-md bg-gray-100',
+//                               )}
+//                             >
+//                               <img
+//                                 alt={item.imageAlt}
+//                                 src={item.imageSrc}
+//                                 className="object-cover object-center group-hover:opacity-75"
+//                               />
+//                               <div className="flex flex-col justify-end">
+//                                 <div className="bg-white bg-opacity-60 p-4 text-sm">
+//                                   <a href={item.href} className="font-medium text-gray-900">
+//                                     <span aria-hidden="true" className="absolute inset-0" />
+//                                     {item.name}
+//                                   </a>
+//                                   <p aria-hidden="true" className="mt-0.5 text-gray-700 sm:mt-1">
+//                                     Shop now
+//                                   </p>
+//                                 </div>
+//                               </div>
+//                             </div>
+//                           ))}
+//                         </div>
+//                         <div className="grid grid-cols-3 gap-x-8 gap-y-10 text-sm text-gray-500">
+//                           {category.sections.map((column, columnIdx) => (
+//                             <div key={columnIdx} className="space-y-10">
+//                               {column.map((section) => (
+//                                 <div key={section.name}>
+//                                   <p
+//                                     id={`${category.id}-${section.id}-heading`}
+//                                     className="font-medium text-gray-900"
+//                                   >
+//                                     {section.name}
+//                                   </p>
+//                                   <ul
+//                                     role="list"
+//                                     aria-labelledby={`${category.id}-${section.id}-heading`}
+//                                     className="mt-4 space-y-4"
+//                                   >
+//                                     {section.items.map((item) => (
+//                                       <li key={item.name} className="flex">
+//                                         <a href={item.href} className="hover:text-gray-800">
+//                                           {item.name}
+//                                         </a>
+//                                       </li>
+//                                     ))}
+//                                   </ul>
+//                                 </div>
+//                               ))}
+//                             </div>
+//                           ))}
+//                         </div>
+//                       </div>
+//                     </div>
+//                   </div>
+//                 </Popover.Panel>
+//               </Popover>
+//             ))}
 
-            {navigation.pages.map((page) => (
-              <a
-                key={page.name}
-                href={page.href}
-                className="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800"
-              >
-                {page.name}
-              </a>
-            ))}
-          </div>
-        </Popover.Group>
+//             {navigation.pages.map((page) => (
+//               <a
+//                 key={page.name}
+//                 href={page.href}
+//                 className="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800"
+//               >
+//                 {page.name}
+//               </a>
+//             ))}
+//           </div>
+//         </Popover.Group>
 
-        {/* Logo */}
-        <a href="#" className="flex">
-          <span className="sr-only">Your Company</span>
-          <img
-            alt=""
-            src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-            className="h-8 w-auto"
-          />
-        </a>
+//         {/* Logo */}
+//         <a href="#" className="flex">
+//           <span className="sr-only">Your Company</span>
+//           <img
+//             alt=""
+//             src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+//             className="h-8 w-auto"
+//           />
+//         </a>
 
-        <div className="flex flex-1 items-center justify-end">
-          <a href="#" className="hidden text-gray-700 hover:text-gray-800 lg:flex lg:items-center">
-            <img
-              alt=""
-              src="https://tailwindui.com/img/flags/flag-canada.svg"
-              className="block h-auto w-5 flex-shrink-0"
-            />
-            <span className="ml-3 block text-sm font-medium">CAD</span>
-            <span className="sr-only">, change currency</span>
-          </a>
+//         <div className="flex flex-1 items-center justify-end">
+//           <a href="#" className="hidden text-gray-700 hover:text-gray-800 lg:flex lg:items-center">
+//             <img
+//               alt=""
+//               src="https://tailwindui.com/img/flags/flag-canada.svg"
+//               className="block h-auto w-5 flex-shrink-0"
+//             />
+//             <span className="ml-3 block text-sm font-medium">CAD</span>
+//             <span className="sr-only">, change currency</span>
+//           </a>
 
-          {/* Search */}
-          <a href="#" className="ml-6 hidden p-2 text-gray-400 hover:text-gray-500 lg:block">
-            <span className="sr-only">Search</span>
-            <MagnifyingGlassIcon aria-hidden="true" className="h-6 w-6" />
-          </a>
+//           {/* Search */}
+//           <a href="#" className="ml-6 hidden p-2 text-gray-400 hover:text-gray-500 lg:block">
+//             <span className="sr-only">Search</span>
+//             <MagnifyingGlassIcon aria-hidden="true" className="h-6 w-6" />
+//           </a>
 
-          {/* Account */}
-          <a href="#" className="p-2 text-gray-400 hover:text-gray-500 lg:ml-4">
-            <span className="sr-only">Account</span>
-            <UserIcon aria-hidden="true" className="h-6 w-6" />
-          </a>
+//           {/* Account */}
+//           <a href="#" className="p-2 text-gray-400 hover:text-gray-500 lg:ml-4">
+//             <span className="sr-only">Account</span>
+//             <UserIcon aria-hidden="true" className="h-6 w-6" />
+//           </a>
 
-          {/* Cart */}
-          <div className="ml-4 flow-root lg:ml-6">
-            <a href="#" className="group -m-2 flex items-center p-2">
-              <ShoppingBagIcon
-                aria-hidden="true"
-                className="h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
-              />
-              <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">0</span>
-              <span className="sr-only">items in cart, view bag</span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </nav>
-</header>
+//           {/* Cart */}
+//           <div className="ml-4 flow-root lg:ml-6">
+//             <a href="#" className="group -m-2 flex items-center p-2">
+//               <ShoppingBagIcon
+//                 aria-hidden="true"
+//                 className="h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
+//               />
+//               <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">0</span>
+//               <span className="sr-only">items in cart, view bag</span>
+//             </a>
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//   </nav>
+// </header>
 }
 
 

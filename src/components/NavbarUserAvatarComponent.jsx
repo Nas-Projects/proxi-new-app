@@ -1,5 +1,5 @@
 import React from 'react';
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { BellIcon} from '@heroicons/react/24/outline'
 import Link from 'next/link';
 
 

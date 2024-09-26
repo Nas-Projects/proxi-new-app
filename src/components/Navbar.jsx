@@ -49,11 +49,11 @@ function classNames(...classes) {
 }
 
 export default function Navbar({}) {
-  const [isScrollingUp, setIsScrollingUp] = useState(false);
-  const [isTop, setIsTop] = useState(true);
+  // const [isScrollingUp, setIsScrollingUp] = useState(false);
+  // const [isTop, setIsTop] = useState(true);
   const [lastScrollTop, setLastScrollTop] = useState(0);
-  const [isSocialVisible, setIsSocialVisible] = useState(true);
-  const [open, setIsNavOpen] = useState(false); // New state for managing the nav checkbox
+  // const [isSocialVisible, setIsSocialVisible] = useState(true);
+  // const [open, setIsNavOpen] = useState(false); // New state for managing the nav checkbox
 
 
 
@@ -150,7 +150,7 @@ export default function Navbar({}) {
   useEffect(() => {
     const handleScroll = () => {
       const st = window.scrollY || document.documentElement.scrollTop;
-      setIsScrollingUp(st < lastScrollTop);
+      // setIsScrollingUp(st < lastScrollTop);
       setLastScrollTop(st);
     };
 
@@ -161,8 +161,8 @@ export default function Navbar({}) {
 
   if (loading) return <LoadingDots />; // Show loading spinner while loading
 
-   const baseStyle = 'h-[4.1em] sm:h-[4em] lg:!h-[8em] z-50 mt-0 !z-50';
-  const applyStyle = '!sticky bg-black !top-0 !z-30 !inset-x-0 lg:h-[5em] lg:pl-[1em] lg:pt-[0%] z-50';
+  //  const baseStyle = 'h-[4.1em] sm:h-[4em] lg:!h-[8em] z-50 mt-0 !z-50';
+  // const applyStyle = '!sticky bg-black !top-0 !z-30 !inset-x-0 lg:h-[5em] lg:pl-[1em] lg:pt-[0%] z-50';
 
   return (
     <Disclosure as="nav" className="bg-white z-50 pt-2 max-w-[600px]:!min-h-[60vh]">

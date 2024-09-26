@@ -8,9 +8,9 @@ const query = groq`
   *[_type == "social"]
 `;
 
-type Data = {
-  socials:[];
-};
+// type Data = {
+//   socials:[];
+// };
 
 export default async function handler(
   // req: NextApiRequest,

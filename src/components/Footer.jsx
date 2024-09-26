@@ -1,10 +1,10 @@
 import Link from 'next/link'
 
-import { Container } from '@/components/Container'
+// import { Container } from '@/components/Container'
 import { useEffect, useRef } from 'react';
 import { Input } from './ui/input';
 
-function NavLink({ href, children }) {
+export function NavLink({ href, children }) {
   return (
     <Link
       href={href}
@@ -15,7 +15,7 @@ function NavLink({ href, children }) {
   )
 }
 
-const footerNavigation = {
+export const footerNavigation = {
   products: [
     { name: 'Tracks', href: '/tracks' },
     { name: 'Exercises', href: '/exercises' },
@@ -135,7 +135,7 @@ const navigation = {
 const Footer = () => {
   
 
-  const sectionRef = useRef(null);
+  // const sectionRef = useRef(null);
   const footerRef = useRef(null);
 useEffect(() => {
   const observer = new IntersectionObserver(

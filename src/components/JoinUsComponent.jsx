@@ -361,7 +361,7 @@ useEffect(() =>
 
                 {section1.tiles.map((section, index) => {
                     console.log("SECTIONMAPPING", section)
-                    return (<div className="relative my-4 sm:mt-[0rem]">
+                    return (<div className="relative my-4 sm:mt-[0rem]" key={index}>
                         <div id="section3TextComp" ref={section3TextCompRef} 
                         className="relative sm:col-span-3 my-4 sm:py-6 px-[6%] mt-2  dark:bg-[black] " >
                         <ExpandableSection key={index} itemkey={section._key} title={section.tileTitle}>
@@ -394,7 +394,7 @@ useEffect(() =>
 
 export const ExpandableSection = ({ title, itemkey,  children }) => {
   const [isOpen, setIsOpen] = useState(false);
-    console.log("EXP{ANDABLE_SECTION", title, children)
+    console.log("EXP{ANDABLE_SECTION", title, children, itemkey)
 
   return (<div className="expandable-section z-50">
       <div  className={clsx(isOpen &&  "shadow-xl" , "expandable-header !bg-white rounded-lg shadow-md px-4 justify-center py-3 inline-flex gap-x-4 w-full")} onClick={() => setIsOpen(!isOpen)}

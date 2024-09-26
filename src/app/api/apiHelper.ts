@@ -3,6 +3,7 @@ import clientPromise from './apiHelpers/mongodb';
 // import remarkMdx from 'remark-mdx';
 // import { serialize } from 'next-mdx-remote/serialize';
 // import type { MDXRemoteSerializeResult } from 'next-mdx-remote';
+import { ObjectId } from 'mongodb'; // Import ObjectId for MongoDB fields
 
 import { revalidatePath, unstable_noStore as noStore, unstable_noStore } from 'next/cache';
 
@@ -58,123 +59,6 @@ export interface UserProps {
   entrepreneurProjects: string[];
 }
 
-// export async function getUser(email: string) {
-//   const client = await clientPromise;
-//   const db = client.db('property-pulse');
-//   const collection = db.collection('users');
-
-//   const user = await collection.findOne({ email });
-//   console.log("USER_IN_GET_USER", user);
-//   if (!user) return null;
-
-//   const parsedUser = {
-//     _id: user._id.toString(),
-//     id: user._id.toString(),
-//     email: user.email,
-//     username: user.username,
-//     image: user.image,
-//     bookmarks: user.bookmarks,
-//     projectsStarted: user.projectsStarted,
-//     createdAt: user.createdAt ? user.createdAt.toISOString() : null,
-//     updatedAt: user.updatedAt ? user.updatedAt.toISOString() : null,
-//     followedBy: user.followedBy.map((id: { toString: () => string }) => id.toString()),
-//     following: user.following.map((id: { toString: () => string }) => id.toString()),
-//     phone: user.phone,
-//     bio: user.bio,
-//     website: user.website,
-//     emailVerified: user.emailVerified ? user.emailVerified.toString() : null,
-//     posts: user.posts?.map((id: { toString: () => string }) => id.toString()),
-//     savedPosts: user.savedPosts?.map((id: { toString: () => string }) => id.toString()),
-//     savedItems: user.savedItems?.map((item: { contentId: { toString: () => string }; contentType: string }) => ({
-//       contentId: item.contentId.toString(),
-//       contentType: item.contentType
-//     })),
-//     likes: user.likes?.map((id: { toString: () => string }) => id.toString()),
-//     accounts: user.accounts?.map((id: { toString: () => string }) => id.toString()),
-//     sessions: user.sessions?.map((id: { toString: () => string }) => id.toString()),
-//     payments: user.payments?.map((id: { toString: () => string }) => id.toString()),
-//     plan: user.plan ? user.plan.toString() : null,
-//   };
-  
-//   console.log("IN_GET_USER_lib_api_user", parsedUser);
-//   return parsedUser;
-// }
-// export interface UserProps {
-//   name: string;
-//   username: any;
-//   email: string;
-//   image: string;
-//   bio: string;
-//   bioMdx: MDXRemoteSerializeResult<Record<string, unknown>>;
-//   followers: number;
-//   verified: boolean;
-//   website?: string;
-//   gender?: string;
-//   emailVerified?: Date;
-//   createdAt: string | null; // Allow null
-//   updatedAt: string | null; // Allow null
-//   posts: string[]; // Array of post IDs as strings
-//   savedPosts: string[]; // Array of saved post IDs as strings
-//   savedItems: {
-//     contentId: string; // Converted to string for serialization
-//     contentType: 'Blog' | 'Project' | 'EntrepreneurProject' | 'Post';
-//   }[];
-//   likes: string[]; // Array of like IDs as strings
-//   followedBy: string[]; // Array of user IDs who follow this user as strings
-//   following: string[]; // Array of user IDs this user is following as strings
-//   accounts: string[]; // Array of account IDs as strings
-//   sessions: string[]; // Array of session IDs as strings
-//   messages: {
-//     senderId: string; // Converted to string for serialization
-//     receiverId: string; // Converted to string for serialization
-//     content: string;
-//     timestamp: string; // Converted to string for serialization
-//   }[];
-//   tickets: {
-//     userId: string; // Converted to string for serialization
-//     projectId: string; // Converted to string for serialization
-//     status: 'open' | 'accepted' | 'resolved';
-//     requestDetails: string;
-//     responses: {
-//       adminId?: string; // Converted to string for serialization, optional
-//       responseContent?: string;
-//       timestamp: string; // Converted to string for serialization
-//     }[];
-//   }[];
-//   bookmarks: string[]; // Array of bookmarked project IDs as strings
-//   projectsStarted: string[]; // Array of started project IDs as strings
-//   plans: string[]; // Array of plan IDs as strings
-//   payments: string[]; // Array of payment IDs as strings
-//   entrepreneurProjects: string[]; // Array of entrepreneur project IDs as strings
-//   // comments: {
-//   //   contentId: string; // Converted to string for serialization
-//   //   contentType: 'Blog' | 'Project' | 'EntrepreneurProject' | 'Post';
-//   //   comment: string;
-//   //   avatar: string; // Store the avatar URL directly
-//   //   username: string; // Store the username directly
-//   //   reactions: string[]; // Array to store reactions like "👍", "❤️", etc.
-//   //   replies: {
-//   //     userId: any;
-//   //     createdAt: any;
-//   //     updatedAt: any;
-//   //     senderId: string; // Converted to string for serialization
-//   //     body: string;
-//   //     avatar: string; // Store the avatar URL directly
-//   //     username: string; // Store the username directly
-//   //     likes: string[]; // Array of user IDs who liked the reply as strings
-//   //     timestamp: string; // Converted to string for serialization
-//   //     commentId: string; // Converted to string for serialization
-//   //   }[];
-//     // likes: string[]; // Array of user IDs who liked the comment as strings
-//     // isPinned: boolean; // Indicates if the comment is pinned
-//   //   createdAt: string; // Converted to string for serialization
-//   //   updatedAt: string; // Converted to string for serialization
-//   // }[];
-// }
-
-// // export interface UsersProps {
-// // users: UserProps[];
-// // }
 
 
 export interface ResultProps {
@@ -182,21 +66,6 @@ export interface ResultProps {
   users: UserProps[];
 }
 
-// export async function getMdxSource(postContents: string) {
-//   // Use remark plugins to convert markdown into HTML string
-//   const processedContent = await remark()
-//     // Native remark plugin that parses markdown into MDX
-//     .use(remarkMdx)
-//     .process(postContents);
-
-//   // Convert converted html to string format
-//   const contentHtml = String(processedContent);
-
-//   // Serialize the content string into MDX
-//   const mdxSource = await serialize(contentHtml);
-
-//   return mdxSource;
-// }
 
 export const placeholderBio = `
 Tincidunt quam neque in cursus viverra orci, dapibus nec tristique. Nullam ut sit dolor consectetur urna, dui cras nec sed. Cursus risus congue arcu aenean posuere aliquam.
@@ -210,66 +79,62 @@ export async function getUser(email: string) {
   const collection = db.collection('users');
 
   const user = await collection.findOne({ email });
-    console.log("USER_IN_GET_USER", user);
   if (!user) return null;
 
-  
-const parsedUser = {
-  _id: user._id.toString(),
-  id: user._id.toString(),
-  email: user.email,
-  username: user.username,
-  image: user.image,
-  bookmarks: user.bookmarks, // Assuming this is a plain array
-  projectsStarted: user.projectsStarted, // Assuming this is a plain array
-  createdAt: user.createdAt ? user.createdAt.toISOString() : null,
-  updatedAt: user.updatedAt ? user.updatedAt.toISOString() : null,
-  followedBy: user.followedBy.map((id: { toString: () => any; }) => id.toString()),
-  following: user.following.map((id: { toString: () => any; }) => id.toString()),
-  phone: user.phone, // Assuming this is already a string
-  bio: user.bio, // Assuming this is already a string
-  website: user.website, // Assuming this is already a string
-  emailVerified: user.emailVerified ? user.emailVerified.toString() : null,
-  posts: user.posts?.map((id: { toString: () => any; }) => id.toString()),
-  savedPosts: user.savedPosts?.map((id: { toString: () => any; }) => id.toString()),
-  savedItems: user.savedItems?.map((item: { contentId: { toString: () => any; }; contentType: any; }) => ({
-    contentId: item.contentId.toString(),
-    contentType: item.contentType
-  })),
-  likes: user.likes?.map((id: { toString: () => any; }) => id.toString()),
-  accounts: user.accounts?.map((id: { toString: () => any; }) => id.toString()),
-  sessions: user.sessions?.map((id: { toString: () => any; }) => id.toString()),
-  goalsCreatedForSelf: user.goalsCreatedForSelf?.map((id: { toString: () => any; }) => id.toString()),
-  goalsCreatedForOthers: user.goalsCreatedForOthers?.map((id: { toString: () => any; }) => id.toString()),
-  taskListsCreatedForSelf: user.taskListsCreatedForSelf?.map((id: { toString: () => any; }) => id.toString()),
-  taskListsCreatedForOthers: user.taskListsCreatedForOthers?.map((id: { toString: () => any; }) => id.toString()),
-  badges: user.badges?.map((badge: { icon: any; title: any; }) => ({
-    icon: badge.icon,
-    title: badge.title
-  })),
-  payments: user.payments?.map((id: { toString: () => any; }) => id.toString()),
-  plan: user.plan ? user.plan.toString() : null, // Direct reference for quick access to plan
-};
-const userData = {
-  ...parsedUser,
-  // Explicitly convert any other fields again if necessary
-  _id: user._id.toString(),
-  id: user._id.toString(),
-  createdAt: user.createdAt ? user.createdAt.toISOString() : null,
-  updatedAt: user.updatedAt ? user.updatedAt.toString() : null,
-  followedBy: user.followedBy.map((id: { toString: () => any; }) => id.toString()),
-  following: user.following.map((id: { toString: () => any; }) => id.toString()),
-};
-  // Revalidate the path before returning the user data
-  console.log("IN_GET_USER_lib_api_user", userData)
-  // unstable_noStore()
-  noStore()
- revalidatePath(`/${user.username}`);
+  const parsedUser = {
+    _id: user._id.toString(),
+    id: user._id.toString(),
+    email: user.email,
+    username: user.username,
+    image: user.image,
+    bookmarks: user.bookmarks, // Assuming this is a plain array
+    projectsStarted: user.projectsStarted, // Assuming this is a plain array
+    createdAt: user.createdAt ? user.createdAt.toISOString() : null,
+    updatedAt: user.updatedAt ? user.updatedAt.toISOString() : null,
+    followedBy: user.followedBy.map((id: ObjectId) => id.toString()), // Fixed type for ObjectId
+    following: user.following.map((id: ObjectId) => id.toString()),  // Fixed type for ObjectId
+    phone: user.phone,
+    bio: user.bio,
+    website: user.website,
+    emailVerified: user.emailVerified ? user.emailVerified.toString() : null,
+    posts: user.posts?.map((id: ObjectId) => id.toString()),  // Fixed type for ObjectId
+    savedPosts: user.savedPosts?.map((id: ObjectId) => id.toString()), // Fixed type for ObjectId
+    savedItems: user.savedItems?.map((item: { contentId: ObjectId; contentType: string }) => ({
+      contentId: item.contentId.toString(),
+      contentType: item.contentType
+    })),
+    likes: user.likes?.map((id: ObjectId) => id.toString()), // Fixed type for ObjectId
+    accounts: user.accounts?.map((id: ObjectId) => id.toString()),
+    sessions: user.sessions?.map((id: ObjectId) => id.toString()),
+    goalsCreatedForSelf: user.goalsCreatedForSelf?.map((id: ObjectId) => id.toString()),
+    goalsCreatedForOthers: user.goalsCreatedForOthers?.map((id: ObjectId) => id.toString()),
+    taskListsCreatedForSelf: user.taskListsCreatedForSelf?.map((id: ObjectId) => id.toString()),
+    taskListsCreatedForOthers: user.taskListsCreatedForOthers?.map((id: ObjectId) => id.toString()),
+    badges: user.badges?.map((badge: { icon: string; title: string }) => ({
+      icon: badge.icon,
+      title: badge.title
+    })),
+    payments: user.payments?.map((id: ObjectId) => id.toString()),
+    plan: user.plan ? user.plan.toString() : null,
+  };
 
+  const userData = {
+    ...parsedUser,
+    _id: user._id.toString(),
+    id: user._id.toString(),
+    createdAt: user.createdAt ? user.createdAt.toISOString() : null,
+    updatedAt: user.updatedAt ? user.updatedAt.toString() : null,
+    followedBy: user.followedBy.map((id: ObjectId) => id.toString()),
+    following: user.following.map((id: ObjectId) => id.toString()),
+  };
+
+  // Revalidate the path before returning the user data
+  noStore();
+  revalidatePath(`/${user.username}`);
 
   return userData;
-  
 }
+
 
 
 export async function getFirstUser(): Promise<UserProps | null> {

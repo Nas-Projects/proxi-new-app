@@ -10,7 +10,7 @@ export function BlogPost(props: {
   author: string;
   content: React.ReactNode;
 }) {
-  // const { date, title, author, content } = props;
+  // console.log { date, title, author, content } = props;
   const {  content } = props;
 
   return (
