@@ -22,5 +22,16 @@ import ChevronDown from './chevron-down'
 // import contactSection from './schemaTypes/contactSection';
 // export  {PersonalIcon, DesktopIcon, LotsOfContentIcon, CheckIcon, LifetimeIcon,  Ideal , Back, ArrowRight, Eye, EyeOff}
 
-export  {PersonalIcon, DesktopIcon, LotsOfContentIcon, CheckIcon, LifetimeIcon,  Ideal , Back, ArrowRight, Eye, EyeOff, ChevronDown}
+export  { 
+        PersonalIcon, 
+        DesktopIcon,
+        LotsOfContentIcon, 
+        CheckIcon, LifetimeIcon,
+        Ideal, 
+        Back, 
+        ArrowRight, 
+        Eye, 
+        EyeOff, 
+        ChevronDown
+      }
 

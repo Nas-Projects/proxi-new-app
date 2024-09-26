@@ -1,5 +1,5 @@
 import LoadingDots from '@/components/LoadingDots';
-import  AlertCircleIcon  from '@/components/icons';
+import  AlertCircleIcon  from '@/components/nassersIcons/alert-circle';
 import Link from 'next/link';
 import { MouseEvent, useState } from 'react';
 
