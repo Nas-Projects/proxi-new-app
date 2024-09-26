@@ -1,10 +1,10 @@
 'use client';
 import Link from 'next/link';
-import { Fragment, useEffect, useState } from 'react';
+import {  useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
 import { fetchProperty } from '../../../utils/requests';
 import PropertyHeaderImage from '@/components/propertiesComponents/PropertyHeaderImage';
-import PropertyDetails from '@/components/propertiesComponents/PropertyDetails';
+// import PropertyDetails from '@/components/propertiesComponents/PropertyDetails';
 import PropertyImages from '@/components/propertiesComponents/PropertyImages';
 import BookmarkButton from '@/components/propertiesComponents/BookmarkButton';
 import PropertyContactForm from '@/components/propertiesComponents/PropertyContactForm';
@@ -16,7 +16,7 @@ import MorgageCalculator from '@/components/propertiesComponents//MorgageCalcula
 import { FaArrowLeft, FaTimes } from 'react-icons/fa';
 import {
   Breadcrumb,
-  BreadcrumbEllipsis,
+  // BreadcrumbEllipsis,
   BreadcrumbItem,
   BreadcrumbLink,
   BreadcrumbList,
@@ -24,10 +24,10 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb"
 import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
+  // DropdownMenu,
+  // DropdownMenuContent,
+  // DropdownMenuItem,
+  // DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import {
   FaMapMarker,
@@ -36,9 +36,9 @@ import {
 import PropertyDetailsCard from "@/components/propertiesComponents/PropertyDetailsCard.jsx";
  import PropertyNeighborhoodDetails from "@/components/propertiesComponents/PropertyNeighborhoodDetails.jsx";
  import PropertyAmenitiesDetails from "@/components/propertiesComponents/PropertyAmenitiesDetails";
- import PropertyRatesOrPriceDetails from "@/components/propertiesComponents/PropertyRatesOrPriceDetails";
+//  import PropertyRatesOrPriceDetails from "@/components/propertiesComponents/PropertyRatesOrPriceDetails";
 import PropertyMap from '@/components/propertiesComponents/PropertyMap';
-import NewPropertyContactForm from '@/components/propertiesComponents/NewPropertyContactForm';
+// import NewPropertyContactForm from '@/components/propertiesComponents/NewPropertyContactForm';
 const PropertyPage = () => {
   const { id } = useParams();
 

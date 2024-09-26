@@ -2,7 +2,7 @@
 
 import { useState, ReactNode } from 'react';
 import Sidebar from './sidebar';
-import Navbar from '../../navbar';
+// import Navbar from '../../navbar';
 import Directory from './directory';
 import { ResultProps } from '../../../app/api/apiHelper';
 import Toast from '@/components/alerts/toast';

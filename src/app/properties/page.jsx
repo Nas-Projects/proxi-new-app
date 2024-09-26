@@ -251,7 +251,7 @@ const PropertiesPage = () => {
   const [properties, setProperties] = useState([]);
   const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(1);
-  const [pageSize, setPageSize] = useState(6);
+  const [pageSize, setPageSize] = useState(0);
   const [totalItems, setTotalItems] = useState(0);
 
   const [filters, setFilters] = useState({
@@ -279,6 +279,7 @@ const PropertiesPage = () => {
         const data = await res.json();
         setProperties(data.rawproperties);
         setTotalItems(data.total);
+        setPageSize(6);
       } catch (error) {
         console.error(error);
       } finally {
@@ -415,7 +416,8 @@ if (filters.size) {
         <h1 className="page-h1 text-custom-gradient font-bold md:text-[55px] ss:text-[45px] text-[33px] slide-animation">
           Our Properties
         </h1>
-        <h2 className="text-4xl text-custom-gradient">Proxy <span className="text-slate-600 text-4xl ">will give you help hand with search for a new living</span></h2>
+        <h2 className="text-4xl text-custom-gradient">Proxy <span className="text-slate-600 text-4xl ">
+          will give you help hand with search for a new living</span></h2>
         <Filters filters={filters} setFilters={setFilters} />
         
         {/* <button className="clear-filters" onClick={clearFilters}>
@@ -428,7 +430,8 @@ if (filters.size) {
           <div className="items-center w-full mx-auto flex flex-col max-w-[126rem]">
             <div className="container-xl lg:container m-auto px-4 py-6 min-w-[330px]">
               {filteredProperties.length === 0 ? (
-                <p>No properties found matching your criteria. Please adjust the price or location.</p>
+                <p>No properties found matching your criteria. 
+                  Please adjust the price or location.</p>
               ) : (
                 <div className="grid grid-cols-1 min-[712px]:grid-cols-2 min-[1079px]:grid-cols-3 min-[1475px]:!grid-cols-4 gap-6 bg-white">
                   {filteredProperties.map((property) => (

@@ -12,8 +12,8 @@ import {
   FormControl,
   FormField,
   FormItem,
-  FormMessage,
-} from "../../ui/form";
+  // FormMessage,
+} from "../../components/ui/form";
 import useMount from "../../../hooks/useMount";
 import { updateProfile } from "../../../lib/actions";
 import { UserWithExtras } from "../../../lib/definitions";
@@ -80,7 +80,9 @@ function ProfileAvatar({
               <FormField
                 control={form.control}
                 name="image"
-                render={({ field }) => (
+                render={({ field }) => {
+                  console.log(field);
+                  return (
                   <FormItem>
                     <FormControl>
                       <UploadButton
@@ -101,6 +103,7 @@ function ProfileAvatar({
                     </FormControl>
                   </FormItem>
                 )}
+              }
               />
 
               {user.image && (

@@ -13,15 +13,15 @@ import {
 } from '@heroicons/react/24/outline'
 
 import {
-  Bars3Icon,
-  BellIcon,
+  // Bars3Icon,
+  // BellIcon,
   CalendarIcon,
-  ChartPieIcon,
-  Cog6ToothIcon,
-  DocumentDuplicateIcon,
-  FolderIcon,
+  // ChartPieIcon,
+  // Cog6ToothIcon,
+  // DocumentDuplicateIcon,
+  // FolderIcon,
   HomeIcon,
-  UsersIcon,
+  // UsersIcon,
   XMarkIcon,
 } from '@heroicons/react/24/outline'
 import Directory from './directory';

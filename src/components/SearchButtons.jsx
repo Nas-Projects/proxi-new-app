@@ -1,6 +1,6 @@
 'use client';
 
-import SectionWrapper from "../hoc/SectionWrapper";
+// import SectionWrapper from "../hoc/SectionWrapper";
 import { motion } from 'framer-motion';
 import { fadeIn } from '../utils/motion';
 import { SearchBtns } from "../constants";

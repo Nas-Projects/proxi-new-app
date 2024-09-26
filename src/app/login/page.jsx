@@ -491,7 +491,10 @@ import SelectButton from '@/components/Select/SelectButton';
             className="text-font-xxs lg:text-font-xs mb-6 text-center text-glass-600"
             style={{ maxWidth: 328 }}
           >
-**Proxy has transformed real estate transactions with its blockchain technology. It ensures secure, transparent transactions and immutable records. Verifying property histories and ownership is now effortless. I can't imagine managing real estate deals without it.**”
+**Proxy has transformed real estate transactions with its blockchain technology. It ensures secure, 
+transparent transactions and immutable records. Verifying property 
+histories and ownership is now effortless.
+ I can&apos;t imagine managing real estate deals without it.**”
           </div>
           <div className="flex items-center justify-center">
             <img

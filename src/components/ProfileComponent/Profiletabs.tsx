@@ -1,9 +1,9 @@
 // import { auth } from "@/auth";
 import FollowButton from "@/components/ProfileComponent/FollowButton";
-import ProfileAvatar from "./ProfileAvatar";
-import ProfileHeader from "./ProfileHeader";
-import ProfileContentTabs from "./ProfileContentTabs";
-import UserAvatar from "./UserAvatar";
+// import ProfileAvatar from "./ProfileAvatar";
+// import ProfileHeader from "./ProfileHeader";
+// import ProfileContentTabs from "./ProfileContentTabs";
+// import UserAvatar from "./UserAvatar";
 import { Button, buttonVariants } from "../button";
 import { UserProfileMongoDBWithExtras } from "@/lib/Types";
 // import { fetchProfile } from "@/lib/data";
@@ -13,9 +13,9 @@ import { unstable_noStore } from "next/cache";
 import {PopoverList} from "./PopoverList";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import  LoadingDots  from "../LoadingDots";
+// import  LoadingDots  from "../LoadingDots";
 import { useState } from "react";
-import { signIn } from "next-auth/react";
+// import { signIn } from "next-auth/react";
 import TaskForm from "@/components/TaskForm";
 // import TestSliderComponent from "@/components/mindConnect/Modals/TestSliderComponent"
 type Props = {
@@ -50,8 +50,8 @@ export async function generateMetadata(
   const [showTodoForm, setShowTodoForm] = useState(false);
 //   const profile = await fetchProfile(username);
 //   const session = await auth();
-const [isHeadlessOpen, setIsHeadlessOpen] = useState(false);
-const [loading, setLoading] = useState(false);
+// const [isHeadlessOpen, setIsHeadlessOpen] = useState(false);
+// const [loading, setLoading] = useState(false);
   const isCurrentUser = session?.user.id === profile?.id;
   console.log("IS_CURRENT_USER", isCurrentUser);
   //   the followerId here is the id of the user who is following the profile
@@ -65,10 +65,10 @@ const [loading, setLoading] = useState(false);
   const handleAddClick = () => {
     setShowTodoForm((prevState) => !prevState);
   };
-const handlesetIsHeadlessModal = () => {
-  setIsHeadlessOpen(!isHeadlessOpen)
-  // alert("Modal is not yet implemented")
-}
+// const handlesetIsHeadlessModal = () => {
+//   setIsHeadlessOpen(!isHeadlessOpen)
+//   // alert("Modal is not yet implemented")
+// }
   return (
     <>
       {/* <ProfileHeader username={profile?.username} /> */}

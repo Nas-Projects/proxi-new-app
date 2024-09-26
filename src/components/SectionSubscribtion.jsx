@@ -1,8 +1,8 @@
 
 
-import Link from "next/link";
+// import Link from "next/link";
 import { FadeIn, FadeInStagger } from "./FadeIn";
-import { DesktopIcon } from "@sanity/icons";
+// import { DesktopIcon } from "@sanity/icons";
 import PricingCard from "./cards/PricingCard";
 
 

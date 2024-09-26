@@ -1,16 +1,16 @@
 import { useState, useRef } from 'react';
 // import emailjs from '@emailjs/browser';
 import { useFormik } from "formik";
-import { RiInformationFill } from "react-icons/ri";
+// import { RiInformationFill } from "react-icons/ri";
 import { IoSearchOutline } from "react-icons/io5";
-import { ImPlay } from "react-icons/im";
-import { TiArrowSortedDown } from "react-icons/ti";
+// import { ImPlay } from "react-icons/im";
+// import { TiArrowSortedDown } from "react-icons/ti";
 import * as Yup from 'yup';
 
 const Search = () => {
 
     const formRef = useRef();
-    const [Loading, setLoading] = useState(false);
+    const [Loading, setLoading] = useState(true);
     const [selectedTab, setSelectedTab] = useState('propertySearch');
 
     const formik = useFormik({
@@ -27,6 +27,8 @@ const Search = () => {
             price: Yup.string().required('Price is required.'),
             numbermail: Yup.string().required('Phone Number or Email is required.'),
         }),
+
+      
 
         // onSubmit: (values) => {
         //     setLoading(true);
@@ -65,7 +67,7 @@ const Search = () => {
         //     );
         // },
     });
-
+  setLoading(false)
     const handleTabChange = (tab) => {
         setSelectedTab(tab);
     };

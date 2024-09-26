@@ -8,16 +8,10 @@ type AccordionItemProps = {
   type?: string;
   className?: string;
   required?: boolean;
-  benefits?: Array<{ isOpen?: boolean; ifo: string }>; // Added a specific type for benefits array
+  benefits?: Array<{ isOpen?: boolean; ifo: string }>; // Type definition for benefits
   tooltip?: string;
-  forceMountContent?: true;
-  headingSize?: "small" | "medium" | "large";
-  customTrigger?: React.ReactNode;
-  complete?: boolean;
-  active?: boolean;
-  triggerable?: boolean;
   children: React.ReactNode;
-  product?: Array<any>;
+  product?: Array<{ id: string; name: string }>; // Specific type for product
 };
 
 type AccordionProps = {
@@ -35,25 +29,20 @@ const Item: React.FC<AccordionItemProps> = ({
   description,
   children,
   className,
-  benefits = [], // Set a default empty array for benefits
-  headingSize = "large",
-  customTrigger,
-  forceMountContent,
-  triggerable,
+  benefits = [], // Default empty array for benefits
   ...props
 }) => {
   const [accordionItem, setAccordionItem] = useState(
     benefits.map((item) => ({ isOpen: false, ...item }))
   );
-  const [isOpen, setIsOpen] = useState(true);
 
   const handleAccordionItem = useCallback((index: number) => {
-    setAccordionItem((prevFaqs) =>
-      prevFaqs.map((faq, i) => {
+    setAccordionItem((prevItems) =>
+      prevItems.map((item, i) => {
         if (i === index) {
-          return { ...faq, isOpen: !faq.isOpen };
+          return { ...item, isOpen: !item.isOpen };
         } else {
-          return faq;
+          return item;
         }
       })
     );
@@ -77,7 +66,9 @@ const Item: React.FC<AccordionItemProps> = ({
               <div key={index} className="p-4 border rounded">
                 <h4
                   className={`flex items-center justify-between cursor-pointer ${
-                    item.isOpen ? 'text-green-400 font-medium transition-transform' : ''
+                    item.isOpen
+                      ? "text-green-400 font-medium transition-transform"
+                      : ""
                   }`}
                   onClick={() => handleAccordionItem(index)}
                 >
@@ -88,7 +79,7 @@ const Item: React.FC<AccordionItemProps> = ({
                     stroke="currentColor"
                     viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg"
-                    style={{ transform: item.isOpen ? 'rotate(180deg)' : '' }}
+                    style={{ transform: item.isOpen ? "rotate(180deg)" : "" }}
                   >
                     <path
                       strokeLinecap="round"
@@ -99,11 +90,7 @@ const Item: React.FC<AccordionItemProps> = ({
                   </svg>
                 </h4>
                 {item.isOpen && (
-                  <div
-                    className={clx(
-                      "radix-state-closed:animate-accordion-close radix-state-open:animate-accordion-open px-1"
-                    )}
-                  >
+                  <div className={clx("px-1")}>
                     <div className="inter-base-regular">
                       {description && <Text>{description}</Text>}
                       <div className="w-full">{children}</div>
@@ -120,26 +107,5 @@ const Item: React.FC<AccordionItemProps> = ({
 };
 
 Accordion.Item = Item;
-
-const MorphingTrigger: React.FC<{ isOpen: boolean }> = ({ isOpen }) => {
-  return (
-    <div className="text-grey-90 hover:bg-grey-5 active:bg-grey-5 active:text-violet-60 focus:border-violet-60 disabled:text-grey-30 bg-transparent disabled:bg-transparent rounded-rounded group relative p-[6px]">
-      <div className="h-5 w-5">
-        <span
-          className={clx(
-            "bg-grey-50 rounded-circle absolute inset-y-[31.75%] left-[48%] right-1/2 w-[1.5px] duration-300",
-            { "rotate-90": isOpen }
-          )}
-        />
-        <span
-          className={clx(
-            "bg-grey-50 rounded-circle absolute inset-x-[31.75%] top-[48%] bottom-1/2 h-[1.5px] duration-300",
-            { "rotate-90": isOpen, "left-1/2 right-1/2": isOpen }
-          )}
-        />
-      </div>
-    </div>
-  );
-};
 
 export default Accordion;

@@ -1,8 +1,6 @@
 'use client'
 
-// import { redirect } from "next/navigation";
-// import { getServerSession } from "next-auth";
-// import { authOptions } from "@/auth";
+
 import ProfileComponent from "@/components/ProfileComponent";
 // import { fetchUserById } from "@/lib/data";
 import { useEffect, useState } from "react";
@@ -12,36 +10,15 @@ import { useUser } from "@supabase/auth-helpers-react";
 // import { getUser } from "../api/apiHelper";
 
 export default function PrivatePage() {
-  const[loading, setLoading] = useState(true);
+  // const[loading, setLoading] = useState(true);
   const [mongoDBnUser, setMongoDBnUser] = useState(null);
   const user  = useUser();
-  // const { mongoUser, setMongoUser } = useMongoUser();
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       if(user) {
-  //         const email = user.email
-  //       //  const mongoUser =  await getUser(email)
-        
-  //        setMongoDBnUser(mongoUser)
-  //         setLoading(false)
-  //       }
 
-      
-  //     } catch (error) {
-  //       console.error("Error fetching About Page data:", error);
-  //     } finally {
-  //       setLoading(false); // Set loading to false once data is fetched
-  //     }
-  //   };
-
-  //   if (!mongoDBnUser) {
-  //     fetchData();
-  //   }
   // }, [mongoDBnUser]);
   useEffect(() => {
     if (user && !mongoDBnUser) {
-         fetch(`/api/users?email=${encodeURIComponent(user.email)}`)
+    const   userEmail = user?.email ? user.email : ""
+         fetch(`/api/users?email=${encodeURIComponent(userEmail)}`)
         .then((res) => res.json())
         .then((data) => setMongoDBnUser(data));
     }
@@ -89,6 +66,6 @@ export default function PrivatePage() {
 //   </div>
 // </div> */}
 
-function setLoading(arg0: boolean) {
-  throw new Error("Function not implemented.");
-}
+// function setLoading(arg0: boolean) {
+//   throw new Error("Function not implemented.");
+// }
