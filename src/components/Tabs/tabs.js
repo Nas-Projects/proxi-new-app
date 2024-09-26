@@ -52,7 +52,7 @@ const tabs = [
   }
 ]
 
-export function TabsDemo() {
+export default function TabsDemo() {
   return (
     <Tabs defaultValue="account" className="w-[400px]">
       <TabsList className="grid w-full grid-cols-3">

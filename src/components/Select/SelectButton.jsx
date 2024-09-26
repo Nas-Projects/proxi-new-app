@@ -11,30 +11,7 @@ import {
   } from "@/components/ui/select"
 import { Label } from "@headlessui/react";
   
-//   export const SelectButton = ({ label, name, items, handleInputChange, value }) => {
-//     const handleChange = (e) => {
-//       console.log("SelectButton onChange", e); // Log the event
-//       handleInputChange(e); // Call the parent handler
-//     };
-  
-//     return (
-//       <div>
-//          <label htmlFor={name} className="block text-gray-700 font-bold mb-2">
-//          {label}
-//        </label>
-//        <Select onValueChange={(value)}   name={name} value={value} onChange={handleChange}>
-//           {items.map((item, index) => (
-//             <option key={index} value={item}>
-//               {item}
-//             </option>
-//           ))}
-//         </Select>
-//       </div>
-//     );
-//   };
-  
-// SelectButton Component for Filters
-export function SelectButton({ label, name, items, handleInputChange }) {
+export default function SelectButton({ label, name, items, handleInputChange }) {
   const handleChange = (e) => {
           console.log("SelectButton onChange", e); // Log the event
           handleInputChange(e); // Call the parent handler

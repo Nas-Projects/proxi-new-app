@@ -15,7 +15,7 @@ import { Link } from 'lucide-react';
 import { getGradient } from '../../lib/gradients';
 // import { MDXRemote } from 'next-mdx-remote';
 import Profiletabs from './Profiletabs';
-import {TabsDemo }from '../tabs/tabs';
+import TabsDemo from '../tabs/tabs';
 
 export default function Profile({
   user,

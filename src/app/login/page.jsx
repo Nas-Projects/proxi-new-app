@@ -7,7 +7,7 @@ import Image from 'next/image';
 import LoadingDots from '@/components/LoadingDots';
 import { signIn } from 'next-auth/react';
 import { GoogleButton } from '@/components/button';
-import { SelectButton } from '@/components/select/SelectButton';
+import  SelectButton  from '@/components/select/SelectButton';
 
 
   
