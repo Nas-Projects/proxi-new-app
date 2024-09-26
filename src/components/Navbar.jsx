@@ -18,12 +18,12 @@ import  NavbarUserAvatarComponent  from './NavbarUserAvatarComponent'
 //         console.log('NAVBAR_User profileUSER:', userData.user.identities[0]);
 //         console.log('NAVBAR_User_profile_IDENTITIES:', userData.user.identities[0]);
 //         console.log('NAVBAR_User_profile_IDENTITIES_DOT_INDENTITY_DATA:', userData.user.identities[0]?.identity_data);
-const user = {
-  name: 'Tom Cook',
-  email: 'tom@example.com',
-  imageUrl:
-    'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-}
+// const user = {
+//   name: 'Tom Cook',
+//   email: 'tom@example.com',
+//   imageUrl:
+//     'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+// }
 const navigation = [
   { name: 'Properties', href: '/properties', current: true },
   { name: 'Sales', href: '/properties/search-results?location=&propertyType=sale"', current: false },
@@ -62,9 +62,9 @@ export default function Navbar({}) {
   const [errorMessage, setErrorMessage] = useState(null);
   // const { data: session } = useSession();
 
-  const router = useRouter();
+  // const router = useRouter();
   const  session  = useSession(); // destructuring session and error
-
+console.log("errorMessage", errorMessage);
   useEffect(() => {
     const fetchUserProfile = async () => {
       if (!session) {

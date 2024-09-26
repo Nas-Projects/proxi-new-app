@@ -394,15 +394,15 @@ if (filters.size) {
   
 
   // Clear all filters
-  const clearFilters = () => {
-    setFilters({
-      location: '',
-      type: '',
-      size: '',
-      priceFrom: '',
-      priceTo: '',
-    });
-  };
+  // const clearFilters = () => {
+  //   setFilters({
+  //     location: '',
+  //     type: '',
+  //     size: '',
+  //     priceFrom: '',
+  //     priceTo: '',
+  //   });
+  // };
 
   const handlePageChange = (newPage) => {
     setPage(newPage);
@@ -416,7 +416,9 @@ if (filters.size) {
         <h1 className="page-h1 text-custom-gradient font-bold md:text-[55px] ss:text-[45px] text-[33px] slide-animation">
           Our Properties
         </h1>
-        <h2 className="text-4xl text-custom-gradient">Proxy <span className="text-slate-600 text-4xl ">
+        <h2 className="text-4xl text-custom-gradient">
+          Proxy 
+        <span className="text-slate-600 text-4xl">
           will give you help hand with search for a new living</span></h2>
         <Filters filters={filters} setFilters={setFilters} />
         
@@ -426,7 +428,8 @@ if (filters.size) {
 
       </div>
       <section className="min-[700px]:px-0 sm:px-0 lg:px-16 sm:py-12 py-4 max-w-[180rem] mx-auto bg-white">
-        <div className="md:min-h-[350px] ss:min-h-[400px] min-h-[550px] min-w-[360px] mx-auto flex items-center relative propertiesMainSection">
+        <div className="md:min-h-[350px] ss:min-h-[400px] min-h-[550px] min-w-[360px] 
+        mx-auto flex items-center relative propertiesMainSection">
           <div className="items-center w-full mx-auto flex flex-col max-w-[126rem]">
             <div className="container-xl lg:container m-auto px-4 py-6 min-w-[330px]">
               {filteredProperties.length === 0 ? (

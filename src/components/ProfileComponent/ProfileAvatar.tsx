@@ -7,33 +7,33 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "../../ui/dialog";
+} from "../ui/dialog";
 import {
   FormControl,
   FormField,
   FormItem,
-  FormMessage,
-} from "../../ui/form";
-import useMount from "../../../hooks/useMount";
-import { updateProfile } from "../../../lib/actions";
-import { UserWithExtras } from "../../../lib/definitions";
-import { UpdateUser } from "../../../lib/schemas";
-import { UploadButton } from "../../../lib/uploadthing";
+  // FormMessage,
+} from "../ui/form";
+import useMount from "@/lib/hooks/useMount";
+import { updateProfile } from "@/lib/data";
+import { UserProfileMongoDBWithExtras } from "@/lib/Types";
+import { UpdateUser } from "@/lib/schemas";
+import { UploadButton } from "/lib/uploadthing";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useSession } from "next-auth/react";
 import { useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 import { z } from "zod";
-import SubmitButton from "./SubmitButton";
+import SubmitButton from "../SubmitButton";
 import UserAvatar from "./UserAvatar";
-import { Form } from "../../ui/form";
+import { Form } from "../ui/form";
 
 function ProfileAvatar({
   user,
   children,
 }: {
-  user: UserWithExtras;
+  user: UserProfileMongoDBWithExtras;
   children: React.ReactNode;
 }) {
   const { data: session } = useSession();

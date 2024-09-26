@@ -75,6 +75,7 @@ export type UserProfileMongoDBWithExtras = {
   userRole: UserRole;
   role: string; // e.g., 'authenticated' or 'unauthenticated'
   [key: string]: unknown; // For any other unspecified fields
+  verified?: boolean;
 };
 
 // Badge interface

@@ -25,7 +25,7 @@ import {
   XMarkIcon,
 } from '@heroicons/react/24/outline'
 import Directory from './directory';
-import { ResultProps } from '@/lib/api/user';
+// import { ResultProps } from '@/lib/api/user';
 
 export default function Sidebar({
   sidebarOpen,
@@ -35,7 +35,7 @@ export default function Sidebar({
 }: {
   sidebarOpen: boolean;
   setSidebarOpen: (open: boolean) => void;
-  results: ResultProps[];
+  results: [];
   totalUsers: number;
 }) {
   return (

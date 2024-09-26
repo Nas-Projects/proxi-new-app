@@ -9,7 +9,20 @@ import { getGradient } from '@/lib/gradients';
 // import { MDXRemote } from 'next-mdx-remote';
 import Profiletabs from './Profiletabs';
 import TabsDemo from '@/components/tabs/TabsDemo';
-
+interface UserProfileProps {
+  user: UserProfileMongoDBWithExtras; // Replace with a more specific user type based on your data
+  data: Object; // Define this based on the data structure
+  setData: React.Dispatch<React.SetStateAction<Object>>; // This assumes setData is a state setter from useState
+  setError: React.Dispatch<React.SetStateAction<string | null>>;
+  setSuccess: React.Dispatch<React.SetStateAction<string>>;
+  setSaving: React.Dispatch<React.SetStateAction<boolean>>;
+  error: string | null;
+  saving: boolean;
+  session: Object; // Define based on your session data
+  settingsPage: boolean;
+  handleSave: () => void; // Define the signature of the function if needed
+  success: string;
+}
 export default function Profile({
   user,
   data,
@@ -26,8 +39,8 @@ export default function Profile({
   setSuccess,
 }: {
   user: UserProfileMongoDBWithExtras;
-  data: any;
-  setData: (data: any) => void;
+  data: [];
+  setData: (data: object) => void;
   setError: (error: string) => void;
   setSuccess: (success: string) => void;
   setSaving: (saving: boolean) => void;
@@ -45,7 +58,17 @@ export default function Profile({
 }) {
   console.log("USER-Profile-IN Dynamic", user);
   console.log(CheckInCircleIcon, GitHubIcon, LoadingDots, UploadIcon);
-
+  console.log(data,
+    setData,
+    setError,
+    setSuccess,
+    setSaving,
+    error,
+    saving,
+    session,
+    settingsPage,
+    handleSave,
+    success);
   return (
     <div className="min-h-screen pb-20">
       <div>
