@@ -56,21 +56,21 @@ export default async function Page({ params }: Props) {
   const post = await sanityFetch<PostType>({ query: postQuery, params });
   console.log("Post_Page_sanityFetch", post)
 
-  const {
-    title,
-    publishedAt,
-    author: {
-      name,
-      bio,
-      email,
-      image: { asset: { url: authorImageUrl } },
-      socialLinks, // Access socialLinks directly
-    },
-    content,
-    mainImage: {
-      asset: { url: mainImageUrl }
-    }
-  } = post;
+  // const {
+  //   // title,
+  //   // publishedAt,
+  //   author: {
+  //     name,
+  //     bio,
+  //     email,
+  //     image: { asset: { url: authorImageUrl } },
+  //     socialLinks, // Access socialLinks directly
+  //   },
+  //   content,
+  //   mainImage: {
+  //     asset: { url: mainImageUrl }
+  //   }
+  // } = post;
 
   return <Post post={post} />;
 

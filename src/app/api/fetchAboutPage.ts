@@ -9,14 +9,11 @@ const query = groq`
   }
 `;
 
-type Data = {
-  aboutPageData: Object;
-};
+type AboutPageData = Record<string, unknown>; // Use a more specific type or refine this
 
-// Updated handler function
 export default async function handler(
-  _req: NextApiRequest, // We’re not using `req` but still need to include it for the function signature
-  res: NextApiResponse<Data>
+  _req: NextApiRequest, // We’re not using `req`
+  res: NextApiResponse<{ aboutPageData: AboutPageData }>
 ) {
   try {
     // Fetch the data from Sanity using the query

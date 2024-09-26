@@ -74,7 +74,7 @@ export default function BlogsPage() {
   if (loading) {
     return <div>Loading...</div>; // Optional loading state
   }
-
+  console.log("fetchResults", fetchResults);
   return (
     <section className="main-container px-0 bg-black !max-w-full min-h-[50vh]">
       <Head>

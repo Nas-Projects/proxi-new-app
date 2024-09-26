@@ -1,15 +1,14 @@
 import clientPromise from './apiHelpers/mongodb';
-import { remark } from 'remark';
-import remarkMdx from 'remark-mdx';
-import { serialize } from 'next-mdx-remote/serialize';
-import type { MDXRemoteSerializeResult } from 'next-mdx-remote';
+// import { remark } from 'remark';
+// import remarkMdx from 'remark-mdx';
+// import { serialize } from 'next-mdx-remote/serialize';
+// import type { MDXRemoteSerializeResult } from 'next-mdx-remote';
 
 import { revalidatePath, unstable_noStore as noStore, unstable_noStore } from 'next/cache';
 
 // import { ObjectId } from 'mongodb';
 // import clientPromise from '@/lib/mongodb'; //
 
-import clientPromise from './apiHelpers/mongodb';
 
 export interface UserProps {
   name: string;

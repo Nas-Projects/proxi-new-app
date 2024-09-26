@@ -1,4 +1,3 @@
-// utils/fetchLandingPageData.ts
 import { groq } from "next-sanity";
 import { sanityClient } from "@/sanity/lib/client";
 
@@ -18,24 +17,29 @@ const query = groq`
         paymentMode
       }
     },
-    benefits,
+    ourValues,
     testimonials,
-    gallery,
-    contact
+    blockchain,
+    contactInformation
   }
 `;
+
+type ImageType = {
+  url: string;
+  alt: string;
+};
 
 type LandingPageData = {
   hero: {
     meta: string;
     banner: {
-      image: any;
+      image: ImageType; // Replace 'any' with specific image type
       title: string;
     };
     tagline: string;
   };
-  about: {
-    coverImage: any;
+  aboutSection: {
+    coverImage: ImageType; // Replace 'any' with specific image type
     tagline: string;
     title: string;
     description: string;
@@ -61,21 +65,21 @@ type LandingPageData = {
   };
   testimonials: {
     title: string;
-    image: any;
+    image: ImageType; // Replace 'any' with specific image type
   };
   gallery: {
     title: string;
     images: Array<{
-      image: any;
+      image: ImageType; // Replace 'any' with specific image type
       caption: string;
     }>;
   };
   contact: {
-    image: any;
+    image: ImageType; // Replace 'any' with specific image type
   };
 };
 
- const fetchLandingPageData = async (): Promise<LandingPageData | null> => {
+const fetchLandingPageData = async (): Promise<LandingPageData | null> => {
   try {
     const landingPageData = await sanityClient.fetch(query);
     return landingPageData;
@@ -85,4 +89,4 @@ type LandingPageData = {
   }
 };
 
-export  default  fetchLandingPageData 
+export default fetchLandingPageData;

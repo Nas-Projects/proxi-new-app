@@ -9,7 +9,7 @@ export function cn(...inputs: ClassValue[]) {
 export const getUserId = async () => {
   // const session = await auth();
   const session = await getServerSession(authOptions);
-  const userId = session?.user?.id;
+  const userId = session?.user?.id || session?.user?.email ? session?.user?.email : null;
 
   if (!userId) {
     throw new Error("You must be signed in to use this feature");

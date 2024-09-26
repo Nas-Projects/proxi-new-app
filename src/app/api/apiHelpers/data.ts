@@ -4,7 +4,7 @@
 import User from "@/models/User";
 import Post from "@/models/Post";
 import Like from "@/models/Like";
-import { getUserId } from "./utils";
+import { getUserId } from "@/utils/utils";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { z } from "zod";

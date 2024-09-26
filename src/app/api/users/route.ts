@@ -2,11 +2,11 @@
 
 import { NextResponse, NextRequest } from 'next/server';
 // import { getAllUsers, getUserCount, searchUser, updateUser, getMdxSource } from '@/lib/api/user';
-import { getSession } from 'next-auth/react';
+// import { getSession } from 'next-auth/react';
 import User from "@/models/User";
 import connectDB from '@/config/database';
 // import { auth } from '@/lib/auth/[...nextauth]';
-import { revalidatePath, unstable_noStore } from 'next/cache';
+// import { revalidatePath, unstable_noStore } from 'next/cache';
 
 console.log("USERS_ROUTE APP/API/USERS");
 

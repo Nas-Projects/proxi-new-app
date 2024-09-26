@@ -57,11 +57,11 @@ const secondaryNavigation = [
 ]
 
 
-const tabsPanel = [
-  { name: 'All', href: '#', current: false },
-  { name: 'Women', href: '/exercises/women', current: true },
-  { name: 'Men', href: '/exercises/men', current: false },
-]
+// const tabsPanel = [
+//   { name: 'All', href: '#', current: false },
+//   { name: 'Women', href: '/exercises/women', current: true },
+//   { name: 'Men', href: '/exercises/men', current: false },
+// ]
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }

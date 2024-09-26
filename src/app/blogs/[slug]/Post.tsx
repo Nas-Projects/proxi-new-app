@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { LinkIcon } from "lucide-react";
@@ -35,23 +35,23 @@ export function Post({ post }: { post: PostType }) {
         return { assetId, dimensions: { width, height } };
       };
       
-      const handleImage = (value) => {
-        if (!value.asset || !value.asset._ref) {
-          console.error("No valid asset reference found for image:", value);
-          return null;
-        }
+      // const handleImage = (value) => {
+      //   if (!value.asset || !value.asset._ref) {
+      //     console.error("No valid asset reference found for image:", value);
+      //     return null;
+      //   }
       
-        const dimensions = decodeAssetId(value.asset._ref);
-        return (
-          <Image
-            src={builder.image(value).width(800).url() || urlFor(value).width(800).url()}
-            alt={value.alt || ""}
-            width={dimensions?.width || 800}
-            height={dimensions?.height || 600}
-            className="h-auto w-full"
-          />
-        );
-      };
+      //   const dimensions = decodeAssetId(value.asset._ref);
+      //   return (
+      //     <Image
+      //       src={builder.image(value).width(800).url() || urlFor(value).width(800).url()}
+      //       alt={value.alt || ""}
+      //       width={dimensions?.width || 800}
+      //       height={dimensions?.height || 600}
+      //       className="h-auto w-full"
+      //     />
+      //   );
+      // };
 
       
   return (

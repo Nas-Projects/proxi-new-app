@@ -19,47 +19,47 @@ export const GET = async (request) => {
     const rawproperties = await Property.find({}).skip(skip).limit(8);
     // console.log("Properties.find", rawproperties);
 
-    const properties = rawproperties.map((property) => {
-      return {
-        location: property.location ? {
-          street: property.location.street || '',
-          city: property.location.city || '',
-          state: property.location.state || '',
-          zipcode: property.location.zipcode || '',
-        } : null,
-        rates: property.rates || null,
-        seller_info: property.seller_info || null,
-        name: property.name || null,
-        _id: property._id.toString(),
-        type: property.type || "Property type not provided",
-        description: property.description || "No description provided",
-        beds: property.beds || "Not Available",
-        baths: property.baths || "Not Available",
-        square_feet: property?.square_feet ? property.square_feet.toString() : "Not Available",
-        amenities: property.amenities || [],
-        id: property._id.toString(),
-        images: property.images || [],
-        is_featured: property.is_featured || false,
-        sellerId: property.seller_info?.id?.toString() || "Proxy",
-        NumberOfbookmarks: property?.NumberOfbookmarks || 0,
-        inClosing: property?.inClosing || false,
-        createdAt: property.createdAt ? property.createdAt.toISOString() : null,
-        updatedAt: property.updatedAt ? property.updatedAt.toISOString() : null,
-        interestedBy: property.interestedBy?.map((id) => id.toString()) || null,
-        prospects: property.prospects?.map((id) => id.toString()) || null,
-        offers: property.offers?.map((id) => id.toString()) || null,
-        comments: property.comments?.map((id) => id.toString()) || [],
-        likes: property.likes?.map((id) => id.toString()) || null,
-        onMarket: property?.onMarket !== undefined ? property.onMarket : true,
-        views: property?.views || 0,
-        daysOnMarket: property?.createdAt
-          ? Math.floor((new Date() - new Date(property.createdAt)) / (1000 * 60 * 60 * 24)) // Calculate days on market
-          : 0,
-        showPropertyDayOnMarket: property?.showPropertyDayOnMarket !== undefined ? property.showPropertyDayOnMarket : true,
-        hassignedTo: property?.hassignedTo?.map((id) => id.toString()) || null,
-        payments: property?.payments?.map((id) => id.toString()) || "Standard",
-      };
-    });
+    // const properties = rawproperties.map((property) => {
+    //   return {
+    //     location: property.location ? {
+    //       street: property.location.street || '',
+    //       city: property.location.city || '',
+    //       state: property.location.state || '',
+    //       zipcode: property.location.zipcode || '',
+    //     } : null,
+    //     rates: property.rates || null,
+    //     seller_info: property.seller_info || null,
+    //     name: property.name || null,
+    //     _id: property._id.toString(),
+    //     type: property.type || "Property type not provided",
+    //     description: property.description || "No description provided",
+    //     beds: property.beds || "Not Available",
+    //     baths: property.baths || "Not Available",
+    //     square_feet: property?.square_feet ? property.square_feet.toString() : "Not Available",
+    //     amenities: property.amenities || [],
+    //     id: property._id.toString(),
+    //     images: property.images || [],
+    //     is_featured: property.is_featured || false,
+    //     sellerId: property.seller_info?.id?.toString() || "Proxy",
+    //     NumberOfbookmarks: property?.NumberOfbookmarks || 0,
+    //     inClosing: property?.inClosing || false,
+    //     createdAt: property.createdAt ? property.createdAt.toISOString() : null,
+    //     updatedAt: property.updatedAt ? property.updatedAt.toISOString() : null,
+    //     interestedBy: property.interestedBy?.map((id) => id.toString()) || null,
+    //     prospects: property.prospects?.map((id) => id.toString()) || null,
+    //     offers: property.offers?.map((id) => id.toString()) || null,
+    //     comments: property.comments?.map((id) => id.toString()) || [],
+    //     likes: property.likes?.map((id) => id.toString()) || null,
+    //     onMarket: property?.onMarket !== undefined ? property.onMarket : true,
+    //     views: property?.views || 0,
+    //     daysOnMarket: property?.createdAt
+    //       ? Math.floor((new Date() - new Date(property.createdAt)) / (1000 * 60 * 60 * 24)) // Calculate days on market
+    //       : 0,
+    //     showPropertyDayOnMarket: property?.showPropertyDayOnMarket !== undefined ? property.showPropertyDayOnMarket : true,
+    //     hassignedTo: property?.hassignedTo?.map((id) => id.toString()) || null,
+    //     payments: property?.payments?.map((id) => id.toString()) || "Standard",
+    //   };
+    // });
     console.log("PROPERTIES_EXTRACTEDd", rawproperties);
     const result = {
       total,

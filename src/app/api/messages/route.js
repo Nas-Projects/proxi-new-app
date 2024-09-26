@@ -5,7 +5,7 @@ import User from '../../../models/User';
 import mongoose from 'mongoose';
 import { getSessionUser } from '@/utils/getSessionUser';
 // import { Console } from 'console';
-import { ObjectId } from 'mongodb';
+// import { ObjectId } from 'mongodb';
 export const dynamic = 'force-dynamic';
 
 // GET /api/messages
