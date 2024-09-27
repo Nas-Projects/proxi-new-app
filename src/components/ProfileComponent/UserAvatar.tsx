@@ -8,7 +8,7 @@ type Props = Partial<AvatarProps> & {
 };
 
 function UserAvatar({ user, ...avatarProps }: Props) {
-  console.log("USER_avatar: " + user);
+  console.log("USER_avatar: " , user,avatarProps);
   return (
     <></>
     // <Avatar className="relative h-8 w-8" {...avatarProps}>

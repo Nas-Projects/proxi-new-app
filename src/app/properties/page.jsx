@@ -205,8 +205,7 @@ export const Filters = ({ filters, setFilters }) => {
               role="region"
               aria-label="Email Form failure"
             >
-              <div> "Oops! Something went wrong while submitting the form.
-            </div>
+          <div> &quot;Oops! Something went wrong while submitting the form.&quot; </div>
             </div>
           </div>
 

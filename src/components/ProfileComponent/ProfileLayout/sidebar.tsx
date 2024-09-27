@@ -1,16 +1,16 @@
 import { Fragment } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
-import {
+// import {
 
-  CogIcon,
+//   CogIcon,
 
-  MapIcon,
-  // SearchCircleIcon,
-  // SpeakerphoneIcon,
-  // UserGroupIcon,
-  // ViewGridAddIcon,
+//   MapIcon,
+//   // SearchCircleIcon,
+//   // SpeakerphoneIcon,
+//   // UserGroupIcon,
+//   // ViewGridAddIcon,
  
-} from '@heroicons/react/24/outline'
+// } from '@heroicons/react/24/outline'
 
 import {
   // Bars3Icon,

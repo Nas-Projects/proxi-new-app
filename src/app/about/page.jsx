@@ -121,7 +121,8 @@ if (!section1) {
                   dateTime={item.dateTime}
                   className="flex items-center text-sm font-semibold leading-6 text-pink-600"
                 >
-                  <svg viewBox="0 0 4 4" aria-hidden="true" className="mr-4 h-1 w-1 flex-none">
+                  <svg viewBox="0 0 4 4" aria-hidden="true"
+                   className="mr-4 h-1 w-1 flex-none">
                     <circle r={2} cx={2} cy={2} fill="currentColor" />
                   </svg>
                   {item.date}
@@ -285,7 +286,8 @@ if (!section1) {
                 {section5.title} 
               </h2>
               <p className="mt-6 text-xl leading-8 text-gray-600">
-              Proxy simplifies residential sales with blockchain technology, ensuring secure, transparent, and efficient property transactions
+              Proxy simplifies residential sales with blockchain technology, 
+              ensuring secure, transparent, and efficient property transactions
               </p>
               <img
                 alt="section 5 image"
@@ -301,7 +303,8 @@ if (!section1) {
                 
               </ul>
               <div className="mt-8  border-t border-gray-100 pt-8">
-                <a href="/properties/search-results?location=&propertyType=sale" className="text-sm font-semibold leading-6 text-pink-600 hover:text-indigo-500">
+                <a href="/properties/search-results?location=&propertyType=sale" 
+                className="text-sm font-semibold leading-6 text-pink-600 hover:text-indigo-500">
                   View all sales <span aria-hidden="true">&rarr;</span>
                 </a>
               </div>
