@@ -104,11 +104,11 @@ export const Filters = ({ filters, setFilters }) => {
   // };
 
   return (
-    <div className="filterSection my-4 lg:my-8 container-navbar">
-      <div className="filterFields space-between lg:flex   lg:space-x-24 xl:space-x-44">
-        <div className="filterFieldsOne relative">
+    <div className="filterSection  max-[600px]:!px-0 my-4 lg:my-8 main-container">
+      <div className="filterFields max-[991px]:flex-col space-between lg:flex  lg:space-x-24 xl:space-x-44">
+        <div className="filterFieldsOne relative max-[991px]:flex-col">
           <div className="select-1">
-          <SelectButton htmlFor="location"
+          <SelectButton htmlFor="location" className=""
             label="Location"
             name="location"
             items={["All Locations", ...locations]} 
@@ -130,26 +130,29 @@ export const Filters = ({ filters, setFilters }) => {
             handleInputChange={handleInputChange}
             value={filters.size} // Bind the value to the filters state
           />
-         <div className="absolute -ml-4 top-[5em]">
-             <a href="/contact" className="cta dark-link w-inline-block">
-          <img
-            src="https://cdn.prod.website-files.com/63c93770199def60f97204e0/63c93770199def55cd720556_place.svg"
-            loading="lazy"
-            alt=""
-          />
-          <div className="text-slate-500">
-            Can&apos;t find your location?
-            <span className="span-grey-link">Ask us here</span>
-          </div>
-        </a>
+         <div className="hidden sr-only lg:not-sr-only  top-24 lg:absolute -ml-4 lg:top-[5em]">
+          <div className="!inline-flex gap-x-4 ">
+              <a href="/contact" className="dark-link w-inline-block">
+              <img
+                src="https://cdn.prod.website-files.com/63c93770199def60f97204e0/63c93770199def55cd720556_place.svg"
+                loading="lazy"
+                alt=""
+              />
+             
+            </a>
+             <div className="text-slate-500">
+                Can&apos;t find your location?
+                <span className="span-grey-link">Ask us here</span>
+              </div>
+            </div> 
         </div>
         </div>
-        <div className="right-top-filters lg:-mt-6">
+        <div className="right-top-filters max-[900px]:pt-12 md:pt-4 lg:pt-0">
           <div className="w-form">
              <div className="form-price-inputs">
-              <div className="gap-[12px] flex">
+              <div className="gap-[12px] flex  min-[1200px]:mt-[-2.5em]">
                 <div className="input-wrap filter-input">
-                <Label htmlFor="price-from" className="text-left block text-gray-700 !font-bold mb-2">Price from</Label>
+                <Label htmlFor="price-from" className="text-left block text-lg text-gray-700 !font-bold mb-2">Price from</Label>
                    <Input 
                     type="text"
                     id="price-from"
@@ -157,12 +160,12 @@ export const Filters = ({ filters, setFilters }) => {
                     name="priceFrom"
                     value={filters.priceFrom}
                     onChange={handleInputChange}
-                    className="filter-text-field bg-white"
+                    className="filter-text-field bg-white  h-12 lg:h-10"
                   />
                  
                 </div>
                 <div className="input-wrap filter-input">
-                <Label htmlFor="price-to" className="text-left block text-gray-700 !font-bold mb-2">Price to</Label>
+                <Label htmlFor="price-to" className="text-left block  text-lg text-gray-700 !font-bold mb-2">Price to</Label>
                 <Input 
                     type="text"
                     id="price-to"
@@ -170,21 +173,21 @@ export const Filters = ({ filters, setFilters }) => {
                     name="priceTo"
                     onChange={handleInputChange}
                     value={filters.priceTo} 
-                    className="bg-white"
+                    className="bg-white h-12 lg:h-10"
                     // Bind the value to the filters state
                   />
                   
                 </div>
               </div>
               <div className="space-32" />
-              <div className="cta-wrap-price-inputs">
+              <div className="cta-wrap-price-inputs max-[991px]:-mt-6">
                 <Button  onClick={clearFilters} className="dark-link w-inline-block font-bold">
                   <div>Clear filters</div>
                 </Button>
                 <Button
                   type="submit"
                   data-wait="Please wait..."
-                  className="cta filter-results  !bg-[#0f1841] text-white"
+                  className="cta filter-results bg-custom-gradient !bg-[#0f1841] text-white"
                   defaultValue="Filter results"
                 >
                     Filter result
@@ -411,14 +414,21 @@ if (filters.size) {
     <Spinner />
   ) : (
     <div className="main-properties px-0">
-      <div className="wrap-title-wrap-center">
+      <div className="main-container w-container">
+        <div className="title-wrap-center mb-6 lg:mb-20"  
+              style={{
+            opacity: 1,
+            transform:
+              "translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)",
+            transformStyle: "preserve-3d"
+          }}>
         <h1 className="page-h1 text-custom-gradient font-bold md:text-[55px] ss:text-[45px] text-[33px] slide-animation">
           Our Properties
         </h1>
-        <h2 className="text-4xl text-custom-gradient">
-          Proxy 
-        <span className="text-slate-600 text-4xl">
-          will give you help hand with search for a new living</span></h2>
+        <p className="text-custom-gradient text-2xl ">
+          Proxy   will give you help hand with search for a new living</p>
+        </div>
+        
         <Filters filters={filters} setFilters={setFilters} />
         
         {/* <button className="clear-filters" onClick={clearFilters}>
