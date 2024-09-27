@@ -3,7 +3,7 @@ import localFont from "next/font/local";
 import "../globals.css";
 // import  CustomSidebar  from "@/components/navigations/CustomSidebar";
 // import  SideBar  from "@/components/navigations/SideBar";
-import ProfileLayout from "@/components/ProfileComponent/ProfileLayout";
+// import ProfileLayout from "@/components/ProfileComponent/ProfileLayout";
 
 export const geistSans = localFont({
   src: "../fonts/GeistVF.woff",
@@ -28,7 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <div lang="en">
-       <ProfileLayout />
+       {/* <ProfileLayout /> */}
     </div>
   );
 }

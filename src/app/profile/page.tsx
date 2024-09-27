@@ -1,7 +1,7 @@
 'use client'
 
 
-import ProfileComponent from "@/components/ProfileComponent";
+// import ProfileComponent from "@/components/ProfileComponent";
 // import { fetchUserById } from "@/lib/data";
 import { useEffect, useState } from "react";
 // import supabase from '@/utils/supabase-browser';
@@ -51,8 +51,8 @@ export default function PrivatePage() {
   //   // redirect("/login");
   //   console.log("User SESSION not found")
   // }
-
-  return <ProfileComponent user={mongoDBnUser} />;
+return <h1>/ PROFILE </h1>
+  // return <ProfileComponent user={mongoDBnUser} />;
 }
 
 {/*  

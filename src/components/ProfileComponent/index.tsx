@@ -111,7 +111,7 @@ export default function ProfileComponent({
 
   return (
     <div className="relative min-h-screen pb-20 bg-black">
-     <Profile
+     {/* <Profile
        success={success}
         setSucces={setSuccess}
         user={user} 
@@ -125,7 +125,7 @@ export default function ProfileComponent({
         session={userProfile}
         sessionUserName={userProfile?.first_name} 
         profileWidth={profileWidth}
-      />
+      /> */}
     </div>
   );
 }
