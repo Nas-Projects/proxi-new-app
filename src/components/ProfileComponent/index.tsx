@@ -12,7 +12,7 @@ export const profileWidth = 'max-w-5xl mx-auto px-4 sm:px-6 lg:px-8';
 export default function ProfileComponent({
   settings,
   user,
-  userProfile
+  // userProfile
 }: {
   settings?: boolean;
   user: UserProfileMongoDBWithExtras;
@@ -20,15 +20,15 @@ export default function ProfileComponent({
 }) {
   // const { data: session } = useSession();
   const [isMounted, setIsMounted] = useState(false);
-  const [saving, setSaving] = useState(false);
+  // const [saving, setSaving] = useState(false);
   const [data, setData] = useState({
     username: user?.username || 'Pick a username',
     image: user?.image,
     bio: user?.bio || '',
     bioMdx: user?.bioMdx,
   });
-  const [error, setError] = useState('');
-  const [success, setSuccess] = useState('');
+  // const [error, setError] = useState('');
+  // const [success, setSuccess] = useState('');
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
@@ -45,8 +45,8 @@ export default function ProfileComponent({
   }, [settingsPage, user?.username, user?.name]);
 
   const handleSave = useCallback(async () => {
-    setError('');
-    setSaving(true);
+    // setError('');
+    // setSaving(true);
       
     try {
       const response = await fetch('/api/users', {
@@ -61,7 +61,7 @@ export default function ProfileComponent({
       });
       if (!response) {
         console.log("RESOLVE_RES ?", response);
-        setSuccess('NO_res saving profile.');
+        // setSuccess('NO_res saving profile.');
       }
       if (response.ok) {
         console.log("RESOLVE OK?")
@@ -74,23 +74,23 @@ export default function ProfileComponent({
         redirect(`/${user.username}`);
       } else if (response.status === 401) {
         console.log('Not authorized to edit this profile.');
-        setError('Not authorized to edit this profile.');
+        // setError('Not authorized to edit this profile.');
       } 
       else if(response.status === 200) {
-        setSuccess('200 Sucess saving profile.');
+        // setSuccess('200 Sucess saving profile.');
       }
       
       else {
-          setSuccess('FAKE SUCCESS saving profile.');
+          // setSuccess('FAKE SUCCESS saving profile.');
         // setError('Error saving profile.');
       
       }
     } catch (error) {
       console.error("ERROR SAVE PROFILE", error);
-      setError('Success-Error saving profile.');
+      // setError('Success-Error saving profile.');
     }
     
-    setSaving(false);
+    // setSaving(false);
   }, [data, user?.username]);
 
   useEffect(() => {
