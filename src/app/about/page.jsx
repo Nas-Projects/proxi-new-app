@@ -1,78 +1,57 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react';
 import { groq } from "next-sanity";
 import { sanityClient } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image.js";
 
-export async function getAboutUsDataPage() {
+// Fetch data with getStaticProps
+export async function getStaticProps() {
   const query = groq`
   *[_type == "aboutPage"] {
     ...,
   }
   `;
   const aboutUsData = await sanityClient.fetch(query);
-  console.log("ABOUT_PAGE_DATA:", aboutUsData); // Corrected logging
-  return aboutUsData;
+
+  return {
+    props: {
+      aboutUsData: aboutUsData.length > 0 ? aboutUsData[0] : null,
+    },
+    revalidate: 10, // Optional: Revalidate every 10 seconds
+  };
 }
 
-export default function AboutPage() {
+export default function AboutPage({ aboutUsData }) {
   const [section1, setSection1] = useState(null);
   const [section2, setSection2] = useState(null);
   const [section3, setSection3] = useState(null);
   const [section4, setSection4] = useState(null);
   const [section5, setSection5] = useState(null);
-  // const [section6, setSection6] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-      const fetchData = async () => {
-        try {
-          const aboutUsData = await getAboutUsDataPage();
-          if (aboutUsData && aboutUsData.length > 0) {
-            const data = aboutUsData[0];
-            console.log("ABOUT_PAGE_DATA_TO_SECTION:", data);
+    if (aboutUsData) {
+      console.log("ABOUT_PAGE_DATA_TO_SECTION:", aboutUsData);
 
-            // Set each section from the sections array
-            setSection1(data.sections[0]);
-            setSection2(data.sections[1]);
-            setSection3(data.sections[2]);
-            setSection4(data.sections[3]);
-            setSection5(data.sections[4]);
-            // setSection6(data.sections[5]);
+      // Set each section from the sections array
+      setSection1(aboutUsData.sections[0]);
+      setSection2(aboutUsData.sections[1]);
+      setSection3(aboutUsData.sections[2]);
+      setSection4(aboutUsData.sections[3]);
+      setSection5(aboutUsData.sections[4]);
 
-            setLoading(false);
-          }
-        } catch (error) {
-          console.error("Error fetching About Us Page data:", error);
-          setLoading(false);
-        }
-      };
-
-      fetchData();
-    }, []);
-    const firstSentence = "Proxy – noun /ˈprɑk·si/: The agency, office, or function of representing another person.";
-
-    const applyColorToText = (text, target) => {
-      const parts = text.split(target);
-      return (
-        <>
-          {parts[0]}
-          <span style={{ color: "#ec687f", fontWeight: "bold" }}>{target}</span>
-          {parts[1]}
-        </>
-      );
+      setLoading(false);
+    } else {
+      setLoading(false);
     }
-      useEffect(() => {
-        if (section1) {
-          const timeout = setTimeout(() => {
-            console.log("Applying color effect to the text");
-            // You can add any additional logic here if needed
-          }, 1500);
+  }, [aboutUsData]);
 
-          return () => clearTimeout(timeout); // Cleanup on unmount
-        }
-      }, [section1]);
+  const firstSentence = "Proxy – noun /ˈprɑk·si/: The agency, office, or function of representing another person.";
+
+  const applyColorToText = (text, target) => {
+    const parts = text.split(target);
+
 if (loading) {
   return <div>Loading...</div>;
 }
