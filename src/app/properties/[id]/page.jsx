@@ -102,7 +102,7 @@ const PropertyPage = () => {
         <section className='block relative lg:grid lg:grid-cols-7'>
          <div className="col-span-5">
             <PropertyImages images={property.images} />
-            <PropertyGalleryCard images={property} />
+            {/* <PropertyGalleryCard images={property} /> */}
          </div>
 
         <div  className="cols-span-2 hidden lg:flex">
@@ -113,7 +113,7 @@ const PropertyPage = () => {
    
        <div className="section breadcrumps">
         </div>  
-        <PropertyDetailsCard property={property} classes={'!max-w-[40em] h-[fit-content] relative  lg:sr-only'}/>
+        <PropertyDetailsCard property={property} classes={'min-w-[max-w-[42em] !max-w-[42em] h-[fit-content] relative  lg:sr-only'}/>
 
         <div className="breadcrumb w-full bg-slate-200 py-4 px-6 lg:px-12 xl:px-24">
             <BreadcrumbDemo 

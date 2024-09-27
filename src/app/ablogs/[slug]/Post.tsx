@@ -19,6 +19,8 @@ import { TryInboxZero } from "../components/TryInboxZero";
 import { ReadMore } from "../components/ReadMore";
 import { formatDate } from "@/lib/formatDate";
 import { getSocialIcon } from "@/components/SocialIcons";
+// import BlurImage from '@/components/blur-image';
+
 
 const builder = imageUrlBuilder(sanityClient);
 
@@ -55,10 +57,21 @@ export function Post({ post }: { post: PostType }) {
                 </div>
             </section>
 
-                <p>{post?.description  && post.description}</p>
+              {/* <p>{post?.description  && post.description}</p> */}
                 {post.mainImage ? (
                   <div className="-mx-10 my-8">
-                    <Image
+                      <Image
+                         src={builder
+                          .image(post.mainImage)
+                          .width(1200)
+                          .height(675)
+                          .url()}
+                        alt={post?.mainImage?.alt || ""}
+                        width={1200}
+                        height={675}
+                        className="h-auto w-full"
+                        />
+                    {/* <Image
                       src={builder
                         .image(post.mainImage)
                         .width(1200)
@@ -68,7 +81,7 @@ export function Post({ post }: { post: PostType }) {
                       width={1200}
                       height={675}
                       className="h-auto w-full"
-                    />
+                    /> */}
                   </div>
                 ) : null}
                 {post.content ? (
@@ -144,17 +157,18 @@ export function Post({ post }: { post: PostType }) {
                 <h3 className="mb-1 !text-[20px] font-semibold pt-4 text-gray-600 ">Written by</h3>
                   <div className="flex items-center">
                   {post.authorImage && (
-                    <Image
-                      src={builder
-                        .image(post.authorImage)
-                        .width(60)
-                        .height(60)
-                        .url()}
-                      alt={post.authorName ?? ""}
-                      className="mr-3 h-10 w-10 rounded-full -mt-24"
-                      width={60}
-                      height={60}
+                     <Image
+                        src={builder
+                          .image(post.authorImage)
+                          .width(60)
+                          .height(60)
+                          .url()}
+                        alt={post.authorName ?? ""}
+                        className="mr-3 h-10 w-10 rounded-full -mt-24"
+                        width={60}
+                        height={60}
                     />
+                  
                   )}
              <div className="pt-0">
                 <p className="font-medium">{post.authorName}</p>
@@ -194,17 +208,17 @@ export function Post({ post }: { post: PostType }) {
         <CardContent className="-mt-2 lg:hidden">
            <div className="flex items-center mt-[-2em]">
                   {post.authorImage && (
-                    <Image
-                      src={builder
-                        .image(post.authorImage)
-                        .width(60)
-                        .height(60)
-                        .url()}
-                      alt={post.authorName ?? ""}
-                      className="mr-3 h-10 w-10 rounded-full -mt-8"
-                      width={60}
-                      height={60}
-                    />
+                     <Image
+                     src={builder
+                       .image(post.authorImage)
+                       .width(60)
+                       .height(60)
+                       .url()}
+                     alt={post.authorName ?? ""}
+                     className="mr-3 h-10 w-10 rounded-full -mt-24"
+                     width={60}
+                     height={60}
+                 />
                   )}
              <div className="pt-6">
                 <p className="font-medium">{post.authorName}</p>

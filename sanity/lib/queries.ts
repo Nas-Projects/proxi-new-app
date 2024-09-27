@@ -9,6 +9,18 @@ export const postsQuery = groq`*[_type == "blogPost"] | order(_createdAt desc) {
   mainImage,
   "imageURL": mainImage.asset->url,
   "authorName": author->name,
+  author -> {
+    name,
+    image {
+      asset -> { url }
+    },
+    bio,
+    email,
+    socialLinks[] {
+      platform,
+      url
+    } 
+  },
 }`;
 
 // Get a single post by its slug

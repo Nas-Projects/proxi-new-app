@@ -4,7 +4,7 @@ const PropertyHeaderImage = ({ image, propertyTitle, propertyType, forRentorSale
   return (
   <section>
     <div className="section detail">
-      <div className="main-container w-container">
+      <div className="main-container w-container ">
         <div
           data-w-id="a763d88d-605b-5960-fb19-85b22eb0fb1d"
           style={{ opacity: 1 }}
