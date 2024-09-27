@@ -1,12 +1,12 @@
 "use client";
 
-import { SupabaseUserProfile } from '@/lib/Types';
+import { UserProfileMongoDBWithExtras } from '@/lib/Types';
 // import { useSession } from 'next-auth/react';
 import { redirect, usePathname, useSearchParams } from 'next/navigation';
 import { useCallback, useEffect, useState } from 'react';
 // import { MDXRemote } from 'next-mdx-remote';
-import Link from 'next/link';
-import Profile from './Profile';
+// import Link from 'next/link';
+// import Profile from './Profile';
 export const profileWidth = 'max-w-5xl mx-auto px-4 sm:px-6 lg:px-8';
 
 export default function ProfileComponent({
@@ -15,8 +15,8 @@ export default function ProfileComponent({
   userProfile
 }: {
   settings?: boolean;
-  user: SupabaseUserProfile;
-  userProfile: SupabaseUserProfile;
+  user: UserProfileMongoDBWithExtras;
+  userProfile: UserProfileMongoDBWithExtras;
 }) {
   // const { data: session } = useSession();
   const [isMounted, setIsMounted] = useState(false);
