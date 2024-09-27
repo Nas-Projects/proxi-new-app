@@ -14,7 +14,7 @@ import {
   FormItem,
   // FormMessage,
 } from "../../components/ui/form";
-import useMount from "../../../hooks/useMount";
+// import useMount from "../../../hooks/useMount";
 import { updateProfile } from "../../../lib/actions";
 import { UserWithExtras } from "../../../lib/definitions";
 import { UpdateUser } from "../../../lib/schemas";
@@ -49,9 +49,9 @@ function ProfileAvatar({
   });
   const inputRef = useRef<HTMLInputElement>(null);
   const [open, setOpen] = useState(false);
-  const mount = useMount();
+  // const mount = useMount();
 
-  if (!mount || !session) return null;
+  if (!session) return null;
 
   if (!isCurrentUser)
     return <UserAvatar user={user} className="w-20 h-20 md:w-36 md:h-36" />;
