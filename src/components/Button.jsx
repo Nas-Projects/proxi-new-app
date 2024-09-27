@@ -116,7 +116,7 @@ export const FeedbackMessage = forwardRef(function FeedbackMessage(
   ref,
   // feedbackStatus
 ) {
-  let colors = {}
+  // let colors = {}
   // const statusMessageColor = colors[feedbackStatus]
   console.log('MESSAGE props.FeedbackStatus', _props.feedbackStatus)
   return (
@@ -131,7 +131,7 @@ export const FeedbackMessage = forwardRef(function FeedbackMessage(
 })
 
 export const Feedback = React.forwardRef(
-  ({ likes, message, feedbackStatus, question, addLikes }, props) => {
+  ({ likes, message, feedbackStatus, question, addLikes }) => {
     let [submitted, setSubmitted] = useState(false)
 
     function onSubmit(event) {
