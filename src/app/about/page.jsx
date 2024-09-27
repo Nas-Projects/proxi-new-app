@@ -5,24 +5,41 @@ import { groq } from "next-sanity";
 import { sanityClient } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image.js";
 
+export const revalidate = 10; // Revalidate the data every 10 seconds
+
 // Fetch data with getStaticProps
-export async function getStaticProps() {
+// export async function getStaticProps() {
+//   const query = groq`
+//   *[_type == "aboutPage"] {
+//     ...,
+//   }
+//   `;
+//   const aboutUsData = await sanityClient.fetch(query);
+
+//   return {
+//     props: {
+//       aboutUsData: aboutUsData.length > 0 ? aboutUsData[0] : null,
+//     },
+//     revalidate: 10, // Optional: Revalidate every 10 seconds
+//   };
+// }
+
+export default async function AboutPage() {
+  // Fetch the data from Sanity
   const query = groq`
-  *[_type == "aboutPage"] {
-    ...,
-  }
+    *[_type == "aboutPage"] {
+      ...,
+    }
   `;
   const aboutUsData = await sanityClient.fetch(query);
 
-  return {
-    props: {
-      aboutUsData: aboutUsData.length > 0 ? aboutUsData[0] : null,
-    },
-    revalidate: 10, // Optional: Revalidate every 10 seconds
-  };
-}
+  // If no data is found, return a fallback UI
+  if (!aboutUsData || aboutUsData.length === 0) {
+    return <div>No data found.</div>;
+  }
 
-export default function AboutPage({ aboutUsData }) {
+  // const data = aboutUsData[0];
+
   const [section1, setSection1] = useState(null);
   const [section2, setSection2] = useState(null);
   const [section3, setSection3] = useState(null);
