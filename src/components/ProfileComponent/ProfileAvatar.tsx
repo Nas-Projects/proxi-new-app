@@ -77,7 +77,7 @@ function ProfileAvatar({
                 setOpen(false);
               })}
             >
-              <FormField
+              {/* <FormField
                 control={form.control}
                 name="image"
                 render={({ field }) => (
@@ -101,7 +101,7 @@ function ProfileAvatar({
                     </FormControl>
                   </FormItem>
                 )}
-              />
+              /> */}
 
               {user.image && (
                 <SubmitButton
