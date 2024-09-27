@@ -201,7 +201,7 @@ export function Posts({ posts }: { posts: SanityPost[] }) {
 
 
 export function PostCard({ post }: { post: Post }) {
-  const authorImageUrl = post.author.image ? urlFor(post.author.image).url() : "/default-avatar.png";
+  // const authorImageUrl = post.author.image ? urlFor(post.author.image).url() : "/default-avatar.png";
 
   return (
     <Card className="overflow-hidden transition-transform duration-300 hover:scale-105">
