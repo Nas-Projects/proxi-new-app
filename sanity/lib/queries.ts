@@ -52,6 +52,41 @@ export const postQuery = groq`
 }
 `;
 
+export const agentsQuery = groq`
+  *[_type == "agent"] | order(_createdAt desc) {
+    _createdAt,
+    name,
+    username,
+    bio,
+    email,
+    phone,
+    image {
+      asset -> { url }
+    },
+    socials[] {
+      platform,
+      url
+    }
+  }
+`;
+
+export const agentQuery = groq`
+  *[_type == "agent" && username == $username][0] {
+    name,
+    username,
+    bio,
+    email,
+    phone,
+    image {
+      asset -> { url }
+    },
+    socials[] {
+      platform,
+      url
+    }
+  }
+`;
+
 // Get all post slugs
 export const postPathsQuery = groq`*[_type == "post" && defined(slug.current)][]{
     "params": { "slug": slug.current }

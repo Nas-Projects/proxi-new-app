@@ -1,13 +1,18 @@
-"use client"
+// "use client"
 
-import { useEffect, useState } from 'react';
+// import { useEffect, useState } from 'react';
 import clsx from 'clsx';
 import Link from 'next/link';
 // import stringSlugifier from '@/lib/StringSlugifier';
 import { groq } from "next-sanity";
 import { sanityClient } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image.js";
-const staticAgents = [
+import { agentsQuery } from "@/sanity/lib/queries";
+import { sanityFetch } from "@/sanity/lib/sanityFetch";
+
+
+
+// const staticAgents = [
 
     // {
     //   name: 'Leonard Krasner',
@@ -31,33 +36,33 @@ const staticAgents = [
     //     xUrl: '#',
     //     linkedinUrl: '#',
     // },
-    {
-        name: 'Marietou Safari',
-        role: 'Rentals agent',
-        imageUrl:"https://images.unsplash.com/photo-1500917293891-ef795e70e1f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80",
-        xUrl: '#',
-        linkedinUrl: '#',
-        username: '@arietou_22',
-        verified: true,
-    },
-    {
-        name: 'Leonard Krasner',
-        role: 'Realestate Agent',
-        imageUrl:"https://images.unsplash.com/photo-1505840717430-882ce147ef2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80",
-        xUrl: '#',
-        linkedinUrl: '#',
-        username: '@arietou_22',
-        verified: true,
-    },
-    {
-        name: 'Ema Krasner',
-        role: 'Realestate Agent',
-        imageUrl:"https://images.unsplash.com/photo-1509783236416-c9ad59bae472?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=800",
-        xUrl: '#',
-        linkedinUrl: '#',
-        username: '@arietou_22',
-        verified: true,
-    },
+    // {
+    //     name: 'Marietou Safari',
+    //     role: 'Rentals agent',
+    //     imageUrl:"https://images.unsplash.com/photo-1500917293891-ef795e70e1f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80",
+    //     xUrl: '#',
+    //     linkedinUrl: '#',
+    //     username: '@arietou_22',
+    //     verified: true,
+    // },
+    // {
+    //     name: 'Leonard Krasner',
+    //     role: 'Realestate Agent',
+    //     imageUrl:"https://images.unsplash.com/photo-1505840717430-882ce147ef2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80",
+    //     xUrl: '#',
+    //     linkedinUrl: '#',
+    //     username: '@arietou_22',
+    //     verified: true,
+    // },
+    // {
+    //     name: 'Ema Krasner',
+    //     role: 'Realestate Agent',
+    //     imageUrl:"https://images.unsplash.com/photo-1509783236416-c9ad59bae472?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=800",
+    //     xUrl: '#',
+    //     linkedinUrl: '#',
+    //     username: '@arietou_22',
+    //     verified: true,
+    // },
     // {
     //     name: 'Jakie Dorseyr',
     //     role: 'Realestate Agentr',
@@ -67,59 +72,66 @@ const staticAgents = [
     // },
 
     // More people...
-  ]
+  // ]
 
   
-  export async function getAgents() {
-    const query = groq`
-      *[_type == "agent"] {
-        ...,
-       socials[]->
-      }
-    `;
-    const agentsData = await sanityClient.fetch(query);
-    console.log("agentsData", agentsData);
-    return agentsData;
-  }
+  // export async function getAgents() {
+  //   const query = groq`
+  //     *[_type == "agent"] {
+  //       ...,
+  //      socials[]->
+  //     }
+  //   `;
+  //   const agentsData = await sanityClient.fetch(query);
+  //   console.log("agentsData", agentsData);
+  //   return agentsData;
+  // }
   
-  export default function Agents() {
-    const [people, setPeople] = useState(staticAgents);
-    const [loading, setLoading] = useState(true);
-    // const [fetchResultsText, setFetchResults] = useState('null');
+  export default async  function Agents() {
+    const agentsData = await sanityFetch({ query: agentsQuery });
+    // const agentsData = await getAgents();
+    const agents = agentsData.map(person => ({
+                ...person,
+                imageUrl: person.image ? urlFor(person.image).url() : staticAgents[0].imageUrl // Use urlFor if image exists
+              }));
+            
+    // const [people, setPeople] = useState(staticAgents);
+    // const [loading, setLoading] = useState(true);
+    // // const [fetchResultsText, setFetchResults] = useState('null');
   
-    useEffect(() => {
-      const fetchAgents = async () => {
-        try {
-          const agentsData = await getAgents();
-          console.log("AGENTS_FETCHED-->", agentsData);
+    // useEffect(() => {
+    //   const fetchAgents = async () => {
+    //     try {
+    //       const agentsData = await getAgents();
+    //       console.log("AGENTS_FETCHED-->", agentsData);
           
-          if (!agentsData || agentsData.length === 0) {
-            // setFetchResults("No valid agents found");
-            console.log("AGENTS_FETCHED-->", agentsData);
-            setPeople(staticAgents); // Optionally keep static agents
-          } else {
-            // setFetchResults("200 ok");
-            console.log("AGENTS", agentsData)
-            setPeople(agentsData.map(person => ({
-              ...person,
-              imageUrl: person.image ? urlFor(person.image).url() : staticAgents[0].imageUrl // Use urlFor if image exists
-            })));
-          }
+    //       if (!agentsData || agentsData.length === 0) {
+    //         // setFetchResults("No valid agents found");
+    //         console.log("AGENTS_FETCHED-->", agentsData);
+    //         setPeople(staticAgents); // Optionally keep static agents
+    //       } else {
+    //         // setFetchResults("200 ok");
+    //         console.log("AGENTS", agentsData)
+    //         const agents = agentsData.map(person => ({
+    //           ...person,
+    //           imageUrl: person.image ? urlFor(person.image).url() : staticAgents[0].imageUrl // Use urlFor if image exists
+    //         }));
+    //       }
           
-        } catch (error) {
-          console.error('Error fetching agents:', error);
-        } finally {
-          setLoading(false);
-        }
-      };
+    //     } catch (error) {
+    //       console.error('Error fetching agents:', error);
+    //     } finally {
+    //       setLoading(false);
+    //     }
+    //   };
   
-      fetchAgents();
-    }, []);
+    //   fetchAgents();
+    // }, []);
   
     return (
-      <div className={clsx(loading ? "bg-custom-gradient-dark" : "bg-gray-900", "pb-24 bg-custom-gradient-dark py-12 sm:pt-12 sm:pb-32")}> 
+      <div className={clsx(!agents ? "bg-custom-gradient-dark" : "bg-gray-900", "pb-24 bg-custom-gradient-dark py-12 sm:pt-12 sm:pb-32")}> 
           <div className="mx-auto max-w-7xl pt-[-4em] pb-14 text-center lg:px-8 ">
-           <h1 className='text-5xl text-orange-100'>{loading ? "Dear User, here are some agents while we're fetching new data for you" : "Available Agents"}</h1>
+           <h1 className='text-5xl text-orange-100'>{!agents ? "Dear User, here are some agents while we're fetching new data for you" : "Available Agents"}</h1>
             <div className="mx-auto max-w-2xl px-6 lg:px-8">
               <h2 className="shadow-sm text-3xl font-bold tracking-tight sm:text-4xl
                hover:text-custom-gradient mt-12 !text-white">
@@ -130,7 +142,7 @@ const staticAgents = [
           </div>
           <div className="agent-list-component bg-pink-100 pt-[0.5px]">
             <div className="mx-auto max-w-7xl text-center lg:px-8 pb-[0.1px]">
-            <AgentList agents={people} />
+            <AgentList agents={agents} />
             {/* {people.map((person) => (
               <li key={person.name} className="rounded-2xl bg-gray-800 px-8 py-10">
                 <Link href={`/agents/${stringSlugifier(person.name)}`}>

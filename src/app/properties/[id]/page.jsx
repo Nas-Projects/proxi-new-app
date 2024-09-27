@@ -10,7 +10,7 @@ import BookmarkButton from '@/components/propertiesComponents/BookmarkButton';
 import PropertyContactForm from '@/components/propertiesComponents/PropertyContactForm';
 import ShareButtons from '@/components/propertiesComponents/ShareButtons';
 import Spinner from '@/components/propertiesComponents/Spinner';
-import PropertyGalleryCard from '@/components/propertiesComponents/PropertyGalleryCard';
+// import PropertyGalleryCard from '@/components/propertiesComponents/PropertyGalleryCard';
 import OtherProperties from '@/components/propertiesComponents/OtherProperties'
 import MorgageCalculator from '@/components/propertiesComponents//MorgageCalculator'
 import { FaArrowLeft, FaTimes } from 'react-icons/fa';
