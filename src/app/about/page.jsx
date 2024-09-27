@@ -48,24 +48,25 @@ export default function AboutPage() {
         const aboutData = await getAbout();
         console.log("ABOUT_FETCHED-->", aboutData);
         
-        if (aboutData.length) {
+        if (!aboutData.length) {
           // setFetchResults("No valid agents found");
-        
-            console.log("ABOUT_PAGE_DATA_TO_SECTION:", aboutUsData);
+          console.log("ABOUT DATA NOT found");
+        }
+        else {
+          let aboutDataSections = aboutData[0]
+            console.log("ABOUT_PAGE_DATA_TO_SECTION:", aboutData);
       
             // Set each section from the sections array
-            setSection1(aboutData.sections[0]);
-            setSection2(aboutData.sections[1]);
-            setSection3(aboutData.sections[2]);
-            setSection4(aboutData.sections[3]);
-            setSection5(aboutData.sections[4]);
+            setSection1(aboutDataSections.sections[0]);
+            setSection2(aboutDataSections.sections[1]);
+            setSection3(aboutDataSections.sections[2]);
+            setSection4(aboutDataSections.sections[3]);
+            setSection5(aboutDataSections.sections[4]);
       
             setLoading(false);
           
         }
-        else {
-          setLoading(false);
-        }
+       
         
       } catch (error) {
         console.error('Error fetching agents:', error);
@@ -78,9 +79,9 @@ export default function AboutPage() {
   }, []);
 
   // If no data is found, return a fallback UI
-  if (!section1) {
-    return <div>No data found.</div>;
-  }
+  // if (!section1) {
+  //   return <div>No data found.</div>;
+  // }
 
 
 
@@ -123,7 +124,7 @@ export default function AboutPage() {
         {/* Hero section */}
 
         {/* ------SECTION 1 ------- */}
-        <div className="relative isolate -z-10 overflow-hidden bg-gradient-to-b from-indigo-100/20 pt-14">
+        <div className=" -mt-4 lg:-mt-10 relative isolate -z-10 overflow-hidden bg-gradient-to-b from-indigo-100/20 pt-14">
           <div
             aria-hidden="true"
             className="absolute inset-y-0 right-1/2 -z-10 -mr-96 w-[200%] origin-top-right skew-x-[-30deg] bg-white shadow-xl shadow-indigo-600/10 ring-1 ring-indigo-50 sm:-mr-80 lg:-mr-96"
@@ -256,7 +257,7 @@ export default function AboutPage() {
 
 
         {/* ------SECTION 4------- */}
-        <div className="mt-32 overflow-hidden sm:mt-40">
+        <div className="mt-12 overflow-hidden sm:mt-40">
           <div className="mx-auto max-w-7xl px-6 lg:flex lg:px-8">
             <div className="mx-auto grid max-w-5xl grid-cols-1  lg:gflex gap-x-12 gap-y-16   lg:gap-y-8">
               <div className="group lg:w-full lg:max-w-lg lg:pb-8">

@@ -117,7 +117,7 @@ const staticAgents = [
     }, []);
   
     return (
-      <div className={clsx(loading ? "bg-custom-gradient-dark" : "bg-gray-900", "pb-24 bg-custom-gradient-dark py-24 sm:py-32")}> 
+      <div className={clsx(loading ? "bg-custom-gradient-dark" : "bg-gray-900", "pb-24 bg-custom-gradient-dark py-12 sm:pt-12 sm:pb-32")}> 
           <div className="mx-auto max-w-7xl pt-[-4em] pb-14 text-center lg:px-8 ">
            <h1 className='text-5xl text-orange-100'>{loading ? "Dear User, here are some agents while we're fetching new data for you" : "Available Agents"}</h1>
             <div className="mx-auto max-w-2xl px-6 lg:px-8">
