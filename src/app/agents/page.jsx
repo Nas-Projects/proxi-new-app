@@ -4,8 +4,7 @@
 import clsx from 'clsx';
 import Link from 'next/link';
 // import stringSlugifier from '@/lib/StringSlugifier';
-import { groq } from "next-sanity";
-import { sanityClient } from "@/sanity/lib/client";
+
 import { urlFor } from "@/sanity/lib/image.js";
 import { agentsQuery } from "@/sanity/lib/queries";
 import { sanityFetch } from "@/sanity/lib/sanityFetch";
