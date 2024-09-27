@@ -5,7 +5,7 @@ import { groq } from "next-sanity";
 import { sanityClient } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image.js";
 
-export const revalidate = 10; // Revalidate the data every 10 seconds
+// export const revalidate = 10; // Revalidate the data every 10 seconds
 
 // Fetch data with getStaticProps
 // export async function getStaticProps() {
@@ -23,23 +23,18 @@ export const revalidate = 10; // Revalidate the data every 10 seconds
 //     revalidate: 10, // Optional: Revalidate every 10 seconds
 //   };
 // }
-
-export default async function AboutPage() {
-  // Fetch the data from Sanity
+export async function getAbout() {
   const query = groq`
-    *[_type == "aboutPage"] {
-      ...,
-    }
-  `;
-  const aboutUsData = await sanityClient.fetch(query);
-
-  // If no data is found, return a fallback UI
-  if (!aboutUsData || aboutUsData.length === 0) {
-    return <div>No data found.</div>;
+  *[_type == "aboutPage"] {
+    ...,
   }
+`;
+  const aboutData = await sanityClient.fetch(query);
+  console.log("aboutData", aboutData);
+  return aboutData;
+}
 
-  // const data = aboutUsData[0];
-
+export default function AboutPage() {
   const [section1, setSection1] = useState(null);
   const [section2, setSection2] = useState(null);
   const [section3, setSection3] = useState(null);
@@ -48,21 +43,46 @@ export default async function AboutPage() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (aboutUsData) {
-      console.log("ABOUT_PAGE_DATA_TO_SECTION:", aboutUsData);
+    const fetchAbout = async () => {
+      try {
+        const aboutData = await getAbout();
+        console.log("ABOUT_FETCHED-->", aboutData);
+        
+        if (aboutData.length) {
+          // setFetchResults("No valid agents found");
+        
+            console.log("ABOUT_PAGE_DATA_TO_SECTION:", aboutUsData);
+      
+            // Set each section from the sections array
+            setSection1(aboutData.sections[0]);
+            setSection2(aboutData.sections[1]);
+            setSection3(aboutData.sections[2]);
+            setSection4(aboutData.sections[3]);
+            setSection5(aboutData.sections[4]);
+      
+            setLoading(false);
+          
+        }
+        else {
+          setLoading(false);
+        }
+        
+      } catch (error) {
+        console.error('Error fetching agents:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
 
-      // Set each section from the sections array
-      setSection1(aboutUsData.sections[0]);
-      setSection2(aboutUsData.sections[1]);
-      setSection3(aboutUsData.sections[2]);
-      setSection4(aboutUsData.sections[3]);
-      setSection5(aboutUsData.sections[4]);
+    fetchAbout();
+  }, []);
 
-      setLoading(false);
-    } else {
-      setLoading(false);
-    }
-  }, [aboutUsData]);
+  // If no data is found, return a fallback UI
+  if (!section1) {
+    return <div>No data found.</div>;
+  }
+
+
 
   const firstSentence = "Proxy – noun /ˈprɑk·si/: The agency, office, or function of representing another person.";
 

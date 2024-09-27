@@ -1,12 +1,12 @@
 {
   "compilerOptions": {
-    "noImplicitAny": false,             
-    "noUnusedLocals": false,           
-    "noUnusedParameters": false,     
-    "skipLibCheck": true,              
-    "strict": false,                  
-    "allowJs": true,                  
-    "ignoreDeprecations": "5.0",        
+    "noImplicitAny": false,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "skipLibCheck": true,
+    "strict": false,
+    "allowJs": true,
+    "ignoreDeprecations": "5.0",
     "esModuleInterop": true,
     "module": "esnext",
     "moduleResolution": "bundler",
@@ -20,18 +20,52 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"],
-      "@/sanity/*": ["./sanity/*"],
-      "@/api/*": ["/api/*"],
-      "@/lib/*": ["./src/lib/*"],
-      "@/config/*": ["./src/config/*"],
-      "@/utils/*": ["./src/utils/*"],
-      "@/components/*": ["./src/components/*"],
-      "@/images/*": ["./src/images/*"],
+      "@/*": [
+        "./src/*"
+      ],
+      "@/sanity/*": [
+        "./sanity/*"
+      ],
+      "@/api/*": [
+        "/api/*"
+      ],
+      "@/lib/*": [
+        "./src/lib/*"
+      ],
+      "@/config/*": [
+        "./src/config/*"
+      ],
+      "@/utils/*": [
+        "./src/utils/*"
+      ],
+      "@/components/*": [
+        "./src/components/*"
+      ],
+      "@/images/*": [
+        "./src/images/*"
+      ]
       // "@/sanityLibrary/*": ["./src/sanity/*"],
       // "@/env/*": [".env/*"],
-    }
+    },
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "noEmit": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/login/oldpage.jsx", "src/models/Notification.js", "src/UserContext.js", "src/components/navigationMenu/navigation.js", "src/components/FollowMessageButtons.js"],
-  "exclude": ["node_modules"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "src/app/login/oldpage.jsx",
+    "src/models/Notification.js",
+    "src/UserContext.js",
+    "src/components/navigationMenu/navigation.js",
+    "src/components/FollowMessageButtons.js"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
