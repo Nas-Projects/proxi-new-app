@@ -91,7 +91,7 @@ export const agentsQuery = groq`
 `;
 
 export const agentQuery = groq`
-  *[_type == "agent" && username == $username][0] {
+  *[_type == "agent" && _id == $id][0]{
     name,
     id,
     username,

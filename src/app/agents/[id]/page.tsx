@@ -1,10 +1,6 @@
-"use client";
 
-// import { useEffect, useState } from 'react';
 import clsx from 'clsx';
-// import { sanityClient } from '@/sanity/lib/client';
 import AgentComponent from "@/components/propertiesComponents/AgentPage.jsx";
-// import { urlFor } from "@/sanity/lib/image";
 import { sanityFetch } from '@/sanity/lib/sanityFetch';
 import { agentQuery } from '@/sanity/lib/queries';
 
@@ -14,6 +10,7 @@ interface Agent {
   name: string;
   email: string;
   phone: string;
+  usernames: string
   image: {
     asset: {
       url: string;
@@ -39,7 +36,7 @@ export const staticAgent = {
 
 export default  async function AgentProfile({ params }: { params: { id: string } }) {
   const { id } = params;
-  const agent = await sanityFetch({ query: agentQuery, params });
+  const agent = await sanityFetch<Agent>({ query: agentQuery, params });
   console.log("Post_Page_sanityFetch", agent)
   // const [agent, setAgent] = useState<Agent | null>(null);
   // const [loading, setLoading] = useState(true);
