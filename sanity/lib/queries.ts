@@ -1,5 +1,24 @@
 import { groq } from "next-sanity";
 
+//About
+export const aboutPageQuery = groq`
+  *[_type == "aboutPage"][0] {
+    title,
+    description,
+    "sections": sections[] {
+      title,
+      content,
+      image {
+        asset -> { url }
+      }
+    },
+    mainImage {
+      asset -> { url }
+    },
+   
+  }
+`;
+
 // Get all posts
 export const postsQuery = groq`*[_type == "blogPost"] | order(_createdAt desc) {
   _createdAt,
@@ -55,6 +74,7 @@ export const postQuery = groq`
 export const agentsQuery = groq`
   *[_type == "agent"] | order(_createdAt desc) {
     _createdAt,
+    _id,
     name,
     username,
     bio,
@@ -73,6 +93,7 @@ export const agentsQuery = groq`
 export const agentQuery = groq`
   *[_type == "agent" && username == $username][0] {
     name,
+    id,
     username,
     bio,
     email,

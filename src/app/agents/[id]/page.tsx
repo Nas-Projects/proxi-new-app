@@ -43,7 +43,7 @@ export default function AgentProfile({ params }: { params: { id: string } }) {
 
   useEffect(() => {
     const fetchAgent = async () => {
-      if (!id) return;
+      // if (!id) return;
 
       try {
         // Fetch a single agent by ID

@@ -94,6 +94,7 @@ import { sanityFetch } from "@/sanity/lib/sanityFetch";
                 ...person,
                 imageUrl: person.image ? urlFor(person.image).url() : staticAgents[0].imageUrl // Use urlFor if image exists
               }));
+              console.log("Agents", agents)
             
     // const [people, setPeople] = useState(staticAgents);
     // const [loading, setLoading] = useState(true);
@@ -235,7 +236,7 @@ export function AgentList({agents}) {
     <ul role="list" className="text-white divide-y divide-gray-100 bg-white md:grid md:grid-cols-2 pb-24">
       {agents.map((person) => (
         <li key={person.email} className="relative py-5 hover:bg-gray-100">
-          <Link href={clsx(`agents/${person._id ? person._id : person.name}`)} className="block hover:bg-gray-50">
+          <Link href={clsx(`agents/${person._id}`)} className="block hover:bg-gray-50">
           <div className="pl-6 px-4 sm:px-6 lg:px-8">
             <div className="mx-auto flex max-w-4xl justify-between gap-x-6">
               <div className="flex min-w-0 gap-x-4">
