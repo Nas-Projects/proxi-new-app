@@ -3,7 +3,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Card, CardContent } from "@/components/ui/card";
 import { urlFor } from '@/sanity/lib/image';
-import BlurImage from "./blur-image";
 
 
 
@@ -90,9 +89,9 @@ export default function Posts({ posts }: { posts: SanityPost[] }) {
   
     return (
       <Card className="overflow-hidden transition-transform duration-300 hover:scale-105">
-        <Link href={`/blog/post/${post.file}`}>
+        <Link href={`/blogs/${post.file}`}>
           <div className="relative h-48 w-full">
-          <BlurImage
+          <Image
              src={post.imageUrl}
              alt={post.title}
              layout="fill"
@@ -110,21 +109,17 @@ export default function Posts({ posts }: { posts: SanityPost[] }) {
               {post.description}
             </p>
             <div className="flex items-center gap-x-4">
-            <BlurImage
+            <Image
               src={urlFor(post.author.image).url() }
               // src={authorImageUrl} // Build the image URL properly
               alt={post.author.name || "Author Avatar"}
               className="h-8 w-8 rounded-full bg-gray-50"
               width={32}
               height={32}
+              placeholder="blur"
+              blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQYV2PYsGHDfwAHNAMQumvbogAAAABJRU5ErkJggg=="
         />
-            {/* <Image
-              src={post.author.image ? post.author.image : urlFor(post.author.image).url()}
-              alt=""
-              className="h-8 w-8 rounded-full bg-gray-50"
-              width={32}
-              height={32}
-            /> */}
+           
               <div className="text-sm !text-left">
                 <p className="text-left  font-semibold text-gray-900">{post.author.name}</p>
                 <time dateTime={post.datetime} className="text-gray-500">
