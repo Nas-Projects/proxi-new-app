@@ -1,59 +1,130 @@
 "use client" 
 
-// import Head from 'next/head'
-// import Image from 'next/image'
 import Link from 'next/link'
 import clsx from 'clsx'
 import { useEffect, useRef, useState } from "react";
 import { urlFor } from "@/sanity/lib/image.js";
-// import { Card } from './ui/card'
+import BlurImage from './blur-image';
+
 
 
 export default function JoinUsComponent({joinUsData }) {
   const sectionRef = useRef(null);
   const section2ImageRef = useRef(null);
-  const Section2TextCompRef = useRef(null); 
+  const Section2TextCompRef = useRef(null);
   const section3ImageRef = useRef(null);
-  const section3TextCompRef = useRef(null); 
-
-
+  const section3TextCompRef = useRef(null);
 
   const [sectionIntro, setSectionIntro] = useState(null);
   const [section1, setSection1] = useState(null);
-  const [remainingSections, setRemainingSections] = useState([]);
+  // const [remainingSections, setRemainingSections] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-      
-        try {
-          console.log("remainingSections", joinUsData)
-          if (joinUsData.length > 0) {
-            const data = joinUsData[0];
-            // Set intro paragraph as sectionIntro
-            setSectionIntro(data.introParagraph);
-  
-            // Set first section as section1
-            setSection1(data.sections[0]);
-            console.log("DATA_SECTION:", + section1.tiles)
-            // Set remaining sections as section2, section3, etc.
-            setRemainingSections(section1.tiles);
-  
-            setLoading(false);
-          }
-        } catch (error) {
-          console.error("Error fetching Join Us Page data:", error);
-          setLoading(false);
-        }
-      
-  
-    }, []);
-if (loading) {
-  return <div>Loading...</div>;
-}
+    if (joinUsData) {
+      console.log("joinUsData.data",joinUsData);
+      // Set intro paragraph as sectionIntro
+      setSectionIntro(joinUsData.introParagraph);
+      // console.log("joinUsData.data",joinUsData);
+      console.log("joinUsData.introParagraph", joinUsData.introParagraph);
+      // Set first section as section1
+      if (joinUsData.sections) {
+        setSection1(joinUsData.sections[0]);
+        console.log("joinUsData.sections", joinUsData.sections[0]);
+        // Set remaining sections as section2, section3, etc.
+        // setRemainingSections(joinUsData.sections.slice(1)); // Use slice to avoid issues with indexing
+        // console.log("joinUsData.expandabke", section1.tiles);
+      }
+      setLoading(false);
+    } else {
+      setLoading(false);
+    }
+  }, [joinUsData]); // Ensure joinUsData is in the dependency array
 
-if (!sectionIntro && !section1 && remainingSections.length === 0) {
-  return <div>No data found.</div>;
-}
+   // Intersection observer for sectionRef
+   useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const bgMedia = entry.target;
+          if (entry.isIntersecting) {
+            bgMedia.classList.add("slide-up");
+          } else {
+            bgMedia.classList.remove("slide-up");
+          }
+        });
+      },
+      { threshold: 0.0 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
+  // Intersection observer for section2ImageRef
+  useEffect(() => {
+    const Section2mage = document.getElementById("Section2mage");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            Section2mage.classList.add("bg-pan-right");
+          } else {
+            Section2mage.classList.remove("bg-pan-right");
+          }
+        });
+      },
+      { threshold: 0.0 }
+    );
+
+    if (section2ImageRef.current) {
+      observer.observe(section2ImageRef.current);
+    }
+
+    return () => {
+      if (section2ImageRef.current) {
+        observer.unobserve(section2ImageRef.current);
+      }
+    };
+  }, []);
+
+  // Intersection observer for Section2TextCompRef
+  useEffect(() => {
+    const Section2TextComp = document.getElementById("Section2TextComp");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            Section2TextComp.classList.add("slide-in-right");
+          } else {
+            Section2TextComp.classList.remove("slide-in-right");
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (Section2TextCompRef.current) {
+      observer.observe(Section2TextCompRef.current);
+    }
+
+    return () => {
+      if (Section2TextCompRef.current) {
+        observer.unobserve(Section2TextCompRef.current);
+      }
+    };
+  }, []);
+
+
 
 useEffect(() => {
   const observer = new IntersectionObserver(
@@ -80,35 +151,36 @@ useEffect(() => {
       }
   };
 }, []);
+  // Loading and error handling
 
 
-// TEXT_comp-kkux3thlinlineContent
-useEffect(() => {
-  const Section2mage = document.getElementById('Section2mage');
+// // TEXT_comp-kkux3thlinlineContent
+// useEffect(() => {
+//   const Section2mage = document.getElementById('Section2mage');
 
-  const observer = new IntersectionObserver(
-      (entries) => {
-          entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                Section2mage.classList.add('bg-pan-right');
-              } else {
-                Section2mage.classList.remove('bg-pan-right');
-              }
-          });
-      },
-      { threshold: 0.0 }  // Adjust the threshold as needed
-  );
+//   const observer = new IntersectionObserver(
+//       (entries) => {
+//           entries.forEach((entry) => {
+//               if (entry.isIntersecting) {
+//                 Section2mage.classList.add('bg-pan-right');
+//               } else {
+//                 Section2mage.classList.remove('bg-pan-right');
+//               }
+//           });
+//       },
+//       { threshold: 0.0 }  // Adjust the threshold as needed
+//   );
 
-  if (section2ImageRef.current) {
-      observer.observe(section2ImageRef.current);
-  }
+//   if (section2ImageRef.current) {
+//       observer.observe(section2ImageRef.current);
+//   }
 
-  return () => {
-      if (section2ImageRef.current) {
-          observer.unobserve(section2ImageRef.current);
-      }
-  };
-}, []);
+//   return () => {
+//       if (section2ImageRef.current) {
+//           observer.unobserve(section2ImageRef.current);
+//       }
+//   };
+// }, []);
 
 useEffect(() => {
   const Section2TextComp = document.getElementById('Section2TextComp');
@@ -178,6 +250,14 @@ useEffect(() =>
        };
 }, []);
 
+if (loading) {
+  return <div>Loading...</div>;
+}
+
+if (!sectionIntro ) {
+  return <div>No data found.</div>;
+}
+
 
   return (
     <div className="!relative h-full">
@@ -221,7 +301,7 @@ useEffect(() =>
                          data-bg-effect-name="BgParallax"
                          data-has-ssr-src=""
                        >
-                         <img className="h-[800px] lg:h-[1007px]"
+                          <BlurImage className="h-[800px] lg:h-[1007px]"
                           src={'/blockchain2.jpeg'}
                            alt=""
                            style={{ width: "1963px",  objectFit: "cover", objectPosition: "50% 0%" }}
@@ -268,8 +348,7 @@ useEffect(() =>
                         hover:!text-white dark:hover:!text-white mx-6 sm:mx-0 w-[14em] 
                        !mt-6 border border-1 border-white rounded-md lg:ml-[.2%] 
                        text-center flex">
-                    <Link href="/contact"
-                        target="_self"
+                      <Link href="/contact"
                         className="uDW_Qe wixui-button PlZyDq text-white bg-custom-gradient  py-4 px-[20%]" >
                         <span className="l7_2fn wixui-button__label hover:text-white dark:hover:!text-white">Sign up</span>
                     </Link>
@@ -329,7 +408,8 @@ useEffect(() =>
                         className="j7pOnl h-full w-full ">
                           <div  className="HlRz5e BI8PVQ  flex !h-full !w-full">
                          {section1.sectionImage && section1.sectionImage.asset && (
-                          <img className='flex !h-full !w-screen object-cover'
+                          <BlurImage
+                          className='flex !h-full !w-screen object-cover'
                               src={urlFor(section1.sectionImage).url()}
                               alt="section1 Image"
                               style={{ width: "1362px", height: "1303px" }}
@@ -387,62 +467,63 @@ useEffect(() =>
       </div>
     </div>
 
-    {/* <section className='!relative h-[0em] py-1 mt-2 bg-black'/> */}
-{/* ----------------- EXPANDABLES ----------------- */}
-        <section id="Section3"  
-        className='bg-black !relative bg-black pb-44 pt-[1em] xl:py-[1rem]'>
-            <h2 className="text-white pb-4"> More FAQs </h2>
-        <div className="expandable sm:grid grid-cols-4 !min-h-[500px]
-                        opacity-1 z-20 mx-auto gap-x-12  
-                        gap-y-4 lg:grid lg:grid-cols-2 xl:grid-cols-3 gap-x-0">
-
-                {section1.tiles.map((section, index) => {
-                    console.log("SECTIONMAPPING", section)
-                    return (<div className="relative my-4 sm:mt-[0rem]" key={index}>
-                        <div id="section3TextComp" ref={section3TextCompRef} 
-                        className="relative sm:col-span-3 my-4 sm:py-6 px-[6%] mt-2  dark:bg-[black] " >
-                        <ExpandableSection key={index} itemkey={section._key} title={section.tileTitle}>
-                        <div>
-                          <p className='text-xl'>{section.tileContent}</p>
-                          </div>
-                           {section.icon && section.icon.asset && (
-                            <img
-                                src={urlFor(section.icon.asset).url()}
-                                alt={section.sectionTitle}
-                                style={{ width: "100%", objectFit: "cover" }}
-                            />
-                        )}
-                        </ExpandableSection>
-                    </div> 
-                    </div> 
-                   )
-                }
-             )}   
-         </div>                
-     </section>
+       {/* ----------------- EXPANDABLES ----------------- */}
+       <section id="Section3" className="bg-black !relative pb-44 pt-[1em] xl:py-[1rem]">
+        <h2 className="text-white pb-4">More FAQs</h2>
+        <div
+          className="expandable sm:grid grid-cols-4 !min-h-[500px] opacity-1 z-20 mx-auto gap-x-12
+                        gap-y-4 lg:grid lg:grid-cols-2 xl:grid-cols-3 gap-x-0"
+        >
+          {/* Mapping over the tiles */}
+          {joinUsData?.sections[0]?.tiles?.map((tile, index) => {
+            return (
+              <div className="relative my-4 sm:mt-[0rem]" key={index}>
+                <div
+                  id="section3TextComp"
+                  ref={section3TextCompRef}
+                  className="relative sm:col-span-3 my-4 sm:py-6 px-[6%] mt-2 dark:bg-[black]"
+                >
+                  <ExpandableSection key={tile._key || index} title={tile.tileTitle}>
+                    <div>
+                      <p className="text-xl">{tile.tileContent}</p>
+                    </div>
+                    {tile.icon && tile.icon.asset && (
+                     <BlurImage
+                     src={tile.icon?.asset?.url ? tile.icon.asset.url : urlFor(tile.icon.asset).url()}
+                     alt={tile.tileTitle}
+                     style={{ width: "100%", objectFit: "cover" }}
+                     height={200}
+                     width={200}
+                   />
+                    )}
+                  </ExpandableSection>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </section>
     </div>
-  
-  )
+  );
 }
 
-
-
-
-
-export const ExpandableSection = ({ title, itemkey,  children }) => {
+export const ExpandableSection = ({ title, children }) => {
   const [isOpen, setIsOpen] = useState(false);
-    console.log("EXP{ANDABLE_SECTION", title, children, itemkey)
 
-  return (<div className="expandable-section z-50">
-      <div  className={clsx(isOpen &&  "shadow-xl" , "expandable-header !bg-white rounded-lg shadow-md px-4 justify-center py-3 inline-flex gap-x-4 w-full")} onClick={() => setIsOpen(!isOpen)}
+  return (
+    <div className="expandable-section z-50">
+      <div
+        className={clsx(
+          isOpen && "shadow-xl",
+          "expandable-header !bg-white rounded-lg shadow-md px-4 justify-center py-3 inline-flex gap-x-4 w-full"
+        )}
+        onClick={() => setIsOpen(!isOpen)}
         style={{ cursor: "pointer", padding: "10px", background: "#f0f0f0" }}
       >
-        <h3 className='!text-xl lg:text-2xl xl:text-3xl font-bold'>{title}</h3>
+        <h3 className="!text-xl lg:text-2xl xl:text-3xl font-bold">{title}</h3>
         <span>{isOpen ? "-" : "+"}</span>
       </div>
-      {isOpen &&  <div className="expandable-content pt-4 px-6 text-white">{children}</div>}
+      {isOpen && <div className="expandable-content pt-4 px-6 text-white">{children}</div>}
     </div>
   );
 };
-
-

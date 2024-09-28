@@ -2,15 +2,25 @@ import { groq } from "next-sanity";
 
 // JoinUs 
 export const joinUsQuery = groq`
-  *[_type == "joinUsPage"] {
-    ...,
+  *[_type == "joinUsPage"][0] {
+    introParagraph,
     sections[] {
-      title,
-      content
-    },
-    introParagraph
+      sectionTitle,
+      sectionContent,
+      sectionImage {
+        asset -> { url }
+      },
+      tiles[] {
+        icon {
+          asset -> { url }
+        },
+        tileTitle,
+        tileContent
+      }
+    }
   }
 `;
+
 
 //About
 export const aboutPageQuery = groq`

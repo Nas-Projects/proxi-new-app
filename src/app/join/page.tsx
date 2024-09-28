@@ -23,7 +23,7 @@ export default async function JoinUsPage() {
     return <div>No data found.</div>;
   }
 
-  const data = joinUsData[0];
+  const data = joinUsData;
 
   return (
     <div className={'!relative min-h-screen'}>
