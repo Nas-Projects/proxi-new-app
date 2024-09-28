@@ -12,7 +12,7 @@ import { sanityFetch } from "../../../sanity/lib/sanityFetch";
 // import type { Post as PostType } from "./types";
 
 import { propertiesQuery } from "../../../sanity/lib/queries";
-import PropertiesPageComponent from '@/components/propertiesComponents/propertiesPageComponent';
+import PropertiesPageComponent from '../../components/propertiesComponents/propertiesPageComponent';
 
 // type Author = {
 //   name: string;
