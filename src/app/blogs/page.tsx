@@ -103,9 +103,9 @@ export default async function BlogsPage() {
                 }}
                 className="title-wrap-center"
               >
-                <h1 className='text-5xl text-white'>Our Recent Blogs</h1>
+                <h1 className='text-5xl text-white mt-4'>Our Recent Blogs</h1>
                 <div className="space-12" />
-                <p className="paragraph-big text-slate-200">
+                <p className="paragraph-big text-slate-200 mt-4 lg:mt-8 lg:mb-4">
                   Proxy blogs to guide through the search for a better living
                 </p>
               </div>
