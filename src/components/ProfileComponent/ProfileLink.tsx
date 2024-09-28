@@ -8,6 +8,7 @@ import { buttonVariants } from "../ui/button";
 // import UserAvatar from "./UserAvatar";
 
 function ProfileLink({ user }: { user: User }) {
+  console.log("USER", user)
   const pathname = usePathname();
 
   const href = `/dashboard/`
