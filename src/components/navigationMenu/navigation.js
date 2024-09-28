@@ -14,7 +14,7 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "../ui/navigation-menu"
-import Image from "next/image"
+
 import BlurImage from "../blur-image"
 
 // Define the components array without TypeScript annotations
