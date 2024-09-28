@@ -44,113 +44,90 @@ export default function JoinUsComponent({joinUsData }) {
    // Intersection observer for sectionRef
    useEffect(() => {
     const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          const bgMedia = entry.target;
-          if (entry.isIntersecting) {
-            bgMedia.classList.add("slide-up");
-          } else {
-            bgMedia.classList.remove("slide-up");
-          }
-        });
-      },
-      { threshold: 0.0 }
+        (entries) => {
+            entries.forEach((entry) => {
+                const bgMedia = entry.target;
+                if (entry.isIntersecting) {
+                    bgMedia.classList.add('slide-up');
+                } else {
+                    bgMedia.classList.remove('slide-up');
+                }
+            });
+        },
+        { threshold: 0.0 }  // Adjust the threshold as needed
     );
-
+  
     if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+        observer.observe(sectionRef.current);
     }
-
+  
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
+        if (sectionRef.current) {
+            observer.unobserve(sectionRef.current);
+        }
     };
   }, []);
-
-  // Intersection observer for section2ImageRef
+  
+  
+  // TEXT_comp-kkux3thlinlineContent
   useEffect(() => {
-    const Section2mage = document.getElementById("Section2mage");
-
+    const Section2mage = document.getElementById('Section2mage');
+  
     const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            Section2mage.classList.add("bg-pan-right");
-          } else {
-            Section2mage.classList.remove("bg-pan-right");
-          }
-        });
-      },
-      { threshold: 0.0 }
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  Section2mage.classList.add('bg-pan-right');
+                } else {
+                  Section2mage.classList.remove('bg-pan-right');
+                }
+            });
+        },
+        { threshold: 0.0 }  // Adjust the threshold as needed
     );
-
+  
     if (section2ImageRef.current) {
-      observer.observe(section2ImageRef.current);
+        observer.observe(section2ImageRef.current);
     }
-
+  
     return () => {
-      if (section2ImageRef.current) {
-        observer.unobserve(section2ImageRef.current);
-      }
+        if (section2ImageRef.current) {
+            observer.unobserve(section2ImageRef.current);
+        }
     };
   }, []);
+  
 
-  // Intersection observer for Section2TextCompRef
+
+
+  
   useEffect(() => {
-    const Section2TextComp = document.getElementById("Section2TextComp");
-
+    const Section2TextComp = document.getElementById('Section2TextComp');
+    // const Section2TextComp = document.getElementById('#aboutSection3Paragraph');
     const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            Section2TextComp.classList.add("slide-in-right");
-          } else {
-            Section2TextComp.classList.remove("slide-in-right");
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    if (Section2TextCompRef.current) {
-      observer.observe(Section2TextCompRef.current);
-    }
-
-    return () => {
-      if (Section2TextCompRef.current) {
-        observer.unobserve(Section2TextCompRef.current);
-      }
-    };
-  }, []);
-
-
-
-useEffect(() => {
-  const observer = new IntersectionObserver(
       (entries) => {
           entries.forEach((entry) => {
-              const bgMedia = entry.target;
               if (entry.isIntersecting) {
-                  bgMedia.classList.add('slide-up');
+                Section2TextComp.classList.add('slide-in-right');
               } else {
-                  bgMedia.classList.remove('slide-up');
+                Section2TextComp.classList.remove('slide-in-right');
               }
-          });
-      },
-      { threshold: 0.0 }  // Adjust the threshold as needed
-  );
-
-  if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-  }
-
-  return () => {
-      if (sectionRef.current) {
-          observer.unobserve(sectionRef.current);
-      }
-  };
-}, []);
+                
+            });
+        },
+        { threshold: 0.1 }  // Adjust the threshold as needed
+    );
+  
+     if (Section2TextCompRef.current) {
+            observer.observe(Section2TextCompRef.current);
+        }
+  
+        return () => {
+             if (Section2TextCompRef.current) {
+                observer.unobserve(Section2TextCompRef.current);
+              }
+            };
+  }, []);
   // Loading and error handling
 
 
@@ -182,33 +159,33 @@ useEffect(() => {
 //   };
 // }, []);
 
-useEffect(() => {
-  const Section2TextComp = document.getElementById('Section2TextComp');
-  // const Section2TextComp = document.getElementById('#aboutSection3Paragraph');
-  const observer = new IntersectionObserver(
-    (entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              Section2TextComp.classList.add('slide-in-right');
-            } else {
-              Section2TextComp.classList.remove('slide-in-right');
-            }
+// useEffect(() => {
+//   const Section2TextComp = document.getElementById('Section2TextComp');
+//   // const Section2TextComp = document.getElementById('#aboutSection3Paragraph');
+//   const observer = new IntersectionObserver(
+//     (entries) => {
+//         entries.forEach((entry) => {
+//             if (entry.isIntersecting) {
+//               Section2TextComp.classList.add('slide-in-right');
+//             } else {
+//               Section2TextComp.classList.remove('slide-in-right');
+//             }
               
-          });
-      },
-      { threshold: 0.1 }  // Adjust the threshold as needed
-  );
+//           });
+//       },
+//       { threshold: 0.1 }  // Adjust the threshold as needed
+//   );
 
-   if (Section2TextCompRef.current) {
-          observer.observe(Section2TextCompRef.current);
-      }
+//    if (Section2TextCompRef.current) {
+//           observer.observe(Section2TextCompRef.current);
+//       }
 
-      return () => {
-           if (Section2TextCompRef.current) {
-              observer.unobserve(Section2TextCompRef.current);
-            }
-          };
-}, []);
+//       return () => {
+//            if (Section2TextCompRef.current) {
+//               observer.unobserve(Section2TextCompRef.current);
+//             }
+//           };
+// }, []);
 
 
 
