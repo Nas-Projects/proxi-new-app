@@ -19,6 +19,7 @@ import { TryInboxZero } from "../components/TryInboxZero";
 import { ReadMore } from "../components/ReadMore";
 import { formatDate } from "@/lib/formatDate";
 import { getSocialIcon } from "@/components/SocialIcons";
+import { urlFor } from "@/sanity/lib/image";
 // import BlurImage from '@/components/blur-image';
 
 
