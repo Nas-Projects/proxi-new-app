@@ -9,14 +9,51 @@ import { urlFor } from "@/sanity/lib/image.js";
 // import { Card } from './ui/card'
 
 
-export default  function JoinUsComponent({ sectionIntro, section1, remainingSections}) {
+export default function JoinUsComponent({joinUsData }) {
   const sectionRef = useRef(null);
   const section2ImageRef = useRef(null);
   const Section2TextCompRef = useRef(null); 
   const section3ImageRef = useRef(null);
   const section3TextCompRef = useRef(null); 
 
-  console.log("remainingSections", remainingSections)
+
+
+  const [sectionIntro, setSectionIntro] = useState(null);
+  const [section1, setSection1] = useState(null);
+  const [remainingSections, setRemainingSections] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+      
+        try {
+          console.log("remainingSections", joinUsData)
+          if (joinUsData.length > 0) {
+            const data = joinUsData[0];
+            // Set intro paragraph as sectionIntro
+            setSectionIntro(data.introParagraph);
+  
+            // Set first section as section1
+            setSection1(data.sections[0]);
+            console.log("DATA_SECTION:", + section1.tiles)
+            // Set remaining sections as section2, section3, etc.
+            setRemainingSections(section1.tiles);
+  
+            setLoading(false);
+          }
+        } catch (error) {
+          console.error("Error fetching Join Us Page data:", error);
+          setLoading(false);
+        }
+      
+  
+    }, []);
+if (loading) {
+  return <div>Loading...</div>;
+}
+
+if (!sectionIntro && !section1 && remainingSections.length === 0) {
+  return <div>No data found.</div>;
+}
 
 useEffect(() => {
   const observer = new IntersectionObserver(

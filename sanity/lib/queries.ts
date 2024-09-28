@@ -1,5 +1,17 @@
 import { groq } from "next-sanity";
 
+// JoinUs 
+export const joinUsQuery = groq`
+  *[_type == "joinUsPage"] {
+    ...,
+    sections[] {
+      title,
+      content
+    },
+    introParagraph
+  }
+`;
+
 //About
 export const aboutPageQuery = groq`
   *[_type == "aboutPage"][0] {
