@@ -2,27 +2,28 @@
 import { groq } from "next-sanity";
 // import {sanityFetch} from "../../../../../sanity/lib/sanityFetch";
 import { sanityFetch } from "@/sanity/lib/sanityFetch"
-export const searchQuery = groq`
-  *[_type == "property" &&
-    (location.city match $location || location.state match $location || location.street match $location || name match $location) &&
-    ($propertyType == "All" || type match $propertyType)] {
-    _id,
-    name,
-    description,
-    type,
-    location {
-      city,
-      state,
-      street,
-      zipcode
-    },
-    retail,
-    office,
-    investmentSale,
-    amenities,
-    images
-  }
-`;
+import { searchQuery } from "@/sanity/lib/queries";
+// export const searchQuery = groq`
+//   *[_type == "property" &&
+//     (location.city match $location || location.state match $location || location.street match $location || name match $location) &&
+//     ($propertyType == "All" || type match $propertyType)] {
+//     _id,
+//     name,
+//     description,
+//     type,
+//     location {
+//       city,
+//       state,
+//       street,
+//       zipcode
+//     },
+//     retail,
+//     office,
+//     investmentSale,
+//     amenities,
+//     images
+//   }
+// `;
 
 export const GET = async (request: Request) => {
   try {
