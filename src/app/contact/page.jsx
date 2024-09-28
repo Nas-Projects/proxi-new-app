@@ -35,7 +35,8 @@ export default function Contact() {
             </div>
             <h2 className="text-3xl font-bold tracking-tight text-gray-900">Get dfsin touch</h2>
             <p className="mt-6 text-lg leading-8 text-gray-600">
-            Get in touch with Proxy Real Estate for personalized property solutions. Our team is ready to assist you with expert guidance and support.
+              Get in touch with Proxy Real Estate for personalized property solutions. 
+              Our team is ready to assist you with expert guidance and support.
             </p>
             <dl className="mt-10 space-y-4 text-base leading-7 text-gray-600">
               <div className="flex gap-x-4">

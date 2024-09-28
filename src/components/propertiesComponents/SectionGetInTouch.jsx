@@ -7,7 +7,7 @@ export default function SectionGetInTouch(){
                   <div>
                     <h2 className="mt-9 text-3xl font-bold tracking-tight text-gray-900">Main Contacts</h2>
                     <p className="mt-4 leading-7 text-gray-600">
-                    Get in touch with us. We're here to help with expert guidance and personalized support.
+                    Get in touch with us. We&apos;re here to help with expert guidance and personalized support.
                     </p>
                   </div>
                   <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:col-span-2 lg:gap-8">
