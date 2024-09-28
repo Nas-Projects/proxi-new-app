@@ -1,12 +1,12 @@
-import { Footer } from "@/app/(landing)/home/Footer";
-import { Header } from "@/app/(landing)/home/Header";
+// import { Footer } from "../Footer";
+// import { Header } from "@/app/(landing)/home/Header";
 
 export function BasicLayout(props: { children: React.ReactNode }) {
   return (
     <div className="bg-white">
-      <Header />
+      {/* <Header /> */}
       <main className="isolate">{props.children}</main>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
