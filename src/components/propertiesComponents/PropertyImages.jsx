@@ -1,5 +1,6 @@
-import Image from 'next/image';
+// import Image from 'next/image';
 import { Gallery, Item } from 'react-photoswipe-gallery';
+import BlurImage from '../blur-image';
 
 const PropertyImages = ({ images }) => {
   return (
@@ -14,7 +15,7 @@ const PropertyImages = ({ images }) => {
               height='600'
             >
               {({ ref, open }) => (
-                <Image
+                <BlurImage
                   ref={ref}
                   onClick={open}
                   src={image.asset.url}
@@ -46,7 +47,7 @@ const PropertyImages = ({ images }) => {
                     height='600'
                   >
                     {({ ref, open }) => (
-                      <Image
+                      <BlurImage
                         ref={ref}
                         onClick={open}
                         src={image.asset.url}

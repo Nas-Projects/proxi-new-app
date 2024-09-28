@@ -158,7 +158,7 @@ import SelectButton from '@/components/Select/SelectButton';
       };
     
       return (
-        <div className="relative bg-[var(--background)] hover:border border-black">
+        <div className="!hidden relative bg-[var(--background)] hover:border border-black">
           <div className="mx-auto max-w-7xl lg:grid lg:grid-cols-12 lg:gap-x-8 lg:px-8">
             <div className="px-6 lg:pl-12  pb-24 pt-10 sm:pb-32 lg:col-span-7 lg:px-0 lg:pb-56 lg:pt-24 xl:col-span-6">
               <div className="mx-auto max-w-2xl lg:mx-0">

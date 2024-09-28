@@ -1,6 +1,6 @@
 'use client'
 
-import SectionWrapper from "../../hoc/SectionWrapper";
+// import SectionWrapper from "../../hoc/SectionWrapper";
 import Link from "next/link";
 import { useState, useEffect } from 'react';
 import Spinner from '@/components/propertiesComponents/Spinner';
@@ -10,7 +10,7 @@ import  CardGrid  from '@/components/cards/CardGrid.jsx';
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@medusajs/ui";
-import Image from 'next/image';
+// import Image from 'next/image';
 import PropertyListCard from '@/components/propertiesComponents/PropertiesListCard';
 import BlurImage from "../blur-image";
 
@@ -491,8 +491,8 @@ if (filters.size) {
   );
 };
 
-// export default PropertiesPageComponent
+export default PropertiesPageComponent
 
-export default SectionWrapper(PropertiesPageComponent, 'PropertiesPageComponent');
+// export default SectionWrapper(PropertiesPageComponent, 'PropertiesPageComponent');
 
 

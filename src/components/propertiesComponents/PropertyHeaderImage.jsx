@@ -1,4 +1,4 @@
-import Image from 'next/image';
+// import Image from 'next/image';
 import BlurImage from '../blur-image';
 
 const PropertyHeaderImage = ({ image, propertyTitle, propertyType, forRentorSale,  propertyLocation}) => {
