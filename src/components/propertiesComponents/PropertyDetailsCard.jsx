@@ -4,7 +4,7 @@
 import React from 'react';
 import styles from './propertyDetailCard.module.css'; // Import the CSS module
 import clsx from 'clsx';
-import { urlFor } from '@/sanity/lib/image';
+// import { urlFor } from '@/sanity/lib/image';
 import BlurImage from '../blur-image';
 import Link from 'next/link';
 
@@ -377,7 +377,7 @@ const DetailCard = ({ property, classes }) => {
              
            
           <div className="detail-card-avatar w-24 h-24 ">
-          <BlurImage
+            <BlurImage
               src={contactImage}
               loading="lazy"
               sizes="75px"
