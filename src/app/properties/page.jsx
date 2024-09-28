@@ -1,18 +1,18 @@
 
 
 // "use client";
-import Head from 'next/head';
-import { BlogCard } from '@/components/blogs/BlogCard';
-import blogsJson from '@/lib/blogsJson';
-import Link from 'next/link';
-import Image from 'next/image';
-import { postsQuery } from "@/sanity/lib/queries";
+// import Head from 'next/head';
+// import { BlogCard } from '@/components/blogs/BlogCard';
+// import blogsJson from '@/lib/blogsJson';
+// import Link from 'next/link';
+// import Image from 'next/image';
+// import { postsQuery } from "@/sanity/lib/queries";
 
 import { sanityFetch } from "../../../sanity/lib/sanityFetch";
 // import type { Post as PostType } from "./types";
 
 import { propertiesQuery } from "../../../sanity/lib/queries";
-import PropertiesPageComponent from '../../components/propertiesComponents/propertiesPageComponent';
+import PropertiesPageComponent from '../../components/propertiesComponents/PropertiesPageComponent';
 
 // type Author = {
 //   name: string;
