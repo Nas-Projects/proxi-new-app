@@ -26,7 +26,7 @@ import { urlFor } from "@/sanity/lib/image";
 const builder = imageUrlBuilder(sanityClient);
 
 export function Post({ post }: { post: PostType }) {
-
+ const blurDataHolderUrl="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQYV2PYsGHDfwAHNAMQumvbogAAAABJRU5ErkJggg=="
     // const decodeAssetId = (id) => {
     //     const pattern = /^image-([a-f\d]+)-(\d+x\d+)-(\w+)$/;
     //     const match = pattern.exec(id);
@@ -92,6 +92,8 @@ export function Post({ post }: { post: PostType }) {
                         width={1200}
                         height={675}
                         className="h-auto w-full"
+                        placeholder="blur"
+                        blurDataURL={blurDataHolderUrl}
                         />
                     {/* <Image
                       src={builder
@@ -114,35 +116,58 @@ export function Post({ post }: { post: PostType }) {
                         h2: createHeadingComponent("h2"),
                         h3: createHeadingComponent("h3"),
                       },
-                      
                       types: {
                         image: ({ value }) => {
                           if (!value.asset) {
                             console.error("No asset found for image:", value);
-                            return null; // Return nothing if no asset is available
-                          }
-                      
-                          const assetId = value.asset._ref; // Get the asset reference
-                      
-                          // Ensure you have a valid asset reference
-                          if (!assetId) {
-                            console.error("Asset ID is undefined for value:", value);
                             return null;
                           }
-                      
-                          // Decode the asset ID if necessary or directly use builder
-                          const dimensions = decodeAssetId(assetId);
+              
+                          const assetId = value.asset._ref;
+                          const decodedAsset = decodeAssetId(assetId);
+                          const dimensions = decodedAsset?.dimensions || { width: 800, height: 600 }; // Default if undefined
+              
                           return (
                             <Image
                               src={builder.image(value).width(800).url() || urlFor(value).width(800).url()}
                               alt={value.alt || ""}
-                              width={dimensions?.width || 800}
-                              height={dimensions?.height || 600}
+                              width={dimensions.width}
+                              height={dimensions.height}
                               className="h-auto w-full"
+                              placeholder="blur"
+                              blurDataURL={blurDataHolderUrl}
                             />
                           );
                         },
                       },
+                      // types: {
+                      //   image: ({ value }) => {
+                      //     if (!value.asset) {
+                      //       console.error("No asset found for image:", value);
+                      //       return null; // Return nothing if no asset is available
+                      //     }
+                      
+                      //     const assetId = value.asset._ref; // Get the asset reference
+                      
+                      //     // Ensure you have a valid asset reference
+                      //     if (!assetId) {
+                      //       console.error("Asset ID is undefined for value:", value);
+                      //       return null;
+                      //     }
+                      
+                      //     // Decode the asset ID if necessary or directly use builder
+                      //     const dimensions = decodeAssetId(assetId);
+                      //     return (
+                      //       <Image
+                      //         src={builder.image(value).width(800).url() || urlFor(value).width(800).url()}
+                      //         alt={value.alt || ""}
+                      //         width={dimensions?.width || 800}
+                      //         height={dimensions?.height || 600}
+                      //         className="h-auto w-full"
+                      //       />
+                      //     );
+                      //   },
+                      // },
              
                       marks: {
                         link: ({ children, value }) => {
@@ -189,6 +214,8 @@ export function Post({ post }: { post: PostType }) {
                         className="mr-3 h-10 w-10 rounded-full -mt-24"
                         width={60}
                         height={60}
+                        placeholder="blur"
+                        blurDataURL={blurDataHolderUrl}
                     />
                   
                   )}
@@ -240,6 +267,8 @@ export function Post({ post }: { post: PostType }) {
                      className="mr-3 h-10 w-10 rounded-full -mt-24"
                      width={60}
                      height={60}
+                     placeholder="blur"
+                     blurDataURL={blurDataHolderUrl}
                  />
                   )}
              <div className="pt-6">
