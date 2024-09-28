@@ -66,12 +66,12 @@ export function NavigationLeft() {
           <NavigationMenuContent>
             <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
               <li className="row-span-3">
-                <NavigationMenuLink asChild >
+                <NavigationMenuLink asChild className="px-0">
                   <Link className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                    href="/about"
+                   href="/blogs/revolutionizing-real-estate-with-blockchain-technology" 
                   >
                     <ChevronDownIcon
-                      className="relative top-[1px] ml-1 h-3 w-3 transition duration-300 group-data-[state=open]:rotate-180"
+                      className="relative top-[1px] px-4 ml-1 h-3 w-3 transition duration-300 group-data-[state=open]:rotate-180"
                       aria-hidden="true"
                     />
                      <BlurImage src="/what-is-blockchain-1.jpeg" 
@@ -83,32 +83,37 @@ export function NavigationLeft() {
                           placeholder="blur"
                           blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQYV2PYsGHDfwAHNAMQumvbogAAAABJRU5ErkJggg=="
                          />
-                    <Link href="/about" className="mb-2 mt-4 text-lg font-medium">
-                      About Proxy
+                    <Link className="mb-2 mt-4 text-lg font-medium px-4"    href="/blogs/revolutionizing-real-estate-with-blockchain-technology" >
+                      Why Proxy
                     </Link>
-                    <p className="text-sm leading-tight text-muted-foreground">
+                    <p className="text-sm leading-tight text-muted-foreground px-4">
                       An elegant real estate solutions use with blockchain technology.
                     </p>
                   </Link>
                 </NavigationMenuLink>
               </li>
-              For a real estate company with a property database and an in-house agent network, you might use equivalent items like this:
 
 
+              <ListItem href="/about" title="About Proxy"  
+              className="hover:text-pink-500 group hover:-mb-4">
+                <h4 className="group-hover:p-2 group-hover:rounded-md text-sm text-gray-500 font-normal hover:bg-pink-100 group-hover:bg-pink-50 ">
+                  A real estate company with a property database and an in-house agent network, you might use equivalent items like this:</h4>
+              </ListItem>
               <ListItem href="/agents" title="Our Agents"  className="hover:text-pink-500 group hover:-mb-4">
                 <h4 className="group-hover:p-2 group-hover:rounded-md text-sm text-gray-500 font-normal hover:bg-pink-100 group-hover:bg-pink-50 ">Meet our team of experienced real estate professionals.</h4>
               </ListItem>
             
-              <ListItem href="/agents" title="Agent Network"  className="hover:text-pink-500">
+              <ListItem href="/join" title="Agent Network"  className="hover:text-pink-500">
                 Learn about our extensive network of in-house real estate agents.
               </ListItem>
               <ListItem href="/contact" title="Contact Us"  className="hover:text-pink-500">
                 Get in touch with us for inquiries and support.
               </ListItem>
-              <ListItem href="/about" title="About Us"  className="hover:text-pink-500">
-                Discover more about our company and mission.
+              <ListItem href="/about" title="About Us"  className="hover:text-pink-500 group hover:-mb-4">
+                <h4 className="group-hover:p-2 group-hover:rounded-md text-sm text-gray-500 font-normal hover:bg-pink-100 group-hover:bg-pink-50 ">
+                Discover more about our company and mission.</h4>
               </ListItem>
-
+   
               {/* Add more list items based on your `components` array if needed */}
             </ul>
             
