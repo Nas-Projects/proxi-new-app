@@ -2,8 +2,7 @@
 
 // import { useEffect, useState } from 'react';
 import clsx from 'clsx';
-import Link from 'next/link';
-// import stringSlugifier from '@/lib/StringSlugifier';
+// import Link from 'next/link';
 
 import { urlFor } from "@/sanity/lib/image.js";
 import { agentsQuery } from "@/sanity/lib/queries";
@@ -17,9 +16,7 @@ import AgentsList from "../../components/agentsList";
                 ...person,
                 imageUrl: person.image ? urlFor(person.image).url() : staticAgents[0].imageUrl // Use urlFor if image exists
               }));
-              console.log("Agents", agents)
-    
-  
+   console.log("Agents", agents)
     return (
       <div className={clsx(!agents ? "bg-custom-gradient-dark" : "bg-gray-900", "pb-24 bg-custom-gradient-dark py-12 sm:pt-12 sm:pb-32")}> 
           <div className="mx-auto max-w-7xl pt-[-4em] pb-14 text-center lg:px-8 ">
