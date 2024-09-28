@@ -5,26 +5,29 @@ export default function SectionGetInTouch(){
               <div className="mx-auto max-w-2xl space-y-16 divide-y divide-gray-100 lg:mx-0 lg:max-w-none">
                 <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-3">
                   <div>
-                    <h2 className="text-3xl font-bold tracking-tight text-gray-900">Get in touch</h2>
+                    <h2 className="mt-9 text-3xl font-bold tracking-tight text-gray-900">Main Contacts</h2>
                     <p className="mt-4 leading-7 text-gray-600">
-                      Quam nunc nunc eu sed. Sed rhoncus quis ultricies ac pellentesque.
+                    Get in touch with us. We're here to help with expert guidance and personalized support.
                     </p>
                   </div>
                   <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:col-span-2 lg:gap-8">
                     <div className="rounded-2xl bg-gray-50 p-10">
-                      <h3 className="text-base font-semibold leading-7 text-gray-900">Collaborate</h3>
+                      <h3 className="text-base font-semibold leading-7 text-gray-900">Front Desk</h3>
                       <dl className="mt-3 space-y-1 text-sm leading-6 text-gray-600">
                         <div>
                           <dt className="sr-only">Email</dt>
                           <dd>
                             <a href="mailto:collaborate@proxyre.io" className="font-semibold text-pink-600">
-                              collaborate@proxyre.io
+                            Hello@proxyre.io
                             </a>
                           </dd>
                         </div>
                         <div className="mt-1">
-                          <dt className="sr-only">Phone number</dt>
-                          <dd>+1 (555) 905-2345</dd>
+                        <a href="tel:+1347.987.0210" className="hover:text-gray-900">
+                          +1 347.987.0210
+                        </a>
+                          {/* <dt className="sr-only">Phone number</dt>
+                          <dd>+1 (347).987.0210</dd> */}
                         </div>
                       </dl>
                     </div>
@@ -35,13 +38,16 @@ export default function SectionGetInTouch(){
                           <dt className="sr-only">Email</dt>
                           <dd>
                             <a href="mailto:press@proxyre.io" className="font-semibold text-pink-600">
-                              press@proxyre.io
+                              ryan@proxyre.io
                             </a>
                           </dd>
                         </div>
                         <div className="mt-1">
                           <dt className="sr-only">Phone number</dt>
-                          <dd>+1 (555) 905-3456</dd>
+                          <a href="tel:+1347.987.0210" className="hover:text-gray-900">
+                              +1 347.987.0210
+                            </a>
+                          {/* <dd>1 347.987.0210</dd> */}
                         </div>
                       </dl>
                     </div>
@@ -51,14 +57,17 @@ export default function SectionGetInTouch(){
                         <div>
                           <dt className="sr-only">Email</dt>
                           <dd>
-                            <a href="mailto:careers@proxyre.io" className="font-semibold text-pink-600">
-                              careers@proxyre.io
+                            <a href="mailto:Hello@proxyre.io" className="font-semibold text-pink-600">
+                              hello@proxyre.io
                             </a>
                           </dd>
                         </div>
                         <div className="mt-1">
                           <dt className="sr-only">Phone number</dt>
-                          <dd>+1 (555) 905-4567</dd>
+                          {/* <dd>1 347.987.0210</dd> */}
+                          <a href="tel:+1347.987.0210" className="hover:text-gray-900">
+                              +1 347.987.0210
+                            </a>
                         </div>
                       </dl>
                     </div>

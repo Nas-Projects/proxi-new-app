@@ -33,10 +33,9 @@ export default function Contact() {
                 <rect fill="url(#83fd4e5a-9d52-42fc-97b6-718e5d7ee527)" width="100%" height="100%" strokeWidth={0} />
               </svg>
             </div>
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900">Get in touch</h2>
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900">Get dfsin touch</h2>
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              Proin volutpat consequat porttitor cras nullam gravida at. Orci molestie a eu arcu. Sed ut tincidunt
-              integer elementum id sem. Arcu sed malesuada et magna.
+            Get in touch with Proxy Real Estate for personalized property solutions. Our team is ready to assist you with expert guidance and support.
             </p>
             <dl className="mt-10 space-y-4 text-base leading-7 text-gray-600">
               <div className="flex gap-x-4">
@@ -76,9 +75,7 @@ export default function Contact() {
           </div>
         </div>
         <Link className="form" href="mailto:Hello@proxyre.io">
-
-        </Link >
-        <form action="#" method="POST" className="px-6 pb-24 pt-20 sm:pb-32 lg:px-8 lg:py-48">
+       <form action="#" method="POST" className="px-6 pb-24 pt-20 sm:pb-32 lg:px-8 lg:py-48">
           <div className="mx-auto max-w-xl lg:mr-0 lg:max-w-lg">
             <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
               <div>
@@ -162,6 +159,8 @@ export default function Contact() {
             </div>
           </div>
         </form>
+        </Link >
+      
       </div>
     </div>
   )
