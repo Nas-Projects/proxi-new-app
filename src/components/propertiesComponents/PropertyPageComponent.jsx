@@ -76,8 +76,8 @@ console.log("PROPERTY_PAGE_COMPONENT", propertyData)
       {!loading && property && (
         <>
           <PropertyHeaderImage 
-              image={`${property.mainImage}`} 
               propertyTitle={property.name}
+              image={`${property.mainImage}`} 
               propertyType={property.type}
               propertyLocation={property.location} 
               forRentorSale={property.forRent===true ? "For rent" : "For sale"}/>

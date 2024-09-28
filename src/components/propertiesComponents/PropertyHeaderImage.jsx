@@ -17,7 +17,7 @@ const PropertyHeaderImage = ({ image, propertyTitle, propertyType, forRentorSale
             <p className="paragraph-big">{propertyType}</p>
           </div>
           <div className="title-wrap mt-4">
-            <h1 className="detail-title detail-page-title mb-4 color-[var(--midnight-blue)] slide-animation">{propertyTitle}</h1>
+            <h1 className="detail-title detail-page-title mb-4 color-[var(--midnight-blue)] slide-animation">{propertyLocation.street}</h1>
             <div className="title-flex block">
               <div className="title-flex-inner inline-flex text-left">
                 <h1 className="detail-page-title detail-title text-color-accent flex  text-custom-gradient">{propertyLocation.street}</h1>
