@@ -1,5 +1,6 @@
 
 import { ChevronRightIcon } from '@heroicons/react/20/solid'
+import Link from 'next/link'
 
 
 function AgentsList({agents}) {
