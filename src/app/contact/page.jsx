@@ -44,9 +44,9 @@ export default function Contact() {
                   <BuildingOffice2Icon aria-hidden="true" className="h-7 w-6 text-gray-400" />
                 </dt>
                 <dd>
-                  545 Mavis Island
+                 110 Lexington Avenue, 2R
                   <br />
-                  Chicago, IL 99191
+                  New York, NY 10016
                 </dd>
               </div>
               <div className="flex gap-x-4">
@@ -55,8 +55,8 @@ export default function Contact() {
                   <PhoneIcon aria-hidden="true" className="h-7 w-6 text-gray-400" />
                 </dt>
                 <dd>
-                  <a href="tel:+1 (555) 234-5678" className="hover:text-gray-900">
-                    +1 (555) 234-5678
+                  <a href="tel:+1347.987.0210" className="hover:text-gray-900">
+                    +1 347.987.0210
                   </a>
                 </dd>
               </div>
@@ -66,8 +66,8 @@ export default function Contact() {
                   <EnvelopeIcon aria-hidden="true" className="h-7 w-6 text-gray-400" />
                 </dt>
                 <dd>
-                  <a href="mailto:hello@example.com" className="hover:text-gray-900">
-                    hello@example.com
+                  <a href="mailto:Hello@proxyre.io" className="hover:text-gray-900">
+                  Hello@proxyre.io
                   </a>
                 </dd>
               </div>

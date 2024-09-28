@@ -7,7 +7,7 @@ import clsx from 'clsx';
 import { urlFor } from "@/sanity/lib/image.js";
 import { agentsQuery } from "@/sanity/lib/queries";
 import { sanityFetch } from "@/sanity/lib/sanityFetch";
-import AgentsList from "../../components/agentsList";
+import AgentsList from "../../components/AgentsList";
   
   export default async  function Agents() {
     const agentsData = await sanityFetch({ query: agentsQuery });
