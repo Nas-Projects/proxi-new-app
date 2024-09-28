@@ -63,7 +63,7 @@ export interface UserProps {
 
 
 export interface ResultProps {
-  // _id: string;
+  _id: string;
   users: UserProps[];
 }
 
