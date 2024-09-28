@@ -22,7 +22,8 @@ export function TryInboxZero() {
           unwanted messages.
         </p>
         <div className="px-4 pb-4">
-          <Button className="w-full" variant="blue">
+          {/* Use a valid variant */}
+          <Button className="w-full bg-blue-500 text-white hover:bg-blue-600">
             Try Inbox Zero
           </Button>
         </div>
