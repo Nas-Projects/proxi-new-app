@@ -1,4 +1,4 @@
-const properties = [
+export const properties = [
     {
       id: 1,
       title: 'Modern Family Home in Downtown',

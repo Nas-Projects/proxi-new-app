@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { sanityFetch } from "@/sanity/lib/fetch";
+import { sanityFetch } from "@/sanity/lib/sanityFetch";
 import { recentPostsQuery } from "@/sanity/lib/queries";
 
 type BlogPostPreview = {

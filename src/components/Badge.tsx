@@ -1,6 +1,6 @@
 import { type ForwardedRef, forwardRef } from "react";
 import { type VariantProps, cva } from "class-variance-authority";
-import { cn } from "@/utils";
+import { cn } from "@/lib/utils";
 
 export type Color = VariantProps<typeof badgeVariants>["color"];
 
