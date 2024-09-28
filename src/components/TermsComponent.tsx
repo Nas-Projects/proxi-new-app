@@ -12,8 +12,10 @@ function TermsComponent({termsData}) {
       try {
        if (termsData) {
            setTermsData(termsData);
+           setLoading(false)
         }
         else {
+            setLoading(false)
           return 
         }
      
@@ -24,6 +26,11 @@ function TermsComponent({termsData}) {
       }
 
   }, [termsData]); // Empty dependency array to run only once
+
+if (loading) {
+    return <h1 className="my-64 flex text-center">Loading...</h1>
+}
+
 
     const toggleTerm = (index) => {
       setTermsData((prevTerms) => {
