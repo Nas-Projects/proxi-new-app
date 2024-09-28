@@ -1,7 +1,7 @@
 import { groq } from "next-sanity";
 
 
-const searchQuery = groq`
+export const searchQuery = groq`
   *[_type == "property" &&
     (location.city match $location || location.state match $location || location.street match $location || name match $location) &&
     ($propertyType == "All" || type match $propertyType)] {
