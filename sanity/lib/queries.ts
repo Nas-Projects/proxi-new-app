@@ -1,5 +1,20 @@
 import { groq } from "next-sanity";
 
+// export const termsQuery = groq`
+//   *[_type == "termsAndConditions"] {
+//     _id,
+//     title,
+//     terms[] {
+//       _key,
+//       content
+//     }
+//   }
+// `;
+
+
+export const termsQuery = groq`*[_type == "termsAndConditions"] {
+  ...,
+}`
 // JoinUs 
 export const joinUsQuery = groq`
   *[_type == "joinUsPage"][0] {

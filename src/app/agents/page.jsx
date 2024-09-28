@@ -1,8 +1,5 @@
-// "use client"
 
-// import { useEffect, useState } from 'react';
 import clsx from 'clsx';
-// import Link from 'next/link';
 
 import { urlFor } from "@/sanity/lib/image.js";
 import { agentsQuery } from "@/sanity/lib/queries";
