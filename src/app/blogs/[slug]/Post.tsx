@@ -26,18 +26,39 @@ import { urlFor } from "@/sanity/lib/image";
 const builder = imageUrlBuilder(sanityClient);
 
 export function Post({ post }: { post: PostType }) {
-    const decodeAssetId = (id) => {
-        const pattern = /^image-([a-f\d]+)-(\d+x\d+)-(\w+)$/;
-        const match = pattern.exec(id);
-        if (!match) {
-          console.error(`Invalid asset ID: ${id}`);
-          return null;
-        }
-        const [, assetId, dimensions] = match;
-        const [width, height] = dimensions.split("x").map(Number);
-        return { assetId, dimensions: { width, height } };
-      };
 
+    // const decodeAssetId = (id) => {
+    //     const pattern = /^image-([a-f\d]+)-(\d+x\d+)-(\w+)$/;
+    //     const match = pattern.exec(id);
+    //     if (!match) {
+    //       console.error(`Invalid asset ID: ${id}`);
+    //       return null;
+    //     }
+    //     const [, assetId, dimensions] = match;
+    //     const [width, height] = dimensions.split("x").map(Number);
+    //     return { assetId, dimensions: { width, height } };
+    //   };
+
+    const decodeAssetId = (id) => {
+      const pattern = /^image-([a-f\d]+)-(\d+x\d+)-(\w+)$/;
+      const match = pattern.exec(id);
+    
+      if (!match) {
+        console.error(`Invalid asset ID: ${id}`);
+        return null;
+      }
+    
+      const [, assetId, dimensions] = match;
+      const [width, height] = dimensions.split("x").map(Number);
+    
+      return {
+        assetId,
+        dimensions: {
+          width: isNaN(width) ? 800 : width,  // Default width to 800 if NaN
+          height: isNaN(height) ? 600 : height // Default height to 600 if NaN
+        },
+      };
+    };
       
   return (
     <BlogLayout>
