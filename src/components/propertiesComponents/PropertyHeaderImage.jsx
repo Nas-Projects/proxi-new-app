@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import BlurImage from '../blur-image';
 
 const PropertyHeaderImage = ({ image, propertyTitle, propertyType, forRentorSale,  propertyLocation}) => {
   return (
@@ -34,22 +35,26 @@ const PropertyHeaderImage = ({ image, propertyTitle, propertyType, forRentorSale
       <div className="detail-block-wrap lg:flex gap-x-4">
         <a href="#" className="detail-block w-inline-block">
           <div className="realestate-icon paragraph-small">
-            <img
+          <BlurImage
               src="https://cdn.prod.website-files.com/63c93770199def60f97204e0/63c93770199def27b172056c_Assignment.svg"
               loading="lazy"
               alt=""
               className="image"
+              width={0}
+            height={0}
             />
           </div>
           <p className="paragraph-small text-bold">Compare</p>
         </a>
         <a href="#" className="detail-block w-inline-block">
           <div className="realestate-iconn paragraph-small">
-            <img
+          <BlurImage
               src="https://cdn.prod.website-files.com/63c93770199def60f97204e0/63c93770199def3e7a72056d_Favorite.svg"
               loading="lazy"
               alt=""
               className="image"
+              width={0}
+            height={0}
             />
           </div>
           <p className="paragraph-small text-bold">Save as favorite</p>
@@ -61,7 +66,7 @@ const PropertyHeaderImage = ({ image, propertyTitle, propertyType, forRentorSale
 
       <div className='container-xl m-auto'>
         <div className='grid grid-cols-1'>
-          <Image
+        <BlurImage
             src={image}
             alt=''
             className='object-cover h-[400px] lg:h-[70vh] xl:h-[85vh] w-full'
@@ -69,6 +74,8 @@ const PropertyHeaderImage = ({ image, propertyTitle, propertyType, forRentorSale
             height={0}
             sizes='100vw'
             priority={true}
+            // height={600}
+            // width={600}
           />
         </div>
       </div>

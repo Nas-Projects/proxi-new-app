@@ -174,8 +174,10 @@ console.log("errorMessage", errorMessage);
               <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 mainText hover:bg-pink-100 hover:text-black focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                 <span className="absolute -inset-0.5" />
                 <span className="sr-only">Open main menu</span>
-                <Bars3Icon aria-hidden="true" className={`block h-6 w-6 group-data-[${open}]:hidden`} />
-                <XMarkIcon aria-hidden="true" className={`hidden h-6 w-6 group-data-[${open}]:block`} />
+                {/* <Bars3Icon aria-hidden="true" className={`block h-6 w-6 group-data-[${open}]:hidden`} />
+                <XMarkIcon aria-hidden="true" className={`hidden h-6 w-6 group-data-[${open}]:block`} /> */}
+                <Bars3Icon aria-hidden="true" className={`block h-6 w-6 group-data-[open]:hidden`} />
+                <XMarkIcon aria-hidden="true" className={`hidden h-6 w-6 group-data-[open]:block`} />
               </DisclosureButton>
             </div>
             <Link href="/" className="flex flex-shrink-0 items-center">
@@ -241,7 +243,7 @@ console.log("errorMessage", errorMessage);
 
 
                      <div className='hidden  md:ml-4 md:flex md:!mt-[-0.5em] md:flex-shrink-0 md:items-center'>
-                      <MenuButton className="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                      <MenuButton className="hidden relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                         <button
                           type="button"
                           className="inline-flex z-50 items-center justify-center rounded-md text-gray-700 hover:text-gray-900 focus:outline-none focus:ring-0"

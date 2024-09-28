@@ -18,6 +18,7 @@ export async function sanityFetch<QueryResponse>({
   params?: QueryParams;
   tags?: string[];
 }): Promise<QueryResponse> {
+  console.log("PROPERTY_PAGE_QUERY", ` ${JSON.stringify(params)}, "TAGS_", ${JSON.stringify(tags)}`);
   const isDraftMode = draftMode().isEnabled;
   if (isDraftMode && !token) {
     throw new Error(
@@ -29,7 +30,7 @@ console.log(`sanity_fetch query: ${query}`);
   return sanityClient
     .withConfig({ useCdn: true })
     .fetch<QueryResponse>(query, params, {
-      // cache: isDevelopment || isDraftMode ? undefined : "force-cache",
+      cache: isDevelopment || isDraftMode ? undefined : "force-cache",
       ...(isDraftMode && {
         token: token,
         perspective: "previewDrafts",

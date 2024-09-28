@@ -8,8 +8,8 @@ const PropertyImages = ({ images }) => {
         <div className='container mx-auto'>
           {images.length === 1 ? (
             <Item
-              original={images[0]}
-              thumbnail={images[0]}
+              original={image.asset.url}
+              thumbnail={image.asset.url}
               width='1000'
               height='600'
             >
@@ -17,7 +17,7 @@ const PropertyImages = ({ images }) => {
                 <Image
                   ref={ref}
                   onClick={open}
-                  src={images[0]}
+                  src={image.asset.url}
                   alt=''
                   className='object-cover h-[400px] mx-auto rounded-xl'
                   width={1800}
@@ -49,7 +49,7 @@ const PropertyImages = ({ images }) => {
                       <Image
                         ref={ref}
                         onClick={open}
-                        src={image}
+                        src={image.asset.url}
                         alt=''
                         className='object-cover h-[400px] w-full rounded-xl'
                         width={0}

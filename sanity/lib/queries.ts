@@ -147,3 +147,226 @@ export const agentByIdQuery = groq`
   }
 }
 `;
+
+
+export const propertiesQuery = groq`
+  *[_type == "property"] | order(_createdAt desc) {
+    _createdAt,
+    _id,
+    name,
+    email,
+    type,
+    category,
+    description,
+    location {
+      street,
+      city,
+      state,
+      zipcode
+    },
+    amenities,
+    images[] {
+      asset -> { url }
+    },
+    "mainImage": images[0].asset->url, // Grab the first image as the main image
+    contact-> {
+      name,
+      email,
+      phone,
+      image {
+        asset -> { url }
+      }
+    },
+    forSale,
+    forRent,
+    acceptsCrypto,
+    isFeatured,
+    views,
+    daysOnMarket
+  }
+`;
+
+
+
+export const propertyQuery = groq`
+*[_type == "property" && _id == $id][0] {
+  _id,
+  _createdAt,
+  _updatedAt,
+  name,
+  email,
+  type,
+  category,
+  description,
+  location {
+    street,
+    city,
+    state,
+    zipcode
+  },
+  amenities,
+  images[] {
+    asset -> { url }
+  },
+  "mainImage": images[0].asset->url, // First image as the main image
+  contact-> {
+    name,
+    email,
+    phone,
+    image {
+      asset -> { url }
+    }
+  },
+  retail {
+    address,
+    crossStreets,
+    neighborhood,
+    pricePerMonth,
+    priceAnnual,
+    size,
+    psf,
+    basement,
+    frontage,
+    ceilingHeight,
+    cookingAllowed,
+    popUpAllowed,
+    neighbors
+  },
+  office {
+    address,
+    suite,
+    crossStreets,
+    neighborhood,
+    priceMonthly,
+    priceYearly,
+    size,
+    psf,
+    numberOfOffices,
+    numberOfConferenceRooms,
+    ceilingHeight,
+    kitchen,
+    bathrooms
+  },
+  investmentSale {
+    assetType,
+    portfolio,
+    sizeAvailable,
+    price,
+    psf,
+    totalBuildingSize,
+    lotSize,
+    buildingDimensions,
+    occupied,
+    floors,
+    numberOfUnits,
+    averageFloorSize,
+    grossIncome,
+    realEstateTax,
+    totalExpenses,
+    noi,
+    far,
+    airRights,
+    capRate,
+    zoning,
+    capEx,
+    loadingDock
+  },
+  forSale,
+  forRent,
+  acceptsCrypto,
+  isFeatured,
+  views,
+  daysOnMarket
+}`
+
+
+// export const propertyQuery = groq`
+//   *[_type == "property" && id == $id][0] {
+//     _createdAt,
+//     _id,
+//     name,
+//     email,
+//     type,
+//     category,
+//     description,
+//     location {
+//       street,
+//       city,
+//       state,
+//       zipcode
+//     },
+//     amenities,
+//     images[] {
+//       asset -> { url }
+//     },
+//     "mainImage": images[0].asset->url, // First image as the main image
+//     contact-> {
+//       name,
+//       email,
+//       phone,
+//       image {
+//         asset -> { url }
+//       }
+//     },
+//     retail {
+//       address,
+//       crossStreets,
+//       neighborhood,
+//       pricePerMonth,
+//       priceAnnual,
+//       size,
+//       psf,
+//       basement,
+//       frontage,
+//       ceilingHeight,
+//       cookingAllowed,
+//       popUpAllowed,
+//       neighbors
+//     },
+//     office {
+//       address,
+//       suite,
+//       crossStreets,
+//       neighborhood,
+//       priceMonthly,
+//       priceYearly,
+//       size,
+//       psf,
+//       numberOfOffices,
+//       numberOfConferenceRooms,
+//       ceilingHeight,
+//       kitchen,
+//       bathrooms
+//     },
+//     investmentSale {
+//       assetType,
+//       portfolio,
+//       sizeAvailable,
+//       price,
+//       psf,
+//       totalBuildingSize,
+//       lotSize,
+//       buildingDimensions,
+//       occupied,
+//       floors,
+//       numberOfUnits,
+//       averageFloorSize,
+//       grossIncome,
+//       realEstateTax,
+//       totalExpenses,
+//       noi,
+//       far,
+//       airRights,
+//       capRate,
+//       zoning,
+//       capEx,
+//       loadingDock
+//     },
+//     forSale,
+//     forRent,
+//     acceptsCrypto,
+//     isFeatured,
+//     views,
+//     daysOnMarket
+//   }
+// `;

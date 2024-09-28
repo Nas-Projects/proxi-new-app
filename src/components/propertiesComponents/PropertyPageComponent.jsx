@@ -1,8 +1,8 @@
 'use client';
 import Link from 'next/link';
 import {  useEffect, useState } from 'react';
-import { useParams } from 'next/navigation';
-import { fetchProperty } from '../../../utils/requests';
+// import { useParams } from 'next/navigation';
+// import { fetchProperty } from '../../../utils/requests';
 import PropertyHeaderImage from '@/components/propertiesComponents/PropertyHeaderImage';
 // import PropertyDetails from '@/components/propertiesComponents/PropertyDetails';
 import PropertyImages from '@/components/propertiesComponents/PropertyImages';
@@ -39,31 +39,26 @@ import PropertyDetailsCard from "@/components/propertiesComponents/PropertyDetai
 //  import PropertyRatesOrPriceDetails from "@/components/propertiesComponents/PropertyRatesOrPriceDetails";
 import PropertyMap from '@/components/propertiesComponents/PropertyMap';
 // import NewPropertyContactForm from '@/components/propertiesComponents/NewPropertyContactForm';
-const PropertyPage = () => {
-  const { id } = useParams();
+const PropertyPageComponent = ({propertyData}) => {
+
+console.log("PROPERTY_PAGE_COMPONENT", propertyData)
 
   const [property, setProperty] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchPropertyData = async () => {
-      if (!id) return;
       try {
-        const property = await fetchProperty(id);
-        setProperty(property);
+       if(propertyData)
+        console.log("PROPERTY_COMPONENT", propertyData)
+        setProperty(propertyData);
       } catch (error) {
-       
         console.log('Error fetching property:')
         console.error('Error fetching property:', error);
       } finally {
         setLoading(false);
       }
-    };
-
-    if (property === null) {
-      fetchPropertyData();
-    }
-  }, [id, property]);
+ 
+  }, [propertyData]);
 
   if (!property && !loading) {
     return (
@@ -81,7 +76,7 @@ const PropertyPage = () => {
       {!loading && property && (
         <>
           <PropertyHeaderImage 
-              image={`${property.images[0]}`} 
+              image={`${property.mainImage}`} 
               propertyTitle={property.name}
               propertyType={property.type}
               propertyLocation={property.location} 
@@ -143,7 +138,7 @@ const PropertyPage = () => {
           <div className='flex items-center justify-center mb-4 border-b border-gray-200 md:border-b-0 pb-4 md:pb-0'>
             <div className='text-gray-500 mr-2 font-bold'>Nightly</div>
             <div className='text-xl text-left sm:text-2xl font-bold text-custom-gradient'>
-              {property.rates.nightly ? (
+              {property.rates?.nightly ? (
                 `$${property.rates.nightly.toLocaleString()}`
               ) : (
                 <FaTimes className='text-red-700' />
@@ -153,7 +148,7 @@ const PropertyPage = () => {
           <div className='flex items-center justify-center mb-4 border-b border-gray-200 md:border-b-0 pb-4 md:pb-0'>
             <div className='text-gray-500 mr-2 font-bold'>Weekly</div>
             <div className='text-xl sm:text-2xl font-bold text-teal-500'>
-              {property.rates.weekly ? (
+              {property.rates?.weekly ? (
                 `$${property.rates.weekly.toLocaleString()}`
               ) : (
                 <FaTimes className='text-red-700' />
@@ -163,7 +158,7 @@ const PropertyPage = () => {
           <div className='flex items-center justify-center mb-4 pb-4 md:pb-0'>
             <div className='text-gray-500 mr-2 font-bold'>Monthly</div>
             <div className='text-xl sm:text-2xl font-bold text-custom-gradient'>
-              {property.rates.monthly ? (
+              {property.rates?.monthly ? (
                 `$${property.rates.monthly.toLocaleString()}`
               ) : (
                 <FaTimes className='text-red-700' />
@@ -193,7 +188,7 @@ const PropertyPage = () => {
       
         </section>
         <section className='relative mx-4 mt-6'>
-           <PropertyNeighborhoodDetails neighborhoodDetails={property. neighborhoodDetails} />
+         { property?.neighborhoodDetails &&  <PropertyNeighborhoodDetails neighborhoodDetails={property. neighborhoodDetails} />}
         </section>
         {/* <section className='relative mx-4 mt-4 lg:my-2  px-4 lg:px-12'>
           <PropertyRatesOrPriceDetails property={property} />
@@ -206,7 +201,7 @@ const PropertyPage = () => {
         <h3 className='text-lg font-bold mb-6'>Additional Amenities</h3>
 
         <ul className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 list-none space-y-2'>
-          {property.amenities.map((amenity, index) => (
+          {property?.amenities &&  property.amenities.map((amenity, index) => (
             <li key={index}>
               <FaCheck className='inline-block text-green-600 mr-2' /> {amenity}
             </li>
@@ -241,7 +236,7 @@ const PropertyPage = () => {
     </>
   );
 };
-export default PropertyPage;
+export default PropertyPageComponent;
 
 
 

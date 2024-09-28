@@ -35,7 +35,7 @@ export const staticAgent = {
 };
 
 export default  async function AgentProfile({ params }: { params: { id: string } }) {
-  const { id } = params;
+  // const { id } = params;
   const agent = await sanityFetch<Agent>({ query: agentQuery, params });
   console.log("Post_Page_sanityFetch", agent)
   // const [agent, setAgent] = useState<Agent | null>(null);
