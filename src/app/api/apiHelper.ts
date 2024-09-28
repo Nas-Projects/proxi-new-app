@@ -15,6 +15,7 @@ export interface UserProps {
   name: string;
   username: string;
   email: string;
+  _id: string;
   image: string;
   bio: string;
   followers: number;

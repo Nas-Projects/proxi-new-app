@@ -1,8 +1,10 @@
 export default function HeroSearch() {
     return <div class="flex relative items-center justify-center w-2/4"><div class="search fade-in"><div class="items-center w-full flex flex-col"><div class="flex flex-col bg-white md:p-8 ss:p-8 p-5  md:rounded-[20px] rounded-[12px] md:gap-3 ss:gap-3 gap-2  border-[1px] border-main3"><div class="flex w-full md:gap-3 ss:gap-2 gap-2 items-center"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="text-gradient text-[24px]" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill="none" stroke-miterlimit="10" stroke-width="32" d="M221.09 64a157.09 157.09 0 1 0 157.09 157.09A157.1 157.1 0 0 0 221.09 64z"></path><path fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M338.29 338.29 448 448"></path></svg><h2 class="text-custom-gradient font-bold md:text-[22px] ss:text-[20px] text-[18px] tracking-tight md:leading-[30px]  ss:leading-[25px] leading-[25px]">Let us know exactly what you want</h2></div><div class="flex flex-row w-full md:mt-3 ss:mt-3 mt-2 justify-center items-center"><h2 class="text-main md:text-[15px] ss:text-[14px] text-[13px]
-    text-main font-bold border-b-main border-b-[3px] 
-        md:pb-2 ss:pb-2 pb-1 text-center w-full cursor-pointer">Property Search</h2><h2 class="text-main md:text-[15px] ss:text-[14px] text-[13px]
-    text-center
-        w-full cursor-pointer 
+         text-main font-bold border-b-main 
+         border-b-[3px] 
+         md:pb-2 ss:pb-2 pb-1 text-center w-full
+         cursor-pointer">Property Search</h2><h2 class="text-main md:text-[15px] ss:text-[14px] text-[13px]
+         text-center
+      w-full cursor-pointer 
         md:pb-2 ss:pb-2 pb-1">Agents Search</h2></div><form class="flex flex-col md:gap-2.5 ss:gap-2.5 md:mt-4 ss:mt-4 mt-3 gap-2"><div class="relative"><input type="text" placeholder="Search for properties" class="md:py-2.5 ss:py-2 py-1.5 md:px-3  ss:px-3 px-2 border-search  text-black md:rounded-lg rounded-md md:text-[14px] ss:text-[14px] text-[12px] bg-transparent w-full placeholder:text-main3" name="numbermail" value=""/><p class="text-mainRed md:text-[12px]  ss:text-[12px] text-[11px] md:mt-2 ss:mt-2 mt-1"></p></div><div class="w-full mt-1"><button type="submit" class="bg-custom-gradient grow5 md:text-[15px] w-full ss:text-[16px] text-[12px] md:py-3 ss:py-3 py-2.5  text-white md:rounded-lg rounded-md border-none">Search</button></div></form></div></div></div></div>
 }
