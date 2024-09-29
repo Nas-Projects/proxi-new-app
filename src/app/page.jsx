@@ -14,7 +14,7 @@ import SectionBlockChain from '@/components/propertiesComponents/SectionBlockCha
 import SectionJoin from '@/components/propertiesComponents/SectionJoin';
 import SectionTestimonial from '@/components/propertiesComponents/SectionTestimonial';
 import SectionOurTeams from '@/components/propertiesComponents/SectionOurTeams';
-// import FeaturedListings from '@/components/propertiesComponents/FeaturedListings';
+import FeaturedListings from '@/components/propertiesComponents/FeaturedListings';
 import ProperTiesForSale from '@/components/propertiesComponents/ProperTiesForSale';
 import Hero from '@/components/Hero';
 import Link from 'next/link';
