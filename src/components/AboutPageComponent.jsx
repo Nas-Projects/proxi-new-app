@@ -136,7 +136,7 @@ export default function AboutPageComponent({aboutData}) {
 
         {/* ------SECTION 2 ------- */}
         {/* Content section */}
-        <div className="mt-32 overflow-hidden sm:mt-40">
+        <div id="section2" className="mt-32 overflow-hidden sm:mt-40">
           <div className="mx-auto max-w-7xl px-6 lg:flex lg:px-8">
             <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-12 gap-y-16 lg:mx-0 lg:min-w-full lg:max-w-none lg:flex-none lg:gap-y-8">
               <div className="group lg:col-end-1 lg:w-full lg:max-w-lg lg:pb-8">
@@ -282,8 +282,8 @@ export default function AboutPageComponent({aboutData}) {
                 {section5.title} 
               </h2>
               <p className="mt-6 text-xl leading-8 text-gray-800">
-              Proxy simplifies residential sales with blockchain technology, 
-              ensuring secure, transparent, and efficient property transactions
+                Proxy simplifies residential sales with blockchain technology, 
+                ensuring secure, transparent, and efficient property transactions
               </p>
               <img
                 alt="section 5 image"

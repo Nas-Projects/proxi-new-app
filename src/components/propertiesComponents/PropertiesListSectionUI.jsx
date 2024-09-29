@@ -161,7 +161,7 @@ const PropertiesListSectionUI = ({properties}) => {
   return loading ? (
     <Spinner />
   ) : (
-    <section className="main-properties mt-[20em] md:mt-[-17em] xl:mt-[-12.5em] px-0 lg:-mt-[12em] min-[439px]:w-[99vw]">
+    <section className="main-properties mt-[-2em] md:mt-[-17em] xl:mt-[-12.5em] px-0 lg:-mt-[12em] min-[439px]:w-[99vw]">
       <div className="wrap-title-wrap-center xl:mb-4 fade-in-from-bottom ">
         <h1 className="!text-left text-center py-6 text-custom-gradient font-bold slide-animation">
            Real Estate Properties
