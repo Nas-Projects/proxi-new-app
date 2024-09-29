@@ -172,6 +172,13 @@ export function NavigationLeft() {
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
+        <NavigationMenuItem className="group-hover:p-2 group-hover:rounded-md text-sm text-gray-500 font-normal hover:bg-pink-100 group-hover:bg-pink-50">
+          <Link href="/terms" legacyBehavior passHref>
+            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+             Terms
+            </NavigationMenuLink>
+          </Link>
+        </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>
   )

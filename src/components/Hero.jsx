@@ -1,9 +1,17 @@
 import Link from "next/link";
 import HeroSearchForm from "./propertiesComponents/HeroSearchForm";
+import BlurImage from "./blur-image";
 
 export default function Hero() {
     return(<div className="hero hero-primary overflow-hidden relative z-0 bg-white">
-        <img src="/beams-basic.png" alt="" class="absolute left-1/2 top-0 -ml-[39rem] w-[113.125rem] max-w-none"></img>
+        <BlurImage
+         src="/beams-basic.png"
+          alt=""
+          height={1000}
+          width={1000}
+          placeholder="blur"
+          class="absolute left-1/2 top-0 -ml-[39rem] w-[113.125rem] max-w-none"
+          />
     <div className="hero-slider-container swiper-container relative">
       <div className="primary-slider home-3 swiper-fade swiper-initialized swiper-horizontal swiper-watch-progress swiper-backface-hidden">
         <div

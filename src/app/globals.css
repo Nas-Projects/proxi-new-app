@@ -284,6 +284,11 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 } */
+
+.bg-custom-gradient-smoke {
+  background: linear-gradient(255deg, #f6a5d21f, #59236630);
+  -webkit-background-fill-color: transparent;
+}
 .text-secondary-color {
   background: linear-gradient(to bottom, #ff39a8, #ff397cd1, #e91e63d4, #be62d6);
   -webkit-background-clip: text;

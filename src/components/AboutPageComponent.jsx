@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { urlFor } from "@/sanity/lib/image.js";
+import BlurImage from './blur-image';
 
 export default function AboutPageComponent({aboutData}) {
 
@@ -78,11 +79,19 @@ export default function AboutPageComponent({aboutData}) {
 
   return (
     <div className="bg-white">
+       <BlurImage
+            src="/beams-basic.png"
+            alt=""
+            height={1000}
+            width={1000}
+            placeholder="blur"
+            className="absolute left-1/2 top-20 -ml-[39rem]  w-[113.125rem] max-w-none"
+            />
       <main className="isolate">
         {/* Hero section */}
 
         {/* ------SECTION 1 ------- */}
-        <div className=" mt-4 lg:-mt-10 relative isolate -z-10 overflow-hidden bg-gradient-to-b from-indigo-100/20 pt-14">
+        <div className="absolute top-0 sm:top-14 z-10  mt-4 lg:-mt-10 relative isolate -z-10 overflow-hidden bg-gradient-to-b from-indigo-100/20 pt-14">
           <div
             aria-hidden="true"
             className="absolute inset-y-12 right-1/2 -z-10 -mr-96 w-[200%] origin-top-right skew-x-[-30deg] bg-white shadow-xl shadow-indigo-600/10 ring-1 ring-indigo-50 sm:-mr-80 lg:-mr-96"

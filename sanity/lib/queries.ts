@@ -3,7 +3,10 @@ import { groq } from "next-sanity";
 
 export const searchQuery = groq`
   *[_type == "property" &&
-    (location.city match $location || location.state match $location || location.street match $location || name match $location) &&
+    (coalesce(location.city, '') match $location || 
+     coalesce(location.state, '') match $location || 
+     coalesce(location.street, '') match $location || 
+     coalesce(name, '') match $location) &&
     ($propertyType == "All" || type match $propertyType)] {
     _id,
     name,

@@ -24,7 +24,7 @@ function SearchResultsCSR() {
         const res = await fetch(
           `/api/properties/search?location=${location}&propertyType=${propertyType}`
         );
-
+        console.log("searchResults", res)
         if (res.status === 200) {
           const data = await res.json();
           setProperties(data);
@@ -57,10 +57,10 @@ function SearchResultsCSR() {
         >
           <FaArrowAltCircleLeft className='mr-2 mb-1  h-8 w-8 hover:text-custom-gradient  ' /> Back To Properties
         </Link>
-        <h1 className='text-xl sm:text-2xl mb-4 lg:text-5xl mainText inline-flex gap-x-4'>
+        <h2 className='text-xl sm:text-2xl mb-4 lg:text-5xl mainText inline-flex gap-x-4'>
           {location && <span> - {location}</span>} 
           {propertyType && <span className='text-custom-gradient'> {propertyType}</span>} Results
-        </h1>
+        </h2>
         {properties.length === 0 ? (
           <p className='lg:text-3xl text-slate-600'>
             No search results found for {location} {propertyType}
