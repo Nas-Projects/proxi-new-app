@@ -1,18 +1,18 @@
 import * as React from "react";
 import { Table, TableBody, TableCell, TableHeader, TableRow } from "@/components/ui/table";
 
-export default function CutomTable({ retail, office, investmentSale }) {
-  const renderTableRows = (fields) => {
-    return fields.map((field) => {
-      const { name, title, value } = field;
-      return (
-        <TableRow key={name}>
-          <TableCell>{title}</TableCell>
-          <TableCell>{value ? value : "N/A"}</TableCell>
-        </TableRow>
-      );
-    });
-  };
+export default function CutomTableDataList({ retail, office, investmentSale }) {
+  // const renderTableRows = (fields) => {
+  //   return fields.map((field) => {
+  //     const { name, title, value } = field;
+  //     return (
+  //       <TableRow key={name}>
+  //         <TableCell>{title}</TableCell>
+  //         <TableCell>{value ? value : "N/A"}</TableCell>
+  //       </TableRow>
+  //     );
+  //   });
+  // };
 
   const getTableData = () => {
     if (retail) {
