@@ -92,7 +92,7 @@ export default async function BlogsPage() {
 
       <div className="pb-24">
         <div className="blog-list ">
-          <div className="w-full lg:py-20 lg:px-24 xl:px-[5vw]">
+          <div className="w-full py-12 lg:py-20 lg:px-24 xl:px-[5vw]">
             <div
                 data-w-id="a64550db-8ef2-cc50-2a21-0932a87b5f90"
                 style={{

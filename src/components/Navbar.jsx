@@ -27,8 +27,8 @@ import  NavbarUserAvatarComponent  from './NavbarUserAvatarComponent'
 const navigation = [
   { name: 'Properties', href: '/properties', current: true },
   { name: 'Sales', href: '/properties/search-results?location=&propertyType=sale"', current: false },
-  { name: 'Rentals', href: '/properties/search-results?location=&propertyType=rentals"', current: false },
-  { name: 'Comercial', href: '/properties/propertyCategory=Commercial"', current: false },
+  { name: 'Rentals', href: '/properties/search-results?location=&propertyType=rentals', current: false },
+  { name: 'Comercial', href: '/properties/propertyCategory=Commercial', current: false },
   { name: 'About', href: '/about', current: false },
   { name: 'Agents', href: '/agents', current: false },
   { name: 'Contact', href: '/contact', current: false },

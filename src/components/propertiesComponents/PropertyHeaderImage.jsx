@@ -26,10 +26,10 @@ const PropertyHeaderImage = ({ image, propertyTitle, propertyType, forRentorSale
                 <span className="detail-page-title  detail-title text-color-accent flex text-custom-gradient">,</span>
               </div>
            <br />
-          <div className="lg:-mt-8 xl:lg:-mt-12 flex text-left  inline-flex gap-x-2 lg:gap-x-4">
-           <h1 className="detail-title text-color-accent text-custom-gradient-secondary">{propertyLocation.city}</h1>
-            <h1 className=" flex detail-title text-color-accent text-custom-gradient-secondary">{propertyLocation.state}</h1>
-            <h1 className="detail-title text-color-accent text-custom-gradient-secondary">{propertyLocation.zip}</h1>  
+          <div className="mt-[-1em] lg:-mt-8 xl:lg:-mt-12 flex text-left  inline-flex gap-x-2 lg:gap-x-4">
+           <h1 className="detail-title text-color-accent text-custom-gradient">{propertyLocation.city}</h1>
+            <h1 className=" flex detail-title text-color-accent text-custom-gradient">{propertyLocation.state}</h1>
+            <h1 className="detail-title text-color-accent text-custom-gradient">{propertyLocation.zip}</h1>  
           </div>
         </div>
       </div>
