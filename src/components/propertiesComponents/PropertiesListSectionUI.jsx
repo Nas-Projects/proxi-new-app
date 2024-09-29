@@ -161,12 +161,12 @@ const PropertiesListSectionUI = ({properties}) => {
   return loading ? (
     <Spinner />
   ) : (
-    <section className="main-properties mt-[-2em] md:mt-[-17em] xl:mt-[-12.5em] px-0 lg:-mt-[12em] min-[439px]:w-[99vw]">
+    <section className="main-properties mt-[-8em] md:mt-[-17em] xl:mt-[-12.5em] px-0 lg:-mt-[12em] min-[439px]:w-[99vw]">
       <div className="wrap-title-wrap-center xl:mb-4 fade-in-from-bottom ">
-        <h1 className="!text-left text-center py-6 text-custom-gradient font-bold slide-animation">
-           Real Estate Properties
+        <h1 className="!text-left text-center py-6 text-custom-gradient font-bold slide-animation lg:mt-24">
+           Retail Properties
         </h1>
-        <h2 className="text-3xl xl:-mt-2 pb-6 text-gray-600 ">Smart Searches & Data access</h2>
+        <h2 className="text-2xl lg:text-3xl xl:-mt-2 pb-6 text-gray-600 ">Smart Searches & Data access</h2>
         {/* <Link href="/properties" className="">
         View all 
         </Link> */}

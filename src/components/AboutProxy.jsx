@@ -26,10 +26,10 @@ import Link from "next/link";
 
 const AboutProxy = () => {
   return (
-   <section className="xl:max-w-[96vw] min-[1500px]:px-[5vw] lg:mb-24">
+   <section className="xl:max-w-[96vw] min-[1500px]:px-[5vw] lg:mb-14">
     <div className="relative py-[2vh] lg:mt-[3em]] md:mt-12 md:mt-[4em] md:py-0 lg:mt-12 xlg:mt-12 xl:mb-24">
     <div className="w-full lg:mt-24 lg:mt-34 xl:justify-center
-         xl:max-w-[99vw] lg:px-6 lg:ppt-24 pb-44 lg:pb-12 xl:pb-44 relative h-[80vh]">
+         xl:max-w-[99vw] lg:px-6 lg:pt-8 pb-44 lg:pb-12 xl:pb-4 relative min-h-[40vh]">
        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 lg:gap-12 xl:gap-x-20">
          {/* about left */} 
           <div className="md:hidden py-2 items-center w-full-mb-12  pl-4 mt-[-1em]">

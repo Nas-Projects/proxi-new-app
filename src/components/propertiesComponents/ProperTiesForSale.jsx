@@ -33,14 +33,14 @@ const PropertiesForSale = ({properties}) => {
   }
 
   return (
-    <div className="property-list mt-[15vh] lg:mt-[2vh] 
+    <div className="property-list mt-[35vh] lg:mt-[2vh] 
     max-auto mx-4 md:mx-8 lg:mx-12 xl:mx-[0em] min-[1600px]:mx-[8em] justify-center">
       <SectionHeader
         title="Properties For Sale"
         subtitle="Find the right location"
         description="We believe Proxy Realestatecan make the world a much better place by choosing the right houses for the right people."
       />
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 px-4 xl:mx-12 xl:mt-[-3em]">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-4 px-4 xl:mx-12 xl:mt-[-3em]">
         {properties.map((property) => (
           <PropertyCard property={property} key={property._id} />
         ))}
@@ -57,7 +57,7 @@ export const PropertyCard = ({ property }) => {
   return(
   
   // <Link className="property h-[520px] w-[379px] min-[600px]:h-[420px] min-[600px]:w-[30%] md:h-[280px] md:h-[470px] md:w-[319px] lg:md:h-[500px] xl:w-[299px]" href={`properties/${property._id}`}>
- <Link className="relative property h-[280px] w-[379px] sm:w-[289px] min-[1400px]:w-[309px] xl:sm:w-[359px] relative isolate flex flex-col justify-end  rounded-2xl bg-gray-900  pb-8" 
+ <Link className="mb-4 relative property h-[280px] lg::w-[379px] sm:w-[289px] min-[1400px]:w-[309px] xl:sm:w-[359px] relative isolate flex flex-col justify-end  rounded-2xl bg-gray-900  pb-8" 
      href={`properties/${property._id}`}> 
   <BlurImage className="absolute top-0 inset-0 pb-[1em]"
     alt={property.name}

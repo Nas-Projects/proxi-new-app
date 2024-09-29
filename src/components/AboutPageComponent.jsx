@@ -108,7 +108,7 @@ export default function AboutPageComponent({aboutData}) {
         </div>
 
         {/* Timeline section */}
-        <div className="mx-auto -mt-0 max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto mt-12 max-w-7xl px-6 lg:px-8">
           <div className="mx-auto grid max-w-2xl grid-cols-1 gap-8 overflow-hidden lg:mx-0 lg:max-w-none lg:grid-cols-4">
             {timeline.map((item) => (
               <div key={item.name}>
@@ -298,9 +298,9 @@ export default function AboutPageComponent({aboutData}) {
                 {section5.description}
                 
               </p>
-              <div className="mt-8  border-t border-gray-100 pt-8">
+              <div className="mt-2  border-t border-gray-100 pt-8">
                 <a href="/properties/search-results?location=&propertyType=sale" 
-                className="text-sm font-semibold leading-6 text-pink-600 hover:text-indigo-500">
+                   className="text-sm  bg-custom-gradient px-5 py-4 text-white font-semibold leading-6 hover:text-pink-600 hover:bg-white">
                   View all sales <span aria-hidden="true">&rarr;</span>
                 </a>
               </div>

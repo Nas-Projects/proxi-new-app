@@ -121,7 +121,7 @@ export default function Hero() {
                 
                 </div>
               </div>
-               <div className="mx-4  mt-10 lg:mt-0 search-right  max-w-[95vw] container w-full relative z-xl fade-in-from-bottom">
+               <div className="mx-4 !z-20 mt-10 lg:mt-0 search-right  max-w-[95vw] container w-full relative z-xl fade-in-from-bottom">
                   <HeroSearchForm/>
                 </div>
             </div>

@@ -62,10 +62,10 @@ export default function OurValues(){
         <div className="mx-auto mt-6 grid max-w-2xl auto-rows-fr grid-cols-1 gap-8 sm:mt-10 xl:mt-20 lg:mt-4 lg:max-w-none lg:grid-cols-2 xl:grid-cols-3">
           {values.map((value) => (
             <article key={value.id}
-              className="!group hover:border border-pink-400 relative isolate flex flex-col overflow-hidden rounded-2xl  px-8 pb-8">
+              className="!group hover:border border-pink-400 relative isolate flex flex-col overflow-hidden rounded-2xl  px-8 pb-0">
                 <div className="inline-flex gap-x-4">
                     <div className="mt-[1em] gorup-hover:text-pink-500" dangerouslySetInnerHTML={{ __html: value.icon }} />
-                    <h3 className="mt-3 !text-left mainText !text-md xl:!text-[23px] font-semibold leading-6 text-white">
+                    <h3 className="mt-3 !text-left mainText !text-normal  !text-[22px] leading-[2.1rem]  xl:!text-[23px] font-semibold leading-6 text-white">
                         <a href={value?.href}>
                         <span className="!text-left absolute inset-0" />
                         {value.title}
@@ -73,7 +73,7 @@ export default function OurValues(){
                     </h3>
                 </div>
               <div className="absolute inset-0 -z-10 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
-               <p className="text-left">{value.body}</p>
+               <p className="text-left pb-4 lg:pb-4  xl:pb-6 flex">{value.body}</p>
             </article>
           ))}
           </div>
