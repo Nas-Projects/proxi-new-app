@@ -1,5 +1,5 @@
 
-import SearchResultsComponent from '@/components/propertiesComponents/SearchResultsComponent';
+import SearchResultsComponent from '../../../components/propertiesComponents/SearchResultsComponent ';
 
 const SearchResultsPage = () => {
 
