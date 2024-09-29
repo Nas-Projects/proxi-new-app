@@ -32,7 +32,7 @@ const PropertyContactForm = ({ property }) => {
       e.preventDefault();
     
       const name = `${firstName} ${lastName}`;
-      const subject = `Inquiry: ${property.name} ${property.location}`;
+      const subject = `Inquiry: ${property.name} - ${property.location.street}`;
       const body = `
         Name: ${name}
         Email: ${userEmail}
