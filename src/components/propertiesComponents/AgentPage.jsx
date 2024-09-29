@@ -40,7 +40,7 @@ const teams = [
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
-export const profileWidth = 'max-w-5xl mx-auto px-4 sm:px-6 lg:px-8';
+export const profileWidth = 'max-w-5xl inline-flex  mx-auto px-4 sm:px-6 lg:px-8';
 
 export default function AgentPage({agent}) {
   console.log("AGENT_AgentPage Passed down:", agent);
@@ -228,7 +228,7 @@ export const AgentProfileCard = ({agent}) => {
         height={300}
       />
     </div>
-    <div className="mt-6 sm:flex-1 sm:min-w-0 sm:flex sm:items-center 
+    <div className="mt-20 pl-4 sm:flex-1 sm:min-w-0 sm:flex sm:items-center 
                      sm:justify-end sm:space-x-6 sm:pb-1 gap-x-4">
       <div className="flex min-w-0 flex-1 items-center space-x-2 mt-[-2em]">
         <h3 className="font-bold text-2xl text-gray-800 text-white dark:text-white mb-1  truncate">
@@ -244,7 +244,7 @@ export const AgentProfileCard = ({agent}) => {
 </div>
 
           <div class="py-2 md:pt-6">
-              <h1 class="font-bold text-2xl text-gray-800 text-white/80 dark:text-white mb-1">Realestate Agent</h1>
+              <h1 class="font-bold tex-base lg:text-xl xl:text-2xl text-gray-800 text-white/80 dark:text-white mb-1">Realestate Agent</h1>
               <div class="inline-flex text-gray-200 dark:text-gray-700 dark:text-gray-300 items-center">
                   <svg class="h-5 w-5 text-gray-400 dark:text-gray-600 mr-1" fill="currentColor"
                       xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
