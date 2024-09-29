@@ -5,27 +5,31 @@ import { useEffect, useState } from 'react';
 import SectionHeader from './SectionHeader';
 import LoadingDots from '../LoadingDots';
 import Link from 'next/link';
+import BlurImage from '../blur-image';
+import { urlFor } from '@/sanity/lib/image';
 
-const PropertiesForSale = () => {
-  const [loading, setLoading] = useState(true);
-  const [properties, setProperties] = useState([]);
-  const page = 1;
-  const pageSize = 4;
+const PropertiesForSale = ({properties}) => {
+  let loading =true
+  // const [properties, setProperties] = useState([]);
+   properties?.length ? loading = false : loading 
+   console.log("PROPERTIES FOR SALES", properties);
+  // const page = 1;
+  // const pageSize = 4;
 
-  useEffect(() => {
-    const fetchProperties = async () => {
-      const response = await fetch(`/api/properties/type/forSale?page=${page}&pageSize=${pageSize}`);
-      const data = await response.json();
-      console.log("PROPERTIES_RESPONSE: ", data.properties);
-      setProperties(data.properties);
-      setLoading(false); // Set loading to false after fetching data
-    };
+  // useEffect(() => {
+  //   const fetchProperties = async () => {
+  //     const response = await fetch(`/api/properties/type/forSale?page=${page}&pageSize=${pageSize}`);
+  //     const data = await response.json();
+  //     console.log("PROPERTIES_RESPONSE: ", data.properties);
+  //     setProperties(data.properties);
+  //     setLoading(false); // Set loading to false after fetching data
+  //   };
 
-    fetchProperties();
-  }, []);
+  //   fetchProperties();
+  // }, []);
 
   if (loading) {
-    return <LoadingDots />; // Show loading dots while loading
+    return <div className='py-64 px-64 justify-center content-center'><LoadingDots /></div>; // Show loading dots while loading
   }
 
   return (
@@ -48,19 +52,23 @@ const PropertiesForSale = () => {
 export default PropertiesForSale;
 
 
-export const PropertyCard = ({ property }) => (
+export const PropertyCard = ({ property }) => {
+  const firstImage = property.images?.[0].asset.url || property.mainImage 
+  return(
+  
   // <Link className="property h-[520px] w-[379px] min-[600px]:h-[420px] min-[600px]:w-[30%] md:h-[280px] md:h-[470px] md:w-[319px] lg:md:h-[500px] xl:w-[299px]" href={`properties/${property._id}`}>
-  <Link className="relative property h-[280px] w-[379px] sm:w-[289px] min-[1400px]:w-[309px] xl:sm:w-[359px] relative isolate flex flex-col justify-end  rounded-2xl bg-gray-900  pb-8" 
+ <Link className="relative property h-[280px] w-[379px] sm:w-[289px] min-[1400px]:w-[309px] xl:sm:w-[359px] relative isolate flex flex-col justify-end  rounded-2xl bg-gray-900  pb-8" 
      href={`properties/${property._id}`}> 
-  <img className="absolute top-0 inset-0 pb-[1em]"
+  <BlurImage className="absolute top-0 inset-0 pb-[1em]"
     alt={property.name}
     loading="lazy"
-    width={property.imageWidth}
-    height={property.imageHeight}
+    width={property.imageWidth || 800}
+    height={property.imageHeight || 600}
     decoding="async"
     data-nimg={1}
     style={{ color: 'transparent' }}
-    src={`${property.images[0]}`}
+    // src={`${property.images[0]}`}
+    src={firstImage ? urlFor(firstImage).url() : property.mainImage} 
   />
   <div className="propertyInfo bg-white">
     <div className="title inline-flex gap-x-5 max-h-[2em]">
@@ -89,5 +97,5 @@ export const PropertyCard = ({ property }) => (
 </Link>
 
 );
-
+}
 

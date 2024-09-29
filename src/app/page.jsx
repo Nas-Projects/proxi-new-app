@@ -51,7 +51,7 @@ async function Home({}){
           <div className="mx-auto lg:px-[10%] absolute absolute top-[69vh] lg:top-[68vh] lg:mx-auto md:top-[70vh] xl:top-[67vh] z-20">
           <SearchButtons />
           </div>
-          <ProperTiesForSale/>
+          <ProperTiesForSale properties={properties}/>
           <AboutProxy/>
           <PropertiesListSectionUI properties={properties}/>
           {/* <FeaturedListings /> */}
