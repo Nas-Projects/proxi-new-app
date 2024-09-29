@@ -14,7 +14,7 @@ import Spinner from '@/components/propertiesComponents/Spinner';
 import OtherProperties from '@/components/propertiesComponents/OtherProperties'
 import MorgageCalculator from '@/components/propertiesComponents//MorgageCalculator'
 import { FaArrowLeft, FaTimes } from 'react-icons/fa';
-import CutomTable from '@/components/ui/CutomTable';
+import CutomTableDataList from '@/components/ui/CutomTableDataList';
 import {
   Breadcrumb,
   // BreadcrumbEllipsis,
@@ -131,7 +131,12 @@ console.log("PROPERTY_PAGE_COMPONENT", propertyData)
          <div className='my-12 bg-white/70 p-6 rounded-lg shadow-md text-center md:text-left max-w-4xl'>
           { property.rates &&  <h1 className='text-3xl font-bold mb-4'> Rates & Options</h1>}
           { property.retail && property.retail.askingPrice &&  <h1 className='text-3xl font-bold mb-4'>Asking Price <span>{property.askingPrice}</span></h1>}
-          {property.category == "Commercial" &&  <CutomTable retail={property?.retail} residential={property} investement={property}/>}
+          {property.category == "Commercial" && <div className="t">
+          <h3 className="font-bold !text-4xl py-4">Additional Information</h3>
+          <CutomTableDataList retail={property?.retail} residential={property} investement={property}/>
+          </div>
+          
+           }
         {/* <h3 className='text-lg font-bold my-6 bg-gray-800 text-white p-2'>
           Rates & Options
         </h3> */}
@@ -175,9 +180,9 @@ console.log("PROPERTY_PAGE_COMPONENT", propertyData)
         <section className='relative mx-4'>
          <div className="px-4 lg:px-6 w-full lg:w-2/3 lg:h-[60vh]">
             <h3 className="font-bold !text-4xl text-left pl-2 lg:px-4">Location</h3>
-            <div className='text-gray-500 mb-4 flex align-middle justify-start md:justify-start pt-4 pl-2 lg:pl-2'>
-                <FaMapMarker className='text-lg text-pink-600 mr-2 lg:pl-2' />
-                <p className='text-custom-gradient-secondary'>
+            <div className='group text-gray-500 mb-4 flex align-middle justify-start md:justify-start pt-0 pl-2 lg:pl-2'>
+                <FaMapMarker className='text-lg text-pink-300  group-hover:text-pink-600 mr-2 mt-1.5 lg:pl-2' />
+                <p className='hover:text-custom-gradient-secondary'>
                   {property.location.street}, {property.location.city}{' '}
                   {property.location.state}
                 </p>
@@ -194,23 +199,31 @@ console.log("PROPERTY_PAGE_COMPONENT", propertyData)
         {/* <section className='relative mx-4 mt-4 lg:my-2  px-4 lg:px-12'>
           <PropertyRatesOrPriceDetails property={property} />
         </section> */}
-        <section className='relative mx-4 lg:my-2   z-20'>
-      {  property.amenities && <PropertyAmenitiesDetails property={property} />}
+        <section className='relative mx-4 lg:my-2 z-20'>
+        {property?.amenities?.filter((amenity) => amenity.trim() !== "").length > 0 && (
+         <div className="amenities">
+          <h3 className="text-left font-bold mt-12 lg:mt-24 !text-4xl py-4">
+            Additional amenities</h3>
+          <PropertyAmenitiesDetails property={property} />
+       </div>)}
         </section> 
+        
         <section className='text-left relative mx-4 lg:my-2 z-20'> 
-        <div className='bg-white p-6 rounded-lg shadow-md mt-6'>
-        <h3 className='text-lg font-bold mb-6'>Additional Amenities</h3>
-
-        <ul className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 list-none space-y-2'>
-          {property?.amenities &&  property.amenities.map((amenity, index) => (
+        {property?.amenities?.filter((amenity) => amenity.trim() !== "").length > 0 &&  <div className='bg-white p-6 rounded-lg shadow-md mt-6'>
+       <div className="t">
+          <h3 className="font-bold !text-4xl py-4">Additional amenities</h3>
+          <ul className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 list-none space-y-2'>
+         { property.amenities.map((amenity, index) => (
             <li key={index}>
               <FaCheck className='inline-block text-green-600 mr-2' /> {amenity}
             </li>
           ))}
         </ul>
-      </div>     </section> 
+       </div>
+      </div>  }  
+     </section> 
         
-        <section className="relative">
+        <section className="relative mt-24">
           <MorgageCalculator/>
         </section>
         <section className='relative '>

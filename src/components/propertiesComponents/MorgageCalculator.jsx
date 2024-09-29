@@ -35,7 +35,9 @@ export default function MortgageCalculator() {
       <div className="detail">
       <div className={styles.detailToggle} onClick={toggleDropdown}>
         <div className={styles.dropdownTitleWrap}>
-          <h3 className={styles.headingThreePropertyDetail}>Morgage Calculator</h3>
+        <h3 className="text-left font-bold !text-4xl py-4">
+            Additional amenities</h3>
+          {/* <h3 className={styles.headingThreePropertyDetail}>Morgage Calculator</h3> */}
           <div className={styles.dropdownIconWrap}>
             <div className={styles.dropdownText}>
               <div className={`${styles.showText} ${isOpen ? styles.hidden : ''}`}>
