@@ -41,151 +41,96 @@ export default function JoinUsComponent({joinUsData }) {
     }
   }, [joinUsData]); // Ensure joinUsData is in the dependency array
 
-   // Intersection observer for sectionRef
-   useEffect(() => {
-    const observer = new IntersectionObserver(
-        (entries) => {
-            entries.forEach((entry) => {
-                const bgMedia = entry.target;
-                if (entry.isIntersecting) {
-                    bgMedia.classList.add('slide-up');
-                } else {
-                    bgMedia.classList.remove('slide-up');
-                }
-            });
-        },
-        { threshold: 0.0 }  // Adjust the threshold as needed
-    );
-  
-    if (sectionRef.current) {
-        observer.observe(sectionRef.current);
-    }
-  
-    return () => {
-        if (sectionRef.current) {
-            observer.unobserve(sectionRef.current);
-        }
-    };
-  }, []);
-  
-  
-  // TEXT_comp-kkux3thlinlineContent
-  useEffect(() => {
-    const Section2mage = document.getElementById('Section2mage');
-  
-    const observer = new IntersectionObserver(
-        (entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                  Section2mage.classList.add('bg-pan-right');
-                } else {
-                  Section2mage.classList.remove('bg-pan-right');
-                }
-            });
-        },
-        { threshold: 0.0 }  // Adjust the threshold as needed
-    );
-  
-    if (section2ImageRef.current) {
-        observer.observe(section2ImageRef.current);
-    }
-  
-    return () => {
-        if (section2ImageRef.current) {
-            observer.unobserve(section2ImageRef.current);
-        }
-    };
-  }, []);
-  
 
 
 
-  
-  useEffect(() => {
-    const Section2TextComp = document.getElementById('Section2TextComp');
-    // const Section2TextComp = document.getElementById('#aboutSection3Paragraph');
-    const observer = new IntersectionObserver(
+
+  // ------ANIMATION
+
+
+
+useEffect(() => {
+  const observer = new IntersectionObserver(
+      (entries) => {
+          entries.forEach((entry) => {
+              const bgMedia = entry.target;
+              if (entry.isIntersecting) {
+                  bgMedia.classList.add('slide-up');
+              } else {
+                  bgMedia.classList.remove('slide-up');
+              }
+          });
+      },
+      { threshold: 0.0 }  // Adjust the threshold as needed
+  );
+
+  if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+  }
+
+  return () => {
+      if (sectionRef.current) {
+          observer.unobserve(sectionRef.current);
+      }
+  };
+}, []);
+
+
+// TEXT_comp-kkux3thlinlineContent
+useEffect(() => {
+  const Section2mage = document.getElementById('Section2mage');
+
+  const observer = new IntersectionObserver(
       (entries) => {
           entries.forEach((entry) => {
               if (entry.isIntersecting) {
-                Section2TextComp.classList.add('slide-in-right');
+                Section2mage.classList.add('bg-pan-right');
               } else {
-                Section2TextComp.classList.remove('slide-in-right');
+                Section2mage.classList.remove('bg-pan-right');
               }
-                
-            });
-        },
-        { threshold: 0.1 }  // Adjust the threshold as needed
-    );
-  
-     if (Section2TextCompRef.current) {
-            observer.observe(Section2TextCompRef.current);
-        }
-  
-        return () => {
-             if (Section2TextCompRef.current) {
-                observer.unobserve(Section2TextCompRef.current);
-              }
-            };
-  }, []);
-  // Loading and error handling
+          });
+      },
+      { threshold: 0.0 }  // Adjust the threshold as needed
+  );
 
+  if (section2ImageRef.current) {
+      observer.observe(section2ImageRef.current);
+  }
 
-// // TEXT_comp-kkux3thlinlineContent
-// useEffect(() => {
-//   const Section2mage = document.getElementById('Section2mage');
+  return () => {
+      if (section2ImageRef.current) {
+          observer.unobserve(section2ImageRef.current);
+      }
+  };
+}, []);
 
-//   const observer = new IntersectionObserver(
-//       (entries) => {
-//           entries.forEach((entry) => {
-//               if (entry.isIntersecting) {
-//                 Section2mage.classList.add('bg-pan-right');
-//               } else {
-//                 Section2mage.classList.remove('bg-pan-right');
-//               }
-//           });
-//       },
-//       { threshold: 0.0 }  // Adjust the threshold as needed
-//   );
-
-//   if (section2ImageRef.current) {
-//       observer.observe(section2ImageRef.current);
-//   }
-
-//   return () => {
-//       if (section2ImageRef.current) {
-//           observer.unobserve(section2ImageRef.current);
-//       }
-//   };
-// }, []);
-
-// useEffect(() => {
-//   const Section2TextComp = document.getElementById('Section2TextComp');
-//   // const Section2TextComp = document.getElementById('#aboutSection3Paragraph');
-//   const observer = new IntersectionObserver(
-//     (entries) => {
-//         entries.forEach((entry) => {
-//             if (entry.isIntersecting) {
-//               Section2TextComp.classList.add('slide-in-right');
-//             } else {
-//               Section2TextComp.classList.remove('slide-in-right');
-//             }
+useEffect(() => {
+  const Section2TextComp = document.getElementById('Section2TextComp');
+  // const Section2TextComp = document.getElementById('#aboutSection3Paragraph');
+  const observer = new IntersectionObserver(
+    (entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              Section2TextComp.classList.add('slide-in-right');
+            } else {
+              Section2TextComp.classList.remove('slide-in-right');
+            }
               
-//           });
-//       },
-//       { threshold: 0.1 }  // Adjust the threshold as needed
-//   );
+          });
+      },
+      { threshold: 0.1 }  // Adjust the threshold as needed
+  );
 
-//    if (Section2TextCompRef.current) {
-//           observer.observe(Section2TextCompRef.current);
-//       }
+   if (Section2TextCompRef.current) {
+          observer.observe(Section2TextCompRef.current);
+      }
 
-//       return () => {
-//            if (Section2TextCompRef.current) {
-//               observer.unobserve(Section2TextCompRef.current);
-//             }
-//           };
-// }, []);
+      return () => {
+           if (Section2TextCompRef.current) {
+              observer.unobserve(Section2TextCompRef.current);
+            }
+          };
+}, []);
 
 
 
@@ -293,6 +238,60 @@ if (!sectionIntro ) {
                       ref={sectionRef}
                       data-mesh-id="comp-kkuwu6gjinlineContent" 
                       data-testid="inline-content" 
+                      className="mwF7X1 absolute top-[33%] left-[10%]">
+                     <div
+                     
+                     > 
+                    <div className="section-1-text-wrapp px-0 lg:px-[7%] min-[1400px]:px-[8%]" >
+                      <h1 href="/" target="_self" className="text-custom-gradient text-left mt-24 
+                         !font-bold text-center text-[36px] xl:text-[96px]">
+                         PROXY REALESTATE <br class="wixui-rich-text__text "/>
+                        </h1>
+                       <div className="HcOXKn c9GqVL QxJLC3  
+                            text-center comp-kkuwwx9z
+                            wixui-rich-text lg:mb-8">
+                         <h1 className="font_0 text-white" 
+                              style={{ lineHeight: "normal", fontSize: "76px" }}>
+                           <span style={{ letterSpacing: "0.02em" }} className="wixui-rich-text__text">
+                             <span className="mt-4 color_11 wixui-rich-text__text">
+                              Join Us 
+                             </span>
+                           </span>
+                         </h1>
+                       </div>
+                         </div>
+                     <a href="/" target="_self" class="wixui-rich-text__text hover:text-white  text-black  !font-bold text-center text-[36px] xl:text-[96px]">— ODFIT —<br class="wixui-rich-text__text "/></a>
+                       {/* <div className="HcOXKn c9GqVL QxJLC3 comp-kkuwwx9z wixui-rich-text lg:mb-8">
+                         <h1 className="font_0 wixui-rich-text__text min-[1200px]:max-w-[40vw]" style={{ lineHeight: "normal", fontSize: "76px" }}>
+                           <span style={{ letterSpacing: "0.02em" }} className="wixui-rich-text__text">
+                             <span className="color_11 wixui-rich-text__text">
+                            {section1.title}
+                             </span>
+                           </span>
+                         </h1>
+                       </div> */}
+                       <div className="HcOXKn c9GqVL QxJLC3 comp-kkuxe0vg wixui-rich-text xl:max-w-lg min-[1300px]:max-w-[40vw]"
+                        
+                       >
+                         <p    
+                         id="SlideInUp"
+                          ref={sectionRef}
+                          className="font_7 wixui-rich-text__text min-[1200px]:max-w-[40vw]"
+                          style={{ lineHeight: "1.4em", fontSize: "24px" }}
+                         >
+                           <span style={{ letterSpacing: "normal" }} className="wixui-rich-text__text">
+                             <span className="color_11 wixui-rich-text__text">
+                             {sectionIntro}
+                             </span>
+                           </span>
+                         </p>
+                       </div>
+                     </div>
+                   </div>
+                   {/* <div id="SlideInFromLeft"
+                      ref={sectionRef}
+                      data-mesh-id="comp-kkuwu6gjinlineContent" 
+                      data-testid="inline-content" 
                       className="mwF7X1 absolute top-[2%] left-[10%] max-w-[80vw]">
                      <div>
                     <div className="section-1-text-wrapp px-0 lg:px-[7%] min-[1400px]:px-[8%]" >
@@ -333,7 +332,7 @@ if (!sectionIntro ) {
                        </div>
                        </div>
                      </div>
-                   </div>
+                   </div> */}
                  </div>
                </div>
           

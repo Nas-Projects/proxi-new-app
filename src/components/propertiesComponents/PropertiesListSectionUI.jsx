@@ -138,8 +138,8 @@ const PropertiesListSectionUI = ({properties}) => {
   
   const [totalItems, setTotalItems] = useState(0);
 
-  const page = 1
-  const pageSize = 2
+  // const page = 1
+  // const pageSize = 2
   // Fetch properties on page load
   useEffect(() => {
         if (properties === undefined || properties.length === 0) {

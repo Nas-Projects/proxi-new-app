@@ -82,7 +82,7 @@ export default function AboutPageComponent({aboutData}) {
         {/* Hero section */}
 
         {/* ------SECTION 1 ------- */}
-        <div className=" -mt-4 lg:-mt-10 relative isolate -z-10 overflow-hidden bg-gradient-to-b from-indigo-100/20 pt-14">
+        <div className=" mt-4 lg:-mt-10 relative isolate -z-10 overflow-hidden bg-gradient-to-b from-indigo-100/20 pt-14">
           <div
             aria-hidden="true"
             className="absolute inset-y-12 right-1/2 -z-10 -mr-96 w-[200%] origin-top-right skew-x-[-30deg] bg-white shadow-xl shadow-indigo-600/10 ring-1 ring-indigo-50 sm:-mr-80 lg:-mr-96"
@@ -108,7 +108,7 @@ export default function AboutPageComponent({aboutData}) {
         </div>
 
         {/* Timeline section */}
-        <div className="mx-auto -mt-8 max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto -mt-0 max-w-7xl px-6 lg:px-8">
           <div className="mx-auto grid max-w-2xl grid-cols-1 gap-8 overflow-hidden lg:mx-0 lg:max-w-none lg:grid-cols-4">
             {timeline.map((item) => (
               <div key={item.name}>
@@ -140,7 +140,8 @@ export default function AboutPageComponent({aboutData}) {
           <div className="mx-auto max-w-7xl px-6 lg:flex lg:px-8">
             <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-12 gap-y-16 lg:mx-0 lg:min-w-full lg:max-w-none lg:flex-none lg:gap-y-8">
               <div className="group lg:col-end-1 lg:w-full lg:max-w-lg lg:pb-8">
-                <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl group-hover:text-pink-600">{section2.title}</h2>
+                <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl group-hover:text-pink-600">
+                  {section2.title}</h2>
                 <p className="mt-6 text-xl leading-8 text-gray-600">
                  {section2.description}
                 </p>
@@ -188,16 +189,16 @@ export default function AboutPageComponent({aboutData}) {
 
         {/* ------SECTION 3 ------- */}
       
-        <div className="relative isolate -z-10 overflow-hidden bg-gradient-to-b from-indigo-100/20 pt-14">
+        <div className="relative isolate -z-10 -mt-8 overflow-hidden bg-gradient-to-b from-indigo-100/20 pt-14">
           <div
             aria-hidden="true"
             className="absolute inset-y-0 right-1/2 -z-10 -mr-96 w-[200%] origin-top-right skew-x-[-30deg] bg-white shadow-xl shadow-pink-600 ring-1 ring-indigo-50 sm:-mr-80 lg:-mr-96"
           />
           <div className="mx-auto max-w-7xl px-6 py-32 sm:py-40 lg:px-8">
             <div className="mx-auto max-w-2xl lg:mx-0 lg:grid lg:max-w-none lg:grid-cols-2 lg:gap-x-16 lg:gap-y-6 xl:grid-cols-1 xl:grid-rows-1 xl:gap-x-8">
-              <h1 className="max-w-2xl text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl lg:col-span-2 xl:col-auto">
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl group-hover:text-pink-600">
                 {section3.title}
-              </h1>
+              </h2>
               <div className="mt-6 max-w-xl lg:mt-0 xl:col-end-1 xl:row-start-1">
                 <p className="text-lg leading-8 text-gray-600">
                  {section3.description}
@@ -215,13 +216,13 @@ export default function AboutPageComponent({aboutData}) {
 
 
         {/* ------SECTION 4------- */}
-        <div className="mt-12 overflow-hidden sm:mt-40">
+        <div className="mt-12 overflow-hidden sm:mt-40 lg:mt-[4em] ">
           <div className="mx-auto max-w-7xl px-6 lg:flex lg:px-8">
             <div className="mx-auto grid max-w-5xl grid-cols-1  lg:gflex gap-x-12 gap-y-16   lg:gap-y-8">
-              <div className="group lg:w-full lg:max-w-lg lg:pb-8">
+              <div className="grouppx-4 lg:w-full xl:max-w-[90vw] lg:pb-8 xl:px-12">
                 <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl group-hover:text-pink-600">
                   {section4.title}</h2>
-                <p className="mt-6 text-xl leading-8 text-gray-600">
+                <p className="mt-6 text-xl leading-8 text-gray-600 py-4 lg:pb-8 ">
                  {section4.description}
                 </p>
                 {/* <p className="mt-6 text-base leading-7 text-gray-600">
@@ -229,7 +230,7 @@ export default function AboutPageComponent({aboutData}) {
                   amet fugiat veniam occaecat fugiat. Quasi aperiam sit non sit neque reprehenderit.
                 </p> */}
               </div>
-              <div className="lg:-mt-4 xl:-mt-24 flex flex-wrap items-start justify-end gap-6 sm:gap-8 lg:contents">
+              <div className="lg:-mt-12 xl:-mt-24 flex gap-6 sm:gap-8 ">
                 <div className="w-0 flex-auto lg:ml-auto lg:w-auto lg:flex-none lg:self-end">
                   <img
                     alt=""
@@ -255,7 +256,7 @@ export default function AboutPageComponent({aboutData}) {
 
         {/* ------SECTION 5 ------- */}
 
-        <div className="mx-auto mt-32 max-w-7xl px-6 sm:mt-40 lg:px-8">
+        {/* <div className="mx-auto mt-32 max-w-7xl px-6 sm:mt-40 lg:px-8">
           <div className="mx-auto max-w-2xl lg:mx-0">
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
              {section4.title}
@@ -271,7 +272,7 @@ export default function AboutPageComponent({aboutData}) {
             className="mt-16 aspect-[6/5] w-full rounded-2xl bg-gray-50 object-cover lg:aspect-auto lg:h-[34.5rem]"
           />
         
-        </div>
+        </div> */}
 
         {/* Content section */}
         <div className="mx-auto mt-32 max-w-7xl px-6 sm:mt-40 lg:px-8">
@@ -280,7 +281,7 @@ export default function AboutPageComponent({aboutData}) {
               <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
                 {section5.title} 
               </h2>
-              <p className="mt-6 text-xl leading-8 text-gray-600">
+              <p className="mt-6 text-xl leading-8 text-gray-800">
               Proxy simplifies residential sales with blockchain technology, 
               ensuring secure, transparent, and efficient property transactions
               </p>
@@ -293,10 +294,10 @@ export default function AboutPageComponent({aboutData}) {
             <div className="flex-block">
               <div className="flex w-full mt-4 lg:mt-[10em] lg:pt-[4em] lg:max-w-xl lg:flex-auto !block">
               <h3 className="sr-only">Residential sale</h3>
-              <ul className="-my-8 divide-y divide-gray-100">
+              <p className="-mt-8 divide-y text-xl leading-8 text-gray-600 py-4 lg:pb-8 divide-gray-100">
                 {section5.description}
                 
-              </ul>
+              </p>
               <div className="mt-8  border-t border-gray-100 pt-8">
                 <a href="/properties/search-results?location=&propertyType=sale" 
                 className="text-sm font-semibold leading-6 text-pink-600 hover:text-indigo-500">
@@ -309,7 +310,7 @@ export default function AboutPageComponent({aboutData}) {
           </div>
         </div>
                     {/* Logo cloud */}
-     <div className="mx-auto mt-32 max-w-7xl sm:mt-40 sm:px-6 lg:px-8 mb-24 ">
+     <div className="mx-auto mt-32 max-w-7xl sm:mt-40 sm:px-6 lg:px-8 mb-32 ">
           <div className="relative isolate overflow-hidden bg-gray-900 px-6 py-24 text-center shadow-2xl sm:rounded-3xl sm:px-16">
             <h2 className="mx-auto max-w-2xl text-3xl font-bold tracking-tight text-white sm:text-4xl">
               Our customers love us

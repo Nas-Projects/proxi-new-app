@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from 'react';
+// import { useEffect, useState } from 'react';
 // import PropertyCard from './PropertiesListCard'; // Make sure this import is correct
 import SectionHeader from './SectionHeader';
 import LoadingDots from '../LoadingDots';

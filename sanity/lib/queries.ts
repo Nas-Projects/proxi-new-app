@@ -67,7 +67,7 @@ export const aboutPageQuery = groq`
     description,
     "sections": sections[] {
       title,
-      content,
+      description,
       image {
         asset -> { url }
       }
