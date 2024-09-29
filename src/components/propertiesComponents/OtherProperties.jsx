@@ -104,7 +104,7 @@ export default function OtherProperties({}) {
               backgroundImage:
                 'url("/b435fa2d60b2741f5662128b0843b1e8e7295689-3000x4000.webp")'
             }}
-            href="/properties/properties/e9e604ac-5d65-4e14-a444-9c8af98229c1"
+            href="/properties/e9e604ac-5d65-4e14-a444-9c8af98229c1"
             aria-current="page"
             className="house-card w-inline-block w--current"
           >

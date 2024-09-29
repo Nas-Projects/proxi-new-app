@@ -41,7 +41,7 @@ export async function generateMetadata(
     : undefined;
 
   // Map custom property type to a valid OpenGraph type
-  const openGraphType = property.type === "Retail" ? "website" : "blog"; // Default to 'website' if not Retail
+  // const openGraphType = property.type === "Retail" ? "Sale" : "Commercial"; // Default to 'website' if not Retail
 
   return {
     title: property.name, // Using the property name as the title
@@ -55,7 +55,7 @@ export async function generateMetadata(
       title: property.name,
       description: property.description ?? "No description available.",
       images: imageUrl ? [imageUrl, ...previousImages] : previousImages,
-      type: openGraphType, // Use valid OpenGraph type
+      // type: openGraphType, // Use valid OpenGraph type
       location: {
         street: property.location.street,
         city: property.location.city,

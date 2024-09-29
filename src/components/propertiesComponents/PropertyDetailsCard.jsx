@@ -244,7 +244,7 @@ const DetailCard = ({ property, classes }) => {
               </div>
               <div className={styles.listItem}>
                 <div className={styles.detailBlock}>
-                <div className={clsx("!hidden", styles.icon)}>
+                <div className={clsx("", styles.icon)}>
                     <img
                       src="https://cdn.prod.website-files.com/63c93770199def60f97204e0/63c93770199def2eeb72058f_home-line.svg"
                       loading="lazy"
@@ -252,13 +252,13 @@ const DetailCard = ({ property, classes }) => {
                       className={styles.image}
                     />
                   </div>
-                  <p className={clsx("pl-10 xl:pl-10", styles.propertyDetailsLeft)}>Frontage</p>
+                  <p className={clsx("", styles.propertyDetailsLeft)}>Frontage</p>
                 </div>
                 <div className={`${styles.paragraphSmall} ${styles.textBold}`}>
                   {property.retail.frontage ?? "Unknown"}
                 </div>
               </div>
-              <div className={styles.listItem}>
+              {property.retail.acceptsCrypto && <div className={styles.listItem}>
                 <div className={styles.detailBlock}>
                 <div className={clsx( styles.icon)}>
                     <img
@@ -273,7 +273,7 @@ const DetailCard = ({ property, classes }) => {
                 <div className={`${styles.paragraphSmall} ${styles.textBold}`}>
                   {property.retail.acceptsCrypto ? "Yes" : "No"}
                 </div>
-              </div>
+              </div>}
 
               {property.floors !== undefined && (
                 <div className={styles.listItem}>
@@ -355,7 +355,7 @@ const DetailCard = ({ property, classes }) => {
               </div>
             )}
 
-            <div className="space-24" />
+            <div className="space-4" />
             <div className="cta-wrap">
            <div className="cta-wrap">
             <div className="lg:inline-flex gap-x-4 gap-y-6">
@@ -364,7 +364,7 @@ const DetailCard = ({ property, classes }) => {
             </a>
           </div>
           <div className="cta-wrap mt-4">
-              <a href={telLink} className="cta w-button text-center rounded-2xl !bg-white ring-1 border-1 ring-slate-100 focusr:ring-sky-100 !text-black hover:!bg-sky-500 hover:!text-white w-full">
+              <a href={telLink} className="cta w-button text-center rounded-2xl !bg-white ring-1 border-1 ring-slate-300 focusr:ring-sky-100 !text-black hover:!bg-sky-500 hover:!text-white w-full">
                 Call us
               </a>
             </div>
@@ -373,7 +373,7 @@ const DetailCard = ({ property, classes }) => {
 
             </div>
             <div className="space-12" />
-            <div className={styles.detailCardAuthor}>
+            <div className={clsx("ring-1 border-1 ring-slate-200",styles.detailCardAuthor)}>
              
            
           <div className="detail-card-avatar w-24 h-24 ">
@@ -382,13 +382,13 @@ const DetailCard = ({ property, classes }) => {
               loading="lazy"
               sizes="75px"
               alt={contactName}
-              className="image rounded-full"
+              className="image rounded-full "
               height={75}
               width={75}
             />
           </div>
           <div className="text-left block">
-            <div className="paragraph-small text-bold">{contactName}</div>
+            <div className="paragraph-small font-bold text-bold">{contactName}</div>
             <p className="paragraph-small">Book a viewing with me!</p>
             <div className="space-04" />
             <Link href={mailtoLink} className="link-block-appointment w-inline-block">

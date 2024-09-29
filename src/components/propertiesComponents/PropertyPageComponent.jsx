@@ -96,7 +96,7 @@ console.log("PROPERTY_PAGE_COMPONENT", propertyData)
          {/* ------ Property-Main Container */}
         <section className='block relative lg:grid lg:grid-cols-7'>
          <div className="col-span-5">
-            <PropertyImages images={property.images} />
+            {property.images.length > 1 && <PropertyImages images={property.images} />}
             {/* <PropertyGalleryCard images={property} /> */}
          </div>
 
