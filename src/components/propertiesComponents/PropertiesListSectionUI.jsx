@@ -1,3 +1,5 @@
+"use client"
+
 import PropertiesListCard  from './PropertiesListCard';
 import SectionWrapper from '../../hoc/SectionWrapper';
 import Spinner from './Spinner';
@@ -130,7 +132,7 @@ export const sizes = ["< 1000 sqft", "1000-2000 sqft", "2000-3000 sqft", "3000+ 
 
 
 
-const PropertiesList = ({}) => {
+const PropertiesListSectionUI = ({properties}) => {
   const [propertiesToMap, setProperties] = useState([]);
   const [loading, setLoading] = useState(true);
   
@@ -140,28 +142,20 @@ const PropertiesList = ({}) => {
   const pageSize = 2
   // Fetch properties on page load
   useEffect(() => {
-    const fetchProperties = async () => {
-      try {
-        const res = await fetch(
-          `/api/properties?page=${page}&pageSize=${pageSize}`
-        );
-
-        if (!res.ok) {
-          throw new Error('Failed to fetch data');
+        if (properties === undefined || properties.length === 0) {
+          setLoading(false);
+         console.log('No properties passed from SSR parent');
         }
-
-        const data = await res.json();
-        setProperties(data.rawproperties);
-        setTotalItems(data.total);
-      } catch (error) {
-        console.error(error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchProperties();
-  }, []);
+        else {
+          setLoading(false);
+          console.log('properties in UI  passed from SSR parent', properties);
+          const data = properties;
+          setProperties(data);
+          setTotalItems(data.total);
+           }
+           setLoading(false);
+    // fetchProperties();
+  }, [properties]);
 
 
   return loading ? (
@@ -260,5 +254,7 @@ const PropertiesList = ({}) => {
 
 
 
-export default SectionWrapper(PropertiesList, 'PropertiesList');
+
+export default SectionWrapper(PropertiesListSectionUI, 'PropertiesListSectionUI');
+
 

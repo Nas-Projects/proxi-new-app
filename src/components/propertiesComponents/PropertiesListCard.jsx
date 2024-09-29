@@ -1,21 +1,13 @@
 'use client'
 
-// import SectionWrapper from "../../hoc/SectionWrapper";
 import Link from "next/link";
 import BlurImage from "../blur-image";
 import { urlFor } from "@/sanity/lib/image";
-// import { useState, useEffect } from 'react';
-// import Spinner from '@/components/propertiesComponents/Spinner';
-// import Pagination from '@/components/propertiesComponents/Pagination';
-// import { SelectButton } from '@/components/select/SelectButton';
-// import  CardGrid  from '@/components/cards/CardGrid.jsx';
-// import { Input } from "@/components/ui/input";
-// import { Label } from "@/components/ui/label";
-// import { Button } from "@medusajs/ui";
-// Reusable PropertyCard component
+;
 const PropertiesListCard = ({ property }) => {
   console.log("PropertyCard", property)
-  const firstImage = property.images?.[0].asset.url
+  // const firstImage = property.images?.[0] ? property.images[0] : property.images?.[0].asset || property.mainImage 
+  const firstImage = property.images?.[0].asset.url || property.mainImage 
   
   // <Link className="property h-[520px] w-[379px] min-[600px]:h-[420px] min-[600px]:w-[30%] md:h-[280px] md:h-[470px] md:w-[319px] lg:md:h-[500px] xl:w-[299px]" href={`properties/${property._id}`}>
  return ( <Link className="property h-[420px] max-[439px]:!w-[85vw] !w-[329px]  max-[1351px]:!w-[299px] max-[1380px]:!w-[309px]  max-[1550px]:!w-[300px]  relative isolate flex flex-col justify-end  rounded-2xl bg-gray-900  pb-8  mx-2" href={`properties/${property._id}`}> 
