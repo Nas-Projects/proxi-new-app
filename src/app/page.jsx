@@ -33,7 +33,7 @@ const Home = ({}) => {
           <ProperTiesForSale/>
           <AboutProxy/>
           <PropertiesList />
-          {/* <FeaturedListings /> */}
+          <FeaturedListings />
           <SectionBlockChain/>
           <OurValues/> 
           {/* <OurFocus/> */}
