@@ -20,12 +20,12 @@ export default function OurValues(){
         },
         {
           icon: `<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="40" width="40" xmlns="http://www.w3.org/2000/svg"><path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M256 160c16-63.16 76.43-95.41 208-96a15.94 15.94 0 0 1 16 16v288a16 16 0 0 1-16 16c-128 0-177.45 25.81-208 64-30.37-38-80-64-208-64-9.88 0-16-8.05-16-17.93V80a15.94 15.94 0 0 1 16-16c131.57.59 192 32.84 208 96zm0 0v288"></path></svg>`,
-          title: "Education (Industry Knowledge)",
+          title: "Industry Knowledge",
           body: "We prioritize continuous learning and industry knowledge. Our team stays current with trends and best practices to provide you with accurate insights. Empowering you with the latest expertise is our mission."
         },
         {
           icon: `<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="40" width="40" xmlns="http://www.w3.org/2000/svg"><path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M352.92 80C288 80 256 144 256 144s-32-64-96.92-64c-52.76 0-94.54 44.14-95.08 96.81-1.1 109.33 86.73 187.08 183 252.42a16 16 0 0 0 18 0c96.26-65.34 184.09-143.09 183-252.42-.54-52.67-42.32-96.81-95.08-96.81z"></path><path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M48 256h112l48-96 48 160 48-96 32 64h128"></path></svg>`,
-          title: "Indomitable Spirit (Tenacity)",
+          title: "Indomitable Spirit",
           body: "Our indomitable spirit drives us forward. With unwavering tenacity, we tackle challenges and push through obstacles to achieve success. We are committed to delivering exceptional results, no matter the difficulty."
         },
         {
