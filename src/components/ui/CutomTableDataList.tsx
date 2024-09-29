@@ -87,7 +87,7 @@ export default function CutomTable({ retail, office, investmentSale }) {
     <TableBody>
       {tableData.map((field) => (
         <TableRow key={field.name} className="group hover:bg-pink-100">
-          <TableCell className="text-left text-lg text-gray-700 font-bold group-hover:text-custom-gradient">{field.title}</TableCell>
+          <TableCell className="pl-2 text-left text-lg text-gray-700 font-bold group-hover:text-custom-gradient">{field.title}</TableCell>
           <TableCell className="text-right text-lg group-hover:text-custom-gradient">{field.value || "N/A"}</TableCell>
         </TableRow>
       ))}

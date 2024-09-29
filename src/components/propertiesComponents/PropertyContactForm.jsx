@@ -25,96 +25,155 @@ const PropertyContactForm = ({ property }) => {
     const [userEmail, setEmail] = useState('');
     const [userPhone, setPhone] = useState('');
     const [message, setMessage] = useState('');
+    const [budget, setBudget] = useState('');
     const [wasSubmitted, setWasSubmitted] = useState(false);
-  
-    useEffect(() => {
-      if (userSession) {
-        setFirstName(userSession.userMetadata?.firstName || '');
-        setLastName(userSession.userMetadata?.lastName || '');
-        setEmail(userSession.email || '');
-        setPhone(userSession.phone || '');   
 
-        // const { 
-        //   accessToken,
-        //   tokenType,
-        //   expiresIn,
-        //   expiresAt,
-        //   refreshToken,
+    const handleSubmit = (e) => {
+      e.preventDefault();
+    
+      const name = `${firstName} ${lastName}`;
+      const subject = `Inquiry: ${property.name} ${property.location}`;
+      const body = `
+        Name: ${name}
+        Email: ${userEmail}
+        Phone: ${userPhone}
+        Budget: ${budget}
+        Message:
+        ${message}
+      `;
+    
+      const mailtoLink = `mailto:${property.contact.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      
+      // Open the user's email client with the prefilled subject and body
+      window.location.href = mailtoLink;
+    
+      // You can still send the message to your backend API if needed
+      const data = {
+        name,
+        email: userEmail,
+        userPhone,
+        budget: budget || 'N/A',
+        message,
+        recipient: property.contact._id,
+        property: property._id,
+        supabaseUser: true,
+      };
+    
+      console.log("MNESSAGE_DATA_TO_SEND", data);
+    
+      try {
+        fetch('/api/messages', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data),
+        }).then((res) => {
+          if (res.status === 200) {
+            toast.success('Message sent successfully');
+            setWasSubmitted(true);
+          } else {
+            res.json().then((dataObj) => {
+              toast.error(dataObj.message || 'Error sending form');
+            });
+          }
+        });
+      } catch (error) {
+        console.log(error);
+        toast.error('Error sending form');
+      } finally {
+        setMessage(''); // Clear the message field
+      }
+    };
+    
+  //   useEffect(() => {
+  //     if (userSession) {
+  //       setFirstName(userSession.userMetadata?.firstName || '');
+  //       setLastName(userSession.userMetadata?.lastName || '');
+  //       setEmail(userSession.email || '');
+  //       setPhone(userSession.phone || '');   
+
+  //       // const { 
+  //       //   accessToken,
+  //       //   tokenType,
+  //       //   expiresIn,
+  //       //   expiresAt,
+  //       //   refreshToken,
           
-        //   // User-level data
-        //   userId,
-        //   aud,
-        //   role,
-        //   email = '', // Default to empty string if email is not available
-        //   emailConfirmedAt,
-        //   phone = '', // Default to empty string if phone is not available
-        //   confirmedAt,
-        //   lastSignInAt,
-        //   createdAt,
-        //   updatedAt,
-        //   isAnonymous,
+  //       //   // User-level data
+  //       //   userId,
+  //       //   aud,
+  //       //   role,
+  //       //   email = '', // Default to empty string if email is not available
+  //       //   emailConfirmedAt,
+  //       //   phone = '', // Default to empty string if phone is not available
+  //       //   confirmedAt,
+  //       //   lastSignInAt,
+  //       //   createdAt,
+  //       //   updatedAt,
+  //       //   isAnonymous,
           
-        //   // Metadata
-        //   appMetadata,
-        //   userMetadata,
+  //       //   // Metadata
+  //       //   appMetadata,
+  //       //   userMetadata,
           
-        //   // Identities
-        //   identities 
-        // } = userSession  // Fallback to an empty object if userSession is null
+  //       //   // Identities
+  //       //   identities 
+  //       // } = userSession  // Fallback to an empty object if userSession is null
         
 
       
-        console.log("USER_INFO: " + userSession)
+  //       console.log("USER_INFO: " + userSession)
       
-      }
-    }, [userSession]);
+  //     }
+  //   }, [userSession]);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
 
-   console.log("property.seller_info._id", property.seller_info._id)
-  //  console.log("property.owner._id", property.owner._id)
-  //  setName(e.vaue);
-  //  setPhone(e.vaue);
-    const name = firstName + " " + lastName;
-    const data = {
-      name:name,
-      email,
-      userPhone,
-      message,
-      recipient: property.seller_info._id,
-      property: property._id,
-      supabaseUser:true
-    };
+  //  console.log("property.seller_info._id", property.seller_info._id)
+  // //  console.log("property.owner._id", property.owner._id)
+  // //  setName(e.vaue);
+  // //  setPhone(e.vaue);
+  //   const name = firstName + " " + lastName;
+  //   const data = {
+  //     name:name,
+  //     email,
+  //     userPhone,
+  //     message,
+  //     recipient: property.seller_info._id,
+  //     property: property._id,
+  //     supabaseUser:true
+  //   };
 
 
 
-    console.log("MNESSAGE_DATA_TO_SEND", data )
-    try {
-      const res = await fetch('/api/messages', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      });
+  //   console.log("MNESSAGE_DATA_TO_SEND", data )
+  //   try {
+  //     const res = await fetch('/api/messages', {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //       },
+  //       body: JSON.stringify(data),
+  //     });
 
-      if (res.status === 200) {
-        toast.success('Message sent successfully');
-        setWasSubmitted(true);
-      } else if (res.status === 400 || res.status === 401) {
-        const dataObj = await res.json();
-        toast.error(dataObj.message);
-      } else {
-        toast.error('Error sending form');
-      }
-    } catch (error) {
-      console.log(error);
-      toast.error('Error sending form');
-    } finally {
-      setMessage(''); // We might want to clear only the message field
-    }
-  };
+  //     if (res.status === 200) {
+  //       toast.success('Message sent successfully');
+  //       setWasSubmitted(true);
+  //     } else if (res.status === 400 || res.status === 401) {
+  //       const dataObj = await res.json();
+  //       toast.error(dataObj.message);
+  //     } else {
+  //       toast.error('Error sending form');
+  //     }
+  //   } catch (error) {
+  //     console.log(error);
+  //     toast.error('Error sending form');
+  //   } finally {
+  //     setMessage(''); // We might want to clear only the message field
+  //   }
+  // };
 
   return (
     <div className='bg-white p-6 rounded-lg shadow-md lg:mt-12'>
@@ -219,7 +278,7 @@ const PropertyContactForm = ({ property }) => {
                     </p>
                   </div>
                   <div className="mt-2.5">
-                    <input  onChange={(e) => setPhonee(e.target.value)}
+                    <input  onChange={(e) => setPhone(e.target.value)}
                        value={userPhone}
                       id="phone"
                       name="phone"
@@ -256,7 +315,7 @@ const PropertyContactForm = ({ property }) => {
                   <legend className="block text-sm font-semibold leading-6 text-gray-900">Aproximate budget</legend>
                   <div className="mt-4 space-y-4 text-sm leading-6 text-gray-600">
                     <div className="flex gap-x-2.5">
-                      <input
+                      <input onChange={(e) => setBudget(e.target.value)}
                         defaultValue="under_25k"
                         id="budget-under-25k"
                         name="budget"
@@ -266,7 +325,7 @@ const PropertyContactForm = ({ property }) => {
                       <label htmlFor="budget-under-25k">Less than $25K</label>
                     </div>
                     <div className="flex gap-x-2.5">
-                      <input
+                      <input  onChange={(e) => setBudget(e.target.value)}
                         defaultValue="25k-50k"
                         id="budget-25k-50k"
                         name="budget"
@@ -276,7 +335,7 @@ const PropertyContactForm = ({ property }) => {
                       <label htmlFor="budget-25k-50k">$25K – $50K</label>
                     </div>
                     <div className="flex gap-x-2.5">
-                      <input
+                      <input onChange={(e) => setBudget(e.target.value)}
                         defaultValue="50k-100k"
                         id="budget-50k-100k"
                         name="budget"
@@ -286,14 +345,14 @@ const PropertyContactForm = ({ property }) => {
                       <label htmlFor="budget-50k-100k">$50K – $100K</label>
                     </div>
                     <div className="flex gap-x-2.5">
-                      <input
-                        defaultValue="over_100k"
-                        id="budget-over-100k"
+                      <input onChange={(e) => setBudget(e.target.value)}
+                        defaultValue="50k-100k"
+                        id="budget-50k-100k"
                         name="budget"
                         type="radio"
-                        className="text-field w-input mt-1 h-4 w-4 border-gray-300  text-custom-gradient shadow-sm focus:ring-pink-600"
+                        className="mt-1 h-4 w-4 border-gray-300  text-custom-gradient shadow-sm focus:ring-pink-600"
                       />
-                      <label htmlFor="budget-over-100k">$100K+</label>
+                      <label htmlFor="budget-50k-100k">$100K + </label>
                     </div>
                   </div>
                 </fieldset>

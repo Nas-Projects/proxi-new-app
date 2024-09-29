@@ -132,7 +132,7 @@ console.log("PROPERTY_PAGE_COMPONENT", propertyData)
           { property.rates &&  <h1 className='text-3xl font-bold mb-4'> Rates & Options</h1>}
           { property.retail && property.retail.askingPrice &&  <h1 className='text-3xl font-bold mb-4'>Asking Price <span>{property.askingPrice}</span></h1>}
           {property.category == "Commercial" && <div className="t">
-          <h3 className="font-bold !text-4xl py-4">Additional Information</h3>
+          <h3 className="text-left text-2xl font-bold lg:!text-4xl py-4">Additional Information</h3>
           <CutomTableDataList retail={property?.retail} residential={property} investement={property}/>
           </div>
           
@@ -177,7 +177,7 @@ console.log("PROPERTY_PAGE_COMPONENT", propertyData)
           <h3 className="font-bold !text-4xl py-4">Property description</h3>
             <p className='paragraph-big'>{property.description} </p>
         </div>   
-        <section className='relative mx-4'>
+        <section className='relative lg:mx-4'>
          <div className="px-4 lg:px-6 w-full lg:w-2/3 lg:h-[60vh]">
             <h3 className="font-bold !text-4xl text-left pl-2 lg:px-4">Location</h3>
             <div className='group text-gray-500 mb-4 flex align-middle justify-start md:justify-start pt-0 pl-2 lg:pl-2'>
@@ -187,7 +187,7 @@ console.log("PROPERTY_PAGE_COMPONENT", propertyData)
                   {property.location.state}
                 </p>
               </div>
-            <div className='bg-white p-6 rounded-lg shadow-md mt-6'>
+            <div className='bg-white lg:p-6 rounded-lg shadow-md mt-6'>
               <PropertyMap property={property} /> 
             </div> 
         </div> 

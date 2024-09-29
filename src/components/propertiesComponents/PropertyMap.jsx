@@ -15,7 +15,7 @@ const PropertyMap = ({ property }) => {
     longitude: 0,
     zoom: 12,
     width: '100%',
-    height: '500px',
+    height: '600px',
   });
   const [loading, setLoading] = useState(true);
   const [geocodeError, setGeocodeError] = useState(false);
