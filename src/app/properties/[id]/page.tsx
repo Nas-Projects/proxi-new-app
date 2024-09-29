@@ -127,7 +127,7 @@ export default async function PropertyPage({ params }: Props) {
   console.log("PROPERTY_PAGE_sanityFetch", property)
 
   return (
-    <div className={clsx("min-h-[90vh] relative justify-center w-full")}>
+    <div className={clsx("min-h-[90vh] relative justify-center h-full")}>
       <PropertyPageComponent propertyData={property} />
     </div>
   );
