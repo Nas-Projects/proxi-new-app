@@ -58,7 +58,6 @@ export default function RootLayout({
   // let previousPathname = usePrevious(router.pathname)
   return (
     <html lang="en">
-
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased !min-h-[100vh] `}>
       <SessionContextProvider supabaseClient={supabaseClient}>
          <Navbar />

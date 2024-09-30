@@ -76,7 +76,7 @@ console.log("PROPERTY_PAGE_COMPONENT", propertyData)
       {loading && <Spinner loading={loading} />}
       {!loading && property && (
         <>
-          <PropertyHeaderImage 
+            <PropertyHeaderImage 
               propertyTitle={property.name}
               image={`${property.mainImage}`} 
               propertyType={property.type}

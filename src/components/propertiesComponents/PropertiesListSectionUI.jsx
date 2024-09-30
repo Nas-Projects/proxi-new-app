@@ -172,7 +172,7 @@ const PropertiesListSectionUI = ({properties}) => {
         </Link> */}
        </div>
       <div className="lg:px-[4%] sm:py-12 py-4  mx-auto bg-white  ">
-        <div className="md:min-h-[750px] ss:min-h-[600px] min-h-[850px] min-w-[360px] mx-auto flex items-center relative propertiesMainSection">
+        <div className="md:min-h-[750px] ss:min-h-[600px] min-h-[850px]  mx-auto flex items-center relative propertiesMainSection">
           <div className="items-center w-full mx-auto flex flex-col max-w-[126rem]">
             <div className="container-xl lg:container m-auto md:px-4 py-6 min-w-[330px]">
               {!propertiesToMap?.length ? (
