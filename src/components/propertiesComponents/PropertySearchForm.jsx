@@ -1,12 +1,12 @@
 'use client';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import Link from 'next/link';
-import { Checkbox, Field, Label,Input } from '@headlessui/react';
+// import Link from 'next/link';
+import { Field, Input } from '@headlessui/react';
 
 import clsx from 'clsx';
-import { CheckIcon } from '@heroicons/react/20/solid';
-import { Button } from '../button';
+// import { CheckIcon } from '@heroicons/react/20/solid';
+// import { Button } from '../button';
 
 const PropertySearchForm = () => {
   const [location, setLocation] = useState('');
