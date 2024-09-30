@@ -29,12 +29,12 @@ const PropertySearchForm = () => {
   return (<main className="main-container">
   <section className="content-wrapper pt-8">
     <div className="title-wrapper pt-8">
-      <h1 className="title">Welcome back</h1>
+      <h1 className="title">Search</h1>
     </div>
-    <div className="login-container ">
-      <div className="input-wrapper space-y-4" onSubmit={handleSubmit} >
+    <div className="login-container">
+      <div className="input-wrapper" onSubmit={handleSubmit} >
         <input onChange={(e) => setLocation(e.target.value)}
-          className="email-input "
+          className="email-input !mb-6 border-1 !border-pink-500"
           inputMode="text"
           type="text"
           id="email-input"
@@ -55,13 +55,13 @@ const PropertySearchForm = () => {
           />
           Email is not valid.
         </div>
-                   <div className='w-full  md:pl-2'>
+           <div className='w-full  md:pl-2'>
                <label htmlFor='property-type' className='sr-only'>
                  Property Type
                </label>
                <select
                  id='property-type'
-                 className='w-full px-4 py-4 rounded-lg !bg-white text-gray-800 focus:outline-none focus:ring ring-1 ring-pink-300  focus:ring-blue-500 hover:shadow-lg '
+                 className='w-full px-4 py-4  text-xl rounded-lg !bg-white text-gray-800 focus:outline-none focus:ring ring-1 ring-pink-300  focus:ring-blue-500 hover:shadow-lg '
                  value={propertyType}
                  onChange={(e) => setPropertyType(e.target.value)}
                >
