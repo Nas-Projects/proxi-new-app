@@ -30,7 +30,7 @@ const navigation = [
   { name: 'Sales', href: '/properties/search-results?location=&propertyType=sale', current: false },
   { name: 'Retail', href: '/properties/search-results?location=&propertyType=retail', current: false },
   { name: 'Residentials', href: '/properties/search-results?location=&propertyType=residential', current: false },
-  { name: 'Comercial', href: '/properties/propertyCategory=Commercial', current: false },
+  { name: 'Blockchain', href: '/blogs/how-blockchain-is-transforming-real-estate-transactions', current: false },
   { name: 'About', href: '/about', current: false },
   { name: 'Agents', href: '/agents', current: false },
   { name: 'Join', href: '/join', current: false },

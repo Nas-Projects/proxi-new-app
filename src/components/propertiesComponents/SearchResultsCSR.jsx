@@ -27,13 +27,13 @@ function SearchResultsCSR() {
     
         if (res.status === 200) {
           const data = await res.json();
-          console.log("SEARCH_DATA_RETURNED_FROM_API", data);
+          console.log("SEARCH_DATA_RETURNED_FROM_API", data);  // Log the data to inspect it
     
           // Decode the propertyType from the URL to handle spaces and special characters
           let decodedPropertyType = decodeURIComponent(propertyType || '').trim().toLowerCase();
           console.log("DECODED_PROPERTY_TYPE", decodedPropertyType);
-  
-          // Defining a mapping btw URL query params and actual property types (to be extended)
+    
+          // Defining a mapping between URL query params and actual property types
           const typeMapping = {
             sale: "Investment Sale",
             retail: "Retail",
@@ -43,24 +43,25 @@ function SearchResultsCSR() {
             commercial: "Commercial",
             studio: "Studio",
           };
-  
-          // I'm mapping the decoded propertyType to the correct property type name
+    
+          // Map the decoded propertyType to the correct property type name
           const mappedPropertyType = typeMapping[decodedPropertyType] || decodedPropertyType;
-          console.log("MAPPED_PROPERTY_TYPE", mappedPropertyType);
+          console.log("MAPPED_PROPERTY_TYPE", mappedPropertyType);  // Log the mapped property type
     
-          // Here I filtering properties based on the mapped propertyType
+          // Filter properties based on the mapped propertyType
           const filteredProperties = data.filter((property) => {
-            if (mappedPropertyType === "All" || mappedPropertyType === "") {
-              return true; // Return all properties
+            console.log("PROPERTY_TYPE", property.type);  // Log the type of each property to debug matching
+  
+            // Handle "All" or empty cases where we return all properties
+            if (mappedPropertyType === "all" || mappedPropertyType === "") {
+              return true;  // Return all properties
             }
-    
-            console.log("PROPERTY_TYPE", property.type, "MAPPED_SEARCHED_PROPERTY_TYPE", mappedPropertyType);
-    
+  
             // Comparing property.type directly with the mapped property type
-            return property.type === mappedPropertyType;
+            return property.type.toLowerCase() === mappedPropertyType.toLowerCase();
           });
     
-          console.log("SEARCH_DATA_FILTERED", filteredProperties);
+          console.log("SEARCH_DATA_FILTERED", filteredProperties);  // Log the filtered properties
           setProperties(filteredProperties);
         } else {
           setProperties([]);
@@ -74,6 +75,63 @@ function SearchResultsCSR() {
     
     fetchSearchResults();
   }, [location, propertyType]);
+  
+  // useEffect(() => {
+  //   const fetchSearchResults = async () => {
+  //     try {
+  //       const res = await fetch(`/api/properties/search`);
+  //       console.log("searchResults", res);
+    
+  //       if (res.status === 200) {
+  //         const data = await res.json();
+  //         console.log("SEARCH_DATA_RETURNED_FROM_API", data);
+    
+  //         // Decode the propertyType from the URL to handle spaces and special characters
+  //         let decodedPropertyType = decodeURIComponent(propertyType || '').trim().toLowerCase();
+  //         console.log("DECODED_PROPERTY_TYPE", decodedPropertyType);
+    
+  //         // Defining a mapping between URL query params and actual property types
+  //         const typeMapping = {
+  //           sale: "Investment Sale",
+  //           retail: "Retail",
+  //           office: "Office",
+  //           rental: "Rental",
+  //           residential: "Residential",
+  //           commercial: "Commercial",
+  //           studio: "Studio",
+  //         };
+    
+  //         // Map the decoded propertyType to the correct property type name
+  //         const mappedPropertyType = typeMapping[decodedPropertyType] || decodedPropertyType;
+  //         console.log("MAPPED_PROPERTY_TYPE", mappedPropertyType);
+    
+  //         // Filter properties based on the mapped propertyType
+  //         const filteredProperties = data.filter((property) => {
+  //           // Handle "All" or empty cases where we return all properties
+  //           if (mappedPropertyType === "all" || mappedPropertyType === "") {
+  //             return true; // Return all properties if propertyType is "All"
+  //           }
+    
+  //           console.log("PROPERTY_TYPE", property.type, "MAPPED_SEARCHED_PROPERTY_TYPE", mappedPropertyType);
+    
+  //           // Comparing property.type directly with the mapped property type
+  //           return property.type === mappedPropertyType;
+  //         });
+    
+  //         console.log("SEARCH_DATA_FILTERED", filteredProperties);
+  //         setProperties(filteredProperties);
+  //       } else {
+  //         setProperties([]);
+  //       }
+  //     } catch (error) {
+  //       console.log(error);
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   };
+    
+  //   fetchSearchResults();
+  // }, [location, propertyType]);
   
   // useEffect(() => {
   //   const fetchSearchResults = async () => {
@@ -195,17 +253,21 @@ function SearchResultsCSR() {
       <div className='container-xl lg:container m-auto px-4 py-6'>
         <Link
           href='/properties'
-          className='flex items-center hover:underline mb-3 max-w-xl'
+          className='flex items-center hover:underline mb-12 max-w-xl'
         >
-          <FaArrowAltCircleLeft className='mr-2 mb-1  h-8 w-8 hover:text-custom-gradient  ' /> Back To Properties
+          <FaArrowAltCircleLeft className='mr-2   h-8 w-8 hover:text-custom-gradient  ' /> Back To Properties
         </Link>
         <h2 className='text-xl sm:text-2xl mb-4 lg:text-5xl mainText inline-flex gap-x-4'>
           {location && <span> - {location}</span>} 
-          {propertyType && <span className='text-custom-gradient'> {propertyType}</span>} Results
+          {propertyType && 
+            <span className='text-custom-gradient'>
+              {propertyType.charAt(0).toUpperCase() + propertyType.slice(1)}
+            </span>} <div className="text-slate-500">search results
+              </div>
         </h2>
         {properties.length === 0 ? (
           <p className='lg:text-3xl text-slate-600'>
-            No search results found for {location} {propertyType}
+            No search results found for {location.charAt(0).toUpperCase() + location.slice(1)} {propertyType.charAt(0).toUpperCase() + propertyType.slice(1)}
           </p>
         ) : (
           <div className='grid grid-cols-1 md:grid-cols-3 gap-6 py-12 lg:pt-12 pb-24'>
