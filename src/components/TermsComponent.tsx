@@ -47,22 +47,23 @@ if (loading) {
     };
 
     return (
-        <div className="relative z-20 bg-white">
-        <div className="hero hero-primary bg-gray-50 relative mb-[60em]">
+        <div className="relative z-20 bg-white h-full">
+        <div className=" bg-gray-50 relative mb-[0em]">
           <BlurImage
             src="/beams-basic.png"
             alt=""
             height={1000}
             width={1000}
             placeholder="blur"
-            className="absolute left-1/2 top-0 -ml-[39rem] !w-[98vw]  xl:!w-[113.125rem] max-w-none"
+            className="absolute left-1/2 top-0 -ml-[39rem] max-h-[50vh] !w-[98vw]  xl:!w-[113.125rem] max-w-none"
             />
-         <div className='absolute  inset-x-0 z-20 top-12
-           md:top-24 lg:top-34 flex-block px-6 md:px-8
+         <div className='relative inset-x-0 z-20 
+           md:top-8 lg:top-12 flex-block px-6 md:px-8
           lg:px-12 xl:px-24 pb-44 justify-center
            items-center !z-20'>
            
-           <h1 className="flex-block !text-4xl lg:!text-4xl xl:!text-5xl 
+           <div className="relative">
+             <h1 className="flex-block !text-4xl lg:!text-4xl xl:!text-5xl 
                      !text-black px-4 pt-16 mainText mb-8 lg:text-center 
                      py-12 lg:mt-[-4em]xl:pb-24 ">Terms and Conditions.</h1>
            <div className="flex justify-center items-center mb-[10em]">
@@ -93,8 +94,11 @@ if (loading) {
            </div>
            </div>
           
+           </div>
+          
        </div>
-        </div></div>
+        </div>
+    </div>
       
     );
 }
