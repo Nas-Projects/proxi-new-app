@@ -27,15 +27,15 @@ const PropertySearchForm = () => {
   };
 
   return (
-      <div className="w-full max-w-md md:max-w-5xl lg:max-w-full rounded-xl bg-white shadow-md ring-1 ring-black/5">
-        <form action="#" method="POST" className="p-7 sm:p-11" onSubmit={handleSubmit}>
+      <div className="w-full max-w-[90vw] md:max-w-5xl lg:max-w-full rounded-xl bg-white shadow-md ring-1 ring-black/5">
+        <form action="#" method="POST" className="p-7 sm:p-11 space-y-4" onSubmit={handleSubmit}>
           <Field className="mt-8 space-y-3">
           <Input required
-                   autoFocus
-                   value={location}
-                   type="text"
-                   name="location"
-                   className={clsx(
+                  autoFocus
+                  value={location}
+                  type="text"
+                  name="location"
+                  className={clsx(
                      'block w-full rounded-lg border border-transparent shadow ring-1 ring-black/10 px-4 py-3 ',
                      'px-[calc(theme(spacing.2)-1px)] py-[calc(theme(spacing[1.5])-1px)] text-base/6 sm:text-sm/6',
                      'data-[focus]:outline data-[focus]:outline-2 data-[focus]:-outline-offset-1 data-[focus]:outline-black',
@@ -81,9 +81,14 @@ const PropertySearchForm = () => {
               </Checkbox>
              
             </Field>
-            <Link href="#" className="font-medium hover:text-gray-600">
-              Forgot password?
-            </Link>
+            <div className="-mt-4">
+             <button
+               type='submit'
+               className='md:ml-4 mt-4 md:mt-0 w-full md:w-auto px-6 py-3 
+                 rounded-lg bg-black text-white bg-custom-gradient hover:bg-black  focus:outline-none focus:ring focus:ring-blue-500'>
+               Search
+             </button>
+            </div>
           </div>
          
         </form>
