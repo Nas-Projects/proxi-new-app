@@ -28,14 +28,14 @@ const PropertySearchForm = () => {
   return (
         <div className="justify-center items-center w-full">
           <form  onSubmit={handleSubmit} action="#" method="POST"
-           className="md:inline-flex  sm:p-7 
-                  sm:p-11 mt-3 
-                  max-w-7xl w-full 
-                  md::inline-flex 
-                  flex-col 
-                  md:flex-row 
-                  items-center">
-            
+                 className="md:inline-flex  sm:p-7 
+                    sm:p-11 mt-3 
+                    max-w-7xl w-full 
+                    md::inline-flex 
+                    flex-col 
+                    md:flex-row 
+                    items-center"
+                    >
               <Field className="mt-8 space-y-3">
                 {/* <Label className="text-sm/5 font-medium">Email</Label> */}
                 <Input
