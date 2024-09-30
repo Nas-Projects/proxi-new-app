@@ -417,10 +417,10 @@ if (filters.size) {
        
         </div>
       </section> 
-      <section className="mt-4 lg:my-8"> 
+      <section className="mt-4 lg:my-8 mx-6 lg:mx-8 xl:mx-12"> 
         <CardGrid/>
       </section>
-    <section className="bg-white my-12 lg:my-24 mx-auto flex items-center relative joinSection">
+    <section className="bg-white my-12 lg:my-24 mx-auto flex items-center relative joinSection py-14 lg:py-20">
     <div className="w-full block lg:grid  lg:drid grid-cols-3">
     <div action="#" method="POST" className="col-span-2 h-full w-full z-10">
         <BlurImage
@@ -436,7 +436,7 @@ if (filters.size) {
           className="flex items-center w-full md:mb-16 ss:mb-8  mb-16"
           style={{ opacity: 1, transform: "none", willChange: "auto" }}
         >
-          <h1 className="text-custom-gradient font-bold md:text-[55px] ss:text-[45px] text-[33px] md:mr-14 ss:mr-6 mr-5">
+          <h1 className="text-custom-gradient  py-6 lg:py-8 font-bold md:text-[55px] ss:text-[45px] text-[33px] md:mr-14 ss:mr-6 mr-5">
           Want to join the team?
           </h1>
           <div
