@@ -87,7 +87,7 @@ const PropertySearchForm = () => {
         Continue
       </button>
       <p className="other-page">
-        Don't have an account?{" "}
+        Don&apos;t have an account?{" "}
         <a
           className="other-page-link"
           href="https://auth.openai.com/authorize?client_id=TdJIcbe16WoTHtN95nyywh5E4yOo6ItG&scope=openid+email+profile+offline_access+model.request+model.read+organization.read+organization.write&response_type=code&redirect_uri=https%3A%2F%2Fchatgpt.com%2Fapi%2Fauth%2Fcallback%2Flogin-web&audience=https%3A%2F%2Fapi.openai.com%2Fv1&device_id=b5e02696-2667-4e9d-98f7-020e76780dba&prompt=login&screen_hint=signup&ext-statsig-tier=production&ext-oai-did=b5e02696-2667-4e9d-98f7-020e76780dba&flow=control&state=bIgY65TuvjTPXq1nnE5mZ4hBwx-UKGpZ4uPxio5AJjM&code_challenge=4DYNYwC-jBjLc_nJImo6fXs1oCE_yKg9uQEATWinmZI&code_challenge_method=S256"
