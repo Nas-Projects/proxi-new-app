@@ -32,7 +32,7 @@ const PropertySearchForm = () => {
       <h1 className="title">Welcome back</h1>
     </div>
     <div className="login-container ">
-      <div className="input-wrapper" onSubmit={handleSubmit} >
+      <div className="input-wrapper space-y-4" onSubmit={handleSubmit} >
         <input onChange={(e) => setLocation(e.target.value)}
           className="email-input "
           inputMode="text"
@@ -61,7 +61,7 @@ const PropertySearchForm = () => {
                </label>
                <select
                  id='property-type'
-                 className='w-full px-4 py-3 rounded-lg !bg-white text-gray-800 focus:outline-none focus:ring ring-1 ring-pink-300  focus:ring-blue-500 hover:shadow-lg '
+                 className='w-full px-4 py-4 rounded-lg !bg-white text-gray-800 focus:outline-none focus:ring ring-1 ring-pink-300  focus:ring-blue-500 hover:shadow-lg '
                  value={propertyType}
                  onChange={(e) => setPropertyType(e.target.value)}
                >
@@ -87,18 +87,18 @@ const PropertySearchForm = () => {
         Continue
       </button>
       <p className="other-page">
-        Don&apos;t have an account?{" "}
+         Clear search
         <a
           className="other-page-link"
-          href="https://auth.openai.com/authorize?client_id=TdJIcbe16WoTHtN95nyywh5E4yOo6ItG&scope=openid+email+profile+offline_access+model.request+model.read+organization.read+organization.write&response_type=code&redirect_uri=https%3A%2F%2Fchatgpt.com%2Fapi%2Fauth%2Fcallback%2Flogin-web&audience=https%3A%2F%2Fapi.openai.com%2Fv1&device_id=b5e02696-2667-4e9d-98f7-020e76780dba&prompt=login&screen_hint=signup&ext-statsig-tier=production&ext-oai-did=b5e02696-2667-4e9d-98f7-020e76780dba&flow=control&state=bIgY65TuvjTPXq1nnE5mZ4hBwx-UKGpZ4uPxio5AJjM&code_challenge=4DYNYwC-jBjLc_nJImo6fXs1oCE_yKg9uQEATWinmZI&code_challenge_method=S256"
+          href="/#properties"
         >
-          Sign Up
+         All Propertie
         </a>
       </p>
       <div className="divider-wrapper">
         <span className="divider">Or</span>
       </div>
-      <div className="social-section">
+      <div className="hidden social-section">
         <button className="social-btn">
           <span className="social-logo-wrapper">
             <img
