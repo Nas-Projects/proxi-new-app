@@ -103,8 +103,8 @@ export function NavigationLeft() {
                 <h4 className="group-hover:p-2 group-hover:rounded-md text-sm text-gray-500 font-normal hover:bg-pink-100 group-hover:bg-pink-50 ">Meet our team of experienced real estate professionals.</h4>
               </ListItem>
             
-              <ListItem href="/join" title="Agent Network"  className="hover:text-pink-500">
-                Learn about our extensive network of in-house real estate agents.
+              <ListItem href="/blogs/proxy-s-implementation-of-blockchain-for-real-estate-innovation" title="Blockchain Solution"  className="hover:text-pink-500">
+                Learn about our extensive blockhain implimentation for real estate.
               </ListItem>
               <ListItem href="/contact" title="Contact Us"  className="hover:text-pink-500">
                 Get in touch with us for inquiries and support.
