@@ -1,7 +1,8 @@
 import Link from "next/link";
 import HeroSearchForm from "./propertiesComponents/HeroSearchForm";
-// import BlurImage from "./blur-image";
+import BlurImage from "./blur-image";
 import Image from "next/image";
+
 
 export default function Hero() {
     return(<div className="hero hero-primary overflow-hidden relative z-0 bg-white">
@@ -18,15 +19,16 @@ export default function Hero() {
             alt=""
             height={1000}
             width={1000}
-            // placeholder="blur"
+            placeholder="blur"
             class="absolute left-1/2 top-0 -ml-[39rem] !h-[55vh] lg:!h-[55vh] max-w-none w-full lg:w-[113.125rem] max-w-none"
+            blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQYV2PYsGHDfwAHNAMQumvbogAAAABJRU5ErkJggg=="
             />
           {/* Hero  1 */}
           {/* <div   className="swiper-slide relative z-0 pt-[6vh]  md:pt-24 pb-100px 
             4xl:h-screen 4xl:min-h-[800px] overflow-hidden flex flex-col 
             justify-center bg-cover bg-center bg-no-repeat swiper-slide-visible 
             swiper-slide-fully-visible swiper-slide-active" */}
-         <div   className=" relative z-0 pt-[4vh] pt-12  md:pt-24 pb-100px 
+         <div   className=" relative z-0 pt-[6vh] pt-12  md:pt-24 pb-100px 
             4xl:h-screen 4xl:min-h-[800px] overflow-hidden flex flex-col 
             justify-center bg-cover bg-center bg-no-repeat swiper-slide-active"
             // style={{
