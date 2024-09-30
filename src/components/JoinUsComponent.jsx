@@ -417,7 +417,7 @@ export function AccordionDemo({data}) {
   return (
    <> 
    {data?.sections[0]?.tiles?.map((tile, index) => {
-       return  (  <Accordion type="single" collapsible className=" group w-full text-white ">
+       return  (  <Accordion key={index} type="single" collapsible className=" group w-full text-white ">
                     <AccordionItem value="item-1"  key={index}>
                       <AccordionTrigger className="text-white text-left text-2xl group-hover:text-pink-400">
                         {tile.tileTitle}

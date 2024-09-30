@@ -1,4 +1,4 @@
-import Image from "next/image";
+// import Image from "next/image";
 import BlurImage from "../blur-image";
 
 export default function OurValues(){
