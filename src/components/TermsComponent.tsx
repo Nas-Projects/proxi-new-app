@@ -55,7 +55,7 @@ if (loading) {
             height={1000}
             width={1000}
             placeholder="blur"
-            className="absolute left-1/2 top-0 -ml-[39rem]  w-[113.125rem] max-w-none"
+            className="absolute left-1/2 top-0 -ml-[39rem] !w-[98vw]  xl:!w-[113.125rem] max-w-none"
             />
          <div className='absolute  inset-x-0 z-20 top-12
            md:top-24 lg:top-34 flex-block px-6 md:px-8
