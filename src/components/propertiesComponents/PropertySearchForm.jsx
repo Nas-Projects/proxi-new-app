@@ -26,7 +26,7 @@ const PropertySearchForm = () => {
   };
 
   return (
-        <div className="justify-center items-center w-full">
+        <div className="justify-center items-center w-full max-w-[85vw] overflow-hidden">
           <form  onSubmit={handleSubmit} action="#" method="POST"
                  className="md:inline-flex  sm:p-7 
                     sm:p-11 mt-3 
