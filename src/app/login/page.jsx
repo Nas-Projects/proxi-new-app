@@ -184,16 +184,16 @@ import SelectButton from '@/components/Select/SelectButton';
           Code was incorrect
         </button>
         <button className="rounded-lg border border-token-border-light px-3 py-1 text-sm text-token-text-secondary hover:text-token-text-primary hover:bg-token-main-surface-secondary">
-          Shouldn't have used Memory
+          Shouldn&apos;t have used Memory
         </button>
         <button className="rounded-lg border border-token-border-light px-3 py-1 text-sm text-token-text-secondary hover:text-token-text-primary hover:bg-token-main-surface-secondary">
-          Don't like the style
+          Don&apos; like the style
         </button>
         <button className="rounded-lg border border-token-border-light px-3 py-1 text-sm text-token-text-secondary hover:text-token-text-primary hover:bg-token-main-surface-secondary">
           Not factually correct
         </button>
         <button className="rounded-lg border border-token-border-light px-3 py-1 text-sm text-token-text-secondary hover:text-token-text-primary hover:bg-token-main-surface-secondary">
-          Didn't fully follow instructions
+          Didn&apos;t fully follow instructions
         </button>
         <button className="rounded-lg border border-token-border-light px-3 py-1 text-sm text-token-text-secondary hover:text-token-text-primary hover:bg-token-main-surface-secondary">
           More...
