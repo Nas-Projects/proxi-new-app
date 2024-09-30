@@ -381,7 +381,7 @@ export default function JoinUsComponent({joinUsData }) {
             <div className="expandable mt-6 lg:mt-12 sm:grid grid-cols-1 
                 !min-h-[500px] opacity-1 z-20 mx-auto 
                 gap-x-12 gap-y-4 lg:grid-cols-2 gap-x-0" >      
-                <AccordionDemo data={joinUsData} ref={sectionRef} />
+                <AccordionDemo data={joinUsData}  />
           </div>
         </div>
     </section>
@@ -413,7 +413,7 @@ export default function JoinUsComponent({joinUsData }) {
 
 
 
-export function AccordionDemo({data, ref}) {
+export function AccordionDemo({data}) {
   return (
    <> 
    {data?.sections[0]?.tiles?.map((tile, index) => {

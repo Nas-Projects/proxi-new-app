@@ -17,16 +17,18 @@ function SearchResultsCSR() {
 
   const location = searchParams.get('location');
   const propertyType = searchParams.get('propertyType');
-
+  
   useEffect(() => {
     const fetchSearchResults = async () => {
       try {
         const res = await fetch(
           `/api/properties/search?location=${location}&propertyType=${propertyType}`
         );
-        console.log("searchResults", res)
+        console.log("searchResults Response:", res);
+  
         if (res.status === 200) {
           const data = await res.json();
+          console.log("Fetched Properties:", data);
           setProperties(data);
         } else {
           setProperties([]);
@@ -37,9 +39,32 @@ function SearchResultsCSR() {
         setLoading(false);
       }
     };
-
+  
     fetchSearchResults();
   }, [location, propertyType]);
+
+  // useEffect(() => {
+  //   const fetchSearchResults = async () => {
+  //     try {
+  //       const res = await fetch(
+  //         `/api/properties/search?location=${location}&propertyType=${propertyType}`
+  //       );
+  //       console.log("searchResults", res)
+  //       if (res.status === 200) {
+  //         const data = await res.json();
+  //         setProperties(data);
+  //       } else {
+  //         setProperties([]);
+  //       }
+  //     } catch (error) {
+  //       console.log(error);
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   };
+
+  //   fetchSearchResults();
+  // }, [location, propertyType]);
 
   if (loading) {
     return <Spinner loading={loading} />;
