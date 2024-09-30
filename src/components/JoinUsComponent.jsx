@@ -6,11 +6,18 @@ import { useEffect, useRef, useState } from "react";
 import { urlFor } from "@/sanity/lib/image.js";
 import BlurImage from './blur-image';
 import Image from 'next/image';
+import {useInView} from 'framer-motion';
 
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
 
 
 export default function JoinUsComponent({joinUsData }) {
-  const sectionRef = useRef(null);
+
   const sectionIntroRef = useRef(null); // Define the missing sectionIntroRef
   const section2ImageRef = useRef(null);
   const Section2TextCompRef = useRef(null);
@@ -19,8 +26,9 @@ export default function JoinUsComponent({joinUsData }) {
 
   const [sectionIntro, setSectionIntro] = useState(null);
   const [section1, setSection1] = useState(null);
-  const [loading, setLoading] = useState(true);
-
+  const [loading, setLoading] = useState(true);  
+  const sectionRef = useRef(null);
+   const isInView = useInView(sectionRef);
   // Load the joinUsData
   useEffect(() => {
     if (joinUsData) {
@@ -39,126 +47,126 @@ export default function JoinUsComponent({joinUsData }) {
     }
   }, [joinUsData]);
 
-  // Intersection Observer for the section animation
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          const target = entry.target;
-          if (entry.isIntersecting) {
-            target.classList.add('slide-up');
-          } else {
-            target.classList.remove('slide-up');
-          }
-        });
-      },
-      { threshold: 0.1 } // Adjust threshold for when the element becomes visible
-    );
+  // // Intersection Observer for the section animation
+  // useEffect(() => {
+  //   const observer = new IntersectionObserver(
+  //     (entries) => {
+  //       entries.forEach((entry) => {
+  //         const target = entry.target;
+  //         if (entry.isIntersecting) {
+  //           target.classList.add('slide-up');
+  //         } else {
+  //           target.classList.remove('slide-up');
+  //         }
+  //       });
+  //     },
+  //     { threshold: 0.1 } // Adjust threshold for when the element becomes visible
+  //   );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
+  //   if (sectionRef.current) {
+  //     observer.observe(sectionRef.current);
+  //   }
 
-    if (sectionIntroRef.current) {
-      observer.observe(sectionIntroRef.current); // Add observer for sectionIntroRef
-    }
+  //   if (sectionIntroRef.current) {
+  //     observer.observe(sectionIntroRef.current); // Add observer for sectionIntroRef
+  //   }
 
-    return () => {
-      if (sectionRef.current) observer.unobserve(sectionRef.current);
-      if (sectionIntroRef.current) observer.unobserve(sectionIntroRef.current);
-    };
-  }, []);
+  //   return () => {
+  //     if (sectionRef.current) observer.unobserve(sectionRef.current);
+  //     if (sectionIntroRef.current) observer.unobserve(sectionIntroRef.current);
+  //   };
+  // }, []);
 
-  // Animation for Section 2 Image
-  useEffect(() => {
-    const Section2mage = document.getElementById('Section2mage');
+  // // Animation for Section 2 Image
+  // useEffect(() => {
+  //   const Section2mage = document.getElementById('Section2mage');
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            Section2mage.classList.add('bg-pan-right');
-          } else {
-            Section2mage.classList.remove('bg-pan-right');
-          }
-        });
-      },
-      { threshold: 0.0 } // Adjust the threshold as needed
-    );
+  //   const observer = new IntersectionObserver(
+  //     (entries) => {
+  //       entries.forEach((entry) => {
+  //         if (entry.isIntersecting) {
+  //           Section2mage.classList.add('bg-pan-right');
+  //         } else {
+  //           Section2mage.classList.remove('bg-pan-right');
+  //         }
+  //       });
+  //     },
+  //     { threshold: 0.0 } // Adjust the threshold as needed
+  //   );
 
-    if (section2ImageRef.current) {
-      observer.observe(section2ImageRef.current);
-    }
+  //   if (section2ImageRef.current) {
+  //     observer.observe(section2ImageRef.current);
+  //   }
 
-    return () => {
-      if (section2ImageRef.current) {
-        observer.unobserve(section2ImageRef.current);
-      }
-    };
-  }, []);
+  //   return () => {
+  //     if (section2ImageRef.current) {
+  //       observer.unobserve(section2ImageRef.current);
+  //     }
+  //   };
+  // }, []);
 
-  // Animation for Section 2 Text
-  useEffect(() => {
-    const Section2TextComp = document.getElementById('Section2TextComp');
+  // // Animation for Section 2 Text
+  // useEffect(() => {
+  //   const Section2TextComp = document.getElementById('Section2TextComp');
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            Section2TextComp.classList.add('slide-in-right');
-          } else {
-            Section2TextComp.classList.remove('slide-in-right');
-          }
-        });
-      },
-      { threshold: 0.1 } // Adjust the threshold as needed
-    );
+  //   const observer = new IntersectionObserver(
+  //     (entries) => {
+  //       entries.forEach((entry) => {
+  //         if (entry.isIntersecting) {
+  //           Section2TextComp.classList.add('slide-in-right');
+  //         } else {
+  //           Section2TextComp.classList.remove('slide-in-right');
+  //         }
+  //       });
+  //     },
+  //     { threshold: 0.1 } // Adjust the threshold as needed
+  //   );
 
-    if (Section2TextCompRef.current) {
-      observer.observe(Section2TextCompRef.current);
-    }
+  //   if (Section2TextCompRef.current) {
+  //     observer.observe(Section2TextCompRef.current);
+  //   }
 
-    return () => {
-      if (Section2TextCompRef.current) {
-        observer.unobserve(Section2TextCompRef.current);
-      }
-    };
-  }, []);
+  //   return () => {
+  //     if (Section2TextCompRef.current) {
+  //       observer.unobserve(Section2TextCompRef.current);
+  //     }
+  //   };
+  // }, []);
 
-  // Animation for Section 3 Image
-  useEffect(() => {
-    const isDesktopOrTablet = () => window.innerWidth >= 768;
+  // // Animation for Section 3 Image
+  // useEffect(() => {
+  //   const isDesktopOrTablet = () => window.innerWidth >= 768;
 
-    if (!isDesktopOrTablet()) {
-      // Skip animation on mobile devices
-      return;
-    }
+  //   if (!isDesktopOrTablet()) {
+  //     // Skip animation on mobile devices
+  //     return;
+  //   }
 
-    const section3Image = document.getElementById('section3Image');
+  //   const section3Image = document.getElementById('section3Image');
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            section3Image.classList.add('bg-pan-right');
-          } else {
-            section3Image.classList.remove('bg-pan-right');
-          }
-        });
-      },
-      { threshold: 0.1 } // Adjust the threshold as needed
-    );
+  //   const observer = new IntersectionObserver(
+  //     (entries) => {
+  //       entries.forEach((entry) => {
+  //         if (entry.isIntersecting) {
+  //           section3Image.classList.add('bg-pan-right');
+  //         } else {
+  //           section3Image.classList.remove('bg-pan-right');
+  //         }
+  //       });
+  //     },
+  //     { threshold: 0.1 } // Adjust the threshold as needed
+  //   );
 
-    if (section3ImageRef.current) {
-      observer.observe(section3ImageRef.current);
-    }
+  //   if (section3ImageRef.current) {
+  //     observer.observe(section3ImageRef.current);
+  //   }
 
-    return () => {
-      if (section3ImageRef.current) {
-        observer.unobserve(section3ImageRef.current);
-      }
-    };
-  }, []);
+  //   return () => {
+  //     if (section3ImageRef.current) {
+  //       observer.unobserve(section3ImageRef.current);
+  //     }
+  //   };
+  // }, []);
 
   if (loading) {
     return <div>Loading...</div>;
@@ -170,35 +178,16 @@ export default function JoinUsComponent({joinUsData }) {
 
 
   return (
-    <div className="!relative h-full">
-        <section  id="comp-lt8qptm3"
-      className="comp-lt8qptm3 wixui-section bg-gray-400 !relative min-h-[84vh] xl:min-h-screen">
-         <div id="bgLayers_comp-lt8qptm3"
-           className="MW5IWV"
-         >
-           <div data-testid="colorUnderlay" className="LWbAav Kv1aVt !top-20"></div>
-           <div id="bgMedia_comp-lt8qptm3" data-motion-part="BG_MEDIA" className="VgO9Yg"></div>
-         </div>
-         <div className="absolute top-0" data-testid="inline-content">
-           <div
-             className="comp-lt8 ineContent-gridContainer"
-             data-testid="mesh-container-content"
-           >
-               <div
-                 id="bgLayers_comp-kkuwu6dm"
-                 data-hook="bgLayers"
-                 data-motion-part="BG_LAYER"
-                 className="if7Vw2"
-               >
-                 <div data-testid="colorUnderlay" className="tcElKx i1tH8h"></div>
-                 <div id="bgMedia_comp-kkuwu6dm" data-motion-part="BG_MEDIA" className="wG8dni"></div>
-               </div>
-               <div data-testid="columns" className="V5AUxf">
-                 <div id="comp-kkuwu6gj" className="comp-kkuwu6gj YzqVVZ wixui-column-strip__column">
-                   <div>
-                     <div data-testid="colorUnderlay" className="LWbAav Kv1aVt"></div>
-                     <div
-                
+    <div className="!relative h-full bg-black">
+        <section  className=" !relative min-h-[84vh] xl:min-h-screen">
+    
+         <div className="relative top-0 inset-x-0">
+           <div  className="relative" >
+       
+               <div>
+                   <div data-testid="colorUnderlay" className="LWbAav Kv1aVt"></div>
+                      <div
+               
                        style={{
                         
                          willChange: "transform",
@@ -220,55 +209,58 @@ export default function JoinUsComponent({joinUsData }) {
                            fetchpriority="high"
                          />
                        </wow-image>
-                     </div>
+                     </div> 
                    </div>
-                   <div id="SlideInFromLeft"
-                      ref={sectionRef}
-                      data-mesh-id="comp-kkuwu6gjinlineContent" 
-                      data-testid="inline-content" 
-                      className="mwF7X1 absolute top-[13%] left-[10%] !z-40">
-                     <div
-                     
-                     > 
-                    <div className="section-1-text-wrapp px-0 lg:px-[7%] min-[1400px]:px-[8%]" >
-                      <h1 href="/" target="_self" className="text-custom-gradient text-left mt-24 
-                         !font-bold text-center text-[36px] xl:text-[96px]">
-                         PROXY REALESTATE <br class="wixui-rich-text__text "/>
-                        </h1>
-                       <div  id="SlideInUp" ref={sectionIntroRef} className="HcOXKn c9GqVL QxJLC3  
-                            text-center comp-kkuwwx9z
-                            wixui-rich-text lg:mb-8">
-                         <h1 className="font_0 text-white" 
+                   <div id="" className="absolute px-6 top-[10%] lg:left-[10%] lg:top-[20%] !z-10"  >
+                     <div 
+                     ref={sectionRef}    
+                      style={{
+                          transition: "all 1.5s ease-in-out",
+                          opacity: !isInView ? 1 : 0,
+                          transform: isInView ?  "translateY(0)" : "translateY(100)",
+                        }}> 
+                   
+                    <div className="section-1-text-wrapp px-0" >
+                         <div className="block xl:inline-flex space-y-4"> 
+                          <h1 className="font_0 text-white" 
                               style={{ lineHeight: "normal", fontSize: "76px" }}>
                            <span style={{ letterSpacing: "0.02em" }} className="wixui-rich-text__text">
-                             <span className="mt-4 color_11 wixui-rich-text__text">
-                              Join Us 
+                             <span className="mt-8 pr-4 mmin-[1400px]:hidden color_11 wixui-rich-text__text">
+                              JOIN {!isInView}
                              </span>
                            </span>
                          </h1>
-                       </div>
-                         </div>
-                     <a href="/" target="_self" class="wixui-rich-text__text hover:text-white  text-black  !font-bold text-center text-[36px] xl:text-[96px]">— ODFIT —<br class="wixui-rich-text__text "/></a>
-                       <div    id="SlideInUp" ref={sectionIntroRef} className="HcOXKn c9GqVL QxJLC3 comp-kkuwwx9z wixui-rich-text lg:mb-8">
-                         <h1 className="font_0 wixui-rich-text__text min-[1200px]:max-w-[40vw]" style={{ lineHeight: "normal", fontSize: "76px" }}>
+                         <h1 style={{
+                            transition: "all 0.5s ease-in-out",
+                            opacity: !isInView ? 1 : 1}}
+                            className="text-custom-gradient text-left 
+                              !font-bold text-center text-[36px] xl:text-[86px] max-[1700px]::text-[96px]">
+                              PROXY REALESTATE <br class="wixui-rich-text__text "/>
+                        </h1>
+                       <div id="SlideInUp" ref={sectionIntroRef} className="text-center 
+                            wixui-rich-text lg:mb-8 h-full">
+                        <div id="SlideInUp" ref={sectionIntroRef} className="wixui-rich-text lg:mb-8">
+                         <h1 className="font_0 wixui-rich-text__text min-[1200px]:max-w-[80vw]" style={{ lineHeight: "normal", fontSize: "76px" }}>
                            <span style={{ letterSpacing: "0.02em" }} className="wixui-rich-text__text">
                              <span className="color_11 wixui-rich-text__text">
                             {section1.title}
                              </span>
                            </span>
                          </h1>
+                         </div>
                        </div>
-                       <div className="HcOXKn c9GqVL QxJLC3 comp-kkuxe0vg wixui-rich-text xl:max-w-lg min-[1300px]:max-w-[40vw]"
-                        
-                       >
-                         <p    
-                         id="SlideInUp"
+                     </div>
+                      
+                     
+                       </div>
+                       <div className=" wixui-rich-text lg:px-24 xl:px-44 backdrop-blur mt-12 text-right">
+                         <p  id="SlideInUp"
                           ref={sectionRef}
-                          className="font_7 wixui-rich-text__text min-[1200px]:max-w-[40vw]"
+                          className="font_7 wixui-rich-text__text"
                           style={{ lineHeight: "1.4em", fontSize: "24px" }}
                          >
-                           <span style={{ letterSpacing: "normal" }} className="wixui-rich-text__text">
-                             <span className="color_11 wixui-rich-text__text">
+                           <span>
+                             <span className=" text-lg md:text-xl lg:text-2xl text-white px-4">
                              {sectionIntro}
                              </span>
                            </span>
@@ -299,9 +291,9 @@ export default function JoinUsComponent({joinUsData }) {
                            </span>
                          </h1>
                        </div>
-                       <div className="mt-4 HcOXKn c9GqVL QxJLC3 comp-kkuxe0vg wixui-rich-text " >
+                       <div className="mt-4wixui-rich-text px-6" >
                          <p id="SlideInUp" ref={sectionRef}  >
-                           <span  className="text-lg md:text-xl lg:text-2xl  text-white">
+                           <span  className="text-lg md:text-xl lg:text-2xl text-white">
                              <span>
                              {sectionIntro}
                              </span>
@@ -321,96 +313,44 @@ export default function JoinUsComponent({joinUsData }) {
                        </div>
                      </div>
                    </div>
-                 </div>
-               </div>
+           
+             
           
              {/* </section> */}
            </div>
          </div>
          <div className="relative my-1"></div>
-       {/* -------END OF SECTYION INTRO  */}
-      {/* <div data-mesh-id="comp-lt8qptm3inlineContent !bg-black" data-testid="inline-content" className="">
-        <div
-          data-mesh-id="comp-lt8qptm3inlineContent-gridContainer"
-          data-testid="mesh-container-content"
-        >
-         CONTENT 
-        </div>
-      </div> */}
     </section>
 
-    <div id="Absout-SECTION-2"  
-          className="!relative h-full bg-black
-           !min-h-[20vh] comp-lt8qptm4 wixui-section 
-           sm:top-[55vh] lg:!top-[0vh] sm:h-full" >
-    
-      <div id="About-section2" 
-            data-mesh-id="comp-lt8qptm4inlineContent" 
-            data-testid="inline-content"
-            className="relative py-12 w-full"> 
-          <div className="w-full left-0 -mt-[0%] "
-                data-mesh-id="comp-lt8qptm4inlineContent-gridContainer"
-                data-testid="mesh-container-content" >
-               <div id="bgLayers_comp-kkux3tg4"
-                    data-hook="bgLayers"
-                    data-motion-part="BG_LAYER"
-                    className="if7Vw2 opacity-[0.5]"> 
-                   <div data-testid="colorUnderlay" className="tcElKx i1tH8h"></div>
-                  <div id="bgMedia_comp-kkux3tg4" data-motion-part="BG_MEDIA" className="wG8dni"></div>
-              </div>
-              <div data-testid="columns" 
-                   className="bg-black sm:bg-[#040405c4] w-screen sm:w-full 
-                              relative sm:grid grid-cols-7 !min-h-[700px] sm:px-[6%] sm:h-full py-12 xl:py-24 opacity-1 z-20">
-                     <div id="comp-kkux63q1" className="flex sm:block comp-kkux63q1 YzqVVZ wixui-column-strip__column col-span-3 z-20">
-                    <div className="w-full z-20">
-                  
-                <div className="MazNVa comp-kkux7dxt wixui-image z-20  px-[6%] sm:py-12  pb-12"
-                    style={{ "--filter-effect-svg-url": "url(#kennedy-comp-kkux7dxt)" }}
-                    data-motion-enter="done">
-                     <div ref={section2ImageRef}  
-                        id="Section2mage" 
-                        className="j7pOnl h-full w-full ">
-                          <div  className="HlRz5e BI8PVQ  flex !h-full !w-full">
-                         {section1.sectionImage && section1.sectionImage.asset && (
-                          <BlurImage
-                          className='flex !h-full !w-screen object-cover'
-                              src={urlFor(section1.sectionImage).url()}
-                              alt="section1 Image"
-                              style={{ width: "1362px", height: "1303px" }}
-                              width="1362"
-                              height="1303"
-                              fetchpriority="high"
-                            />
-                          )}
-                          </div>
-                        </div>
-                      </div>
-                    
-                  </div>
-                </div>
-                <div id="comp-kkux3thl" className="relative -mt-[3em] lg:mt-12 comp-kkux3thl YzqVVZ wixui-column-strip__column  w-wull col-span-3 pb-12  xl:pt-12 xl:pb-24">
-                  <div  id="bgLayers_comp-kkux3thl"
+         <div id="Absout-SECTION-2" 
+                className='max-[600px]:mt-[8vh] sm:!mt-[10vh] 
+                xl:!mt-[0vh] relative bg-custom-gradient z-20 '>  
+                                
+                <div className="relative  w-wull col-span-3 pb-12  xl:pt-12 xl:pb-24">
+                  <div 
                     className="MW5IWV">  
-                      <div id="comp-kkr5qq5f" class="pl-4 lg:-mt-24 HcOXKn SxM0TO QxJLC3 comp-kkr5qq5f wixui-rich-text">
-                     <p class="font_4 wixui-rich-text__text !text-white pb-6 px-4" style={{"font-size":"18px"}}>
-                        <a href="#comp-lt8qptm3" target="_self" class="wixui-rich-text__text hover:text-white text-sky-600 ">
-                        <span className='text-custom-gradient mt-2 lg:mt-6 py-4 '>
+                      <div className="pl-4  pt-14  wixui-rich-text">
+                     <p class="font_4 wixui-rich-text__text !text-white pb-6 px-4" 
+                      style={{
+                        transition: "all 0.5s ease-in-out",
+                        opacity: !isInView ? 1 : 0,
+                        transform: !isInView ?  "translateY(0)" : "translateX(1000)",
+                      }}
+                     >
+                        <h2 class="text-white text-right lg:px-[3em]">
+                        <span className='text-white mt-2 lg:mt-6 py-4 '>
                             {section1.sectionTitle.toUpperCase()}
                         </span>
-                        </a>
+                        </h2>
                       </p>
                       </div>
-                  <div data-testid="colorUnderlay" className="LWbAav Kv1aVt"></div>
-                    <div id="bgMedia_comp-kkux3thl" className="VgO9Yg"></div>
-                   </div>
-                  <div  className="relative !z-30 -mt-4 lg:-mt-16" >
-                    <div className='!z-30'>
-                      <div className="HcOXKn SxM0TO QxJLC3 comp-kkux5ddo wixui-rich-text px-[6%] sm:py-12">
-                        <p id="Section2TextComp" ref={Section2TextCompRef}   
+      
+                 
+                      <div className=" wixui-rich-text px-[6%] lg:py-6">
+                        <p id="Section2TextComp" ref={sectionRef}   
                         className="font_7 wixui-rich-text__text !text-white" 
                            style={{ lineHeight: "1.4em", fontSize: "24px" }}>
-                          <span className="color_14 wixui-rich-text__text 
-                                text-lg md:text-xl lg:text-2xl text-white">  
+                          <span className=" text-lg text-right md:text-xl lg:text-2xl text-white">  
                                 {section1.sectionContent}
                           </span>
                         </p>
@@ -421,73 +361,72 @@ export default function JoinUsComponent({joinUsData }) {
                             className="uDW_Qe wixui-button PlZyDq text-white bg-custom-gradient  py-4 px-[20%]" >
                           <span className="l7_2fn wixui-button__label hover:text-white dark:hover:!text-white">Reach out</span>
                         </Link>
-                      </div>       
-                    </div>
-                  </div>
-                </div>
+
            </div>
         
         </div>
       </div>
     </div>
 
-       {/* ----------------- EXPANDABLES ----------------- */}
-       <section id="Section3" className="bg-black !relative pb-44 pt-[1em] xl:py-[1rem]">
-        <h2 className="text-white pb-4">More FAQs</h2>
-        <div
-          className="expandable sm:grid grid-cols-4 !min-h-[500px] opacity-1 z-20 mx-auto gap-x-12
-                        gap-y-4 lg:grid lg:grid-cols-2 xl:grid-cols-3 gap-x-0"
-        >
-          {/* Mapping over the tiles */}
-          {joinUsData?.sections[0]?.tiles?.map((tile, index) => {
-            return (
-              <div className="relative my-4 sm:mt-[0rem]" key={index}>
-                <div
-                  id="section3TextComp"
-                  ref={section3TextCompRef}
-                  className="relative sm:col-span-3 my-4 sm:py-6 px-[6%] mt-2 dark:bg-[black]"
-                >
-                  <ExpandableSection key={tile._key || index} title={tile.tileTitle}>
-                    <div>
-                      <p className="text-xl">{tile.tileContent}</p>
-                    </div>
-                    {tile.icon && tile.icon.asset && (
-                     <BlurImage
-                     src={tile.icon?.asset?.url ? tile.icon.asset.url : urlFor(tile.icon.asset).url()}
-                     alt={tile.tileTitle}
-                     style={{ width: "100%", objectFit: "cover" }}
-                     height={200}
-                     width={200}
-                   />
-                    )}
-                  </ExpandableSection>
-                </div>
-              </div>
-            );
-          })}
+      {/* ----------------- EXPANDABLES ----------------- */}
+      <section id="Section3" 
+                ref={sectionRef}
+                className="flex px-6 mx-auto justify-center items-center 
+                  max-w-5xl relative bg-black !relative 
+                  pb-44 pt-[1em] xl:py-[1rem] py-6 xl:pb-44">
+            <div className="center lg:pt-4 lg:pb-24  "> 
+            <h1 className="text-white pb-4 py-12 ">
+              More FAQs
+            </h1>
+            <div className="expandable mt-6 lg:mt-12 sm:grid grid-cols-1 
+                !min-h-[500px] opacity-1 z-20 mx-auto 
+                gap-x-12 gap-y-4 lg:grid-cols-2 gap-x-0" >      
+                <AccordionDemo data={joinUsData} ref={sectionRef} />
+          </div>
         </div>
-      </section>
+    </section>
     </div>
   );
 }
 
-export const ExpandableSection = ({ title, children }) => {
-  const [isOpen, setIsOpen] = useState(false);
+// export const ExpandableSection = ({ title, children }) => {
+//   const [isOpen, setIsOpen] = useState(false);
 
+//   return (
+//     <div className="expandable-section z-50">
+//       <div
+//         className={clsx(
+//           isOpen && "shadow-xl",
+//           "expandable-header !bg-white rounded-lg shadow-md px-4 justify-center py-3 inline-flex gap-x-4 w-full"
+//         )}
+//         onClick={() => setIsOpen(!isOpen)}
+//         style={{ cursor: "pointer", padding: "10px", background: "#f0f0f0" }}
+//       >
+//         <h3 className="!text-xl lg:text-2xl xl:text-3xl font-bold">{title}</h3>
+//         <span>{isOpen ? "-" : "+"}</span>
+//       </div>
+//       {isOpen && <div className="expandable-content pt-4 px-6 text-white">{children}</div>}
+//     </div>
+//   );
+// };
+
+
+
+
+export function AccordionDemo({data, ref}) {
   return (
-    <div className="expandable-section z-50">
-      <div
-        className={clsx(
-          isOpen && "shadow-xl",
-          "expandable-header !bg-white rounded-lg shadow-md px-4 justify-center py-3 inline-flex gap-x-4 w-full"
-        )}
-        onClick={() => setIsOpen(!isOpen)}
-        style={{ cursor: "pointer", padding: "10px", background: "#f0f0f0" }}
-      >
-        <h3 className="!text-xl lg:text-2xl xl:text-3xl font-bold">{title}</h3>
-        <span>{isOpen ? "-" : "+"}</span>
-      </div>
-      {isOpen && <div className="expandable-content pt-4 px-6 text-white">{children}</div>}
-    </div>
-  );
-};
+   <> 
+   {data?.sections[0]?.tiles?.map((tile, index) => {
+       return  (  <Accordion type="single" collapsible className=" group w-full text-white ">
+                    <AccordionItem value="item-1"  key={index}>
+                      <AccordionTrigger className="text-white text-left text-2xl group-hover:text-pink-400">
+                        {tile.tileTitle}
+                        </AccordionTrigger>
+                        <AccordionContent className='text-xl text-slate-200 group-hover:text-pink-100/90'>
+                        {tile.tileContent}
+                        </AccordionContent>
+                      </AccordionItem>
+                     </Accordion>
+        )})}</>
+  )
+}
