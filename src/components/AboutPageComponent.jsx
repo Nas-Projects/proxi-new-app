@@ -85,7 +85,7 @@ export default function AboutPageComponent({aboutData}) {
             height={1000}
             width={1000}
             placeholder="blur"
-            className="sr-only md:not-sr-only md:!absolute md:mt-[4em] md:left-1/2  -ml-[39rem]  w-[113.125rem] max-w-none"
+            className="sr-only md:not-sr-only md:!absolute md:mt-[4em] md:left-1/2  -ml-[39rem]  w-full lg:w-[113.125rem] max-w-none"
             />
       <main className="isolate">
         {/* Hero section */}

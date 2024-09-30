@@ -420,7 +420,7 @@ if (filters.size) {
       <section className="mt-4 lg:my-8 mx-6 lg:mx-8 xl:mx-12"> 
         <CardGrid/>
       </section>
-    <section className="bg-white my-12 lg:my-24 mx-auto flex items-center relative joinSection py-14 lg:py-20">
+    <section className="bg-white my-12 lg:my-44 mx-auto flex items-center relative joinSection py-14 lg:py-20">
     <div className="w-full block lg:grid  lg:drid grid-cols-3">
     <div action="#" method="POST" className="col-span-2 h-full w-full z-10">
         <BlurImage
@@ -473,7 +473,7 @@ if (filters.size) {
                  
                   className="relative z-10 px-5 md:px-25px lg:px-10 py-10px md:py-3 lg:py-17px group-hover:text-heading-color leading-23px"
                 >
-                 Join ggggdgd
+                 Join now
                 </Link>
               </h5>
             </div>

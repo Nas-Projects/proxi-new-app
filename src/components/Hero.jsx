@@ -19,7 +19,7 @@ export default function Hero() {
             height={1000}
             width={1000}
             // placeholder="blur"
-            class="absolute left-1/2 top-0 -ml-[39rem] w-[113.125rem] !h-[55vh] lg:!h-[55vh] max-w-none"
+            class="absolute left-1/2 top-0 -ml-[39rem] !h-[55vh] lg:!h-[55vh] max-w-none w-full lg:w-[113.125rem] max-w-none"
             />
           {/* Hero  1 */}
           {/* <div   className="swiper-slide relative z-0 pt-[6vh]  md:pt-24 pb-100px 
