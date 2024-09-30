@@ -19,10 +19,10 @@ import {
 export default function JoinUsComponent({joinUsData }) {
 
   const sectionIntroRef = useRef(null); // Define the missing sectionIntroRef
-  const section2ImageRef = useRef(null);
-  const Section2TextCompRef = useRef(null);
-  const section3ImageRef = useRef(null);
-  const section3TextCompRef = useRef(null);
+  // const section2ImageRef = useRef(null);
+  // const Section2TextCompRef = useRef(null);
+  // const section3ImageRef = useRef(null);
+  // const section3TextCompRef = useRef(null);
 
   const [sectionIntro, setSectionIntro] = useState(null);
   const [section1, setSection1] = useState(null);
