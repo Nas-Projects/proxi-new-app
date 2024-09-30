@@ -26,11 +26,9 @@ const PropertySearchForm = () => {
     }
   };
 
-  return (<main className="main-container">
-  <section className="content-wrapper pt-8">
-    <div className="title-wrapper pt-8">
-      <h1 className="title">Search</h1>
-    </div>
+  return (<main className="main-container lg:!my-2 lg:!mx-2 lg:!py-[2em] lg:!px-[2em]">
+  <section className="content-wrapper pt-6 lg:pt-0">
+   
     <div className="login-container">
       <div className="input-wrapper" onSubmit={handleSubmit} >
         <input onChange={(e) => setLocation(e.target.value)}
@@ -61,7 +59,7 @@ const PropertySearchForm = () => {
                </label>
                <select
                  id='property-type'
-                 className='w-full px-4 py-4  text-xl rounded-lg !bg-white text-gray-800 focus:outline-none focus:ring ring-1 ring-pink-300  focus:ring-blue-500 hover:shadow-lg '
+                 className='w-full px-4 py-4 lg:py-3  text-xl rounded-lg !bg-white text-gray-800 focus:outline-none focus:ring ring-1 ring-pink-300  focus:ring-blue-500 hover:shadow-lg '
                  value={propertyType}
                  onChange={(e) => setPropertyType(e.target.value)}
                >
@@ -86,8 +84,8 @@ const PropertySearchForm = () => {
       <button type="submit" className="continue-btn !bg-custom-gradient" disabled="">
         Continue
       </button>
-      <p className="other-page">
-         Clear search
+      <p className="inline-flex justify-between other-page gap-x-12">
+        <span>Clear search</span> 
         <a
           className="other-page-link"
           href="/#properties"
@@ -95,7 +93,7 @@ const PropertySearchForm = () => {
          All Propertie
         </a>
       </p>
-      <div className="divider-wrapper">
+      <div className="!hidden divider-wrapper">
         <span className="divider">Or</span>
       </div>
       <div className="hidden social-section">

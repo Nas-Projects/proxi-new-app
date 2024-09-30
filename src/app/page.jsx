@@ -54,8 +54,8 @@ async function Home({}){
 
         <Hero   //  heroDetails={heroDetails}
           />
-
-          <div className="mx-auto lg:px-[10%] bg-transparent  absolute absolute top-[89vh] lg:top-[68vh] lg:mx-auto md:top-[70vh] xl:top-[67vh]">
+          {/* <div className="mx-auto lg:px-[10%] bg-transparent  absolute absolute top-[89vh] lg:top-[68vh] lg:mx-auto md:top-[70vh] xl:top-[67vh]"></div> */}
+          <div className="mx-auto lg:px-[10%] mt-44 bg-transparent relative relative ">
           <SearchButtons />
           </div>
           <ProperTiesForSale properties={properties}/>
@@ -205,7 +205,7 @@ async function Home({}){
         
 
           <Link href="/contact">
-            <div class="bg-pink-400 py-3 px-6 cursor-pointer rounded-l-md bottom-28 right-0 z-50 fixed grow2">
+            <div class="bg-pink-400 py-3 px-6 cursor-pointer rounded-l-md bottom-10 right-0 z-50 fixed grow2">
               <p class="text-white text-[20px] font-semibold">Contact Us</p>
             </div>
           </Link>

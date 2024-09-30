@@ -2,7 +2,9 @@ import PropertySearchForm from './PropertySearchForm';
 
 const HeroSearchForm = () => {
   return (
-    <section className='!max-w-[87vw] shadow-xl px-6 pt-4 pb-8 fade-in-from-bottom2 my-4  sm:p-6 !bg-white/70 lg:bg-gray-400 -mt-12 lg:mt-24  lg:py-20 mb-4  rounded-xl max-w-2xl '>
+    <section className='!max-w-[87vw] shadow-xl px-6 pt-4 pb-8 fade-in-from-bottom
+      my-4  sm:p-6 !bg-white/70 lg:bg-gray-400 -mt-12
+     lg:mt-24  lg:py-0 mb-4  rounded-xl max-w-2xl '>
        
       <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center'>
         <div className='text-center'>
