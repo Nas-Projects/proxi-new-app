@@ -126,7 +126,7 @@ export default function OtherProperties({}) {
                 <div className="detail-block white-block">
                   <div className="icon paragraph-small">
                   <BlurImage
-                      src="/b435fa2d60b2741f5662128b0843b1e8e7295689-3000x4000.webp"
+                                           src="https://cdn.prod.website-files.com/63c93770199def60f97204e0/63c93770199defda7c72052e_door_back.svg"
                       loading="lazy"
                       alt=""
                       className="image"

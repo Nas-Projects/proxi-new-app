@@ -3,24 +3,10 @@
 import { sanityFetch } from "@/sanity/lib/sanityFetch"
 import { searchQuery } from "@/sanity/lib/queries";
 
-export const GET = async (request: Request) => {
+export const GET = async () => {
   try {
-    const { searchParams } = new URL(request.url);
-    const location = searchParams.get('location') || "";
-    const propertyType = searchParams.get('propertyType') || "All";
-
-    const params = {
-      location: location.toLowerCase(),
-      propertyType: propertyType.toLowerCase()
-    };
-
-    // Log parameters to check if they are passed correctly
-    console.log("Sanity Params:", params);
-
-    const properties = await sanityFetch({ query: searchQuery, params });
-
-    // Log properties to ensure they are fetched correctly
-    console.log("Sanity Properties:", properties);
+    // Fetch all properties from Sanity
+    const properties = await sanityFetch({ query: searchQuery });
 
     return new Response(JSON.stringify(properties), {
       status: 200,
@@ -30,6 +16,34 @@ export const GET = async (request: Request) => {
     return new Response('Something went wrong', { status: 500 });
   }
 };
+
+// export const GET = async (request: Request) => {
+//   try {
+//     const { searchParams } = new URL(request.url);
+//     const location = searchParams.get('location') || "";
+//     const propertyType = searchParams.get('propertyType') || "All";
+
+//     const params = {
+//       location: location.toLowerCase(),
+//       propertyType: propertyType.toLowerCase()
+//     };
+
+//     // Log parameters to check if they are passed correctly
+//     console.log("Sanity Params:", params);
+
+//     const properties = await sanityFetch({ query: searchQuery, params });
+
+//     // Log properties to ensure they are fetched correctly
+//     console.log("Sanity Properties:", properties);
+
+//     return new Response(JSON.stringify(properties), {
+//       status: 200,
+//     });
+//   } catch (error) {
+//     console.log(error);
+//     return new Response('Something went wrong', { status: 500 });
+//   }
+// };
 
 // export const GET = async (request: Request) => {
 //   try {
