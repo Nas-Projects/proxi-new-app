@@ -1,30 +1,32 @@
 import Link from "next/link";
 import HeroSearchForm from "./propertiesComponents/HeroSearchForm";
 import BlurImage from "./blur-image";
+import Image from "next/image";
 
 export default function Hero() {
     return(<div className="hero hero-primary overflow-hidden relative z-0 bg-white">
-        <BlurImage
-         src="/beams-basic.png"
-          alt=""
-          height={1000}
-          width={1000}
-          placeholder="blur"
-          class="absolute left-1/2 top-0 -ml-[39rem] w-[113.125rem] max-w-none"
-          />
+      
     <div className="hero-slider-container swiper-container relative">
       <div className="primary-slider home-3 swiper-fade swiper-initialized swiper-horizontal swiper-watch-progress swiper-backface-hidden">
         <div
           // className="swiper-wrapper"
           // id="swiper-wrapper-510e237465d3af044"
           aria-live="polite"
-        >
+        >  
+          <Image
+          src="/beams-basic.png"
+            alt=""
+            height={1000}
+            width={1000}
+            // placeholder="blur"
+            class="absolute left-1/2 top-0 -ml-[39rem] w-[113.125rem] !h-[55vh] lg:!h-[55vh] max-w-none"
+            />
           {/* Hero  1 */}
           {/* <div   className="swiper-slide relative z-0 pt-[6vh]  md:pt-24 pb-100px 
             4xl:h-screen 4xl:min-h-[800px] overflow-hidden flex flex-col 
             justify-center bg-cover bg-center bg-no-repeat swiper-slide-visible 
             swiper-slide-fully-visible swiper-slide-active" */}
-         <div   className="swiper-slide relative z-0 pt-[6vh]  md:pt-24 pb-100px 
+         <div   className=" relative z-0 pt-[4vh] pt-12  md:pt-24 pb-100px 
             4xl:h-screen 4xl:min-h-[800px] overflow-hidden flex flex-col 
             justify-center bg-cover bg-center bg-no-repeat swiper-slide-active"
             // style={{
@@ -36,7 +38,7 @@ export default function Hero() {
             aria-label="1 / 3"
             data-swiper-slide-index={0}
           >
-           <div className="absolute top-0 left-0 w-full h-full  z-0" />
+           {/* <div className="absolute top-0 left-0 w-full h-full  z-0" /> */}
            
            <div className="xl:mt-12 flex-block lg:grid  grid-cols-2 group">
             <div className="container w-full relative z-xl !text-left">
@@ -52,7 +54,7 @@ export default function Hero() {
                     PROXY 
                     </h1>
                   <p className="mainText mt-[-0.9em] pl-[0.1em]  lg:mt-[-1.6em] lg:pl-[0.3em] font-bold  text-[20px] md:text-15px lg:text-base 
-                    xl:text-xl font-bold mb-5 text-white animated font-bold">
+                    xl:text-xl font-bold mb-5 text-white font-bold">
                     <i className="fas fa-home" />
                     Real Estate Agency
                  </p>
@@ -60,7 +62,7 @@ export default function Hero() {
              
               <div className="group px-4 lg:px-6 py-12 lg:py-6  xl:pt-[5vh] rounded-xl -mt-10  fade-in-from-bottom">
                 <div className="max-w-3xl mx-4 leading-[54px] group-hover:text-pink-500">
-                  <h1 class="!text-left text-black md:text-[82px] lg:ss:text-[70px] lg:text-[52px] 
+                  <h1 class="!text-left !text-[32px] text-black md:text-[82px] lg:ss:text-[70px] lg:text-[52px] 
                    lg:ss:leading-[70px] leading-[55px] maintext tracking-tight group-hover:text-pink-500">
                      <span className="text-slate-600">
                         <br class="ss:flex hidden"/>Reinventing</span> 
@@ -78,14 +80,13 @@ export default function Hero() {
                         lg:leading-50px 4xl:leading-65px font-bold mb-5 animated"> 
                       <span className="text-2xl lg:leading-30px md:leading-10 lg:leading-50px 
                               xl:text-4xl text-gay-300">
-                              Find Your Dream
+                              Find Your Dream 
                             <br />
                         </span>
                     </h1>
                     <p className="-mt-4 !text-slate-600 max-w-2xl text-sm lg:text-base  mb-5 max-w-450px animated xl:text-2xl">
                       <span className="leading-25px lg:leading-1.8">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                        sed do eiusmod tempor incididunt ut labore.
+                        Let proxy at the forfront of the realestate tech revolution handle your realestate needs.
                      </span>
                     </p>
                 <div id="HERO-CTA-BUTTONS" className="lg:-mt-12  py-4 lg:py-12  ">

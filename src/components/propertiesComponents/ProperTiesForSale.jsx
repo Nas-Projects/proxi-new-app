@@ -33,7 +33,7 @@ const PropertiesForSale = ({properties}) => {
   }
 
   return (
-    <div className="property-list mt-[35vh] lg:mt-[2vh] 
+    <div className="property-list mt-[35vh]  sm:mt-[57vh] lg:mt-[2vh] 
     max-auto mx-4 md:mx-8 lg:mx-12 xl:mx-[0em] min-[1600px]:mx-[8em] justify-center">
       <SectionHeader
         title="Properties For Sale"

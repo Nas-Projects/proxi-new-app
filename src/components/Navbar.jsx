@@ -36,7 +36,7 @@ const navigation = [
   { name: 'Contact', href: '/contact', current: false },
 
   { name: 'Terms', href: '/terms', current: false },
-  { name: 'Calendar', href: '#', current: false },
+
 ]
 const userNavigation = [
   { name: 'Your Profile', href: '/profile' },

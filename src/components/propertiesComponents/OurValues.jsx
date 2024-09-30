@@ -1,4 +1,5 @@
 import Image from "next/image";
+import BlurImage from "../blur-image";
 
 export default function OurValues(){
 
@@ -46,8 +47,8 @@ export default function OurValues(){
                 </div> 
               </div>
           <div style={{ opacity: 1 }} className="max-[500px]:h-[300px] feature-video w-background-video w-background-video-atom">
-              <Image src="/happy_customers_ezg.gif"
-                id="62f790eb-875e-81bd-7239-4dc64c2fbbee-video"
+              <BlurImage 
+              src="/happy_customers_ezg.gif"
                 height="1080"
                 width="1920"
                 autoPlay=""
