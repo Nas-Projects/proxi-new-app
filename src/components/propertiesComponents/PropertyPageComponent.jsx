@@ -72,7 +72,7 @@ console.log("PROPERTY_PAGE_COMPONENT", propertyData)
 
   const marketCategory = property?.forRent === true ? "For rent" : "For sale"
   return (
-    <div className='overflow-hidden'>
+    <div className=''>
       {loading && <Spinner loading={loading} />}
       {!loading && property && (
         <>

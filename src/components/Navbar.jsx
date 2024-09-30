@@ -31,8 +31,11 @@ const navigation = [
   { name: 'Comercial', href: '/properties/propertyCategory=Commercial', current: false },
   { name: 'About', href: '/about', current: false },
   { name: 'Agents', href: '/agents', current: false },
-  { name: 'Contact', href: '/contact', current: false },
+  { name: 'Join', href: '/join', current: false },
   { name: 'Blogs', href: '/blogs', current: false },
+  { name: 'Contact', href: '/contact', current: false },
+
+  { name: 'Terms', href: '/terms', current: false },
   { name: 'Calendar', href: '#', current: false },
 ]
 const userNavigation = [
@@ -187,7 +190,7 @@ console.log("errorMessage", errorMessage);
                 className="h-8 w-auto"
               />
             </Link>
-            <div className="hidden md:ml-6 md:flex md:items-center md:space-x-4">
+            <div className="hidden z-50 md:ml-6 md:flex md:items-center md:space-x-4">
              <NavigationLeft />
               {/* {navigation.map((item) => (
                 <a
@@ -329,7 +332,7 @@ console.log("errorMessage", errorMessage);
         </div>
       </div>
 
-      <DisclosurePanel className="md:hidden p-4 mt-6">
+      <DisclosurePanel className="md:hidden p-4 mt-6 z-50">
         <div className="space-y-1 px-2 pb-3 pt-2 sm:px-3 max-w-[24em]">
           {navigation.map((item) => (
             <DisclosureButton

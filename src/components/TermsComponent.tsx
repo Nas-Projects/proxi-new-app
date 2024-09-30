@@ -47,7 +47,8 @@ if (loading) {
     };
 
     return (
-        <div className="hero hero-primary bg-gray-50 overflow-hidden relative">
+        <div className="relative z-20 bg-white">
+        <div className="hero hero-primary bg-gray-50 relative mb-[60em]">
           <BlurImage
             src="/beams-basic.png"
             alt=""
@@ -56,15 +57,19 @@ if (loading) {
             placeholder="blur"
             className="absolute left-1/2 top-0 -ml-[39rem]  w-[113.125rem] max-w-none"
             />
-         <div className='absolute inset-x-0 z-20 top-12  md:top-24  lg:top-44  flex-block px-6 md:px-8 lg:px-12 xl:px-24 pb-44 justify-center items-center !z-50'>
+         <div className='absolute  inset-x-0 z-20 top-12
+           md:top-24 lg:top-34 flex-block px-6 md:px-8
+          lg:px-12 xl:px-24 pb-44 justify-center
+           items-center !z-20'>
            
-           <h1 className="!text-4xl lg:!text-4xl xl:!text-5xl 
-                     !text-black px-4 pt-16 mainText mb-8 lg:text-center py-12 xl:py-24 ">Terms and Conditions.</h1>
-           <div className="flex justify-center items-center">
+           <h1 className="flex-block !text-4xl lg:!text-4xl xl:!text-5xl 
+                     !text-black px-4 pt-16 mainText mb-8 lg:text-center 
+                     py-12 lg:mt-[-4em]xl:pb-24 ">Terms and Conditions.</h1>
+           <div className="flex justify-center items-center mb-[10em]">
                 <div className="grid grid-cols-1 max-w-2xl gap-x-4 pb-44">
                {terms.map((term, index) => {
                   console.log("terms", term.terms[0])
-                 return <div key={index} className={clsx(term.isOpen && "!bg-gray-100 rounded-xl my-2","p-4 border rounded")}>
+                 return <div key={index} className={clsx(term.isOpen && "pb-64 !bg-gray-100 rounded-xl my-2 h-full","p-4 border rounded")}>
                        <h4  className={`flex mainText text-[1.5em] items-center justify-between cursor-pointer ${
                                term.isOpen ? 'text-custom-gradient font-medium bg-white' : ''
                            }`}
@@ -82,14 +87,14 @@ if (loading) {
                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                            </svg>
                        </h4>
-                       {term.isOpen && <p className="mt-3">{term.terms[0]}</p>}
+                       {term.isOpen && <p className="flex mt-3 z-20 h-full pb-6">{term.terms[0]}</p>}
                    </div>
                })}
            </div>
            </div>
           
        </div>
-        </div>
+        </div></div>
       
     );
 }

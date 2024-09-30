@@ -2012,13 +2012,13 @@ body:not(.device-mobile-optimized) .gallery>*{flex:var(--column-flex) 1 0%;left:
 
 /* -------ABOUT PAGE CSSS */
 #SlideInFromLeft {
-  transition: transform 0.8s ease-in-out;
+  transition: transform 0.8s ease-in-out Im !important;
   transform: translateX(-100%);
   opacity: 0;
 }
 
 #SlideInFromLeft.pan-right {
-  transform: translateX(0);
+  transform: translateX(0) !important;
   opacity: 1;
 }
 #comp-kkux7dxt {

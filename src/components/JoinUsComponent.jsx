@@ -5,11 +5,13 @@ import clsx from 'clsx'
 import { useEffect, useRef, useState } from "react";
 import { urlFor } from "@/sanity/lib/image.js";
 import BlurImage from './blur-image';
+import Image from 'next/image';
 
 
 
 export default function JoinUsComponent({joinUsData }) {
   const sectionRef = useRef(null);
+  const sectionIntroRef = useRef(null); // Define the missing sectionIntroRef
   const section2ImageRef = useRef(null);
   const Section2TextCompRef = useRef(null);
   const section3ImageRef = useRef(null);
@@ -17,168 +19,154 @@ export default function JoinUsComponent({joinUsData }) {
 
   const [sectionIntro, setSectionIntro] = useState(null);
   const [section1, setSection1] = useState(null);
-  // const [remainingSections, setRemainingSections] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  // Load the joinUsData
   useEffect(() => {
     if (joinUsData) {
-      console.log("joinUsData.data",joinUsData);
+      console.log("joinUsData.data", joinUsData);
       // Set intro paragraph as sectionIntro
       setSectionIntro(joinUsData.introParagraph);
-      // console.log("joinUsData.data",joinUsData);
       console.log("joinUsData.introParagraph", joinUsData.introParagraph);
       // Set first section as section1
       if (joinUsData.sections) {
         setSection1(joinUsData.sections[0]);
         console.log("joinUsData.sections", joinUsData.sections[0]);
-        // Set remaining sections as section2, section3, etc.
-        // setRemainingSections(joinUsData.sections.slice(1)); // Use slice to avoid issues with indexing
-        // console.log("joinUsData.expandabke", section1.tiles);
       }
       setLoading(false);
     } else {
       setLoading(false);
     }
-  }, [joinUsData]); // Ensure joinUsData is in the dependency array
+  }, [joinUsData]);
 
-
-
-
-
-  // ------ANIMATION
-
-
-
-useEffect(() => {
-  const observer = new IntersectionObserver(
+  // Intersection Observer for the section animation
+  useEffect(() => {
+    const observer = new IntersectionObserver(
       (entries) => {
-          entries.forEach((entry) => {
-              const bgMedia = entry.target;
-              if (entry.isIntersecting) {
-                  bgMedia.classList.add('slide-up');
-              } else {
-                  bgMedia.classList.remove('slide-up');
-              }
-          });
-      },
-      { threshold: 0.0 }  // Adjust the threshold as needed
-  );
-
-  if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-  }
-
-  return () => {
-      if (sectionRef.current) {
-          observer.unobserve(sectionRef.current);
-      }
-  };
-}, []);
-
-
-// TEXT_comp-kkux3thlinlineContent
-useEffect(() => {
-  const Section2mage = document.getElementById('Section2mage');
-
-  const observer = new IntersectionObserver(
-      (entries) => {
-          entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                Section2mage.classList.add('bg-pan-right');
-              } else {
-                Section2mage.classList.remove('bg-pan-right');
-              }
-          });
-      },
-      { threshold: 0.0 }  // Adjust the threshold as needed
-  );
-
-  if (section2ImageRef.current) {
-      observer.observe(section2ImageRef.current);
-  }
-
-  return () => {
-      if (section2ImageRef.current) {
-          observer.unobserve(section2ImageRef.current);
-      }
-  };
-}, []);
-
-useEffect(() => {
-  const Section2TextComp = document.getElementById('Section2TextComp');
-  // const Section2TextComp = document.getElementById('#aboutSection3Paragraph');
-  const observer = new IntersectionObserver(
-    (entries) => {
         entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              Section2TextComp.classList.add('slide-in-right');
-            } else {
-              Section2TextComp.classList.remove('slide-in-right');
-            }
-              
-          });
-      },
-      { threshold: 0.1 }  // Adjust the threshold as needed
-  );
-
-   if (Section2TextCompRef.current) {
-          observer.observe(Section2TextCompRef.current);
-      }
-
-      return () => {
-           if (Section2TextCompRef.current) {
-              observer.unobserve(Section2TextCompRef.current);
-            }
-          };
-}, []);
-
-
-
-useEffect(() => 
-    
-  {const isDesktopOrTablet = () => {
-  // Check if the device width is greater than a mobile breakpoint (e.g., 768px)
-  return window.innerWidth >= 768;
-};
-  if (!isDesktopOrTablet()) {
-    // Do not apply the animation on mobile devices
-    return;
-  }
-
-  const section3Image = document.getElementById('section3Image');
-  // const Section2TextComp = document.getElementById('#aboutSection3Paragraph');
-  const observer = new IntersectionObserver(
-    (entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              section3Image.classList.add('bg-pan-right')
-            } else {
-              section3Image.classList.remove('bg-pan-right');
-            }
-              
-          });
-      },
-      { threshold: 0.1 }  // Adjust the threshold as needed
-  );
-
-   if (section3ImageRef.current) {
-          observer.observe(section3ImageRef.current);
-      }
-
-      return () => {
-          if (section3ImageRef.current) {
-              observer.unobserve(section3ImageRef.current);
+          const target = entry.target;
+          if (entry.isIntersecting) {
+            target.classList.add('slide-up');
+          } else {
+            target.classList.remove('slide-up');
           }
-       };
-}, []);
+        });
+      },
+      { threshold: 0.1 } // Adjust threshold for when the element becomes visible
+    );
 
-if (loading) {
-  return <div>Loading...</div>;
-}
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
 
-if (!sectionIntro ) {
-  return <div>No data found.</div>;
-}
+    if (sectionIntroRef.current) {
+      observer.observe(sectionIntroRef.current); // Add observer for sectionIntroRef
+    }
+
+    return () => {
+      if (sectionRef.current) observer.unobserve(sectionRef.current);
+      if (sectionIntroRef.current) observer.unobserve(sectionIntroRef.current);
+    };
+  }, []);
+
+  // Animation for Section 2 Image
+  useEffect(() => {
+    const Section2mage = document.getElementById('Section2mage');
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            Section2mage.classList.add('bg-pan-right');
+          } else {
+            Section2mage.classList.remove('bg-pan-right');
+          }
+        });
+      },
+      { threshold: 0.0 } // Adjust the threshold as needed
+    );
+
+    if (section2ImageRef.current) {
+      observer.observe(section2ImageRef.current);
+    }
+
+    return () => {
+      if (section2ImageRef.current) {
+        observer.unobserve(section2ImageRef.current);
+      }
+    };
+  }, []);
+
+  // Animation for Section 2 Text
+  useEffect(() => {
+    const Section2TextComp = document.getElementById('Section2TextComp');
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            Section2TextComp.classList.add('slide-in-right');
+          } else {
+            Section2TextComp.classList.remove('slide-in-right');
+          }
+        });
+      },
+      { threshold: 0.1 } // Adjust the threshold as needed
+    );
+
+    if (Section2TextCompRef.current) {
+      observer.observe(Section2TextCompRef.current);
+    }
+
+    return () => {
+      if (Section2TextCompRef.current) {
+        observer.unobserve(Section2TextCompRef.current);
+      }
+    };
+  }, []);
+
+  // Animation for Section 3 Image
+  useEffect(() => {
+    const isDesktopOrTablet = () => window.innerWidth >= 768;
+
+    if (!isDesktopOrTablet()) {
+      // Skip animation on mobile devices
+      return;
+    }
+
+    const section3Image = document.getElementById('section3Image');
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            section3Image.classList.add('bg-pan-right');
+          } else {
+            section3Image.classList.remove('bg-pan-right');
+          }
+        });
+      },
+      { threshold: 0.1 } // Adjust the threshold as needed
+    );
+
+    if (section3ImageRef.current) {
+      observer.observe(section3ImageRef.current);
+    }
+
+    return () => {
+      if (section3ImageRef.current) {
+        observer.unobserve(section3ImageRef.current);
+      }
+    };
+  }, []);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (!sectionIntro) {
+    return <div>No data found.</div>;
+  }
 
 
   return (
@@ -223,7 +211,7 @@ if (!sectionIntro ) {
                          data-bg-effect-name="BgParallax"
                          data-has-ssr-src=""
                        >
-                          <BlurImage className="h-[800px] lg:h-[1007px]"
+                         <Image className="h-[800px] lg:h-[1007px]"
                           src={'/blockchain2.jpeg'}
                            alt=""
                            style={{ width: "1963px",  objectFit: "cover", objectPosition: "50% 0%" }}
@@ -238,7 +226,7 @@ if (!sectionIntro ) {
                       ref={sectionRef}
                       data-mesh-id="comp-kkuwu6gjinlineContent" 
                       data-testid="inline-content" 
-                      className="mwF7X1 absolute top-[33%] left-[10%]">
+                      className="mwF7X1 absolute top-[13%] left-[10%] !z-40">
                      <div
                      
                      > 
@@ -247,7 +235,7 @@ if (!sectionIntro ) {
                          !font-bold text-center text-[36px] xl:text-[96px]">
                          PROXY REALESTATE <br class="wixui-rich-text__text "/>
                         </h1>
-                       <div className="HcOXKn c9GqVL QxJLC3  
+                       <div  id="SlideInUp" ref={sectionIntroRef} className="HcOXKn c9GqVL QxJLC3  
                             text-center comp-kkuwwx9z
                             wixui-rich-text lg:mb-8">
                          <h1 className="font_0 text-white" 
@@ -261,7 +249,7 @@ if (!sectionIntro ) {
                        </div>
                          </div>
                      <a href="/" target="_self" class="wixui-rich-text__text hover:text-white  text-black  !font-bold text-center text-[36px] xl:text-[96px]">— ODFIT —<br class="wixui-rich-text__text "/></a>
-                       {/* <div className="HcOXKn c9GqVL QxJLC3 comp-kkuwwx9z wixui-rich-text lg:mb-8">
+                       <div    id="SlideInUp" ref={sectionIntroRef} className="HcOXKn c9GqVL QxJLC3 comp-kkuwwx9z wixui-rich-text lg:mb-8">
                          <h1 className="font_0 wixui-rich-text__text min-[1200px]:max-w-[40vw]" style={{ lineHeight: "normal", fontSize: "76px" }}>
                            <span style={{ letterSpacing: "0.02em" }} className="wixui-rich-text__text">
                              <span className="color_11 wixui-rich-text__text">
@@ -269,7 +257,7 @@ if (!sectionIntro ) {
                              </span>
                            </span>
                          </h1>
-                       </div> */}
+                       </div>
                        <div className="HcOXKn c9GqVL QxJLC3 comp-kkuxe0vg wixui-rich-text xl:max-w-lg min-[1300px]:max-w-[40vw]"
                         
                        >
@@ -288,7 +276,7 @@ if (!sectionIntro ) {
                        </div>
                      </div>
                    </div>
-                   {/* <div id="SlideInFromLeft"
+                   <div id="SlideInFromLeft"
                       ref={sectionRef}
                       data-mesh-id="comp-kkuwu6gjinlineContent" 
                       data-testid="inline-content" 
@@ -332,7 +320,7 @@ if (!sectionIntro ) {
                        </div>
                        </div>
                      </div>
-                   </div> */}
+                   </div>
                  </div>
                </div>
           
