@@ -1,6 +1,6 @@
 'use server';
 import { Gradient } from '@/components/gradient'
-import { Container } from '@/components/container'
+import { Container } from '@/components/Container'
 // import clsx from 'clsx';
 // import Hero11 from '../../public/assets/11.jpeg'
 // import hero12 from '../../public/assets/12.jpeg'
