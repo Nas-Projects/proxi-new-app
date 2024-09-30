@@ -43,7 +43,7 @@ async function Home({}){
 //  );
   return ( 
   <div className="relative">
-     <Gradient className="absolute inset-2 bottom-0 rounded-4xl ring-1 ring-inset ring-black/5" />
+     {/* <Gradient className="absolute inset-2 bottom-0 rounded-4xl ring-1 ring-inset ring-black/5" /> */}
        <Container className="relative">
     <> {loading ? (
       <Spinner />
