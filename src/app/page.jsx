@@ -49,7 +49,7 @@ async function Home({}){
       <Spinner />
       ) :(
    
-     <div className="isolate flex min-h-dvh items-center justify-center">
+     <div className="isolate flex min-h-dvh items-center justify-center t">
       <div className="relative w-full ">
 
         <Hero   //  heroDetails={heroDetails}
