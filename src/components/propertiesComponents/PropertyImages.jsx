@@ -5,7 +5,7 @@ import BlurImage from '../blur-image';
 const PropertyImages = ({ images }) => {
   return (
     <Gallery>
-      <section className='bg-blue-50 p-4'>
+      <section className='bg-blue-50 md:p-4 space-y-2'>
         <div className='container mx-auto'>
           {images.length === 1 ? (
             <Item

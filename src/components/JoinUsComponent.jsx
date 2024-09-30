@@ -1,10 +1,10 @@
 "use client" 
 
 import Link from 'next/link'
-import clsx from 'clsx'
+// import clsx from 'clsx'
 import { useEffect, useRef, useState } from "react";
-import { urlFor } from "@/sanity/lib/image.js";
-import BlurImage from './blur-image';
+// import { urlFor } from "@/sanity/lib/image.js";
+// import BlurImage from './blur-image';
 import Image from 'next/image';
 import {useInView} from 'framer-motion';
 

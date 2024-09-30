@@ -46,8 +46,9 @@ const PropertyHeaderImage = ({ image, propertyTitle, propertyType, forRentorSale
             height={0}
             />
           </div>
-          <p className="paragraph-small text-bold">Compare</p>
-        </a>
+          <div className="inline-flex gap-x-6">
+              <p className="paragraph-small text-bold">Compare</p>
+          </div>
         <a href="#" className="detail-block w-inline-block">
           <div className="realestate-iconn paragraph-small">
           <BlurImage
@@ -61,6 +62,8 @@ const PropertyHeaderImage = ({ image, propertyTitle, propertyType, forRentorSale
           </div>
           <p className="paragraph-small text-bold">Save as favorite</p>
         </a>
+        </a>
+        
       </div>
     </div>
   </div>

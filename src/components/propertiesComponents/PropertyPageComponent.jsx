@@ -96,7 +96,7 @@ console.log("PROPERTY_PAGE_COMPONENT", propertyData)
         <div className="main-container w-container">
          {/* ------ Property-Main Container */}
         <section className='block relative lg:grid lg:grid-cols-7'>
-         <div className="col-span-5">
+         <div className="col-span-5 mt-4">
             {property.images.length > 1 && <PropertyImages images={property.images} />}
             {/* <PropertyGalleryCard images={property} /> */}
          </div>
@@ -107,7 +107,7 @@ console.log("PROPERTY_PAGE_COMPONENT", propertyData)
          </section>
 
    
-       <div className="section breadcrumps">
+       <div className="section breadcrumps mt-6 ">
         </div>  
         <PropertyDetailsCard property={property} classes={'min-w-[max-w-[42em] !max-w-[42em] h-[fit-content] relative  lg:sr-only'}/>
 
