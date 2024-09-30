@@ -4,8 +4,8 @@ import Link from 'next/link'
 // import clsx from 'clsx'
 import { useEffect, useRef, useState } from "react";
 // import { urlFor } from "@/sanity/lib/image.js";
-// import BlurImage from './blur-image';
-import Image from 'next/image';
+
+// import Image from 'next/image';
 import {useInView} from 'framer-motion';
 
 import {
@@ -14,6 +14,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
+import BlurImage from './blur-image';
 
 
 export default function JoinUsComponent({joinUsData }) {
@@ -200,7 +201,7 @@ export default function JoinUsComponent({joinUsData }) {
                          data-bg-effect-name="BgParallax"
                          data-has-ssr-src=""
                        >
-                         <Image className="h-[800px] lg:h-[1007px]"
+                         <BlurImage className="h-[800px] lg:h-[1007px]"
                           src={'/blockchain2.jpeg'}
                            alt=""
                            style={{ width: "1963px",  objectFit: "cover", objectPosition: "50% 0%" }}
@@ -232,28 +233,28 @@ export default function JoinUsComponent({joinUsData }) {
                          </h1>
                          <h1 style={{
                             transition: "all 0.5s ease-in-out",
-                            opacity: !isInView ? 1 : 1}}
+                            opacity: !isInView ? 1 : 0}}
                             className="text-custom-gradient text-left 
                               !font-bold text-center text-[36px] xl:text-[86px] max-[1700px]::text-[96px]">
                               PROXY REALESTATE <br class="wixui-rich-text__text "/>
                         </h1>
-                       <div id="SlideInUp" ref={sectionIntroRef} className="text-center 
+                       <div ref={sectionIntroRef} className="text-center 
                             wixui-rich-text lg:mb-8 h-full">
-                        <div id="SlideInUp" ref={sectionIntroRef} className="wixui-rich-text lg:mb-8">
-                         <h1 className="font_0 wixui-rich-text__text min-[1200px]:max-w-[80vw]" style={{ lineHeight: "normal", fontSize: "76px" }}>
+                        <div ref={sectionIntroRef} className="wixui-rich-text lg:mb-8">
+                         {/* <h1 className="font_0 wixui-rich-text__text min-[1200px]:max-w-[80vw]" style={{ lineHeight: "normal", fontSize: "76px" }}>
                            <span style={{ letterSpacing: "0.02em" }} className="wixui-rich-text__text">
                              <span className="color_11 wixui-rich-text__text">
-                            {section1.title}
+                            {sectionIntro.title}
                              </span>
                            </span>
-                         </h1>
+                         </h1> */}
                          </div>
                        </div>
                      </div>
                       
                      
                        </div>
-                       <div className=" wixui-rich-text lg:px-24 xl:px-44 backdrop-blur mt-12 text-right">
+                       <div className=" wixui-rich-text lg:px-24 xl:px-44 backdrop-blur mt-12 text-left lg:text-right">
                          <p  id="SlideInUp"
                           ref={sectionRef}
                           className="font_7 wixui-rich-text__text"
@@ -264,6 +265,16 @@ export default function JoinUsComponent({joinUsData }) {
                              {sectionIntro}
                              </span>
                            </span>
+
+                           <div className=" lg:!float-right lg:!mr-[-20%] lg:mb-[20vh]hover:!text-white bg-wtransparent hover:bg-black 
+                                  hover:!text-white dark:hover:!text-white mx-6 sm:mx-0 w-[14em] 
+                                !mt-6 border border-1 border-white rounded-md lg:ml-[.2%] 
+                                text-center flex">
+                                <Link href="/contact"
+                                  className="uDW_Qe wixui-button PlZyDq text-white bg-custom-gradient  py-4 px-[10%]" >
+                                  <span className="l7_2fn wixui-button__label hover:text-white dark:hover:!text-white">Sign up</span>
+                              </Link>
+                            </div>  
                          </p>
                        </div>
                      </div>
@@ -275,10 +286,10 @@ export default function JoinUsComponent({joinUsData }) {
                       className="mwF7X1 absolute top-[2%] left-[10%] max-w-[80vw]">
                      <div>
                     <div className="section-1-text-wrapp px-0 lg:px-[7%] min-[1400px]:px-[8%]" >
-                      <h1 href="/" target="_self" className="text-custom-gradient text-left mt-24 
+                      {/* <h1 href="/" target="_self" className="text-custom-gradient text-left mt-24 
                          !font-bold text-center text-[36px] xl:text-[96px]">
                          PROXY REALESTATE <br class="wixui-rich-text__text "/>
-                        </h1>
+                        </h1> */}
                        <div className="HcOXKn c9GqVL QxJLC3  
                             text-center comp-kkuwwx9z
                             wixui-rich-text lg:mb-8">
@@ -296,19 +307,21 @@ export default function JoinUsComponent({joinUsData }) {
                            <span  className="text-lg md:text-xl lg:text-2xl text-white">
                              <span>
                              {sectionIntro}
-                             </span>
-                           </span>
+                             </span> 
+                            <div className="lg:!float-right lg:!mr-[-12%] lg:mb-[20vh]  flex hover:bg-[var(--light-theme-disabled-color)]
+                                  hover:!text-white bg-wtransparent hover:bg-black 
+                                  hover:!text-white dark:hover:!text-white mx-6 sm:mx-0 w-[14em] 
+                                !mt-6 border border-1 border-white rounded-md lg:ml-[.2%] 
+                                text-center flex">
+                                <Link href="/contact"
+                                  className="uDW_Qe wixui-button PlZyDq text-white bg-custom-gradient  py-4 px-[20%]" >
+                                  <span className="l7_2fn wixui-button__label hover:text-white dark:hover:!text-white">Sign up</span>
+                              </Link>
+                              </div>  
+                           </span>  
+                             
                          </p> 
-                     <div className="flex hover:bg-[var(--light-theme-disabled-color)]
-                        hover:!text-white bg-wtransparent hover:bg-black 
-                        hover:!text-white dark:hover:!text-white mx-6 sm:mx-0 w-[14em] 
-                       !mt-6 border border-1 border-white rounded-md lg:ml-[.2%] 
-                       text-center flex">
-                      <Link href="/contact"
-                        className="uDW_Qe wixui-button PlZyDq text-white bg-custom-gradient  py-4 px-[20%]" >
-                        <span className="l7_2fn wixui-button__label hover:text-white dark:hover:!text-white">Sign up</span>
-                    </Link>
-                     </div>  
+                
                        </div>
                        </div>
                      </div>
@@ -337,7 +350,7 @@ export default function JoinUsComponent({joinUsData }) {
                         transform: !isInView ?  "translateY(0)" : "translateX(1000)",
                       }}
                      >
-                        <h2 class="text-white text-right lg:px-[3em]">
+                        <h2 class="text-white text-left lg:text-right lg:px-[3em]">
                         <span className='text-white mt-2 lg:mt-6 py-4 '>
                             {section1.sectionTitle.toUpperCase()}
                         </span>
@@ -350,20 +363,23 @@ export default function JoinUsComponent({joinUsData }) {
                         <p id="Section2TextComp" ref={sectionRef}   
                         className="font_7 wixui-rich-text__text !text-white" 
                            style={{ lineHeight: "1.4em", fontSize: "24px" }}>
-                          <span className=" text-lg text-right md:text-xl lg:text-2xl text-white">  
+                          <span className=" text-lg text-left lg:text-right md:text-xl lg:text-2xl text-white">  
                                 {section1.sectionContent}
-                          </span>
-                        </p>
-                      </div>
-                    <div  className="hover:bg-[var(--light-theme-disabled-color)] hover:!text-white bg-wtransparent hover:bg-black hover:!text-white dark:hover:!text-white mx-6 sm:mx-0 w-[14em] !flex content-center justify-center !mt-6 border border-1 border-white rounded-md lg:ml-[6.2%] text-center flex">
-                        <Link href="/contact"
-                            target="_self"
-                            className="uDW_Qe wixui-button PlZyDq text-white bg-custom-gradient  py-4 px-[20%]" >
-                          <span className="l7_2fn wixui-button__label hover:text-white dark:hover:!text-white">Reach out</span>
-                        </Link>
-
-           </div>
+                          </span> <div  style={{ lineHeight: "1.4em", fontSize: "24px" }}
+                       className="lg:!float-right lg:!mr-[-12%] lg:mb-[20vh] hover:!text-white bg-wtransparent hover:bg-black 
+                          hover:!text-white dark:hover:!text-white mx-6 sm:mx-0 w-[14em] 
+                        !mt-6 border border-1 border-white rounded-md lg:ml-[.2%] 
+                    text-center flex">
+                    <Link href="/contact"
+                      className="uDW_Qe wixui-button PlZyDq text-white bg-custom-gradient  py-4 px-[10%]" >
+                      <span className="l7_2fn wixui-button__label hover:text-white dark:hover:!text-white">Join US</span>
+                  </Link>
+                  </div>  
         
+                        </p> 
+                
+                      </div>
+                
         </div>
       </div>
     </div>
@@ -375,7 +391,7 @@ export default function JoinUsComponent({joinUsData }) {
                   max-w-5xl relative bg-black !relative 
                   pb-44 pt-[1em] xl:py-[1rem] py-6 xl:pb-44">
             <div className="center lg:pt-4 lg:pb-24  "> 
-            <h1 className="text-white pb-4 py-12 ">
+            <h1 className="text-left lg:text-center text-white pb-4 py-12 ">
               More FAQs
             </h1>
             <div className="expandable mt-6 lg:mt-12 sm:grid grid-cols-1 
