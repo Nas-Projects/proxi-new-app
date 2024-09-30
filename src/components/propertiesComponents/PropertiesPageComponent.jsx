@@ -368,7 +368,7 @@ if (filters.size) {
   return loading ? (
     <Spinner />
   ) : (
-    <div className="main-properties px-0 py-12">
+    <div className="main-properties px-0 py-12 overflow-hidden bg-gray-50">
       <div className="main-container w-container">
         <div className="title-wrap-center mb-6 lg:mb-20"  
               style={{

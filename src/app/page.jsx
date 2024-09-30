@@ -43,7 +43,8 @@ async function Home({}){
   return (
     loading ? (
       <Spinner />
-    ) : <div className="relative w-full">
+    ) : <div className="main overflow-hidden bg-gray-50">
+      <div className="relative w-full ">
 
         <Hero   //  heroDetails={heroDetails}
           />
@@ -226,7 +227,8 @@ async function Home({}){
     
     
 
-    </div>)
+    </div>
+      </div>)
 
 };
 
