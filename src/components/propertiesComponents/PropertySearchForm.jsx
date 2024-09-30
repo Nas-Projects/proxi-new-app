@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import { Checkbox, Field, Input } from '@headlessui/react';
 
 import clsx from 'clsx';
-import Link from 'next/link';
+// import Link from 'next/link';
 // import { CheckIcon } from '@heroicons/react/20/solid';
 // import { Button } from '../button';
 
@@ -27,7 +27,7 @@ const PropertySearchForm = () => {
   };
 
   return (
-      <div className="w-full max-w-[90vw] md:max-w-5xl lg:max-w-full rounded-xl bg-white shadow-md ring-1 ring-black/5">
+      <div className="w-full adds max-w-[90vw] md:max-w-5xl lg:max-w-full rounded-xl bg-white shadow-md ring-1 ring-black/5">
         <form action="#" method="POST" className="p-7 sm:p-11 space-y-4" onSubmit={handleSubmit}>
           <Field className="mt-8 space-y-3">
           <Input required
@@ -86,7 +86,7 @@ const PropertySearchForm = () => {
                type='submit'
                className='md:ml-4 mt-4 md:mt-0 w-full md:w-auto px-6 py-3 
                  rounded-lg bg-black text-white bg-custom-gradient hover:bg-black  focus:outline-none focus:ring focus:ring-blue-500'>
-               Search
+               Search Form
              </button>
             </div>
           </div>
