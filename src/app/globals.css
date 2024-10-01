@@ -4685,7 +4685,10 @@ p{margin-top:0;margin-bottom:10px;}
 }
 h4{margin-top:0;margin-bottom:16px;font-family:Poppins, sans-serif;font-size:24px;font-weight:600;line-height:32px;}
 p{margin-bottom:0;}
-.main-container{max-width:1248px;padding-left:24px;padding-right:24px;}
+.main-container{
+  max-width:1248px;
+  padding-left:24px;
+  padding-right:24px;}
 .paragraph-small{font-size:14px;line-height:28px;}
 .cta{grid-column-gap:8px;background-color:var(--midnight-blue);color:var(--background);letter-spacing:normal;border-radius:6px;justify-content:center;align-items:center;height:46px;padding:12px 24px;font-family:Poppins, sans-serif;font-size:15px;font-weight:600;line-height:22px;text-decoration:none;transition:transform .2s;display:flex;}
 .cta:hover{transform:scale(1.03);}
@@ -4713,7 +4716,9 @@ p{margin-bottom:0;}
 .houe-grid{grid-template-columns:1fr 1fr;}
 }
 @media screen and (max-width: 479px){
-.main-container{padding-left:16px;padding-right:16px;}
+.main-container{
+  padding-left:16px;
+  padding-right:16px;}
 .houe-grid{grid-template-columns:1fr;}
 .house-button-wrap{grid-row-gap:16px;text-align:center;flex-direction:column;align-items:center;}
 .wrap-detail-value{font-size:18px;}
@@ -5086,7 +5091,9 @@ The @supports CSS at-rule lets you specify CSS declarations that depend on a bro
 a{font-weight:400;text-decoration:inherit;
   /* color:#E91E63; */
 }
-.main-container{flex:1 0 auto;min-height:0;display:grid;box-sizing:border-box;grid-template-rows:[left-start center-start right-start] 1fr [left-end center-end right-end];grid-template-columns:[left-start center-start] 1fr [left-end right-start] 1fr [center-end right-end];align-items:center;justify-content:center;justify-items:center;grid-column-gap:160px;column-gap:160px;padding:80px;width:100%;}
+.main-container{flex:1 0 auto;min-height:0;
+  /* display:grid; */
+  box-sizing:border-box;grid-template-rows:[left-start center-start right-start] 1fr [left-end center-end right-end];grid-template-columns:[left-start center-start] 1fr [left-end right-start] 1fr [center-end right-end];align-items:center;justify-content:center;justify-items:center;grid-column-gap:160px;column-gap:160px;padding:80px;width:100%;}
 @media (max-width: 480px){
 .main-container{padding:0;}
 }

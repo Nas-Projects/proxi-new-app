@@ -112,10 +112,10 @@ console.log("PROPERTY_PAGE_COMPONENT", propertyData)
         <PropertyDetailsCard property={property} classes={'min-w-[max-w-[42em] !max-w-[42em] h-[fit-content] relative  lg:sr-only'}/>
 
         <div className="breadcrumb w-full bg-slate-200 py-4 px-6 lg:px-12 xl:px-24">
-            <BreadcrumbDemo 
+            {/* <BreadcrumbDemo 
               marketCategory={marketCategory}
               propertyName={property.name}
-              />
+              /> */}
           </div> 
             <div className="property-share">
               <aside className='space-y-4 lg:grid lg:grid-cols-3'> 
@@ -254,47 +254,47 @@ export default PropertyPageComponent;
 
 
 
-export function BreadcrumbDemo({marketCategory, propertyName}) {
-  return (
-    <Breadcrumb>
-      <BreadcrumbList>
-        <BreadcrumbItem>
-          <BreadcrumbLink href="/">   
-             <Link href='/properties'
-                className='custom-text-gradient hover:text-blue-600 flex items-center'>
-                <FaArrowLeft className='mr-2' /> Back to Properties
-              </Link>
-            </BreadcrumbLink>
-        </BreadcrumbItem>
-        <BreadcrumbSeparator />
-           {/* <BreadcrumbItem>
-        <DropdownMenu>
-           <DropdownMenuTrigger className="flex items-center gap-1">
-              <BreadcrumbEllipsis className="h-4 w-4" />
-              <span className="sr-only">Toggle menu</span>
-            </DropdownMenuTrigger> */}
-             {/*  <DropdownMenuContent align="start">
-            <DropdownMenuItem> 
-              <img
-                src="https://cdn.prod.website-files.com/63c93770199def60f97204e0/63c93770199def4aaa72056e_arrow_right.svg"
-                loading="lazy"
-                alt=""
-              /> 
-              {marketCategory}</DropdownMenuItem>
-              <DropdownMenuItem>{marketCategory == "For sale" ? "Lease" : "Sale"}</DropdownMenuItem>
-              <DropdownMenuItem>GitHub</DropdownMenuItem>
-            </DropdownMenuContent> 
-          </DropdownMenu>
-        </BreadcrumbItem>
-        <BreadcrumbSeparator />*/}
-        <BreadcrumbItem>
-          <BreadcrumbLink href={`/properties/${marketCategory}`}>{marketCategory}</BreadcrumbLink>
-        </BreadcrumbItem>
-        <BreadcrumbSeparator />
-        <BreadcrumbItem>
-          <BreadcrumbPage>{propertyName}</BreadcrumbPage>
-        </BreadcrumbItem>
-      </BreadcrumbList>
-    </Breadcrumb>
-  )
-}
+// export function BreadcrumbDemo({marketCategory, propertyName}) {
+//   return (
+//     <Breadcrumb>
+//       <BreadcrumbList>
+//         <BreadcrumbItem>
+//           <BreadcrumbLink href="/">   
+//              <Link href='/properties'
+//                 className='custom-text-gradient hover:text-blue-600 flex items-center'>
+//                 <FaArrowLeft className='mr-2' /> Back to Properties
+//               </Link>
+//             </BreadcrumbLink>
+//         </BreadcrumbItem>
+//         <BreadcrumbSeparator />
+//            {/* <BreadcrumbItem>
+//         <DropdownMenu>
+//            <DropdownMenuTrigger className="flex items-center gap-1">
+//               <BreadcrumbEllipsis className="h-4 w-4" />
+//               <span className="sr-only">Toggle menu</span>
+//             </DropdownMenuTrigger> */}
+//              {/*  <DropdownMenuContent align="start">
+//             <DropdownMenuItem> 
+//               <img
+//                 src="https://cdn.prod.website-files.com/63c93770199def60f97204e0/63c93770199def4aaa72056e_arrow_right.svg"
+//                 loading="lazy"
+//                 alt=""
+//               /> 
+//               {marketCategory}</DropdownMenuItem>
+//               <DropdownMenuItem>{marketCategory == "For sale" ? "Lease" : "Sale"}</DropdownMenuItem>
+//               <DropdownMenuItem>GitHub</DropdownMenuItem>
+//             </DropdownMenuContent> 
+//           </DropdownMenu>
+//         </BreadcrumbItem>
+//         <BreadcrumbSeparator />*/}
+//         <BreadcrumbItem>
+//           <BreadcrumbLink href={`/properties/${marketCategory}`}>{marketCategory}</BreadcrumbLink>
+//         </BreadcrumbItem>
+//         <BreadcrumbSeparator />
+//         <BreadcrumbItem>
+//           <BreadcrumbPage>{propertyName}</BreadcrumbPage>
+//         </BreadcrumbItem>
+//       </BreadcrumbList>
+//     </Breadcrumb>
+//   )
+// }

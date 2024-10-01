@@ -22,7 +22,7 @@ export default function OtherProperties({}) {
             className="house-card w-inline-block"
           >
             <div className="house-content">
-              <div className="house-title">Solhjulet 236</div>
+              <div className="house-title">Brand New Condo in Harlem</div>
               <div className="house-card-divider" />
               <div className="house-detail-wrap">
                 <div className="detail-block white-block">
@@ -34,7 +34,7 @@ export default function OtherProperties({}) {
                       className="image"
                     />
                   </div>
-                  <p className="paragraph-small">Stavanger</p>
+                  <p className="paragraph-small">Harlem</p>
                 </div>
                 <div className="detail-block white-block">
                   <div className="icon paragraph-small">
@@ -46,8 +46,8 @@ export default function OtherProperties({}) {
                     />
                   </div>
                   <div className="wrap-detail-value">
-                    <p className="paragraph-small">160</p>
-                    <p className="paragraph-small">m2</p>
+                    <p className="paragraph-small">1240</p>
+                    <p className="paragraph-small">ft2</p>
                   </div>
                 </div>
               </div>
