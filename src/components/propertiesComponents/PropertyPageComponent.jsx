@@ -70,7 +70,7 @@ console.log("PROPERTY_PAGE_COMPONENT", propertyData)
   }
 
 
-  const marketCategory = property?.forRent === true ? "For rent" : "For sale"
+  // const marketCategory = property?.forRent === true ? "For rent" : "For sale"
   return (
     <div className=''>
       {loading && <Spinner loading={loading} />}
