@@ -343,8 +343,8 @@ console.log("errorMessage", errorMessage);
               href={item.href}
               aria-current={item.current ? 'page' : undefined}
               className={classNames(
-                item.current ? 'bg-pink-100/80 text-black text-2xl' : 'mainText hover:bg-pink-300 hover:text-black dark:hover:text-white',
-                'block rounded-md px-3 py-2  text-2xl font-medium ',
+                item.current ? 'bg-pink-100/80 text-black !text-[1.425rem]' : 'mainText hover:bg-pink-300 hover:text-black dark:hover:text-white',
+                'block rounded-md px-3 py-2  !text-[1.325rem] font-medium ',
               )}
             >
               {item.name}

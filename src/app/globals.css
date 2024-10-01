@@ -5075,7 +5075,24 @@ The @supports CSS at-rule lets you specify CSS declarations that depend on a bro
   text-decoration: none;
   width: 100%;
 }
-
+.margin-top-15-rem {
+  margin-top: 15rem;
+}
+@media (max-width: 7024px) {
+  .margin-top-15-rem {
+    margin-top: 15rem;
+  }
+}
+.text-custom-gradient-3 {
+  background: linear-gradient(to bottom, #ca89ae, #a01dc1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.text-custom-gradient-4 {
+  background: linear-gradient(to bottom, #dac3d0c9, #f8deff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
 .from-\[\#fff1be0f\] {
   --tw-gradient-from: #fff1be0f var(--tw-gradient-from-position);

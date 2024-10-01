@@ -95,7 +95,7 @@ console.log("PROPERTY_PAGE_COMPONENT", propertyData)
           </div>
         <div className="main-container w-container px-6 lg:!px-0">
          {/* ------ Property-Main Container */}
-        <section className='block relative lg:grid lg:grid-cols-7'>
+        <section className='block relative lg:grid lg:grid-cols-7 px-6'>
          <div className="col-span-5 mt-4">
             {property.images.length > 1 && <PropertyImages images={property.images} />}
             {/* <PropertyGalleryCard images={property} /> */}
@@ -136,7 +136,7 @@ console.log("PROPERTY_PAGE_COMPONENT", propertyData)
               
               {property.category == "Commercial" && 
                 <div className="t">
-                  <h3 className="text-left text-2xl font-bold lg:!text-4xl py-4">Additional Information</h3>
+                  <h3 className="max-[800px]:px-6  mx-4 mt-12 text-left text-2xl font-bold lg:!text-4xl py-4">Additional Information</h3>
                   <CutomTableDataList retail={property?.retail} residential={property} investement={property}/>
                 </div>}
 

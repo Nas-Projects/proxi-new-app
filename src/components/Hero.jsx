@@ -163,7 +163,7 @@ export default function Hero() {
             <i className="fas fa-arrow-left" />
           </div>
         </div>
-        <div className="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal">
+        {/* <div className="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal">
           <span
             className="swiper-pagination-bullet swiper-pagination-bullet-active"
             tabIndex={0}
@@ -183,7 +183,7 @@ export default function Hero() {
             role="button"
             aria-label="Go to slide 3"
           />
-        </div>
+        </div> */}
         <span
           className="swiper-notification"
           aria-live="assertive"

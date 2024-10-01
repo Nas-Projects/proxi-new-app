@@ -75,13 +75,13 @@ export default function CutomTableDataList({ retail, office, investmentSale }) {
   const tableData = getTableData();
 
   return (
-    <div className="w-full">
-      <div className="w-full">
+    <div className="w-full max-w-3xl max-[800px]:px-6 bg-white rounded-xl">
+ <div className="w-full px-4 lg:px-6 pb-6 -pt-2  ">
   <Table>
     <TableHeader>
       <TableRow>
-        <TableCell className="text-left text-xl font-bold sr-only">Additional Details</TableCell>
-        <TableCell className="text-right text-xl font-bold sr-only">Details</TableCell>
+        {/* <TableCell className="text-left text-xl font-bold sr-only">Additional Details</TableCell>
+        <TableCell className="text-right text-xl font-bold sr-only">Details</TableCell> */}
       </TableRow>
     </TableHeader>
     <TableBody>
