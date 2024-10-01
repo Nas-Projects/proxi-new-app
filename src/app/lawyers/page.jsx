@@ -2,6 +2,11 @@
 
 export default function CommunityLead(){
     return <div className="bg-gray-100 py-8 mb-44">
+          <div className="justify-center  px-6 pt-6 py-10 lg:px-12 xl:px-12 rounded-xl lg:py-12 xl:-my-4 ">
+          <h3 className="font-bold !text-4xl py-4 text-center">Meet The Lawyers</h3>
+           
+        </div>   
+
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <ul
         role="list"

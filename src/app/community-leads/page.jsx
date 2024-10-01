@@ -1,7 +1,13 @@
 
 
 export default function CommunityLead(){
-    return  <div className="bg-gray-100 py-8 my-34">
+    return  <div className="relative bg-gray-100 py-8 mb-64 mx-auto py-64 ">
+
+       <div className="justify-center  px-6 pt-6 py-10 lg:px-12 xl:px-12 rounded-xl lg:py-12 xl:-my-4 ">
+          <h3 className="font-bold !text-4xl py-4 text-center">Communty Leads</h3>
+          <h2 className="text-xl text-center font-medium text-gray-900">Pick a lead here </h2>
+        </div>   
+
     
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     <div>
@@ -12,7 +18,7 @@ export default function CommunityLead(){
       >
         <li className="col-span-1 flex rounded-md shadow-sm">
           <div className="flex w-16 flex-shrink-0 items-center justify-center bg-pink-600 rounded-l-md text-sm font-medium text-white">
-           Manhattan
+           M
           </div>
           <div className="flex flex-1 items-center justify-between truncate rounded-r-md border-b border-r border-t border-gray-200 bg-white">
             <div className="flex-1 truncate px-4 py-2 text-sm">
@@ -54,7 +60,7 @@ export default function CommunityLead(){
               >
              Proxy's Leads
               </a>
-              <p className="text-gray-500">12 Listings</p>
+              <p className="text-gray-500">12 Leads</p>
             </div>
             <div className="flex-shrink-0 pr-2">
               <button
@@ -86,7 +92,7 @@ export default function CommunityLead(){
               >
                 Brooklyn Leads
               </a>
-              <p className="text-gray-500">16 New Listings</p>
+              <p className="text-gray-500">16 New Posts</p>
             </div>
             <div className="flex-shrink-0 pr-2">
               <button
@@ -118,7 +124,7 @@ export default function CommunityLead(){
               >
                Rockaway, Queens Leads
               </a>
-              <p className="text-gray-500">8 Listings</p>
+              <p className="text-gray-500">8 Buyers Leads</p>
             </div>
             <div className="flex-shrink-0 pr-2">
               <button
