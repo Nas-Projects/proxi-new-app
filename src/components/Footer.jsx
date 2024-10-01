@@ -173,17 +173,17 @@ useEffect(() => {
             <div className="pt-12  pb-6 md:py-4 md:rounded-xl bg-custom-gradient group-hover:!bg-black px-25px lg:px-60px py-50px max-w-[600px]:!bg-indigo-400  text-white flex justify-center lg:justify-between items-center flex-col lg:flex-row gap-y-30px lg:gap-0 sm:whitespace-nowrap">
               <div>
                 <h5 className="text-xl md:text-26px lg:text-3xl xl:text-4xl text-white font-bold mb-15px">
-                  <span className="leading-1.3">Looking for a dream home?</span>
+                  <span className="leading-1.3">Looking for something else than whats out there?</span>
                 </h5>
                 <p className="text-white leading-1.8">
-                  We can help you realize your dream of a new home
+                  Proxy can help you buy or sell.
                 </p>
               </div>
               <div className='py-4'>
                 <h5 className="capitalize inline-block text-sm md:text-base text-primary-color hover:text-white hover:bg-primary-color relative group whitespace-nowrap font-normal transition-all duration-300 shadow-box-shadow-3 mb-0">
                   <span className="inline-block absolute top-0 right-0 w-full h-full bg-white group-hover:bg-secondary-color z-1 group-hover:w-0 transition-all duration-300" />
                   <Link
-                    href="contact.html"
+                    href="/properties"
                     className="relative z-10 px-5 md:px-25px lg:px-10 py-10px md:py-3 lg:py-17px group-hover:text-white leading-23px group-hover:bg-black"
                   >
                     Explore Properties <i className="icon-next" />
@@ -210,13 +210,13 @@ useEffect(() => {
                   <li>
                     <p className="leading-1.8 text-white flex">
                       <i className="icon-placeholder mr-15px mt-1" />
-                      <span>Brooklyn, New York, United States</span>
+                      <span>10 Lexington Avenue, 2R, New York, NY 10016</span>
                     </p>
                   </li>
                   <li>
-                    <Link href="tel:+0123-456789" className="leading-1.8 flex">
+                    <Link href="tel:+1(347)-987-0210" className="leading-1.8 flex">
                       <i className="icon-call mr-15px mt-1" />
-                      <span>+1845-641-5385</span>
+                      <span>+1(347)-987-0210</span>
                     </Link>
                   </li>
                   <li>
@@ -257,7 +257,7 @@ useEffect(() => {
                 </li>
                 <li>
                 <Link 
-                    href="blog.html"
+                    href="/blogs"
                     className="hover:text-secondary-color -translate-x-5 hover:translate-x-0 group leading-1.8 pl-4 lg:pl-6"
                   >
                     <span className="text-secondary-color pr-15px opacity-0 group-hover:opacity-100 transition-all duration-300">
@@ -268,7 +268,7 @@ useEffect(() => {
                 </li>
                 <li>
                 <Link 
-                    href="shop.html"
+                    href="/properties"
                     className="hover:text-secondary-color -translate-x-5 hover:translate-x-0 group leading-1.8 pl-4 lg:pl-6"
                   >
                     <span className="text-secondary-color pr-15px opacity-0 group-hover:opacity-100 transition-all duration-300">
@@ -279,7 +279,7 @@ useEffect(() => {
                 </li>
                 <li>
                   <Link
-                    href="contact.html"
+                    href="/blogs/revolutionizing-real-estate-with-blockchain-technology"
                     className="hover:text-secondary-color -translate-x-5 hover:translate-x-0 group leading-1.8 pl-4 lg:pl-6"
                   >
                     <span className="text-secondary-color pr-15px opacity-0 group-hover:opacity-100 transition-all duration-300">
@@ -288,9 +288,9 @@ useEffect(() => {
                    Blockchain
                   </Link>
                 </li>
-                <li>
+               {/*  <li>
                 <Link 
-                    href="locations.html"
+                    href="/locations"
                     className="hover:text-secondary-color -translate-x-5 hover:translate-x-0 group leading-1.8 pl-4 lg:pl-6"
                   >
                     <span className="text-secondary-color pr-15px opacity-0 group-hover:opacity-100 transition-all duration-300">
@@ -299,7 +299,7 @@ useEffect(() => {
                     Locations Map
                   </Link>
                 </li>
-               
+                */}
               </ul>
             </div>
             {/* footer services*/}
@@ -310,7 +310,7 @@ useEffect(() => {
               <ul className="space-y-[15px]">
                 <li>
                   <Link
-                    href="/comercial"
+                    href="/properties/search-results?location=&propertyType=retail"
                     className="hover:text-secondary-color -translate-x-5 hover:translate-x-0 group leading-1.8 pl-4 lg:pl-6"
                   >
                     <span className="text-secondary-color pr-15px opacity-0 group-hover:opacity-100 transition-all duration-300">
@@ -363,7 +363,7 @@ useEffect(() => {
                     Terms &amp; Conditions
                   </Link>
                 </li>
-                <li>
+                {/* <li>
                   <Link
                     href="/promotions"
                     className="hover:text-secondary-color -translate-x-5 hover:translate-x-0 group leading-1.8 pl-4 lg:pl-6"
@@ -373,7 +373,7 @@ useEffect(() => {
                     </span>
                     Promotional Offers
                   </Link>
-                </li>
+                </li> */}
               </ul>
             </div>
             {/* footer customer care*/}
@@ -382,7 +382,7 @@ useEffect(() => {
                 <span className="leading-1.3"> Customer</span>
               </h3>
               <ul className="space-y-[15px]">
-                <li>
+                {/* <li>
                   <Link
                     href="login.html"
                     className="hover:text-secondary-color -translate-x-5 hover:translate-x-0 group leading-1.8 pl-4 lg:pl-6"
@@ -392,10 +392,10 @@ useEffect(() => {
                     </span>
                     Login
                   </Link>
-                </li>
-                <li>
+                </li> */}
+                {/* <li>
                   <Link
-                    href="account.html"
+                    href="/account"
                     className="hover:text-secondary-color -translate-x-5 hover:translate-x-0 group leading-1.8 pl-4 lg:pl-6"
                   >
                     <span className="text-secondary-color pr-15px opacity-0 group-hover:opacity-100 transition-all duration-300">
@@ -404,7 +404,7 @@ useEffect(() => {
                     My account
                   </Link>
                 </li>
-                
+                 */}
              
                 <li>
                 <Link 
@@ -420,7 +420,7 @@ useEffect(() => {
   
                 <li>
                   <Link
-                    href="contact.html"
+                    href="/contact"
                     className="hover:text-secondary-color -translate-x-5 hover:translate-x-0 group leading-1.8 pl-4 lg:pl-6"
                   >
                     <span className="text-secondary-color pr-15px opacity-0 group-hover:opacity-100 transition-all duration-300">
@@ -442,12 +442,12 @@ useEffect(() => {
               {/* subscription input  */}
               <div>
                 <form className="w-full relative">
-                <input 
+                <input href="mailto:Hello@proxyre.io" 
                   className="email-input !mb-6 border-1 !border-pink-500  placeholder:text-paragraph-color outline-none border-2 "
                   inputMode="email"
                   placeholder="Email*"
                   type="email"
-                  bg-white rounded-md w-full text-sm text-paragraph-color pl-5 pr-50px 
+                  // bg-white rounded-md w-full text-sm text-paragraph-color pl-5 pr-50px 
                   name="location"
                   autoComplete="Enter location"
                   autoCapitalize="none"

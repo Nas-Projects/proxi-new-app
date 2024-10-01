@@ -15,7 +15,7 @@ import SectionContact from '@/components/propertiesComponents/SectionContact';
 import SectionBlockChain from '@/components/propertiesComponents/SectionBlockChain';
 import SectionJoin from '@/components/propertiesComponents/SectionJoin';
 import SectionTestimonial from '@/components/propertiesComponents/SectionTestimonial';
-import SectionServices from '@/components/propertiesComponents/SectionServices';
+// import SectionServices from '@/components/propertiesComponents/SectionServices';
 import SectionOurTeams from '@/components/propertiesComponents/SectionOurTeams';
 // import FeaturedListings from '@/components/propertiesComponents/FeaturedListings';
 import ProperTiesForSale from '@/components/propertiesComponents/ProperTiesForSale';
@@ -53,21 +53,21 @@ async function Home({}){
      <div className="isolate flex min-h-dvh items-center justify-center t">
       <div className="relative w-full ">
 
-        <Hero   //  heroDetails={heroDetails}
+          <Hero   //  heroDetails={heroDetails}
           />
-          {/* <div className="mx-auto lg:px-[10%] bg-transparent  absolute absolute top-[89vh] lg:top-[68vh] lg:mx-auto md:top-[70vh] xl:top-[67vh]"></div> */}
+           {/* <div className="mx-auto lg:px-[10%] bg-transparent  absolute absolute top-[89vh] lg:top-[68vh] lg:mx-auto md:top-[70vh] xl:top-[67vh]"></div> */}
            <div className="margin-top-15-rem mt-44 relative px-0.5 lg:mt-[-24em] xl:lg:mt-[-0vh] mx-auto lg:px-[10%] bg-transparent relative relative ">
            <SearchButtons />
            </div>
            <ProperTiesForSale properties={properties}/>
            <AboutProxy/>
            <PropertiesListSectionUI properties={properties}/>
-          {/* <FeaturedListings /> */}
+           {/* <FeaturedListings /> */}
            <SectionBlockChain/>
            <OurValues/> 
-          {/* <OurFocus/> */}
+           {/* <OurFocus/> */}
             <SectionTestimonial/>
-            <SectionServices/>
+            {/* <SectionServices/> */}
             <SectionOurTeams />
             <SectionJoin/>
             <SectionContact/>
