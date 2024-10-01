@@ -292,24 +292,42 @@ console.log("errorMessage", errorMessage);
                    </div>
                  
 
-                   :<div className='hidden md:ml-4 md:flex md:flex-shrink-0 md:items-center'>
-                     <MenuButton className="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"> 
-                      <button
-                        disabled={loading}
-                        onClick={() => {
-                          setLoading(true);
-                          signIn('google', { callbackUrl: `/properties` });
-                        }}
-                        className={`${
-                          loading
-                            ? 'bg-gray-200 border-gray-300'
-                            : 'bg-black hover:bg-white border-black'
-                        } w-36 h-8 py-1 text-white hover:text-black border rounded-md text-sm transition-all`}
-                      >
-                        {loading ? <LoadingDots color="gray" /> : 'Log in with Google'}
-                      </button> 
-                    </MenuButton>
-                  </div>
+                   :  <div className='hidden md:ml-4 md:flex md:flex-shrink-0 md:items-center'>
+                   <MenuButton className="relative flex rounded-full bg-white text-sm focus:outline-none ring-1  ring-black focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"> 
+                    <Link href='/'
+                      disabled={loading}
+                      // onClick={() => {
+                      //   setLoading(true);
+                      //   signIn('google', { callbackUrl: `/properties` });
+                      // }}
+                      className={`${
+                        loading
+                          ? 'bg-gray-200 border-pink-500'
+                          : 'bg-white/80 hover:bg-white border-black hover:border-pink-500'
+                      }      w-36 h-8 py-1 text-white hover:text-black border rounded-md text-sm transition-all`}
+                    >
+                      {loading ? <LoadingDots color="gray" /> : 'Log in with Google'}
+                    </Link> 
+                  </MenuButton>
+                </div>
+                  //  <div className='hidden md:ml-4 md:flex md:flex-shrink-0 md:items-center'>
+                  //    <MenuButton className="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"> 
+                  //     <button
+                  //       disabled={loading}
+                  //       onClick={() => {
+                  //         setLoading(true);
+                  //         signIn('google', { callbackUrl: `/properties` });
+                  //       }}
+                  //       className={`${
+                  //         loading
+                  //           ? 'bg-gray-200 border-gray-300'
+                  //           : 'bg-black hover:bg-white border-black'
+                  //       } w-36 h-8 py-1 text-white hover:text-black border rounded-md text-sm transition-all`}
+                  //     >
+                  //       {loading ? <LoadingDots color="gray" /> : 'Log in with Google'}
+                  //     </button> 
+                  //   </MenuButton>
+                  // </div>
                   }
                   </MenuButton>
 

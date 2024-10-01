@@ -203,16 +203,17 @@ useEffect(() => {
                     alt=""
                   />
                 </Link>
-                <p className="leading-1.8 mb-5 lg:mb-25px text-white pl-6">
+                <p className="leading-1.8 mb-5 lg:mb-25px text-white/90 pl-6 text-[1.275rem]">
                 Full Service Real Estate Brokerage - Innovating the transaction process - Blockchain Technology
                 </p>
-                <ul className="space-y-2">
+                <ul className="space-y-2 pl-2" >
                   <li>
                     <p className="leading-1.8 text-white flex">
-                      <i className="icon-placeholder mr-15px mt-1" />
+                      <i className="icon-placeholder mr-15px mt-1 lg:text-lg font-bold " />
                       <span>10 Lexington Avenue, 2R, New York, NY 10016</span>
                     </p>
                   </li>
+                  <div className="inline-flex space-y-2 space-x-2 lg::space-x-4">
                   <li>
                     <Link href="tel:+1(347)-987-0210" className="leading-1.8 flex">
                       <i className="icon-call mr-15px mt-1" />
@@ -225,6 +226,8 @@ useEffect(() => {
                       <span>info@proxyre.io</span>
                     </Link>
                   </li>
+                  </div>
+                 
                 </ul>
                 <ul className="flex items-center gap-x-5 mt-5 ml-4">
                 <div className="flex space-x-6">
@@ -240,16 +243,16 @@ useEffect(() => {
             </div>
             {/* footer company*/}
             <div className="xl:col-start-4 xl:col-span-2 mb-60px  ml-2 py-4 md:py-0">
-              <h3 className="text-22px font-bold mb-25px text-white">
+              <h3 className="text-[1.625rem] font-bold mb-25px text-white">
                 <span className="leading-1.3"> Company </span>
               </h3>
               <ul className="space-y-[15px] ml-4">
                 <li>
                 <Link 
                     href="/about"
-                    className="hover:text-secondary-color -translate-x-5 hover:translate-x-0 group leading-1.8 pl-4 lg:pl-6"
+                    className="hover:text-secondary-color text-[1.275rem;] -translate-x-5 hover:translate-x-0 group leading-1.8 pl-4 lg:pl-6"
                   >
-                    <span className="text-secondary-color pr-15px opacity-0 group-hover:opacity-100 transition-all duration-300">
+                    <span className="text-secondary-color text-[1.275rem;] pr-15px opacity-0 group-hover:opacity-100 transition-all duration-300">
                   
                     </span>
                     About
@@ -258,9 +261,9 @@ useEffect(() => {
                 <li>
                 <Link 
                     href="/blogs"
-                    className="hover:text-secondary-color -translate-x-5 hover:translate-x-0 group leading-1.8 pl-4 lg:pl-6"
+                    className="hover:text-secondary-color text-[1.275rem;] -translate-x-5 hover:translate-x-0 group leading-1.8 pl-4 lg:pl-6"
                   >
-                    <span className="text-secondary-color pr-15px opacity-0 group-hover:opacity-100 transition-all duration-300">
+                    <span className="text-secondary-color text-[1.275rem;] pr-15px opacity-0 group-hover:opacity-100 transition-all duration-300">
                   
                     </span>
                     Blog
@@ -269,9 +272,9 @@ useEffect(() => {
                 <li>
                 <Link 
                     href="/properties"
-                    className="hover:text-secondary-color -translate-x-5 hover:translate-x-0 group leading-1.8 pl-4 lg:pl-6"
+                    className="hover:text-secondary-color text-[1.275rem;] -translate-x-5 hover:translate-x-0 group leading-1.8 pl-4 lg:pl-6"
                   >
-                    <span className="text-secondary-color pr-15px opacity-0 group-hover:opacity-100 transition-all duration-300">
+                    <span className="text-secondary-color text-[1.275rem;] pr-15px opacity-0 group-hover:opacity-100 transition-all duration-300">
                   
                     </span>
                     All Properties
@@ -280,40 +283,40 @@ useEffect(() => {
                 <li>
                   <Link
                     href="/blogs/revolutionizing-real-estate-with-blockchain-technology"
-                    className="hover:text-secondary-color -translate-x-5 hover:translate-x-0 group leading-1.8 pl-4 lg:pl-6"
+                    className="hover:text-secondary-color text-[1.275rem;] -translate-x-5 hover:translate-x-0 group leading-1.8 pl-4 lg:pl-6"
                   >
-                    <span className="text-secondary-color pr-15px opacity-0 group-hover:opacity-100 transition-all duration-300">
+                    <span className="text-secondary-color text-[1.275rem;] pr-15px opacity-0 group-hover:opacity-100 transition-all duration-300">
                   
                     </span>
                    Blockchain
                   </Link>
                 </li>
-               {/*  <li>
+                <li>
                 <Link 
-                    href="/locations"
-                    className="hover:text-secondary-color -translate-x-5 hover:translate-x-0 group leading-1.8 pl-4 lg:pl-6"
+                    href="/community-leads  "
+                    className="hover:text-secondary-color text-[1.275rem;] -translate-x-5 hover:translate-x-0 group leading-1.8 pl-4 lg:pl-6"
                   >
-                    <span className="text-secondary-color pr-15px opacity-0 group-hover:opacity-100 transition-all duration-300">
+                    <span className="text-secondary-color text-[1.275rem;] pr-15px opacity-0 group-hover:opacity-100 transition-all duration-300">
                   
                     </span>
-                    Locations Map
+                    Community Leads
                   </Link>
                 </li>
-                */}
+               
               </ul>
             </div>
             {/* footer services*/}
             <div className="xl:col-start-6 xl:col-span-2 mb-60px ml-4">
-              <h3 className="text-22px font-bold mb-25px text-white">
+              <h3 className="text-[1.625rem] font-bold mb-25px text-white">
                 <span className="leading-1.3"> Services </span>
               </h3>
               <ul className="space-y-[15px]">
                 <li>
                   <Link
                     href="/properties/search-results?location=&propertyType=retail"
-                    className="hover:text-secondary-color -translate-x-5 hover:translate-x-0 group leading-1.8 pl-4 lg:pl-6"
+                    className="hover:text-secondary-color text-[1.275rem;] -translate-x-5 hover:translate-x-0 group leading-1.8 pl-4 lg:pl-6"
                   >
-                    <span className="text-secondary-color pr-15px opacity-0 group-hover:opacity-100 transition-all duration-300">
+                    <span className="text-secondary-color text-[1.275rem;] pr-15px opacity-0 group-hover:opacity-100 transition-all duration-300">
                   
                     </span>
                     Comercial
@@ -321,10 +324,10 @@ useEffect(() => {
                 </li>
                 <li>
                   <Link
-                    href="/residential"
-                    className="hover:text-secondary-color -translate-x-5 hover:translate-x-0 group leading-1.8 pl-4 lg:pl-6"
+                    href="https://proxi-new-app.vercel.app/properties/search-results?location=&propertyType=residential"
+                    className="hover:text-secondary-color text-[1.275rem;] -translate-x-5 hover:translate-x-0 group leading-1.8 pl-4 lg:pl-6"
                   >
-                    <span className="text-secondary-color pr-15px opacity-0 group-hover:opacity-100 transition-all duration-300">
+                    <span className="text-secondary-color text-[1.275rem;] pr-15px opacity-0 group-hover:opacity-100 transition-all duration-300">
                   
                     </span>
                     Residential
@@ -332,62 +335,63 @@ useEffect(() => {
                 </li>
                 <li>
                   <Link
-                    href="/sales"
-                    className="hover:text-secondary-color -translate-x-5 hover:translate-x-0 group leading-1.8 pl-4 lg:pl-6"
+                    href="/properties/search-results?location=&propertyType=retail"
+                    className="hover:text-secondary-color text-[1.275rem;] -translate-x-5 hover:translate-x-0 group leading-1.8 pl-4 lg:pl-6"
                   >
-                    <span className="text-secondary-color pr-15px opacity-0 group-hover:opacity-100 transition-all duration-300">
+                    <span className="text-secondary-color text-[1.275rem;] pr-15px opacity-0 group-hover:opacity-100 transition-all duration-300">
                   
                     </span>
                     Sales
                   </Link>
                 </li>
-                {/* <li>
+                <li>
                   <Link
-                    href="account.html"
-                    className="hover:text-secondary-color -translate-x-5 hover:translate-x-0 group leading-1.8 pl-4 lg:pl-6"
+                    href="/lawyers"
+                    className="hover:text-secondary-color text-[1.275rem;] -translate-x-5 hover:translate-x-0 group leading-1.8 pl-4 lg:pl-6"
                   >
-                    <span className="text-secondary-color pr-15px opacity-0 group-hover:opacity-100 transition-all duration-300">
+                    <span className="text-secondary-color text-[1.275rem;] pr-15px opacity-0 group-hover:opacity-100 transition-all duration-300">
                   
                     </span>
-                    My account
+                     Lawyers
                   </Link>
-                </li> */}
+                </li>
                 <li>
                   <Link
                     href="/terms"
-                    className="hover:text-secondary-color -translate-x-5 hover:translate-x-0 group leading-1.8 pl-4 lg:pl-6"
+                    className="hover:text-secondary-color text-[1.275rem;] -translate-x-5 hover:translate-x-0 group leading-1.8 pl-4 lg:pl-6"
                   >
-                    <span className="text-secondary-color pr-15px opacity-0 group-hover:opacity-100 transition-all duration-300">
+                    <span className="text-secondary-color text-[1.275rem;] pr-15px opacity-0 group-hover:opacity-100 transition-all duration-300">
                   
                     </span>
                     Terms &amp; Conditions
                   </Link>
                 </li>
-                {/* <li>
+                <li>
                   <Link
-                    href="/promotions"
-                    className="hover:text-secondary-color -translate-x-5 hover:translate-x-0 group leading-1.8 pl-4 lg:pl-6"
+                    href="/virtual-tours"  
+                    
+                    className="hover:text-secondary-color text-[1.275rem;] -translate-x-5 hover:translate-x-0 group leading-1.8 pl-4 lg:pl-6"
                   >
-                    <span className="text-secondary-color pr-15px opacity-0 group-hover:opacity-100 transition-all duration-300">
+                    <span className="text-secondary-color text-[1.275rem;] pr-15px opacity-0 group-hover:opacity-100 transition-all duration-300">
                   
                     </span>
-                    Promotional Offers
+                    Virtual Tours
                   </Link>
-                </li> */}
+                </li>
               </ul>
             </div>
             {/* footer customer care*/}
             <div className="xl:col-start-8 xl:col-span-2 mb-60px ml-4 py-4 md:py-0">
-              <h3 className="text-22px font-bold mb-25px text-white">
+              <h3 className="text-[1.625rem] font-bold mb-25px text-white">
                 <span className="leading-1.3"> Customer</span>
               </h3>
               <ul className="space-y-[15px]">
                 <li>
                   <Link
                     href="/join"
-                    className="hover:text-secondary-color -translate-x-5 hover:translate-x-0 group leading-1.8 pl-4 lg:pl-6"
+                    className="hover:text-secondary-color text-[1.275rem;] -translate-x-5 hover:translate-x-0 group leading-1.8 pl-4 lg:pl-6"
                   >
-                    <span className="text-secondary-color pr-15px opacity-0 group-hover:opacity-100 transition-all duration-300">
+                    <span className="text-secondary-color text-[1.275rem;] pr-15px opacity-0 group-hover:opacity-100 transition-all duration-300">
                   
                     </span>
                     Join
@@ -396,9 +400,9 @@ useEffect(() => {
                 {/* <li>
                   <Link
                     href="/account"
-                    className="hover:text-secondary-color -translate-x-5 hover:translate-x-0 group leading-1.8 pl-4 lg:pl-6"
+                    className="hover:text-secondary-color text-[1.275rem;] -translate-x-5 hover:translate-x-0 group leading-1.8 pl-4 lg:pl-6"
                   >
-                    <span className="text-secondary-color pr-15px opacity-0 group-hover:opacity-100 transition-all duration-300">
+                    <span className="text-secondary-color text-[1.275rem;] pr-15px opacity-0 group-hover:opacity-100 transition-all duration-300">
                   
                     </span>
                     My account
@@ -408,10 +412,10 @@ useEffect(() => {
              
                 <li>
                 <Link 
-                    href="/faq"
-                    className="hover:text-secondary-color -translate-x-5 hover:translate-x-0 group leading-1.8 pl-4 lg:pl-6"
+                    href="/terms"
+                    className="hover:text-secondary-color text-[1.275rem;] -translate-x-5 hover:translate-x-0 group leading-1.8 pl-4 lg:pl-6"
                   >
-                    <span className="text-secondary-color pr-15px opacity-0 group-hover:opacity-100 transition-all duration-300">
+                    <span className="text-secondary-color text-[1.275rem;] pr-15px opacity-0 group-hover:opacity-100 transition-all duration-300">
                   
                     </span>
                     FAQ
@@ -421,9 +425,9 @@ useEffect(() => {
                 <li>
                   <Link
                     href="/contact"
-                    className="hover:text-secondary-color -translate-x-5 hover:translate-x-0 group leading-1.8 pl-4 lg:pl-6"
+                    className="hover:text-secondary-color text-[1.275rem;] -translate-x-5 hover:translate-x-0 group leading-1.8 pl-4 lg:pl-6"
                   >
-                    <span className="text-secondary-color pr-15px opacity-0 group-hover:opacity-100 transition-all duration-300">
+                    <span className="text-secondary-color text-[1.275rem;] pr-15px opacity-0 group-hover:opacity-100 transition-all duration-300">
                   
                     </span>
                     Contact us
@@ -433,10 +437,10 @@ useEffect(() => {
             </div>
             {/* footer newsletter*/}
             <div className="xl:col-start-10 xl:col-span-3 mb-60px ml-4 py-4 md:py-0 max-w-[23rem]">
-              <h3 className="text-22px font-bold mb-25px text-white">
+              <h3 className="text-[1.625rem] font-bold mb-25px text-white">
                 <span className="leading-1.3"> Newsletter </span>
               </h3>
-              <p className="leading-1.8 mb-5 lg:mb-25px text-white">
+              <p className="leading-1.8 mb-5 lg:mb-25px text-[1.275rem;] text-white/90">
                 Subscribe to our weekly Newsletter and receive updates via email.
               </p>
               {/* subscription input  */}

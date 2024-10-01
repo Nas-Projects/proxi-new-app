@@ -29,8 +29,8 @@ const components = [
   description: "Explore properties available for sale.",
 },
 {
-  title: "Investment Opportunities",
-  href: "/properties/search-results?location=&propertyType=sale",
+  title: "Community Leads",
+  href: "/community-leads",
   description:
     "Discover lucrative investment opportunities and potential returns in real estate.",
 },
@@ -44,15 +44,15 @@ const components = [
  
   {
     title: "Virtual Tours",
-    href: "/properties",
+    href: "/virtual-tours",
     description:
       "Take virtual tours of properties to explore them from the comfort of your home.",
   },
   {
-    title: "Client Reviews",
-    href: "/client-reviews",
+    title: "Lawyers",
+    href: "/lawyers",
     description:
-      "Read reviews and testimonials from clients who have used our real estate services.",
+      "Available lawyers you can use for your real estate services.",
   },
  
 ]
@@ -62,7 +62,7 @@ export function NavigationLeft() {
     <NavigationMenu>
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuTrigger >Getting started</NavigationMenuTrigger>
+          <NavigationMenuTrigger className="text-[1.125rem]">Getting started</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
               <li className="row-span-3">
@@ -120,8 +120,8 @@ export function NavigationLeft() {
           </NavigationMenuContent>
 
         </NavigationMenuItem>
-        <NavigationMenuItem>
-          <NavigationMenuTrigger>Properties</NavigationMenuTrigger>
+        <NavigationMenuItem> 
+          <NavigationMenuTrigger className="text-[1.125rem]">Properties</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
               {components.map((component) => (
@@ -136,21 +136,21 @@ export function NavigationLeft() {
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
-        <NavigationMenuItem className="group-hover:p-2 group-hover:rounded-md text-sm text-gray-500 font-normal hover:bg-pink-100 group-hover:bg-pink-50">
+        <NavigationMenuItem className="group-hover:p-2 group-hover:rounded-md text-gray-500 font-normal hover:bg-pink-100 group-hover:bg-pink-50 text-[1.125rem]">
           <Link href="/join" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
               Join
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
-        <NavigationMenuItem className="group-hover:p-2 group-hover:rounded-md text-sm text-gray-500 font-normal hover:bg-pink-100 group-hover:bg-pink-50">
+        <NavigationMenuItem className="group-hover:p-2 group-hover:rounded-md text-gray-500 font-normal hover:bg-pink-100 group-hover:bg-pink-50 text-[1.125rem]">
           <Link href="/agents" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
               Agents
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
-        <NavigationMenuItem className="group-hover:p-2 group-hover:rounded-md text-sm text-gray-500 font-normal hover:bg-pink-100 group-hover:bg-pink-50">
+        <NavigationMenuItem className="group-hover:p-2 group-hover:rounded-md text-gray-500 font-normal hover:bg-pink-100 group-hover:bg-pink-50 text-[1.125rem]">
           <Link href="/contact"
           legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
@@ -158,28 +158,43 @@ export function NavigationLeft() {
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
-        <NavigationMenuItem className="group-hover:p-2 group-hover:rounded-md text-sm text-gray-500 font-normal hover:bg-pink-100 group-hover:bg-pink-50">
+        <NavigationMenuItem className="group-hover:p-2 group-hover:rounded-md text-gray-500 font-normal hover:bg-pink-100 group-hover:bg-pink-50 text-[1.125rem]">
           <Link href="/about" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
               About
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
-        <NavigationMenuItem className="group-hover:p-2 group-hover:rounded-md text-sm text-gray-500 font-normal hover:bg-pink-100 group-hover:bg-pink-50">
+        <NavigationMenuItem className="group-hover:p-2 group-hover:rounded-md text-gray-500 font-normal hover:bg-pink-100 group-hover:bg-pink-50 text-[1.125rem]">
           <Link href="/blogs" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
               Blogs
             </NavigationMenuLink>
           </Link>
+        </NavigationMenuItem> 
+        <NavigationMenuItem className="group-hover:p-2 group-hover:rounded-md text-gray-500 font-normal hover:bg-pink-100 group-hover:bg-pink-50 text-[1.125rem]">
+          <Link href="/lawyers" legacyBehavior passHref>
+            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+             Lawyers
+            </NavigationMenuLink>
+          </Link>
         </NavigationMenuItem>
-        <NavigationMenuItem className="group-hover:p-2 group-hover:rounded-md text-sm text-gray-500 font-normal hover:bg-pink-100 group-hover:bg-pink-50">
+        <NavigationMenuItem className="group-hover:p-2 group-hover:rounded-md text-gray-500 font-normal hover:bg-pink-100 group-hover:bg-pink-50 text-[1.125rem]">
+          <Link href="/community-leads" legacyBehavior passHref>
+            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+             Leads
+            </NavigationMenuLink>
+          </Link>
+        </NavigationMenuItem>
+      </NavigationMenuList>
+      
+      <NavigationMenuItem className="group-hover:p-2 group-hover:rounded-md text-gray-500 font-normal hover:bg-pink-100 group-hover:bg-pink-50 text-[1.125rem]">
           <Link href="/terms" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
              Terms
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
-      </NavigationMenuList>
     </NavigationMenu>
   )
 }
