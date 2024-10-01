@@ -246,7 +246,7 @@ useEffect(() => {
               <ul className="space-y-[15px] ml-4">
                 <li>
                 <Link 
-                    href="about.html"
+                    href="/about"
                     className="hover:text-secondary-color -translate-x-5 hover:translate-x-0 group leading-1.8 pl-4 lg:pl-6"
                   >
                     <span className="text-secondary-color pr-15px opacity-0 group-hover:opacity-100 transition-all duration-300">
@@ -382,17 +382,17 @@ useEffect(() => {
                 <span className="leading-1.3"> Customer</span>
               </h3>
               <ul className="space-y-[15px]">
-                {/* <li>
+                <li>
                   <Link
-                    href="login.html"
+                    href="/join"
                     className="hover:text-secondary-color -translate-x-5 hover:translate-x-0 group leading-1.8 pl-4 lg:pl-6"
                   >
                     <span className="text-secondary-color pr-15px opacity-0 group-hover:opacity-100 transition-all duration-300">
                   
                     </span>
-                    Login
+                    Join
                   </Link>
-                </li> */}
+                </li>
                 {/* <li>
                   <Link
                     href="/account"
