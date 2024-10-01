@@ -57,9 +57,9 @@ export const PropertyCard = ({ property }) => {
   return(
   
   // <Link className="property h-[520px] w-[379px] min-[600px]:h-[420px] min-[600px]:w-[30%] md:h-[280px] md:h-[470px] md:w-[319px] lg:md:h-[500px] xl:w-[299px]" href={`properties/${property._id}`}>
- <Link className="mb-4 relative property h-[280px] lg::w-[379px] sm:w-[289px] min-[1400px]:w-[309px] xl:sm:w-[359px] relative isolate flex flex-col justify-end  rounded-2xl bg-gray-900  pb-8" 
+ <Link className="group shadow-md hover:shadow-2xl mb-4 relative property h-[280px] lg::w-[379px] sm:w-[289px] min-[1400px]:w-[309px] xl:sm:w-[359px] relative isolate flex flex-col justify-end  rounded-2xl bg-gray-900  pb-8" 
      href={`properties/${property._id}`}> 
-  <BlurImage className="absolute top-0 inset-0 pb-[1em]"
+  <BlurImage className="grroup-hover:hover:scale-110 absolute top-0 inset-0 pb-[1em]"
     alt={property.name}
     loading="lazy"
     width={property.imageWidth || 800}

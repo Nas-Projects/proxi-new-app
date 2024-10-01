@@ -147,12 +147,12 @@ const AboutProxy = () => {
                <span className="leading-1.8">Mutiparties Interactions</span>
              </li>
              <li className="text-sm lg:text-base flex items-center gap-x-2">
-             <Newspaper width={18} className="flaticon-heart text-xl text-secondary-color bg-color-6 w-45px h-45px flex items-center justify-center mr-25px rounded-100%" />
+             <Newspaper width={18} className="flaticon-heart text-xl  bg-color-6 w-45px h-45px flex items-center justify-center mr-25px rounded-100%" />
 
                <span className="leading-1.8">Blockchain Inclusion</span>
              </li>
              <li className="text-sm lg:text-base flex items-center gap-x-2">
-             <Globe width={18} className="flaticon-heart text-xl text-secondary-color bg-color-6 w-45px h-45px flex items-center justify-center mr-25px rounded-100%" />
+             <Globe width={18} className="flaticon-heart text-xl  bg-color-6 w-45px h-45px flex items-center justify-center mr-25px rounded-100%" />
                <span className="leading-1.8  text-left">Decentralize properties via tech</span>
              </li>
            </ul>
