@@ -5,7 +5,7 @@ export default function CommunityLead(){
 
        <div className="justify-center  px-6 pt-6 py-10 lg:px-12 xl:px-12 rounded-xl lg:py-12 xl:-my-4 ">
           <h3 className="font-bold !text-4xl py-4 text-center">Communty Leads</h3>
-          <h2 className="text-xl text-center font-medium text-gray-900">Pick a lead here </h2>
+          <h2 className="text-xl text-center font-medium text-gray-900">Start with a lead. </h2>
         </div>   
 
     
