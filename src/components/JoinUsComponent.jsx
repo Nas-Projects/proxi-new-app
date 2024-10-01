@@ -223,7 +223,7 @@ export default function JoinUsComponent({joinUsData }) {
                    
                     <div className="section-1-text-wrapp px-0" >
                          <div className="block xl:inline-flex space-y-4"> 
-                          <h1 className="font_0 text-white" 
+                          <h1 className="font_0 text-white lg:hidden" 
                               style={{ lineHeight: "normal", fontSize: "76px" }}>
                            <span style={{ letterSpacing: "0.02em" }} className="wixui-rich-text__text">
                              <span className="mt-8 pr-4 mmin-[1400px]:hidden color_11 wixui-rich-text__text">
