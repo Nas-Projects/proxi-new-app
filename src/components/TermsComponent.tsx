@@ -59,7 +59,7 @@ if (loading) {
             />
          <div className='relative inset-x-0 z-20 
            md:top-8 lg:top-12 flex-block px-6 md:px-8
-          lg:px-12 xl:px-24 pb-44 justify-center
+          lg:px-12 xl:px-12 pb-10 justify-center
            items-center !z-20'>
            
            <div className="relative">
