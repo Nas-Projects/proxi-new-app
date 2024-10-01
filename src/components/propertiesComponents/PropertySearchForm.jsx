@@ -17,7 +17,7 @@ const PropertySearchForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+  alert('Submitted');
     if (location === '' && propertyType === 'All') {
       router.push('/properties');
     } else {
@@ -26,40 +26,43 @@ const PropertySearchForm = () => {
     }
   };
 
-  return (<main className="main-container lg:!my-2 lg:!mx-2 lg:!py-[2em] lg:!px-[2em]">
+  return (<main className="main-container bg-transparent lg:!my-2 lg:!mx-2 lg:!py-[2em] lg:!px-[2em]">
   <section className="content-wrapper pt-6 lg:pt-0">
    
     <div className="login-container">
-      <div className="input-wrapper" onSubmit={handleSubmit} >
+      <div  className="input-wrapper"  >
+      <form action="#" method="POST" className="input-wrapper" onSubmit={handleSubmit}>
         <input onChange={(e) => setLocation(e.target.value)}
           className="email-input !mb-6 border-1 !border-pink-500"
           inputMode="text"
           type="text"
-          id="email-input"
-          name="email"
+          id="location-input"
+          name="location"
           autoComplete="Enter location"
           autoCapitalize="none"
           spellCheck="false"
           required=""
           placeholder=""
         />
-        <label className="email-label " htmlFor="email-input">
-           Enter location*
+        <label className="email-label " htmlFor="location-input">
+          {location ? location : "Enter location*"} 
         </label>
-        <div className="invalid-email-error-message ">
+        {/* <div className="invalid-email-error-message ">
           <img
             className="error-icon"
             src="https://auth.openai.com/assets/error-icon-BaFi8GTB.svg"
           />
           Email is not valid.
-        </div>
-           <div className='w-full  md:pl-2'>
+        </div> */}
+           <div className=''>
                <label htmlFor='property-type' className='sr-only'>
                  Property Type
                </label>
                <select
                  id='property-type'
-                 className='w-full px-4 py-4 lg:py-3  text-xl rounded-lg !bg-white text-gray-800 focus:outline-none focus:ring ring-1 ring-pink-300  focus:ring-blue-500 hover:shadow-lg '
+                 className='w-full px-4 py-4 lg:py-3  text-[16px]  w-[320px] text-[#2d333a] h-[52px] rounded-[6px] !bg-white text-gray-800 
+                 focus:outline-none focus:ring ring-1 ring-pink-300  
+                 focus:ring-blue-500 hover:shadow-lg '
                  value={propertyType}
                  onChange={(e) => setPropertyType(e.target.value)}
                >
@@ -80,17 +83,23 @@ const PropertySearchForm = () => {
           Your organization requires SSO, click Continue to log in with SSO
           instead.
         </div>
-      </div>
-      <button type="submit" className="continue-btn !bg-custom-gradient" disabled="">
+      <button  type='submit' className="continue-btn !bg-custom-gradient">
         Continue
       </button>
-      <p className="inline-flex justify-between other-page gap-x-12">
+      </form>   
+      </div>
+     
+      <p className="inline-flex text-white justify-between other-page gap-x-12">
+     
         <span>Clear search</span> 
+         <div className=" divider-wrapper pt-0 !w-[10px]">
+          <span className="divider">Or</span>
+         </div>
         <a
-          className="other-page-link"
+          className="other-page-link text-white"
           href="/#properties"
         >
-         All Propertie
+         See all Propertie
         </a>
       </p>
       <div className="!hidden divider-wrapper">
@@ -288,10 +297,9 @@ export default PropertySearchForm;
 //               </Field>
             
 //               <div className="mt-8">
-//                 <button
-//               type='submit'
-//               className='md:ml-4 mt-4 md:mt-0 w-full md:w-auto px-6 py-3 
-//             rounded-lg bg-black text-white bg-custom-gradient hover:bg-black  focus:outline-none focus:ring focus:ring-blue-500'
+//          <button type='submit'
+//                  className='md:ml-4 mt-4 md:mt-0 w-full md:w-auto px-6 py-3 
+//                   rounded-lg bg-black text-white bg-custom-gradient hover:bg-black  focus:outline-none focus:ring focus:ring-blue-500'
 //             >
 //               Search
 //           </button>
