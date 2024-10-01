@@ -34,7 +34,7 @@ const ButtonCard = ({ name, Icon, index, href }) => {
 
 const SearchButtons = () => {
   return (
-    <section className="md:min-h-[100px] px-6 mt-[6vh] mx-auto flex items-center relative">
+    <section className="md:min-h-[100px] mx-auto flex items-center relative">
         <div className='items-center w-full mx-auto flex 
         max-w-[86rem]'>
             <div className="flex items-center w-full justify-center">

@@ -4,7 +4,7 @@ const SectionHeader = ({ title, subtitle, description }) => {
   console.log("SECTION_TITLE", title, subtitle, description);
   
   return (
-    <div className="section-header text-mainText opacity-1 fade-in-from-bottom ">
+    <div className="section-header lg:mx-[4em] mb-4 lg:mb-8 text-mainText opacity-1 fade-in-from-bottom ">
       <h1 className='!text-left text-center py-6 text-custom-gradient'>{title}</h1>
       <div
         data-w-id="c61ae90e-5b42-2ae8-3af4-27a1254fdfcd"

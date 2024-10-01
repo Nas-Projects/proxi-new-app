@@ -161,12 +161,12 @@ const PropertiesListSectionUI = ({properties}) => {
   return loading ? (
     <Spinner />
   ) : (
-    <section className="main-properties mt-[-8em] md:mt-[-17em] xl:mt-[-12.5em] px-0 lg:-mt-[12em] min-[439px]:w-[99vw]">
+    <section className="main-properties mt-[-4em] md:mt-[-17em] xl:mt-[-2.5em] px-0 lg:-mt-[12em] min-[439px]:w-[99vw]">
       <div className="wrap-title-wrap-center xl:mb-4 fade-in-from-bottom ">
         <h1 className="!text-left text-center py-6 text-custom-gradient font-bold slide-animation lg:mt-24">
            Retail Properties
         </h1>
-        <h2 className="text-2xl lg:text-3xl xl:-mt-2 pb-6 text-gray-600 ">Smart Searches & Data access</h2>
+        <h2 className="-mt-4 text-2xl lg:text-3xl xl:-mt-2 pb-6 text-gray-600 ">Smart Searches & Data access</h2>
         {/* <Link href="/properties" className="">
         View all 
         </Link> */}
@@ -200,7 +200,7 @@ const PropertiesListSectionUI = ({properties}) => {
                 <Link href="/contact">
                     <h5 className="uppercase text-sm md:text-base text-white relative group 
                         whitespace-nowrap font-normal mb-0 transition-all duration-300 border 
-                              border-black !text-black  hover:border-heading-color inline-block">
+                        border-black !text-black  hover:border-heading-color inline-block">
                     <span className="inline-block absolute top-0 right-0 w-full h-full bg-white !text-black 
                            group-hover:bg-black hover:bg-primary-cogroup-lor z-1 group-hover:w-0 transition-all duration-300" />
                     <a href="/contact"

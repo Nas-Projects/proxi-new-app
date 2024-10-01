@@ -378,7 +378,9 @@ body {
   object-fit: cover;
   background-position: center;
   width: auto;
-  height: 95vh;
+  /* height: 95vh;
+   */
+   max-height: 77vh;
 }
 .bg-overlay-1 {
   background-color: rgba(7, 28, 31, 0.6);

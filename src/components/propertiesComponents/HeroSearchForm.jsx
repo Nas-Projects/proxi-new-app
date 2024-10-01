@@ -2,12 +2,13 @@ import PropertySearchForm from './PropertySearchForm';
 
 const HeroSearchForm = () => {
   return (
-    <section className='!max-w-[87vw] shadow-xl pt-4 pb-8 fade-in-from-bottom
+    <section className='!max-w-[98vw] px-6 lg:mt-[-1em] rounded-xl lg:!rounded-3xl  
+    shadow-xl pt-4 sm:pb-8 fade-in-from-bottom
       my-4  sm:p-6 !bg-white/70 lg:bg-gray-400 -mt-12
-     lg:mt-24  lg:py-0 mb-4  rounded-xl max-w-2xl '>
+     lg:mt-24 lg:py-0 mb-4 lg:!max-w-xl '>
        
       <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center'>
-        <div className='text-center'>
+        <div className='text-center pt-4 lg:pt-8 !max-w-[23rem] !text-left'>
           {/* <h1 className='text-4xl font-extrabold text-white sm:text-5xl md:text-6xl'>
             Find The Perfect Rental
           </h1> */}

@@ -5,9 +5,9 @@ import Image from "next/image";
 
 
 export default function Hero() {
-    return(<div className="hero hero-primary overflow-hidden relative z-0 bg-white">
+    return(<div className="!bg-white hero hero-primary lg:overflow-hidden relative">
       
-    <div className="hero-slider-container swiper-container relative">
+    <div className="hero-slider-container swiper-container relative bg-white">
       <div className="primary-slider home-3 swiper-fade swiper-initialized swiper-horizontal swiper-watch-progress swiper-backface-hidden">
         <div
           // className="swiper-wrapper"
@@ -20,7 +20,7 @@ export default function Hero() {
             height={1000}
             width={1000}
             placeholder="blur"
-            class="absolute left-1/2 top-0 -ml-[39rem] !h-[55vh] lg:!h-[55vh] max-w-none w-full lg:w-[113.125rem] max-w-none"
+            class="absolute left-1/2 top-0 -ml-[39rem] !h-[55vh] lg:!h-[55vh] max-w-none w-full lg:w-[113.125rem] xl:!left-0 xl:!w-[109vw] "
             blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQYV2PYsGHDfwAHNAMQumvbogAAAABJRU5ErkJggg=="
             />
           {/* Hero  1 */}
@@ -28,7 +28,7 @@ export default function Hero() {
             4xl:h-screen 4xl:min-h-[800px] overflow-hidden flex flex-col 
             justify-center bg-cover bg-center bg-no-repeat swiper-slide-visible 
             swiper-slide-fully-visible swiper-slide-active" */}
-         <div   className=" relative z-0 pt-[6vh] pt-12  md:pt-24 pb-100px 
+         <div className=" relative z-0 pt-12  md:pt-12 lg:!mt-[-12em] 
             4xl:h-screen 4xl:min-h-[800px] overflow-hidden flex flex-col 
             justify-center bg-cover bg-center bg-no-repeat swiper-slide-active"
             // style={{
@@ -42,7 +42,7 @@ export default function Hero() {
           >
            {/* <div className="absolute top-0 left-0 w-full h-full  z-0" /> */}
            
-           <div className="xl:mt-12 flex-block lg:grid  grid-cols-2 group">
+           <div className="xl:mt-12 xl:mt-[18em] flex-block lg:grid  grid-cols-2 group">
             <div className="container w-full relative z-xl !text-left">
               <div className="-mt-[24">
               {/* <div className="slide-animation flex flex-col justify-center xl:mx-3 px:px-2 md:px-6 lg:px-10  "> */}
@@ -63,7 +63,7 @@ export default function Hero() {
                  </p>
                 </div>
              
-              <div className="group lg:px-6 py-12 lg:py-6  xl:pt-[10em] rounded-xl -mt-10  fade-in-from-bottom">
+              <div className="group lg:px-6 py-12 lg:py-6  xl:pt-[4em] rounded-xl -mt-10  fade-in-from-bottom">
                 <div className="max-w-3xl mx-4 leading-[54px] group-hover:text-pink-500">
                   <h1 class="!text-left !text-[32px] text-black md:text-[82px] lg:ss:text-[70px] lg:text-[52px] 
                    lg:ss:leading-[70px] leading-[55px] maintext tracking-tight group-hover:text-pink-500">
@@ -108,10 +108,10 @@ export default function Hero() {
                 <Link href="/contact">
                     <h5 className="uppercase text-sm md:text-base text-white relative group 
                         whitespace-nowrap font-normal mb-0 transition-all duration-300 border 
-                              border-black !text-black  hover:border-heading-color inline-block">
-                    <span className="inline-block absolute top-0 right-0 w-full h-full bg-white !text-black 
-                           group-hover:bg-black hover:bg-primary-cogroup-lor z-1 group-hover:w-0 transition-all duration-300" />
-                    <a href="/contact"
+                        border-black !text-black  hover:border-heading-color inline-block">
+                    <span className="inline-block absolute top-0 right-0 w-full h-full 
+                          bg-white !text-black group-hover:bg-black hover:bg-primary-cogroup-lor z-1 group-hover:w-0 transition-all duration-300" />
+                       <a href="/contact"
                         className="relative  z-10 relative z-10 px-5 py-4 px-8  group-hover:text-heading-color leading-23px lg:py-17px group-hover:text-heading-color leading-23px" >
                         Contact Us
                         </a>
@@ -119,7 +119,7 @@ export default function Hero() {
                     </Link>
                     </div>
                     </div>
-                </div>
+                      </div>
                         {/* <h5 class="bg-custom-gradient z-30 capitalize text-sm md:text-base text-white relative group whitespace-nowrap font-normal transition-all duration-300 border hover:bg-white border-secondary-color hover:border-heading-color inline-block mr-15px">
                         <span class="inline-block absolute top-0 right-0 w-full h-fullbg-custom-gradient  group-hover:bg-primary-color z-1 group-hover:w-0 transition-all duration-300"></span>
                         <a href="about.html" class="relative z-10 px-5 md:px-25px lg:px-10 py-10px md:py-3 lg:py-17px group-hover:text-heading-color leading-23px">Make An Enquiry</a>
@@ -133,8 +133,8 @@ export default function Hero() {
                 
                 </div>
               </div>
-               <div className="mx-4 !z-20 mt-10 lg:mt-0 search-right  
-               max-w-[95vw] container w-full relative z-xl fade-in-from-bottom">
+               <div className="z-10 xl:!float-right !z-20 mt-10 lg:mt-0 xl:-mr-24 search-right  
+                   max-w-[100vw] container w-full relative z-xl fade-in-from-bottom">
                   <HeroSearchForm/>
                 </div>
             </div>

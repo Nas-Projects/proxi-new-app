@@ -42,7 +42,7 @@ async function Home({}){
 //    <PropertiesListSectionUI  properties={properties} total={totalItems}/>
 //  );
   return ( 
-  <div className="relative">
+  <div className="relative !bg-white">
      {/* <Gradient className="absolute inset-2 bottom-0 rounded-4xl ring-1 ring-inset ring-black/5" /> */}
        <Container className="relative">
     <> {loading ? (
@@ -55,19 +55,19 @@ async function Home({}){
         <Hero   //  heroDetails={heroDetails}
           />
           {/* <div className="mx-auto lg:px-[10%] bg-transparent  absolute absolute top-[89vh] lg:top-[68vh] lg:mx-auto md:top-[70vh] xl:top-[67vh]"></div> */}
-          <div className="mx-auto lg:px-[10%] mt-44 bg-transparent relative relative ">
+          <div className="mt-44 relative px-0.5 lg:mt-[-24em] xl:lg:mt-[-0vh] mx-auto lg:px-[10%] bg-transparent relative relative ">
           <SearchButtons />
           </div>
           <ProperTiesForSale properties={properties}/>
           <AboutProxy/>
-          <PropertiesListSectionUI properties={properties}/>
+           <PropertiesListSectionUI properties={properties}/>
           {/* <FeaturedListings /> */}
           <SectionBlockChain/>
           <OurValues/> 
           {/* <OurFocus/> */}
           <SectionTestimonial/>
           <div className="section buy-service">
-           <div className="main-container large w-container">
+           <div className="large w-container">
             <div
             data-w-id="b613acd8-a7a8-18c7-bb65-e5559fefd061"
             className="buy-service-wrap"

@@ -26,10 +26,10 @@ const PropertySearchForm = () => {
     }
   };
 
-  return (<main className="main-container bg-transparent lg:!my-2 lg:!mx-2 lg:!py-[2em] lg:!px-[2em]">
+  return (<main className="main-container bg-transparentlg:!my-0 lg:!mx-2 lg:!pb-[0em] lg:!pt-[0em] lg:!px-[2em] !max-w-2xl">
   <section className="content-wrapper pt-6 lg:pt-0">
    
-    <div className="login-container">
+    <div className="login-container max-[700px]:!px-0lg:!pb-0">
       <div  className="input-wrapper"  >
       <form action="#" method="POST" className="input-wrapper" onSubmit={handleSubmit}>
         <input onChange={(e) => setLocation(e.target.value)}
@@ -89,7 +89,7 @@ const PropertySearchForm = () => {
       </form>   
       </div>
      
-      <p className="inline-flex text-white font-bold justify-between other-page gap-x-12">
+      <p className="hidden md:inline-flex text-white font-bold justify-between other-page gap-x-12">
      
         <span>Clear search</span> 
          <div className=" divider-wrapper !mt-[-4em] !w-[10px]">

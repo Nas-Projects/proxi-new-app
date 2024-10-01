@@ -38,7 +38,7 @@ export default function OurValues(){
 
       const ValuesSection = () => {
         return (
-          <section className="main-container md:min-h-[750px] ss:min-h-[600px] min-h-[850px] mx-auto flex items-center relative valuesSection">
+          <section className=" md:min-h-[750px] ss:min-h-[600px] min-h-[850px] mx-auto flex items-center relative valuesSection">
             <div className="items-center w-full mx-auto max-w-[86rem]">
               <div className="md:pt8 px-5 flex items-center w-full md:mb-16 ss:mb-8 mb-16">
                 <h1 className="text-custom-gradient font-bold md:text-[55px] ss:text-[45px] text-[33px] md:mr-14 ss:mr-6 mr-5">Our values</h1>
