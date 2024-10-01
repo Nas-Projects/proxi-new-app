@@ -93,7 +93,7 @@ console.log("PROPERTY_PAGE_COMPONENT", propertyData)
 
             </div>
           </div>
-        <div className="main-container w-container">
+        <div className="main-container w-container px-6 lg:!px-0">
          {/* ------ Property-Main Container */}
         <section className='block relative lg:grid lg:grid-cols-7'>
          <div className="col-span-5 mt-4">
@@ -118,7 +118,7 @@ console.log("PROPERTY_PAGE_COMPONENT", propertyData)
               /> 
            </div> */}
             <div className="property-share">
-              <aside className='space-y-4 lg:grid lg:grid-cols-3'> 
+              <aside className='space-y-4 lg:grid lg:grid-cols-3 px-6'> 
              <div className='inline-flex gap-x-4 py-4 mt-4 '>
               <h4 className='lg:ml-2 text-xl text-left mainText text-center py-2'>
                 Share Property
@@ -233,7 +233,7 @@ console.log("PROPERTY_PAGE_COMPONENT", propertyData)
       </div>  }  
      </section> 
         
-        <section className="relative mt-24">
+        <section className="relative !px-6 lg:!px-0 mt-12 lg:mt-24">
           <MorgageCalculator/>
         </section>
         <section className='relative '>

@@ -28,7 +28,7 @@ export default function Hero() {
             4xl:h-screen 4xl:min-h-[800px] overflow-hidden flex flex-col 
             justify-center bg-cover bg-center bg-no-repeat swiper-slide-visible 
             swiper-slide-fully-visible swiper-slide-active" */}
-         <div className=" relative z-0 pt-12  md:pt-12 lg:!mt-[-12em] 
+         <div className="relative z-0 pt-12  md:pt-12 xl:!mt-[-12em] 
             4xl:h-screen 4xl:min-h-[800px] overflow-hidden flex flex-col 
             justify-center bg-cover bg-center bg-no-repeat swiper-slide-active"
             // style={{
@@ -42,13 +42,13 @@ export default function Hero() {
           >
            {/* <div className="absolute top-0 left-0 w-full h-full  z-0" /> */}
            
-           <div className="xl:mt-12 xl:mt-[18em] flex-block lg:grid  grid-cols-2 group">
+           <div className="xl:mt-12 xl:mt-[8em] flex-block lg:grid grid-cols-2 group">
             <div className="container w-full relative z-xl !text-left">
               <div className="-mt-[24">
               {/* <div className="slide-animation flex flex-col justify-center xl:mx-3 px:px-2 md:px-6 lg:px-10  "> */}
               {/* fade-in-from-bottom  */}
                <div className="flex flex-col justify-center xl:mx-3 px:px-2 md:px-6 lg:px-10  ">
-                <div className="logo-agnecy ml-10 !text-left">
+                <div className="logo-agnecy logo-agnecy ml-4 lg:ml-10 !text-left !text-left">
                    <h1 className="text-custom-gradient 
                     md:text-[82px] ss:text-[70px] text-[52px] md:leading-[90px]
                     ss:leading-[70px] leading-[55px] mb-4 font-black
@@ -98,7 +98,7 @@ export default function Hero() {
                 
                         <h5 className="uppercase text-sm md:text-base text-white relative group whitespace-nowrap font-normal mb-0 transition-all duration-300 border border-secondary-color hover:border-heading-color inline-block">
                             <span className="inline-block absolute top-0 right-0 w-full h-full bg-custom-gradient  group-hover:bg-black hover:bg-primary-cogroup-lor z-1 group-hover:w-0 transition-all duration-300" />
-                             <a  href="/properties"  className="relative z-10 px-5 py-4 px-6  group-hover:text-heading-color leading-23px" >
+                             <a  href="/properties"  className="ring ring-1 ring-pink-[#2196f3] relative z-10 px-5 py-4 px-6  group-hover:text-heading-color leading-23px" >
                               View properties
                            </a>
                         </h5>

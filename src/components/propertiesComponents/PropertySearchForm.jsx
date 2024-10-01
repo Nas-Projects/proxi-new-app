@@ -33,7 +33,7 @@ const PropertySearchForm = () => {
       <div  className="input-wrapper"  >
       <form action="#" method="POST" className="input-wrapper" onSubmit={handleSubmit}>
         <input onChange={(e) => setLocation(e.target.value)}
-          className="email-input !mb-6 border-1 !border-pink-500"
+          className="email-input !mb-6 border-1 !border-pink-500 ring ring-1 ring-pink-[#7a7678]"
           inputMode="text"
           type="text"
           id="location-input"
@@ -60,9 +60,9 @@ const PropertySearchForm = () => {
                </label>
                <select
                  id='property-type'
-                 className='w-full px-4 py-4 lg:py-3  text-[16px]  w-[320px] text-[#2d333a] h-[52px] rounded-[6px] !bg-white text-gray-800 
+                 className='ring ring-1 ring-pink-[#7a7678] w-full px-4 py-4 lg:py-3  text-[16px]  w-[320px] text-[#2d333a] h-[52px] rounded-[6px] !bg-white text-gray-800 
                  focus:outline-none focus:ring ring-1 ring-pink-300  
-                 focus:ring-blue-500 hover:shadow-lg '
+                 focus:ring-blue-500 hover:shadow-lg email-input !mb-6 border-1 !border-pink-500 ring ring-1 ing-pink-[#7a7678]'
                  value={propertyType}
                  onChange={(e) => setPropertyType(e.target.value)}
                >

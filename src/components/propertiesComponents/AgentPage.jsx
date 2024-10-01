@@ -208,8 +208,8 @@ export const AgentProfileCard = ({agent}) => {
   <div className="sm:pr-4 py-0 sm:px-6 lg:pr-8 pb-24">
        {/* <!-- Card start --> */}
   <div class="max-[600px]:min-w-[90vw] sm:w-3xl lg:min-w-[384px] lg:max-w-[30vw] xl:min-w-[37vw] mx-auto dark:bg-gray-900 rounded-lg overflow-hidden shadow-sm hover:shadow-lg">
-  <div class="border-b px-4 pb-6">
-   <div class="text-center my-4">
+  <div class="border-b  pb-6">
+   <div class="text-center my-0">
        {/* ----Profile --Header */}
        <div>
  <div
@@ -231,7 +231,7 @@ export const AgentProfileCard = ({agent}) => {
     <div className="mt-20 pl-4 sm:flex-1 sm:min-w-0 sm:flex sm:items-center 
                      sm:justify-end sm:space-x-6 sm:pb-1 gap-x-4">
       <div className="flex min-w-0 flex-1 items-center space-x-2 mt-[-2em]">
-        <h3 className="font-bold text-2xl text-gray-800 text-white dark:text-white mb-1  truncate">
+        <h3 className="font-bold text-2xl text-gray-800 text-white dark:text-white mb-1 mt-2 truncate">
           {agent?.name  ? agent.name : agent.username}
         </h3>
         {!agent?.verified && (
@@ -243,8 +243,8 @@ export const AgentProfileCard = ({agent}) => {
   </div>
 </div>
 
-          <div class="py-2 md:pt-6">
-              <h1 class="font-bold tex-base lg:text-xl xl:text-2xl text-gray-800 text-white/80 dark:text-white mb-1">Realestate Agent</h1>
+          <div class="py-4 md:pt-6">
+              <h1 class="font-bold text-lg lg:text-xl xl:text-2xl text-gray-800 text-white/90 dark:text-white mb-1">Realestate Agent</h1>
               <div class="inline-flex text-gray-200 dark:text-gray-700 dark:text-gray-300 items-center">
                   <svg class="h-5 w-5 text-gray-400 dark:text-gray-600 mr-1" fill="currentColor"
                       xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
@@ -255,7 +255,7 @@ export const AgentProfileCard = ({agent}) => {
           </div>
       </div>
       {/* <FollowMessageButtons /> */}
-      <div className="flex gap-2 px-2 gap-x-4 md:gap-x-5 md:gap-x-6">
+      <div className="px-6  flex gap-2 px-2 gap-x-4 md:gap-x-5 md:gap-x-6">
           <button
               class="flex-1  max-w-[9em] ] rounded-full bg-blue-600 dark:bg-blue-800 text-white dark:text-white antialiased font-bold hover:bg-blue-800 dark:hover:bg-blue-900 px-4 py-2">
               Follow
@@ -276,7 +276,7 @@ export const AgentProfileCard = ({agent}) => {
          </button>
       </div>
   </div>
-  <div class="px-4 py-4">
+  <div class="px-6 py-4">
       <div class="flex gap-2 items-center text-gray-200 dark:text-gray-300 mb-4">
           <svg class="h-6 w-6 text-gray-200 dark:text-gray-400" fill="currentColor"
               xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">

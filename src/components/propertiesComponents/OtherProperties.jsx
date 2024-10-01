@@ -2,7 +2,7 @@ import Link from "next/link";
 import BlurImage from "../blur-image";
 
 export default function OtherProperties({}) {
-    return <div className="mb-44 pb-64 main-container w-container xl:!max-w-[110em]">
+    return <div className="mb-44 pb-64 main-container w-container xl:!max-w-[110em] !px-6 lg:!px-0">
     <div className="house-button-wrap justify-start flex-start">
       <h4 className="no-margin ">Other properties</h4>
       <Link href="/properties" className="cta w-button  bg-custom-gradient">
