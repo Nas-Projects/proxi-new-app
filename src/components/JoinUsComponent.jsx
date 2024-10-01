@@ -254,7 +254,7 @@ export default function JoinUsComponent({joinUsData }) {
                       
                      
                        </div>
-                       <div className=" wixui-rich-text lg:px-24 xl:px-44 backdrop-blur mt-12 text-left lg:text-right">
+                       <div className=" wixui-rich-text lg:px-24 xl:px-34 backdrop-blur mt-12 text-left lg:text-right">
                          <p  id="SlideInUp"
                           ref={sectionRef}
                           className="font_7 wixui-rich-text__text"
