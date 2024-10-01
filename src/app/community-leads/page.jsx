@@ -58,7 +58,7 @@ export default function CommunityLead(){
                 href="#"
                 className="font-medium text-gray-900 hover:text-gray-600"
               >
-             Proxy's Leads
+             Proxy&apos;s Leads
               </a>
               <p className="text-gray-500">12 Leads</p>
             </div>
