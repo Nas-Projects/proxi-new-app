@@ -89,10 +89,10 @@ const PropertySearchForm = () => {
       </form>   
       </div>
      
-      <p className="inline-flex text-white justify-between other-page gap-x-12">
+      <p className="inline-flex text-white font-bold justify-between other-page gap-x-12">
      
         <span>Clear search</span> 
-         <div className=" divider-wrapper pt-0 !w-[10px]">
+         <div className=" divider-wrapper !mt-[-4em] !w-[10px]">
           <span className="divider">Or</span>
          </div>
         <a
