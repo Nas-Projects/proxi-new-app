@@ -15,15 +15,15 @@ import OtherProperties from '@/components/propertiesComponents/OtherProperties'
 import MorgageCalculator from '@/components/propertiesComponents//MorgageCalculator'
 import { FaArrowLeft, FaTimes } from 'react-icons/fa';
 import CutomTableDataList from '@/components/ui/CutomTableDataList';
-import {
-  Breadcrumb,
-  // BreadcrumbEllipsis,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb"
+// import {
+//   Breadcrumb,
+//   // BreadcrumbEllipsis,
+//   BreadcrumbItem,
+//   BreadcrumbLink,
+//   BreadcrumbList,
+//   BreadcrumbPage,
+//   BreadcrumbSeparator,
+// } from "@/components/ui/breadcrumb"
 import {
   // DropdownMenu,
   // DropdownMenuContent,

@@ -1,5 +1,5 @@
 import React from 'react';
-import Card from './Card'; // Import the reusable Card component
+// import Card from './Card'; // Import the reusable Card component
 const sectionArray = [
     {
       title: "View our properties",
