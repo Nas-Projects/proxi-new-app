@@ -55,14 +55,15 @@ export default function Hero() {
                     tracking-tight !text-left">
                     PROXY 
                     </h1>
-                  <p className="mainText mt-[-0.9em] pl-[0.1em]  lg:mt-[-1.6em] lg:pl-[0.3em] font-bold  text-[20px] md:text-15px lg:text-base 
+                  <p className="mainText mt-[-0.9em] pl-[0.1em]  lg:mt-[-1.6em] 
+                  lg:pl-[0.3em] font-bold  text-[20px] md:text-15px lg:text-base 
                     xl:text-xl font-bold mb-5 text-white font-bold">
                     <i className="fas fa-home" />
                     Real Estate Agency
                  </p>
                 </div>
              
-              <div className="group px-4 lg:px-6 py-12 lg:py-6  xl:pt-[5vh] rounded-xl -mt-10  fade-in-from-bottom">
+              <div className="group lg:px-6 py-12 lg:py-6  xl:pt-[10em] rounded-xl -mt-10  fade-in-from-bottom">
                 <div className="max-w-3xl mx-4 leading-[54px] group-hover:text-pink-500">
                   <h1 class="!text-left !text-[32px] text-black md:text-[82px] lg:ss:text-[70px] lg:text-[52px] 
                    lg:ss:leading-[70px] leading-[55px] maintext tracking-tight group-hover:text-pink-500">
@@ -132,7 +133,8 @@ export default function Hero() {
                 
                 </div>
               </div>
-               <div className="mx-4 !z-20 mt-10 lg:mt-0 search-right  max-w-[95vw] container w-full relative z-xl fade-in-from-bottom">
+               <div className="mx-4 !z-20 mt-10 lg:mt-0 search-right  
+               max-w-[95vw] container w-full relative z-xl fade-in-from-bottom">
                   <HeroSearchForm/>
                 </div>
             </div>
