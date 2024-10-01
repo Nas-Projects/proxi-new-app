@@ -1,7 +1,7 @@
 
 
 export default function CommunityLead(){
-    return <div className="bg-gray-100 py-8">
+    return <div className="bg-gray-100 py-8 mb-44">
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <ul
         role="list"

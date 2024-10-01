@@ -303,8 +303,8 @@ console.log("errorMessage", errorMessage);
                       className={`${
                         loading
                           ? 'bg-gray-200 border-pink-500'
-                          : 'bg-white/80 hover:bg-white border-black hover:border-pink-500'
-                      }      w-36 h-8 py-1 text-white hover:text-black border rounded-md text-sm transition-all`}
+                          : 'bg-white/80 hover:bg-white '
+                      }      w-36 h-8 py-1 text-bllack hover:text-white hover:bg-black text-white hover:text-black border rounded-md text-sm transition-all`}
                     >
                       {loading ? <LoadingDots color="gray" /> : 'Log in with Google'}
                     </Link> 
