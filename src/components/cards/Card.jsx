@@ -9,19 +9,19 @@ const Card = ({ title, description, href, cta, icon, bg, btnColor,  txtColor, bt
       return <img src="/arrow-topblue.svg" loading="lazy" alt="" className="icon-cta" />;
     }
     if (icon === 'button') {
-      return <button className={clsx(`${txtColor && txtColor}, ${btntxtColor && btntxtColor}  py-4 px-8`)}>{cta}</button> 
+      return <button className={clsx(`${txtColor && txtColor} ${btntxtColor && btntxtColor} py-4 px-8`)}>{cta}</button> 
     }
      else if (cta && icon === 'arrow-topblue'){
         return  <div className="inlne-flex"> 
-              <button className={clsx(`${txtColor && txtColor}, ${btntxtColor && btntxtColor}  py-4 px-8`)}>{cta}</button>  
+              <button className={clsx(`${txtColor && txtColor} ${btntxtColor && btntxtColor} py-4 px-8`)}>{cta}</button>  
                <img src="/arrow-topblue.svg" loading="lazy" alt="" className="icon-cta" />;
             </div>
     }
     else if ( cta && href){
-      return  <div className="inlne-flex"> 
-           <button className={clsx(`${txtColor && txtColor}, ${btntxtColor && btntxtColor}  py-4 px-8`)}>{cta}</button> 
-             <img src="/arrow-topblue.svg" loading="lazy" alt="" className="icon-cta" />;
-          </div>
+      return  <Link  href={href} className="inlne-flex"> 
+           <button className={clsx(`${txtColor && txtColor} ${btntxtColor && btntxtColor} py-4 px-8`)}>{cta}</button> 
+            { icon && <img src="/arrow-topblue.svg" loading="lazy" alt="" className="icon-cta" />};
+          </Link>
   }
     return null;
   };

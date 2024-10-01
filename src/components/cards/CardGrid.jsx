@@ -22,10 +22,13 @@ const sectionArray = [
       title: "Call us",
       description: "Feel free to call us in working hours Mon - Fri (8:00 - 16:00 EST). Our team will be happy to help answer your questions.",
       cta: "+1 776 336 733",
-      icon: "arrow-topblue",
+      // icon: "arrow-topbWhite",
       bg:"bg-custom-gradient",
       href:'/contact',
-      txtColor:"text-white"
+      // btnColor:"!bg-white",
+      txtColor:"!text-white",
+      // btntxtColor:"!text-white"
+      
     }
   ];
   

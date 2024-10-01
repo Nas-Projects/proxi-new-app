@@ -474,7 +474,7 @@ useEffect(() => {
                 <h3 className="text-base lg:text-lg font-bold mt-30px mb-15px text-white">
                   <span className="leading-1.3"> We Accept </span>
                 </h3>
-                <img
+                <img className='rounded-lg'
                   src="https://html.themewin.com/pixells/quarter-tailwind-preview/quarter/assets/img/icons/payment-4.png"
                   alt="Payment Image"
                 />

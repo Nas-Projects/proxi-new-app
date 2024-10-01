@@ -74,10 +74,10 @@ export const Filters = ({ filters, setFilters }) => {
   // };
 
   return (
-    <div className="filterSection  max-[600px]:!px-0 my-4 lg:my-8 main-container">
+    <div className="filterSection  max-[600px]:!px-0 my-4 lg:my-8 w-container">
       <div className="filterFields max-[991px]:flex-col space-between lg:flex  lg:space-x-24 xl:space-x-44">
         <div className="filterFieldsOne relative max-[991px]:flex-col">
-          <div className="select-1">
+          <div className="select-1 !w-72">
           <SelectButton htmlFor="location" className=""
             label="Location"
             name="location"
@@ -117,7 +117,7 @@ export const Filters = ({ filters, setFilters }) => {
             </div> 
         </div>
         </div>
-        <div className="right-top-filters max-[900px]:pt-12 md:pt-4 lg:pt-0">
+        {/* <div className="right-top-filters max-[900px]:pt-12 md:pt-4 lg:pt-0">
           <div className="w-form">
              <div className="form-price-inputs">
               <div className="gap-[12px] flex  min-[1200px]:mt-[-2.5em]">
@@ -182,7 +182,7 @@ export const Filters = ({ filters, setFilters }) => {
             </div>
           </div>
 
-        </div>
+        </div> */}
       </div>
     </div>
   );
@@ -368,8 +368,8 @@ if (filters.size) {
   return loading ? (
     <Spinner />
   ) : (
-    <div className="main-properties px-0 py-12 overflow-hidden bg-gray-50">
-      <div className="main-container w-container">
+    <div className="main-properties px-4 mx-auto lg:mx-[9%] px-0 py-12 overflow-hidden bg-gray-50">
+      <div className="w-container lg:!max-w-full">
         <div className="title-wrap-center mb-6 lg:mb-20"  
               style={{
             opacity: 1,
@@ -377,10 +377,10 @@ if (filters.size) {
               "translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)",
             transformStyle: "preserve-3d"
           }}>
-        <h1 className="page-h1 text-custom-gradient font-bold md:text-[55px] ss:text-[45px] text-[33px] slide-animation">
+        <h1 className="page-h1 lg:text-center text-custom-gradient font-bold md:text-[55px] ss:text-[45px] text-[33px] slide-animation">
           Our Properties
         </h1>
-        <p className="text-custom-gradient text-2xl ">
+        <p className="text-custom-gradient text-2xl lg:text-center">
           Proxy will give you help hand with search for a new living</p>
         </div>
         
