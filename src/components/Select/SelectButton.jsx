@@ -19,7 +19,7 @@ export default function SelectButton({ label, name, items, handleInputChange }) 
       
   return (
     <Select onValueChange={(value) => handleChange({ target: { name, value } })}>
-      <SelectTrigger className="gap-x-4 space-between h-14 lg:h-10 text-xl bg-white !w-34">
+      <SelectTrigger className="gap-x-4 space-between h-14 lg:h-10 text-xl bg-white !max-w-34">
         <SelectValue placeholder={`Select ${label}`} />
       </SelectTrigger>
       <SelectContent>

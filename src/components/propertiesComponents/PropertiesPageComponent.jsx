@@ -74,7 +74,7 @@ export const Filters = ({ filters, setFilters }) => {
   // };
 
   return (
-    <div className="filterSection  max-[600px]:!px-0 my-4 lg:my-8 w-container">
+    <div className="filterSection  max-[600px]:!px-0 my-4 lg:my-8 ">
       <div className="filterFields max-[991px]:flex-col space-between lg:flex  lg:space-x-24 xl:space-x-44">
         <div className="filterFieldsOne relative max-[991px]:flex-col">
           <div className="select-1 !w-72">
@@ -117,7 +117,7 @@ export const Filters = ({ filters, setFilters }) => {
             </div> 
         </div>
         </div>
-        {/* <div className="right-top-filters max-[900px]:pt-12 md:pt-4 lg:pt-0">
+        <div className="right-top-filters max-[900px]:pt-12 md:pt-4 lg:pt-0">
           <div className="w-form">
              <div className="form-price-inputs">
               <div className="gap-[12px] flex  min-[1200px]:mt-[-2.5em]">
@@ -182,7 +182,7 @@ export const Filters = ({ filters, setFilters }) => {
             </div>
           </div>
 
-        </div> */}
+        </div>
       </div>
     </div>
   );
@@ -400,7 +400,7 @@ if (filters.size) {
                 <p>No properties found matching your criteria. 
                   Please adjust the price or location.</p>
               ) : (
-                <div className="grid grid-cols-1 min-[712px]:grid-cols-2 min-[1079px]:grid-cols-3 min-[1475px]:!grid-cols-4 gap-6 bg-white">
+                <div className="grid grid-cols-1 min-[712px]:grid-cols-2 min-[1079px]:grid-cols-3 min-[1475px]:!grid-cols-3 gap-6 bg-white">
                   {filteredProperties.map((property) => (
                     <PropertyListCard key={property._id} property={property} />
                   ))}
@@ -419,6 +419,7 @@ if (filters.size) {
       </section> 
       <section className="mt-4 lg:my-8 mx-6 lg:mx-8 xl:mx-12"> 
         <CardGrid/>
+
       </section>
     <section className="bg-white my-12 lg:my-44 mx-auto flex items-center relative joinSection py-14 lg:py-20">
     <div className="w-full block lg:grid  lg:drid grid-cols-3">
@@ -436,7 +437,7 @@ if (filters.size) {
           className="flex items-center w-full md:mb-16 ss:mb-8  mb-16"
           style={{ opacity: 1, transform: "none", willChange: "auto" }}
         >
-          <h1 className="text-custom-gradient  py-6 lg:py-8 font-bold md:text-[55px] ss:text-[45px] text-[33px] md:mr-14 ss:mr-6 mr-5">
+          <h1 className="text-custom-gradient py-4  text-left lg:text-center  font-bold md:text-[55px] ss:text-[45px] text-[33px] md:mr-14 ss:mr-6 mr-5">
           Want to join the team?
           </h1>
           <div
@@ -454,7 +455,7 @@ if (filters.size) {
             className="flex1 flex justify-center items-start flex-col"
             style={{ opacity: 1, transform: "none", willChange: "auto" }}
           >
-            <div className="joinContainer -mt-4 xl:-mt-12">
+            <div className="joinContainer -mt-12 xl:-mt-12">
               <div className="joinText text-left">
                 <p>
                   Join our dynamic, team and unleash your full earning potential in
@@ -466,7 +467,10 @@ if (filters.size) {
                 </p>
               </div>
 
-             <div className="flex-start">
+           
+
+            
+            </div>  <div className="flex-start mt-6 py-4">
               <h5 className="uppercase text-sm md:text-base text-white relative group whitespace-nowrap font-normal mb-0 transition-all duration-300 border border-secondary-color hover:border-heading-color inline-block">
                 <span className="inline-block absolute top-0 right-0 w-full h-full bg-custom-gradient group-hover:bg-black hover:bg-primary-cogroup-lor z-1 group-hover:w-0 transition-all duration-300" />
                 <Link href="/join"
@@ -476,9 +480,6 @@ if (filters.size) {
                  Join now
                 </Link>
               </h5>
-            </div>
-
-            
             </div>
           </div>
         </div>
