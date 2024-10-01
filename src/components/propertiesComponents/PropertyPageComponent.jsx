@@ -111,16 +111,16 @@ console.log("PROPERTY_PAGE_COMPONENT", propertyData)
         </div>  
         <PropertyDetailsCard property={property} classes={'min-w-[max-w-[42em] !max-w-[42em] h-[fit-content] relative  lg:sr-only'}/>
 
-        <div className="breadcrumb w-full bg-slate-200 py-4 px-6 lg:px-12 xl:px-24">
-            {/* <BreadcrumbDemo 
+             {/*<div className="breadcrumb w-full bg-slate-200 py-4 px-6 lg:px-12 xl:px-24">
+            <BreadcrumbDemo 
               marketCategory={marketCategory}
               propertyName={property.name}
-              /> */}
-          </div> 
+              /> 
+           </div> */}
             <div className="property-share">
               <aside className='space-y-4 lg:grid lg:grid-cols-3'> 
-            <div className='inline-flex gap-x-4 py-4 mt-4 '>
-              <h4 className='text-xl text-left mainText text-center py-2'>
+             <div className='inline-flex gap-x-4 py-4 mt-4 '>
+              <h4 className='lg:ml-2 text-xl text-left mainText text-center py-2'>
                 Share Property
               </h4>
               <ShareButtons property={property} />
@@ -128,22 +128,28 @@ console.log("PROPERTY_PAGE_COMPONENT", propertyData)
                 <BookmarkButton property={property} />
               </aside>
             </div>
-         <div className='my-12 bg-white/70 p-6 rounded-lg shadow-md text-center md:text-left max-w-4xl'>
-          { property.rates &&  <h1 className='text-3xl font-bold mb-4'> Rates & Options</h1>}
-          { property.retail && property.retail.askingPrice &&  <h1 className='text-3xl font-bold mb-4'>Asking Price <span>{property.askingPrice}</span></h1>}
-          {property.category == "Commercial" && <div className="t">
-          <h3 className="text-left text-2xl font-bold lg:!text-4xl py-4">Additional Information</h3>
-          <CutomTableDataList retail={property?.retail} residential={property} investement={property}/>
-          </div>
-          
-           }
-        {/* <h3 className='text-lg font-bold my-6 bg-gray-800 text-white p-2'>
+         {/* <div className='my-12 bg-white/70 p-6 rounded-lg shadow-md text-center md:text-left max-w-4xl'> */}
+
+              { property.rates &&  <h1 className='text-3xl font-bold mb-4'> Rates & Options</h1>}
+
+              { property.retail && property.retail.askingPrice &&  <h1 className='text-3xl font-bold mb-4'>Asking Price <span>{property.askingPrice}</span></h1>}
+              
+              {property.category == "Commercial" && 
+                <div className="t">
+                  <h3 className="text-left text-2xl font-bold lg:!text-4xl py-4">Additional Information</h3>
+                  <CutomTableDataList retail={property?.retail} residential={property} investement={property}/>
+                </div>}
+
+
+          {/* <h3 className='text-lg font-bold my-6 bg-gray-800 text-white p-2'>
           Rates & Options
         </h3> */}
-      {property.rates && <div className='flex flex-col md:flex-row justify-around '>
-        <div className='flex items-center justify-center mb-4 border-b border-gray-200 md:border-b-0 pb-4 md:pb-0'>
-          <div className='text-gray-500 mr-2 font-bold'>Nightly</div>
-          <div className='text-xl text-left sm:text-2xl font-bold text-custom-gradient'>
+          {property.rates && <div className='flex flex-col md:flex-row justify-around '>
+           <div className='flex items-center justify-center mb-4 border-b border-gray-200 md:border-b-0 pb-4 md:pb-0'>
+          <div className='text-gray-500 mr-2 font-bold'>
+            Nightly
+            </div>
+            <div className='text-xl text-left sm:text-2xl font-bold text-custom-gradient'>
             {property.rates?.nightly ? (
               `$${property.rates.nightly.toLocaleString()}`
             ) : (
@@ -170,13 +176,16 @@ console.log("PROPERTY_PAGE_COMPONENT", propertyData)
               <FaTimes className='text-red-700' />
             )}
           </div>
-        </div>
-      </div>}
-     </div>
-        <div className="px-6 pt-6 py-10 lg:px-12 xl:px-12 rounded-xl  lg:max-w-[60vw] lg:py-12 xl:-my-4">
+         </div>
+        </div>}
+       {/* </div> */}
+
+        <div className="px-6 pt-6 py-10 lg:px-12 xl:px-12 rounded-xl  lg:max-w-[55vw]  xl:max-w-[45vw] lg:py-12 xl:-my-4 ">
           <h3 className="font-bold !text-4xl py-4">Property description</h3>
             <p className='paragraph-big'>{property.description} </p>
         </div>   
+
+
         <section className='relative lg:mx-4'>
          <div className="px-4 lg:px-6 w-full lg:w-2/3 lg:h-[60vh]">
             <h3 className="font-bold !text-4xl text-left pl-2 lg:px-4">Location</h3>
@@ -190,25 +199,26 @@ console.log("PROPERTY_PAGE_COMPONENT", propertyData)
             <div className='bg-white lg:p-6 rounded-lg shadow-md mt-6'>
               <PropertyMap property={property} /> 
             </div> 
-        </div> 
-      
-        </section>
+         </div> 
+       </section>
+
         <section className='relative mx-4 mt-6'>
-         { property?.neighborhoodDetails &&  <PropertyNeighborhoodDetails neighborhoodDetails={property. neighborhoodDetails} />}
+          { property?.neighborhoodDetails &&  <PropertyNeighborhoodDetails neighborhoodDetails={property. neighborhoodDetails} />}
         </section>
         {/* <section className='relative mx-4 mt-4 lg:my-2  px-4 lg:px-12'>
           <PropertyRatesOrPriceDetails property={property} />
         </section> */}
-        <section className='relative mx-4 lg:my-2 z-20'>
-        {property?.amenities?.filter((amenity) => amenity.trim() !== "").length > 0 && (
-         <div className="amenities">
-          <h3 className="text-left font-bold mt-12 lg:mt-24 !text-4xl py-4">
-            Additional amenities</h3>
-          <PropertyAmenitiesDetails property={property} />
-       </div>)}
+        {property?.amenities?.filter((amenity) => amenity.trim() !== "").length >= 2 && 
+          (  <section className='relative mx-4 lg:my-2 z-20'>
+          <div className="amenities">
+            <h3 className="text-left font-bold mt-12 lg:mt-24 !text-4xl py-4">
+           { property?.amenities.length  == 2 && "Additional amenities"}</h3>
+            <PropertyAmenitiesDetails property={property} />
+         </div>
         </section> 
+          )}
         
-        <section className='text-left relative mx-4 lg:my-2 z-20'> 
+        <section className='hidden text-left relative mx-4 lg:my-2 z-20'> 
         {property?.amenities?.filter((amenity) => amenity.trim() !== "").length > 0 &&  <div className='bg-white p-6 rounded-lg shadow-md mt-6'>
        <div className="t">
           <h3 className="font-bold !text-4xl py-4">Additional amenities</h3>

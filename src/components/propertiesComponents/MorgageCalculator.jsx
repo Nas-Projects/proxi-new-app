@@ -7,7 +7,7 @@ export default function MortgageCalculator() {
   const [mortgageRate, setMortgageRate] = useState(); // Example rate
   const [buyingCosts, setBuyingCosts] = useState(); // Example buying costs
   const [monthlyPayment, setMonthlyPayment] = useState(null);
-  const [isOpen, setIsOpen] = useState(true); // State to track dropdown
+  const [isOpen, setIsOpen] = useState(false); // State to track dropdown
 
   const calculateMortgage = (e) => {
     e.preventDefault();
@@ -35,8 +35,8 @@ export default function MortgageCalculator() {
       <div className="detail">
       <div className={styles.detailToggle} onClick={toggleDropdown}>
         <div className={styles.dropdownTitleWrap}>
-        <h3 className="text-left font-bold !text-4xl py-4">
-            Additional amenities</h3>
+     
+        <h3 className="font-bold !text-4xl py-4">Mortgage Calculator</h3>
           {/* <h3 className={styles.headingThreePropertyDetail}>Morgage Calculator</h3> */}
           <div className={styles.dropdownIconWrap}>
             <div className={styles.dropdownText}>

@@ -2,10 +2,10 @@ import Link from "next/link";
 import BlurImage from "../blur-image";
 
 export default function OtherProperties({}) {
-    return <div className="mb-44 pb-64 main-container w-container">
-    <div className="house-button-wrap">
+    return <div className="mb-44 pb-64 main-container w-container xl:!max-w-[110em]">
+    <div className="house-button-wrap justify-start flex-start">
       <h4 className="no-margin ">Other properties</h4>
-      <Link href="/properties" className="cta w-button bg-custom-gradient">
+      <Link href="/properties" className="cta w-button  bg-custom-gradient">
         Show all properties
       </Link>
     </div>
@@ -13,16 +13,20 @@ export default function OtherProperties({}) {
     <div className="w-dyn-list">
       <div role="list" className="houe-grid w-dyn-items">
         <div role="listitem" className="collection-item w-dyn-item">
-          <Link
+          <Link 
             style={{
               backgroundImage:
                 'url("https://cdn.prod.website-files.com/63c93770199def226e7204f3/63c93770199def25cc72052d_property-thumnail%203-min.jpg")'
             }}
-            href="/properties/f2f75817-3106-4818-bdbb-b8cbce180c85"
+             // style={{
+            //   backgroundImage:
+            //     'url("https://cdn.prod.website-files.com/63c93770199def226e7204f3/63c93770199def25cc72052d_property-thumnail%203-min.jpg")'
+            // }}
+            href="/properties/dbed24cc-3b01-440d-a93c-c91d4045ab7f"
             className="house-card w-inline-block"
           >
             <div className="house-content">
-              <div className="house-title">Brand New Condo in Harlem</div>
+              <div className="house-title">New Condo - Harlem</div>
               <div className="house-card-divider" />
               <div className="house-detail-wrap">
                 <div className="detail-block white-block">
@@ -109,7 +113,7 @@ export default function OtherProperties({}) {
             className="house-card w-inline-block w--current"
           >
             <div className="house-content">
-              <div className="house-title">110 Lexington Avenue - Restaurant</div>
+              <div className="house-title">Lexington Ave - Restaurant</div>
               <div className="house-card-divider" />
               <div className="house-detail-wrap">
                 <div className="detail-block white-block">

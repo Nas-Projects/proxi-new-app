@@ -125,7 +125,7 @@ export const amenities = [
 ];
 
 const PropertyAmenitiesDetails = ({ property }) => {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
