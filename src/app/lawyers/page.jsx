@@ -19,12 +19,12 @@ export default function CommunityLead(){
               src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60"
               alt=""
             />
-            <h3 className="mt-6 text-sm font-medium text-gray-900">
+            <h3 className="mt-6 font-medium text-gray-900 text-lg">
               Jane Cooper
             </h3>
             <dl className="mt-1 flex flex-grow flex-col justify-between">
               <dt className="sr-only">Title</dt>
-              <dd className="text-sm text-gray-500">Real Estate Lawyer</dd>
+              <dd className="text-gray-500text-lg">Real Estate Lawyer</dd>
               <dt className="sr-only">Role</dt>
               <dd className="mt-3">
                 <span className="inline-flex items-center rounded-full bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20">
@@ -82,12 +82,12 @@ export default function CommunityLead(){
               src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60"
               alt=""
             />
-            <h3 className="mt-6 text-sm font-medium text-gray-900">
+            <h3 className="mt-6 font-medium text-gray-900 text-lg">
               Cody Fisher
             </h3>
             <dl className="mt-1 flex flex-grow flex-col justify-between">
               <dt className="sr-only">Title</dt>
-              <dd className="text-sm text-gray-500">Real Estate Lawyer</dd>
+              <dd className="text-gray-500text-lg">Real Estate Lawyer</dd>
               <dt className="sr-only">Role</dt>
               <dd className="mt-3">
                 <span className="inline-flex items-center rounded-full bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20">
@@ -145,12 +145,12 @@ export default function CommunityLead(){
               src="https://images.unsplash.com/photo-1520813792240-56fc4a3765a7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60"
               alt=""
             />
-            <h3 className="mt-6 text-sm font-medium text-gray-900">
+            <h3 className="mt-6 font-medium text-gray-900 text-lg">
               Esther Howard
             </h3>
             <dl className="mt-1 flex flex-grow flex-col justify-between">
               <dt className="sr-only">Title</dt>
-              <dd className="text-sm text-gray-500">Assurance Lawyer</dd>
+              <dd className="text-gray-500text-lg">Assurance Lawyer</dd>
               <dt className="sr-only">Role</dt>
               <dd className="mt-3">
                 <span className="inline-flex items-center rounded-full bg-orange-100 px-2 py-1 text-xs font-medium text-orange-700 ring-1 ring-inset ring-green-600/20">
@@ -208,17 +208,17 @@ export default function CommunityLead(){
               src="https://images.unsplash.com/photo-1498551172505-8ee7ad69f235?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60"
               alt=""
             />
-            <h3 className="mt-6 text-sm font-medium text-gray-900">
+            <h3 className="mt-6 font-medium text-gray-900 text-lg">
               Jenny Wilson
             </h3>
             <dl className="mt-1 flex flex-grow flex-col justify-between">
               <dt className="sr-only">Title</dt>
-              <dd className="text-sm text-gray-500">
+              <dd className="text-gray-500text-lg">
                 Real Estate Lawyer
               </dd>
               <dt className="sr-only">Role</dt>
               <dd className="mt-3">
-                <span className="inline-flex items-center rounded-full bg-indigo-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20">
+                <span className="inline-flex items-center rounded-full bg-custom-gradient px-2 py-1 text-xs font-medium text-indigo-100 ring-1 ring-inset ring-green-600/20">
                 Exellent
                 </span>
               </dd>
@@ -273,12 +273,12 @@ export default function CommunityLead(){
               src="https://images.unsplash.com/photo-1532417344469-368f9ae6d187?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60"
               alt=""
             />
-            <h3 className="mt-6 text-sm font-medium text-gray-900">
+            <h3 className="mt-6 font-medium text-gray-900 text-lg">
               Kristin Watson
             </h3>
             <dl className="mt-1 flex flex-grow flex-col justify-between">
               <dt className="sr-only">Title</dt>
-              <dd className="text-sm text-gray-500">
+              <dd className="text-gray-500text-lg">
                 Investor Data Orchestrator
               </dd>
               <dt className="sr-only">Role</dt>
@@ -338,13 +338,13 @@ export default function CommunityLead(){
               src="https://images.unsplash.com/photo-1566492031773-4f4e44671857?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60"
               alt=""
             />
-            <h3 className="mt-6 text-sm font-medium text-gray-900">
+            <h3 className="mt-6 font-medium text-gray-900 text-lg">
               Cameron Williamson
             </h3>
             <dl className="mt-1 flex flex-grow flex-col justify-between">
               <dt className="sr-only">Title</dt>
-              <dd className="text-sm text-gray-500">
-                Product Infrastructure Lawyer
+              <dd className="text-gray-500text-lg">
+                Commercial property Lawyer
               </dd>
               <dt className="sr-only">Role</dt>
               <dd className="mt-3">
@@ -403,12 +403,12 @@ export default function CommunityLead(){
               src="https://images.unsplash.com/photo-1534751516642-a1af1ef26a56?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60"
               alt=""
             />
-            <h3 className="mt-6 text-sm font-medium text-gray-900">
+            <h3 className="mt-6 font-medium text-gray-900 text-lg">
               Courtney Henry
             </h3>
             <dl className="mt-1 flex flex-grow flex-col justify-between">
               <dt className="sr-only">Title</dt>
-              <dd className="text-sm text-gray-500">
+              <dd className="text-gray-500text-lg">
                 Investments Lawyer
               </dd>
               <dt className="sr-only">Role</dt>
@@ -468,12 +468,12 @@ export default function CommunityLead(){
               src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60"
               alt=""
             />
-            <h3 className="mt-6 text-sm font-medium text-gray-900">
+            <h3 className="mt-6 text-sm font-medium text-gray-900 text-lg text-lg">
               Theresa Webb
             </h3>
             <dl className="mt-1 flex flex-grow flex-col justify-between">
               <dt className="sr-only">Title</dt>
-              <dd className="text-sm text-gray-500">Real Etstate Lawyer</dd>
+              <dd className="text-gray-500text-lg">Real Etstate Lawyer</dd>
               <dt className="sr-only">Role</dt>
               <dd className="mt-3">
                 <span className="inline-flex items-center rounded-full bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20">

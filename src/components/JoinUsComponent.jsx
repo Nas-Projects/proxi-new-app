@@ -234,7 +234,7 @@ export default function JoinUsComponent({joinUsData }) {
                          <h1 style={{
                             transition: "all 0.5s ease-in-out",
                             opacity: !isInView ? 1 : 0}}
-                            className="text-custom-gradient text-left 
+                            className="text-custom-gradient !text-left
                               !font-bold text-center text-[36px] xl:text-[86px] max-[1700px]::text-[96px]">
                               PROXY REALESTATE <br class="wixui-rich-text__text "/>
                         </h1>
@@ -261,20 +261,23 @@ export default function JoinUsComponent({joinUsData }) {
                           style={{ lineHeight: "1.4em", fontSize: "24px" }}
                          >
                            <span>
-                             <span className=" text-lg md:text-xl lg:text-2xl text-white px-4">
+                             <span className="!text-left text-lg md:text-xl lg:text-2xl text-white px-4">
                              {sectionIntro}
                              </span>
                            </span>
 
-                           <div className=" lg:!float-right lg:!mr-[-20%] lg:mb-[20vh]hover:!text-white bg-wtransparent hover:bg-black 
-                                  hover:!text-white dark:hover:!text-white mx-6 sm:mx-0 w-[14em] 
-                                !mt-6 border border-1 border-white rounded-md lg:ml-[.2%] 
-                                text-center flex">
-                                <Link href="/contact"
-                                  className="uDW_Qe wixui-button PlZyDq text-white bg-custom-gradient  py-2 px-[10%]" >
-                                  <span className="l7_2fn wixui-button__label hover:text-white dark:hover:!text-white">Sign up</span>
-                              </Link>
-                            </div>  
+                    <Link href="/contact" className='ml-4 my-6 flex '>
+                       <h5 className="uppercase text-sm md:text-base text-white relative group 
+                        whitespace-nowrap font-normal mb-0 transition-all duration-300 border 
+                        border-black !text-black  hover:border-heading-color inline-block">
+                        <span className="inline-block absolute top-0 right-0 w-full h-full 
+                          bg-white !text-black group-hover:bg-black hover:bg-primary-cogroup-lor z-1 group-hover:w-0 transition-all duration-300" />
+                          <a href="/contact"
+                        className="relative  z-10 relative z-10 px-5 py-4 px-8 group-hover:bg-custom-gradient group-hover:text-heading-color leading-23px lg:py-17px group-hover:text-heading-color leading-23px" >
+                        Sign Up with Proxy
+                        </a>
+                        </h5>
+                       </Link>
                          </p>
                        </div>
                      </div>
@@ -304,11 +307,11 @@ export default function JoinUsComponent({joinUsData }) {
                        </div>
                        <div className="mt-4wixui-rich-text px-6" >
                          <p id="SlideInUp" ref={sectionRef}  >
-                           <span  className="text-lg md:text-xl lg:text-2xl text-white">
+                           <span  className="!text-left text-lg md:text-xl lg:text-2xl text-white">
                              <span>
                              {sectionIntro}
                              </span> 
-                            <div className="lg:!float-right lg:!mr-[-12%] lg:mb-[20vh]  flex hover:bg-[var(--light-theme-disabled-color)]
+                            {/* <div className="lg:!float-right lg:!mr-[-12%] lg:mb-[20vh]  flex hover:bg-[var(--light-theme-disabled-color)]
                                   hover:!text-white bg-wtransparent hover:bg-black 
                                   hover:!text-white dark:hover:!text-white mx-6 sm:mx-0 w-[14em] 
                                 !mt-6 border border-1 border-white rounded-md lg:ml-[.2%] 
@@ -317,7 +320,7 @@ export default function JoinUsComponent({joinUsData }) {
                                   className="uDW_Qe wixui-button PlZyDq text-white bg-custom-gradient  py-4 px-[20%]" >
                                   <span className="l7_2fn wixui-button__label hover:text-white dark:hover:!text-white">Sign up</span>
                               </Link>
-                              </div>  
+                              </div>   */}
                            </span>  
                              
                          </p> 
@@ -350,7 +353,7 @@ export default function JoinUsComponent({joinUsData }) {
                         transform: !isInView ?  "translateY(0)" : "translateX(1000)",
                       }}
                      >
-                        <h2 class="text-white text-left lg:text-right lg:px-[3em]">
+                        <h2 class="text-white !text-left lg:text-right lg:px-[3em]">
                         <span className='text-white mt-2 lg:mt-6 py-4 '>
                             {section1.sectionTitle.toUpperCase()}
                         </span>
@@ -359,21 +362,30 @@ export default function JoinUsComponent({joinUsData }) {
                       </div>
       
                  
-                      <div className=" wixui-rich-text px-[6%] lg:py-6">
+                      <div className="wixui-rich-text px-[6%] lg:py-6">
                         <p id="Section2TextComp" ref={sectionRef}   
                         className="font_7 wixui-rich-text__text !text-white" 
                            style={{ lineHeight: "1.4em", fontSize: "24px" }}>
-                          <span className=" text-lg text-left lg:text-right md:text-xl lg:text-2xl text-white">  
+                          <span className=" text-lg !text-left lg:text-right md:text-xl lg:text-2xl text-white">  
                                 {section1.sectionContent}
                           </span> <div  style={{ lineHeight: "1.4em", fontSize: "24px" }}
-                       className="lg:!float-right lg:!mr-[-12%] lg:mb-[20vh] hover:!text-white bg-wtransparent hover:bg-black 
-                          hover:!text-white dark:hover:!text-white mx-6 sm:mx-0 w-[14em] 
+                       className="lg:mb-[20vh] hover:!text-white bg-wtransparent hover:bg-black 
+                          hover:!text-white dark:hover:!text-white lg:mx-6 sm:mx-0 w-[8em] 
                         !mt-6 border border-1 border-white rounded-md lg:ml-[.2%] 
                     text-center flex">
-                    <Link href="/contact"
-                      className="uDW_Qe wixui-button PlZyDq text-white bg-custom-gradient  py-2 px-[10%]" >
-                      <span className="l7_2fn wixui-button__label hover:text-white dark:hover:!text-white">Join US</span>
-                  </Link>
+                   <div className="relative flex">
+                 <Link href="/contact ">
+                    <h5 className="uppercase text-sm md:text-base text-white relative group w-[10em]
+                        whitespace-nowrap font-normal mb-0 transition-all duration-300 border 
+                        border-black !text-black  hover:border-heading-color inline-block ">
+                    <span className="inline-block absolute top-0 right-0 w-full h-full 
+                          bg-white !text-black group-hover:bg-black hover:bg-primary-cogroup-lor z-1 group-hover:w-0 transition-all duration-300" />
+                       <a href="/contact"
+                        className="relative  z-10 relative z-10 px-5 py-4 px-10  group-hover:text-white leading-23px lg:py-17px group-hover:text-heading-color leading-23p !max-w-[4em]x" >
+                        Join  Proxy
+                        </a>
+                        </h5>
+                    </Link></div>
                   </div>  
         
                         </p> 
@@ -438,7 +450,7 @@ export function AccordionDemo({data}) {
                       <AccordionTrigger className="text-white text-left text-2xl group-hover:text-pink-400">
                         {tile.tileTitle}
                         </AccordionTrigger>
-                        <AccordionContent className='text-xl text-slate-200 group-hover:text-pink-100/90'>
+                        <AccordionContent className='!text-left text-xl text-slate-400/90 group-hover:text-pink-100/90'>
                         {tile.tileContent}
                         </AccordionContent>
                       </AccordionItem>

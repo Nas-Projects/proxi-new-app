@@ -1,9 +1,9 @@
 
 
 export default function CommunityLead(){
-    return  <div className="relative bg-gray-100 py-8 mb-64 mx-auto py-64 ">
+    return  <div className="relative bg-gray-100 py-8 mb-64 mx-auto pt-4  pb-64 ">
 
-       <div className="justify-center  px-6 pt-6 py-10 lg:px-12 xl:px-12 rounded-xl lg:py-12 xl:-my-4 ">
+       <div className="justify-center  px-6 pt-6 py-6 lg:px-12 xl:px-12 rounded-xl lg:py-12 xl:-my-4 ">
           <h3 className="font-bold !text-4xl py-4 text-center">Communty Leads</h3>
           <h2 className="text-xl text-center font-medium text-gray-900">Start with a lead. </h2>
         </div>   
@@ -11,20 +11,20 @@ export default function CommunityLead(){
     
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     <div>
-      <h2 className="text-sm font-medium text-gray-500">Pinned Listings </h2>
+      <h2 className="text-lg font-medium text-gray-500">Pinned Listings </h2>
       <ul
         role="list"
         className="mt-3 grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4"
       >
         <li className="col-span-1 flex rounded-md shadow-sm">
-          <div className="flex w-16 flex-shrink-0 items-center justify-center bg-pink-600 rounded-l-md text-sm font-medium text-white">
+          <div className="flex w-16 flex-shrink-0 items-center justify-center bg-pink-600 rounded-l-md text-lg font-medium text-white">
            M
           </div>
           <div className="flex flex-1 items-center justify-between truncate rounded-r-md border-b border-r border-t border-gray-200 bg-white">
-            <div className="flex-1 truncate px-4 py-2 text-sm">
+            <div className="flex-1 truncate px-4 py-2 text-lg">
               <a
                 href="#"
-                className="font-medium text-gray-900 hover:text-gray-600"
+                className="max-[600px]:text-xl max-[600px]:text-xl font-medium text-gray-900 hover:text-gray-600"
               >
                 Manhattan Leads
               </a>
@@ -49,14 +49,14 @@ export default function CommunityLead(){
           </div>
         </li>
         <li className="col-span-1 flex rounded-md shadow-sm">
-          <div className="flex w-16 flex-shrink-0 items-center justify-center bg-purple-600 rounded-l-md text-sm font-medium text-white">
+          <div className="flex w-16 flex-shrink-0 items-center justify-center bg-purple-600 rounded-l-md text-lg font-medium text-white">
            PR
           </div>
           <div className="flex flex-1 items-center justify-between truncate rounded-r-md border-b border-r border-t border-gray-200 bg-white">
-            <div className="flex-1 truncate px-4 py-2 text-sm">
+            <div className="flex-1 truncate px-4 py-2 text-lg">
               <a
                 href="#"
-                className="font-medium text-gray-900 hover:text-gray-600"
+                className="max-[600px]:text-xl max-[600px]:text-xl font-medium text-gray-900 hover:text-gray-600"
               >
              Proxy&apos;s Leads
               </a>
@@ -81,14 +81,14 @@ export default function CommunityLead(){
           </div>
         </li>
         <li className="col-span-1 flex rounded-md shadow-sm">
-          <div className="flex w-16 flex-shrink-0 items-center justify-center bg-yellow-500 rounded-l-md text-sm font-medium text-white">
+          <div className="flex w-16 flex-shrink-0 items-center justify-center bg-yellow-500 rounded-l-md text-lg font-medium text-white">
            BK
           </div>
           <div className="flex flex-1 items-center justify-between truncate rounded-r-md border-b border-r border-t border-gray-200 bg-white">
-            <div className="flex-1 truncate px-4 py-2 text-sm">
+            <div className="flex-1 truncate px-4 py-2 text-lg">
               <a
                 href="#"
-                className="font-medium text-gray-900 hover:text-gray-600"
+                className="max-[600px]:text-xl max-[600px]:text-xl font-medium text-gray-900 hover:text-gray-600"
               >
                 Brooklyn Leads
               </a>
@@ -113,14 +113,14 @@ export default function CommunityLead(){
           </div>
         </li>
         <li className="col-span-1 flex rounded-md shadow-sm">
-          <div className="flex w-16 flex-shrink-0 items-center justify-center bg-green-500 rounded-l-md text-sm font-medium text-white">
+          <div className="flex w-16 flex-shrink-0 items-center justify-center bg-green-500 rounded-l-md text-lg font-medium text-white">
             RQ
           </div>
           <div className="flex flex-1 items-center justify-between truncate rounded-r-md border-b border-r border-t border-gray-200 bg-white">
-            <div className="flex-1 truncate px-4 py-2 text-sm">
+            <div className="flex-1 truncate px-4 py-2 text-lg">
               <a
                 href="#"
-                className="font-medium text-gray-900 hover:text-gray-600"
+                className="max-[600px]:text-xl max-[600px]:text-xl font-medium text-gray-900 hover:text-gray-600"
               >
                Rockaway, Queens Leads
               </a>
