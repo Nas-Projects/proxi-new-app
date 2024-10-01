@@ -271,7 +271,7 @@ export default function JoinUsComponent({joinUsData }) {
                                 !mt-6 border border-1 border-white rounded-md lg:ml-[.2%] 
                                 text-center flex">
                                 <Link href="/contact"
-                                  className="uDW_Qe wixui-button PlZyDq text-white bg-custom-gradient  py-4 px-[10%]" >
+                                  className="uDW_Qe wixui-button PlZyDq text-white bg-custom-gradient  py-2 px-[10%]" >
                                   <span className="l7_2fn wixui-button__label hover:text-white dark:hover:!text-white">Sign up</span>
                               </Link>
                             </div>  
@@ -371,7 +371,7 @@ export default function JoinUsComponent({joinUsData }) {
                         !mt-6 border border-1 border-white rounded-md lg:ml-[.2%] 
                     text-center flex">
                     <Link href="/contact"
-                      className="uDW_Qe wixui-button PlZyDq text-white bg-custom-gradient  py-4 px-[10%]" >
+                      className="uDW_Qe wixui-button PlZyDq text-white bg-custom-gradient  py-2 px-[10%]" >
                       <span className="l7_2fn wixui-button__label hover:text-white dark:hover:!text-white">Join US</span>
                   </Link>
                   </div>  

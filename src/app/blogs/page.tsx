@@ -81,7 +81,7 @@ export default async function BlogsPage() {
   // }
   // console.log("fetchResults", fetchResults);
   return (
-    <section className="main-container px-0 bg-black !max-w-full min-h-[50vh]">
+    <section className=" px-0 bg-black !max-w-full min-h-[50vh]">
       <Head>
         <title>Blogs - Proxy Realestate</title>
         <meta
