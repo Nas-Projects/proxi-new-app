@@ -178,7 +178,7 @@ const PropertiesListSectionUI = ({properties}) => {
               {!propertiesToMap?.length ? (
                 <p>No properties found matching your criteria. Please adjust the price or location.</p>
               ) : (
-                <div className="grid min-[400px]:grid-cols-1 min-[600px]:grid-cols-2 gap-6 sm:grid-col-2 min-[600px]:grid-cols-2  md:gap-x-8 min-[920px]:grid-cols-3 gap-x-8 lg:grid-cols-3 min-[1511px]:grid-cols-4 xl:gap-x-10 bg-white ">
+                <div className="px-2 grid min-[400px]:grid-cols-1 min-[600px]:grid-cols-2 gap-6 sm:grid-col-2 min-[600px]:grid-cols-2  md:gap-x-8 min-[920px]:grid-cols-3 gap-x-8 lg:grid-cols-3 min-[1511px]:grid-cols-4 xl:gap-x-10 bg-white ">
                   {propertiesToMap.map((property) => (
                     <PropertiesListCard key={property.id} property={property} totsl={totalItems}/>
                   ))}

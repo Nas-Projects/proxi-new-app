@@ -70,7 +70,7 @@ export const PropertyCard = ({ property }) => {
     // src={`${property.images[0]}`}
     src={firstImage ? urlFor(firstImage).url() : property.mainImage} 
   />
-  <div className="propertyInfo bg-white">
+  <div className="propertyInfo bg-white !pt-0">
     <div className="title inline-flex gap-x-5 max-h-[2em]">
       <h2 className="text-white text-[1.1rem] mt-2 font-bold text-left mainText flex">{property.name} 
       <img src="/arrow-topblue.svg"
