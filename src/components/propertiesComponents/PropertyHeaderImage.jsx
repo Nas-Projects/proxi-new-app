@@ -69,7 +69,7 @@ const PropertyHeaderImage = ({ image, propertyTitle, propertyType, forRentorSale
   </div>
 </div>
 
-      <div className='container-xl m-auto px-6'>
+      <div className='container-xl m-auto '>
         <div className='grid grid-cols-1'>
         <BlurImage
             src={image}
