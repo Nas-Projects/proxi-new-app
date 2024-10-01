@@ -442,13 +442,25 @@ useEffect(() => {
               {/* subscription input  */}
               <div>
                 <form className="w-full relative">
-                  <Input
+                <input 
+                  className="email-input !mb-6 border-1 !border-pink-500  placeholder:text-paragraph-color outline-none border-2 "
+                  inputMode="email"
+                  placeholder="Email*"
+                  type="email"
+                  bg-white rounded-md w-full text-sm text-paragraph-color pl-5 pr-50px 
+                  name="location"
+                  autoComplete="Enter location"
+                  autoCapitalize="none"
+                  spellCheck="false"
+                  required
+                />
+                  {/* <Input
                     type="email"
                     placeholder="Email*"
                     className="bg-white rounded-md w-full text-sm text-paragraph-color pl-5 pr-50px 
                     placeholder:text-paragraph-color outline-none border-2 
                     border-border-color-9 focus:border focus:border-secondary-color h-65px block rounded-none "
-                  />
+                  /> */}
                   <button
                     type="submit"
                     className="absolute top-0 right-0 h-full px-18px text-white bg-secondary-color hover:bg-primary-color"
