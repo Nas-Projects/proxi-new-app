@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react';
 import Spinner from '@/components/propertiesComponents/Spinner';
 import Pagination from '@/components/propertiesComponents/Pagination';
 import  SelectButton  from '@/components/Select/SelectButton';
-import  CardGrid  from '@/components/cards/CardGrid.jsx';
+// import  CardGrid  from '@/components/cards/CardGrid.jsx';
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@medusajs/ui";
@@ -418,7 +418,7 @@ if (filters.size) {
         </div>
       </section> 
       <section className="mt-4 lg:my-8 mx-6 lg:mx-8 xl:mx-12"> 
-        <CardGrid/>
+        {/* <CardGrid/> */}
 
       </section>
     <section className="bg-white my-12 lg:my-44 mx-auto flex items-center relative joinSection py-14 lg:py-20">
