@@ -15,7 +15,7 @@ export default function SectionJoin() {
           />
       </div>
         <div className="col-span-1 relative px-0 lg:py-48 xl:pl-10">
-          <div className="mx-auto max-w-4xl  lg:max-w-4xl xl:max-w-4xl">
+          <div className="px-6 mx-auto max-w-4xl  lg:max-w-4xl xl:max-w-4xl">
             <div className="px-4 md:px-6 absolute inset-y-0 left-0 -z-10 w-full overflow-hidden ring-1 ring-white/5 lg:w-1/2">
               <svg
                 aria-hidden="true"
