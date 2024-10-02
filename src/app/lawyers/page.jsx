@@ -37,7 +37,7 @@ export default function CommunityLead(){
             <div className="-mt-px flex divide-x divide-gray-200">
               <div className="flex w-0 flex-1">
                 <a
-                  href="mailto:janecooper@example.com"
+                  href="mailto:janecooper@proxyre.io"
                   className="relative -mr-px inline-flex w-0 flex-1 items-center justify-center gap-x-3 rounded-bl-lg border border-transparent py-4 text-sm font-semibold text-gray-900"
                 >
                   <svg
@@ -100,7 +100,7 @@ export default function CommunityLead(){
             <div className="-mt-px flex divide-x divide-gray-200">
               <div className="flex w-0 flex-1">
                 <a
-                  href="mailto:codyfisher@example.com"
+                  href="mailto:codyfisher@proxyre.io"
                   className="relative -mr-px inline-flex w-0 flex-1 items-center justify-center gap-x-3 rounded-bl-lg border border-transparent py-4 text-sm font-semibold text-gray-900"
                 >
                   <svg
@@ -163,7 +163,7 @@ export default function CommunityLead(){
             <div className="-mt-px flex divide-x divide-gray-200">
               <div className="flex w-0 flex-1">
                 <a
-                  href="mailto:estherhoward@example.com"
+                  href="mailto:estherhoward@proxyre.io"
                   className="relative -mr-px inline-flex w-0 flex-1 items-center justify-center gap-x-3 rounded-bl-lg border border-transparent py-4 text-sm font-semibold text-gray-900"
                 >
                   <svg
@@ -228,7 +228,7 @@ export default function CommunityLead(){
             <div className="-mt-px flex divide-x divide-gray-200">
               <div className="flex w-0 flex-1">
                 <a
-                  href="mailto:jennywilson@example.com"
+                  href="mailto:jennywilson@proxyre.io"
                   className="relative -mr-px inline-flex w-0 flex-1 items-center justify-center gap-x-3 rounded-bl-lg border border-transparent py-4 text-sm font-semibold text-gray-900"
                 >
                   <svg
@@ -293,7 +293,7 @@ export default function CommunityLead(){
             <div className="-mt-px flex divide-x divide-gray-200">
               <div className="flex w-0 flex-1">
                 <a
-                  href="mailto:kristinwatson@example.com"
+                  href="mailto:kristinwatson@proxyre.io"
                   className="relative -mr-px inline-flex w-0 flex-1 items-center justify-center gap-x-3 rounded-bl-lg border border-transparent py-4 text-sm font-semibold text-gray-900"
                 >
                   <svg
@@ -358,7 +358,7 @@ export default function CommunityLead(){
             <div className="-mt-px flex divide-x divide-gray-200">
               <div className="flex w-0 flex-1">
                 <a
-                  href="mailto:cameronwilliamson@example.com"
+                  href="mailto:cameronwilliamson@proxyre.io"
                   className="relative -mr-px inline-flex w-0 flex-1 items-center justify-center gap-x-3 rounded-bl-lg border border-transparent py-4 text-sm font-semibold text-gray-900"
                 >
                   <svg
@@ -423,7 +423,7 @@ export default function CommunityLead(){
             <div className="-mt-px flex divide-x divide-gray-200">
               <div className="flex w-0 flex-1">
                 <a
-                  href="mailto:courtneyhenry@example.com"
+                  href="mailto:courtneyhenry@proxyre.io"
                   className="relative -mr-px inline-flex w-0 flex-1 items-center justify-center gap-x-3 rounded-bl-lg border border-transparent py-4 text-sm font-semibold text-gray-900"
                 >
                   <svg
@@ -486,7 +486,7 @@ export default function CommunityLead(){
             <div className="-mt-px flex divide-x divide-gray-200">
               <div className="flex w-0 flex-1">
                 <a
-                  href="mailto:theresawebb@example.com"
+                  href="mailto:theresawebb@proxyre.io"
                   className="relative -mr-px inline-flex w-0 flex-1 items-center justify-center gap-x-3 rounded-bl-lg border border-transparent py-4 text-sm font-semibold text-gray-900"
                 >
                   <svg
