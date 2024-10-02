@@ -80,7 +80,7 @@ const tabs = [
 
 function AgentsTabs({bio}) {
   return (
-    <Tabs defaultValue="bio" className="min-w-[400px] sm:w-full !bg-black mt-4 ring ring-1 pt-4 ring-slate-600  hover:ring-sky-400">
+    <Tabs defaultValue="bio" className="min-w-[400px] min-h-[35vh] sm:w-full !bg-black mt-4 ring ring-1 pt-4 ring-slate-600  hover:ring-sky-400">
       <TabsList className="grid w-full grid-cols-3 !bg-black border-b border-gray-900/50">
         {tabs.map((tab, index) => (
           <TabsTrigger key={index} value={tab.value} className={clsx( tab.current && "text-orange-400", "text-slate-200")}>
@@ -90,18 +90,18 @@ function AgentsTabs({bio}) {
       </TabsList>
 
       {tabs.map((tab, index) => (
-        <TabsContent key={tab.value} value={tab.value} className="!bg-black text-slate-100">
-          <Card>
+        <TabsContent key={tab.value} value={tab.value} className="!bg-black text-slate-100 pb-12">
+          <Card className="border-b-0 !rounded-[0] pb-24">
             <CardHeader className="border-b border-1 border-white !bg-black text-white">
               <CardTitle>{tab.title}</CardTitle>
               <CardDescription className="text-slate-200">{tab.description}</CardDescription>
             </CardHeader>
-            <CardContent className={clsx(index ==1 && "text-gray-500", "space-y-2 mt-4 pt-6")}>
+            <CardContent className={clsx(index ==1 && "text-gray-500", "space-y-2 mt-4 pt-6 pb-12")}>
               {tab.label === "Bio" ? bio : tab.content}
             </CardContent>
             <CardFooter>
               {/* This can be used for any future actions */}
-              <Button>Learn More</Button>
+              <Button to="/contact" >Learn More</Button>
             </CardFooter>
           </Card>
         </TabsContent>

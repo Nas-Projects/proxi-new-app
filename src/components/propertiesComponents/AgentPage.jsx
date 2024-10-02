@@ -47,7 +47,7 @@ export default function AgentPage({agent}) {
   const [sidebarOpen, setSidebarOpen] = useState(false)
 
   return (
-    <div id="AGENT_PAGE" className='justify-center content-center w-full min-h-screen pb-44'>
+    <div id="AGENT_PAGE" className='justify-center content-center w-full min-h-screen pb-'>
       <div>
         <Dialog open={sidebarOpen} onClose={setSidebarOpen} className="relative z-50 !hidden  lg:hidden">
           <DialogBackdrop
@@ -205,7 +205,7 @@ export default function AgentPage({agent}) {
 
 export const AgentProfileCard = ({agent}) => {
   return          <div className="">
-  <div className="sm:pr-4 py-0 md:pt-4 sm:px-6 lg:pr-8 pb-24">
+  <div className="sm:pr-4 py-0 md:pt-4 sm:px-6 lg:pr-8 pb-">
        {/* <!-- Card start --> */}
   <div class="max-[600px]:min-w-[90vw] sm:w-3xl lg:min-w-[384px] lg:max-w-[30vw] xl:min-w-[37vw] mx-auto dark:bg-gray-900  overflow-hidden shadow-sm hover:shadow-lg">
   <div class="border-b  pb-6">
