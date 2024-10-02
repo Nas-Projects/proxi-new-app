@@ -395,7 +395,7 @@ if (filters.size) {
         <div className="md:min-h-[350px] ss:min-h-[400px] min-h-[550px] min-w-[360px] 
         mx-auto flex items-center relative propertiesMainSection">
           <div className="items-center w-full mx-auto flex flex-col max-w-[126rem]">
-            <div className="container-xl lg:container m-auto px-4 py-6 min-w-[330px]">
+            <div className="container-xl lg:container m-auto px-2 py-6 min-w-[330px]">
               {filteredProperties.length === 0 ? (
                 <p>No properties found matching your criteria. 
                   Please adjust the price or location.</p>
