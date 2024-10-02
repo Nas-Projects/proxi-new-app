@@ -231,7 +231,7 @@ export const AgentProfileCard = ({agent}) => {
     <div className="mt-20 pl-4 sm:flex-1 mt-12 sm:min-w-0 sm:flex sm:items-center 
                      sm:justify-end sm:space-x-6 sm:pb-1 gap-x-4">
       <div className="flex min-w-0 flex-1 items-center space-x-2 mt-[-2em]">
-        <h3 className="font-bold text-2xl text-gray-800 text-custom-gradient-4 mb-1 mt-2 truncate">
+        <h3 className="font-bold text-2xl text-gray-800 !text-white mb-1 mt-2 truncate">
           {agent?.name  ? agent.name : agent.username}
         </h3>
         {!agent?.verified && (
@@ -315,7 +315,7 @@ export const AgentProfileCard = ({agent}) => {
       </div>
   </div>
   <div id="agent-tabs">
-  <AgentsTabs/>
+  <AgentsTabs bio={agent.bio}/>
   </div>
 </div>
 {/* <!-- Card end --> */}

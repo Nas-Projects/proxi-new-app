@@ -78,7 +78,7 @@ const tabs = [
   }
 ];
 
-function AgentsTabs() {
+function AgentsTabs({bio}) {
   return (
     <Tabs defaultValue="bio" className="min-w-[400px] sm:w-full !bg-black mt-4 ring ring-1 pt-4 ring-slate-600  hover:ring-sky-400">
       <TabsList className="grid w-full grid-cols-3 !bg-black border-b border-gray-900/50">
@@ -97,7 +97,7 @@ function AgentsTabs() {
               <CardDescription className="text-slate-200">{tab.description}</CardDescription>
             </CardHeader>
             <CardContent className={clsx(index ==1 && "text-gray-500", "space-y-2 mt-4 pt-6")}>
-              {tab.content}
+              {tab.label === "Bio" ? bio : tab.content}
             </CardContent>
             <CardFooter>
               {/* This can be used for any future actions */}
