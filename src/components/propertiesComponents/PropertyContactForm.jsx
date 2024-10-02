@@ -179,7 +179,7 @@ const PropertyContactForm = ({ property }) => {
     <div className='bg-white p-6 rounded-lg shadow-md lg:mt-12'>
       {/* <h3 className='text-xl font-bold mb-6 text-custom-gradient'>Contact Property {property.owner}</h3> */}
       {!userSession?.accessToken ? (
-        <p>You must be logged in to send a message</p>
+        <p className="mx-6">You must be logged in to send an inbox messages</p>
       ) : wasSubmitted ? (
         <p className='text-green-500 mb-4'>
           Thank Your. Your message has been sent successfully
