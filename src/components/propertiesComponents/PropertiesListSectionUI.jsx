@@ -5,102 +5,102 @@ import SectionWrapper from '../../hoc/SectionWrapper';
 import Spinner from './Spinner';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-export const RecentSale = () => {
-    return   <div className="px-4 lg:px-4 xl:mx-24 pt-24  pb-90px">
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-5 lg:gap-30px items-center">
-      {/* about 2 left */}
-      <div className="mb-5">
-        <div className="mb-30px">
-        <span className="my-4 inline-flex float-left rounded-full bg-red-50 px-2 py-1 text-xs font-medium text-pink-700 ring-1 ring-inset ring-red-600/10">
-        Just Sold
-      </span>
-          <h2 className="text-left text-2xl sm:text-3xl md:text-26px lg:text-3xl xl:text-44px text-heading-color font-bold mb-15px">
-            <span className="leading-1.3"> Today&apos;s Property Sale</span>
-          </h2>
-          <p className="text-sm lg:text-base max-w-500px lg:text-left my-4 pr-6">
-            Proxy allow you to design unlimited panels and real estate custom
-            forms to capture leads and keep record of all information
-          </p>
-        </div>
-        <ul className="space-y-4 pb-4">
-          <li className="text-sm lg:text-base flex items-center">
-            <span className="w-15px h-0.5 bg-highlight opacity-50 inline-block mr-15px" />
-            <span className="leading-1.8">Properties data and agents available</span>
-          </li>
-          <li className="text-sm lg:text-base flex items-center">
-            <span className="w-15px h-0.5 bg-secondary-color opacity-50 inline-block mr-15px" />
-            <span className="leading-1.8">
-              Our Secret Island Boat Tour is Just for You
-            </span>
-          </li>
-          <li className="text-sm lg:text-base flex items-center">
-            <span className="w-15px h-0.5 bg-secondary-color opacity-50 inline-block mr-15px" />
-            <span className="leading-1.8">Live Music Cocerts at Luviana</span>
-          </li>
-          <li className="text-sm lg:text-base flex items-center">
-            <span className="w-15px h-0.5 bg-secondary-color opacity-50 inline-block mr-15px" />
-            <span className="leading-1.8">Live Music Cocerts at Luviana</span>
-          </li>
-        </ul>
-        <ul className="flex gap-x-15px py-4">
-          <li className="text-sm pr-4 border-r border-primary-color border-opacity-20">
-            <p className="leading-1.8 font-bold">
-              3<i className="flaticon-bed ml-1" />
-            </p>
-            <p className="leading-1.8">Bedrooms</p>
-          </li>
-          <li className="text-sm pr-4 border-r border-primary-color border-opacity-20">
-            <p className="leading-1.8 font-bold">
-              2<i className="flaticon-clean ml-1" />
-            </p>
-            <p className="leading-1.8">Bedrooms</p>
-          </li>
-          <li className="text-sm pr-4 border-r border-primary-color border-opacity-20">
-            <p className="leading-1.8 font-bold">
-              2<i className="flaticon-car ml-1" />
-            </p>
-            <p className="leading-1.8">Car parking</p>
-          </li>
-          <li className="text-sm">
-            <p className="leading-1.8 font-bold">
-              3450
-              <i className="flaticon-square-shape-design-interface-tool-symbol ml-1" />
-            </p>
-            <p className="leading-1.8">square Ft</p>
-          </li>
-        </ul>
-        <div>
-          <ul className="flex gap-15px pt-4 gap-x-4">
-            <li>
-              <a
-                className="glightbox2"
-                href="assets/img/img-slide/11.jpg"
-                data-glightbox="type:image;"
-              >
-                <img src="https://html.themewin.com/pixells/quarter-tailwind-preview/quarter/assets/img/img-slide/11.jpg" alt="" />
-              </a>
-            </li>
-            <li>
-              <a className="glightbox2" href="/assets/img/img-slide/12.jpg">
-                <img src="https://html.themewin.com/pixells/quarter-tailwind-preview/quarter/assets/img/img-slide/12.jpg" alt="" />
-              </a>
-            </li>
-            <li>
-              <a className="glightbox2" href="assets/img/img-slide/13.jpg">
-                <img src="https://html.themewin.com/pixells/quarter-tailwind-preview/quarter/assets/img/img-slide/13.jpg" alt="" />
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      {/* about 2 right */}
-      <div className="lg:ml-30px relative mb-10 lg:mb-0">
-        <img src="https://html.themewin.com/pixells/quarter-tailwind-preview/quarter/assets/img/others/9.png" alt="" className="max-w-full" />
-      </div>
-    </div>
-  </div>
+// export const RecentSale = () => {
+//     return   <div className="px-4 lg:px-4 xl:mx-24 pt-24  pb-90px">
+//     <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-5 lg:gap-30px items-center">
+//       {/* about 2 left */}
+//       <div className="mb-5">
+//         <div className="mb-30px">
+//         <span className="my-4 inline-flex float-left rounded-full bg-red-50 px-2 py-1 text-xs font-medium text-pink-700 ring-1 ring-inset ring-red-600/10">
+//         Just Sold
+//       </span>
+//           <h2 className="text-left text-2xl sm:text-3xl md:text-26px lg:text-3xl xl:text-44px text-heading-color font-bold mb-15px">
+//             <span className="leading-1.3"> Today&apos;s Property Sale</span>
+//           </h2>
+//           <p className="text-sm lg:text-base max-w-500px lg:text-left my-4 pr-6">
+//             Proxy allow you to design unlimited panels and real estate custom
+//             forms to capture leads and keep record of all information
+//           </p>
+//         </div>
+//         <ul className="space-y-4 pb-4">
+//           <li className="text-sm lg:text-base flex items-center">
+//             <span className="w-15px h-0.5 bg-highlight opacity-50 inline-block mr-15px" />
+//             <span className="leading-1.8">Properties data and agents available</span>
+//           </li>
+//           <li className="text-sm lg:text-base flex items-center">
+//             <span className="w-15px h-0.5 bg-secondary-color opacity-50 inline-block mr-15px" />
+//             <span className="leading-1.8">
+//               Our Secret Island Boat Tour is Just for You
+//             </span>
+//           </li>
+//           <li className="text-sm lg:text-base flex items-center">
+//             <span className="w-15px h-0.5 bg-secondary-color opacity-50 inline-block mr-15px" />
+//             <span className="leading-1.8">Live Music Cocerts at Luviana</span>
+//           </li>
+//           <li className="text-sm lg:text-base flex items-center">
+//             <span className="w-15px h-0.5 bg-secondary-color opacity-50 inline-block mr-15px" />
+//             <span className="leading-1.8">Live Music Cocerts at Luviana</span>
+//           </li>
+//         </ul>
+//         <ul className="flex gap-x-15px py-4">
+//           <li className="text-sm pr-4 border-r border-primary-color border-opacity-20">
+//             <p className="leading-1.8 font-bold">
+//               3<i className="flaticon-bed ml-1" />
+//             </p>
+//             <p className="leading-1.8">Bedrooms</p>
+//           </li>
+//           <li className="text-sm pr-4 border-r border-primary-color border-opacity-20">
+//             <p className="leading-1.8 font-bold">
+//               2<i className="flaticon-clean ml-1" />
+//             </p>
+//             <p className="leading-1.8">Bedrooms</p>
+//           </li>
+//           <li className="text-sm pr-4 border-r border-primary-color border-opacity-20">
+//             <p className="leading-1.8 font-bold">
+//               2<i className="flaticon-car ml-1" />
+//             </p>
+//             <p className="leading-1.8">Car parking</p>
+//           </li>
+//           <li className="text-sm">
+//             <p className="leading-1.8 font-bold">
+//               3450
+//               <i className="flaticon-square-shape-design-interface-tool-symbol ml-1" />
+//             </p>
+//             <p className="leading-1.8">square Ft</p>
+//           </li>
+//         </ul>
+//         <div>
+//           <ul className="flex gap-15px pt-4 gap-x-4">
+//             <li>
+//               <a
+//                 className="glightbox2"
+//                 href="assets/img/img-slide/11.jpg"
+//                 data-glightbox="type:image;"
+//               >
+//                 <img src="https://html.themewin.com/pixells/quarter-tailwind-preview/quarter/assets/img/img-slide/11.jpg" alt="" />
+//               </a>
+//             </li>
+//             <li>
+//               <a className="glightbox2" href="/assets/img/img-slide/12.jpg">
+//                 <img src="https://html.themewin.com/pixells/quarter-tailwind-preview/quarter/assets/img/img-slide/12.jpg" alt="" />
+//               </a>
+//             </li>
+//             <li>
+//               <a className="glightbox2" href="assets/img/img-slide/13.jpg">
+//                 <img src="https://html.themewin.com/pixells/quarter-tailwind-preview/quarter/assets/img/img-slide/13.jpg" alt="" />
+//               </a>
+//             </li>
+//           </ul>
+//         </div>
+//       </div>
+//       {/* about 2 right */}
+//       <div className="lg:ml-30px relative mb-10 lg:mb-0">
+//         <img src="https://html.themewin.com/pixells/quarter-tailwind-preview/quarter/assets/img/others/9.png" alt="" className="max-w-full" />
+//       </div>
+//     </div>
+//   </div>
 
-}
+// }
 
 
 // Arrays for Locations, Property Types, and Sizes
@@ -164,7 +164,7 @@ const PropertiesListSectionUI = ({properties}) => {
     <section className="main-properties mt-[-4em] md:mt-[-17em] xl:mt-[-2.5em] px-0 lg:-mt-[12em] min-[439px]:w-[99vw]">
       <div className="wrap-title-wrap-center xl:mb-4 fade-in-from-bottom ">
         <h1 className="!text-left text-center py-6 text-custom-gradient font-bold slide-animation lg:mt-24">
-           Retail Properties
+          Properties
         </h1>
         <h2 className="-mt-4 text-2xl lg:text-3xl xl:-mt-2 pb-6 text-gray-600 ">Smart Searches & Data access</h2>
         {/* <Link href="/properties" className="">
@@ -238,7 +238,7 @@ const PropertiesListSectionUI = ({properties}) => {
                     </div>
                 </div>
              </div> */}
-             <RecentSale />
+             {/* <RecentSale /> */}
             </div> 
           </div>
        

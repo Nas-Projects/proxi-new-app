@@ -16,9 +16,9 @@ import SectionBlockChain from '@/components/propertiesComponents/SectionBlockCha
 import SectionJoin from '@/components/propertiesComponents/SectionJoin';
 import SectionTestimonial from '@/components/propertiesComponents/SectionTestimonial';
 // import SectionServices from '@/components/propertiesComponents/SectionServices';
-import SectionOurTeams from '@/components/propertiesComponents/SectionOurTeams';
+// import SectionOurTeams from '@/components/propertiesComponents/SectionOurTeams';
 // import FeaturedListings from '@/components/propertiesComponents/FeaturedListings';
-import ProperTiesForSale from '@/components/propertiesComponents/ProperTiesForSale';
+// import ProperTiesForSale from '@/components/propertiesComponents/ProperTiesForSale';
 import Hero from '@/components/Hero';
 import Link from 'next/link';
 import Spinner from '@/components/propertiesComponents/Spinner';
@@ -59,16 +59,16 @@ async function Home({}){
            <div className="margin-top-15-rem mt-44 relative px-0.5 lg:mt-[-24em] xl:lg:mt-[-0vh] mx-auto lg:px-[10%] bg-transparent relative relative ">
            <SearchButtons />
            </div>
-           <ProperTiesForSale properties={properties}/>
+           {/* <ProperTiesForSale properties={properties}/> */}
            <AboutProxy/>
+           <SectionBlockChain/>
            <PropertiesListSectionUI properties={properties}/>
            {/* <FeaturedListings /> */}
-           <SectionBlockChain/>
            <OurValues/> 
            {/* <OurFocus/> */}
-            <SectionTestimonial/>
+            {/* <SectionTestimonial/> */}
             {/* <SectionServices/> */}
-            <SectionOurTeams />
+            {/* <SectionOurTeams /> */}
             <SectionJoin/>
             <SectionContact/>
         

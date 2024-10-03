@@ -37,10 +37,10 @@ export const navLinks = [
     id: "about",
     title: "About Us",
     links: [
-      {
-        name: "About Us",
-        route: "/about",
-      },
+      // {
+      //   name: "About Us",
+      //   route: "/about",
+      // },
       {
         name: "Contact Us",
         route: "/contact",
@@ -74,15 +74,20 @@ export const navLinks = [
 export const SearchBtns = [
   {
     id: "office",
-    name: "Office",
+    name: "Office Leasing",
     Icon: FaRegBuilding,
-    link: "/properties/search-results?location=&propertyType=Studio"
+    link: "/properties/search-results?location=&propertyType=office"
   },
   {
     id: "sales",
-    name: "Sales",
+    name: "Ivestment Sales",
     Icon: HiOutlineBuildingLibrary,
     link: "/properties/search-results?location=&propertyType=sale",
+  },
+  { id: "residential",
+  name: "Residential Sales",
+  Icon: RiBuilding2Line,
+  link: "/properties/search-results?location=&propertyType=sale"
   },
   {
     id: "rentals",
@@ -90,16 +95,12 @@ export const SearchBtns = [
     Icon: GrResources,
     link: "/properties/search-results?location=&propertyType=rentals"
   },
-  { id: "modern",
-    name: "Modern",
-    Icon: RiBuilding2Line,
-    link: "/properties/search-results?location=&propertyType=modern"
-  },
+
   {
     id: "apartment",
-    name: "Apartment",
+    name: "Apartment Rentals",
     Icon: BsBuildings,
-    link: "/properties/search-results?location=&propertyType=apartment"
+    link: "/properties/search-results?location=&propertyType=rentals"
   },
   {
     id: "blockchain",

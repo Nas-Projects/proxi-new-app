@@ -15,8 +15,8 @@ const HeroSearchForm = () => {
              <h1 className='mainText text-base  md:text-3xl font-extrabold sm:text-4xl md:text-5xl'>
             Search
           </h1>
-          <p className='hidden md:flex my-4 text-xl text-gray-600'>
-            Discover the perfect property that suits your needs.
+          <p className='md:flex my-4 text-xl text-gray-600 italic font-base'>
+           Commercial or Residential
           </p>
         </div>
         <PropertySearchForm />

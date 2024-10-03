@@ -32,15 +32,15 @@ const navigation = [
   { name: 'Residentials', href: '/properties/search-results?location=&propertyType=residential', current: false },
   { name: 'Blockchain', href: '/blogs/how-blockchain-is-transforming-real-estate-transactions', current: false },
   { name: 'About', href: '/about', current: false }, 
-  { name: 'Lawyers', href: '/lawyers', current: false },
+  // { name: 'Lawyers', href: '/lawyers', current: false },
   { name: 'Agents', href: '/agents', current: false },
   { name: 'Join', href: '/join', current: false },
   { name: 'Blogs', href: '/blogs', current: false },
-  { name: 'Community Leads', href: '/community-leads', current: false },
+  // { name: 'Community Leads', href: '/community-leads', current: false },
   { name: 'Vitual Tours', href: '/virtual-tours', current: false },
-  { name: 'Contact', href: '/contact', current: false },
+  // { name: 'Contact', href: '/contact', current: false },
 
-  { name: 'Terms', href: '/terms', current: false },
+  // { name: 'Terms', href: '/terms', current: false },
 
 ]
 const userNavigation = [

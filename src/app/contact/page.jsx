@@ -33,7 +33,7 @@ export default function Contact() {
                 <rect fill="url(#83fd4e5a-9d52-42fc-97b6-718e5d7ee527)" width="100%" height="100%" strokeWidth={0} />
               </svg>
             </div>
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900">Get dfsin touch</h2>
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900">Get in touch</h2>
             <p className="mt-6 text-lg leading-8 text-gray-600">
               Get in touch with Proxy Real Estate for personalized property solutions. 
               Our team is ready to assist you with expert guidance and support.

@@ -59,13 +59,13 @@ export default function Hero() {
                   lg:pl-[0.3em] font-bold  text-[20px] md:text-15px lg:text-base 
                     xl:text-xl font-bold mb-5 text-white font-bold">
                     <i className="fas fa-home" />
-                    Real Estate Agency
+                    Full Service Real Estate Co.
                  </p>
                 </div>
              
               <div className="group lg:px-6 py-12 lg:py-6  xl:pt-[4em] rounded-xl -mt-10  fade-in-from-bottom">
                 <div className="max-w-3xl mx-4 leading-[54px] group-hover:text-pink-500">
-                  <h1 class="!text-left !text-[32px] text-black md:text-[82px] lg:ss:text-[70px] lg:text-[52px] 
+                  {/* <h1 class="!text-left !text-[32px] text-black md:text-[82px] lg:ss:text-[70px] lg:text-[52px] 
                    lg:ss:leading-[70px] leading-[55px] maintext tracking-tight group-hover:text-pink-500">
                      <span className="text-slate-600">
                         <br class="ss:flex hidden"/>Reinventing</span> 
@@ -77,21 +77,21 @@ export default function Hero() {
                         business.
                       </span>
                      </span>
-                   </h1>
+                   </h1> */}
                   <div className="slogan-cta pt-4 group-hover:text-pink-500">
-                    <h1 className="mt-4 text-2xl md:text-40px lg:text-50px 4xl:text-65px leading-30px md:leading-10 
+                    {/* <h1 className="mt-4 text-2xl md:text-40px lg:text-50px 4xl:text-65px leading-30px md:leading-10 
                         lg:leading-50px 4xl:leading-65px font-bold mb-5 animated"> 
                       <span className="text-2xl lg:leading-30px md:leading-10 lg:leading-50px 
                               xl:text-4xl text-gay-300">
                               Find Your Dream 
                             <br />
                         </span>
-                    </h1>
-                    <p className="-mt-4 !text-slate-600 max-w-2xl text-sm lg:text-base  mb-5 max-w-450px animated xl:text-2xl">
+                    </h1> */}
+                    {/* <p className="-mt-4 !text-slate-600 max-w-2xl text-sm lg:text-base  mb-5 max-w-450px animated xl:text-2xl">
                       <span className="leading-25px lg:leading-1.8">
                         Let proxy at the forfront of the realestate tech revolution handle your realestate needs.
                      </span>
-                    </p>
+                    </p> */}
                 <div id="HERO-CTA-BUTTONS" className="lg:-mt-12  py-4 lg:py-12  ">
                     <div className="!flex grid-cols-2 gap-x-4 ">
                     <Link href="/properties">
@@ -120,10 +120,7 @@ export default function Hero() {
                     </div>
                     </div>
                       </div>
-                        {/* <h5 class="bg-custom-gradient z-30 capitalize text-sm md:text-base text-white relative group whitespace-nowrap font-normal transition-all duration-300 border hover:bg-white border-secondary-color hover:border-heading-color inline-block mr-15px">
-                        <span class="inline-block absolute top-0 right-0 w-full h-fullbg-custom-gradient  group-hover:bg-primary-color z-1 group-hover:w-0 transition-all duration-300"></span>
-                        <a href="about.html" class="relative z-10 px-5 md:px-25px lg:px-10 py-10px md:py-3 lg:py-17px group-hover:text-heading-color leading-23px">Make An Enquiry</a>
-                      </h5> */}
+                     
                     </div>       
                   </div>
                     

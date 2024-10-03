@@ -430,7 +430,29 @@ useEffect(() => {
                     <span className="text-secondary-color text-[1.275rem;] pr-15px opacity-0 group-hover:opacity-100 transition-all duration-300">
                   
                     </span>
-                    Contact us
+                    Contact uu
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/terms"
+                    className="hover:text-secondary-color text-[1.275rem;] -translate-x-5 hover:translate-x-0 group leading-1.8 pl-4 lg:pl-6"
+                  >
+                    <span className="text-secondary-color text-[1.275rem;] pr-15px opacity-0 group-hover:opacity-100 transition-all duration-300">
+                  
+                    </span>
+                    Fair Housing
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/terms"
+                    className="hover:text-secondary-color text-[1.275rem;] -translate-x-5 hover:translate-x-0 group leading-1.8 pl-4 lg:pl-6"
+                  >
+                    <span className="text-secondary-color text-[1.275rem;] pr-15px opacity-0 group-hover:opacity-100 transition-all duration-300">
+                  
+                    </span>
+                   Standard Operating Procedures
                   </Link>
                 </li>
               </ul>

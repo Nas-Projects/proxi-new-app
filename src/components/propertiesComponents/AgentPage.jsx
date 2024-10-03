@@ -245,13 +245,13 @@ export const AgentProfileCard = ({agent}) => {
 {/* max-[600px]:flex */}
        
           <div class="py-4 md:pt-6">
-              <h4 class="px-8 flex mb-1 font-bold !text-[28px] lg:text-2xl text-gray-800 text-white dark:text-white   mb-1 mt-2">
-                Realestate Agent</h4>
-              <div class="flex mx-8 py-2 inline-flex px-12 text-left lg:text-right mr-24 font-bold !text-sm lg:text-xl xl:text-2xl text-gray-800 text-white/90 dark:text-white mb-1">
+              {/* <h4 class="px-8 flex mb-1 font-bold !text-[28px] lg:text-2xl text-gray-800 text-white dark:text-white   mb-1 mt-2">
+                Realestate Agent</h4> */}
+              {/* <div class="flex mx-8 py-2 inline-flex px-12 text-left lg:text-right mr-24 font-bold !text-sm lg:text-xl xl:text-2xl text-gray-800 text-white/90 dark:text-white mb-1">
                 <svg class="h-5 w-5 text-gray-400 dark:text-gray-600 mr-1" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path className="" d="M5.64 16.36a9 9 0 1 1 12.72 0l-5.65 5.66a1 1 0 0 1-1.42 0l-5.65-5.66zm11.31-1.41a7 7 0 1 0-9.9 0L12 19.9l4.95-4.95zM12 14a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm0-2a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"></path></svg><p class="text-left font-bold !text-sm lg:text-xl xl:text-2xl text-gray-800 text-white dark:text-white mb-1">
                   New York, NY
                </p>
-          </div>
+          </div> */}
               {/* <div class="flex inline-flex text-gray-200 dark:text-gray-700 dark:text-gray-300 items-center">
                   <svg class="h-5 w-5 text-gray-400 dark:text-gray-600 mr-1" fill="currentColor"
                       xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
@@ -263,6 +263,10 @@ export const AgentProfileCard = ({agent}) => {
           </div>
       </div>
       {/* <FollowMessageButtons /> */}
+      <div class="px-6 py-4">
+        <p className="text-white"><span className="pr-2 font-bold text-gray-200">Cell:</span>{agent.phone}</p> <p className="text-white "><span className="pr-2 text-bold text-gray-200">Email:</span>{agent.email}</p>
+      </div>
+
       <div className="px-6 flex gap-2 px-2 gap-x-4 md:gap-x-5 md:gap-x-6">
           <button
               class="flex-1  max-w-[9em] ] rounded-full bg-blue-600 dark:bg-blue-800 text-white dark:text-white antialiased font-bold hover:bg-blue-800 dark:hover:bg-blue-900 px-4 py-2">
@@ -285,7 +289,8 @@ export const AgentProfileCard = ({agent}) => {
       </div>
   </div>
   <div class="px-6 py-4">
-      <div class="flex gap-2 items-center text-gray-200 dark:text-gray-300 mb-4">
+    {/* <p className="text-white">{agent.phone}</p> <p className="text-white">{agent.email}</p> */}
+      {/* <div class="flex gap-2 items-center text-gray-200 dark:text-gray-300 mb-4">
           <svg class="h-6 w-6 text-gray-200 dark:text-gray-400" fill="currentColor"
               xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
               <path class=""
@@ -312,7 +317,7 @@ export const AgentProfileCard = ({agent}) => {
                   +999
               </span>
           </div>
-      </div>
+      </div> */}
   </div>
   <div id="agent-tabs">
   <AgentsTabs bio={agent.bio}/>

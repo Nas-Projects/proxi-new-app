@@ -28,12 +28,12 @@ const components = [
   href: "/properties/search-results?location=&propertyType=sale",
   description: "Explore properties available for sale.",
 },
-{
-  title: "Community Leads",
-  href: "/community-leads",
-  description:
-    "Discover lucrative investment opportunities and potential returns in real estate.",
-},
+// {
+//   title: "Community Leads",
+//   href: "/community-leads",
+//   description:
+//     "Discover lucrative investment opportunities and potential returns in real estate.",
+// },
   {
     title: "Market Trends",
     href: "market-trends",
@@ -48,12 +48,12 @@ const components = [
     description:
       "Take virtual tours of properties to explore them from the comfort of your home.",
   },
-  {
-    title: "Lawyers",
-    href: "/lawyers",
-    description:
-      "Available lawyers you can use for your real estate services.",
-  },
+  // {
+  //   title: "Lawyers",
+  //   href: "/lawyers",
+  //   description:
+  //     "Available lawyers you can use for your real estate services.",
+  // },
  
 ]
 
@@ -99,9 +99,9 @@ export function NavigationLeft() {
                 <h4 className="group-hover:p-2 group-hover:rounded-md text-sm text-gray-500 font-normal hover:bg-pink-100 group-hover:bg-pink-50 ">
                   A real estate company with a property database and an in-house agent network, you might use equivalent items like this:</h4>
               </ListItem>
-              <ListItem href="/agents" title="Our Agents"  className="hover:text-pink-500 group hover:-mb-4">
+              {/* <ListItem href="/agents" title="Our Agents"  className="hover:text-pink-500 group hover:-mb-4">
                 <h4 className="group-hover:p-2 group-hover:rounded-md text-sm text-gray-500 font-normal hover:bg-pink-100 group-hover:bg-pink-50 ">Meet our team of experienced real estate professionals.</h4>
-              </ListItem>
+              </ListItem> */}
             
               <ListItem href="/blogs/proxy-s-implementation-of-blockchain-for-real-estate-innovation" title="Blockchain Solution"  className="hover:text-pink-500">
                 Learn about our extensive blockhain implimentation for real estate.
@@ -158,13 +158,13 @@ export function NavigationLeft() {
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
-        <NavigationMenuItem className="group-hover:p-2 group-hover:rounded-md text-gray-500 font-normal hover:bg-pink-100 group-hover:bg-pink-50 text-[1.125rem]">
+        {/* <NavigationMenuItem className="group-hover:p-2 group-hover:rounded-md text-gray-500 font-normal hover:bg-pink-100 group-hover:bg-pink-50 text-[1.125rem]">
           <Link href="/about" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
               About
             </NavigationMenuLink>
           </Link>
-        </NavigationMenuItem>
+        </NavigationMenuItem> */}
         <NavigationMenuItem className="group-hover:p-2 group-hover:rounded-md text-gray-500 font-normal hover:bg-pink-100 group-hover:bg-pink-50 text-[1.125rem]">
           <Link href="/blogs" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
@@ -172,27 +172,27 @@ export function NavigationLeft() {
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem> 
-        <NavigationMenuItem className="group-hover:p-2 group-hover:rounded-md text-gray-500 font-normal hover:bg-pink-100 group-hover:bg-pink-50 text-[1.125rem]">
+        {/* <NavigationMenuItem className="group-hover:p-2 group-hover:rounded-md text-gray-500 font-normal hover:bg-pink-100 group-hover:bg-pink-50 text-[1.125rem]">
           <Link href="/lawyers" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
              Lawyers
             </NavigationMenuLink>
           </Link>
-        </NavigationMenuItem>
-        <NavigationMenuItem className="group-hover:p-2 group-hover:rounded-md text-gray-500 font-normal hover:bg-pink-100 group-hover:bg-pink-50 text-[1.125rem]">
+        </NavigationMenuItem> */}
+        {/* <NavigationMenuItem className="group-hover:p-2 group-hover:rounded-md text-gray-500 font-normal hover:bg-pink-100 group-hover:bg-pink-50 text-[1.125rem]">
           <Link href="/community-leads" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
              Leads
             </NavigationMenuLink>
           </Link>
-        </NavigationMenuItem>
-      <NavigationMenuItem className="group-hover:p-2 group-hover:rounded-md text-gray-500 font-normal hover:bg-pink-100 group-hover:bg-pink-50 text-[1.125rem]">
+        </NavigationMenuItem> */}
+      {/* <NavigationMenuItem className="group-hover:p-2 group-hover:rounded-md text-gray-500 font-normal hover:bg-pink-100 group-hover:bg-pink-50 text-[1.125rem]">
           <Link href="/terms" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
              Terms
             </NavigationMenuLink>
           </Link>
-        </NavigationMenuItem>
+        </NavigationMenuItem> */}
        </NavigationMenuList>
     </NavigationMenu>
   )
