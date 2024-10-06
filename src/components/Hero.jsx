@@ -41,7 +41,7 @@ export default function Hero() {
           >
            {/* <div className="absolute top-0 left-0 w-full h-full  z-0" /> */}
            
-           <div className="px-6 pt-12 md:pt-[10em] xl:-mt-64
+           <div className="px-6 pt-12 md:pt-[10em]  lg:pt-[14em] ] xl:-mt-4  min-w-[1580px]:-mt-24 
              max-[1071px]:mt-[-4em] flex-block lg:grid grid-cols-2 group">
                 <RightPart/>
                <div className="z-10 xl:!float-right !z-20 mt-10 lg:mt-0 xl:-mr-24 search-right  
