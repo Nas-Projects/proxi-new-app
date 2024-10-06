@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import AgentComponent from "@/components/propertiesComponents/AgentPage.jsx";
-import { sanityFetch } from '@/sanity/lib/sanityFetch';
+
 import { agentQuery } from '@/sanity/lib/queries';
 import { sanityClient } from "@/sanity/lib/client";
 

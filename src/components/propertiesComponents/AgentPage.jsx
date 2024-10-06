@@ -12,6 +12,7 @@ import {
   UsersIcon,
   XMarkIcon,
 } from '@heroicons/react/24/outline'
+import { BuildingOffice2Icon, EnvelopeIcon, PhoneIcon } from '@heroicons/react/24/outline';
 
 import Link from 'next/link';
 import { TryInboxZero } from '@/components/TryInboxZero';
@@ -266,8 +267,19 @@ export const AgentProfileCard = ({agent}) => {
           </div>
       </div>
       {/* <FollowMessageButtons /> */}
-      <div class="px-6 py-4">
-        <p className="text-white"><span className="pr-2 font-bold text-gray-200">Cell:</span>{agent.phone}</p> <p className="text-white "><span className="pr-2 text-bold text-gray-200">Email:</span>{agent.email}</p>
+      <div class="px-6 py-4 lg:-mt-4">
+        <p className="text-white group">
+            <span className="group pr-2 font-bold text-gray-200">
+               <PhoneIcon aria-hidden="true" className="h-5 w-5 text-gray-400 -mb-1 group-hover:text-pink-500 " />
+           </span>
+              <span className="group-hover:text-pink-200">{agent.phone}</span>
+           </p> 
+         <p className="text-white group">
+          <span className="pr-2 text-bold text-gray-200">  
+          <EnvelopeIcon aria-hidden="true" className="h-5 w-5 text-gray-400 group-hover:text-pink-500 -mb-1 " />
+          </span>
+           <span className="-mt-4 group-hover:text-pink-200"> {agent.email}</span>
+          </p>
       </div>
 
       <div className="px-6 flex gap-2 px-2 gap-x-4 md:gap-x-5 md:gap-x-6">
@@ -280,7 +292,7 @@ export const AgentProfileCard = ({agent}) => {
                 <button className="bg-white flex-1 rounded-sm  dark:bg-blue-800 text-black
                  dark:text-white antialiased font-bold 
                 hover:bg-custom-gradient hover:text-white dark:hover:border-sky-200 px-4 py-2">
-                  Message
+                Message
                 </button>
             
           </Link> 
@@ -288,7 +300,7 @@ export const AgentProfileCard = ({agent}) => {
                 <button className="bg-white flex-1 rounded-sm  dark:bg-blue-800 text-black
                  dark:text-white antialiased font-bold 
                 hover:bg-custom-gradient hover:text-white dark:hover:border-sky-200 px-4 py-2">
-                 Call
+                Call
                 </button>
             
           </Link> 

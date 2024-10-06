@@ -114,7 +114,7 @@ export default function Hero() {
 
 export const RightPart = () =>{
 return (
-<div className="flex flex-col w-full justify-center">
+<div className="flex flex-col w-full justify-center max-[1000px]:!mt-[3em]">
   <h1 className="text-black md:text-[82px] ss:text-[70px] text-custom-gradient  text-[52px] md:leading-[90px] fade-in-from-bottom ss:leading-[70px] leading-[55px] mb-4 font-black tracking-tight">
     proxy -{/* */}{" "}
   </h1>
