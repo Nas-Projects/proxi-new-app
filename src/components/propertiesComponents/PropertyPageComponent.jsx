@@ -83,12 +83,12 @@ console.log("PROPERTY_PAGE_COMPONENT", propertyData)
               propertyLocation={property.location} 
               forRentorSale={property.forRent===true ? "For rent" : "For sale"}/>
           <div>
-            <div className='w-full  py-6 px-6 bg-custom-gradient'>
+            <div className='group w-full  py-6 px-6 bg-pink-300 hover:bg-custom-gradient'>
               <Link
                 href='/properties'
-                className='text-blue-500 hover:text-blue-600 flex items-center text-white'
+                className='flex items-center text-white hover:text-white group-hover:text-white'
               >
-                <FaArrowLeft className='mr-2' /> Back to Properties
+                <FaArrowLeft className='mr-2  text-gray-600 group-hover:mr-4  group-hover:text-white' /> Back to Properties
               </Link>
 
             </div>
