@@ -15,9 +15,34 @@ import PropertyListCard from '@/components/propertiesComponents/PropertiesListCa
 import BlurImage from "../blur-image";
 
 
+export const locations = [
+  "Upper East Side", "Chelsea", "SoHo", "Greenwich Village", "Harlem", "Lower East Side", 
+  "Midtown", "Upper West Side", "Tribeca", "East Village", "Financial District", "Murray Hill", 
+  "Chinatown", "Gramercy", "Battery Park City", "NoHo", "Kips Bay", "Inwood", "Washington Heights", 
+  "Hudson Yards", 
+  "Williamsburg", "Park Slope", "Brooklyn Heights", "DUMBO", "Bushwick", "Bedford-Stuyvesant", 
+  "Red Hook", "Fort Greene", "Crown Heights", "Greenpoint", "Flatbush", "Cobble Hill", "Gowanus", 
+  "Prospect Heights", "Sunset Park", "East New York", "Clinton Hill", "Brownsville", "Bay Ridge", 
+  "Borough Park", 
+  "Astoria", "Long Island City", "Flushing", "Forest Hills", "Jackson Heights", "Elmhurst", 
+  "Corona", "Rego Park", "Woodside", "Kew Gardens", "Ridgewood", "Sunnyside", "Bayside", 
+  "Whitestone", "Far Rockaway", "College Point", "Ozone Park", "Middle Village", "Jamaica", 
+  "Fresh Meadows", 
+  "Riverdale", "Kingsbridge", "Woodlawn", "Pelham Bay", "Throgs Neck", "Morris Park", 
+  "Fordham", "Belmont", "Mott Haven", "Parkchester", "Co-op City", "Hunts Point", 
+  "Soundview", "Tremont", "Wakefield", "Castle Hill", "Norwood", "Bedford Park", 
+  "University Heights", "Concourse"
+];
 
 
-export const locations = ["New York", "Los Angeles", "Austin", "Phoenix", "San Francisco", "Miami", "Lost Angeles", "Chicago", "Houston", "Phoenix","Seattle", "Miami", "Denver", "Boston",  "Brooklyn", "Queens"];
+
+
+
+
+
+
+// export const locations = ["New York", "Los Angeles", "Austin", "Phoenix", "San Francisco", "Miami", "Lost Angeles", "Chicago", "Houston", "Phoenix","Seattle", "Miami", "Denver", "Boston",  "Brooklyn", "Queens"];
+
 export const propertyTypes = [
   "Residential",
   "Commercial",
@@ -87,7 +112,7 @@ export const Filters = ({ filters, setFilters }) => {
           />  
           </div>
           <SelectButton className="text-left"
-            label="Type"
+            label="Property Type"
             name="type"
             items={["All Types", ...propertyTypes]} 
             handleInputChange={handleInputChange}

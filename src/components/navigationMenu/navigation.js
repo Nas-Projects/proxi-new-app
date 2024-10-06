@@ -42,12 +42,12 @@ const components = [
       "View the latest market trends and insights for different real estate sectors.",
   },
  
-  {
-    title: "Virtual Tours",
-    href: "/virtual-tours",
-    description:
-      "Take virtual tours of properties to explore them from the comfort of your home.",
-  },
+  // {
+  //   title: "Virtual Tours",
+  //   href: "/virtual-tours",
+  //   description:
+  //     "Take virtual tours of properties to explore them from the comfort of your home.",
+  // },
   // {
   //   title: "Lawyers",
   //   href: "/lawyers",

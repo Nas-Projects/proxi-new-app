@@ -26,7 +26,8 @@ const PropertySearchForm = () => {
     }
   };
 
-  return (<main className="main-container bg-transparentlg:!my-0 lg:!mx-2 lg:!pb-[0em] lg:!pt-[0em] lg:!px-[2em] !max-w-2xl">
+  return (<main className="main-container bg-transparent lg:!my-0 min-[1371px]:!pt-0 lg:!mx-2 lg:!pb-[0em] lg:!pt-[0em] lg:!px-[2em] !max-w-2xl
+   ">
   <section className="content-wrapper pt-6 lg:pt-0">
    
     <div className="login-container max-[700px]:!px-0lg:!pb-0">

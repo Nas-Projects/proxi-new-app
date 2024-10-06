@@ -366,7 +366,7 @@ useEffect(() => {
                     Terms &amp; Conditions
                   </Link>
                 </li>
-                <li>
+                {/* <li>
                   <Link
                     href="/virtual-tours"  
                     
@@ -377,7 +377,7 @@ useEffect(() => {
                     </span>
                     Virtual Tours
                   </Link>
-                </li>
+                </li> */}
               </ul>
             </div>
             {/* footer customer care*/}

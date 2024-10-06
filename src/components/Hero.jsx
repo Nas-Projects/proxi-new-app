@@ -28,8 +28,7 @@ export default function Hero() {
             4xl:h-screen 4xl:min-h-[800px] overflow-hidden flex flex-col 
             justify-center bg-cover bg-center bg-no-repeat swiper-slide-visible 
             swiper-slide-fully-visible swiper-slide-active" */}
-         <div className="relative z-0 pt-12  md:pt-12 xl:!mt-[-12em] 
-            4xl:h-screen 4xl:min-h-[800px] overflow-hidden flex flex-col 
+         <div className="relative z-0 4xl:h-screen 4xl:min-h-[800px] overflow-hidden flex flex-col 
             justify-center bg-cover bg-center bg-no-repeat swiper-slide-active"
             // style={{
             //   width: '100%',
@@ -42,94 +41,9 @@ export default function Hero() {
           >
            {/* <div className="absolute top-0 left-0 w-full h-full  z-0" /> */}
            
-           <div className="xl:mt-12 xl:mt-[8em] flex-block lg:grid grid-cols-2 group">
-            <div className="container w-full relative z-xl !text-left">
-              <div className="-mt-[24">
-              {/* <div className="slide-animation flex flex-col justify-center xl:mx-3 px:px-2 md:px-6 lg:px-10  "> */}
-              {/* fade-in-from-bottom  */}
-               <div className="flex flex-col justify-center xl:mx-3 px:px-2 md:px-6 lg:px-10  ">
-                <div className="logo-agnecy logo-agnecy ml-4 lg:ml-10 !text-left !text-left">
-                   <h1 className="text-custom-gradient 
-                    md:text-[82px] ss:text-[70px] text-[52px] md:leading-[90px]
-                    ss:leading-[70px] leading-[55px] mb-4 font-black
-                    tracking-tight !text-left">
-                    PROXY 
-                    </h1>
-                  <p className="mainText mt-[-0.9em] pl-[0.1em]  lg:mt-[-1.6em] 
-                  lg:pl-[0.3em] font-bold  text-[20px] md:text-15px lg:text-base 
-                    xl:text-xl font-bold mb-5 text-white font-bold">
-                    <i className="fas fa-home" />
-                    Full Service Real Estate Co.
-                 </p>
-                </div>
-             
-              <div className="group lg:px-6 py-12 lg:py-6  xl:pt-[4em] rounded-xl -mt-10  fade-in-from-bottom">
-                <div className="max-w-3xl mx-4 leading-[54px] group-hover:text-pink-500">
-                  {/* <h1 class="!text-left !text-[32px] text-black md:text-[82px] lg:ss:text-[70px] lg:text-[52px] 
-                   lg:ss:leading-[70px] leading-[55px] maintext tracking-tight group-hover:text-pink-500">
-                     <span className="text-slate-600">
-                        <br class="ss:flex hidden"/>Reinventing</span> 
-                        <br/>
-                     <br class="ss:flex hidden"/>
-                     <span className="text-slate-600">
-                          real estate
-                      <span className='text-slate-600 max-[500px]:pl-4'> 
-                        business.
-                      </span>
-                     </span>
-                   </h1> */}
-                  <div className="slogan-cta pt-4 group-hover:text-pink-500">
-                    {/* <h1 className="mt-4 text-2xl md:text-40px lg:text-50px 4xl:text-65px leading-30px md:leading-10 
-                        lg:leading-50px 4xl:leading-65px font-bold mb-5 animated"> 
-                      <span className="text-2xl lg:leading-30px md:leading-10 lg:leading-50px 
-                              xl:text-4xl text-gay-300">
-                              Find Your Dream 
-                            <br />
-                        </span>
-                    </h1> */}
-                    {/* <p className="-mt-4 !text-slate-600 max-w-2xl text-sm lg:text-base  mb-5 max-w-450px animated xl:text-2xl">
-                      <span className="leading-25px lg:leading-1.8">
-                        Let proxy at the forfront of the realestate tech revolution handle your realestate needs.
-                     </span>
-                    </p> */}
-                <div id="HERO-CTA-BUTTONS" className="lg:-mt-12  py-4 lg:py-12  ">
-                    <div className="!flex grid-cols-2 gap-x-4 ">
-                    <Link href="/properties">
-                
-                        <h5 className="uppercase text-sm md:text-base text-white relative group whitespace-nowrap font-normal mb-0 transition-all duration-300 border border-secondary-color hover:border-heading-color inline-block">
-                            <span className="inline-block absolute top-0 right-0 w-full h-full bg-custom-gradient  group-hover:bg-black hover:bg-primary-cogroup-lor z-1 group-hover:w-0 transition-all duration-300" />
-                             <a  href="/properties"  className="ring ring-1 ring-pink-[#2196f3] relative z-10 px-5 py-4 px-6  group-hover:text-heading-color leading-23px" >
-                              View properties
-                           </a>
-                        </h5>
-                  
-                    </Link>
-                  <div>
-                <Link href="/contact">
-                    <h5 className="uppercase text-sm md:text-base text-white relative group 
-                        whitespace-nowrap font-normal mb-0 transition-all duration-300 border 
-                        border-black !text-black  hover:border-heading-color inline-block">
-                    <span className="inline-block absolute top-0 right-0 w-full h-full 
-                          bg-white !text-black group-hover:bg-black hover:bg-primary-cogroup-lor z-1 group-hover:w-0 transition-all duration-300" />
-                       <a href="/contact"
-                        className="relative  z-10 relative z-10 px-5 py-4 px-8  group-hover:text-heading-color leading-23px lg:py-17px group-hover:text-heading-color leading-23px" >
-                        Contact Us
-                        </a>
-                        </h5>
-                    </Link>
-                    </div>
-                    </div>
-                      </div>
-                     
-                    </div>       
-                  </div>
-                    
-                   
-                  </div>
-                  </div>
-                
-                </div>
-              </div>
+           <div className="px-6 pt-12 md:pt-[10em] xl:-mt-64
+             max-[1071px]:mt-[-4em] flex-block lg:grid grid-cols-2 group">
+                <RightPart/>
                <div className="z-10 xl:!float-right !z-20 mt-10 lg:mt-0 xl:-mr-24 search-right  
                    max-w-[100vw] container w-full relative z-xl fade-in-from-bottom">
                   <HeroSearchForm/>
@@ -191,3 +105,59 @@ export default function Hero() {
   </div>)
 
 }
+
+
+
+
+
+
+
+export const RightPart = () =>{
+return (
+<div className="flex flex-col w-full justify-center">
+  <h1 className="text-black md:text-[82px] ss:text-[70px] text-custom-gradient  text-[52px] md:leading-[90px] fade-in-from-bottom ss:leading-[70px] leading-[55px] mb-4 font-black tracking-tight">
+    proxy -{/* */}{" "}
+  </h1>
+  <span className="text-black text-[20px] md:leading-[30px] fade-in-from-bottom  mb-4  tracking-tight italic">
+  <p
+    className="-pt-12 md:mt-6 ss:mt-5  md:text-[18px] ss:text-[18px] text-[16px] text-main md:leading-[25px] ss:leading-[25px]  leading-[20px] fade-in-from-bottom md:max-w-[600px]  ss:max-w-[480px] max-w-[320px]"
+    style={{
+      opacity: 0,
+      animationDelay: "0.5s",
+      animationFillMode: "forwards"
+    }}
+  >
+     noun /ˈprɑk·si/ the agency, office, person or function who is given <br />
+    the authority or power to act for another.
+  </p>
+  </span>
+  <h1 className="text-black md:text-[82px] mt-6 ss:text-[70px]  text-[52px] md:leading-[90px] fade-in-from-bottom font-black tracking-tight">
+    <span className="text-custom-gradient">
+      <br className="ss:flex hidden" />
+      Reinventing {/* */}{" "}
+    </span>{" "}
+    <br className="ss:flex hidden" />
+    the real estate business.
+  </h1>
+  <p
+    className="md:mt-6 ss:mt-5 mt-6 md:text-[18px] ss:text-[18px] text-[16px] text-main md:leading-[25px] ss:leading-[25px]  leading-[20px] fade-in-from-bottom md:max-w-[600px]  ss:max-w-[480px] max-w-[320px]"
+    style={{
+      opacity: 0,
+      animationDelay: "0.5s",
+      animationFillMode: "forwards"
+    }}
+  >
+   Armed with two decades of industry wisdom, we are focused on combining these insights with the prowess of modern technology, delivering outcomes that not only meet but exceed your expectations
+  </p>
+  <div
+    className="flex md:mt-6 ss:mt-8 mt-6 items-center  buttonfull fade-in-from-bottom2"
+    style={{ opacity: 0, animationDelay: "1s", animationFillMode: "forwards" }}
+  >
+    <a href="/join">
+      <button className="grow4 bg-custom-gradient border-none buttonhalf md:text-[18px] ss:text-[17px] text-[14px] md:py-3 ss:py-3 py-3 md:px-24 ss:px-7 px-3 text-white  md:rounded-[6px] ss:rounded-[3px] rounded-[3px]  font-medium cursor-pointer">
+        Join Us
+      </button>
+    </a>
+  </div>
+</div>)
+  }

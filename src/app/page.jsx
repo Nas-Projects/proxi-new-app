@@ -14,7 +14,7 @@ import OurValues from '@/components/propertiesComponents/OurValues';
 import SectionContact from '@/components/propertiesComponents/SectionContact';
 import SectionBlockChain from '@/components/propertiesComponents/SectionBlockChain';
 import SectionJoin from '@/components/propertiesComponents/SectionJoin';
-import SectionTestimonial from '@/components/propertiesComponents/SectionTestimonial';
+// import SectionTestimonial from '@/components/propertiesComponents/SectionTestimonial';
 // import SectionServices from '@/components/propertiesComponents/SectionServices';
 // import SectionOurTeams from '@/components/propertiesComponents/SectionOurTeams';
 // import FeaturedListings from '@/components/propertiesComponents/FeaturedListings';
