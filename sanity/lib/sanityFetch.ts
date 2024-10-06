@@ -36,7 +36,7 @@ console.log(`sanity_fetch query: ${query}`);
         perspective: "previewDrafts",
       }),
       next: {
-        ...(isDraftMode && { revalidate: 30 }),
+        ...(isDraftMode && { revalidate: 0 }),
         tags,
       },
     });
