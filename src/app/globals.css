@@ -2449,7 +2449,7 @@ div {
 @media (max-width: 1100px) {
   body, html {
       font-size: 14px;  
-     transition: all 0.5s ease 0s !important;
+     transition: all 0.2s ease 0s !important;
    
   }
 }
@@ -4725,7 +4725,7 @@ p{margin-bottom:0;}
 }
 
 * {
-  transition: all 0.5s ease 0s !important;
+  transition: all 0.2s ease 0s !important;
 }
 
 

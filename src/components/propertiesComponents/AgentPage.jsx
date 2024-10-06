@@ -222,7 +222,7 @@ export const AgentProfileCard = ({agent}) => {
     <div className="relative group h-24 w-24 rounded-full overflow-hidden sm:h-32 sm:w-32">
   
       <BlurImage
-        src={agent?.image?.asset?.url ? agent.image.asset.url : 'https://randomuser.me/api/portraits/women/21.jpg'}
+        src={agent?.image?.asset?.url &&  agent.image.asset.url }
         alt={agent?.name}
         width={300}
         height={300}
@@ -269,19 +269,19 @@ export const AgentProfileCard = ({agent}) => {
 
       <div className="px-6 flex gap-2 px-2 gap-x-4 md:gap-x-5 md:gap-x-6">
           <button
-              class="flex-1  max-w-[9em] ] rounded-full bg-blue-600 dark:bg-blue-800 text-white dark:text-white antialiased font-bold hover:bg-blue-800 dark:hover:bg-blue-900 px-4 py-2">
+              class="flex-1  max-w-[9em] ] rounded-sm bg-blue-600 dark:bg-blue-800 text-white dark:text-white antialiased font-bold hover:bg-blue-800 dark:hover:bg-blue-900 px-4 py-2">
               Follow
           </button>  
         
           <Link  href={clsx(`mailto:${agent.email}?subject=Inquiry about property&body=Hello, I would like to inquire about..."`)}>
-                <button className="bg-white flex-1 rounded-full  dark:bg-blue-800 text-black
+                <button className="bg-white flex-1 rounded-sm  dark:bg-blue-800 text-black
                  dark:text-white antialiased font-bold 
                 hover:bg-custom-gradient hover:text-white dark:hover:border-sky-200 px-4 py-2">
                   Message
                 </button>
             
           </Link> 
-         <button className="fflex-1 bg-white text-black rounded-full border-2 border-gray-400 dark:border-gray-700 font-semibold text-black dark:text-white px-4 py-2">
+         <button className="fflex-1 bg-white text-black rounded-sm border-2 border-gray-400 dark:border-gray-700 font-semibold text-black dark:text-white px-4 py-2">
           <Link href={clsx(`tel:+1-${agent.phone}`)}>    
                  Call
           </Link>
