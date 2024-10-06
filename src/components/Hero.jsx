@@ -14,7 +14,7 @@ export default function Hero() {
           // id="swiper-wrapper-510e237465d3af044"
           aria-live="polite"
         >  
-          <Image
+          {/* <Image
           src="/beams-basic.png"
             alt=""
             height={1000}
@@ -22,7 +22,7 @@ export default function Hero() {
             placeholder="blur"
             class="absolute left-1/2 top-0 -ml-[39rem] !h-[55vh] lg:!h-[55vh] max-w-none w-full lg:w-[113.125rem] xl:!left-0 xl:!w-[109vw] "
             blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQYV2PYsGHDfwAHNAMQumvbogAAAABJRU5ErkJggg=="
-            />
+            /> */}
           {/* Hero  1 */}
           {/* <div   className="swiper-slide relative z-0 pt-[6vh]  md:pt-24 pb-100px 
             4xl:h-screen 4xl:min-h-[800px] overflow-hidden flex flex-col 
@@ -41,8 +41,8 @@ export default function Hero() {
           >
            {/* <div className="absolute top-0 left-0 w-full h-full  z-0" /> */}
            
-           <div className="px-6 pt-12 md:pt-[10em]  lg:pt-[14em] ] xl:-mt-4  min-w-[1580px]:-mt-24 
-             max-[1071px]:mt-[-4em] flex-block lg:grid grid-cols-2 group">
+           <div className="px-6 pt-12 md:pt-[10em]  lg:pt-[8em]   min-[1400px]:pt-[6em]  xl:-mt-4  min-w-[1580px]:-mt-6 
+             max-[1071px]:mt-[-4em]  min-[1600px]:pt-[0em] flex-block lg:grid grid-cols-2 group">
                 <RightPart/>
                <div className="z-10 xl:!float-right !z-20 mt-10 lg:mt-0 xl:-mr-24 search-right  
                    max-w-[100vw] container w-full relative z-xl fade-in-from-bottom">
