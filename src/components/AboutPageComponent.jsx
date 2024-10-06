@@ -44,7 +44,9 @@ export default function AboutPageComponent({aboutData}) {
 
 
 
-  const firstSentence = "Proxy – noun /ˈprɑk·si/: The agency, office, or function of representing another person.";
+  const firstSentence = "Noun /ˈprɑk·si/: The agency, office, or function of representing another person.";
+  // Noun /&apos;prak·si/ the agency, office, person or function who is given 
+  // the authority or power to act for another.
 
 
   const applyColorToText = (text, target) => {
@@ -52,7 +54,7 @@ export default function AboutPageComponent({aboutData}) {
     return (
       <>
         {parts[0]}
-        <span style={{ color: "#ec687f", fontWeight: "bold" }}>{target}</span>
+        <span  className="!text-custom-gradient" style={{ color: "#ec687f", fontWeight: "bold" }}>{target}</span>
         {parts[1]}
       </>
     );
@@ -100,6 +102,7 @@ export default function AboutPageComponent({aboutData}) {
             <div className="mx-auto max-w-2xl lg:mx-0 lg:grid lg:max-w-none lg:grid-cols-2 lg:gap-x-16 lg:gap-y-6 xl:grid-cols-1 xl:grid-rows-1 xl:gap-x-8">
               <h1 className="pt-8 max-w-2xl text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl lg:col-span-2 xl:col-auto">
               {applyColorToText(firstSentence, "/ˈprɑk·si/:")}
+           
               </h1>
               <div className="mt-6 max-w-xl lg:mt-0 xl:col-end-1 xl:row-start-1">
                 <p className="text-lg leading-8 text-gray-600">
@@ -117,7 +120,7 @@ export default function AboutPageComponent({aboutData}) {
         </div>
 
         {/* Timeline section */}
-        <div className="mx-auto mt-12 max-w-7xl px-6 lg:px-8">
+        {/* <div className="mx-auto mt-12 max-w-7xl px-6 lg:px-8">
           <div className="mx-auto grid max-w-2xl grid-cols-1 gap-8 overflow-hidden lg:mx-0 lg:max-w-none lg:grid-cols-4">
             {timeline.map((item) => (
               <div key={item.name}>
@@ -140,7 +143,7 @@ export default function AboutPageComponent({aboutData}) {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
 
 
         {/* ------SECTION 2 ------- */}
