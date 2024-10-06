@@ -188,9 +188,9 @@ console.log("errorMessage", errorMessage);
                 <XMarkIcon aria-hidden="true" className={`hidden h-6 w-6 group-data-[open]:block`} />
               </DisclosureButton>
             </div>
-            <Link href="/" className="flex flex-shrink-0 items-center">
+            <Link href="/" className="flex flex-shrink-0 items-center  min-w-44 py-6">
               <img
-                alt="Your Company"
+                alt="Proxy Logo"
                 src="/logo.png"
                 className="h-8 w-auto"
               />

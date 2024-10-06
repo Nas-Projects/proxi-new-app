@@ -189,61 +189,6 @@ useEffect(() =>
        };
 }, []);
 
-// useEffect(() => {
-//   const section3Image = document.getElementById('section3Image');
-//   // const Section2TextComp = document.getElementById('#aboutSection3Paragraph');
-//   const observer = new IntersectionObserver(
-//     (entries) => {
-//         entries.forEach((entry) => {
-//             if (entry.isIntersecting) {
-//               section3Image.classList.add('bg-pan-right')
-//             } else {
-//               section3Image.classList.remove('bg-pan-right');
-//             }
-              
-//           });
-//       },
-//       { threshold: 0.1 }  // Adjust the threshold as needed
-//   );
-
-//    if (section3ImageRef.current) {
-//           observer.observe(section3ImageRef.current);
-//       }
-
-//       return () => {
-//           if (section3ImageRef.current) {
-//               observer.unobserve(section3ImageRef.current);
-//           }
-//        };
-// }, []);
-
-// useEffect(() => {
-//   const section3TextComp = document.getElementById('section3TextComp');
-//   const observer = new IntersectionObserver(
-//     (entries) => {
-//         entries.forEach((entry) => {
-//             if (entry.isIntersecting) {
-//               section3TextComp.classList.add('slide-in-right');
-//             } else {
-//               section3TextComp.classList.remove('slide-in-right');
-//             }
-              
-//           });
-//       },
-//       { threshold: 0.0 }  // Adjust the threshold as needed
-//   );
-
-//    if (section3TextCompRef.current) {
-//           observer.observe(section3TextCompRef.current);
-//       }
-
-//       return () => {
-//           if (section3TextCompRef.current) {
-//               observer.unobserve(section3TextCompRef.current);
-//           }
-//           };
-// }, []);
-
 
   return (
     <div className="relative h-full">

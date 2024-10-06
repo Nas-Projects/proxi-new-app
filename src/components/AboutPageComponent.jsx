@@ -37,12 +37,6 @@ export default function AboutPageComponent({aboutData}) {
 
         }, []);
 
-  // If no data is found, return a fallback UI
-  // if (!section1) {
-  //   return <div>No data found.</div>;
-  // }
-
-
 
   const firstSentence = "Noun /ˈprɑk·si/: The agency, office, or function of representing another person.";
   // Noun /&apos;prak·si/ the agency, office, person or function who is given 
@@ -93,7 +87,7 @@ export default function AboutPageComponent({aboutData}) {
         {/* Hero section */}
 
         {/* ------SECTION 1 ------- */}
-        <div className="mt-4 lg:-mt-10 relative isolate -z-10 overflow-hidden bg-gradient-to-b from-indigo-100/20 pt-14">
+        <div className="px-4 pt-6 md:pt-14lg:-mt-10 relative isolate -z-10 overflow-hidden bg-gradient-to-b from-indigo-100/20 ">
           <div
             aria-hidden="true"
             className="absolute inset-y-12 right-1/2 -z-10 -mr-96 w-[200%] origin-top-right skew-x-[-30deg] bg-white shadow-xl shadow-indigo-600/10 ring-1 ring-indigo-50 sm:-mr-80 lg:-mr-96"
@@ -148,7 +142,7 @@ export default function AboutPageComponent({aboutData}) {
 
         {/* ------SECTION 2 ------- */}
         {/* Content section */}
-        <div id="section2" className="mt-32 overflow-hidden sm:mt-40">
+        <div id="section2" className="px-4 mt-32 overflow-hidden sm:mt-40">
           <div className="mx-auto max-w-7xl px-6 lg:flex lg:px-8">
             <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-12 gap-y-16 lg:mx-0 lg:min-w-full lg:max-w-none lg:flex-none lg:gap-y-8">
               <div className="group lg:col-end-1 lg:w-full lg:max-w-lg lg:pb-8">
@@ -201,12 +195,12 @@ export default function AboutPageComponent({aboutData}) {
 
         {/* ------SECTION 3 ------- */}
       
-        <div className="relative isolate -z-10 -mt-8 overflow-hidden bg-gradient-to-b from-indigo-100/20 pt-14">
+        <div className="px-4 relative isolate -z-10 -mt-8 overflow-hidden bg-gradient-to-b from-indigo-100/20 pt-14">
           <div
             aria-hidden="true"
             className="absolute inset-y-0 right-1/2 -z-10 -mr-96 w-[200%] origin-top-right skew-x-[-30deg] bg-white shadow-xl shadow-pink-600 ring-1 ring-indigo-50 sm:-mr-80 lg:-mr-96"
           />
-          <div className="mx-auto max-w-7xl px-6 py-32 sm:py-40 lg:px-8">
+          <div className="mx-auto max-w-7xl px-6 py-32 py-20 xl:py-40 lg:px-8">
             <div className="mx-auto max-w-2xl lg:mx-0 lg:grid lg:max-w-none lg:grid-cols-2 lg:gap-x-16 lg:gap-y-6 xl:grid-cols-1 xl:grid-rows-1 xl:gap-x-8">
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl group-hover:text-pink-600">
                 {section3.title}
@@ -234,7 +228,7 @@ export default function AboutPageComponent({aboutData}) {
               <div className="grouppx-4 lg:w-full xl:max-w-[90vw] lg:pb-8 xl:px-12">
                 <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl group-hover:text-pink-600">
                   {section4.title}</h2>
-                <p className="mt-6 text-xl leading-8 text-gray-600 py-4 lg:pb-8 ">
+                <p className="mt-6 text-xl leading-8 text-gray-600 py-4 lg:pb-8 py-4 ">
                  {section4.description}
                 </p>
                 {/* <p className="mt-6 text-base leading-7 text-gray-600">
@@ -287,7 +281,7 @@ export default function AboutPageComponent({aboutData}) {
         </div> */}
 
         {/* Content section */}
-        <div className="mx-auto mt-32 max-w-7xl px-6 sm:mt-40 lg:px-8">
+        <div className="px-4 mx-auto mt-12 lg:mt-24  max-w-7xl px-6 sm:mt-40 lg:px-8">
           <div className=" lg:max-w-none lg:inline-flex  gap-4 lg:gap-x-10">
             <div className="w-full lg:max-w-lg lg:flex-auto">
               <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
@@ -322,7 +316,7 @@ export default function AboutPageComponent({aboutData}) {
           </div>
         </div>
                     {/* Logo cloud */}
-     <div className="mx-auto mt-32 max-w-7xl sm:mt-40 sm:px-6 lg:px-8 mb-32 ">
+     <div className="px-4 mx-auto mt-32 max-w-7xl sm:mt-40 sm:px-6 lg:px-8 mb-32 ">
           <div className="relative isolate overflow-hidden bg-gray-900 px-6 py-24 text-center shadow-2xl sm:rounded-3xl sm:px-16">
             <h2 className="mx-auto max-w-2xl text-3xl font-bold tracking-tight text-white sm:text-4xl">
               Our customers love us

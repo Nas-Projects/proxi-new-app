@@ -2,8 +2,8 @@ import PropertySearchForm from './PropertySearchForm';
 
 const HeroSearchForm = () => {
   return (
-    <section className='!max-w-[98vw] px-6 lg:mt-[-1em] rounded-xl lg:!rounded-3xl  
-    shadow-xl pt-4 sm:pb-8 fade-in-from-bottom
+    <section className='!max-w-[99.5vw] px-8 md:px-6 lg:mt-[-1em] rounded-xl lg:!rounded-3xl  
+    md:shadow-xl pt-4 sm:pb-8 fade-in-from-bottom
       my-4  sm:p-6 !bg-white/70 lg:bg-gray-400 -mt-12
      lg:mt-24 lg:py-0 mb-4 lg:!max-w-xl '>
        

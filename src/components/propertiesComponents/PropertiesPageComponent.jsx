@@ -394,8 +394,8 @@ if (filters.size) {
     <Spinner />
   ) : (
     <div className="main-properties px-6 mx-auto lg:mx-[9%] px-0 py-12 overflow-hidden bg-gray-50">
-      <div className="w-container lg:!max-w-full">
-        <div className="title-wrap-center mb-6 lg:mb-20"  
+      <div className="w-container lg:!max-w-full px-[1.5em]">
+        <div className="title-wrap-center mb-6 lg:mb-20 "  
               style={{
             opacity: 1,
             transform:

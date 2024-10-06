@@ -59,10 +59,10 @@ const AboutProxy = () => {
             </motion.div>
             </div>
          <div className=" lg:mr-34 relative mb-10 lg:mb-0">
-           <img src="./assets/img/others/7.png" alt="" className="max-w-full" />
+           {/* <img src="./assets/img/others/7.png" alt="" className="max-w-full" /> */}
            <div className="lg:absolute top-0 left-[10px] bottom-[70px] w-150px md:w-300px">
              <div className="relative">
-               <img src="blockchain_mov_ec1ff6532a.gif" alt="" className="w-full" />
+               <img src="/blockchain_mov_ec1ff6532a.gif" alt="" className="w-full" />
                <div className="hidden lg:flex">
                <p className="text-sm lg:text-base max-w-500px">
                <span className="text-left leading-1.8 lg:leading-1.8 pt-6">

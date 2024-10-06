@@ -84,7 +84,7 @@ export default function OurValues(){
       };
     return (
          <section className="sm:px-16 -mt-12  max-w-[99vw] mx-auto">  
-           <div className="container px-[4%] lg:px-[8%]  pt-30 pb-90px">
+           <div className="container px-[4%] lg:px-[8%]  pt-14 md:pt-30 pb-90px">
             <ValuesSection/>
           </div>
         </section>
