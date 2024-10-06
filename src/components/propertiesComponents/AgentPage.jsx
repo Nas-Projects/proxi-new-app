@@ -220,13 +220,16 @@ export const AgentProfileCard = ({agent}) => {
     className={`${profileWidth} -mt-12 sm:-mt-16 sm:flex sm:items-end sm:space-x-5`}
   >
     <div className="relative group h-24 w-24 rounded-full overflow-hidden sm:h-32 sm:w-32">
-  
-      <BlurImage
-        src={agent?.image?.asset?.url &&  agent.image.asset.url }
-        alt={agent?.name}
-        width={300}
-        height={300}
-      />
+    {agent?.image?.asset?.url ?
+        <BlurImage
+          src={agent.image.asset.url }
+          alt={agent?.name}
+          width={300}
+          height={300}
+        />
+        :
+        <DefaultAvatar/>
+        }
     </div>
     <div className="mt-20 pl-4 sm:flex-1 mt-12 sm:min-w-0 sm:flex sm:items-center 
                      sm:justify-end sm:space-x-6 sm:pb-1 gap-x-4">
@@ -327,4 +330,8 @@ export const AgentProfileCard = ({agent}) => {
 
 </div>
 </div>
+}
+
+export const DefaultAvatar = ()=> {
+  return <div class="sc-hLQSwg dmFaqS h-full w-full object-cover"><svg width="11" height="7" viewBox="0 0 11 7" fill="none"><path d="M6.67948 1.50115L11 7L0 7L4.32052 1.50115C4.92109 0.736796 6.07891 0.736795 6.67948 1.50115Z" fill="gray"></path></svg></div>
 }

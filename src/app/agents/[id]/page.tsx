@@ -26,7 +26,7 @@ export const revalidate = 60; // Optional: Revalidate the page every 60 seconds
 
 export default async function AgentProfile({ params }: { params: { id: string } }) {
   // Fetch the agent data based on the provided ID
-  const agent = await sanityFetch<Agent>({ query: agentQuery, params: { id: params.id } });
+  const agent = await sanityFetch<Agent>({ query: agentQuery, params: { id: params.id } },);
 
   if (!agent) {
     return <div>No agent found.</div>;
