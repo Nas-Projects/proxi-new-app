@@ -6,23 +6,23 @@ import { sanityClient } from "@/sanity/lib/client";
 
 
 // Define the structure of an Agent
-interface Agent {
-  _id: string;
-  name: string;
-  email: string;
-  phone: string;
-  usernames: string;
-  image: {
-    asset: {
-      url: string;
-    };
-  };
-  bio: string;
-  socials: {
-    platform: string;
-    url: string;
-  }[];
-}
+// interface Agent {
+//   _id: string;
+//   name: string;
+//   email: string;
+//   phone: string;
+//   usernames: string;
+//   image: {
+//     asset: {
+//       url: string;
+//     };
+//   };
+//   bio: string;
+//   socials: {
+//     platform: string;
+//     url: string;
+//   }[];
+// }
 
 export const revalidate = 0; // Optional: Revalidate the page every 60 seconds
 

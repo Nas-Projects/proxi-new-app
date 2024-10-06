@@ -51,7 +51,7 @@ export default function OtherProperties({}) {
                   </div>
                   <div className="wrap-detail-value">
                     <p className="paragraph-small">1240</p>
-                    <p className="paragraph-small">ft2</p>
+                    <p className="paragraph-small">sq ft</p>
                   </div>
                 </div>
               </div>
@@ -94,7 +94,7 @@ export default function OtherProperties({}) {
                   </div>
                   <div className="wrap-detail-value">
                     <p className="paragraph-small">1198</p>
-                    <p className="paragraph-small">ft2</p>
+                    <p className="paragraph-small">sq ft</p>
                   </div>
                 </div>
               </div>

@@ -12,14 +12,14 @@ import {
   UsersIcon,
   XMarkIcon,
 } from '@heroicons/react/24/outline'
-import { BuildingOffice2Icon, EnvelopeIcon, PhoneIcon } from '@heroicons/react/24/outline';
+import {  EnvelopeIcon, PhoneIcon } from '@heroicons/react/24/outline';
 
 import Link from 'next/link';
 import { TryInboxZero } from '@/components/TryInboxZero';
 import { Card, CardContent } from '@/components/ui/card';
 // import { GitHubIcon } from '../SocialIcons';
 import { CheckInCircleIcon } from '../nassersIcons';
-import { getGradient } from '@/lib/gradients';
+// import { getGradient } from '@/lib/gradients';
 import BlurImage from '../blur-image';
 // import { InstagramLogoIcon } from '@radix-ui/react-icons';
 import AgentsTabs from "@/components/AgentsTabs.jsx"
@@ -213,9 +213,9 @@ export const AgentProfileCard = ({agent}) => {
    <div class="text-center my-0">
        {/* ----Profile --Header */}
        <div>
- <div
-    className={`h-48 w-full lg:h-64 
-    ${getGradient(agent.username || agent?.name)}`}
+ <div className="h-48 w-full lg:h-64 bg-custom-gradient"
+    // className={`h-48 w-full lg:h-64 
+    // ${getGradient(agent.username || agent?.name)}`}
   />
   <div
     className={`${profileWidth} -mt-12 sm:-mt-16 sm:flex sm:items-end sm:space-x-5`}
@@ -239,7 +239,7 @@ export const AgentProfileCard = ({agent}) => {
           {agent?.name  ? agent.name : agent.username}
         </h3>
         {!agent?.verified && (
-          <CheckInCircleIcon className="w-6 h-6 text-[#0070F3]" />
+          <CheckInCircleIcon className="w-6 h-6 text-pink-500" />
         )}
       </div>
      

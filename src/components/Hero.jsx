@@ -1,7 +1,7 @@
 // import Link from "next/link";
 import HeroSearchForm from "./propertiesComponents/HeroSearchForm";
 // import BlurImage from "./blur-image";
-import Image from "next/image";
+// import Image from "next/image";
 
 
 export default function Hero() {

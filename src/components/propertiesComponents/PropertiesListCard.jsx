@@ -52,7 +52,7 @@ const PropertiesListCard = ({ property }) => {
                     </div>
                     <div className="wrap-detail-value">
                       <p className="paragraph-small">  {property?.size ? property.size : property?.retail?.psf  || property.retail?.squaref_feet && property?.retail.size}</p>
-                      <p className="paragraph-small">ft2</p>
+                      <p className="paragraph-small">sq ft</p>
                     </div>
                   </div>
       {/* <p className="inline-flex gap-x-4 ">

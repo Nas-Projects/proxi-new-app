@@ -258,12 +258,12 @@ function SearchResultsCSR() {
           <FaArrowAltCircleLeft className='mr-2   h-8 w-8 hover:text-custom-gradient  ' /> Back To Properties
         </Link>
         <h2 className='text-xl sm:text-2xl mb-4 lg:text-5xl mainText inline-flex gap-x-4'>
-          {location && <span> - {location}</span>} 
+          {/* {location && <span> - {location}</span>}  */}
           {propertyType && 
             <span className='text-custom-gradient'>
               {propertyType.charAt(0).toUpperCase() + propertyType.slice(1)}
-            </span>} <div className="text-slate-500">search results
-              </div>
+            </span>}
+           <div className="text-slate-500">Results</div>
         </h2>
         {properties.length === 0 ? (
           <p className='lg:text-3xl text-slate-600'>
@@ -486,7 +486,7 @@ export const SearchResultsCard = ({ property }) => {
                     </div>
                     <div className="wrap-detail-value">
                       <p className="paragraph-small">  {property?.size ? property.size : property?.retail.psf || property.retail.size || property.retail.squaref_feet && property?.retail.size}</p>
-                      <p className="paragraph-small">ft2</p>
+                      <p className="paragraph-small">sq ft</p>
                     </div>
                   </div>
                 </div>
