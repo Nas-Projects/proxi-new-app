@@ -270,15 +270,15 @@ export const AgentProfileCard = ({agent}) => {
       <div class="px-6 py-4 lg:-mt-4">
         <p className="text-white group">
             <span className="group pr-2 font-bold text-gray-200">
-               <PhoneIcon aria-hidden="true" className="h-5 w-5 text-gray-400 -mb-1 group-hover:text-pink-500 " />
+               <PhoneIcon aria-hidden="true" className="h-5 w-5 text-pink-400 -mb-1 group-hover:text-pink-500 " />
            </span>
-              <span className="group-hover:text-pink-200">{agent.phone}</span>
+              <span className="text-pink-300  group-hover:text-pink-400">{agent.phone}</span>
            </p> 
          <p className="text-white group">
-          <span className="pr-2 text-bold text-gray-200">  
-          <EnvelopeIcon aria-hidden="true" className="h-5 w-5 text-gray-400 group-hover:text-pink-500 -mb-1 " />
+          <span className="pr-2 text-bold ">  
+          <EnvelopeIcon aria-hidden="true" className="h-5 w-5 text-pink-400  group-hover:text-pink-500 -mb-1 " />
           </span>
-           <span className="-mt-4 group-hover:text-pink-200"> {agent.email}</span>
+           <span className="-mt-4 text-pink-300  group-hover:text-pink-400"> {agent.email}</span>
           </p>
       </div>
 
@@ -289,17 +289,15 @@ export const AgentProfileCard = ({agent}) => {
           </button>   */}
         
           <Link  href={clsx(`mailto:${agent.email}?subject=Inquiry about property&body=Hello, I would like to inquire about..."`)}>
-                <button className="bg-white flex-1 rounded-sm  dark:bg-blue-800 text-black
-                 dark:text-white antialiased font-bold 
-                hover:bg-custom-gradient hover:text-white dark:hover:border-sky-200 px-4 py-2">
+                <button className="bg-custom-gradient text-white hover:!bg-white hover:!text-custom-gradient-2 flex-1 rounded-sm dark:bg-blue-800 text-black
+                 dark:text-white antialiased font-bold  dark:hover:border-sky-200 px-4 py-2">
                 Message
                 </button>
             
           </Link> 
           <Link href={clsx(`tel:+1-${agent.phone}`)}>
-                <button className="bg-white flex-1 rounded-sm  dark:bg-blue-800 text-black
-                 dark:text-white antialiased font-bold 
-                hover:bg-custom-gradient hover:text-white dark:hover:border-sky-200 px-4 py-2">
+                <button className="bg-custom-gradient text-white hover:!bg-white hover:!text-custom-gradient-2 flex-1 rounded-sm dark:bg-blue-800 text-black
+                 dark:text-white antialiased font-bold  dark:hover:border-sky-200 px-4 py-2">
                 Call
                 </button>
             

@@ -37,7 +37,7 @@ const navigation = [
   { name: 'Join', href: '/join', current: false },
   { name: 'Blogs', href: '/blogs', current: false },
   // { name: 'Community Leads', href: '/community-leads', current: false },
-  { name: 'Vitual Tours', href: '/virtual-tours', current: false },
+  // { name: 'Vitual Tours', href: '/virtual-tours', current: false },
   // { name: 'Contact', href: '/contact', current: false },
 
   // { name: 'Terms', href: '/terms', current: false },

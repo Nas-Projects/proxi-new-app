@@ -69,9 +69,7 @@ async function Home({}){
             {/* <SectionTestimonial/> */}
             {/* <SectionServices/> */}
             {/* <SectionOurTeams /> */}
-            <SectionJoin/>
-            <SectionContact/>
-        
+          
 
           <Link href="/contact">
             <div class="bg-pink-400 py-3 px-6 cursor-pointer rounded-l-md bottom-10 right-0 z-50 fixed grow2">
@@ -107,6 +105,9 @@ async function Home({}){
 
    } </>
  </Container>
+ <SectionJoin/>
+  <SectionContact/>
+        
  </div>
  )
 

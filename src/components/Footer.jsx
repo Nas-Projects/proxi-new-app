@@ -280,7 +280,7 @@ useEffect(() => {
                     All Properties
                   </Link>
                 </li>
-                <li>
+                {/* <li>
                   <Link
                     href="/blogs/revolutionizing-real-estate-with-blockchain-technology"
                     className="hover:text-secondary-color text-[1.275rem;] -translate-x-5 hover:translate-x-0 group leading-1.8 pl-4 lg:pl-6"
@@ -290,8 +290,8 @@ useEffect(() => {
                     </span>
                    Blockchain
                   </Link>
-                </li>
-                <li>
+                </li> */}
+                {/* <li>
                 <Link 
                     href="/community-leads  "
                     className="hover:text-secondary-color text-[1.275rem;] -translate-x-5 hover:translate-x-0 group leading-1.8 pl-4 lg:pl-6"
@@ -301,7 +301,7 @@ useEffect(() => {
                     </span>
                     Community Leads
                   </Link>
-                </li>
+                </li> */}
                
               </ul>
             </div>
@@ -344,7 +344,7 @@ useEffect(() => {
                     Sales
                   </Link>
                 </li>
-                <li>
+                {/* <li>
                   <Link
                     href="/lawyers"
                     className="hover:text-secondary-color text-[1.275rem;] -translate-x-5 hover:translate-x-0 group leading-1.8 pl-4 lg:pl-6"
@@ -354,7 +354,7 @@ useEffect(() => {
                     </span>
                      Lawyers
                   </Link>
-                </li>
+                </li> */}
                 <li>
                   <Link
                     href="/terms"
