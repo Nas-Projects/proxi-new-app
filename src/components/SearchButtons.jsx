@@ -38,7 +38,7 @@ const SearchButtons = () => {
         <div className='items-center w-full mx-auto flex 
         max-w-[86rem]'>
             <div className="flex items-center w-full justify-center">
-                <div className='grid grid-cols-3 lg:flex gap-6 items-center'>
+                <div className='grid grid-cols-3 lg:flex gap-2 items-center'>
                     {SearchBtns.map((item, index) => (
                       <ButtonCard 
                         key={item.id}

@@ -72,6 +72,13 @@ export const navLinks = [
 ];
 
 export const SearchBtns = [
+
+{
+  id: "apartment",
+  name: "Apartment Rentals",
+  Icon: BsBuildings,
+  link: "/properties/search-results?location=&propertyType=rentals"
+},
   {
     id: "office",
     name: "Office Leasing",
@@ -90,21 +97,14 @@ export const SearchBtns = [
   link: "/properties/search-results?location=&propertyType=sale"
   },
   {
-    id: "rentals",
-    name: "Rentals",
-    Icon: GrResources,
-    link: "/properties/search-results?location=&propertyType=rentals"
-  },
-
-  {
-    id: "apartment",
-    name: "Apartment Rentals",
-    Icon: BsBuildings,
-    link: "/properties/search-results?location=&propertyType=rentals"
+    id: "office",
+    name: "Office Leasing",
+    Icon: FaRegBuilding,
+    link: "/properties/search-results?location=&propertyType=office"
   },
   {
     id: "blockchain",
-    name: "Blockchain",
+    name: "Blockchain Tech",
     Icon: HiOutlineBuildingLibrary,
     link: "/blogs/how-blockchain-is-transforming-real-estate-transactions"
   },

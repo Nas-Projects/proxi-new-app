@@ -569,7 +569,8 @@ select{font-family:var(--body-font);transition:all 0.3s ease 0s;}
 
 .bg-secondary-color {
   --tw-bg-opacity: 1;
-  background-color: #fd90b5;
+  background:linear-gradient(180deg,#da1f88,#360b41);-webkit-background-fill-color:transparent;
+  /* background-color: #fd90b5; */
 }
 .w-15px {
   width: .9375rem;

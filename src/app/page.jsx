@@ -24,7 +24,7 @@ import Link from 'next/link';
 import Spinner from '@/components/propertiesComponents/Spinner';
 import { sanityFetch } from "@/sanity/lib/sanityFetch";
 import { propertiesQuery } from "@/sanity/lib/queries";
-
+import SectionHero from '@/components/landing/SectionHero'
 async function Home({}){
   let loading = true 
   const properties = await sanityFetch({ query: propertiesQuery });
@@ -52,9 +52,8 @@ async function Home({}){
    
      <div className="isolate flex min-h-dvh items-center justify-center t">
       <div className="relative w-full ">
-
-          <Hero   //  heroDetails={heroDetails}
-          />
+         <SectionHero />
+          <Hero />
            {/* <div className="mx-auto lg:px-[10%] bg-transparent  absolute absolute top-[89vh] lg:top-[68vh] lg:mx-auto md:top-[70vh] xl:top-[67vh]"></div> */}
            <div className="mt-64 md:mt-96 relative px-0.5 lg:mt-[-0em] xl:lg:mt-[-0vh] mx-auto lg:px-[10%] bg-transparent relative relative ">
            <SearchButtons />
@@ -72,7 +71,7 @@ async function Home({}){
           
 
           <Link href="/contact">
-            <div class="bg-pink-400 py-3 px-6 cursor-pointer rounded-l-md bottom-10 right-0 z-50 fixed grow2">
+            <div class="bg-custom-gradient mx-6 py-3 px-6 cursor-pointer rounded-full bottom-8 right-0 z-50 fixed grow2">
               <p class="text-white text-[20px] font-semibold">Contact Us</p>
             </div>
           </Link>

@@ -26,15 +26,15 @@ const PropertySearchForm = () => {
     }
   };
 
-  return (<main className="main-container bg-transparent lg:!my-0 min-[1371px]:!pt-0 lg:!mx-2 lg:!pb-[0em] lg:!pt-[0em] lg:!px-[2em] !max-w-2xl
+  return (<main className="main-container !mx-auto min-[600px]:!px-12 justify-center cinstent-center min-[600px]:!py-0  bg-transparent lg:!my-0 min-[1371px]:!pt-0 lg:!mx-2 lg:!pb-[0em] lg:!pt-[0em] lg:!px-[2em] !max-w-2xl
    ">
   <section className="content-wrapper pt-6 lg:pt-0">
    
-    <div className="login-container max-[700px]:!px-0lg:!pb-0">
+    <div className="login-container max-[600px]:px-0 max-[700px]:!px-0lg:!pb-0">
       <div  className="input-wrapper"  >
       <form action="#" method="POST" className="input-wrapper" onSubmit={handleSubmit}>
         <input onChange={(e) => setLocation(e.target.value)}
-          className="email-input !mb-6 border-1 !border-pink-500 ring ring-1 ring-pink-[#7a7678]"
+          className="email-input !mb-6 border-1 !border-pink-900 ring ring-1 focus:!border-pink-500 ring-pink-[#7a7678]"
           inputMode="text"
           type="text"
           id="location-input"
@@ -62,8 +62,8 @@ const PropertySearchForm = () => {
                <select
                  id='property-type'
                  className='ring ring-1 ring-pink-[#7a7678] w-full px-4 py-4 lg:py-3  text-[16px]  w-[320px] text-[#2d333a] h-[52px] rounded-[6px] !bg-white text-gray-800 
-                 focus:outline-none focus:ring ring-1 ring-pink-300  
-                 focus:ring-blue-500 hover:shadow-lg email-input !mb-6 border-1 !border-pink-500 ring ring-1 ing-pink-[#7a7678]'
+                 focus:outline-none focus:ring ring-1 ring-black focus:ring-pink-300  
+                 focus:ring-blue-500 hover:shadow-lg email-input !mb-6  border-1 !border-pink-600 ring ring-1 focus:!border-pink-500 ring-pink-[#7a7678]'
                  value={propertyType}
                  onChange={(e) => setPropertyType(e.target.value)}
                >
