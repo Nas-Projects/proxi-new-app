@@ -74,7 +74,7 @@ export default function AboutPageComponent({aboutData}) {
 
 
   return (
-    <div className="bg-white">
+    <div className="bg-white min-h-[calc(100vh_-_216px)] text-sm leading-6">
        <BlurImage
             src="/beams-basic.png"
             alt=""
@@ -83,7 +83,8 @@ export default function AboutPageComponent({aboutData}) {
             placeholder="blur"
             className="sr-only md:not-sr-only md:!absolute md:mt-[4em] md:left-1/2  -ml-[39rem]  w-full lg:w-[113.125rem] max-w-none"
             />
-      <main className="isolate">
+      <main className="isolate min-h-[calc(100vh_-_216px)] text-sm leading-6">
+        <div className='max-w-full justify-center px-6 py-12'>
         {/* Hero section */}
 
         {/* ------SECTION 1 ------- */}
@@ -371,6 +372,7 @@ export default function AboutPageComponent({aboutData}) {
               />
             </div>
           </div>
+        </div>
         </div>
 
       </main>

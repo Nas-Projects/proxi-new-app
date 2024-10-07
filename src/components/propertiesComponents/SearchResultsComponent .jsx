@@ -6,7 +6,7 @@ export default function SearchResultsComponent() {
   return (
     <main className="overflow-hidden bg-gray-50 min-h-dvh"> 
        <GradientBackground />
-        <div className="isolate flex min-h-dvh items-center justify-center">
+        <div className="min-h-[calc(100vh_-_216px)] text-sm leading-6 isolate flex min-h-dvh items-center justify-center">
           <div className="w-full max-w-full justify-center content-center  items-center
            rounded-xl bg-white shadow-md ring-1 ring-black/5">
             <section className='bg-custom-gradient p-6 lg:p-8 px-4 py-/12 lg:py-1/2'>

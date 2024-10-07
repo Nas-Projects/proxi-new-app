@@ -15,7 +15,7 @@ import AgentsList from "../../components/AgentsList";
               }));
    console.log("Agents", agents)
     return (
-      <div className={clsx(!agents ? "bg-custom-gradient-dark" : "bg-gray-900", "pb-24 bg-custom-gradient-dark py-12 sm:pt-12 sm:pb-32")}> 
+      <div className={clsx(!agents ? "bg-custom-gradient-dark" : "bg-section-bg-2  bg-gray-900", "min-h-[calc(100vh_-_216px)] text-sm leading-6 pb-24 bg-custom-gradient-dark py-12 sm:pt-12 sm:pb-32")}> 
           <div className="mx-auto max-w-7xl pt-[-4em] pb-14 text-center lg:px-8 ">
            <h1 className='text-5xl text-orange-100/90'>{!agents ? "Dear User, here are some agents while we're fetching new data for you" : "Agents"}</h1>
             <div className="mx-auto max-w-2xl px-6 lg:px-8">

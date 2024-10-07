@@ -48,7 +48,7 @@ export default function AgentPage({agent}) {
   const [sidebarOpen, setSidebarOpen] = useState(false)
 
   return (
-    <div id="AGENT_PAGE" className='justify-center content-center w-full min-h-screen pb-'>
+    <div id="AGENT_PAGE" className='min-h-[calc(80vh_-_216px)] bg-section-bg-2  text-sm leading-6 justify-center content-center w-full min-h-screen pb-'>
       <div>
         <Dialog open={sidebarOpen} onClose={setSidebarOpen} className="relative z-50 !hidden  lg:hidden">
           <DialogBackdrop
@@ -206,10 +206,10 @@ export default function AgentPage({agent}) {
 
 export const AgentProfileCard = ({agent}) => {
   return          <div className="">
-  <div className="sm:pr-4 py-0 md:pt-4 sm:px-6 lg:pr-8 pb-">
+  <div className="sm:pr-4 py-0 md:pt-4 sm:px-6 lg:pr-8 pb-  ">
        {/* <!-- Card start --> */}
-  <div class="max-[600px]:min-w-[90vw] sm:w-3xl lg:min-w-[384px] lg:max-w-[30vw] xl:min-w-[37vw] mx-auto dark:bg-gray-900  overflow-hidden shadow-sm hover:shadow-lg">
-  <div class="border-b  pb-6">
+  <div class="bg-black  max-[600px]:min-w-[90vw] sm:w-3xl lg:min-w-[384px] lg:max-w-[30vw] xl:min-w-[37vw] mx-auto dark:bg-gray-900  overflow-hidden shadow-sm hover:shadow-lg">
+  <div class="border-b  pb-6" >
    <div class="text-center my-0">
        {/* ----Profile --Header */}
        <div>
@@ -248,7 +248,7 @@ export const AgentProfileCard = ({agent}) => {
 </div>
 {/* max-[600px]:flex */}
        
-          <div class="py-4 md:pt-6">
+          <div class="py-4 md:pt-6 ">
               {/* <h4 class="px-8 flex mb-1 font-bold !text-[28px] lg:text-2xl text-gray-800 text-white dark:text-white   mb-1 mt-2">
                 Realestate Agent</h4> */}
               {/* <div class="flex mx-8 py-2 inline-flex px-12 text-left lg:text-right mr-24 font-bold !text-sm lg:text-xl xl:text-2xl text-gray-800 text-white/90 dark:text-white mb-1">
@@ -272,13 +272,13 @@ export const AgentProfileCard = ({agent}) => {
             <span className="group pr-2 font-bold text-gray-200">
                <PhoneIcon aria-hidden="true" className="h-5 w-5 text-pink-400 -mb-1 group-hover:text-pink-500 " />
            </span>
-              <span className="text-pink-300  group-hover:text-pink-400">{agent.phone}</span>
+              <span className="text-pink-100  group-hover:text-pink-400">{agent.phone}</span>
            </p> 
          <p className="text-white group">
           <span className="pr-2 text-bold ">  
           <EnvelopeIcon aria-hidden="true" className="h-5 w-5 text-pink-400  group-hover:text-pink-500 -mb-1 " />
           </span>
-           <span className="-mt-4 text-pink-300  group-hover:text-pink-400"> {agent.email}</span>
+           <span className="-mt-4 text-pink-1x00  group-hover:text-pink-400"> {agent.email}</span>
           </p>
       </div>
 

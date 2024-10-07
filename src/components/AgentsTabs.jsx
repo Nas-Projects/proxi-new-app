@@ -54,7 +54,7 @@ const tabs = [
     content: (
       <ul>
         {recentlyClosedListings.map((listing, index) => (
-          <li key={index} className="py-1 hover:bg-slate-200 hover:text-slate-600 hover:pl-4">
+          <li key={index} className="py-1  hover:bg-slate-200 hover:text-slate-600 hover:pl-4">
             {listing}
           </li>
         ))}
@@ -83,7 +83,7 @@ function AgentsTabs({bio}) {
     <Tabs defaultValue="bio" className="group min-w-[400px] min-h-[35vh] sm:w-full !bg-black mt-4 ring ring-1 pt-4 ring-slate-600  hover:ring-pink-400">
       <TabsList className="grid w-full grid-cols-3 !bg-black border-b border-1 border-pink-200  group-hover:border-pink-400">
         {tabs.map((tab, index) => (
-          <TabsTrigger key={index} value={tab.value} className={clsx("data[state-'active']" && "text-pink-400", "text-slate-200")}>
+          <TabsTrigger key={index} value={tab.value} className={clsx("data[state-'active']" && "hover:text-pink-200", "text-slate-200")}>
             {tab.label}
           </TabsTrigger>
         ))}
@@ -93,7 +93,7 @@ function AgentsTabs({bio}) {
         <TabsContent key={tab.value} value={tab.value} className="group !bg-black text-slate-100 pb-12">
           <Card className="border-b-0 !rounded-[0] pb-24">
             <CardHeader className="border-b border-1 border-white !bg-black text-white">
-              <CardTitle className="text-pink-200">{tab.title}</CardTitle>
+              <CardTitle className="text-pink-100/90 hover:text-pink-400">{tab.title}</CardTitle>
               <CardDescription className="text-slate-200">{tab.description}</CardDescription>
             </CardHeader>
             <CardContent className={clsx(index ==1 && "text-gray-500", "space-y-2 mt-4 pt-6 pb-12")}>
@@ -101,7 +101,7 @@ function AgentsTabs({bio}) {
             </CardContent>
             <CardFooter>
               {/* This can be used for any future actions */}
-              <Button to="/contact" >Learn More</Button>
+              <Button className="bg-custom-gradient text-white hover:!bg-white hover:!text-custom-gradient-2  rounded-sm dark:bg-blue-800 dark:text-white antialiased font-bold  dark:hover:border-sky-200 px-4 py-2" to="/contact" >Learn More</Button>
             </CardFooter>
           </Card>
         </TabsContent>

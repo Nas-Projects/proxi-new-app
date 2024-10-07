@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 export function TryInboxZero() {
   return (
     <Link
-      href={`${process.env.NEXT_PUBLIC_BASE_URL}/?utm_source=blog&utm_medium=inbox-zero`}
+      href={`${process.env.NEXT_PUBLIC_BASE_URL}/blogs`}
     >
       <div className="rounded-lg border-2 border-blue-400 bg-white shadow-xl transition-transform duration-300 hover:scale-105">
         <Image

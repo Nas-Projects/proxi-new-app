@@ -141,11 +141,11 @@ export default async function BlogsPage() {
               ))} */}
             </div>
           </div>
-          <div id="blog-list-desktop-wrapper" className="pb-20 pt-24 lg:pb-44">
+          {/* <div id="blog-list-desktop-wrapper" className="pb-20 pt-24 lg:pb-44">
             {blogsJson.reverse().map((blog) => (
               <BlogCard key={blog.slug} blog={blog} />
             ))}
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

@@ -5101,7 +5101,9 @@ The @supports CSS at-rule lets you specify CSS declarations that depend on a bro
 }
 
 /* ---------- CSS --- INPUT------ */
-
+.tailwind :is(.min-h-\[calc\(100vh_-_216px\)\]) {
+  min-height: calc(100vh - 216px) !important;
+}
 /*! CSS Used from: https://auth.openai.com/assets/root-CN7TmZ9c.css */
 *{box-sizing:border-box;text-wrap:pretty;}
 /*! CSS Used from: https://auth.openai.com/assets/route-C2M74Jic.css */

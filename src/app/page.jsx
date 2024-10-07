@@ -43,7 +43,7 @@ async function Home({}){
 //    <PropertiesListSectionUI  properties={properties} total={totalItems}/>
 //  );
   return ( 
-  <div className="relative !bg-white">
+  <div className="relative !bg-white min-h-[calc(100vh_-_216px)] text-sm leading-6">
      {/* <Gradient className="absolute inset-2 bottom-0 rounded-4xl ring-1 ring-inset ring-black/5" /> */}
        <Container className="relative">
     <> {loading ? (
