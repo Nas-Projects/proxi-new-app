@@ -1,7 +1,7 @@
 // "use client";
 import Head from 'next/head';
-import { BlogCard } from '@/components/blogs/BlogCard';
-import blogsJson from '@/lib/blogsJson';
+// import { BlogCard } from '@/components/blogs/BlogCard';
+// import blogsJson from '@/lib/blogsJson';
 
 import { postsQuery } from "@/sanity/lib/queries";
 
