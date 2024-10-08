@@ -75,9 +75,9 @@ export const SearchBtns = [
 
 {
   id: "apartment",
-  name: "Apartment Rentals",
+  name: "Retail Leasing",
   Icon: BsBuildings,
-  link: "/properties/search-results?location=&propertyType=rentals"
+  link: "/properties/search-results?location=&propertyType=Residential"
 },
   {
     id: "office",

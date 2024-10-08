@@ -280,7 +280,7 @@ import SearchButtons from '../SearchButtons'
                   </Link>
                 </div>
               </div>
-              <div className="mx-auto mt-10 flex max-w-2xl sm:mt-24 lg:ml-10 lg:mr-0 lg:mt-24 lg:max-w-none lg:flex-none xl:ml-32 xl:mt-32">
+              <div className="mx-auto mt-6 md:mt-14 flex max-w-2xl sm:mt-24 lg:ml-10 lg:mr-0 lg:mt-32 lg:max-w-none lg:flex-none xl:ml-32 xl:mt-64">
                 <div className="max-w-3xl mx-4 flex-none sm:max-w-5xl lg:max-w-none">
                    <HeroSearchForm />
                  
@@ -290,12 +290,12 @@ import SearchButtons from '../SearchButtons'
           </div>
   
           {/* Logo cloud */}
-          <div className="mx-auto mt-0 max-w-7xl sm:px-6 sm:-mt-10 xl:-mt-16 lg:px-8">
+          <div className="mx-auto -mt-[4rem] max-w-7xl sm:px-6 sm:-mt-10 lg:!-mt-20 xl:-mt-16 lg:px-8">
             <SearchButtons />
           </div>
   
           {/* Feature section */}
-          <div className="mx-auto mt-32 max-w-7xl px-6 sm:mt-56 lg:px-8">
+          <div className="!text-black mx-auto mt-32 max-w-7xl px-6 sm:mt-56 lg:px-8">
             <div className="mx-auto max-w-2xl text-center">
               <h2 className="text-base font-semibold leading-7 text-indigo-400">Deploy faster</h2>
               <p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">

@@ -1,5 +1,8 @@
 // import Image from "next/image";
 import BlurImage from "../blur-image";
+import { motion } from 'framer-motion';
+import { fadeIn } from '@/utils/motion';
+
 
 export default function OurValues(){
 
@@ -40,11 +43,35 @@ export default function OurValues(){
         return (
           <section className=" md:min-h-[750px] ss:min-h-[600px] min-h-[850px] mx-auto flex items-center relative valuesSection">
             <div className="items-center w-full mx-auto max-w-[86rem]">
-              <div className="md:pt8 px-5 flex items-center w-full md:mb-16 ss:mb-8 mb-16">
-                <h1 className="text-custom-gradient font-bold md:text-[55px] ss:text-[45px] text-[33px] md:mr-14 ss:mr-6 mr-5">Our values</h1>
-                <div className="flex-1 relative items-center justify-center">
+            <motion.div variants={fadeIn('up', 'tween', 0.2, 0.5)}
+                   className="hidden md:flex items-center w-full -mb-8">
+                 <div class="section-header text-mainText opacity-1">
+                {/* <h1 class="!text-left text-center py-4 md:pt-8 md:pb-4 lg:pt-4 
+                lg:pb-[-4em] max-[1700px]:text-[63px] text-custom-gradient">Our Values</h1> */}
+                    <div data-w-id="c61ae90e-5b42-2ae8-3af4-27a1254fdfcd"
+                        className="title-wrap pb-12 max-w-xl lg:max-w-[34vw]"
+                        style={{
+                          opacity: 1,
+                          transform:
+                            "translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)",
+                          transformStyle: "preserve-3d"
+                        }}
+                      >
+                         <h1 class="!text-left text-center py-4 md:pt-8 md:pb-4 lg:pt-4 
+                lg:pb-[-4em] max-[1700px]:text-[63px] text-custom-gradient">Our Values 2</h1>
+                    
+                    
+                      </div>
+                   </div>
+                  <div class="space-08"></div>
+              
+            </motion.div>
+            
+              <div className="md:pt-8 px-5 flex items-center w-full md:mb-16 ss:mb-8 mb-16">
+                <h1 className="lg:pt-8 lg:mt-8 lg:mb-4 overflow-auto shrink-0  lg:pb-0 text-custom-gradient font-bold md:text-[55px] ss:text-[45px] text-[33px] md:mr-14 ss:mr-6 mr-5">Our values</h1>
+                {/* <div className="flex-1 relative items-center justify-center">
                   <div className="bg-main w-full h-[2px]"></div>
-                </div> 
+                </div>  */}
               </div>
           <div style={{ opacity: 1 }} className="max-[500px]:h-[300px] feature-video w-background-video w-background-video-atom">
               <BlurImage 
