@@ -10,7 +10,7 @@ function AgentsList({agents}) {
   return (
     <ul role="list" className="text-white divide-y divide-gray-100  md:grid md:grid-cols-2 lg:grid-cols-3 pb-24">
       {agents.map((person) => (
-        <AgentListNewCard {...person} />
+        <AgentListNewCard {...person} key={person.email}/>
 
         // <li key={person.email} className="relative py-5 hover:bg-gray-100">
         //   <Link href={clsx(`agents/${person._id}`)} className="block hover:bg-gray-50">

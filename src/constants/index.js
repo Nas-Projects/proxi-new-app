@@ -5,7 +5,7 @@ import { FaRegBuilding } from "react-icons/fa";
 import { HiOutlineBuildingLibrary } from "react-icons/hi2";
 import { RiBuilding2Line } from "react-icons/ri";
 import { BsBuildings } from "react-icons/bs";
-import { GrResources } from "react-icons/gr";
+// import { GrResources } from "react-icons/gr";
 
 
 export const navLinks = [
