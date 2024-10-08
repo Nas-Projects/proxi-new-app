@@ -5,7 +5,6 @@ import { Container } from '@/components/Container'
 // import Hero11 from '../../public/assets/11.jpeg'
 // import hero12 from '../../public/assets/12.jpeg'
 // import hero13 from '../../public/assets/13.jpeg'
-import SearchButtons from '@/components/SearchButtons';
 import AboutProxy from '@/components/AboutProxy';
 // import PropertiesList from '@/components/propertiesComponents/PropertiesList';
 import PropertiesListSectionUI from '@/components/propertiesComponents/PropertiesListSectionUI';

@@ -1,13 +1,6 @@
 import {
-    ArrowPathIcon,
     ChevronRightIcon,
-    CloudArrowUpIcon,
-    Cog6ToothIcon,
-    FingerPrintIcon,
-    LockClosedIcon,
-    ServerIcon,
   } from '@heroicons/react/20/solid'
-  import { BoltIcon, CalendarDaysIcon, UsersIcon } from '@heroicons/react/24/outline'
 import HeroSearchForm from '../propertiesComponents/HeroSearchForm'
 import Link from 'next/link'
 import Image from 'next/image'
