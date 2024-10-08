@@ -247,7 +247,25 @@ export const AgentProfileCard = ({agent}) => {
           </div>
       </div>
       {/* <FollowMessageButtons /> */}
-      <div class="px-6 py-4 lg:-mt-4"> <div className="1">
+      <div class="px-6 py-4 lg:-mt-4">
+        
+         <div className="1">
+         <Link href={clsx(`tel:+1-${agent.phone}`)} className="text-white group">
+            <span className="group pr-2 font-bold text-gray-200">
+               <PhoneIcon aria-hidden="true" className="h-5 w-5 text-pink-100 -mb-1 group-hover:text-pink-500 " />
+           </span>
+              <span className="text-pink-100 text-xl lg:text-lg group-hover:text-pink-400">{agent.userRole}</span>
+           </Link> 
+      </div>
+         <div className="1">
+         <Link href={clsx(`tel:+1-${agent.phone}`)} className="text-white group">
+            <span className="group pr-2 font-bold text-gray-200">
+               <globeIcon aria-hidden="true" className="h-5 w-5 text-pink-100 -mb-1 group-hover:text-pink-500 " />
+           </span>
+              <span className="text-pink-100 text-xl lg:text-lg group-hover:text-pink-400">{agent?.speaksLanguages.length ? agent.speaksLanguages.map((language =>(language)) : "Mandingo | Spanish" }</span>
+           </Link> 
+      </div>
+         <div className="1">
          <Link href={clsx(`tel:+1-${agent.phone}`)} className="text-white group">
             <span className="group pr-2 font-bold text-gray-200">
                <PhoneIcon aria-hidden="true" className="h-5 w-5 text-pink-100 -mb-1 group-hover:text-pink-500 " />
