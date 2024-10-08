@@ -18,7 +18,7 @@ import SectionJoin from '@/components/propertiesComponents/SectionJoin';
 // import SectionOurTeams from '@/components/propertiesComponents/SectionOurTeams';
 // import FeaturedListings from '@/components/propertiesComponents/FeaturedListings';
 // import ProperTiesForSale from '@/components/propertiesComponents/ProperTiesForSale';
-import Hero from '@/components/Hero';
+// import Hero from '@/components/Hero';
 import Link from 'next/link';
 import Spinner from '@/components/propertiesComponents/Spinner';
 import { sanityFetch } from "@/sanity/lib/sanityFetch";

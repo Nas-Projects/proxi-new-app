@@ -288,7 +288,7 @@ export const AgentProfileCard = ({agent}) => {
               Follow
           </button>   */}
         
-          <Link  href={clsx(`mailto:${agent.email}?subject=Inquiry&body=Hello Hi ${agent.name}, I am reaching out about ...."`)}>
+          <Link  href={clsx(`mailto:${agent.email}?subject=Inquiry&body=Hello ${agent.name}, I am reaching out about ...."`)}>
                 <button className="hover:bg-custom-gradient hover:text-white bg-white hover:!text-custom-gradient-2 flex-1 rounded-sm dark:bg-blue-800 text-black
                  dark:text-white antialiased font-bold  dark:hover:border-sky-200 px-4 py-2">
                 Message
