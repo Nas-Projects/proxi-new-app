@@ -199,9 +199,9 @@ export const AgentProfileCard = ({agent}) => {
     // ${getGradient(agent.username || agent?.name)}`}
   />
   <div
-    className={`${profileWidth} -mt-12 sm:-mt-16 sm:flex sm:items-end sm:space-x-5`}
+    className={`${profileWidth} !ml-[-16em] sm:!ml-[1em] -mt-12 sm:-mt-16 sm:flex sm:items-end sm:space-x-5`}
   >
-    <div className="relative group h-24 w-24 rounded-full overflow-hidden sm:h-32 sm:w-32">
+    <div className=" relative group h-24 w-24 rounded-full overflow-hidden sm:h-32 sm:w-32">
     {agent?.image?.asset?.url ?
         <BlurImage
           src={agent.image.asset.url }
@@ -216,12 +216,12 @@ export const AgentProfileCard = ({agent}) => {
     <div className="mt-20 pl-4 sm:flex-1 mt-12 sm:min-w-0 sm:flex sm:items-center 
                      sm:justify-end sm:space-x-6 sm:pb-1 gap-x-4">
       <div className="flex min-w-0 flex-1 items-center space-x-2 mt-[-2em]">
-        <h3 className="font-bold text-2xl text-gray-800 !text-white mb-1 mt-2 truncate">
+        {/* <h3 className="font-bold text-2xl text-gray-800 !text-white mb-1 mt-2 truncate">
           {agent?.name  ? agent.name : agent.username}
         </h3>
         {!agent?.verified && (
           <CheckInCircleIcon className="w-6 h-6 text-[#2196F3]" />
-        )}
+        )} */}
       </div>
      
     </div>
@@ -250,27 +250,20 @@ export const AgentProfileCard = ({agent}) => {
       {/* <FollowMessageButtons /> */}
       <div class="px-6 py-4 lg:-mt-4"> 
       <div className="-1">
-      <Link href={clsx(`tel:+1-${agent.phone}`)} className="text-white group">
-            
-              <span className="text-pink-100 text-xl lg:text-lg group-hover:text-pink-400">{agent?.name  ? agent.name : agent.username}</span>
-           </Link> 
-         <Link href={clsx(`tel:+1-${agent.phone}`)} className="text-white group">
-            <span className="group pr-2 font-bold text-gray-200">
-               <PhoneIcon aria-hidden="true" className="h-5 w-5 text-pink-100 -mb-1 group-hover:text-pink-500 " />
-           </span>
-              <span className="text-pink-100 text-xl lg:text-lg group-hover:text-pink-400">{agent.phone}</span>
+           <Link href={clsx(`tel:+1-${agent.phone}`)} className="text-white group">
+              <span className="font-bold text-2xl text-gray-800 !text-white mb-1 mt-2 truncate">{agent?.name  ? agent.name : agent.username}</span>
            </Link> 
       </div>
-      <div className="0">
-      <Link href={clsx(`tel:+1-${agent.phone}`)} className="text-white group">
+      <div className="0 mb-3">
+            <Link href={clsx(`tel:+1-${agent.phone}`)} className="text-white group">
             <span className="group pr-2 font-bold text-gray-200">
                <Globe2Icon aria-hidden="true" className="h-5 w-5 text-pink-100 -mb-1 group-hover:text-pink-500 " />
            </span>
-              <span className="text-pink-100 text-xl lg:text-lg group-hover:text-pink-400">{agent?.speacksLanguages.length ? speacksLanguages.map((language)=>(<span className='inline-flex gap-x-3'>{language}</span>)) :"Mandingo | English"}</span>
+              <span className="text-pink-100 text-xl lg:text-lg group-hover:text-pink-400">{agent?.speacksLanguages?.length ? speacksLanguages.map((language)=>(<span className='inline-flex gap-x-3'>{language}</span>)) :"Mandingo | English"}</span>
            </Link> 
          
       </div>
-      <div className="1">
+      <div className="1 mb-3">
      
          <Link href={clsx(`tel:+1-${agent.phone}`)} className="text-white group">
             <span className="group pr-2 font-bold text-gray-200">
@@ -279,7 +272,7 @@ export const AgentProfileCard = ({agent}) => {
               <span className="text-pink-100 text-xl lg:text-lg group-hover:text-pink-400">{agent.phone}</span>
            </Link> 
       </div>
-       <div className="2">
+       <div className="2  mb-3">
         <Link  href={clsx(`mailto:${agent.email}?subject=Inquiry&body=Hello ${agent.name}, I am reaching out about ...."`)}className="text-white group">
           <span className="pr-2 text-bold ">  
           <EnvelopeIcon aria-hidden="true" className="h-5 w-5 text-pink-100  group-hover:text-pink-500 -mb-1 " />
