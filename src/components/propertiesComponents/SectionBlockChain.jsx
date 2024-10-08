@@ -21,20 +21,20 @@ import Image from 'next/image'
                   <polygon points="0,0 90,0 50,100 0,100" />
                 </svg>
     
-                <div className="relative px-2 pt-8 pb-12 sm:py-40 lg:px-8 lg:pb-56 lg:pt-24 lg:pr-0">
-                  <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl">
+                <div className="lg:w-4/6  relative px-2 pt-8 pb-12 sm:py-40 lg:px-8 lg:pb-56 lg:pt-24 lg:pr-0">
+                  <div className="mx-auto max-w-3xl lg:mx-0 lg:max-w-full">
                     <div className="hidden sm:mb-10 sm:flex">
                       <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-500 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
-                      Blockchain transaction to enrich realestate deals .{' '}
-                        <a href="#" className="text-custom-gradient whitespace-nowrap font-semibold text-indigo-600">
+                      Blockchain transaction to enrich.. .
+                        <Link href="/blogs/revolutionizing-real-estate-with-blockchain-technology" className="text-custom-gradient whitespace-nowrap font-semibold text-indigo-600">
                           <span aria-hidden="true" className="absolute inset-0" />
                           Read more <span aria-hidden="true">&rarr;</span>
-                        </a>
+                        </Link>
                       </div>
                     </div>
                     <h1 className="text-left pt-4 pb-6 text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-                     <span className='text-custom-gradient text-left'></span>Revolutionizing <br/>
-                      Real Estate <br></br>with <span className='text-custom-gradient'>Blockchain</span> Technology
+                     <span className='text-custom-gradient text-left'></span>Revolutionize <br/>
+                      Real Estate <br className='max-[1300px]:hidden'></br>with <span className='text-custom-gradient'>Blockchain</span> Technology
                     </h1>
                     <p className="mt-6 text-lg leading-8 text-gray-600  ">
                       At PROXY, we leverage blockchain technology to enrich the real estate experience, making transactions more secure, transparent, and efficient. Here are three compelling use cases that demonstrate how blockchain transforms the real estate landscape:
@@ -51,9 +51,9 @@ import Image from 'next/image'
                 
                         <h5 className="uppercase text-sm md:text-base text-white relative group whitespace-nowrap font-normal mb-0 transition-all duration-300 border border-secondary-color hover:border-heading-color inline-block">
                             <span className="inline-block absolute top-0 right-0 w-full h-full bg-custom-gradient  group-hover:bg-black hover:bg-primary-cogroup-lor z-1 group-hover:w-0 transition-all duration-300" />
-                             <a  href="/properties"  className="relative z-10 px-5 py-4 px-6  group-hover:text-heading-color leading-23px" >
+                             <Link  href="/blogs/revolutionizing-real-estate-with-blockchain-technology"  className="relative z-10 px-5 py-4 px-6  group-hover:text-heading-color leading-23px" >
                              Read More
-                           </a>
+                           </Link>
                         </h5>
                   
                     </Link>

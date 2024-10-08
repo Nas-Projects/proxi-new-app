@@ -53,7 +53,7 @@ async function Home({}){
      <div className="isolate flex min-h-dvh items-center justify-center t">
       <div className="relative w-full ">
          <SectionHero />
-          <Hero />
+          {/* <Hero /> */}
            {/* <div className="mx-auto lg:px-[10%] bg-transparent  absolute absolute top-[89vh] lg:top-[68vh] lg:mx-auto md:top-[70vh] xl:top-[67vh]"></div> */}
            <div className="mt-64 md:mt-96 relative px-0.5 lg:mt-[-0em] xl:lg:mt-[-0vh] mx-auto lg:px-[10%] bg-transparent relative relative ">
            <SearchButtons />

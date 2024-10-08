@@ -14,8 +14,8 @@ export default function SectionJoin() {
           className="h-full w-full object-cover"
           />
       </div>
-        <div className="col-span-1 relative px-0 lg:py-48 xl:pl-10">
-          <div className="px-6 mx-auto max-w-4xl  lg:max-w-4xl xl:max-w-4xl">
+        <div className="col-span-1 relative px-0 lg:py-48  lg:min-w-[420px] xl:min-w-[560px] lg:pl-8 xl:pl-14 lg:py-48 xl:pl-10xl:pl-10">
+          <div className="px-6 mx-auto max-w-4xl lg:max-w-full">
             <div className="px-4 md:px-6 absolute inset-y-0 left-0 -z-10 w-full overflow-hidden ring-1 ring-white/5 lg:w-1/2">
               <svg
                 aria-hidden="true"
@@ -68,7 +68,7 @@ export default function SectionJoin() {
                 
                         <h5 className="uppercase text-sm md:text-base text-white relative group whitespace-nowrap font-normal mb-0 transition-all duration-300 border border-secondary-color hover:border-heading-color inline-block">
                             <span className="inline-block absolute top-0 right-0 w-full h-full bg-custom-gradient  group-hover:bg-black hover:bg-primary-cogroup-lor z-1 group-hover:w-0 transition-all duration-300" />
-                             <a  href="/properties"  className="relative z-10 px-5 py-4 px-6  group-hover:text-heading-color leading-23px" >
+                             <a  href="/properties"  className="relative z-10 px-5 py-4 px-6 group-hover:bg-black  group-hover:text-white leading-23px" >
                              Join Proxy Realestate
                            </a>
                         </h5>
@@ -82,7 +82,7 @@ export default function SectionJoin() {
                     <span className="inline-block absolute top-0 right-0 w-full h-full bg-white !text-black 
                            group-hover:bg-black hover:bg-primary-cogroup-lor z-1 group-hover:w-0 transition-all duration-300" />
                     <a href="/contact"
-                        className="relative  z-10 relative z-10 px-5 py-4 px-8  group-hover:text-heading-color leading-23px lg:py-17px group-hover:text-heading-color leading-23px" >
+                        className="relative  z-10 relative z-10 px-5 py-4 px-8  group-hover:bg-black  group-hover:text-white  leading-23px lg:py-17px group-hover:text-heading-color leading-23px" >
                       Learn More
                         </a>
                         </h5>

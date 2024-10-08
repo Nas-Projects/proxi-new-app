@@ -1,12 +1,10 @@
 // import Image from "next/image";
 import BlurImage from "../blur-image";
-import { motion } from 'framer-motion';
-import { fadeIn } from '@/utils/motion';
+// import { motion, } from 'framer-motion';
+// import { fadeIn } from '@/utils/motion';
 
 
-export default function OurValues(){
-
-    const values = [
+export const values = [
         {
           icon: `<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="40" width="40" xmlns="http://www.w3.org/2000/svg"><path d="M192 208c0-17.67-14.33-32-32-32h-16c-35.35 0-64 28.65-64 64v48c0 35.35 28.65 64 64 64h16c17.67 0 32-14.33 32-32V208zm176 144c35.35 0 64-28.65 64-64v-48c0-35.35-28.65-64-64-64h-16c-17.67 0-32 14.33-32 32v112c0 17.67 14.33 32 32 32h16zM256 0C113.18 0 4.58 118.83 0 256v16c0 8.84 7.16 16 16 16h16c8.84 0 16-7.16 16-16v-16c0-114.69 93.31-208 208-208s208 93.31 208 208h-.12c.08 2.43.12 165.72.12 165.72 0 23.35-18.93 42.28-42.28 42.28H320c0-26.51-21.49-48-48-48h-32c-26.51 0-48 21.49-48 48s21.49 48 48 48h181.72c49.86 0 90.28-40.42 90.28-90.28V256C507.42 118.83 398.82 0 256 0z"></path></svg>`,
           title: "Customer Service",
@@ -39,15 +37,14 @@ export default function OurValues(){
           }
       ];
 
+      export default function OurValues(){
+ 
       const ValuesSection = () => {
         return (
-          <section className=" md:min-h-[750px] ss:min-h-[600px] min-h-[850px] mx-auto flex items-center relative valuesSection">
+          <section className="md:min-h-[750px] ss:min-h-[600px] min-h-[850px] mx-auto flex items-center relative valuesSection">
             <div className="items-center w-full mx-auto max-w-[86rem]">
-            <motion.div variants={fadeIn('up', 'tween', 0.2, 0.5)}
-                   className="hidden md:flex items-center w-full -mb-8">
+              <div className="md:flex items-center w-full -mb-6">
                  <div class="section-header text-mainText opacity-1">
-                {/* <h1 class="!text-left text-center py-4 md:pt-8 md:pb-4 lg:pt-4 
-                lg:pb-[-4em] max-[1700px]:text-[63px] text-custom-gradient">Our Values</h1> */}
                     <div data-w-id="c61ae90e-5b42-2ae8-3af4-27a1254fdfcd"
                         className="title-wrap pb-12 max-w-xl lg:max-w-[34vw]"
                         style={{
@@ -55,37 +52,27 @@ export default function OurValues(){
                           transform:
                             "translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)",
                           transformStyle: "preserve-3d"
-                        }}
-                      >
-                         <h1 class="!text-left text-center py-4 md:pt-8 md:pb-4 lg:pt-4 
-                lg:pb-[-4em] max-[1700px]:text-[63px] text-custom-gradient">Our Values 2</h1>
-                    
-                    
+                        }} > 
+                      <h1 class="!text-left text-center py-4 md:pt-8 md:pb-4 lg:pt-4 
+                            lg:pb-[-4em] max-[1700px]:text-[63px] text-custom-gradient">
+                              Our Values
+                        </h1>
                       </div>
                    </div>
-                  <div class="space-08"></div>
-              
-            </motion.div>
-            
-              <div className="md:pt-8 px-5 flex items-center w-full md:mb-16 ss:mb-8 mb-16">
-                <h1 className="lg:pt-8 lg:mt-8 lg:mb-4 overflow-auto shrink-0  lg:pb-0 text-custom-gradient font-bold md:text-[55px] ss:text-[45px] text-[33px] md:mr-14 ss:mr-6 mr-5">Our values</h1>
-                {/* <div className="flex-1 relative items-center justify-center">
-                  <div className="bg-main w-full h-[2px]"></div>
-                </div>  */}
+               </div>
+            <div style={{ opacity: 1 }} className="max-[500px]:h-[320px] max-[500px]:mb-[-8em]  feature-video w-background-video w-background-video-atom">
+                <BlurImage 
+                  src="/happy_customers_ezg.gif"
+                    height="1080"
+                  width="1920"
+                  autoPlay=""
+                  loop=""
+                  style={{
+                    backgroundImage:
+                      'url("/happy_customers_ezg")'
+                  }}  data-object-fit="cover"
+                />
               </div>
-          <div style={{ opacity: 1 }} className="max-[500px]:h-[300px] feature-video w-background-video w-background-video-atom">
-              <BlurImage 
-              src="/happy_customers_ezg.gif"
-                height="1080"
-                width="1920"
-                autoPlay=""
-                loop=""
-                style={{
-                  backgroundImage:
-                    'url("/happy_customers_ezg")'
-                }}  data-object-fit="cover"
-              />
-            </div>
 
         <div className="mx-auto mt-6 grid max-w-2xl auto-rows-fr grid-cols-1 gap-8 sm:mt-10 xl:mt-20 lg:mt-4 lg:max-w-none lg:grid-cols-2 xl:grid-cols-3">
           {values.map((value) => (
@@ -119,3 +106,4 @@ export default function OurValues(){
     
   
 }
+
