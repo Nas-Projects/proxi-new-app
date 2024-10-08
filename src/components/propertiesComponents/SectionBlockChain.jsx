@@ -7,7 +7,7 @@ import Image from 'next/image'
   
     export default function SectionBlockChain(){
       return (
-        <div className="relative bg-white mt-4 sm:mt-24 xl:mt-44">
+        <div className="relative bg-white -mt-32 sm:-mt-24 lg:mt-10 xl:mt-44">
         
           <div className="relative">
             <div className="mx-auto max-w-7xl">
@@ -21,7 +21,7 @@ import Image from 'next/image'
                   <polygon points="0,0 90,0 50,100 0,100" />
                 </svg>
     
-                <div className="lg:w-4/6  relative px-2 pt-8 pb-12 sm:py-20 lg:px-8 lg:pb-32 lg:pt-12 lg:pr-0">
+                <div className="lg:w-4/6  relative px-2 pb-12 sm:py-20 lg:px-8 lg:pb-32 lg:pt-12 lg:pr-0">
                   <div className="mx-auto max-w-3xl lg:mx-0 lg:max-w-full">
                     <div className="hidden sm:mb-10 sm:flex">
                       <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-500 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
@@ -33,7 +33,7 @@ import Image from 'next/image'
                       </div>
                     </div>
                     <h1 className="text-left pt-4 pb-6 text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-                     <span className='text-custom-gradient text-left'></span>Revolutionize <br/>
+                     <span className='text-custom-gradient text-left'></span>Revolutionizing <br/>
                       Real Estate <br className='max-[1300px]:hidden'></br>with <span className='text-custom-gradient'>Blockchain</span> Technology
                     </h1>
                     <p className="mt-6 text-lg leading-8 text-gray-600  ">

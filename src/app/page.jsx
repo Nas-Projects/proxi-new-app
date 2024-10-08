@@ -69,7 +69,7 @@ async function Home({}){
 
           <Link href="/contact">
             <div class="bg-custom-gradient mx-6 py-3 px-6 cursor-pointer rounded-full bottom-8 right-0 z-50 fixed grow2">
-              <p class="text-white text-[20px] font-semibold">Contact Us</p>
+              <p class="text-white text-[17px] xl:text-[20px] font-semibold">Contact Us</p>
             </div>
           </Link>
         {/* TURN THIS IN JOIN US HEADER x */}
@@ -102,7 +102,7 @@ async function Home({}){
    } </>
  </Container>
  <SectionJoin/>
-  <SectionContact/>
+<SectionContact/>
         
  </div>
  )

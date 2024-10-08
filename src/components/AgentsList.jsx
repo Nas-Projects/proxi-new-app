@@ -66,10 +66,10 @@ function AgentsList({agents}) {
         //   </Link>
         // </li>
       ))}
-        <li className="col-span-1 flex flex-col divide-y divide-gray-200 rounded-lg bg-white text-center shadow shadow-lg mx-4 my-4 ">
+        <li className="col-span-1 flex flex-col divide-y divide-gray-200 rounded-lg bg-white text-center shadow shadow-lg mx-4 my-4 transition-transform duration-300 hover:scale-105">
           <div className="flex flex-1 flex-col p-8">
             <img
-              className="mx-auto h-32 w-32 flex-shrink-0 rounded-full"
+              className="mx-auto h-32 w-32 flex-shrink-0 rounded-full transition-transform duration-300 hover:scale-105"
               src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60"
               alt=""
             />
@@ -88,11 +88,11 @@ function AgentsList({agents}) {
             </dl>
           </div>
           <div>
-            <div className="-mt-px flex divide-x divide-[#f5f3f6a3] bg-pink-300/60">
+            <div className="!bg-black -mt-px flex divide-x divide-[#f5f3f6a3] !text-white">
               <div className="flex w-0 flex-1">
                 <a
                   href="mailto:janecooper@proxyre.io"
-                  className="relative -mr-px inline-flex w-0 flex-1 items-center justify-center gap-x-3 rounded-bl-lg border border-transparent py-4 text-sm font-semibold text-gray-900"
+                  className="relative -mr-px inline-flex w-0 flex-1 items-center justify-center gap-x-3 rounded-bl-lg border border-transparent py-4 text-sm font-semibold text-gray-200"
                 >
                   <svg
                     className="h-5 w-5 text-gray-400"
@@ -129,10 +129,10 @@ function AgentsList({agents}) {
             </div>
           </div>
         </li>
-        <li className="col-span-1 flex flex-col divide-y divide-gray-200 rounded-lg bg-white text-center shadow shadow-lg m-4">
+        <li className="col-span-1 flex flex-col divide-y divide-gray-200 rounded-lg bg-white text-center shadow shadow-lg m-4 transition-transform duration-300 hover:scale-105" >
           <div className="flex flex-1 flex-col p-8">
             <img
-              className="mx-auto h-32 w-32 flex-shrink-0 rounded-full"
+              className="mx-auto h-32 w-32 flex-shrink-0 rounded-full transition-transform duration-300 hover:scale-105"
               src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60"
               alt=""
             />
@@ -151,11 +151,11 @@ function AgentsList({agents}) {
             </dl>
           </div>
           <div>
-            <div className="-mt-px flex divide-x divide-[#f5f3f6a3] bg-pink-300/60">
+            <div className="!bg-black -mt-px flex divide-x divide-[#f5f3f6a3] !text-white">
               <div className="flex w-0 flex-1">
                 <a
                   href="mailto:codyfisher@proxyre.io"
-                  className="relative -mr-px inline-flex w-0 flex-1 items-center justify-center gap-x-3 rounded-bl-lg border border-transparent py-4 text-sm font-semibold text-gray-900"
+                  className="relative -mr-px inline-flex w-0 flex-1 items-center justify-center gap-x-3 rounded-bl-lg border border-transparent py-4 text-sm font-semibold text-gray-200"
                 >
                   <svg
                     className="h-5 w-5 text-gray-400"
@@ -202,11 +202,12 @@ export default AgentsList
 
 
 export const AgentListNewCard = (agent) => {
-  return   <li key={agent.email} className="col-span-1 flex flex-col divide-y divide-slate-custom rounded-lg bg-white text-center shadow  shadow-lg m-4">
+  return   <li key={agent.email} className="col-span-1 flex flex-col divide-y divide-slate-custom rounded-lg bg-white text-center
+  shadow  shadow-lg hover:shadow-2xl m-4 transition-transform duration-300 hover:scale-105">
     <Link href={clsx(`agents/${agent._id}`)}>
       <div className="flex flex-1 flex-col p-8">
       <BlurImage alt={`${agent.name}-image`}
-                 src={agent.imageUrl} className="mx-auto h-32 w-32 flex-shrink-0 rounded-full" 
+                 src={agent.imageUrl} className="mx-auto h-32 w-32 flex-shrink-0 rounded-full transition-transform duration-300 hover:scale-105" 
                  height={300} 
                  width={300}
                  priority="primary"
@@ -226,11 +227,11 @@ export const AgentListNewCard = (agent) => {
     </dl>
   </div>
   <div>
-    <div className="-mt-px flex divide-x divide-[#f5f3f6a3] bg-pink-300/60">
+    <div className="!bg-black -mt-px flex divide-x divide-[#f5f3f6a3] !text-white">
       <div className="flex w-0 flex-1 md:px-3 lg:px-2 xl:px-8">
         <a
           href="mailto:janecooper@proxyre.io"
-          className="relative -mr-px inline-flex w-0 flex-1 items-center justify-center gap-x-3 rounded-bl-lg border border-transparent py-4 text-lg font-semibold text-gray-600/80"
+          className="relative -mr-px inline-flex w-0 flex-1 items-center justify-center gap-x-3 rounded-bl-lg border border-transparent py-4 text-lg font-semibold text-gray-300/80"
         >
           <svg
             className="h-5 w-5 text-gray-400"
@@ -247,7 +248,7 @@ export const AgentListNewCard = (agent) => {
       <div className="-ml-px flex w-0 flex-1">
         <a
           href="tel:+1-202-555-0170"
-          className="relative inline-flex w-0 flex-1 items-center justify-center gap-x-3 rounded-br-lg border border-transparent py-4 text-lg font-semibold text-gray-900"
+          className="relative inline-flex w-0 flex-1 items-center justify-center gap-x-3 rounded-br-lg border border-transparent py-4 text-lg font-semibold text-gray-200"
         >
           <svg
             className="h-5 w-5 text-gray-400"

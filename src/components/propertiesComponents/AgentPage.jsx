@@ -149,29 +149,9 @@ export default function AgentPage({agent}) {
        
         {/* -------LEFT BAR BEGIN ------- */}
       
-         <div className=" lg:relative  lg:flex-col">
-         
-        <AgentProfileCard agent={agent} /> 
+         <div className=" lg:relative  lg:flex-col"> 
+           <AgentProfileCard agent={agent} /> 
         </div>
-        <aside className="!hidden md:relative block w-96 overflow-y-auto border-l border-gray-200 px-4 py-6 sm:px-6 lg:px-8 xl:block">
-        {/* <aside className="hidden md:block xl:ml-6"> */}
-          <div className="sticky top-20">
-            <div className="mb-4">
-              <TryInboxZero />
-            </div>
-
-            {agent?.role && (
-              <Card>
-                <CardContent className="pt-6">
-                    Email Me
-                  {/* <TableOfContents body={post.content} /> */}
-                </CardContent>
-              </Card>
-            )}
-       
-          </div>
-        {/* </aside> */}
-        </aside>   
         {/* <div className="hidden sticky top-0 z-40 flex items-center gap-x-6 bg-white px-4 py-4 shadow-sm sm:px-6 lg:hidden">
           <button type="button" onClick={() => setSidebarOpen(true)} className="-m-2.5 p-2.5 text-gray-700 lg:hidden">
             <span className="sr-only">Open sidebar</span>
@@ -267,19 +247,23 @@ export const AgentProfileCard = ({agent}) => {
           </div>
       </div>
       {/* <FollowMessageButtons /> */}
-      <div class="px-6 py-4 lg:-mt-4">
-        <p className="text-white group">
+      <div class="px-6 py-4 lg:-mt-4"> <div className="1">
+         <Link href={clsx(`tel:+1-${agent.phone}`)} className="text-white group">
             <span className="group pr-2 font-bold text-gray-200">
                <PhoneIcon aria-hidden="true" className="h-5 w-5 text-pink-100 -mb-1 group-hover:text-pink-500 " />
            </span>
-              <span className="text-pink-100  group-hover:text-pink-400">{agent.phone}</span>
-           </p> 
-         <p className="text-white group">
+              <span className="text-pink-100 text-xl lg:text-lg group-hover:text-pink-400">{agent.phone}</span>
+           </Link> 
+      </div>
+       <div className="2">
+        <Link  href={clsx(`mailto:${agent.email}?subject=Inquiry&body=Hello ${agent.name}, I am reaching out about ...."`)}className="text-white group">
           <span className="pr-2 text-bold ">  
           <EnvelopeIcon aria-hidden="true" className="h-5 w-5 text-pink-100  group-hover:text-pink-500 -mb-1 " />
           </span>
-           <span className="-mt-4 text-pink-1x00  group-hover:text-pink-400"> {agent.email}</span>
-          </p>
+           <span className="-mt-4 text-pink-1x00 text-xl lg:text-lg group-hover:text-pink-400"> {agent.email}</span>
+          </Link>
+       </div>
+         
       </div>
 
       <div className="px-6 flex gap-2 px-2 gap-x-4 md:gap-x-5 md:gap-x-6">
