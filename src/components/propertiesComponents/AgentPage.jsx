@@ -15,8 +15,8 @@ import {
 import {  EnvelopeIcon, PhoneIcon } from '@heroicons/react/24/outline';
 
 import Link from 'next/link';
-import { TryInboxZero } from '@/components/TryInboxZero';
-import { Card, CardContent } from '@/components/ui/card';
+// import { TryInboxZero } from '@/components/TryInboxZero';
+// import { Card, CardContent } from '@/components/ui/card';
 // import { GitHubIcon } from '../SocialIcons';
 import { CheckInCircleIcon } from '../nassersIcons';
 // import { getGradient } from '@/lib/gradients';

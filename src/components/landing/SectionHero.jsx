@@ -238,7 +238,7 @@ import SearchButtons from '../SearchButtons'
                     animationFillMode: "forwards"
                   }}
                 >
-                  noun /&apost;prak·si/ the agency, office, person or function who is given <br />
+                  noun /&apos;prak·si/ the agency, office, person or function who is given <br />
                   the authority or power to act for another.
                 </p>
                 <h1 className="text-black md:text-[82px] mt-6 ss:text-[70px]  text-[52px] md:leading-[90px] fade-in-from-bottom font-black tracking-tight">
