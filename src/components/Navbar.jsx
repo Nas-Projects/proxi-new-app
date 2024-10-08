@@ -26,13 +26,13 @@ import  NavbarUserAvatarComponent  from './NavbarUserAvatarComponent'
 // }
 const navigation = [
   { name: 'Home', href: '/', current: true },
+  { name: 'About', href: '/about', current: false }, 
   { name: 'Properties', href: '/properties', current: true },
   { name: 'Sales', href: '/properties/search-results?location=&propertyType=sale', current: false },
   { name: 'Retail', href: '/properties/search-results?location=&propertyType=retail', current: false },
   { name: 'Residentials', href: '/properties/search-results?location=&propertyType=residential', current: false },
   { name: 'Blockchain', href: '/blogs/how-blockchain-is-transforming-real-estate-transactions', current: false },
-  { name: 'About', href: '/about', current: false }, 
-  // { name: 'Lawyers', href: '/lawyers', current: false },
+  { name: 'Contact', href: '/contact', current: false },
   { name: 'Agents', href: '/agents', current: false },
   { name: 'Join', href: '/join', current: false },
   { name: 'Blogs', href: '/blogs', current: false },
@@ -40,7 +40,7 @@ const navigation = [
   // { name: 'Vitual Tours', href: '/virtual-tours', current: false },
   // { name: 'Contact', href: '/contact', current: false },
 
-  // { name: 'Terms', href: '/terms', current: false },
+  { name: 'Terms', href: '/terms', current: false },
 
 ]
 const userNavigation = [

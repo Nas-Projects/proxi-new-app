@@ -62,7 +62,7 @@ export default function SectionJoin() {
                           transformStyle: "preserve-3d"
                         }} > 
                       <h1 class="!text-left text-center py-4 md:pt-8 md:pb-4 lg:pt-4 
-                            lg:pb-[-4em] max-[1700px]:text-[63px] text-white">
+                            lg:pb-[-4em] max-[1700px]:text-[63px] text-white uppercase">
                            Want to Join ?
                         </h1>
                       </div>

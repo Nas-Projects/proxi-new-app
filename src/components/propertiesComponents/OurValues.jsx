@@ -53,7 +53,7 @@ export const values = [
                             "translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)",
                           transformStyle: "preserve-3d"
                         }} > 
-                      <h1 class="!text-left text-center py-4 md:pt-8 md:pb-4 lg:pt-4 
+                      <h1 class="!uppercase !text-left text-center py-4 md:pt-8 md:pb-4 lg:pt-4 
                             lg:pb-[-4em] max-[1700px]:text-[63px] text-custom-gradient">
                               Our Values
                         </h1>

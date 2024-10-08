@@ -31,7 +31,8 @@ export default function SectionContact() {
       <div className="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2">
         <div className="relative px-6 pb-20 pt-24 sm:pt-32 lg:static lg:px-8 lg:py-48">
           <div className="mx-auto max-w-xl lg:mx-0 lg:max-w-lg">
-            <h2 className="text-3xl font-bold tracking-tight text-white">Get in touch</h2>
+            <h2 className="!text-left text-center py-4 md:pt-8 md:pb-4 lg:pt-4 
+                            lg:pb-[-4em] max-[1700px]:text-[63px] text-white uppercase">Get in touch</h2>
             <p className="mt-6 text-lg leading-8 text-gray-300">
               Get in touch with Proxy Real Estate for expert guidance and seamless property solutions.
             </p>

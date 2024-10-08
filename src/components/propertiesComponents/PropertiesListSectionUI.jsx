@@ -163,15 +163,15 @@ const PropertiesListSectionUI = ({properties}) => {
   ) : (
     <section className="main-properties mt-[-0em] xl:mt-[-2em] lg:-mt-[1em] xl:mt-[-0.5em] px-0  min-[439px]:w-[99vw]">
       <div className="wrap-title-wrap-center xl:mb-4 fade-in-from-bottom ">
-        <h1 className="!text-left text-center py-6 text-custom-gradient font-bold slide-animation lg:mt-24">
+        <h1 className="uppercase !text-left text-center py-6 text-custom-gradient font-bold slide-animation lg:mt-24">
           Properties
         </h1>
-        <h2 className="-mt-4 text-2xl lg:text-3xl  md:mt-4 xl:mt-2 pb-0 text-gray-600">Smart Searches & Data access</h2>
+        <h2 className="-mt-4 text-2xl lg:text-3xl  md:mt-4 xl:-mt-2 pb-0 text-gray-600">Smart Searches & Data access</h2>
         {/* <Link href="/properties" className="">
         View all 
         </Link> */}
        </div>
-      <div className="lg:px-[4%] sm:py-12 py-4 mx-auto bg-white">
+      <div className="lg:px-[4%] sm:py-12 py-4 mx-auto bg-white xl:pt-0">
         <div className="md:min-h-[750px] ss:min-h-[600px] min-h-[850px]  mx-auto flex items-center relative propertiesMainSection">
           <div className="items-center w-full mx-auto flex flex-col max-w-[126rem]">
             <div className="container-xl lg:container m-auto md:px-4 py-6 min-w-[330px]">

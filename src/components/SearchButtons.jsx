@@ -8,8 +8,8 @@ import Link from "next/link";
 
 const ButtonCard = ({ name, Icon, index, href }) => {
     return (
-        <Link href={href} className="grow4  group hover:shadow-lg ring-1 ring-inset ring-[#da1f88] rounded-xl
-         placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-pink-600 lg:focus:ring-2 lg:focus:ring-pink-300">
+        <Link href={href} className="grow4  group hover:shadow-lg ring-1 ring-inset ring-[#4a2f3e] hover:ring-[#da1f88] focus:ring-pink-200 rounded-xl
+         placeholder:text-gray-400 focus:ring-2 focus:ring-inset lg:focus:ring-2 lg:focus:ring-pink-300 focus:shadow-2xl">
             <motion.div
                 variants={fadeIn('', 'spring', index * 0.2, 0.75)}
                 className='cursor-pointer bg-white/60 lg:bg-white/90 shadow-md pt-6 

@@ -3,7 +3,8 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-    
+   import {motion }from 'framer-motion'
+import { fadeIn } from '@/utils/motion'
   
     export default function SectionBlockChain(){
       return (
@@ -11,7 +12,7 @@ import Image from 'next/image'
         
           <div className="relative">
             <div className="mx-auto max-w-7xl">
-              <div className="relative  mx-4  md:pt-14 lg:w-full lg:max-w-2xl">
+              <div className="relative  mx-4  md:pt-14 lg:w-full lg:max-w-4xl">
                 <svg
                   viewBox="0 0 100 100"
                   preserveAspectRatio="none"
@@ -22,7 +23,7 @@ import Image from 'next/image'
                 </svg>
     
                 <div className="lg:w-4/6  relative px-2 pb-12 sm:py-20 lg:px-8 lg:pb-32 lg:pt-12 lg:pr-0">
-                  <div className="mx-auto max-w-3xl lg:mx-0 lg:max-w-full">
+                  <div className="mx-auto -mt-6 max-w-3xl lg:mx-0 lg:max-w-full">
                     <div className="hidden sm:mb-10 sm:flex">
                       <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-500 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
                       Blockchain transaction to enrich.. .
@@ -32,9 +33,33 @@ import Image from 'next/image'
                         </Link>
                       </div>
                     </div>
-                    <h1 className="text-left pt-4 pb-6 text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+                    <motion.div variants={fadeIn('up', 'tween', 0.2, 0.5)}
+                        className="items-center w-full -mb-8">
+                   <div class="section-header text-mainText opacity-1">
+                   <h1 class="!text-left text-center py-4 md:pt-8 md:pb-4 lg:pt-4 
+                           lg:pb-[-4em] max-[1700px]:text-[60px] text-custom-gradient uppercase">BLOCKCHAIN</h1>
+                     <div data-w-id="c61ae90e-5b42-2ae8-3af4-27a1254fdfcd"
+                        className="title-wrap pb-12 max-w-xl lg:max-w-[34vw]"
+                        style={{
+                          opacity: 1,
+                          transform:
+                            "translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)",
+                          transformStyle: "preserve-3d"
+                        }}
+                      >
+                    
+                        {/* <div className="space-08" /> */}
+                      </div>
+                   </div>
+                  <div class="space-08"></div>
+                <motion.div variants={fadeIn('down', 'tween', 0.2, 0.5)}
+                className="flex-1 relative items-center justify-center">
+                    {/* <div className='bg-main w-full h-[2px]' /> */}
+                </motion.div>
+            </motion.div>
+                    <h1 className="mt-[-0.99em] text-left pt-0 pb-6 text-4xl font-bold tracking-tight text-gray-700 sm:text-6xl">
                      <span className='text-custom-gradient text-left'></span>Revolutionizing <br/>
-                      Real Estate <br className='max-[1300px]:hidden'></br>with <span className='text-custom-gradient'>Blockchain</span> Technology
+                      real Estate <br className='max-[1300px]:hidden'></br>with <span className='text-custom-gradient'></span> technology
                     </h1>
                     <p className="mt-6 text-lg leading-8 text-gray-600  ">
                       At PROXY, we leverage blockchain technology to enrich the real estate experience, making transactions more secure, transparent, and efficient. Here are three compelling use cases that demonstrate how blockchain transforms the real estate landscape:

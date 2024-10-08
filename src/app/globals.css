@@ -576,6 +576,23 @@ select{font-family:var(--body-font);transition:all 0.3s ease 0s;}
   background:linear-gradient(180deg,#da1f88,#360b41);-webkit-background-fill-color:transparent;
   /* background-color: #fd90b5; */
 }
+.bg-secondary-color:hover {
+  background:linear-gradient(180deg,#da1f88,#360b41);-webkit-background-fill-color:transparent;
+}
+.group:hover .group-hover\:bg-secondary-color {
+  background:linear-gradient(180deg,#da1f88,#360b41);-webkit-background-fill-color:transparent !important;
+}
+.group-hover\:bg-custom-gradient  {
+  background:linear-gradient(180deg,#da1f88,#360b41);-webkit-background-fill-color:transparent !important;
+}
+.hover\:bg-main-color{
+  background:linear-gradient(180deg,#da1f88,#360b41);-webkit-background-fill-color:transparent !important;
+
+}
+.group:hover .group-hover\:bg-main-color{
+  background:linear-gradient(180deg,#da1f88,#360b41);-webkit-background-fill-color:transparent !important;
+
+}
 .w-15px {
   width: .9375rem;
 }

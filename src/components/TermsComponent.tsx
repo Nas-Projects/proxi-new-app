@@ -64,9 +64,9 @@ if (loading) {
            
            <div className="relative">
              <h1 className="flex-block !text-4xl lg:!text-4xl xl:!text-5xl 
-                     !text-black px-4 pt-16 mainText mb-8 lg:text-center 
+                     !text-black px-4 smL:pt-16 mainText lg:mb-8 lg:text-center 
                      py-12 lg:mt-[-4em]xl:pb-24 ">Terms and Conditions.</h1>
-           <div className="flex justify-center items-center mb-[10em]">
+              <div className="flex justify-center items-center mb-[10em]">
                 <div className="grid grid-cols-1 max-w-2xl gap-x-4 pb-44">
                {terms.map((term, index) => {
                   console.log("terms", term.terms[0])

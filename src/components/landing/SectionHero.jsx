@@ -216,7 +216,7 @@ import SearchButtons from '../SearchButtons'
                   src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=500"
                   className="h-11"
                 /> */}
-                <div className="mt-12 sm:-mt-4 lg:-mt-4 z-30">
+                {/* <div className="mt-12 sm:-mt-4 lg:-mt-4 z-30">
                   <Link href="/properties" className="inline-flex space-x-6">
                     <span className="rounded-full bg-pink-500/10 px-3 py-1 text-sm font-semibold leading-6 text-pink-600 !text-custom-gradient ring-1 ring-inset ring-pink-500/20">
                       Properties
@@ -226,7 +226,7 @@ import SearchButtons from '../SearchButtons'
                       <ChevronRightIcon aria-hidden="true" className="h-5 w-5 text-gray-500" />
                     </span>
                   </Link>
-                </div>
+                </div> */}
                 <h1 className="z-30 mt-3 lg:mt-10 text-4xl font-bold tracking-tight text-white sm:text-6xl">
                   <span className="text-custom-gradient">Proxy - </span>
                 </h1>
@@ -253,16 +253,22 @@ import SearchButtons from '../SearchButtons'
                 <p className="mt-6 text-lg leading-8 text-gray-[#333]">
                      Armed with two decades of industry wisdom, we are focused on combining these insights with the prowess of modern technology, delivering outcomes that not only meet but exceed your expectations.
                 </p>
-                <div className="mt-10 flex items-center gap-x-6">
-                <div className="min-[900px]:hidden mt-5 lg:mt-5 mb-30px xl:mb-0 animated">
-                  <h5 class="capitalize text-sm md:text-base text-white relative group whitespace-nowrap font-normal transition-all duration-300 border border-secondary-color bg-white hover:border-heading-color inline-block mr-15px">
-                    <span class="inline-block absolute top-0 right-0 w-full h-full bg-secondary-color group-hover:bg-primary-color z-1 group-hover:w-0 transition-all duration-300"></span>
-                    <Link href="/properties" className="relative z-10 px-5 md:px-25px lg:px-10 py-10px md:py-3 lg:py-17px group-hover:text-heading-color leading-23px">
-                     ENQUIRY
+                <div className="-mt-10 sm:mt-2 sm:mb-6 flex items-center gap-x-6">
+                <div className="group mt-4 lg:mt-5 mb-30px xl:mb-0 animated">
+                  <h5 class="capitalize text-sm md:text-base hover:border-secondary-color 
+                  relative whitespace-nowrap font-normal transition-all duration-300 border
+                             border-black text-[#333] 
+                             bg-white inline-block mr-15px">
+                      <span className="inline-block absolute top-0 right-0 
+                            w-full h-full group-hover:text-white  z-1 group-hover:bg-secondary-color 
+                            group-hover:w-0 transition-all duration-300"></span>
+                    <Link href="/properties" className="relative z-10 px-5 md:px-25px lg:px-10 py-10px
+                              md:py-3 lg:py-17px group-hover:!text-heading-color leading-23px">
+                    ALL PROPERTIES <span aria-hidden="true">→</span>
                       </Link>
                   </h5>
                  </div>
-                 <div className="max-[600px]:hidden mt-5 lg:mt-5 mb-30px xl:mb-0 animated">
+                 {/* <div className="max-[600px]:hidden mt-5 lg:mt-5 mb-30px xl:mb-0 animated">
                   <h5 class="capitalize text-sm md:text-base text-white relative group whitespace-nowrap font-normal transition-all duration-300 border border-secondary-color bg-white hover:border-heading-color inline-block mr-15px">
                     <span class="inline-block absolute top-0 right-0 w-full h-full bg-secondary-color group-hover:bg-primary-color z-1 group-hover:w-0 transition-all duration-300"></span>
                     <Link href="/properties" className="relative z-10 px-5 md:px-25px lg:px-10 py-10px md:py-3 lg:py-17px group-hover:text-heading-color leading-23px">
@@ -285,11 +291,11 @@ import SearchButtons from '../SearchButtons'
                   <Link href="/properties" className="text-[#333]  border  py-3 hover:text-custom-gradient text-sm font-semibold leading-6  hover:border border-gray-800  hover:border-pink-300  px-3.5 py-2.5">
                     PROPERTIES <span aria-hidden="true">→</span>
                   </Link>
-                 </div>
+                 </div> */}
                 </div>
               </div>
               {/* !mr-24 */}
-              <div className="lg:mx-auto  mt-6 md:mt-14 flex max-w-2xl sm:mt-24 lg:ml-10 lg:mr-0 lg:mt-32 lg:max-w-none lg:flex-none xl:ml-32 xl:mt-64">
+              <div className="lg:mx-auto -mt-4 md:mt-14 flex max-w-2xl sm:mt-24 lg:ml-10 lg:mr-0 lg:mt-20 lg:max-w-none lg:flex-none xl:ml-32 xl:mt-44">
                 <div className="max-w-3xl mx-4 flex-none sm:max-w-5xl lg:max-w-none">
                    <HeroSearchForm />
                  

@@ -8,7 +8,7 @@ import BlurImage from './blur-image'
 function AgentsList({agents}) {
 
   return (
-    <ul role="list" className="text-white divide-y divide-gray-100  md:grid md:grid-cols-2 lg:grid-cols-3 pb-24">
+    <ul role="list" className="p-6 bg-[#e91e6326]  min-[800px]:bg-black min-[800px]:p-12 text-white divide-y divide-gray-100  md:grid md:grid-cols-2 lg:grid-cols-3 pb-24">
       {agents.map((person) => (
         <AgentListNewCard {...person} key={person.email}/>
 
@@ -202,7 +202,7 @@ export default AgentsList
 
 
 export const AgentListNewCard = (agent) => {
-  return   <li key={agent.email} className="col-span-1 flex flex-col divide-y divide-slate-custom rounded-lg bg-white text-center
+  return   <li key={agent.email} className="max-[800px]:m-10 col-span-1 flex flex-col divide-y divide-slate-custom rounded-xl  lg:rounded-lg bg-white text-center
   shadow  shadow-lg hover:shadow-2xl m-4 transition-transform duration-300 hover:scale-105">
     <Link href={clsx(`agents/${agent._id}`)}>
       <div className="flex flex-1 flex-col p-8">
@@ -227,14 +227,14 @@ export const AgentListNewCard = (agent) => {
     </dl>
   </div>
   <div>
-    <div className="!bg-black -mt-px flex divide-x divide-[#f5f3f6a3] !text-white">
+    <div className="bg-[#b9bdc4] text-[#333]  min-[800px]:!bg-black  flex divide-x divide-[#f5f3f6a3] !text-white">
       <div className="flex w-0 flex-1 md:px-3 lg:px-2 xl:px-8">
         <a
           href="mailto:janecooper@proxyre.io"
-          className="relative -mr-px inline-flex w-0 flex-1 items-center justify-center gap-x-3 rounded-bl-lg border border-transparent py-4 text-lg font-semibold text-gray-300/80"
+          className="text-gray-500  min-[800px]:text-gray-400 relative lg:-mr-px inline-flex w-0 flex-1 items-center justify-center gap-x-3 rounded-bl-lg border border-transparent py-4 md:text-lg font-semibold text-gray-300/80"
         >
           <svg
-            className="h-5 w-5 text-gray-400"
+            className="h-6 w-6 text-[#333]  min-[800px]:text-gray-400"
             viewBox="0 0 20 20"
             fill="currentColor"
             aria-hidden="true"
@@ -248,10 +248,10 @@ export const AgentListNewCard = (agent) => {
       <div className="-ml-px flex w-0 flex-1">
         <a
           href="tel:+1-202-555-0170"
-          className="relative inline-flex w-0 flex-1 items-center justify-center gap-x-3 rounded-br-lg border border-transparent py-4 text-lg font-semibold text-gray-200"
+          className="text-gray-500  min-[800px]:text-gray-40 relative inline-flex w-0 flex-1 items-center justify-center gap-x-3 rounded-br-lg border border-transparent py-4 text-lg font-semibold text-gray-200"
         >
           <svg
-            className="h-5 w-5 text-gray-400"
+            className="h-5 w-5 text-gray-500  min-[800px]:text-gray-400"
             viewBox="0 0 20 20"
             fill="currentColor"
             aria-hidden="true"
