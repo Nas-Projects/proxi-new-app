@@ -227,7 +227,7 @@ export const AgentListNewCard = (agent) => {
     </dl>
   </div>
   <div>
-    <div className="bg-[#b9bdc4] text-[#333]  min-[800px]:!bg-black  flex divide-x divide-[#f5f3f6a3] !text-white">
+    <div className="bg-[#eeeeee] text-[#333]  min-[800px]:!bg-black  flex divide-x divide-[#f5f3f6a3] !text-white">
       <div className="flex w-0 flex-1 md:px-3 lg:px-2 xl:px-8">
         <a
           href="mailto:janecooper@proxyre.io"

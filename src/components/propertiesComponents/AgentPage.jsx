@@ -24,6 +24,7 @@ import BlurImage from '../blur-image';
 // import { InstagramLogoIcon } from '@radix-ui/react-icons';
 import AgentsTabs from "@/components/AgentsTabs.jsx"
 import clsx from 'clsx';
+import { Globe2Icon } from 'lucide-react';
 const navigation = [
   { name: 'Dashboard', href: '/dashboard', icon: HomeIcon, current: true },
   { name: 'Team', href: '/teams', icon: UsersIcon, current: false },
@@ -247,7 +248,30 @@ export const AgentProfileCard = ({agent}) => {
           </div>
       </div>
       {/* <FollowMessageButtons /> */}
-      <div class="px-6 py-4 lg:-mt-4"> <div className="1">
+      <div class="px-6 py-4 lg:-mt-4"> 
+      <div className="-1">
+      <Link href={clsx(`tel:+1-${agent.phone}`)} className="text-white group">
+            
+              <span className="text-pink-100 text-xl lg:text-lg group-hover:text-pink-400">{agent?.name  ? agent.name : agent.username}</span>
+           </Link> 
+         <Link href={clsx(`tel:+1-${agent.phone}`)} className="text-white group">
+            <span className="group pr-2 font-bold text-gray-200">
+               <PhoneIcon aria-hidden="true" className="h-5 w-5 text-pink-100 -mb-1 group-hover:text-pink-500 " />
+           </span>
+              <span className="text-pink-100 text-xl lg:text-lg group-hover:text-pink-400">{agent.phone}</span>
+           </Link> 
+      </div>
+      <div className="0">
+      <Link href={clsx(`tel:+1-${agent.phone}`)} className="text-white group">
+            <span className="group pr-2 font-bold text-gray-200">
+               <Globe2Icon aria-hidden="true" className="h-5 w-5 text-pink-100 -mb-1 group-hover:text-pink-500 " />
+           </span>
+              <span className="text-pink-100 text-xl lg:text-lg group-hover:text-pink-400">{agent?.speacksLanguages.length ? speacksLanguages.map((language)=>(<span className='inline-flex gap-x-3'>{language}</span>)) :"Mandingo | English"}</span>
+           </Link> 
+         
+      </div>
+      <div className="1">
+     
          <Link href={clsx(`tel:+1-${agent.phone}`)} className="text-white group">
             <span className="group pr-2 font-bold text-gray-200">
                <PhoneIcon aria-hidden="true" className="h-5 w-5 text-pink-100 -mb-1 group-hover:text-pink-500 " />
