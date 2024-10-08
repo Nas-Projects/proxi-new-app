@@ -163,7 +163,7 @@ import SearchButtons from '../SearchButtons'
       <div className="">
         <main>
           {/* Hero section */}
-          <div className="relative isolate overflow-hidden">
+          <div className="relative isolate overflow-hidden sm:pt-8">
             <Image
                 src="/beams-basic.png"
                 alt=""
@@ -227,7 +227,7 @@ import SearchButtons from '../SearchButtons'
                     </span>
                   </Link>
                 </div>
-                <h1 className="z-30 mt-10 text-4xl font-bold tracking-tight text-white sm:text-6xl">
+                <h1 className="z-30 mt-3 lg:mt-10 text-4xl font-bold tracking-tight text-white sm:text-6xl">
                   <span className="text-custom-gradient">Proxy - </span>
                 </h1>
                 <p
