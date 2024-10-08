@@ -7,11 +7,11 @@ import Image from 'next/image'
   
     export default function SectionBlockChain(){
       return (
-        <div className="relative bg-white">
+        <div className="relative bg-white mt-4 sm:mt-24 xl:mt-44">
         
           <div className="relative">
             <div className="mx-auto max-w-7xl">
-              <div className="relative z-10mt-4 mx-4  md:pt-14 lg:w-full lg:max-w-2xl">
+              <div className="relative  mx-4  md:pt-14 lg:w-full lg:max-w-2xl">
                 <svg
                   viewBox="0 0 100 100"
                   preserveAspectRatio="none"
@@ -21,7 +21,7 @@ import Image from 'next/image'
                   <polygon points="0,0 90,0 50,100 0,100" />
                 </svg>
     
-                <div className="lg:w-4/6  relative px-2 pt-8 pb-12 sm:py-40 lg:px-8 lg:pb-56 lg:pt-24 lg:pr-0">
+                <div className="lg:w-4/6  relative px-2 pt-8 pb-12 sm:py-20 lg:px-8 lg:pb-32 lg:pt-12 lg:pr-0">
                   <div className="mx-auto max-w-3xl lg:mx-0 lg:max-w-full">
                     <div className="hidden sm:mb-10 sm:flex">
                       <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-500 ring-1 ring-gray-900/10 hover:ring-gray-900/20">

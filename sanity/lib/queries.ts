@@ -148,6 +148,7 @@ export const agentsQuery = groq`
     _createdAt,
     _id,
     name,
+    userRole,
     username,
     bio,
     email,

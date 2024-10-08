@@ -395,7 +395,7 @@ if (filters.size) {
   ) : (
     <div className="main-properties min-h-[calc(100vh_-_216px)] text-sm leading-6 px-6 mx-auto lg:mx-[9%] px-0 py-12 overflow-hidden bg-gray-50">
       <div className="w-container lg:!max-w-full px-[1.5em]">
-        <div className="title-wrap-center mb-6 lg:mb-20 "  
+        <div className="title-wrap-center mb-6 lg:mb-20 xl:pt-10 "  
               style={{
             opacity: 1,
             transform:
@@ -425,7 +425,7 @@ if (filters.size) {
                 <p>No properties found matching your criteria. 
                   Please adjust the price or location.</p>
               ) : (
-                <div className="grid grid-cols-1 min-[712px]:grid-cols-2 min-[1079px]:grid-cols-3 min-[1475px]:!grid-cols-3 gap-6 bg-white">
+                <div className="grid grid-cols-1 min-[712px]:grid-cols-2 min-[1079px]:grid-cols-3 min-[1475px]:!grid-cols-3 gap-6 lg:gap-y-8 bg-white">
                   {filteredProperties.map((property) => (
                     <PropertyListCard key={property._id} property={property} />
                   ))}
@@ -457,13 +457,13 @@ if (filters.size) {
           className="h-full w-full object-cover"
           />
       </div>
-      <div className="col-span-1 items-center  mx-auto max-w-[86rem] px-4 lg:p-8 xl:p-12">
+      <div className="col-span-1 items-center  mx-auto max-w-[126rem] px-4 lg:p-8 xl:p-12">
         <div
           className="flex items-center w-full md:mb-16 ss:mb-8  mb-16"
           style={{ opacity: 1, transform: "none", willChange: "auto" }}
         >
-          <h1 className="text-custom-gradient py-4  text-left lg:text-center  font-bold md:text-[55px] ss:text-[45px] text-[33px] md:mr-14 ss:mr-6 mr-5">
-          Want to join the team?
+          <h1 className="text-custom-gradient py-4  text-left xl:text-center  font-bold md:text-[55px] ss:text-[45px] text-[33px] md:mr-14 ss:mr-6 mr-5">
+         Join ?
           </h1>
           <div
             className="flex-1 relative items-center justify-center"

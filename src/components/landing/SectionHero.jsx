@@ -238,7 +238,7 @@ import SearchButtons from '../SearchButtons'
                     animationFillMode: "forwards"
                   }}
                 >
-                  noun /ˈprɑk·si/ the agency, office, person or function who is given <br />
+                  noun /&apost;prak·si/ the agency, office, person or function who is given <br />
                   the authority or power to act for another.
                 </p>
                 <h1 className="text-black md:text-[82px] mt-6 ss:text-[70px]  text-[52px] md:leading-[90px] fade-in-from-bottom font-black tracking-tight">
@@ -254,23 +254,38 @@ import SearchButtons from '../SearchButtons'
                      Armed with two decades of industry wisdom, we are focused on combining these insights with the prowess of modern technology, delivering outcomes that not only meet but exceed your expectations.
                 </p>
                 <div className="mt-10 flex items-center gap-x-6">
-                <div class="mt-5 lg:mt-5 mb-30px xl:mb-0 animated">
-                          <h5 class="capitalize text-sm md:text-base text-white relative group whitespace-nowrap font-normal transition-all duration-300 border border-secondary-color bg-white hover:border-heading-color inline-block mr-15px">
-                            <span class="inline-block absolute top-0 right-0 w-full h-full bg-secondary-color group-hover:bg-primary-color z-1 group-hover:w-0 transition-all duration-300"></span>
-                            <Link href="/properties" class="relative z-10 px-5 md:px-25px lg:px-10 py-10px md:py-3 lg:py-17px group-hover:text-heading-color leading-23px">
-                              MAKE AN ENQUIRY
-                              </Link>
-                          </h5>
+                <div className="min-[900px]:hidden mt-5 lg:mt-5 mb-30px xl:mb-0 animated">
+                  <h5 class="capitalize text-sm md:text-base text-white relative group whitespace-nowrap font-normal transition-all duration-300 border border-secondary-color bg-white hover:border-heading-color inline-block mr-15px">
+                    <span class="inline-block absolute top-0 right-0 w-full h-full bg-secondary-color group-hover:bg-primary-color z-1 group-hover:w-0 transition-all duration-300"></span>
+                    <Link href="/properties" className="relative z-10 px-5 md:px-25px lg:px-10 py-10px md:py-3 lg:py-17px group-hover:text-heading-color leading-23px">
+                     ENQUIRY
+                      </Link>
+                  </h5>
                  </div>
-                  <Link
+                 <div className="max-[600px]:hidden mt-5 lg:mt-5 mb-30px xl:mb-0 animated">
+                  <h5 class="capitalize text-sm md:text-base text-white relative group whitespace-nowrap font-normal transition-all duration-300 border border-secondary-color bg-white hover:border-heading-color inline-block mr-15px">
+                    <span class="inline-block absolute top-0 right-0 w-full h-full bg-secondary-color group-hover:bg-primary-color z-1 group-hover:w-0 transition-all duration-300"></span>
+                    <Link href="/properties" className="relative z-10 px-5 md:px-25px lg:px-10 py-10px md:py-3 lg:py-17px group-hover:text-heading-color leading-23px">
+                      MAKE AN ENQUIRY
+                      </Link>
+                  </h5>
+                 </div>
+                 <div className="max-[600px]:-mt-5 md:-mt-8 xl:-mt-0 
+                 inline-block border-heading-color z-1 group-hover:w-0 transition-all duration-300"> 
+                 <Link
                     href="/contact"
-                    className="bg-transparent hover:border border-gray-800  hover:border-pink-300  px-3.5 py-2.5 text-sm font-semibold text-[#333] shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pink-400"
+                    className="bg-transparent border border-gray-800  py-3
+                    focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-pink-400 outline-pink-200 outline-offset-2  hover:border-pink-300  px-3.5 py-2.5 text-sm font-semibold text-[#333] shadow-sm 
+                    "
                   >
                     ABOUT
                   </Link>
-                  <Link href="/properties" className="text-[#333] hover:text-custom-gradient text-sm font-semibold leading-6  hover:border border-gray-800  hover:border-pink-300  px-3.5 py-2.5">
+                  </div>
+                  <div className="max-[600px]:-mt-5 sm:-mt-8  xl:-mt-0"> 
+                  <Link href="/properties" className="text-[#333]  border  py-3 hover:text-custom-gradient text-sm font-semibold leading-6  hover:border border-gray-800  hover:border-pink-300  px-3.5 py-2.5">
                     PROPERTIES <span aria-hidden="true">→</span>
                   </Link>
+                 </div>
                 </div>
               </div>
               <div className="mx-auto mt-6 md:mt-14 flex max-w-2xl sm:mt-24 lg:ml-10 lg:mr-0 lg:mt-32 lg:max-w-none lg:flex-none xl:ml-32 xl:mt-64">

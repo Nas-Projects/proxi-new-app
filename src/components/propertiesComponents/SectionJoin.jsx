@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 export default function SectionJoin() {
   return (
-    <div className="relative isolate bg-custom-gradient">
+    <div className="relative isolate bg-custom-gradient pb-4">
       <div className="max-[600px]:pb-16 grid lg:max-w-[89vw] grid-cols-1 lg:grid-cols-3">
       <div  className="col-span-2 h-full w-full z-10">
         <Image src="/what-is-blockchain-1.jpeg" 
@@ -51,7 +51,24 @@ export default function SectionJoin() {
                 />
               </div>
             </div>
-               <h2 className="max-[600px]:pt-8 text-3xl font-bold tracking-tight text-white">Want to Join ?</h2>
+            <div className="md:flex items-center w-full -mb-6">
+                 <div class="section-header text-mainText opacity-1">
+                    <div data-w-id="c61ae90e-5b42-2ae8-3af4-27a1254fdfcd"
+                        className="title-wrap pb-6 mt-4 lg:pb-6 max-w-xl lg:max-w-[34vw]"
+                        style={{
+                          opacity: 1,
+                          transform:
+                            "translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)",
+                          transformStyle: "preserve-3d"
+                        }} > 
+                      <h1 class="!text-left text-center py-4 md:pt-8 md:pb-4 lg:pt-4 
+                            lg:pb-[-4em] max-[1700px]:text-[63px] text-white">
+                           Want to Join ?
+                        </h1>
+                      </div>
+                   </div>
+               </div>
+               {/* <h2 className="pt-8 text-3xl font-bold tracking-tight text-white">Want to Join ?</h2> */}
                 <p className="mt-6 text-lg leading-8 text-gray-300">
                 Join our dynamic, team and unleash your full earning potential in
                           a company that&aposs revolutionizing real estate. Our cutting-edge
@@ -69,13 +86,25 @@ export default function SectionJoin() {
                         <h5 className="uppercase text-sm md:text-base text-white relative group whitespace-nowrap font-normal mb-0 transition-all duration-300 border border-secondary-color hover:border-heading-color inline-block">
                             <span className="inline-block absolute top-0 right-0 w-full h-full bg-custom-gradient  group-hover:bg-black hover:bg-primary-cogroup-lor z-1 group-hover:w-0 transition-all duration-300" />
                              <a  href="/properties"  className="relative z-10 px-5 py-4 px-6 group-hover:bg-black  group-hover:text-white leading-23px" >
-                             Join Proxy Realestate
+                             Join Proxy 
                            </a>
                         </h5>
                   
                     </Link>
                   <div>
-                <Link href="/blogs/benefits-of-working-with-proxy">
+                  <Link className='min-[600px]:hidden' href="/blogs/benefits-of-working-with-proxy">
+                    <h5 className="uppercase text-sm md:text-base text-white relative group 
+                        whitespace-nowrap font-normal mb-0 transition-all duration-300 border 
+                              border-black !text-black  hover:border-heading-color inline-block">
+                    <span className="inline-block absolute top-0 right-0 w-full h-full bg-white !text-black 
+                           group-hover:bg-black hover:bg-primary-cogroup-lor z-1 group-hover:w-0 transition-all duration-300" />
+                    <a href="/contact"
+                        className="relative  z-10 relative z-10 px-5 py-4 px-8  group-hover:bg-black  group-hover:text-white  leading-23px lg:py-17px group-hover:text-heading-color leading-23px" >
+                      Learn 
+                        </a>
+                        </h5>
+                    </Link>
+                <Link className='max-[600px]:hidden' href="/blogs/benefits-of-working-with-proxy">
                     <h5 className="uppercase text-sm md:text-base text-white relative group 
                         whitespace-nowrap font-normal mb-0 transition-all duration-300 border 
                               border-black !text-black  hover:border-heading-color inline-block">

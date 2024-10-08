@@ -567,6 +567,10 @@ select{font-family:var(--body-font);transition:all 0.3s ease 0s;}
   opacity: 0.5;
 }
 
+.divide-slate-custom{
+  border-color: 1px solid #bbbfc440;
+}
+
 .bg-secondary-color {
   --tw-bg-opacity: 1;
   background:linear-gradient(180deg,#da1f88,#360b41);-webkit-background-fill-color:transparent;

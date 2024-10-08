@@ -26,7 +26,7 @@ import Link from "next/link";
 
 const AboutProxy = () => {
   return (
-   <section className="xl:max-w-[96vw] min-[1500px]:px-[5vw] lg:mb-14">
+   <section className="mt-10 lg:mt-24 xl:mt-32  xl:max-w-[96vw] min-[1500px]:px-[5vw] lg:mb-14">
     <div className="relative py-[2vh] lg:mt-[3em]] md:mt-12 md:mt-[4em] md:py-0 lg:mt-12 xlg:mt-12 xl:mb-24">
     <div className="w-full lg:mt-24 lg:mt-34 xl:justify-center
          xl:max-w-[99vw] lg:px-6 lg:pt-8 pb-44 lg:pb-12 xl:pb-4 relative min-h-[40vh]">
@@ -94,7 +94,7 @@ const AboutProxy = () => {
             className="hidden md:flex items-center w-full -mb-8">
                  <div class="section-header text-mainText opacity-1">
                 <h1 class="!text-left text-center py-4 md:pt-8 md:pb-4 lg:pt-4 
-                lg:pb-[-4em] max-[1700px]:text-[63px] text-custom-gradient">Who Are We?</h1>
+                lg:pb-[-4em] max-[1700px]:text-[60px] text-custom-gradient">Who Are We?</h1>
                 <div data-w-id="c61ae90e-5b42-2ae8-3af4-27a1254fdfcd"
                         className="title-wrap pb-12 max-w-xl lg:max-w-[34vw]"
                         style={{
@@ -153,7 +153,7 @@ const AboutProxy = () => {
              </li>
              <li className="text-sm lg:text-base flex items-center gap-x-2">
              <Globe width={18} className="flaticon-heart text-xl  bg-color-6 w-45px h-45px flex items-center justify-center mr-25px rounded-100%" />
-               <span className="leading-1.8  text-left">Decentralize properties via tech</span>
+               <span className="leading-1.8  text-left">Decentralize properties</span>
              </li>
            </ul>
            {/* <div className="mt-12 bg-highlight bg-opacity-5  mb-10">

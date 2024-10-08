@@ -78,7 +78,7 @@ const PropertySearchForm = () => {
              </div>
     
       <button  type='submit' className="continue-btn !bg-custom-gradient">
-        Continue
+        CONTINUE
       </button>
       </form>   
       </div>
