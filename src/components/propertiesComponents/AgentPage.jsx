@@ -324,15 +324,15 @@ export const AgentProfileCard = ({agent}) => {
     <dl class="grid grid-cols-3 gap-x-8 gap-y-16 text-center lg:grid-cols-3">
       <div class="mx-auto flex max-w-xs flex-col gap-y-4">
         <dt class="text-base leading-7 text-white/80 -mt-3">Transactions</dt>
-        <dd class="order-first text-3xl text-white dark:text-gray-600 font-semibold tracking-tight sm:text-4xl">4607 </dd>
+        <dd class="order-first text-3xl text-white dark:text-gray-600 font-semibold tracking-tight sm:text-3xl">4607 </dd>
       </div>
       <div class="mx-auto flex max-w-xs flex-col gap-y-4">
         <dt class="text-base leading-7 text-white/80 -mt-3">Ratings</dt>
-        <dd class="inline-flex gap-x-2 order-first text-3xl text-white dark:text-gray-600 font-semibold tracking-tight sm:text-4xl">4.96 <StarIcon/> </dd>
+        <dd class="inline-flex gap-x-2 order-first text-3xl text-white dark:text-gray-600 font-semibold tracking-tight sm:text-3xl">4.96 <StarIcon/> </dd>
       </div>
       <div class="mx-auto flex max-w-xs flex-col gap-y-4">
         <dt class="text-base leading-7 text-white/80 -mt-3">Years</dt>
-        <dd class="order-first text-3xl text-white dark:text-gray-6000 font-semibold tracking-tight text-gray-900 sm:text-4xl">12</dd>
+        <dd class="order-first text-3xl text-white dark:text-gray-6000 font-semibold tracking-tight text-gray-900 sm:text-3xl">12</dd>
       </div>
     </dl>
   </div>
