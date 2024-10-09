@@ -24,7 +24,7 @@ import BlurImage from '../blur-image';
 // import { InstagramLogoIcon } from '@radix-ui/react-icons';
 import AgentsTabs from "@/components/AgentsTabs.jsx"
 import clsx from 'clsx';
-import { Globe2Icon } from 'lucide-react';
+import { Globe2Icon, LocateIcon, StarIcon } from 'lucide-react';
 const navigation = [
   { name: 'Dashboard', href: '/dashboard', icon: HomeIcon, current: true },
   { name: 'Team', href: '/teams', icon: UsersIcon, current: false },
@@ -49,7 +49,7 @@ export default function AgentPage({agent}) {
   const [sidebarOpen, setSidebarOpen] = useState(false)
 
   return (
-    <div id="AGENT_PAGE" className='min-h-[calc(80vh_-_216px)] bg-section-bg-2  text-sm leading-6 justify-center content-center w-full min-h-screen pb-'>
+    <div id="AGENT_PAGE" className='min-h-[calc(80vh_-_216px)]   text-sm leading-6 justify-center content-center w-full min-h-screen pb-'>
       <div>
         <Dialog open={sidebarOpen} onClose={setSidebarOpen} className="relative z-50 !hidden  lg:hidden">
           <DialogBackdrop
@@ -146,7 +146,7 @@ export default function AgentPage({agent}) {
 
      
         {/* lg:pl-72 xl:pr-96 inline-flex*/}
-        <main className="justify-center content-center sm:-mt-4 lg:px-24 xl:px-34  min-[1500px]:px-44  gap-x-4">
+        <main className="justify-center content-center sm:-mt-4 lg:px-4 xl:px-34  min-[1500px]:px-44  gap-x-4">
        
         {/* -------LEFT BAR BEGIN ------- */}
       
@@ -186,10 +186,11 @@ export default function AgentPage({agent}) {
 
 
 export const AgentProfileCard = ({agent}) => {
+  const fName = agent.name.split(" ")[0]
   return          <div className="">
   <div className="sm:pr-4 py-0 md:pt-4 sm:px-6 lg:pr-8 pb-  ">
        {/* <!-- Card start --> */}
-  <div class="bg-black  max-[600px]:min-w-[90vw] sm:w-3xl lg:min-w-[384px] lg:max-w-[30vw] xl:min-w-[37vw] mx-auto dark:bg-gray-900  overflow-hidden shadow-sm hover:shadow-lg">
+  <div class="bg-black  max-[600px]:min-w-[90vw] sm:w-3xl lg:min-w-[384px] lg:max-w-[46vw] xl:min-w-[37vw] mx-auto dark:bg-gray-900  overflow-hidden shadow-sm hover:shadow-lg">
   <div class="border-b  pb-6" >
    <div class="text-center my-0">
        {/* ----Profile --Header */}
@@ -250,17 +251,31 @@ export const AgentProfileCard = ({agent}) => {
       {/* <FollowMessageButtons /> */}
       <div class="px-6 py-4 lg:-mt-4"> 
       <div className="-1">
-           <Link href={clsx(`tel:+1-${agent.phone}`)} className="text-white group">
-              <span className="font-bold text-2xl text-gray-800 !text-white mb-1 mt-2 truncate">{agent?.name  ? agent.name : agent.username}</span>
+           <div className="text-white group inline-flex">
+              <span className="mb-4 text-3xl text-white dark:text-gray-600 font-semibold tracking-tight sm:text-5xl">{agent?.name  ? fName : agent.username}</span>
+              <span className='text-[#1a73e8]'> {!agent?.verified && (
+                  <CheckInCircleIcon className="w-6 h-6 text-[#2196F3] ml-3 mt-4" />
+                )} </span> 
+           </div> 
+      </div>
+      <div className="-1 pb-3">
+          <Link href={clsx(`/contact`)} className="text-white group">
+            <span className="group pr-2 font-bold text-gray-200">
+               <LocateIcon aria-hidden="true" className="h-5 w-5 text-pink-100 -mb-1 group-hover:text-pink-500 " />
+           </span>
+              <span className="text-pink-100/80 text-xl lg:text-lg group-hover:text-gray-100">
+                110 Lex Ave, 2R
+                NY, NY
+              </span>
            </Link> 
       </div>
       <div className="0 mb-3">
-            <Link href={clsx(`tel:+1-${agent.phone}`)} className="text-white group">
+            <div  className="text-white group">
             <span className="group pr-2 font-bold text-gray-200">
-               <Globe2Icon aria-hidden="true" className="h-5 w-5 text-pink-100 -mb-1 group-hover:text-pink-500 " />
+               <Globe2Icon aria-hidden="true" className="h-5 w-5 text-gray-50 -mb-1 group-hover:text-pink-500 " />
            </span>
-              <span className="text-pink-100 text-xl lg:text-lg group-hover:text-pink-400">{agent?.speacksLanguages?.length ? speacksLanguages.map((language)=>(<span className='inline-flex gap-x-3'>{language}</span>)) :"Mandingo | English"}</span>
-           </Link> 
+              <span className="text-gray-100  text-xl lg:text-lg group-hover:text-pink-400">{agent?.speacksLanguages?.length ? speacksLanguages.map((language)=>(<span className='inline-flex gap-x-3'>{language}</span>)) :"Mandingo | English"}</span>
+           </div> 
          
       </div>
       <div className="1 mb-3">
@@ -269,15 +284,15 @@ export const AgentProfileCard = ({agent}) => {
             <span className="group pr-2 font-bold text-gray-200">
                <PhoneIcon aria-hidden="true" className="h-5 w-5 text-pink-100 -mb-1 group-hover:text-pink-500 " />
            </span>
-              <span className="text-pink-100 text-xl lg:text-lg group-hover:text-pink-400">{agent.phone}</span>
+              <span className="text-gray-100   text-xl lg:text-lg group-hover:text-pink-400">{agent.phone}</span>
            </Link> 
       </div>
        <div className="2  mb-3">
         <Link  href={clsx(`mailto:${agent.email}?subject=Inquiry&body=Hello ${agent.name}, I am reaching out about ...."`)}className="text-white group">
-          <span className="pr-2 text-bold ">  
-          <EnvelopeIcon aria-hidden="true" className="h-5 w-5 text-pink-100  group-hover:text-pink-500 -mb-1 " />
-          </span>
-           <span className="-mt-4 text-pink-1x00 text-xl lg:text-lg group-hover:text-pink-400"> {agent.email}</span>
+            <span className="pr-2 text-bold ">  
+               <EnvelopeIcon aria-hidden="true" className="h-5 w-5 text-[#a8c7fa]  group-hover:text-[#1a73e8] -mb-1" />
+             </span>
+           <span className="-mt-4 text-[#a8c7fa] group-hover:text-[#1a73e8] text-xl lg:text-lg"> {agent.email}</span>
           </Link>
        </div>
          
@@ -290,15 +305,13 @@ export const AgentProfileCard = ({agent}) => {
           </button>   */}
         
           <Link  href={clsx(`mailto:${agent.email}?subject=Inquiry&body=Hello ${agent.name}, I am reaching out about ...."`)}>
-                <button className="hover:bg-custom-gradient hover:text-white bg-white hover:!text-custom-gradient-2 flex-1 rounded-sm dark:bg-blue-800 text-black
-                 dark:text-white antialiased font-bold  dark:hover:border-sky-200 px-4 py-2">
-                Message
+                <button className="hover:bg-custom-gradient hover:text-white bg-transparent text-white hover:!text-custom-gradient-2 flex-1 ring-1 ring-white rounded-sm dark:bg-blue-800 text-black dark:text-white antialiased font-bold dark:hover:border-sky-200 px-4 py-2">
+                   Message
                 </button>
             
           </Link> 
           <Link href={clsx(`tel:+1-${agent.phone}`)}>
-                <button className="hover:bg-custom-gradient hover:text-white bg-white hover:!text-custom-gradient-2 flex-1 rounded-sm dark:bg-blue-800 text-black
-                 dark:text-white antialiased font-bold  dark:hover:border-sky-200 px-4 py-2">
+                <button className="hover:bg-custom-gradient hover:text-white bg-transparent text-white hover:!text-custom-gradient-2 flex-1 ring-1 ring-white rounded-sm dark:bg-blue-800 text-black dark:text-white antialiased font-bold dark:hover:border-sky-200 px-4 py-2">
                 Call
                 </button>
             
@@ -306,6 +319,37 @@ export const AgentProfileCard = ({agent}) => {
       </div>
   </div>
   <div class="px-6 py-4">
+  <div class=" py-4 sm:py-6">
+  <div class="inline-flex mx-auto max-w-7xl px-6 lg:px-8">
+    <dl class="grid grid-cols-3 gap-x-8 gap-y-16 text-center lg:grid-cols-3">
+      <div class="mx-auto flex max-w-xs flex-col gap-y-4">
+        <dt class="text-base leading-7 text-white/80 -mt-2">Transactions</dt>
+        <dd class="order-first text-3xl text-white dark:text-gray-600 font-semibold tracking-tight sm:text-5xl">46074 </dd>
+      </div>
+      <div class="mx-auto flex max-w-xs flex-col gap-y-4">
+        <dt class="text-base leading-7 text-white/80 -mt-2">Ratings</dt>
+        <dd class="inline-flex gap-x-2 order-first text-3xl text-white dark:text-gray-600 font-semibold tracking-tight sm:text-5xl">4.96 <StarIcon/> </dd>
+      </div>
+      <div class="mx-auto flex max-w-xs flex-col gap-y-4">
+        <dt class="text-base leading-7 text-white/80 -mt-2">Years</dt>
+        <dd class="order-first text-3xl text-white dark:text-gray-6000 font-semibold tracking-tight text-gray-900 sm:text-5xl">12</dd>
+      </div>
+    </dl>
+  </div>
+</div>
+  {/* <div class="mx-auto max-w-sm bg-white p-8 text-sm leading-6 text-slate-700 shadow-xl !bg-[#0f172a]  dark:text-slate-400 sm:text-base sm:leading-7">
+    
+      This is the raw version of the base64 encoded image below:
+      <svg width="14" height="12" viewBox="0 0 14 12" xmlns="http://www.w3.org/2000/svg" fill="#38bdf8">
+        <path fill-rule="evenodd" d="M13.685.153a.752.752 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" />
+      </svg>
+ 
+    <ul class="pl-4 text-slate-900 dark:text-slate-200 list-image-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQiIGhlaWdodD0iMTIiIHZpZXdCb3g9IjAgMCAxNCAxMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBmaWxsPSIjMzhiZGY4Ij48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMy42ODUuMTUzYS43NTIuNzUyIDAgMCAxIC4xNDMgMS4wNTJsLTggMTAuNWEuNzUuNzUgMCAwIDEtMS4xMjcuMDc1bC00LjUtNC41YS43NS43NSAwIDAgMSAxLjA2LTEuMDZsMy44OTQgMy44OTMgNy40OC05LjgxN2EuNzUuNzUgMCAwIDEgMS4wNS0uMTQzWiIgLz48L3N2Zz4=')]">
+      <li class="pl-2">5 cups chopped Porcini mushrooms</li>
+      <li class="pl-2">1/2 cup of olive oil</li>
+      <li class="pl-2">3lb of celery</li>
+    </ul>
+  </div> */}
     {/* <p className="text-white">{agent.phone}</p> <p className="text-white">{agent.email}</p> */}
       {/* <div class="flex gap-2 items-center text-gray-200 dark:text-gray-300 mb-4">
           <svg class="h-6 w-6 text-gray-200 dark:text-gray-400" fill="currentColor"
@@ -337,7 +381,7 @@ export const AgentProfileCard = ({agent}) => {
       </div> */}
   </div>
   <div id="agent-tabs">
-  <AgentsTabs bio={agent.bio}/>
+  <AgentsTabs bio={agent.bio} agentName={agent.name}/>
   </div>
 </div>
 {/* <!-- Card end --> */}

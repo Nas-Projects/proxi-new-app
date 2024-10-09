@@ -153,7 +153,7 @@ export default function Contact() {
             <div className="mt-8 flex justify-end">
               <button
                 type="submit"
-                className="rounded-md bg-custom-gradient px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                className="inline-flex items-center justify-center whitespace-nowrap text-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 shadow hover:bg-primary/90 h-9 bg-white text-black ring-1 ring-black hover:text-white hover:!bg-custom-gradient hover:!text-custom-gradient-2 rounded-sm dark:bg-blue-800 dark:text-white antialiased font-bold dark:hover:border-sky-200 px-4 py-2"
               >
                 Send message
               </button>

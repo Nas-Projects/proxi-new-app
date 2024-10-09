@@ -35,7 +35,7 @@ export default async function AgentProfile({ params }: { params: { id: string } 
   }
 
   return (
-    <div className={clsx("min-h-[90vh] bg-black relative justify-center w-full")}>
+    <div className={clsx("min-h-[90vh] bg-[#1e1f20] relative justify-center w-full")}>
       <AgentComponent agent={agent} />
     </div>
   );

@@ -32,26 +32,6 @@ export default function SectionGetInTouch(){
                       </dl>
                     </div>
                     <div className="rounded-2xl bg-gray-50 p-10">
-                      <h3 className="text-2xl font-semibold leading-7 text-gray-900">Press</h3>
-                      <dl className="mt-3 space-y-1 text-lg leading-6 text-gray-600">
-                        <div>
-                          <dt className="sr-only">Email</dt>
-                          <dd>
-                            <a href="mailto:press@proxyre.io" className="font-semibold text-pink-600">
-                              ryan@proxyre.io
-                            </a>
-                          </dd>
-                        </div>
-                        <div className="mt-1">
-                          <dt className="sr-only">Phone number</dt>
-                          <a href="tel:+1347.987.0210" className="hover:text-gray-900">
-                              +1 347.987.0210
-                            </a>
-                          {/* <dd>1 347.987.0210</dd> */}
-                        </div>
-                      </dl>
-                    </div>
-                    <div className="rounded-2xl bg-gray-50 p-10">
                       <h3 className="text-2xl font-semibold leading-7 text-gray-900">Join our team</h3>
                       <dl className="mt-3 space-y-1 text-lg leading-6 text-gray-600">
                         <div>
@@ -71,23 +51,7 @@ export default function SectionGetInTouch(){
                         </div>
                       </dl>
                     </div>
-                    <div className="rounded-2xl bg-gray-50 p-10">
-                      <h3 className="text-2xl font-semibold leading-7 text-gray-900">Say hello</h3>
-                      <dl className="mt-3 space-y-1 text-lg leading-6 text-gray-600">
-                        <div>
-                          <dt className="sr-only">Email</dt>
-                          <dd>
-                            <a href="mailto:hello@proxyre.io" className="font-semibold text-pink-600">
-                              hello@proxyre.io
-                            </a>
-                          </dd>
-                        </div>
-                        <div className="mt-1">
-                          <dt className="sr-only">Phone number</dt>
-                          <dd>+1 (555) 905-5678</dd>
-                        </div>
-                      </dl>
-                    </div>
+                 
                   </div>
                 </div>
               </div>

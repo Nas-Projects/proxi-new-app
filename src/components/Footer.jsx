@@ -165,7 +165,7 @@ useEffect(() => {
 }, []);
 // mt-95px 
   return ( 
-      <footer aria-labelledby="footer-heading" className="!group !relative hover:bg-custom-gradient pt-24 lg:pt-24 lg:pt-[127px] pb-5 px-15px 3xl:px-[2%] 4xl:px-[5%]
+      <footer aria-labelledby="footer-heading" className="!group !relative pt-24 lg:pt-24 lg:pt-[127px] pb-5 px-15px 3xl:px-[2%] 4xl:px-[5%]
        bg-section-bg-2 text-sm lg:text-base text-white relative">
         <div className="px-15px">
           {/* footer top */}
