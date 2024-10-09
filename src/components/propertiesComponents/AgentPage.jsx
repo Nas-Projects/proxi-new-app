@@ -252,7 +252,7 @@ export const AgentProfileCard = ({agent}) => {
       <div class="px-6 py-4 lg:-mt-4"> 
       <div className="-1">
            <div className="text-white group inline-flex">
-              <span className="mb-4 text-3xl text-white dark:text-gray-600 font-semibold tracking-tight sm:text-5xl">{agent?.name  ? fName : agent.username}</span>
+              <span className="mb-4 text-3xl text-white dark:text-gray-600 font-semibold tracking-tight sm:text-4xl">{agent?.name  ? fName : agent.username}</span>
               <span className='text-[#1a73e8]'> {!agent?.verified && (
                   <CheckInCircleIcon className="w-6 h-6 text-[#2196F3] ml-3 mt-4" />
                 )} </span> 
@@ -318,21 +318,21 @@ export const AgentProfileCard = ({agent}) => {
           </Link> 
       </div>
   </div>
-  <div class="px-6 py-4">
-  <div class=" py-4 sm:py-6">
+  <div class=" py-4">
+  <div class="py-4 sm:py-6">
   <div class="inline-flex mx-auto max-w-7xl px-6 lg:px-8">
     <dl class="grid grid-cols-3 gap-x-8 gap-y-16 text-center lg:grid-cols-3">
       <div class="mx-auto flex max-w-xs flex-col gap-y-4">
-        <dt class="text-base leading-7 text-white/80 -mt-2">Transactions</dt>
-        <dd class="order-first text-3xl text-white dark:text-gray-600 font-semibold tracking-tight sm:text-5xl">46074 </dd>
+        <dt class="text-base leading-7 text-white/80 -mt-3">Transactions</dt>
+        <dd class="order-first text-3xl text-white dark:text-gray-600 font-semibold tracking-tight sm:text-4xl">4607 </dd>
       </div>
       <div class="mx-auto flex max-w-xs flex-col gap-y-4">
-        <dt class="text-base leading-7 text-white/80 -mt-2">Ratings</dt>
-        <dd class="inline-flex gap-x-2 order-first text-3xl text-white dark:text-gray-600 font-semibold tracking-tight sm:text-5xl">4.96 <StarIcon/> </dd>
+        <dt class="text-base leading-7 text-white/80 -mt-3">Ratings</dt>
+        <dd class="inline-flex gap-x-2 order-first text-3xl text-white dark:text-gray-600 font-semibold tracking-tight sm:text-4xl">4.96 <StarIcon/> </dd>
       </div>
       <div class="mx-auto flex max-w-xs flex-col gap-y-4">
-        <dt class="text-base leading-7 text-white/80 -mt-2">Years</dt>
-        <dd class="order-first text-3xl text-white dark:text-gray-6000 font-semibold tracking-tight text-gray-900 sm:text-5xl">12</dd>
+        <dt class="text-base leading-7 text-white/80 -mt-3">Years</dt>
+        <dd class="order-first text-3xl text-white dark:text-gray-6000 font-semibold tracking-tight text-gray-900 sm:text-4xl">12</dd>
       </div>
     </dl>
   </div>

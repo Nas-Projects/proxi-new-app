@@ -83,8 +83,8 @@ function AgentsTabs({bio,agentName}) {
     <Tabs defaultValue="bio" className="group min-w-[400px] min-h-[50vh] sm:w-full !bg-black mt-4 ring ring-1 pt-[1px] lg:pt-[1px] hover:ring-slate-600  ring-[#1d2128]">
       <TabsList className="grid w-full grid-cols-3 !bg-black border-b border-1 border-pink-200  group-hover:border-pink-400">
         {tabs.map((tab, index) => (
-          <TabsTrigger key={index} value={tab.value} data-label={tab.label} className={clsx("data-[state=active]:text-white data-[state=active]:font-bold data-[state=active]:bg-[#1d2128] h-12 hover:text-pink-white",
-           "text-slate-400 text-md xl:text-xl")}>
+          <TabsTrigger key={index} value={tab.value} data-label={tab.label} className={clsx("data-[state=active]:text-white data-[state=active]:font-bold data-[state=active]:bg-[#1d212885] h-12 hover:text-pink-white",
+           "text-slate-400 text-xl lg:text-lg g")}>
             {tab.label}
           </TabsTrigger>
         ))}
