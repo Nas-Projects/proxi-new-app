@@ -287,12 +287,12 @@ export const AgentProfileCard = ({agent}) => {
               <span className="text-gray-100   text-xl lg:text-lg group-hover:text-pink-400">{agent.phone}</span>
            </Link> 
       </div>
-       <div className="2  mb-3">
+       <div className="2 group mb-3">
         <Link  href={clsx(`mailto:${agent.email}?subject=Inquiry&body=Hello ${agent.name}, I am reaching out about ...."`)}className="text-white group">
             <span className="pr-2 text-bold ">  
-               <EnvelopeIcon aria-hidden="true" className="h-5 w-5 text-[#a8c7fa]  group-hover:text-[#1a73e8] -mb-1" />
+               <EnvelopeIcon aria-hidden="true" className="h-5 w-5 text-white  group-hover:text-[#1a73e8]  -mb-1" />
              </span>
-           <span className="-mt-4 text-[#a8c7fa] group-hover:text-[#1a73e8] text-xl lg:text-lg"> {agent.email}</span>
+           <span className="-mt-4 hover:!text-[#a8c7fa]  group-hover:text-[#1a73e8] text-xl lg:text-lg"> {agent.email}</span>
           </Link>
        </div>
          
@@ -305,21 +305,21 @@ export const AgentProfileCard = ({agent}) => {
           </button>   */}
         
           <Link  href={clsx(`mailto:${agent.email}?subject=Inquiry&body=Hello ${agent.name}, I am reaching out about ...."`)}>
-                <button className="hover:bg-custom-gradient hover:text-white bg-transparent text-white hover:!text-custom-gradient-2 flex-1 ring-1 ring-white rounded-sm dark:bg-blue-800 text-black dark:text-white antialiased font-bold dark:hover:border-sky-200 px-4 py-2">
+                <button className="text-xl hover:bg-custom-gradient hover:text-white bg-transparent text-white hover:!text-custom-gradient-2 flex-1 ring-1 ring-white rounded-sm dark:bg-blue-800 text-black dark:text-white antialiased font-bold dark:hover:border-sky-200 px-4 py-2">
                    Message
                 </button>
             
           </Link> 
           <Link href={clsx(`tel:+1-${agent.phone}`)}>
-                <button className="hover:bg-custom-gradient hover:text-white bg-transparent text-white hover:!text-custom-gradient-2 flex-1 ring-1 ring-white rounded-sm dark:bg-blue-800 text-black dark:text-white antialiased font-bold dark:hover:border-sky-200 px-4 py-2">
+                <button className="text-xl hover:bg-custom-gradient hover:text-white bg-transparent text-white hover:!text-custom-gradient-2 flex-1 ring-1 ring-white rounded-sm dark:bg-blue-800 text-black dark:text-white antialiased font-bold dark:hover:border-sky-200 px-4 py-2">
                 Call
                 </button>
             
           </Link> 
       </div>
   </div>
-  <div class=" py-4">
-  <div class="py-4 sm:py-6">
+  <div class="pt-4">
+  <div class="py-2 sm:py-4">
   <div class="inline-flex mx-auto max-w-7xl px-6 lg:px-8">
     <dl class="grid grid-cols-3 gap-x-8 gap-y-16 text-center lg:grid-cols-3">
       <div class="mx-auto flex max-w-xs flex-col gap-y-4">
@@ -380,7 +380,7 @@ export const AgentProfileCard = ({agent}) => {
           </div>
       </div> */}
   </div>
-  <div id="agent-tabs">
+  <div id="agent-tabs" className=''>
   <AgentsTabs bio={agent.bio} agentName={agent.name}/>
   </div>
 </div>

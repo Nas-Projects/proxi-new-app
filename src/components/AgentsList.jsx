@@ -202,7 +202,7 @@ export default AgentsList
 
 
 export const AgentListNewCard = (agent) => {
-  return   <li key={agent.email} className="max-[800px]:m-10 col-span-1 flex flex-col divide-y divide-slate-custom rounded-xl  lg:rounded-lg bg-white text-center
+  return   <li key={agent.email} className="ring-1 ring-white/40 max-[800px]:m-10 col-span-1 flex flex-col divide-y divide-slate-custom rounded-xl  lg:rounded-lg bg-white text-center
   shadow  shadow-lg hover:shadow-2xl m-4 transition-transform duration-300 hover:scale-105">
     <Link href={clsx(`agents/${agent._id}`)}>
       <div className="flex flex-1 flex-col p-8">
@@ -231,10 +231,10 @@ export const AgentListNewCard = (agent) => {
       <div className="flex w-0 flex-1 md:px-3 lg:px-2 xl:px-8">
         <a
           href="mailto:janecooper@proxyre.io"
-          className="text-gray-500  min-[800px]:text-gray-400 relative lg:-mr-px inline-flex w-0 flex-1 items-center justify-center gap-x-3 rounded-bl-lg border border-transparent py-4 md:text-lg font-semibold text-gray-300/80"
+          className="text-gray-500  min-[800px]:text-gray-400 relative lg:-mr-px inline-flex w-0 flex-1 items-center justify-center gap-x-3 rounded-bl-lg border border-transparent py-4 md:text-md font-semibold text-gray-300/80"
         >
           <svg
-            className="h-6 w-6 text-[#333]  min-[800px]:text-gray-400"
+            className="h-5 w-4 text-[#333]  min-[800px]:text-gray-400"
             viewBox="0 0 20 20"
             fill="currentColor"
             aria-hidden="true"
@@ -242,13 +242,13 @@ export const AgentListNewCard = (agent) => {
             <path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z" />
             <path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z" />
           </svg>
-          {agent.email}
+          <span className='truncate'>{agent.email}</span> 
         </a>
       </div>
       <div className="-ml-px flex w-0 flex-1">
         <a
           href="tel:+1-202-555-0170"
-          className="text-gray-500  min-[800px]:text-gray-40 relative inline-flex w-0 flex-1 items-center justify-center gap-x-3 rounded-br-lg border border-transparent py-4 text-lg font-semibold text-gray-200"
+          className="text-gray-500 min-[800px]:text-gray-40 relative inline-flex w-0 flex-1 items-center justify-center gap-x-3 rounded-br-lg border border-transparent py-4 text-md font-semibold text-gray-200"
         >
           <svg
             className="h-5 w-5 text-gray-500  min-[800px]:text-gray-400"
