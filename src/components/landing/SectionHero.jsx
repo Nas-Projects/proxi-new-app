@@ -295,7 +295,7 @@ import SearchButtons from '../SearchButtons'
                 </div>
               </div>
               {/* !mr-24 */}
-              <div className="lg:mx-auto -mt-4 md:mt-14 flex max-w-2xl sm:mt-24 lg:ml-10 lg:mr-0 lg:mt-10 lg:max-w-none lg:flex-none xl:ml-12 xl:mt-24">
+              <div className="lg:mx-auto -mt-4 md:mt-14 flex max-w-2xl sm:mt-24 lg:ml-10 lg:mr-0 lg:mt-10 lg:max-w-none lg:flex-none xl:ml-12 xl:mt-[3rem]">
                 <div className="max-w-3xl mx-4 flex-none sm:max-w-5xl lg:max-w-none">
                    <HeroSearchForm />
                  
