@@ -34,13 +34,13 @@ const components = [
 //   description:
 //     "Discover lucrative investment opportunities and potential returns in real estate.",
 // },
-  {
-    title: "Market Trends",
-    href: "market-trends",
-    href:"/blogs/the-future-of-real-estate-trends-to-watch-in-2024",
-    description:
-      "View the latest market trends and insights for different real estate sectors.",
-  },
+  // {
+  //   title: "Market Trends",
+  //   href: "market-trends",
+  //   href:"/blogs/the-future-of-real-estate-trends-to-watch-in-2024",
+  //   description:
+  //     "View the latest market trends and insights for different real estate sectors.",
+  // },
  
   // {
   //   title: "Virtual Tours",

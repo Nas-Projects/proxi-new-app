@@ -9,10 +9,10 @@ const HeroSearchForm = () => {
       <div className='max-w-7xl mx-auto lg:px-0 max-[570px]:pr-[44px] flex flex-col items-center '>
         <div className='text-center pt-4 lg:pt-10 !max-w-[23rem] !text-left'>
          
-          <h1 className='hover:mainText text-center text-slate-700 text-base  md:text-3xl font-extrabold sm:text-3xl md:text-4xl'>
-            Search
+          <h1 className='text-custom-gradient text-center text-slate-700 text-base  md:text-3xl font-extrabold sm:text-3xl md:text-4xl'>
+           Property  Search
           </h1>
-          <p className='md:flex mb-2 text-xl text-gray-600 italic font-base'>
+          <p className='text-lg leading-8 text-gray-[#333]'>
            Commercial or Residential
           </p>
         </div>

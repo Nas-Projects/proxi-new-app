@@ -104,11 +104,11 @@ export default function AboutPageComponent({aboutData}) {
                  {section1.description}
                 </p>
               </div>
-              <img
+             { section1.image && <img
                 alt=""
-                src={urlFor(section1.image).url()}
+                src={urlFor(section2.image).url()}
                 className="mt-10 aspect-[6/5] w-full max-w-lg rounded-2xl object-cover sm:mt-16 lg:mt-0 lg:max-w-none xl:row-span-2 xl:row-end-2 xl:mt-36"
-              />
+              />}
             </div>
           </div>
           <div className="absolute inset-x-0 bottom-0 -z-10 h-24 bg-gradient-to-t from-white sm:h-32" />
@@ -166,7 +166,7 @@ export default function AboutPageComponent({aboutData}) {
                   />
                 </div>
                 <div className="contents lg:col-span-2 lg:col-end-2 lg:ml-auto lg:flex lg:w-[37rem] lg:items-start lg:justify-end lg:gap-x-8">
-                  <div className="order-first flex w-64 flex-none justify-end self-end lg:w-auto">
+                  {/* <div className="order-first flex w-64 flex-none justify-end self-end lg:w-auto">
                     <img
                       alt=""
                       src="https://res.cloudinary.com/da6wkcnok/images/w_600,h_400,c_scale/f_auto,q_auto/v1661867877/iStock-961865680/iStock-961865680.jpg?_i=AA"
@@ -179,7 +179,7 @@ export default function AboutPageComponent({aboutData}) {
                       src="https://www.indianapolispropertymanagement.com/hubfs/Blog%20Images/Happy%20tenants%20talking%20to%20a%20landlord.jpg"
                       className="aspect-[7/5] w-[37rem] max-w-none flex-none rounded-2xl bg-gray-50 object-cover"
                     />
-                  </div>
+                  </div> */}
                   {/* <div className="hidden sm:block sm:w-0 sm:flex-auto lg:w-auto lg:flex-none">
                     <img
                       alt=""

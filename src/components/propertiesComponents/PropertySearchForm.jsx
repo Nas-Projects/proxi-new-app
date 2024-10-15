@@ -46,7 +46,7 @@ const PropertySearchForm = () => {
           placeholder=""
         />
         <label className="email-label " htmlFor="location-input">
-          {location ? location : "Enter location*"} 
+          {location ? location : "Zip Code | Neighborhodod | State *"} 
         </label>
         {/* <div className="invalid-email-error-message ">
           <img
@@ -61,13 +61,11 @@ const PropertySearchForm = () => {
                </label>
                <select
                  id='property-type'
-                 className='ring ring-1 ring-pink-[#7a7678] w-full px-4 py-4 lg:py-3  text-[16px]  w-[320px] text-[#2d333a] h-[52px] rounded-[6px] !bg-white text-gray-800 
-                 focus:outline-none focus:ring ring-1 ring-black focus:ring-pink-300  
-                 focus:ring-blue-500 hover:shadow-lg email-input !mb-3  border-1 !border-pink-600 ring ring-1 focus:!border-pink-500 ring-pink-[#7a7678]'
+                 className='email-input !mb-4 border-1 !border-pink-900 ring ring-1 focus:!border-pink-500 ring-pink-[#7a7678]'
                  value={propertyType}
                  onChange={(e) => setPropertyType(e.target.value)}
                >
-                 <option value='All'>All</option>
+                 <option value='All' className='email-label !text-[#6f7780]'>Property Type</option>
                  <option value='Retail'>Retail</option>
                  <option value='Residential'>Residential</option>
                  <option value='Office'>Office</option>

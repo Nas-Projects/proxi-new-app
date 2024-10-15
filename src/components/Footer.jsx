@@ -165,11 +165,11 @@ useEffect(() => {
 }, []);
 // mt-95px 
   return ( 
-      <footer aria-labelledby="footer-heading" className="!group !relative pt-24 lg:pt-24 lg:pt-[127px] pb-5 px-15px 3xl:px-[2%] 4xl:px-[5%]
+      <footer aria-labelledby="footer-heading" className="!group !relative pt-24  lg:pt-[27px] pb-5 px-15px 3xl:px-[2%] 4xl:px-[5%]
        bg-section-bg-2 text-sm lg:text-base text-white relative">
         <div className="px-15px">
           {/* footer top */}
-          <div className="container w-[90vw]lg:max-w-[75rem] absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
+          {/* <div className="container w-[90vw]lg:max-w-[75rem] absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
             <div className="pt-12  pb-6 md:py-4 md:rounded-xl bg-custom-gradient group-hover:!bg-black px-25px lg:px-60px py-50px max-w-[600px]:!bg-indigo-400  text-white flex justify-center lg:justify-between items-center flex-col lg:flex-row gap-y-30px lg:gap-0 sm:whitespace-nowrap">
               <div>
                 <h5 className="text-xl md:text-26px lg:text-3xl xl:text-4xl text-white font-bold mb-15px">
@@ -191,7 +191,7 @@ useEffect(() => {
                 </h5>
               </div>
             </div>
-          </div>
+          </div> */}
           {/* footer main */}
           <div className="pt-6 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-12 gap-x-30px text-sm lg:text-base text-white">
             {/* footer about*/}
@@ -496,7 +496,7 @@ useEffect(() => {
                 </form>
               </div>
               {/* payment methods */}
-              <div>
+              {/* <div>
                 <h3 className="text-base lg:text-lg font-bold mt-30px mb-15px text-white">
                   <span className="leading-1.3"> We Accept </span>
                 </h3>
@@ -504,7 +504,7 @@ useEffect(() => {
                   src="https://html.themewin.com/pixells/quarter-tailwind-preview/quarter/assets/img/icons/payment-4.png"
                   alt="Payment Image"
                 />
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

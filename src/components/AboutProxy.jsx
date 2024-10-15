@@ -37,7 +37,7 @@ const AboutProxy = () => {
             className="items-center w-full -mb-8">
                  <div class="section-header  opacity-1">
                 <h1 class="!text-left text-center py-4 md:pt-8 md:pb-4 lg:pt-4 
-                lg:pb-[-4em] max-[1700px]:text-[63px] text-custom-gradient !uppercase">Who Are We?</h1>
+                lg:pb-[-4em] max-[1700px]:text-[63px] text-custom-gradient !uppercase">We Hit Different.</h1>
                 <div data-w-id="c61ae90e-5b42-2ae8-3af4-27a1254fdfcd"
                         className="title-wrap pb-12 max-w-xl lg:max-w-[34vw]"
                         style={{
@@ -94,7 +94,7 @@ const AboutProxy = () => {
             className="hidden md:flex items-center w-full -mb-8">
                  <div class="section-header text-mainText opacity-1">
                 <h1 class="!text-left text-center py-4 md:pt-8 md:pb-4 lg:pt-4 
-                lg:pb-[-4em] max-[1700px]:text-[60px] text-custom-gradient uppercase">Who Are We?</h1>
+                lg:pb-[-4em] max-[1700px]:text-[60px] text-custom-gradient uppercase"> We  Hit Different.</h1>
                 <div data-w-id="c61ae90e-5b42-2ae8-3af4-27a1254fdfcd"
                         className="title-wrap pb-12 max-w-xl lg:max-w-[34vw]"
                         style={{
@@ -182,8 +182,8 @@ const AboutProxy = () => {
                                 border-black !text-black  hover:border-heading-color inline-block">
                      <span className="inline-block absolute top-0 right-0 w-full h-full bg-white !text-black 
                                group-hover:bg-primary-color z-1 group-hover:w-0 transition-all duration-300" />
-                    <a href="/contact" className="relative  z-10 relative z-10 px-5 py-4 px-8   group-hover:text-custom-color  leading-23px lg:py-17px group-hover:text-heading-color leading-23px" >
-                       READ MORE
+                    <a href="/about" className="relative  z-10 relative z-10 px-5 py-4 px-8   group-hover:text-custom-color  leading-23px lg:py-17px group-hover:text-heading-color leading-23px" >
+                      SERVICES
                     </a>
                     </h5>
                 </Link>

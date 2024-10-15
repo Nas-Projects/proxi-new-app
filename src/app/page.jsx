@@ -102,7 +102,7 @@ async function Home({}){
    } </>
  </Container>
  <SectionJoin/>
-<SectionContact/>
+{/* <SectionContact/> */}
         
  </div>
  )

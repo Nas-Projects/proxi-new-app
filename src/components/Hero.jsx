@@ -115,10 +115,10 @@ export default function Hero() {
 export const RightPart = () =>{
 return (
 <div className="flex flex-col w-full justify-center max-[1000px]:!mt-[3em]">
-  <h1 className="text-black md:text-[82px] ss:text-[70px] text-custom-gradient  text-[52px] md:leading-[90px] fade-in-from-bottom ss:leading-[70px] leading-[55px] mb-4 font-black tracking-tight">
-    proxy -{/* */}{" "}
-  </h1>
-  <span className="text-black text-[20px] md:leading-[30px] fade-in-from-bottom  mb-4  tracking-tight italic">
+  {/* <h1 className="text-black md:text-[82px] ss:text-[70px] text-custom-gradient  text-[52px] md:leading-[90px] fade-in-from-bottom ss:leading-[70px] leading-[55px] mb-4 font-black tracking-tight">
+    proxy -
+  </h1> */}
+  {/* <spa?n className="text-black text-[20px] md:leading-[30px] fade-in-from-bottom  mb-4  tracking-tight italic">
   <p
     className="-pt-12 md:mt-6 ss:mt-5  md:text-[18px] ss:text-[18px] text-[16px] text-main md:leading-[25px] ss:leading-[25px]  leading-[20px] fade-in-from-bottom md:max-w-[600px]  ss:max-w-[480px] max-w-[320px]"
     style={{
@@ -129,8 +129,8 @@ return (
   >
      noun /ˈprɑk·si/ the agency, office, person or function who is given <br />
     the authority or power to act for another.
-  </p>
-  </span>
+  </p> 
+  </span> */}
   <h1 className="text-black md:text-[82px] mt-6 ss:text-[70px]  text-[52px] md:leading-[90px] fade-in-from-bottom font-black tracking-tight">
     <span className="text-custom-gradient">
       <br className="ss:flex hidden" />

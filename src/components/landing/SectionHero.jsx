@@ -227,7 +227,7 @@ import SearchButtons from '../SearchButtons'
                     </span>
                   </Link>
                 </div> */}
-                <h1 className="z-30 mt-3 lg:mt-10 text-4xl font-bold tracking-tight text-white sm:text-6xl">
+                {/* <h1 className="z-30 mt-3 lg:mt-10 text-4xl font-bold tracking-tight text-white sm:text-6xl">
                   <span className="text-custom-gradient">Proxy - </span>
                 </h1>
                 <p
@@ -240,7 +240,7 @@ import SearchButtons from '../SearchButtons'
                 >
                   noun /&apos;prak·si/ the agency, office, person or function who is given <br />
                   the authority or power to act for another.
-                </p>
+                </p> */}
                 <h1 className="text-black md:text-[82px] mt-6 ss:text-[70px]  text-[52px] md:leading-[90px] fade-in-from-bottom font-black tracking-tight">
                   <span className="text-custom-gradient">
                     <br className="ss:flex hidden" />
@@ -295,7 +295,7 @@ import SearchButtons from '../SearchButtons'
                 </div>
               </div>
               {/* !mr-24 */}
-              <div className="lg:mx-auto -mt-4 md:mt-14 flex max-w-2xl sm:mt-24 lg:ml-10 lg:mr-0 lg:mt-20 lg:max-w-none lg:flex-none xl:ml-32 xl:mt-44">
+              <div className="lg:mx-auto -mt-4 md:mt-14 flex max-w-2xl sm:mt-24 lg:ml-10 lg:mr-0 lg:mt-10 lg:max-w-none lg:flex-none xl:ml-12 xl:mt-24">
                 <div className="max-w-3xl mx-4 flex-none sm:max-w-5xl lg:max-w-none">
                    <HeroSearchForm />
                  
@@ -466,11 +466,11 @@ import SearchButtons from '../SearchButtons'
   export const RightPart = () =>{
     return (
     <div className="flex flex-col w-full justify-center max-[1000px]:!mt-[3em]">
-      <h1 className="text-black md:text-[82px] ss:text-[70px] text-custom-gradient  text-[52px] md:leading-[90px] fade-in-from-bottom ss:leading-[70px] leading-[55px] mb-4 font-black tracking-tight">
-        proxy -{/* */}{" "}
-      </h1>
-      <span className="text-black text-[20px] md:leading-[30px] fade-in-from-bottom  mb-4  tracking-tight italic">
-      <p
+      {/* <h1 className="text-black md:text-[82px] ss:text-[70px] text-custom-gradient  text-[52px] md:leading-[90px] fade-in-from-bottom ss:leading-[70px] leading-[55px] mb-4 font-black tracking-tight">
+        proxy -
+      </h1> */}
+      {/* <span className="text-black text-[20px] md:leading-[30px] fade-in-from-bottom  mb-4  tracking-tight italic"> */}
+      {/* <p
         className="-pt-12 md:mt-6 ss:mt-5  md:text-[18px] ss:text-[18px] text-[16px] text-main md:leading-[25px] ss:leading-[25px]  leading-[20px] fade-in-from-bottom md:max-w-[600px]  ss:max-w-[480px] max-w-[320px]"
         style={{
           opacity: 0,
@@ -480,8 +480,8 @@ import SearchButtons from '../SearchButtons'
       >
          noun /ˈprɑk·si/ the agency, office, person or function who is given <br />
         the authority or power to act for another.
-      </p>
-      </span>
+      </p> */}
+      {/* </span> */}
       <h1 className="text-black md:text-[82px] mt-6 ss:text-[70px]  text-[52px] md:leading-[90px] fade-in-from-bottom font-black tracking-tight">
         <span className="text-custom-gradient">
           <br className="ss:flex hidden" />

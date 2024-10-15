@@ -18,7 +18,7 @@ const About = () => {
             mb-8">
                 <h1 className="text-custom-gradient font-bold md:text-[55px]
                 ss:text-[45px] text-[33px] md:mr-14 ss:mr-6 mr-5">
-                    Who are we?
+                   We t Hit Different.
                 </h1>
                 <motion.div variants={fadeIn('down', 'tween', 0.2, 0.5)}
                 className="flex-1 relative items-center justify-center">
